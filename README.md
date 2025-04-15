@@ -28,7 +28,7 @@ subclass - see dukit/systems.py for more information.
 
 # API documentation
 
-[Docs are here](https://casparvitch.github.io/dukit/dukit/index.html)
+[Docs are here](https://qnslab.github.io/dukit/dukit/index.html)
 
 # Normal usage
 
