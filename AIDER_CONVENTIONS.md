@@ -1,0 +1,10 @@
+- Use types everywhere possible.
+- Use numpydoc style docstrings.
+- Use Australian english spelling.
+- Keep the code as simple as possible. Avoid unnecessary complexity.
+- Use meaningful names for variables, functions, etc. Names should reveal intent.
+- Code should be easy to read and understand.
+- Use click for cli.
+- Use tqdm for progress bars.
+- When loguru is used for logging, use `logger.exception` over `logger.error`.
+- Do not use `**kwargs` or `**params` for function arguments, except where absolutely necessary.

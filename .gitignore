@@ -132,7 +132,11 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+conda_env/
 dukit_conda_env/
+
+.aider*
+bash_completion_doit
 
 # Spyder project settings
 .spyderproject

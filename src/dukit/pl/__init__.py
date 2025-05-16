@@ -26,6 +26,7 @@ Functions
 from dukit.pl.model import (
     FitModel,
     ConstStretchedExp,
+    ConstBiExponential,
     ConstDampedRabi,
     LinearLorentzians,
     LinearN14Lorentzians,

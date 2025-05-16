@@ -80,6 +80,8 @@ System sub-class.
     - Base class for PL fitting models. Subclass this to make your own.
 - `dukit.pl.model.ConstStretchedExp`
     - T1 model.
+- `dukit.pl.model.ConstBiExponential`
+    - T1 model with two exponential decays.
 - `dukit.pl.model.ConstDampedRabi`
     - Rabi model, constant + damped oscillation.
 - `dukit.pl.model.LinearLorentzians`
@@ -273,6 +275,7 @@ import dukit.plot
 from dukit.pl import (
     FitModel,
     ConstStretchedExp,
+    ConstBiExponential,
     ConstDampedRabi,
     LinearLorentzians,
     LinearN15Lorentzians,

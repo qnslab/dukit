@@ -11,6 +11,7 @@ Classes
 -------
  - `qdmpy.pl.model.FitModel`
  - `qdmpy.pl.model.ConstStretchedExp`
+ - `qdmpy.pl.model.ConstBiExponential`
  - `qdmpy.pl.model.ConstDampedRabi`
  - `qdmpy.pl.model.LinearLorentzians`
  - `qdmpy.pl.model.LinearN15Lorentzians`
@@ -25,6 +26,7 @@ __author__ = "Sam Scholten"
 __pdoc__ = {
     "qdmpy.pl.model.FitModel": True,
     "qdmpy.pl.model.ConstStretchedExp": True,
+    "qdmpy.pl.model.ConstBiExponential": True,
     "qdmpy.pl.model.ConstDampedRabi": True,
     "qdmpy.pl.model.LinearLorentzians": True,
     "qdmpy.pl.model.LinearN15Lorentzians": True,
@@ -233,6 +235,68 @@ class ConstStretchedExp(FitModel):
 
 
 # ====================================================================================
+
+
+class ConstBiExponential(FitModel):
+    """
+    Model with two exponential decays plus a constant offset.
+    
+    f(x) = c + a1*exp(-x/t1) + a2*exp(-x/t2)
+    
+    Parameters
+    ----------
+    c : float
+        Constant offset
+    t1 : float
+        Time constant for first exponential
+    a1 : float
+        Amplitude for first exponential
+    t2 : float
+        Time constant for second exponential
+    a2 : float
+        Amplitude for second exponential
+    """
+    @staticmethod
+    @njit(fastmath=True)
+    def _eval(x: npt.ArrayLike, fit_params: npt.ArrayLike):
+        c, t1, a1, t2, a2 = fit_params
+        return c + a1 * np.exp(-x / t1) + a2 * np.exp(-x / t2)
+
+    @staticmethod
+    @njit(fastmath=True)
+    def _resid(
+        x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike
+    ):
+        c, t1, a1, t2, a2 = fit_params
+        return c + a1 * np.exp(-x / t1) + a2 * np.exp(-x / t2) - pl_vals
+
+    @staticmethod
+    @njit(fastmath=True)
+    def _jac(
+        x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike
+    ):
+        c, t1, a1, t2, a2 = fit_params
+        j = np.empty((np.shape(x)[0], 5))
+        j[:, 0] = 1  # wrt constant
+        j[:, 1] = a1 * (x / t1**2) * np.exp(-x / t1)  # wrt t1
+        j[:, 2] = np.exp(-x / t1)  # wrt a1
+        j[:, 3] = a2 * (x / t2**2) * np.exp(-x / t2)  # wrt t2
+        j[:, 4] = np.exp(-x / t2)  # wrt a2
+        return j
+
+    def get_param_defn(self) -> tuple[str, ...]:
+        return "constant", "exp1_t", "exp1_amp", "exp2_t", "exp2_amp"
+
+    def get_param_odict(self) -> dict[str, str]:
+        return dict(
+            [
+                ("constant_0", "Amplitude (a.u.)"),
+                ("exp1_t_0", "Time (s)"),
+                ("exp1_amp_0", "Amplitude (a.u.)"),
+                ("exp2_t_0", "Time (s)"),
+                ("exp2_amp_0", "Amplitude (a.u.)"),
+            ]
+        )
 
 
 class ConstDampedRabi(FitModel):
@@ -804,7 +868,7 @@ class SkewedLorentzians(FitModel):
         c = fit_params[0]
         val = c * np.ones(np.shape(x))
         for i in range(n):
-            fwhm = fit_params[i * 4 + 1]
+            sigma = fit_params[i * 4 + 1]
             pos = fit_params[i * 4 + 2]
             amp = fit_params[i * 4 + 3]
             skew = fit_params[i * 4 + 4]
