@@ -42,7 +42,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "prospector[with_bandit,with_pyroma,with_vulture]",
+    "prospector[with_bandit,with_mypy,with_pyroma,with_vulture]",
     "ruff",
     "pytest>=7.0",
     "pytest-cov",
@@ -75,3 +75,5 @@ ignore = ["E501", "E711"]
 
 [tool.ruff.lint.per-file-ignores]
 "**/__init__.py" = ["F403", "F401"]
+"src/dukit/field/hamiltonian.py" = ["E501"]
+"src/dukit/field/ham_scipy.py" = ["E501"]

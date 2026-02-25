@@ -22,16 +22,16 @@ __pdoc__ = {
 }
 # ============================================================================
 
+import warnings
+from datetime import timedelta
+from timeit import default_timer as timer
+
 import numpy as np
+from joblib import Parallel, delayed
 from scipy.optimize import least_squares
 from tqdm.autonotebook import tqdm  # auto detects jupyter
-import warnings
-from timeit import default_timer as timer
-from datetime import timedelta
-from joblib import Parallel, delayed
 
 # ============================================================================
-
 from dukit.field import hamiltonian
 
 # ============================================================================
@@ -285,9 +285,7 @@ def fit_hamiltonian_scipyfit(
     t1 = timer()
     fit_time = timedelta(seconds=t1 - t0).total_seconds()
 
-    res, sigmas = hamiltonian.ham_get_pixel_fitting_results(
-        hamiltonian_obj, results, pixel_data
-    )
+    res, sigmas = hamiltonian.ham_get_pixel_fitting_results(hamiltonian_obj, results, pixel_data)
 
     if shuffle_pixels and unshuffler is not None:
         res = hamiltonian.ham_unshuffle_fit_results(res, unshuffler)

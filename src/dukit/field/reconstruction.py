@@ -30,21 +30,17 @@ __pdoc__ = {
 }
 
 import warnings
-from datetime import timedelta, timezone
+from datetime import timezone
 from timeit import default_timer as timer
 from typing import Tuple
 
 import numpy as np
 import numpy.typing as npt
-from joblib import Parallel, delayed
-from scipy.optimize import least_squares
-from tqdm.autonotebook import tqdm
-
 from pyfftw.interfaces import numpy_fft
 
-from dukit.field.defects import Defect
-from dukit.field import hamiltonian, ham_scipy
 import dukit.fourier
+from dukit.field import ham_scipy, hamiltonian
+from dukit.field.defects import Defect
 
 # ============================================================================
 
@@ -229,14 +225,14 @@ def get_bxyz_from_single_defect(
 
     u_defect_normalized = u_defect / np.linalg.norm(u_defect)
     u_defect_copy = (
-        u_defect_normalized.copy() if nv_above_sample else np.array([-u_defect_normalized[0], -u_defect_normalized[1], u_defect_normalized[2]])
+        u_defect_normalized.copy()
+        if nv_above_sample
+        else np.array([-u_defect_normalized[0], -u_defect_normalized[1], u_defect_normalized[2]])
     )
 
     kappa = [-1j * kx / k, -1j * ky / k, 1]
     u_dot_kappa = (
-        u_defect_copy[0] * kappa[0]
-        + u_defect_copy[1] * kappa[1]
-        + u_defect_copy[2] * kappa[2]
+        u_defect_copy[0] * kappa[0] + u_defect_copy[1] * kappa[1] + u_defect_copy[2] * kappa[2]
     )
 
     bdefect2bx = kappa[0] / u_dot_kappa
@@ -357,28 +353,19 @@ def get_bxyz_from_pre_gslac_ref(
     - Signal should have single resonance selected by transition relative to bias.
     - Two bias fields required because signal and reference are independent measurements.
     """
-    from datetime import datetime
 
     # Validate inputs
     if len(sig_freqs) != 1:
-        raise ValueError(
-            f"sig_freqs must have exactly 1 frequency, got {len(sig_freqs)}"
-        )
+        raise ValueError(f"sig_freqs must have exactly 1 frequency, got {len(sig_freqs)}")
     if len(ref_freqs) != 2:
-        raise ValueError(
-            f"ref_freqs must have exactly 2 frequencies, got {len(ref_freqs)}"
-        )
+        raise ValueError(f"ref_freqs must have exactly 2 frequencies, got {len(ref_freqs)}")
 
     # Convert frequencies to B_defects
     # Signal: post-GSLAC, single resonance
-    b_defects_sig, _ = get_bdefects_from_frequencies(
-        sig_freqs, defect, past_gslac=True
-    )
+    b_defects_sig, _ = get_bdefects_from_frequencies(sig_freqs, defect, past_gslac=True)
 
     # Reference: pre-GSLAC, two resonances
-    b_defects_ref, _ = get_bdefects_from_frequencies(
-        ref_freqs, defect, past_gslac=False
-    )
+    b_defects_ref, _ = get_bdefects_from_frequencies(ref_freqs, defect, past_gslac=False)
 
     # We now have:
     # b_defects_sig: tuple of 1 element (single B_defect from post-GSLAC measurement)
@@ -479,9 +466,7 @@ def get_bxyz_from_bdefects_inversion(
     # Validation: all b_defects have same shape
     shapes = [b.shape for b in b_defects]
     if not all(s == shapes[0] for s in shapes):
-        raise ValueError(
-            f"All b_defects must have same shape, got shapes: {shapes}"
-        )
+        raise ValueError(f"All b_defects must have same shape, got shapes: {shapes}")
 
     # Normalize u_defects internally
     u_defects_normalized = _normalize_u_defects(u_defects)
@@ -498,18 +483,20 @@ def get_bxyz_from_bdefects_inversion(
         for i in range(n_defects):
             for j in range(i + 1, n_defects):
                 for k in range(j + 1, n_defects):
-                    subset = np.vstack([u_defects_normalized[i], u_defects_normalized[j], u_defects_normalized[k]])
+                    subset = np.vstack(
+                        [u_defects_normalized[i], u_defects_normalized[j], u_defects_normalized[k]]
+                    )
                     try:
                         cond_numbers.append(np.linalg.cond(subset))
                     except np.linalg.LinAlgError:
                         # If SVD fails, use large condition number
                         cond_numbers.append(1e15)
                     indices_list.append((i, j, k))
-        
+
         # Pick the subset with smallest condition number
         best_idx = np.argmin(cond_numbers)
         best_indices = indices_list[best_idx]
-        
+
         u_inv_matrix = np.vstack([u_defects_normalized[i] for i in best_indices])
         b_defects_to_use = [b_defects[i] for i in best_indices]
 
@@ -517,7 +504,7 @@ def get_bxyz_from_bdefects_inversion(
         cond = np.linalg.cond(u_inv_matrix)
     except np.linalg.LinAlgError:
         cond = np.inf
-        
+
     if cond > 1e10:
         warnings.warn(
             f"u_defects matrix ill-conditioned (cond={cond:.2e}), results may be unstable"
@@ -530,7 +517,7 @@ def get_bxyz_from_bdefects_inversion(
     b_defects_stacked = np.stack(b_defects_to_use, axis=-1)
 
     # Multiply inverse matrix by b_defects for each pixel using einsum
-    bxyz = np.einsum('ij,yxj->yxi', u_inv, b_defects_stacked)
+    bxyz = np.einsum("ij,yxj->yxi", u_inv, b_defects_stacked)
 
     return {
         "Bx": bxyz[:, :, 0],
@@ -575,7 +562,7 @@ def _construct_u_defect_frames(u_defects: npt.NDArray) -> npt.NDArray:
 
         # Pick a reference vector not parallel to u_z
         ref_vec = np.array([1.0, 0.0, 0.0])
-        
+
         # If u_z is too close to [1,0,0], use [0,1,0]
         if np.abs(np.dot(u_z, ref_vec)) > 0.99:
             ref_vec = np.array([0.0, 1.0, 0.0])
@@ -588,7 +575,7 @@ def _construct_u_defect_frames(u_defects: npt.NDArray) -> npt.NDArray:
         else:
             # Fallback if cross product failed
             u_y = np.array([0.0, 0.0, 1.0])
-        
+
         u_x = np.cross(u_y, u_z)
         u_x = u_x / np.linalg.norm(u_x)
 
@@ -930,9 +917,7 @@ def reconstruct_field_components(
     # Parse input
     if isinstance(b_measured, dict):
         if "Bx" not in b_measured or "By" not in b_measured or "Bz" not in b_measured:
-            raise KeyError(
-                "b_measured dict must contain 'Bx', 'By', and 'Bz' keys"
-            )
+            raise KeyError("b_measured dict must contain 'Bx', 'By', and 'Bz' keys")
         bx, by, bz = b_measured["Bx"], b_measured["By"], b_measured["Bz"]
     elif isinstance(b_measured, (tuple, list)) and len(b_measured) == 3:
         bx, by, bz = b_measured

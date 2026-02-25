@@ -33,13 +33,13 @@ __pdoc__ = {
     "dukit.field.hamiltonian.ham_get_pixel_fitting_results": True,
 }
 # ============================================================================
+import copy
+from collections import OrderedDict
 from typing import Dict, List
 
 import numpy as np
 import numpy.linalg as LA  # noqa: N812
-from collections import OrderedDict
 from scipy.linalg import svd
-import copy
 
 # ============================================================================
 
@@ -102,7 +102,9 @@ class Hamiltonian:
         """
         self.chooser_obj = chooser_obj
         self.u_defect_frames = u_defect_frames
-        self.u_defects = u_defect_frames[:, 2, :].copy()  # i.e. z axis of each defect ref. frame in lab frame
+        self.u_defects = u_defect_frames[
+            :, 2, :
+        ].copy()  # i.e. z axis of each defect ref. frame in lab frame
 
     # =================================
 

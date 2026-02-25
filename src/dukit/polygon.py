@@ -53,16 +53,16 @@ __pdoc__ = {
 
 # ============================================================================
 
-import dill as pickle
 from pathlib import Path
 
+import dill as pickle
 import matplotlib.pyplot as plt
 import numba
-from numba import jit
 import numpy as np
 import numpy.typing as npt
 from matplotlib.lines import Line2D
 from mpl_toolkits.axes_grid1 import make_axes_locatable
+from numba import jit
 
 import dukit.widget
 from dukit.fourier import pad_image

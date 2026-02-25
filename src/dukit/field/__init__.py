@@ -38,25 +38,25 @@ from dukit.field.defects import (
     SpinPair,
     VBEnsemble,
 )
-from dukit.field.hamiltonian import (
-    Hamiltonian,
-    Bxyz,
-    AVAILABLE_HAMILTONIANS,
-)
 from dukit.field.ham_scipy import (
-    fit_hamiltonian_scipyfit,
     fit_hamiltonian_roi_avg_scipyfit,
+    fit_hamiltonian_scipyfit,
+)
+from dukit.field.hamiltonian import (
+    AVAILABLE_HAMILTONIANS,
+    Bxyz,
+    Hamiltonian,
 )
 
 # Reconstruction functions
 from dukit.field.reconstruction import (
-    spherical_to_cartesian,
     get_bdefects_from_frequencies,
-    get_bxyz_from_single_defect,
     get_bxyz_from_bdefects_inversion,
     get_bxyz_from_hamiltonian,
     get_bxyz_from_pre_gslac_ref,
+    get_bxyz_from_single_defect,
     reconstruct_field_components,
+    spherical_to_cartesian,
 )
 
 # Convenience alias (backwards compatibility)

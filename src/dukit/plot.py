@@ -12,6 +12,9 @@ Functions
  - `dukit.plot.pl_param_image`
  - `dukit.plot.pl_param_images`
  - `dukit.plot.plot_field_images`
+ - `dukit.plot.plot_magnetization`
+ - `dukit.plot.plot_current_density`
+ - `dukit.plot.plot_current_stream`
  - `dukit.plot._add_patch_rect`
 """
 
@@ -27,6 +30,9 @@ __pdoc__ = {
     "dukit.plot.pl_param_image": True,
     "dukit.plot.pl_param_images": True,
     "dukit.plot.plot_field_images": True,
+    "dukit.plot.plot_magnetization": True,
+    "dukit.plot.plot_current_density": True,
+    "dukit.plot.plot_current_stream": True,
     "dukit.plot._add_patch_rect": True,
 }
 
@@ -1213,7 +1219,7 @@ def plot_field_images(
     ...     c_range_type="percentile",
     ...     c_label="Magnetic Field (G)"
     ... )
-    
+
     >>> # Plot uncertainties with specific range
     >>> dukit.plot.plot_field_images(
     ...     {"sigma_Bx": bxyz["sigma_Bx"], "sigma_By": bxyz["sigma_By"]},
@@ -1229,20 +1235,20 @@ def plot_field_images(
     else:
         # Filter to only include requested fields that exist
         field_names = [name for name in field_names if name in field_data]
-    
+
     if not field_names:
         raise ValueError("No valid field names provided or field_data is empty")
-    
+
     # Set up figure
     n_fields = len(field_names)
     figsize = mpl.rcParams["figure.figsize"].copy()
     figsize[0] *= n_fields  # Width scales with number of fields
     fig, axs = plt.subplots(ncols=n_fields, figsize=figsize)
-    
+
     # Handle single field case
     if n_fields == 1:
         axs = np.array([axs])
-    
+
     # Infer colorbar label if not provided
     if not c_label:
         if any("sigma" in name.lower() for name in field_names):
@@ -1253,24 +1259,24 @@ def plot_field_images(
             c_label = "Zero-field Splitting (MHz)"
         else:
             c_label = "Field Value"
-    
+
     # Set default percentile range
     if c_range_type == "percentile" and c_range_values is None:
         c_range_values = (2, 98)
-    
+
     # Plot each field
     for i, field_name in enumerate(field_names):
         field_array = field_data[field_name]
-        
+
         # Determine colormap range
         if c_range_type and c_range_values:
             c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, field_array)
         else:
             c_range = dukit.itool.get_colormap_range("min_max", (), field_array)
-        
+
         # Create title
         title = f"{name} - {field_name}" if name else field_name
-        
+
         # Plot
         dukit.itool.plot_image_on_ax(
             fig,
@@ -1280,12 +1286,424 @@ def plot_field_images(
             c_range=c_range,
             c_label=c_label,
             c_map=c_map,
-            **kwargs
+            **kwargs,
         )
-    
+
     # Save if requested
     if opath:
         fig.savefig(opath)
-    
+
     # Return appropriate axes object
     return fig, axs[0] if n_fields == 1 else axs
+
+
+# ============================================================================
+
+
+def plot_magnetization(
+    magnetization: npt.NDArray,
+    name: str = "Mz",
+    c_range_type: str = "percentile",
+    c_range_values: tuple[float, float] = (2, 98),
+    opath: str = "",
+    raw_pixel_size: float | None = None,
+    applied_binning: int | tuple[int, int] = 1,
+    annotate_polygons: bool = False,
+    polygon_nodes: list | None = None,
+    **kwargs,
+) -> tuple[plt.Figure, plt.Axes]:
+    """
+    Plot magnetization (out-of-plane Mz or in-plane Mpsi).
+
+    Parameters
+    ----------
+    magnetization : npt.NDArray
+        2D array of magnetization values in μB/nm².
+    name : str, default="Mz"
+        Title for the plot. Use "Mz" for out-of-plane, "Mpsi" for in-plane.
+    c_range_type : str, default="percentile"
+        Type of colormap range. See `dukit.itool.get_colormap_range`.
+    c_range_values : tuple[float, float], default=(2, 98)
+        Values for colormap range.
+    opath : str, default=""
+        If given, saves figure to this path.
+    raw_pixel_size : float | None, optional
+        Raw pixel size in nm for scalebar.
+    applied_binning : int | tuple[int, int], default=1
+        Binning applied to determine effective pixel size.
+    annotate_polygons : bool, default=False
+        If True, annotate polygons on the plot.
+    polygon_nodes : list | None, optional
+        List of polygon node lists for annotation.
+    **kwargs
+        Additional plotting options passed to `dukit.itool.plot_image_on_ax`.
+
+    Returns
+    -------
+    fig : plt.Figure
+        The matplotlib figure object.
+    ax : plt.Axes
+        The matplotlib axes object.
+
+    Examples
+    --------
+    >>> # Plot out-of-plane magnetization
+    >>> mag = dukit.source.get_magnetization_from_bxyz(Bx, By, pixel_size=1e-6)
+    >>> dukit.plot.plot_magnetization(
+    ...     mag["Mz"],
+    ...     name="Out-of-plane Magnetization",
+    ...     c_range_type="percentile",
+    ...     c_range_values=(1, 99)
+    ... )
+    """
+    fig, ax = plt.subplots()
+
+    if "c_map" in kwargs:
+        c_map = kwargs.pop("c_map")
+    else:
+        c_map = "RdBu_r"
+
+    c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, magnetization)
+
+    fig, ax = dukit.itool.plot_image_on_ax(
+        fig,
+        ax,
+        magnetization,
+        title=name,
+        c_range=c_range,
+        c_label=r"Magnetization ($\mu_B$/nm$^2$)",
+        c_map=c_map,
+        raw_pixel_size=raw_pixel_size,
+        applied_binning=applied_binning,
+        annotate_polygons=annotate_polygons,
+        polygon_nodes=polygon_nodes,
+        **kwargs,
+    )
+
+    if opath:
+        fig.savefig(opath)
+
+    return fig, ax
+
+
+# ============================================================================
+
+
+def plot_current_density(
+    current_data: dict[str, npt.NDArray],
+    name: str = "Current Density",
+    c_range_type: str = "percentile",
+    c_range_values: tuple[float, float] = (2, 98),
+    opath: str = "",
+    raw_pixel_size: float | None = None,
+    applied_binning: int | tuple[int, int] = 1,
+    annotate_polygons: bool = False,
+    polygon_nodes: list | None = None,
+    **kwargs,
+) -> tuple[plt.Figure, plt.Axes]:
+    """
+    Plot current density components (Jx, Jy) and magnitude (Jnorm).
+
+    Parameters
+    ----------
+    current_data : dict[str, npt.NDArray]
+        Dictionary with keys "Jx", "Jy", "Jnorm" containing 2D arrays in A/m.
+    name : str, default="Current Density"
+        Base title for the plots.
+    c_range_type : str, default="percentile"
+        Type of colormap range. See `dukit.itool.get_colormap_range`.
+    c_range_values : tuple[float, float], default=(2, 98)
+        Values for colormap range.
+    opath : str, default=""
+        If given, saves figure to this path.
+    raw_pixel_size : float | None, optional
+        Raw pixel size in nm for scalebar.
+    applied_binning : int | tuple[int, int], default=1
+        Binning applied to determine effective pixel size.
+    annotate_polygons : bool, default=False
+        If True, annotate polygons on the plot.
+    polygon_nodes : list | None, optional
+        List of polygon node lists for annotation.
+    **kwargs
+        Additional plotting options passed to `dukit.itool.plot_image_on_ax`.
+
+    Returns
+    -------
+    fig : plt.Figure
+        The matplotlib figure object.
+    ax : np.ndarray of plt.Axes
+        Array of matplotlib axes objects (Jx, Jy, Jnorm).
+
+    Examples
+    --------
+    >>> # Plot current density from source reconstruction
+    >>> current = dukit.source.get_current_from_bxyz(Bx, By, pixel_size=1e-6)
+    >>> dukit.plot.plot_current_density(
+    ...     current,
+    ...     name="Reconstructed Current",
+    ...     c_range_type="percentile"
+    ... )
+    """
+    required_keys = ["Jx", "Jy", "Jnorm"]
+    for key in required_keys:
+        if key not in current_data:
+            raise ValueError(f"current_data must contain '{key}' key")
+
+    figsize = mpl.rcParams["figure.figsize"].copy()
+    figsize[0] *= 3  # Three panels: Jx, Jy, Jnorm
+    fig, axs = plt.subplots(ncols=3, figsize=figsize)
+
+    components = ["Jx", "Jy", "Jnorm"]
+    c_labels = ["Jx (A/m)", "Jy (A/m)", "|J| (A/m)"]
+
+    for i, (comp, c_label) in enumerate(zip(components, c_labels)):
+        data = current_data[comp]
+
+        if "c_map" in kwargs:
+            c_map = kwargs.pop("c_map")
+        else:
+            c_map = "viridis" if comp == "Jnorm" else "RdBu_r"
+
+        c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, data)
+        title = f"{name} - {comp}"
+
+        dukit.itool.plot_image_on_ax(
+            fig,
+            axs[i],
+            data,
+            title=title,
+            c_range=c_range,
+            c_label=c_label,
+            c_map=c_map,
+            raw_pixel_size=raw_pixel_size,
+            applied_binning=applied_binning,
+            annotate_polygons=annotate_polygons,
+            polygon_nodes=polygon_nodes,
+            **kwargs,
+        )
+
+    if opath:
+        fig.savefig(opath)
+
+    return fig, axs
+
+
+# ============================================================================
+
+
+def plot_current_stream(
+    current_data: dict[str, npt.NDArray],
+    name: str = "Current Streamlines",
+    background_image: npt.NDArray | None = None,
+    c_range_type: str = "percentile",
+    c_range_values: tuple[float, float] = (2, 98),
+    opath: str = "",
+    raw_pixel_size: float | None = None,
+    applied_binning: int | tuple[int, int] = 1,
+    density: float = 1.5,
+    linewidth: float | None = None,
+    arrowsize: float = 1.5,
+    color: str = "white",
+    vary_linewidth: bool = True,
+    min_linewidth: float = 0.5,
+    max_linewidth: float = 3.0,
+    annotate_polygons: bool = False,
+    polygon_nodes: list | None = None,
+    **kwargs,
+) -> tuple[plt.Figure, plt.Axes]:
+    """
+    Plot current density as streamlines overlaid on Jnorm magnitude.
+
+    This creates a visualization similar to those in Broadway et al. 2020,
+    showing current flow patterns overlaid on the current magnitude.
+
+    Parameters
+    ----------
+    current_data : dict[str, npt.NDArray]
+        Dictionary with keys "Jx", "Jy", "Jnorm" containing 2D arrays in A/m.
+    name : str, default="Current Streamlines"
+        Title for the plot.
+    background_image : npt.NDArray | None, optional
+        Optional background image (e.g., PL image) to display behind streamlines.
+    c_range_type : str, default="percentile"
+        Type of colormap range for Jnorm background. See `dukit.itool.get_colormap_range`.
+    c_range_values : tuple[float, float], default=(2, 98)
+        Values for colormap range.
+    opath : str, default=""
+        If given, saves figure to this path.
+    raw_pixel_size : float | None, optional
+        Raw pixel size in nm for scalebar.
+    applied_binning : int | tuple[int, int], default=1
+        Binning applied to determine effective pixel size.
+    density : float, default=1.5
+        Density of streamlines. Higher values = more lines.
+    linewidth : float | None, optional
+        Fixed linewidth for streamlines. If None and vary_linewidth=True,
+        linewidth varies with current magnitude.
+    arrowsize : float, default=1.5
+        Size of arrows on streamlines.
+    color : str, default="white"
+        Color for streamlines.
+    vary_linewidth : bool, default=True
+        If True, vary linewidth based on current magnitude.
+    min_linewidth : float, default=0.5
+        Minimum linewidth when varying.
+    max_linewidth : float, default=3.0
+        Maximum linewidth when varying.
+    annotate_polygons : bool, default=False
+        If True, annotate polygons on the plot.
+    polygon_nodes : list | None, optional
+        List of polygon node lists for annotation.
+    **kwargs
+        Additional plotting options passed to `dukit.itool.plot_image_on_ax`.
+
+    Returns
+    -------
+    fig : plt.Figure
+        The matplotlib figure object.
+    ax : plt.Axes
+        The matplotlib axes object.
+
+    Examples
+    --------
+    >>> # Plot current streamlines with variable linewidth
+    >>> current = dukit.source.get_current_from_bxyz(Bx, By, pixel_size=1e-6)
+    >>> dukit.plot.plot_current_stream(
+    ...     current,
+    ...     name="Current Flow",
+    ...     vary_linewidth=True,
+    ...     density=2.0
+    ... )
+
+    Reference
+    ---------
+    D. A. Broadway et al., Phys. Rev. Applied 14, 024076 (2020)
+    """
+    required_keys = ["Jx", "Jy", "Jnorm"]
+    for key in required_keys:
+        if key not in current_data:
+            raise ValueError(f"current_data must contain '{key}' key")
+
+    Jx = current_data["Jx"]
+    Jy = current_data["Jy"]
+    Jnorm = current_data["Jnorm"]
+
+    fig, ax = plt.subplots()
+
+    # Plot background if provided
+    if background_image is not None:
+        bg_norm = (background_image - np.nanmin(background_image)) / (
+            np.nanmax(background_image) - np.nanmin(background_image)
+        )
+        ax.imshow(bg_norm, cmap="Greys_r", alpha=0.5)
+
+    # Determine colormap range for Jnorm
+    c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, Jnorm)
+
+    # Plot Jnorm as background
+    im = ax.imshow(
+        Jnorm,
+        cmap="viridis",
+        vmin=c_range[0],
+        vmax=c_range[1],
+        alpha=0.8 if background_image is not None else 1.0,
+    )
+
+    # Calculate streamline linewidths
+    if vary_linewidth and linewidth is None:
+        # Normalize Jnorm to linewidth range
+        jnorm_norm = (Jnorm - np.nanmin(Jnorm)) / (np.nanmax(Jnorm) - np.nanmin(Jnorm))
+        lw = min_linewidth + jnorm_norm * (max_linewidth - min_linewidth)
+    else:
+        lw = linewidth if linewidth is not None else 1.0
+
+    # Create streamplot
+    # Note: streamplot expects (x, y) meshgrid, but our arrays are (row, col) = (y, x)
+    # So we swap Jx and Jy appropriately
+    shape = Jx.shape
+    y_grid, x_grid = np.mgrid[0 : shape[0], 0 : shape[1]]
+
+    if isinstance(lw, np.ndarray):
+        # Variable linewidth - need to use a trick with multiple streamplots
+        # or use linewidth as an array (supported in newer matplotlib versions)
+        try:
+            ax.streamplot(
+                x_grid,
+                y_grid,
+                Jx,
+                Jy,
+                color=color,
+                linewidth=lw,
+                density=density,
+                arrowsize=arrowsize,
+            )
+        except TypeError:
+            # Fall back to fixed linewidth if array not supported
+            ax.streamplot(
+                x_grid,
+                y_grid,
+                Jx,
+                Jy,
+                color=color,
+                linewidth=1.5,
+                density=density,
+                arrowsize=arrowsize,
+            )
+    else:
+        ax.streamplot(
+            x_grid,
+            y_grid,
+            Jx,
+            Jy,
+            color=color,
+            linewidth=lw,
+            density=density,
+            arrowsize=arrowsize,
+        )
+
+    ax.set_title(name)
+    ax.set_aspect("equal")
+
+    # Add colorbar for Jnorm
+    from mpl_toolkits.axes_grid1 import make_axes_locatable
+
+    divider = make_axes_locatable(ax)
+    cax = divider.append_axes("right", size="5%", pad=0.05)
+    cbar = fig.colorbar(im, cax=cax)
+    cbar.set_label("|J| (A/m)", rotation=270, labelpad=15)
+
+    # Add scalebar if pixel size provided
+    if raw_pixel_size is not None:
+        from matplotlib_scalebar.scalebar import ScaleBar
+
+        effective_pixel_size = (
+            raw_pixel_size * applied_binning * 1e-9
+            if isinstance(applied_binning, int)
+            else raw_pixel_size * applied_binning[0] * 1e-9
+        )
+        scalebar = ScaleBar(effective_pixel_size)
+        ax.add_artist(scalebar)
+
+    # Annotate polygons if requested
+    if annotate_polygons and polygon_nodes is not None:
+        for nodes in polygon_nodes:
+            patch = patches.Polygon(
+                np.array(nodes),
+                fill=False,
+                edgecolor="white",
+                linewidth=1.5,
+                linestyle="--",
+            )
+            ax.add_patch(patch)
+
+    # Remove ticks for cleaner look
+    ax.set_xticks([])
+    ax.set_yticks([])
+
+    if opath:
+        fig.savefig(opath)
+
+    return fig, ax
+
+
+# ============================================================================

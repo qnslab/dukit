@@ -147,7 +147,7 @@ class System:
         ):
             if param is not None:
                 setattr(self, att, param)
-        
+
         # check we have sufficient info to calculate pixel size.
         if self._pixel_size < 0 and np.all(
             [

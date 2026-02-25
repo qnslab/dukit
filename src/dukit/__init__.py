@@ -197,6 +197,9 @@ Need to be imported via `dukit.plot.<method>` to work properly.
 - `dukit.plot.pl_param_image`
 - `dukit.plot.pl_param_images`
 - `dukit.plot.plot_field_images`
+- `dukit.plot.plot_magnetization`
+- `dukit.plot.plot_current_density`
+- `dukit.plot.plot_current_stream`
 
 ### Some matplotlib interactive widgets (`dukit.widget`)
 
@@ -238,6 +241,34 @@ in place.
 - `dukit.fourier.MU_0`
     - Vacuum permeability.
 
+### Source reconstruction (`dukit.source`)
+
+Invert measured B-field maps to calculate sources: current density and magnetization.
+
+#### Current density functions:
+
+- `dukit.source.get_current_from_bxyz`
+    - Reconstruct current density Jx, Jy from magnetic field components.
+- `dukit.source.get_current_from_bdefect`
+    - Reconstruct current density from single B_defect measurement.
+- `dukit.source.get_current_without_ft`
+    - Approximate current density without Fourier propagation.
+- `dukit.source.get_divperp_j`
+    - Calculate perpendicular divergence of current density.
+
+#### Magnetization functions:
+
+- `dukit.source.get_magnetization_from_bxyz`
+    - Reconstruct out-of-plane magnetization Mz from magnetic field components.
+- `dukit.source.get_magnetization_from_bdefect`
+    - Reconstruct out-of-plane magnetization Mz from single B_defect measurement.
+
+#### High-level interface:
+
+- `dukit.source.reconstruct_source`
+    - Unified interface for source reconstruction, supports both current and magnetization.
+    - Handles routing to appropriate low-level function and optional background subtraction.
+
 ### Other (`dukit.share`)
 
 - `dukit.share.RoiAvgFit`
@@ -256,15 +287,6 @@ from dukit.field import (
     SpinPair,
     VBEnsemble,
 )
-
-# Geometry for vector field reconstruction
-from dukit.geom import (
-    get_u_defects,
-    get_u_defect_frames,
-    NV_AXES_111,
-    NV_AXES_100_100,
-    NV_AXES_100_110,
-)
 from dukit.fourier import (
     MAG_UNIT_CONV,
     MU_0,
@@ -274,6 +296,15 @@ from dukit.fourier import (
     hanning_filter_kspace,
     pad_image,
     unpad_image,
+)
+
+# Geometry for vector field reconstruction
+from dukit.geom import (
+    NV_AXES_100_100,
+    NV_AXES_100_110,
+    NV_AXES_111,
+    get_u_defect_frames,
+    get_u_defects,
 )
 from dukit.itool import (
     crop_roi,
@@ -315,6 +346,17 @@ from dukit.polygon import (
     polygon_selector,
 )
 from dukit.share import AoiAvgFit, RoiAvgFit
+
+# Source reconstruction (invert B-field to current/magnetization)
+from dukit.source import (
+    get_current_from_bdefect,
+    get_current_from_bxyz,
+    get_current_without_ft,
+    get_divperp_j,
+    get_magnetization_from_bdefect,
+    get_magnetization_from_bxyz,
+    reconstruct_source,
+)
 from dukit.systems import (
     Argus,
     CryoWidefield,

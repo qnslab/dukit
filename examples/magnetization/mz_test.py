@@ -201,6 +201,42 @@ b_nv_sbg = tuple([bnv - bnv_bg for bnv, bnv_bg in zip(b_nvs, b_nv_bgs)])
 for i, b in enumerate(b_nv_sbg):
     np.savetxt(OUTPUT_DIR + f"/data/b_nv_sbg_{i}.txt", b)
 
+
+_ = dukit.plot.b_defects(
+    b_nvs,
+    name="raw b_nvs",
+    opath=OUTPUT_DIR + f"raw_b_nvs.{FIG_FORMAT}",
+    c_range_type="percentile",
+    c_range_values=(2, 98),
+    raw_pixel_size=raw_pixel_size,
+    applied_binning=ADDITIONAL_BINS,
+)
+_ = dukit.plot.b_defects(
+    b_nv_sbg,
+    name="sub_bg b_nvs",
+    opath=OUTPUT_DIR + f"b_nvs-sub_bg.{FIG_FORMAT}",
+    # c_range_type="percentile",
+    c_range_type="strict_range",
+    # c_range_values=(2, 98),
+    c_range_values=(-1.3e-6, 1.3e-6),
+    raw_pixel_size=raw_pixel_size,
+    applied_binning=ADDITIONAL_BINS,
+    annotate_polygons=ANNOTATE_POLYS,
+    polygon_nodes=polygon_nodes,
+)
+
+_ = dukit.plot.dshifts(
+    dshifts,
+    name="dshifts",
+    opath=OUTPUT_DIR + f"dshifts.{FIG_FORMAT}",
+    # c_range_type="percentile",
+    c_range_type="strict_range",
+    # c_range_values=(2, 98),
+    c_range_values=(2876, 2880),
+    raw_pixel_size=raw_pixel_size,
+    applied_binning=ADDITIONAL_BINS,
+)
+
 # === FIELD RECONSTRUCTION SECTION ===
 # Get bias field information
 bias_on, (mag_T, theta_rad, phi_rad) = sys.get_bias_field(FILEPATH, auto_read=True)
@@ -360,29 +396,6 @@ plt.tight_layout()
 plt.savefig(OUTPUT_DIR + f"field_consistency_differences.{FIG_FORMAT}", dpi=150, bbox_inches="tight")
 plt.close()
 
-# Calculate and save consistency metrics
-rms_diff_Bx = np.sqrt(np.nanmean(diff_Bx**2))
-rms_diff_By = np.sqrt(np.nanmean(diff_By**2))
-rms_diff_Bz = np.sqrt(np.nanmean(diff_Bz**2))
-
-print(f"\nField consistency RMS differences:")
-print(f"  RMS(Bx - Bx_from_Bz) = {rms_diff_Bx:.2e} G")
-print(f"  RMS(By - By_from_Bz) = {rms_diff_By:.2e} G")
-print(f"  RMS(Bz - Bz_from_xy) = {rms_diff_Bz:.2e} G")
-
-print(f"\nField consistency max differences:")
-print(f"  max|Bx - Bx_from_Bz| = {np.nanmax(np.abs(diff_Bx)):.2e} G")
-print(f"  max|By - By_from_Bz| = {np.nanmax(np.abs(diff_By)):.2e} G")
-print(f"  max|Bz - Bz_from_xy| = {np.nanmax(np.abs(diff_Bz)):.2e} G")
-
-print("\nInterpretation:")
-print("  - Small differences (< 1% of field magnitude) indicate correct geometry")
-print("  - Large differences may indicate:")
-print("    * Incorrect defect orientations (u_defects)")
-print("    * Wrong diamond orientation or crystal axes")
-print("    * Incorrect bias field direction")
-print("    * NV layer on opposite side of sample (nv_above_sample=False)")
-
 # Save consistency check data
 np.savetxt(OUTPUT_DIR + "/data/field_consistency_Bx_diff.txt", diff_Bx)
 np.savetxt(OUTPUT_DIR + "/data/field_consistency_By_diff.txt", diff_By)
@@ -393,53 +406,6 @@ np.savetxt(OUTPUT_DIR + "/data/field_consistency_Bx_from_Bz.txt", field_check["B
 np.savetxt(OUTPUT_DIR + "/data/field_consistency_By_from_Bz.txt", field_check["By_from_Bz"])
 np.savetxt(OUTPUT_DIR + "/data/field_consistency_Bz_from_xy.txt", field_check["Bz_from_xy"])
 
-# Add consistency metrics to metadata
-metadata["field_consistency"] = {
-    "rms_diff_Bx_G": float(rms_diff_Bx),
-    "rms_diff_By_G": float(rms_diff_By),
-    "rms_diff_Bz_G": float(rms_diff_Bz),
-    "max_diff_Bx_G": float(np.nanmax(np.abs(diff_Bx))),
-    "max_diff_By_G": float(np.nanmax(np.abs(diff_By))),
-    "max_diff_Bz_G": float(np.nanmax(np.abs(diff_Bz))),
-    "interpretation": "Small differences (< 1% of field magnitude) indicate correct geometry",
-}
-with open(OUTPUT_DIR + "/data/reconstruction_metadata.json", "w") as f:
-    json.dump(metadata, f, indent=2)
-
-_ = dukit.plot.b_defects(
-    b_nvs,
-    name="raw b_nvs",
-    opath=OUTPUT_DIR + f"raw_b_nvs.{FIG_FORMAT}",
-    c_range_type="percentile",
-    c_range_values=(2, 98),
-    raw_pixel_size=raw_pixel_size,
-    applied_binning=ADDITIONAL_BINS,
-)
-_ = dukit.plot.b_defects(
-    b_nv_sbg,
-    name="sub_bg b_nvs",
-    opath=OUTPUT_DIR + f"b_nvs-sub_bg.{FIG_FORMAT}",
-    # c_range_type="percentile",
-    c_range_type="strict_range",
-    # c_range_values=(2, 98),
-    c_range_values=(-1.3e-6, 1.3e-6),
-    raw_pixel_size=raw_pixel_size,
-    applied_binning=ADDITIONAL_BINS,
-    annotate_polygons=ANNOTATE_POLYS,
-    polygon_nodes=polygon_nodes,
-)
-
-_ = dukit.plot.dshifts(
-    dshifts,
-    name="dshifts",
-    opath=OUTPUT_DIR + f"dshifts.{FIG_FORMAT}",
-    # c_range_type="percentile",
-    c_range_type="strict_range",
-    # c_range_values=(2, 98),
-    c_range_values=(2876, 2880),
-    raw_pixel_size=raw_pixel_size,
-    applied_binning=ADDITIONAL_BINS,
-)
 
 # === PLOT RECONSTRUCTED VECTOR FIELDS ===
 print("\n=== Plotting reconstructed vector fields ===")
@@ -575,21 +541,85 @@ plt.tight_layout()
 plt.savefig(OUTPUT_DIR + f"field_reconstruction_difference.{FIG_FORMAT}", dpi=150, bbox_inches="tight")
 plt.close()
 
-# Print summary statistics
-print("\n=== Field Reconstruction Summary ===")
-print(f"Bias field: {bias_field[0]*1e3:.1f} mT, θ={bias_field[1]:.1f}°, φ={bias_field[2]:.1f}°")
-print(f"\nHamiltonian method:")
-print(f"  Bx range: [{np.nanmin(bxyz_ham['Bx']):.2e}, {np.nanmax(bxyz_ham['Bx']):.2e}] G")
-print(f"  By range: [{np.nanmin(bxyz_ham['By']):.2e}, {np.nanmax(bxyz_ham['By']):.2e}] G")
-print(f"  Bz range: [{np.nanmin(bxyz_ham['Bz']):.2e}, {np.nanmax(bxyz_ham['Bz']):.2e}] G")
-print(f"  D range: [{np.nanmin(bxyz_ham['D']):.2f}, {np.nanmax(bxyz_ham['D']):.2f}] MHz")
-print(f"  Failed pixels: {bxyz_ham['_metadata']['n_failed_pixels']}")
-print(f"  Fit time: {bxyz_ham['_metadata']['fit_time_s']:.1f} s")
 
-print(f"\nMatrix inversion method:")
-print(f"  Bx range: [{np.nanmin(bxyz_inv['Bx']):.2e}, {np.nanmax(bxyz_inv['Bx']):.2e}] G")
-print(f"  By range: [{np.nanmin(bxyz_inv['By']):.2e}, {np.nanmax(bxyz_inv['By']):.2e}] G")
-print(f"  Bz range: [{np.nanmin(bxyz_inv['Bz']):.2e}, {np.nanmax(bxyz_inv['Bz']):.2e}] G")
-print(f"  Condition number: {bxyz_inv['_metadata']['condition_number']:.2e}")
+# === SOURCE RECONSTRUCTION SECTION ===
+print("\n=== Source Reconstruction (Magnetization) ===")
+
+# Calculate effective pixel size in meters
+effective_pixel_size = raw_pixel_size * ADDITIONAL_BINS * 1e-9  # nm -> m
+print(f"Effective pixel size: {effective_pixel_size*1e6:.2f} μm")
+
+# Reconstruct out-of-plane magnetization from Hamiltonian Bxyz
+# Using Bx and By components (most common and stable method)
+print("\nReconstructing Mz from Bx, By (Hamiltonian)...")
+mz_result = dukit.source.get_magnetization_from_bxyz(
+    bxyz_ham["Bx"],
+    bxyz_ham["By"],
+    Bz=None,  # Not using Bz for Mz reconstruction
+    pixel_size=effective_pixel_size,
+    standoff=None,  # Can specify standoff in meters for better accuracy
+    use_components="xy",  # Use Bx, By only (most stable for Mz)
+    pad_mode="edge",
+    pad_factor=2,
+)
+
+print(f"Mz reconstruction complete.")
+print(f"Mz range: [{np.nanmin(mz_result['Mz']):.2e}, {np.nanmax(mz_result['Mz']):.2e}] μB/nm²")
+
+# Save magnetization data
+np.savetxt(OUTPUT_DIR + "/data/Mz.txt", mz_result["Mz"])
+with open(OUTPUT_DIR + "/data/magnetization_metadata.json", "w") as f:
+    mz_metadata = {
+        "Mz_range": [float(np.nanmin(mz_result["Mz"])), float(np.nanmax(mz_result["Mz"]))],
+        "pixel_size_m": effective_pixel_size,
+        "method": mz_result["_metadata"]["method"],
+        "use_components": mz_result["_metadata"]["use_components"],
+    }
+    json.dump(mz_metadata, f, indent=2)
+
+# Plot magnetization
+_ = dukit.plot.plot_magnetization(
+    mz_result["Mz"],
+    name="Out-of-plane Magnetization (Mz)",
+    c_range_type="percentile",
+    c_range_values=(2, 98),
+    opath=OUTPUT_DIR + f"Mz.{FIG_FORMAT}",
+    raw_pixel_size=raw_pixel_size,
+    applied_binning=ADDITIONAL_BINS,
+    annotate_polygons=ANNOTATE_POLYS,
+    polygon_nodes=polygon_nodes,
+)
+
+# Also reconstruct from matrix inversion Bxyz for comparison
+print("\nReconstructing Mz from Bx, By (Matrix Inversion)...")
+mz_inv_result = dukit.source.get_magnetization_from_bxyz(
+    bxyz_inv["Bx"],
+    bxyz_inv["By"],
+    pixel_size=effective_pixel_size,
+    use_components="xy",
+)
+
+# Plot comparison
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+fig.suptitle("Magnetization Reconstruction Comparison", fontsize=14)
+
+# Use same color scale for comparison
+vmin = min(np.nanmin(mz_result["Mz"]), np.nanmin(mz_inv_result["Mz"]))
+vmax = max(np.nanmax(mz_result["Mz"]), np.nanmax(mz_inv_result["Mz"]))
+
+im1 = axes[0].imshow(mz_result["Mz"], cmap="RdBu_r", vmin=vmin, vmax=vmax)
+axes[0].set_title("Mz (Hamiltonian)")
+plt.colorbar(im1, ax=axes[0], label="Mz (μB/nm²)")
+
+im2 = axes[1].imshow(mz_inv_result["Mz"], cmap="RdBu_r", vmin=vmin, vmax=vmax)
+axes[1].set_title("Mz (Matrix Inversion)")
+plt.colorbar(im2, ax=axes[1], label="Mz (μB/nm²)")
+
+for ax in axes:
+    ax.axis("off")
+
+plt.tight_layout()
+plt.savefig(OUTPUT_DIR + f"Mz_comparison.{FIG_FORMAT}", dpi=150, bbox_inches="tight")
+plt.close()
 
 plt.show()

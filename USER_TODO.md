@@ -1,4 +1,5 @@
 - [x] complete field recon plan
-- [ ] ensure all tests pass
+- [x] ensure all tests pass
+- [x] run dev tooling!
 
-- test mz_test with new recon steps. -> would require test images.
+- [ ] test mz_test with new recon steps. -> would require test images.
