@@ -147,23 +147,24 @@ class System:
         ):
             if param is not None:
                 setattr(self, att, param)
-            # check we have sufficient info to calculate pixel size.
-            if self._pixel_size < 0 and np.all(
-                [
-                    i < 0
-                    for i in [
-                        self._sensor_pixel_pitch,
-                        self._obj_mag,
-                        self._obj_ref_focal_length,
-                        self._camera_tube_lens,
-                    ]
+        
+        # check we have sufficient info to calculate pixel size.
+        if self._pixel_size < 0 and np.all(
+            [
+                i < 0
+                for i in [
+                    self._sensor_pixel_pitch,
+                    self._obj_mag,
+                    self._obj_ref_focal_length,
+                    self._camera_tube_lens,
                 ]
-            ):
-                raise ValueError(
-                    "System must have a pixel_size defined, or all of: "
-                    + "sensor_pixel_pitch, obj_mag, obj_ref_focal_length, "
-                    + "camera_tube_lens."
-                )
+            ]
+        ):
+            raise ValueError(
+                "System must have a pixel_size defined, or all of: "
+                + "sensor_pixel_pitch, obj_mag, obj_ref_focal_length, "
+                + "camera_tube_lens."
+            )
 
     def read_image(
         self, filepath: str, ignore_ref: bool = False, norm: str = "div"

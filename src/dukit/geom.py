@@ -30,6 +30,8 @@ __author__ = "Sam Scholten"
 __pdoc__ = {
     "dukit.geom.get_unvs": True,
     "dukit.geom.get_unv_frames": True,
+    "dukit.geom.get_u_defects": True,
+    "dukit.geom.get_u_defect_frames": True,
     "dukit.geom.NV_AXES_100_110": True,
     "dukit.geom.NV_AXES_100_100": True,
     "dukit.geom.NV_AXES_111": True,
@@ -43,13 +45,10 @@ import numpy.typing as npt
 
 # ============================================================================
 
-# ============================================================================
-
 
 # NOTE for other NV orientations, pass in unvs -> not possible to determine in full
 #   generality the orientations for <111> etc.
 
-# nv orientations (unit vectors) wrt lab frame [x, y, z]
 NV_AXES_100_110: list[dict] = [
     {"nv_number": 0, "ori": (np.sqrt(2 / 3), 0, np.sqrt(1 / 3))},
     {"nv_number": 1, "ori": (-np.sqrt(2 / 3), 0, np.sqrt(1 / 3))},
@@ -167,6 +166,9 @@ def get_unvs(
                 projection = np.dot(family["ori"], [bias_x, bias_y, bias_z])
                 family["mag"] = np.abs(projection)
                 family["sign"] = np.sign(projection)
+                # Fix: when projection is zero, sign is 0 which zeroes out the orientation
+                if family["sign"] == 0:
+                    family["sign"] = 1
             sorted_dict = sorted(nv_axes, key=lambda x: x["mag"], reverse=True)
 
             for idx in range(len(sorted_dict)):
@@ -180,7 +182,7 @@ def get_unvs(
         elif diamond_ori == "<111>":
             nv_axes = NV_AXES_111
         else:
-            raise RuntimeError("diamond_ori not recognised.")
+            raise ValueError("diamond_ori not recognised.")
 
         for family in nv_axes:
             projection = (
@@ -188,6 +190,9 @@ def get_unvs(
             )
             family["mag"] = np.abs(projection)
             family["sign"] = np.sign(projection)
+            # Fix: when projection is zero, sign is 0 which zeroes out the orientation
+            if family["sign"] == 0:
+                family["sign"] = 1
 
         srtd = sorted(nv_axes, key=lambda x: x["mag"], reverse=True)
 
@@ -245,3 +250,8 @@ def get_unv_frames(
 
 
 # ============================================================================
+
+# Aliases for new naming convention (u_defect instead of unv)
+get_u_defects = get_unvs
+get_u_defect_frames = get_unv_frames
+

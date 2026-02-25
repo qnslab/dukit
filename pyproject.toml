@@ -44,6 +44,8 @@ dependencies = [
 dev = [
     "prospector[with_bandit,with_pyroma,with_vulture]",
     "ruff",
+    "pytest>=7.0",
+    "pytest-cov",
 ]
 # cpufit and gpufit must be installed manually from local wheels
 # See: just install-cpufit / just install-gpufit

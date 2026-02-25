@@ -107,8 +107,8 @@ def pad_image(
 
     size_y, size_x = image.shape
 
-    y_pad = pad_factor * size_y
-    x_pad = pad_factor * size_x
+    y_pad = int(pad_factor * size_y)
+    x_pad = int(pad_factor * size_x)
     padder = ((y_pad, y_pad), (x_pad, x_pad))
     padded_image = np.pad(image, mode=pad_mode, pad_width=padder)
 

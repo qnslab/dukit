@@ -11,6 +11,7 @@ Functions
  - `dukit.plot.aoi_spectra_fit`
  - `dukit.plot.pl_param_image`
  - `dukit.plot.pl_param_images`
+ - `dukit.plot.plot_field_images`
  - `dukit.plot._add_patch_rect`
 """
 
@@ -25,6 +26,7 @@ __pdoc__ = {
     "dukit.plot.aoi_spectra_fit": True,
     "dukit.plot.pl_param_image": True,
     "dukit.plot.pl_param_images": True,
+    "dukit.plot.plot_field_images": True,
     "dukit.plot._add_patch_rect": True,
 }
 
@@ -1095,7 +1097,7 @@ def dshifts(
     **kwargs,
 ) -> tuple[plt.Figure, plt.Axes]:
     """
-    Plots the b_defects.
+    Plots b_defects.
 
     Parameters
     ----------
@@ -1147,3 +1149,143 @@ def dshifts(
     if opath:
         fig.savefig(opath)
     return fig, axs
+
+
+# ============================================================================
+
+
+def plot_field_images(
+    field_data: dict[str, npt.NDArray],
+    field_names: list[str] | None = None,
+    name: str = "",
+    c_range_type: str = "",
+    c_range_values: tuple[float, float] | None = None,
+    c_label: str = "",
+    c_map: str = "RdBu_r",
+    opath: str = "",
+    **kwargs,
+) -> tuple[plt.Figure, plt.Axes]:
+    """
+    Plots field component images (e.g., Bx, By, Bz from field reconstruction).
+
+    This is a general-purpose function for plotting any 2D field data, particularly
+    useful for visualizing results from field reconstruction methods.
+
+    Parameters
+    ----------
+    field_data : dict[str, npt.NDArray]
+        Dictionary containing field component arrays. Keys are field names
+        (e.g., "Bx", "By", "Bz", "sigma_Bx"), values are 2D arrays.
+    field_names : list[str] | None, optional
+        List of field names to plot. If None, plots all fields in field_data.
+        Can be used to select specific fields or control plotting order.
+    name : str, default=""
+        Base title for the plot. Individual field names will be appended.
+    c_range_type : str, default=""
+        Type of colormap range to use. See `dukit.itool.get_colormap_range`.
+        Common values: "percentile", "min_max", "strict_range".
+    c_range_values : tuple[float, float] | None, optional
+        Values to use for colormap range when c_range_type="strict_range".
+        If None and c_range_type="percentile", uses (2, 98) as default.
+    c_label : str, default=""
+        Label for colorbar. If empty, attempts to infer from field names.
+    c_map : str, default="RdBu_r"
+        Colormap to use.
+    opath : str, default=""
+        If given, saves figure to this path.
+    **kwargs
+        Additional plotting options passed to `dukit.itool.plot_image_on_ax`.
+
+    Returns
+    -------
+    fig : plt.Figure
+        The matplotlib figure object.
+    ax : plt.Axes or np.ndarray of plt.Axes
+        The matplotlib axes object(s). For multiple fields, returns an array.
+
+    Examples
+    --------
+    >>> # Plot reconstructed magnetic field components
+    >>> bxyz = dukit.field.get_bxyz_from_hamiltonian(...)
+    >>> dukit.plot.plot_field_images(
+    ...     {"Bx": bxyz["Bx"], "By": bxyz["By"], "Bz": bxyz["Bz"]},
+    ...     name="Hamiltonian Reconstruction",
+    ...     c_range_type="percentile",
+    ...     c_label="Magnetic Field (G)"
+    ... )
+    
+    >>> # Plot uncertainties with specific range
+    >>> dukit.plot.plot_field_images(
+    ...     {"sigma_Bx": bxyz["sigma_Bx"], "sigma_By": bxyz["sigma_By"]},
+    ...     name="Field Uncertainties",
+    ...     c_range_type="strict_range",
+    ...     c_range_values=(0, 1e-6),
+    ...     c_label="Uncertainty (G)"
+    ... )
+    """
+    # Determine which fields to plot
+    if field_names is None:
+        field_names = list(field_data.keys())
+    else:
+        # Filter to only include requested fields that exist
+        field_names = [name for name in field_names if name in field_data]
+    
+    if not field_names:
+        raise ValueError("No valid field names provided or field_data is empty")
+    
+    # Set up figure
+    n_fields = len(field_names)
+    figsize = mpl.rcParams["figure.figsize"].copy()
+    figsize[0] *= n_fields  # Width scales with number of fields
+    fig, axs = plt.subplots(ncols=n_fields, figsize=figsize)
+    
+    # Handle single field case
+    if n_fields == 1:
+        axs = np.array([axs])
+    
+    # Infer colorbar label if not provided
+    if not c_label:
+        if any("sigma" in name.lower() for name in field_names):
+            c_label = "Uncertainty (G)"
+        elif any(name in ["Bx", "By", "Bz"] for name in field_names):
+            c_label = "Magnetic Field (G)"
+        elif name == "D":
+            c_label = "Zero-field Splitting (MHz)"
+        else:
+            c_label = "Field Value"
+    
+    # Set default percentile range
+    if c_range_type == "percentile" and c_range_values is None:
+        c_range_values = (2, 98)
+    
+    # Plot each field
+    for i, field_name in enumerate(field_names):
+        field_array = field_data[field_name]
+        
+        # Determine colormap range
+        if c_range_type and c_range_values:
+            c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, field_array)
+        else:
+            c_range = dukit.itool.get_colormap_range("min_max", (), field_array)
+        
+        # Create title
+        title = f"{name} - {field_name}" if name else field_name
+        
+        # Plot
+        dukit.itool.plot_image_on_ax(
+            fig,
+            axs[i],
+            field_array,
+            title=title,
+            c_range=c_range,
+            c_label=c_label,
+            c_map=c_map,
+            **kwargs
+        )
+    
+    # Save if requested
+    if opath:
+        fig.savefig(opath)
+    
+    # Return appropriate axes object
+    return fig, axs[0] if n_fields == 1 else axs

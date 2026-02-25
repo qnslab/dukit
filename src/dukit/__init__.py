@@ -122,7 +122,9 @@ System sub-class.
 
 ### Field calculations (`dukit.field`)
 
-Currently only calculating local field(s) (not vector field)
+Local field extraction and vector magnetic field reconstruction from ODMR data.
+
+#### Defect classes:
 
 - `dukit.field.defects.Defect`
     - Base class for defects.
@@ -141,6 +143,33 @@ Currently only calculating local field(s) (not vector field)
 
 - `dukit.field.defects.Defect.b_defects`
 - `dukit.field.defects.Defect.dshift_defects`
+
+#### Vector field reconstruction:
+
+- `dukit.field.get_bxyz_from_single_defect`
+    - Fourier propagation from single B_defect component to full Bx, By, Bz.
+- `dukit.field.get_bxyz_from_defects`
+    - Matrix inversion from multiple B_defect components (3-4 defects).
+- `dukit.field.get_bxyz_from_hamiltonian`
+    - Direct Hamiltonian fitting to frequencies with uncertainty quantification.
+- `dukit.field.get_bxyz_from_pre_gslac_ref`
+    - Pre-GSLAC reference subtraction for single resonance reconstruction.
+- `dukit.field.get_bdefects_from_frequencies`
+    - Convert resonance frequencies to B_defect components.
+- `dukit.field.reconstruct_field_components`
+    - Consistency checking by reconstructing field components from measured data.
+- `dukit.field.spherical_to_cartesian`
+    - Helper: convert (mag_T, theta_deg, phi_deg) to Cartesian vector.
+
+#### Geometry (for vector reconstruction):
+
+- `dukit.geom.get_u_defects`
+    - Get defect orientation unit vectors for given bias field and diamond orientation.
+- `dukit.geom.get_u_defect_frames`
+    - Get full defect coordinate frames.
+- `dukit.geom.NV_AXES_111`
+- `dukit.geom.NV_AXES_100_100`
+- `dukit.geom.NV_AXES_100_110`
 
 ### Drift correction (`dukit.driftcorrect`)
 
@@ -167,6 +196,7 @@ Need to be imported via `dukit.plot.<method>` to work properly.
 - `dukit.plot.aoi_spectra_fit`
 - `dukit.plot.pl_param_image`
 - `dukit.plot.pl_param_images`
+- `dukit.plot.plot_field_images`
 
 ### Some matplotlib interactive widgets (`dukit.widget`)
 
@@ -227,14 +257,14 @@ from dukit.field import (
     VBEnsemble,
 )
 
-# Not useful yet, until vector field stuff is implemented
-# from dukit.geom import (
-#     get_unvs,
-#     get_unv_frames,
-#     NV_AXES_111,
-#     NV_AXES_100_100,
-#     NV_AXES_100_110,
-# )
+# Geometry for vector field reconstruction
+from dukit.geom import (
+    get_u_defects,
+    get_u_defect_frames,
+    NV_AXES_111,
+    NV_AXES_100_100,
+    NV_AXES_100_110,
+)
 from dukit.fourier import (
     MAG_UNIT_CONV,
     MU_0,

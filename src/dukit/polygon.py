@@ -54,13 +54,15 @@ __pdoc__ = {
 # ============================================================================
 
 import dill as pickle
+from pathlib import Path
+
 import matplotlib.pyplot as plt
 import numba
+from numba import jit
 import numpy as np
 import numpy.typing as npt
 from matplotlib.lines import Line2D
 from mpl_toolkits.axes_grid1 import make_axes_locatable
-from numba import jit
 
 import dukit.widget
 from dukit.fourier import pad_image
@@ -159,11 +161,11 @@ CMAP_OPTIONS: list[str] = [
 # ============================================================================
 
 
-@jit("int8(float64[:], float64[:,:])", nopython=True, cache=True)
+@jit(nopython=True, cache=True)
 def _is_inside_sm(point, polygon):
     # https://github.com/sasamil/PointInPolygon_Py/blob/master/pointInside.py
     # note this fn works in (x,y) coords (but if point/polygon is consistent all is g)
-    conv_map = {0: -1, 1: 1, 2: 0}
+    conv_map = {0: -1, 1: 1}
     length = polygon.shape[0] - 1
     dy2 = point[1] - polygon[0][1]
     intersections = 0
@@ -184,7 +186,7 @@ def _is_inside_sm(point, polygon):
                     #  will intersect it
                     intersections += 1
                 elif point[0] == F:  # point on line
-                    return 2
+                    return 0
 
             # point on upper peak (dy2=dx2=0) or horizontal line
             # (dy=dy2=0 and dx*dx2<=0)
@@ -192,7 +194,7 @@ def _is_inside_sm(point, polygon):
                 point[0] == polygon[jj][0]
                 or (dy == 0 and (point[0] - polygon[ii][0]) * (point[0] - polygon[jj][0]) <= 0)
             ):
-                return 2
+                return 0
 
         ii = jj
         jj += 1
@@ -209,7 +211,7 @@ def _is_inside_sm_parallel(points, polygon):
     # https://stackoverflow.com/questions/36399381/ \
     #
     # note this fn works in (x,y) coords (but if point/polygon is consistent all is g.)
-    p_ar = np.asfarray(points)
+    p_ar = np.asarray(points, dtype=np.float64)
     pts_shape = p_ar.shape[:-1]
     p_ar_flat = p_ar.reshape(-1, 2)  # shape: (len_y * len_x, 2), i.e. long list of coords (y, x)
     d = np.zeros(p_ar_flat.shape[0], dtype=numba.int8)
@@ -238,8 +240,8 @@ class Polygon:
     def __init__(self, y, x):
         if len(y) != len(x):
             raise IndexError("y and x must be equally sized.")
-        self.y = np.asfarray(y)
-        self.x = np.asfarray(x)
+        self.y = np.asarray(y, dtype=float)
+        self.x = np.asarray(x, dtype=float)
         # Closes the polygon if were open
         y1, x1 = y[0], x[0]
         yn, xn = y[-1], x[-1]
@@ -269,14 +271,15 @@ class Polygon:
         # <0 - the point is outside the polygon
         # =0 - the point is one edge (boundary)
         # >0 - the point is inside the polygon
-        xs = np.asfarray(x)
-        ys = np.asfarray(y)
+        xs = np.asarray(x, dtype=float)
+        ys = np.asarray(y, dtype=float)
         # Check consistency
         if xs.shape != ys.shape:
             raise IndexError("x and y has different shapes")
-        # check if single point
-        if xs.shape is tuple():
-            return _is_inside_sm((y, x), self.get_yx())
+        # check if single point (0-d array or scalar)
+        if xs.shape == ():
+            point = np.array([y, x], dtype=np.float64)
+            return _is_inside_sm(point, self.get_yx())
         else:
             return _is_inside_sm_parallel(np.stack((ys, xs), axis=-1), self.get_yx())
 
@@ -576,13 +579,13 @@ class PolygonSelectionWidget:
 # ============================================================================
 
 
-def load_polygon_nodes(poly_path_or_dict: str | dict) -> list[npt.NDArray]:
+def load_polygon_nodes(poly_path_or_dict: str | dict | Path) -> list[npt.NDArray]:
     """
     Loads polygon nodes from json file.
 
     Arguments
     ---------
-    poly_path_or_dict : str | dict
+    poly_path_or_dict : str | dict | Path
         Path to json or pickle/dill file containing polygon nodes, or directly as a dict
 
     Returns
@@ -602,7 +605,7 @@ def load_polygon_nodes(poly_path_or_dict: str | dict) -> list[npt.NDArray]:
 
     if isinstance(poly_path_or_dict, dict):
         return [np.array(p) for p in poly_path_or_dict["nodes"]]
-    elif isinstance(poly_path_or_dict, str):
-        return [np.array(p) for p in _load_dict(poly_path_or_dict)["nodes"]]
+    elif isinstance(poly_path_or_dict, (str, Path)):
+        return [np.array(p) for p in _load_dict(str(poly_path_or_dict))["nodes"]]
     else:
-        raise TypeError("polygons argument was not a dict or string?")
+        raise TypeError("polygons argument was not a dict, string or Path?")

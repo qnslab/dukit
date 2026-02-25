@@ -1286,7 +1286,10 @@ def crop_sweep(
     sweep_arr, sig, ref, sig_norm : npdarray's
         All as input, put with spectral dimension cropped to arr[rem_start:-rem_end]
     """
-    end = -rem_end if rem_end > 0 else None
+    if rem_end > 0:
+        end = sweep_arr.shape[0] - rem_end
+    else:
+        end = None
 
     if rem_start < 0:
         warn("rem_start must be >=0, setting to zero now.")
@@ -1345,7 +1348,7 @@ def rebin_image_stack(stack: npt.NDArray, additional_bins: tuple[int, int] | int
     stack : ndarray
     additional_bins : 2-tuple of ints, or int
         Binning in-plane.  Make it a power of 2.
-        Binning in x then y if 2-tuple, else symmetric.
+        Binning in y then x if 2-tuple, else symmetric.
 
     Returns
     -------
@@ -1357,7 +1360,7 @@ def rebin_image_stack(stack: npt.NDArray, additional_bins: tuple[int, int] | int
     if isinstance(additional_bins, (tuple, list)):
         return dukit.rebin.rebin(
             stack,
-            factor=(additional_bins[1], additional_bins[0], 1),
+            factor=(additional_bins[0], additional_bins[1], 1),
             func=np.mean,
         )
     return dukit.rebin.rebin(

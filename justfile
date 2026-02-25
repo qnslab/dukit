@@ -29,6 +29,18 @@ build:
 check:
 	uv run python -c "import dukit; print(f'dukit {dukit.__version__}')"
 
+# Run all tests
+test: install-dev
+	uv run pytest tests/ -v
+
+# Run tests with coverage report
+test-cov: install-dev
+	uv run pytest tests/ -v --cov=src/dukit --cov-report=html --cov-report=term
+
+# Run only field reconstruction tests
+test-field: install-dev
+	uv run pytest tests/test_field_reconstruction.py -v
+
 # Run prospector - always succeeds, check prospector.log for issues
 lint: install-dev
 	uv run prospector --profile dukit.prospector.yaml -o grouped:prospector.log || true

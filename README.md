@@ -10,8 +10,10 @@ dukit handles the complete workflow from raw image stacks to quantitative analys
 Image processing including drift correction, ROI cropping, rebinning, smoothing, and
 background removal. Spectral fitting of ODMR, Rabi, and T1 data with built-in models
 for Lorentzians, damped oscillations, and stretched exponentials. Magnetic field
-quantification from defect resonance shifts. Simulation of field distributions from
-arbitrary magnetic geometries. Interactive and publication-quality visualization tools.
+quantification from defect resonance shifts. Vector magnetic field reconstruction via
+Fourier propagation, matrix inversion, and Hamiltonian fitting methods. Simulation
+of field distributions from arbitrary magnetic geometries. Interactive and
+publication-quality visualization tools.
 
 ## Installation
 
@@ -74,11 +76,13 @@ software.
 ## Project Status
 
 Currently implemented: Image registration and drift correction, PL fitting via
-scipy/cpufit/gpufit backends with uncertainty quantification, local field extraction
-from ODMR data, magnetic sample simulation, and comprehensive plotting utilities.
+scipy/cpufit/gpufit backends with uncertainty quantification, local and vector
+magnetic field reconstruction from ODMR data (via Fourier propagation, matrix
+inversion, and Hamiltonian fitting methods), magnetic sample simulation, and
+comprehensive plotting utilities.
 
-Features in development: Vector magnetometry, source reconstruction, and aberration
-correction. These capabilities are planned for future releases.
+Features in development: Source reconstruction and aberration correction. These
+capabilities are planned for future releases.
 
 ## Normal Usage
 
