@@ -1,37 +1,87 @@
-Defect μscopy toolkit
-=====================
+# dukit
 
-# Introduction
+Analysis toolkit for widefield quantum defect microscopy. Built for NV-center imaging
+and extensible to other spin defects and quantitative hyperspectral microscopy.
 
-This is a toolkit for the analysis of defect μscopy images.
-We will provide a brief discussion here of what the toolkit does, and how to get setup
-if you're from another lab.
-We will also detail where to get more information on the toolkit.
-Note this toolkit is designed to be used for any spin defect, not just NV centres, and
-in fact could be used for any quantitative (hyperspectral) microscopy technique.
+## Capabilities
 
-Primarily this toolkit can read, process and analyse microscopy images.
-I.e. it can load images, perform drift correction, crop, rebin, smooth, fit and plot.
-It can also simulate images of magnetic flakes.
-There is preliminary work towards supporting vector magnetometry and source 
-reconstruction, but we haven't moved that over from the old 
-[repo](https://github.com/casparvitch/qdmpy/) yet.
+dukit handles the complete workflow from raw image stacks to quantitative analysis:
 
-To install see INSTALL.md, and for more information on developing the toolkit see
-DEVDOCS.md
+Image processing including drift correction, ROI cropping, rebinning, smoothing, and
+background removal. Spectral fitting of ODMR, Rabi, and T1 data with built-in models
+for Lorentzians, damped oscillations, and stretched exponentials. Magnetic field
+quantification from defect resonance shifts. Simulation of field distributions from
+arbitrary magnetic geometries. Interactive and publication-quality visualization tools.
 
-# For users outside the Tetienne lab
+## Installation
 
-We have implemented the toolkit in a modular way, with support for general 'inputs',
-all you have to do is copy some of the example scripts and implement your own System
-subclass - see dukit/systems.py for more information.
+```bash
+pip install dukit
+```
 
-# API documentation
+For GPU-accelerated fitting (NVIDIA, Windows or Linux):
 
-[Docs are here](https://qnslab.github.io/dukit/dukit/index.html)
+```bash
+pip install dukit[gpufit]
+```
 
-# Normal usage
+For CPU-parallel fitting:
 
-We usually use the toolkit in a Jupyter notebook, with a separate `.nb` for each
-measurement - that way we keep the plot outputs in one place with the code that
-created them. Good for reproducability!
+```bash
+pip install dukit[cpufit]
+```
+
+See INSTALL.md for detailed setup instructions including git configuration and
+JupyterLab setup.
+
+## Quick Start
+
+```python
+import dukit
+
+# Load your microscope configuration
+system = dukit.PyControl("/path/to/data")
+
+# Load image stack and sweep parameters
+image_stack, sweep_arr = system.read_image("experiment_001")
+
+# Fit all pixels with a two-Lorentzian ODMR model
+model = dukit.LinearLorentzians(n_lorentzians=2)
+results = dukit.fit_all_pixels(image_stack, sweep_arr, model)
+
+# Plot a fit parameter (e.g., resonance frequency)
+dukit.plot.pl_param_image(results, param_name="f0")
+```
+
+## Documentation
+
+API reference documentation is available at https://qnslab.github.io/dukit
+
+The examples/ directory contains Jupyter notebooks demonstrating drift correction,
+fitting workflows, magnetic simulation, and other common tasks.
+
+For development guidelines, architecture overview, and instructions on adding new
+model functions, see DEVDOCS.md.
+
+## For External Labs
+
+dukit uses a pluggable System class for hardware-specific data I/O. To adapt the
+toolkit to your microscope setup, subclass dukit.systems.System and implement the
+abstract methods read_image() and get_raw_pixel_size(). See dukit/systems.py for
+implementation examples including support for multiple camera types and control
+software.
+
+## Project Status
+
+Currently implemented: Image registration and drift correction, PL fitting via
+scipy/cpufit/gpufit backends with uncertainty quantification, local field extraction
+from ODMR data, magnetic sample simulation, and comprehensive plotting utilities.
+
+Features in development: Vector magnetometry, source reconstruction, and aberration
+correction. These capabilities are planned for future releases.
+
+## Normal Usage
+
+We typically use dukit within Jupyter notebooks, with one notebook per measurement.
+This preserves the connection between analysis code and generated figures, supporting
+reproducible research workflows.

@@ -16,11 +16,12 @@ Classes
 - `dukit.field.defects.CPairEnsemble`
 
 """
+
 from dukit.field.defects import (
-    Defect,
-    SpinOne,
-    NVEnsemble,
-    VBEnsemble,
-    SpinPair,
     CPairEnsemble,
+    Defect,
+    NVEnsemble,
+    SpinOne,
+    SpinPair,
+    VBEnsemble,
 )

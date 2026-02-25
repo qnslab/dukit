@@ -6,39 +6,37 @@ Install instructions
 (Assuming you know git - see below)
 
 - [clone](https://github.com/casparvitch/dukit)
-- install python3.11
+- install python3.11+ and [uv](https://docs.astral.sh/uv/)
 - navigate to root-dir (containing 'src' etc.)
+
 ```bash
-pip install . # will install deps
-pip install jupyterlab
+just install        # or: uv pip install -e .
 ```
 
-or 
-```bash
-pip install -e .
-```
-for an editable install: to edit library without reinstalling. Note you will have to
-restart any jupyter kernel you have running to benefit from any updates.
+or for an editable install: to edit library without reinstalling.
+Note you will have to restart any jupyter kernel you have running to benefit from any updates.
 
-# Installing extensions
+# Installing extensions (cpufit/gpufit)
 
-To install cpufit (linux or windows) or gpufit (windows) extensions, you simply run:
+To install cpufit (Linux or Windows) or gpufit (Windows only):
+
 ```bash
-pip install .[cpufit,gpufit]
+just install-cpufit     # Install cpufit from local wheel
+just install-gpufit     # Install gpufit from local wheel (Windows only)
+just install-fit-backends # Install both (where available)
 ```
-with whichever extensions you want there.
-These libraries are automatically installed from the wheel files in the `ext_wheels` 
-folder.
+
+These libraries are installed from the wheel files in the `gpufit_wheels` folder.
 
 # Documentation
 
-`doit docs`, or:
+`just docs`, or:
 
 Navigate to root-dir (containing 'src' etc.)
 
 ```bash
-conda install -c conda-forge pdoc3 # or pip install pdoc3
-pdoc3 --output-dir docs/ --html --template-dir docs/ --force --skip-errors .src/dukit/
+uv pip install pdoc3
+pdoc3 --output-dir docs/ --html --template-dir docs/ --force --skip-errors ./src/dukit/
 ```
 
 # jupyter-lab widgets
@@ -78,7 +76,7 @@ ssh-keygen -t ed25519 -C "<YOUR EMAIL HERE>"
 
 You will be prompted to input a file path to save it to. Just click Enter to put it in 
 the default \~/.ssh/config file. Once that's decided you will be prompted to input a 
-password. To skip press Enter twice (make sure you don't do this for a shared PC such as 
+password. To skip press Enter twice (make sure you don't do this for a shared PC such as
 the Lab computers).
 
 **Now add to your Gitlab account** (under settings in your browser)

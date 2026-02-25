@@ -31,20 +31,21 @@ __pdoc__ = {
 # ============================================================================
 
 import math
+
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-from matplotlib.lines import Line2D
-from matplotlib import patches
 import numpy as np
 import numpy.typing as npt
+from matplotlib import patches
+from matplotlib.lines import Line2D
+
+import dukit.itool
 
 # ============================================================================
-
 import dukit.json2dict
-import dukit.warn
-import dukit.itool
 import dukit.pl
 import dukit.share
+import dukit.warn
 
 # ===========================================================================
 
@@ -117,9 +118,7 @@ def roi_pl_image(
 
     fig, ax = plt.subplots()
     if "c_range" not in kwargs and c_range_type and c_range_values:
-        c_range = dukit.itool.get_colormap_range(
-            c_range_type, c_range_values, pl_image
-        )
+        c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, pl_image)
     else:
         c_range = dukit.itool.get_colormap_range("min_max", (), pl_image)
 
@@ -183,9 +182,7 @@ def aoi_pl_image(
     """
     fig, ax = plt.subplots()
     if "c_range" not in kwargs and c_range_type and c_range_values:
-        c_range = dukit.itool.get_colormap_range(
-            c_range_type, c_range_values, pl_image
-        )
+        c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, pl_image)
     else:
         c_range = dukit.itool.get_colormap_range("min_max", (), pl_image)
 
@@ -215,9 +212,7 @@ def aoi_pl_image(
         edgecolor=AOI_COLORS[0],
     )
     for i, aoi in enumerate(aoi_coords):
-        _add_patch_rect(
-            ax, aoi, label="AOI " + str(i + 1), edgecolor=AOI_COLORS[i + 1]
-        )
+        _add_patch_rect(ax, aoi, label="AOI " + str(i + 1), edgecolor=AOI_COLORS[i + 1])
 
     if opath:
         fig.savefig(opath)
@@ -228,9 +223,7 @@ def aoi_pl_image(
 # ============================================================================
 
 
-def roi_avg_fits(
-    roi_results: dict[str, dukit.share.RoiAvgFit], opath: str = ""
-):
+def roi_avg_fits(roi_results: dict[str, dukit.share.RoiAvgFit], opath: str = ""):
     """
     Plots fit of spectrum averaged across ROI, as well as corresponding residual values.
 
@@ -267,9 +260,7 @@ def roi_avg_fits(
         mec="firebrick",
     )
     lspec_names.append("raw data")
-    lspec_lines.append(
-        Line2D([0], [0], ls=" ", marker="o", mfc="w", mec="firebrick")
-    )
+    lspec_lines.append(Line2D([0], [0], ls=" ", marker="o", mfc="w", mec="firebrick"))
 
     arb_result = next(iter(roi_results.values()))
 
@@ -418,15 +409,11 @@ def aoi_spectra(
         ref_aoi = ref[aoi[0], aoi[1], :]
         sig_avg = np.nanmean(sig_aoi, axis=(0, 1))
         ref_avg = np.nanmean(ref_aoi, axis=(0, 1))
-        sub_norm = np.nanmean(
-            1 + (sig_aoi - ref_aoi) / (sig_aoi + ref_aoi), axis=(0, 1)
-        )
+        sub_norm = np.nanmean(1 + (sig_aoi - ref_aoi) / (sig_aoi + ref_aoi), axis=(0, 1))
         div_norm = np.nanmean(sig_aoi / ref_aoi, axis=(0, 1))
         true_sub_norm = np.nanmean(
             (sig_aoi - ref_aoi)
-            / np.nanmax(sig_aoi - ref_aoi, axis=-1).reshape(
-                sig_aoi.shape[:-1] + (1,)
-            ),
+            / np.nanmax(sig_aoi - ref_aoi, axis=-1).reshape(sig_aoi.shape[:-1] + (1,)),
             axis=(0, 1),
         )
         sig_avgs.append(sig_avg)
@@ -439,9 +426,7 @@ def aoi_spectra(
     num_wide = 3 if len(aois) < 3 else len(aois)
     figsize[0] *= 0.6 * num_wide
     figsize[1] *= 1.75
-    fig, axs = plt.subplots(
-        2, num_wide, figsize=figsize, sharex=True, sharey=False
-    )
+    fig, axs = plt.subplots(2, num_wide, figsize=figsize, sharex=True, sharey=False)
 
     for i, aoi in enumerate(aois):
         # plot sig
@@ -504,7 +489,7 @@ def aoi_spectra(
         )
         axs[1, 0].legend()
         axs[1, 0].grid(True)
-        axs[1, 0].set_title("sub: 1 + (sig - ref / sig +" " ref)")
+        axs[1, 0].set_title("sub: 1 + (sig - ref / sig + ref)")
         axs[1, 0].set_xlabel("Sweep parameter")
         axs[1, 0].set_ylabel("pl (a.u.)")
 
@@ -615,8 +600,6 @@ def aoi_spectra_fit(
     # columns:
     # sig & ref, sub & div norm, fit -> compared to ROI {raw, fit, ROI_avg_fit}
 
-    aois = dukit.itool.get_aois(img_shape, *aoi_coords)  # type: ignore
-
     figsize = mpl.rcParams["figure.figsize"].copy()
     figsize[0] *= 3  # number of columns
     figsize[1] *= 1 + len(aoi_fit_results.keys())  # number of rows
@@ -635,9 +618,7 @@ def aoi_spectra_fit(
     fit_results = {"ROI": roi_fit_results}
     fit_results.update(aoi_fit_results)
     for i, name in enumerate(fit_results.keys()):
-        fr = next(
-            iter(fit_results[name].values())
-        )  # any fit res, just to plot raw data
+        fr = next(iter(fit_results[name].values()))  # any fit res, just to plot raw data
         # === plot sig, ref data as first column
         # plot sig
         axs[i, 0].plot(
@@ -792,9 +773,7 @@ def pl_param_image(
 
     image = pixel_fit_params[param_name + "_" + str(param_number)]
     if param_name == "residual" and errorplot:
-        dukit.warn.warn(
-            "residual doesn't have an error, can't plot residual sigma (ret. None)."
-        )
+        dukit.warn.warn("residual doesn't have an error, can't plot residual sigma (ret. None).")
         return None
 
     if errorplot:
@@ -803,9 +782,7 @@ def pl_param_image(
         c_label = fit_model.get_param_unit(param_name, param_number)
 
     if "c_range" not in kwargs and c_range_type and c_range_values:
-        c_range = dukit.itool.get_colormap_range(
-            c_range_type, c_range_values, image
-        )
+        c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, image)
     else:
         c_range = dukit.itool.get_colormap_range("min_max", (), image)
 
@@ -880,9 +857,7 @@ def pl_param_images(
         return None
 
     if param_name == "residual" and errorplot:
-        dukit.warn.warn(
-            "residual doesn't have an error, can't plot residual sigma (ret. None)."
-        )
+        dukit.warn.warn("residual doesn't have an error, can't plot residual sigma (ret. None).")
         return None
 
     # plot 2 columns wide, as many rows as required
@@ -902,9 +877,7 @@ def pl_param_images(
         return int(num)
 
     # sort based on number (just in case)
-    our_keys.sort(
-        key=param_sorter
-    )  # i.e. key = lambda x: int(x.split("_")[-1])
+    our_keys.sort(key=param_sorter)  # i.e. key = lambda x: int(x.split("_")[-1])
     nk = len(our_keys)
 
     if nk == 1:
@@ -947,15 +920,9 @@ def pl_param_images(
             if nk % 2:
                 param_nums.append(nk // 2 + 1)
             if len(param_nums) < 4:
-                param_nums.extend(
-                    [-1 for _ in range(4 - len(param_nums))]
-                )  # dummies
-            param_nums.extend(
-                list(range(nk - 1, (nk - 1) // 2, -1))
-            )  # range(start, stop, step)
-            param_nums.extend(
-                [-1 for _ in range(8 - len(param_nums))]
-            )  # add on dummies
+                param_nums.extend([-1 for _ in range(4 - len(param_nums))])  # dummies
+            param_nums.extend(list(range(nk - 1, (nk - 1) // 2, -1)))  # range(start, stop, step)
+            param_nums.extend([-1 for _ in range(8 - len(param_nums))])  # add on dummies
             param_axis_iterator = zip(param_nums, axs.flatten())
         # otherwise plot in a more conventional order
         else:
@@ -971,20 +938,14 @@ def pl_param_images(
                 continue
 
             if errorplot:
-                c_label = "SD: " + fit_model.get_param_unit(
-                    param_name, param_number
-                )
+                c_label = "SD: " + fit_model.get_param_unit(param_name, param_number)
             else:
                 c_label = fit_model.get_param_unit(param_name, param_number)
 
             if "c_range" not in kwargs and c_range_type and c_range_values:
-                c_range = dukit.itool.get_colormap_range(
-                    c_range_type, c_range_values, image_data
-                )
+                c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, image_data)
             else:
-                c_range = dukit.itool.get_colormap_range(
-                    "min_max", (), image_data
-                )
+                c_range = dukit.itool.get_colormap_range("min_max", (), image_data)
 
             fig, ax = dukit.itool.plot_image_on_ax(
                 fig,
@@ -1107,9 +1068,7 @@ def b_defects(
     # axs index: axs[row, col]
     for i, bd in enumerate(b_defects):
         if "c_range" not in kwargs and c_range_type and c_range_values:
-            c_range = dukit.itool.get_colormap_range(
-                c_range_type, c_range_values, bd
-            )
+            c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, bd)
         else:
             c_range = dukit.itool.get_colormap_range("min_max", (), bd)
 
@@ -1117,9 +1076,7 @@ def b_defects(
             ax = axs
         else:
             ax = axs[i]
-        dukit.itool.plot_image_on_ax(
-            fig, ax, bd, name, c_map, c_range, "B (T)", **kwargs
-        )
+        dukit.itool.plot_image_on_ax(fig, ax, bd, name, c_map, c_range, "B (T)", **kwargs)
 
     if opath:
         fig.savefig(opath)
@@ -1177,9 +1134,7 @@ def dshifts(
     # axs index: axs[row, col]
     for i, dshift in enumerate(dshifts):
         if "c_range" not in kwargs and c_range_type and c_range_values:
-            c_range = dukit.itool.get_colormap_range(
-                c_range_type, c_range_values, dshift
-            )
+            c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, dshift)
         else:
             c_range = dukit.itool.get_colormap_range("min_max", (), dshift)
 
@@ -1187,9 +1142,7 @@ def dshifts(
             ax = axs
         else:
             ax = axs[i]
-        dukit.itool.plot_image_on_ax(
-            fig, ax, dshift, name, c_map, c_range, "D (MHz)", **kwargs
-        )
+        dukit.itool.plot_image_on_ax(fig, ax, dshift, name, c_map, c_range, "D (MHz)", **kwargs)
 
     if opath:
         fig.savefig(opath)

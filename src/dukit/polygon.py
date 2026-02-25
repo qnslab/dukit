@@ -53,21 +53,21 @@ __pdoc__ = {
 
 # ============================================================================
 
+import dill as pickle
+import matplotlib.pyplot as plt
+import numba
 import numpy as np
 import numpy.typing as npt
-import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from mpl_toolkits.axes_grid1 import make_axes_locatable
-import numba
 from numba import jit
-import dill as pickle
+
+import dukit.widget
+from dukit.fourier import pad_image
 
 # ============================================================================
-
-from dukit.json2dict import json_to_dict, dict_to_json
+from dukit.json2dict import dict_to_json, json_to_dict
 from dukit.warn import warn
-from dukit.fourier import pad_image
-import dukit.widget
 
 # ============================================================================
 
@@ -175,19 +175,12 @@ def _is_inside_sm(point, polygon):
         dy2 = point[1] - polygon[jj][1]
 
         # consider only lines which are not completely above/bellow/right from the point
-        if dy * dy2 <= 0.0 and (
-            point[0] >= polygon[ii][0] or point[0] >= polygon[jj][0]
-        ):
+        if dy * dy2 <= 0.0 and (point[0] >= polygon[ii][0] or point[0] >= polygon[jj][0]):
             # non-horizontal line
             if dy < 0 or dy2 < 0:
-                F = (
-                    dy * (polygon[jj][0] - polygon[ii][0]) / (dy - dy2)
-                    + polygon[ii][0]
-                )  # noqa: N806
+                F = dy * (polygon[jj][0] - polygon[ii][0]) / (dy - dy2) + polygon[ii][0]  # noqa: N806
 
-                if (
-                    point[0] > F
-                ):  # if line is left from the point - the ray moving towards left,
+                if point[0] > F:  # if line is left from the point - the ray moving towards left,
                     #  will intersect it
                     intersections += 1
                 elif point[0] == F:  # point on line
@@ -197,12 +190,7 @@ def _is_inside_sm(point, polygon):
             # (dy=dy2=0 and dx*dx2<=0)
             elif dy2 == 0 and (
                 point[0] == polygon[jj][0]
-                or (
-                    dy == 0
-                    and (point[0] - polygon[ii][0])
-                    * (point[0] - polygon[jj][0])
-                    <= 0
-                )
+                or (dy == 0 and (point[0] - polygon[ii][0]) * (point[0] - polygon[jj][0]) <= 0)
             ):
                 return 2
 
@@ -223,9 +211,7 @@ def _is_inside_sm_parallel(points, polygon):
     # note this fn works in (x,y) coords (but if point/polygon is consistent all is g.)
     p_ar = np.asfarray(points)
     pts_shape = p_ar.shape[:-1]
-    p_ar_flat = p_ar.reshape(
-        -1, 2
-    )  # shape: (len_y * len_x, 2), i.e. long list of coords (y, x)
+    p_ar_flat = p_ar.reshape(-1, 2)  # shape: (len_y * len_x, 2), i.e. long list of coords (y, x)
     d = np.zeros(p_ar_flat.shape[0], dtype=numba.int8)
     for i in numba.prange(p_ar_flat.shape[0]):
         d[i] = _is_inside_sm(p_ar_flat[i], polygon)
@@ -292,9 +278,7 @@ class Polygon:
         if xs.shape is tuple():
             return _is_inside_sm((y, x), self.get_yx())
         else:
-            return _is_inside_sm_parallel(
-                np.stack((ys, xs), axis=-1), self.get_yx()
-            )
+            return _is_inside_sm_parallel(np.stack((ys, xs), axis=-1), self.get_yx())
 
 
 # ============================================================================
@@ -374,7 +358,7 @@ def polygon_selector(
         mean_plus_minus : float, default=None
             Plot image with color scaled to mean +- this number.
         strict_range: length 2 list, default=None
-            Plot image with color scaled between these values. 
+            Plot image with color scaled between these values.
             Precedence over mean_plus_minus.
         help : bool, Default=False
             View this message.
@@ -418,10 +402,7 @@ def polygon_selector(
         if "image_shape" in polys:
             shp = polys["image_shape"]
             if shp[0] != image.shape[0] or shp[1] != image.shape[1]:
-                warn(
-                    "Image shape loaded polygons were defined on does not match current"
-                    " image."
-                )
+                warn("Image shape loaded polygons were defined on does not match current image.")
 
     fig, ax = plt.subplots()
     minimum = np.nanmin(image)
@@ -432,9 +413,7 @@ def polygon_selector(
         and len(strict_range) == 2
     ):
         vmin, vmax = strict_range
-    elif mean_plus_minus is not None and isinstance(
-        mean_plus_minus, (float, int)
-    ):
+    elif mean_plus_minus is not None and isinstance(mean_plus_minus, (float, int)):
         mean = np.mean(image)
         vmin, vmax = mean - mean_plus_minus, mean + mean_plus_minus
     else:
@@ -480,9 +459,7 @@ def polygon_selector(
         raise RuntimeError("You didn't define any polygons")
 
     # exclude polygons with nodes < 3
-    pgon_lst = [
-        pgon.get_nodes() for pgon in pgons if np.shape(pgon.get_nodes())[0] > 2
-    ]
+    pgon_lst = [pgon.get_nodes() for pgon in pgons if np.shape(pgon.get_nodes())[0] > 2]
     output_dict = {
         "nodes": pgon_lst,
         "image_shape": image.shape,
@@ -546,15 +523,11 @@ class PolygonSelectionWidget:
             if "lineprops" in style and isinstance(style["lineprops"], dict):
                 for key, item in style["lineprops"]:
                     self.lp[key] = item
-            if "markerprops" in style and isinstance(
-                style["markerprops"], dict
-            ):
+            if "markerprops" in style and isinstance(style["markerprops"], dict):
                 for key, item in style["markerprops"]:
                     self.mp[key] = item
 
-        vsr = (
-            7.5 * self.mp["markersize"]
-        )  # linear scaling on what our select radius is
+        vsr = 7.5 * self.mp["markersize"]  # linear scaling on what our select radius is
         self.ax = ax
         self.polys = dukit.widget.PolygonSelector(
             ax,
@@ -592,9 +565,7 @@ class PolygonSelectionWidget:
             new_line = Line2D(nodes_ar[:, 1], nodes_ar[:, 0], **self.lp)
             self.ax.add_line(new_line)
 
-            new_line_dict = dict(
-                line_obj=new_line, xs=nodes_ar[:, 1], ys=nodes_ar[:, 0]
-            )
+            new_line_dict = dict(line_obj=new_line, xs=nodes_ar[:, 1], ys=nodes_ar[:, 0])
 
             self.polys.artists.append(new_line)
             self.polys.lines.append(new_line_dict)  # list of line dicts
@@ -627,9 +598,7 @@ def load_polygon_nodes(poly_path_or_dict: str | dict) -> list[npt.NDArray]:
             with open(path, "rb") as f:
                 return pickle.load(f)
         else:
-            raise ValueError(
-                "polygon_nodes path did not end in 'json' or 'pickle'"
-            )
+            raise ValueError("polygon_nodes path did not end in 'json' or 'pickle'")
 
     if isinstance(poly_path_or_dict, dict):
         return [np.array(p) for p in poly_path_or_dict["nodes"]]

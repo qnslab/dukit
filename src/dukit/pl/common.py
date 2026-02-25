@@ -20,19 +20,22 @@ __pdoc__ = {
 
 # ============================================================================
 
+from typing import TYPE_CHECKING
+
 import numpy as np
 import numpy.typing as npt
 from scipy.linalg import svd
 
+if TYPE_CHECKING:
+    import dukit.pl.model
+
 
 # ============================================================================
 
 # ============================================================================
 
 
-def gen_init_guesses(
-    fit_model: "dukit.pl.model.FitModel", guesses_dict: dict, bounds_dict: dict
-):
+def gen_init_guesses(fit_model: "dukit.pl.model.FitModel", guesses_dict: dict, bounds_dict: dict):
     """
     Generate initial guesses (and bounds) in fit parameters from options dictionary.
 
@@ -68,15 +71,12 @@ def gen_init_guesses(
     for param_key in fit_model.get_param_defn():
         if param_key not in guesses_dict:
             raise KeyError(
-                f"Parameter {param_key} of {fit_model.__class__} "
-                "not in guesses dictionary."
+                f"Parameter {param_key} of {fit_model.__class__} not in guesses dictionary."
             )
         guess = guesses_dict[param_key]
 
         if param_key + "_range" in bounds_dict:
-            bounds = bounds_from_range(
-                bounds_dict[param_key + "_range"], guess
-            )
+            bounds = bounds_from_range(bounds_dict[param_key + "_range"], guess)
         elif param_key + "_bounds" in bounds_dict:
             bounds = bounds_dict[param_key + "_bounds"]
         else:
@@ -89,18 +89,14 @@ def gen_init_guesses(
             init_guesses[param_key] = guess
             init_bounds[param_key] = np.array(bounds)
         else:
-            raise RuntimeError(
-                f"Not sure why your guess for {param_key} is None?"
-            )
+            raise RuntimeError(f"Not sure why your guess for {param_key} is None?")
     return init_guesses, init_bounds
 
 
 # ============================================================================
 
 
-def bounds_from_range(
-    rang: float | npt.ArrayLike, guess: float | npt.ArrayLike
-) -> tuple:
+def bounds_from_range(rang: float | npt.ArrayLike, guess: float | npt.ArrayLike) -> tuple:
     """
     Generate parameter bounds when given a range option.
 
@@ -134,15 +130,9 @@ def bounds_from_range(
                 for each_guess in guess
             ]
     else:
-        if (
-            isinstance(rang, (list, tuple, np.ndarray))
-            and len(list(rang)) == 1
-        ):
+        if isinstance(rang, (list, tuple, np.ndarray)) and len(list(rang)) == 1:
             rang = rang[0]
-        if (
-            isinstance(guess, (list, tuple, np.ndarray))
-            and len(list(guess)) == 1
-        ):
+        if isinstance(guess, (list, tuple, np.ndarray)) and len(list(guess)) == 1:
             guess = guess[0]
         bounds = [
             guess - rang,

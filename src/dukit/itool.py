@@ -46,25 +46,24 @@ __pdoc__ = {
 
 # ============================================================================
 
-import numpy as np
-from numpy import typing as npt
-from numpy.polynomial.polynomial import polyval2d
-from scipy.optimize import least_squares
-from scipy.interpolate import griddata
-from scipy.ndimage import gaussian_filter
-import scipy.ndimage
-from typing import Callable
 from itertools import product
+from typing import Callable
 
 import matplotlib as mpl
-import matplotlib.pyplot as plt
-import matplotlib.patches
 import matplotlib.colorbar
+import matplotlib.patches
+import matplotlib.pyplot as plt
+import numpy as np
+import scipy.ndimage
 from matplotlib_scalebar.scalebar import ScaleBar
-from mpl_toolkits.axes_grid1 import make_axes_locatable, axes_size
+from mpl_toolkits.axes_grid1 import axes_size, make_axes_locatable
+from numpy import typing as npt
+from numpy.polynomial.polynomial import polyval2d
+from scipy.interpolate import griddata
+from scipy.ndimage import gaussian_filter
+from scipy.optimize import least_squares
 
 # ============================================================================
-
 import dukit.polygon
 import dukit.rebin
 from dukit.warn import warn
@@ -151,9 +150,7 @@ def mask_polygons(
     if not isinstance(polygons, (list, tuple)) or not isinstance(
         polygons[0], dukit.polygon.Polygon
     ):
-        raise TypeError(
-            "polygons were not None, a list or a list of Polygon objects"
-        )
+        raise TypeError("polygons were not None, a list or a list of Polygon objects")
 
     ylen, xlen = image.shape
     masked_area = np.full(image.shape, True)  # all masked to start with
@@ -284,15 +281,10 @@ def get_background(
         )
     for setting in method_required_settings[method]:
         if setting not in method_params_dict:
-            raise ValueError(
-                f"{setting} key missing from method_params_dict for method: {method}"
-            )
+            raise ValueError(f"{setting} key missing from method_params_dict for method: {method}")
 
     if polygon_nodes:
-        polygons = [
-            dukit.polygon.Polygon(nodes[:, 0], nodes[:, 1])
-            for nodes in polygon_nodes
-        ]
+        polygons = [dukit.polygon.Polygon(nodes[:, 0], nodes[:, 1]) for nodes in polygon_nodes]
     else:
         polygons = None
 
@@ -329,9 +321,7 @@ def mu_sigma_inside_polygons(
 
 
 # hands off to other filters
-def get_im_filtered(
-    image: npt.NDArray, filter_type: str, **kwargs
-) -> npt.NDArray:
+def get_im_filtered(image: npt.NDArray, filter_type: str, **kwargs) -> npt.NDArray:
     """Wrapped over other filters.
     Current filters defined:
         - filter_type = gaussian, `qdmpy.shared.itool._get_im_filtered_gaussian`
@@ -393,9 +383,7 @@ def _points_to_params(points: list | tuple | npt.NDArray) -> tuple:
     points: iterable of 3 iterables: [x, y, z]
     returns a,b,c,d parameters (see _equation_plane)
     """
-    rearranged_points = [
-        [p[1], p[0], p[2]] for p in points
-    ]  # change to [y, x, z]
+    rearranged_points = [[p[1], p[0], p[2]] for p in points]  # change to [y, x, z]
     pts = np.array(rearranged_points)
     vec1_in_plane = pts[1] - pts[0]
     vec2_in_plane = pts[2] - pts[0]
@@ -415,21 +403,15 @@ def _three_point_background(
     """
 
     if len(points) != 3:
-        raise ValueError(
-            "points needs to be len 3 of format: [x, y] (int or floats)."
-        )
+        raise ValueError("points needs to be len 3 of format: [x, y] (int or floats).")
     if not isinstance(sample_size, int) or sample_size < 0:
         raise TypeError("sample_size must be an integer >= 0")
     for p in points:
         if len(p) != 2:
-            raise ValueError(
-                "points needs to be len 3 of format: [x, y] (int or floats)."
-            )
+            raise ValueError("points needs to be len 3 of format: [x, y] (int or floats).")
         for c in p:
             if not isinstance(c, (int, float)):
-                raise ValueError(
-                    "points needs to be len 3 of format: [x, y] (int or floats)."
-                )
+                raise ValueError("points needs to be len 3 of format: [x, y] (int or floats).")
         if image.mask[p[1], p[0]]:
             warn(
                 "One of the input points was masked (inside a polygon?), "
@@ -454,10 +436,7 @@ def _three_point_background(
         return np.mean(list(_sample_generator(image, sample_size, yx)))
 
     points = np.array(
-        [
-            np.append(p, _mean_sample(image, sample_size, (p[1], p[0])))
-            for p in points
-        ]
+        [np.append(p, _mean_sample(image, sample_size, (p[1], p[0]))) for p in points]
     )
     Y, X = np.indices(image.shape)  # noqa: N806
     return _equation_plane(_points_to_params(points), Y, X)
@@ -502,45 +481,29 @@ def _poly_background(image: npt.NDArray, order: int) -> npt.NDArray:
         return _mean_background(image)
 
     init_params = np.zeros((order + 1, order + 1))
-    init_params[0, 0] = np.nanmean(
-        image
-    )  # set zeroth term to be mean to get it started
+    init_params[0, 0] = np.nanmean(image)  # set zeroth term to be mean to get it started
     Y, X = np.indices(image.shape)  # noqa: N806
     good_vals = np.logical_and(~np.isnan(image), ~image.mask)
     y = Y[good_vals]
     x = X[good_vals]
 
     data = image[good_vals]  # flattened
-    best_c = least_squares(
-        _residual_poly, init_params.flatten()[:-1], args=(y, x, data, order)
-    ).x
+    best_c = least_squares(_residual_poly, init_params.flatten()[:-1], args=(y, x, data, order)).x
     best_c = np.append(best_c, 0)
     c = best_c.reshape((order + 1, order + 1))
-    return polyval2d(Y.flatten(), X.flatten(), c).reshape(
-        image.shape
-    )  # eval over full image
+    return polyval2d(Y.flatten(), X.flatten(), c).reshape(image.shape)  # eval over full image
 
 
 # ============================================================================
 
 
-def _gaussian(
-    p: list | tuple | npt.NDArray, y: npt.NDArray, x: npt.NDArray
-) -> npt.NDArray:
+def _gaussian(p: list | tuple | npt.NDArray, y: npt.NDArray, x: npt.NDArray) -> npt.NDArray:
     """Simple Gaussian function, height, center_y, center_x, width_y, width_x, rot = p."""
     height, center_y, center_x, width_y, width_x, rot, offset = p
     return offset + height * np.exp(
         -(
-            (
-                ((y - center_y) * np.cos(rot) + (x - center_x) * np.sin(rot))
-                / width_y
-            )
-            ** 2
-            + (
-                ((x - center_x) * np.cos(rot) - (y - center_y) * np.sin(rot))
-                / width_x
-            )
-            ** 2
+            (((y - center_y) * np.cos(rot) + (x - center_x) * np.sin(rot)) / width_y) ** 2
+            + (((x - center_x) * np.cos(rot) - (y - center_y) * np.sin(rot)) / width_x) ** 2
         )
         / 2
     )
@@ -562,14 +525,8 @@ def _moments(image: npt.NDArray) -> tuple:
 
     col = image[int(center_y), :]
     row = image[:, int(center_x)]
-    width_x = np.nansum(
-        np.sqrt(abs((np.arange(col.size) - center_y) ** 2 * col))
-        / np.nansum(col)
-    )
-    width_y = np.nansum(
-        np.sqrt(abs((np.arange(row.size) - center_x) ** 2 * row))
-        / np.nansum(row)
-    )
+    width_x = np.nansum(np.sqrt(abs((np.arange(col.size) - center_y) ** 2 * col)) / np.nansum(col))
+    width_y = np.nansum(np.sqrt(abs((np.arange(row.size) - center_x) ** 2 * row)) / np.nansum(row))
     height = np.nanmax(image)
     return height, center_y, center_x, width_y, width_x, 0.0, offset
 
@@ -602,9 +559,7 @@ def _gaussian_background(image: npt.NDArray) -> npt.NDArray:
     return _gaussian(p, Y, X)
 
 
-def _lorentzian(
-    p: list | tuple | npt.NDArray, y: npt.NDArray, x: npt.NDArray
-) -> npt.NDArray:
+def _lorentzian(p: list | tuple | npt.NDArray, y: npt.NDArray, x: npt.NDArray) -> npt.NDArray:
     height, center_y, center_x, width_y, width_x, rot, offset = p
     xp = (x - center_x) * np.cos(rot) - (y - center_y) * np.sin(rot)
     yp = (x - center_x) * np.sin(rot) + (y - center_y) * np.cos(rot)
@@ -657,9 +612,7 @@ def _interpolated_background(
 
     method available: nearest, linear, cubic.
     """
-    if not isinstance(polygons, list) or not isinstance(
-        polygons[0], dukit.polygon.Polygon
-    ):
+    if not isinstance(polygons, list) or not isinstance(polygons[0], dukit.polygon.Polygon):
         raise TypeError("polygons arg was not a list of Polygon objects")
 
     ylen, xlen = image.shape
@@ -671,12 +624,8 @@ def _interpolated_background(
     for p in polygons:
         in_or_out = p.is_inside(grid_y, grid_x)
         # mask all vals that are not background
-        is_this_poly = np.ma.masked_greater_equal(
-            in_or_out, 0
-        ).mask  # >= 0 => inside/on poly
-        isnt_poly = np.logical_and(
-            isnt_poly, ~is_this_poly
-        )  # prev isnt_poly and isnt this poly
+        is_this_poly = np.ma.masked_greater_equal(in_or_out, 0).mask  # >= 0 => inside/on poly
+        isnt_poly = np.logical_and(isnt_poly, ~is_this_poly)  # prev isnt_poly and isnt this poly
 
     # now we want to send all of the values in indexes that is_bg is True to griddata
     pts = []
@@ -695,9 +644,7 @@ def _interpolated_background(
 # ============================================================================
 
 
-def _filtered_background(
-    image: npt.NDArray, filter_type: str, **kwargs
-) -> npt.NDArray:
+def _filtered_background(image: npt.NDArray, filter_type: str, **kwargs) -> npt.NDArray:
     """Background defined by a filter_type-filtering of the image.
     Passed to `qdmpy.shared.itool.get_background"""
     return get_im_filtered(image, filter_type, **kwargs)
@@ -851,9 +798,7 @@ def plot_image_on_ax(
     ax : matplotlib Axis object
     """
 
-    imshowed = ax.imshow(
-        image_data, cmap=c_map, vmin=c_range[0], vmax=c_range[1]
-    )
+    imshowed = ax.imshow(image_data, cmap=c_map, vmin=c_range[0], vmax=c_range[1])
 
     ax.set_title(title)
 
@@ -870,11 +815,7 @@ def plot_image_on_ax(
             ax.add_artist(scalebar_x)
             ax.add_artist(scalebar_y)
         else:
-            pixel = (
-                raw_pixel_size * applied_binning
-                if applied_binning
-                else raw_pixel_size
-            )
+            pixel = raw_pixel_size * applied_binning if applied_binning else raw_pixel_size
             scalebar = ScaleBar(pixel)
             ax.add_artist(scalebar)
 
@@ -1003,11 +944,11 @@ def get_colormap_range(
         For c_range type 'deviation_from_mean', c_range_dict['values'] must be a float,
         between 0 and 1. Changing to 'min_max_symmetric_about_mean' c_range.""",
         "strict_range": """Invalid c_range_dict['values'] encountered.
-        For c_range type 'strict_range', c_range_dict['values'] must be a 2-tup, 
+        For c_range type 'strict_range', c_range_dict['values'] must be a 2-tup,
         with elements that are floats or ints.
         Changing to 'min_max_symmetric_about_mean' c_range.""",
         "mean_plus_minus": """Invalid c_range_dict['values'] encountered.
-        For c_range type 'mean_plus_minus', c_range_dict['values'] must be an int or 
+        For c_range type 'mean_plus_minus', c_range_dict['values'] must be an int or
         float. Changing to 'min_max_symmetric_about_mean' c_range.""",
         "percentile": """Invalid c_range_dict['values'] encountered.
         For c_range type 'percentile', c_range_dict['values'] must be a 2-tup,
@@ -1082,9 +1023,7 @@ def get_colormap_range(
 # ============================
 
 
-def _min_max(
-    image: npt.NDArray, c_range_values: tuple[float, ...]
-) -> tuple[float, float]:
+def _min_max(image: npt.NDArray, c_range_values: tuple[float, ...]) -> tuple[float, float]:
     """
     Map between minimum and maximum values in image
 
@@ -1098,9 +1037,7 @@ def _min_max(
     return np.nanmin(image), np.nanmax(image)
 
 
-def _strict_range(
-    image: npt.NDArray, c_range_values: tuple[float, ...]
-) -> tuple[float, float]:
+def _strict_range(image: npt.NDArray, c_range_values: tuple[float, ...]) -> tuple[float, float]:
     """
     Map between c_range_values
 
@@ -1114,9 +1051,7 @@ def _strict_range(
     return c_range_values[0], c_range_values[1]
 
 
-def _min_max_sym_mean(
-    image: npt.NDArray, c_range_values: tuple[float, ...]
-) -> tuple[float, float]:
+def _min_max_sym_mean(image: npt.NDArray, c_range_values: tuple[float, ...]) -> tuple[float, float]:
     """
     Map symmetrically about mean, capturing all values in image.
 
@@ -1134,9 +1069,7 @@ def _min_max_sym_mean(
     return mean - max_distance_from_mean, mean + max_distance_from_mean
 
 
-def _min_max_sym_zero(
-    image: npt.NDArray, c_range_values: tuple[float, ...]
-) -> tuple[float, float]:
+def _min_max_sym_zero(image: npt.NDArray, c_range_values: tuple[float, ...]) -> tuple[float, float]:
     """
     Map symmetrically about zero, capturing all values in image.
 
@@ -1167,14 +1100,10 @@ def _deviation_from_mean(
     c_range_values : tuple[float, ...]
         See `dukit.plot.get_colormap_range`
     """
-    return (1 - c_range_values[0]) * np.mean(image), (
-        1 + c_range_values[0]
-    ) * np.mean(image)
+    return (1 - c_range_values[0]) * np.mean(image), (1 + c_range_values[0]) * np.mean(image)
 
 
-def _percentile(
-    image: npt.NDArray, c_range_values: tuple[float, ...]
-) -> tuple[float, float]:
+def _percentile(image: npt.NDArray, c_range_values: tuple[float, ...]) -> tuple[float, float]:
     """
     Maps the range between two percentiles of the data.
 
@@ -1206,9 +1135,7 @@ def _percentile_sym_zero(
     return -val, val
 
 
-def _mean_plus_minus(
-    image: npt.NDArray, c_range_values: tuple[float, ...]
-) -> tuple[float, float]:
+def _mean_plus_minus(image: npt.NDArray, c_range_values: tuple[float, ...]) -> tuple[float, float]:
     """
     Maps the range to mean +- value given in c_range_values
 
@@ -1226,9 +1153,7 @@ def _mean_plus_minus(
 # ============================================================================
 
 
-def crop_roi(
-    seq: npt.ArrayLike, roi_coords: tuple[int, int, int, int]
-) -> npt.NDArray:
+def crop_roi(seq: npt.ArrayLike, roi_coords: tuple[int, int, int, int]) -> npt.NDArray:
     """
 
     Parameters
@@ -1265,18 +1190,14 @@ def _define_roi(
         size_h, size_w = np.shape(img)[:-1]
     except ValueError:  # not enough values to unpack -> 2d image not 3d
         size_h, size_w = np.shape(img)
-    start_x, start_y, end_x, end_y = _check_start_end_rectangle(
-        *roi_coords, size_w, size_h
-    )
+    start_x, start_y, end_x, end_y = _check_start_end_rectangle(*roi_coords, size_w, size_h)
     return _define_area_roi(start_x, start_y, end_x, end_y)
 
 
 # ============================================================================
 
 
-def _define_area_roi(
-    start_x: int, start_y: int, end_x: int, end_y: int
-) -> tuple[slice, slice]:
+def _define_area_roi(start_x: int, start_y: int, end_x: int, end_y: int) -> tuple[slice, slice]:
     """
     Returns
     -------
@@ -1310,16 +1231,10 @@ def _check_start_end_rectangle(
     if end_y < 0:
         end_y = full_size_h - 1
     if start_x >= end_x:
-        warn(
-            f"Rectangle ends [{end_x}] before it starts [{start_x}] (in x), "
-            + "swapping them"
-        )
+        warn(f"Rectangle ends [{end_x}] before it starts [{start_x}] (in x), " + "swapping them")
         start_x, end_x = end_x, start_x
     if start_y >= end_y:
-        warn(
-            f"Rectangle ends [{end_y}] before it starts [{start_y}] (in y), "
-            + "swapping them"
-        )
+        warn(f"Rectangle ends [{end_y}] before it starts [{start_y}] (in y), " + "swapping them")
         start_y, end_y = end_y, start_y
     if start_x >= full_size_w:
         warn(
@@ -1336,14 +1251,10 @@ def _check_start_end_rectangle(
         start_y = 0
 
     if end_x >= full_size_w:
-        warn(
-            f"Rectangle too big in x [{end_x}], cropping to image [{full_size_w}].\n"
-        )
+        warn(f"Rectangle too big in x [{end_x}], cropping to image [{full_size_w}].\n")
         end_x = full_size_w - 1
     if end_y >= full_size_h:
-        warn(
-            f"Rectangle too big in y [{end_y}], cropping to image [{full_size_h}].\n"
-        )
+        warn(f"Rectangle too big in y [{end_y}], cropping to image [{full_size_h}].\n")
         end_y = full_size_h - 1
 
     return start_x, start_y, end_x, end_y
@@ -1418,18 +1329,14 @@ def smooth_image_stack(
         Image stack smoothed in spatial dimensions.
     """
     if isinstance(sigma, (list, tuple)):
-        return gaussian_filter(
-            stack, sigma=(sigma[1], sigma[0], 0), truncate=truncate
-        )
+        return gaussian_filter(stack, sigma=(sigma[1], sigma[0], 0), truncate=truncate)
     return gaussian_filter(stack, sigma=(sigma, sigma, 0), truncate=truncate)
 
 
 # ============================================================================
 
 
-def rebin_image_stack(
-    stack: npt.NDArray, additional_bins: tuple[int, int] | int
-) -> npt.NDArray:
+def rebin_image_stack(stack: npt.NDArray, additional_bins: tuple[int, int] | int) -> npt.NDArray:
     """
     Rebin image stack in spatial dimensions.
 
@@ -1476,11 +1383,7 @@ def get_aois(
     image_shape: tuple[int, int, int] | tuple[int, int],
     *aoi_coords: tuple[int, int, int, int],
 ) -> tuple[tuple[slice, slice]]:
-    aois: list = (
-        []
-        if not aoi_coords
-        else [_define_area_roi(*aoi) for aoi in aoi_coords]
-    )
+    aois: list = [] if not aoi_coords else [_define_area_roi(*aoi) for aoi in aoi_coords]
 
     if len(image_shape) == 3:
         shp = image_shape[:-1]
@@ -1488,9 +1391,7 @@ def get_aois(
         shp = image_shape
     aois.insert(
         0,
-        _define_area_roi(
-            shp[0] // 2, shp[1] // 2, shp[0] // 2 + 1, shp[1] // 2 + 1
-        ),
+        _define_area_roi(shp[0] // 2, shp[1] // 2, shp[0] // 2 + 1, shp[1] // 2 + 1),
     )
     return tuple(aois)
 

@@ -36,9 +36,9 @@ __pdoc__ = {
 
 # ============================================================================
 
-from pyfftw.interfaces import numpy_fft
 import numpy as np
 import numpy.typing as npt
+from pyfftw.interfaces import numpy_fft
 
 # ============================================================================
 
@@ -59,9 +59,9 @@ m^2 -> 1e+18 nm^2
 Measure x amps = x A
 
  def  mu_B  =  9.2_      in units of A m^2
- 
+
  => x A = x (1 / 9.2_)   in units of mu_B/m^2
- 
+
  => x A = x (1e-18/9.2_) in units of mu_B/nm^2
 ```
 """
@@ -76,9 +76,7 @@ Vacuum permeability
 # ============================================================================
 
 
-def unpad_image(
-    x: npt.NDArray, padder: tuple[tuple[int, int], tuple[int, int]]
-) -> npt.NDArray:
+def unpad_image(x: npt.NDArray, padder: tuple[tuple[int, int], tuple[int, int]]) -> npt.NDArray:
     """undo a padding defined by `dukit.fourier.pad_image` (it returns
     the padder list)"""
     slices = []
@@ -155,11 +153,7 @@ def define_k_vectors(
         ky_vec = scaling_y * numpy_fft.fftshift(numpy_fft.fftfreq(shape[0]))
         kx_vec = scaling_x * numpy_fft.fftshift(numpy_fft.fftfreq(shape[1]))
     else:
-        scl = (
-            raw_pixel_size * applied_binning
-            if applied_binning
-            else raw_pixel_size
-        )
+        scl = raw_pixel_size * applied_binning if applied_binning else raw_pixel_size
         scaling = np.float64(2 * np.pi / scl)
         ky_vec = scaling * numpy_fft.fftshift(numpy_fft.fftfreq(shape[0]))
         kx_vec = scaling * numpy_fft.fftshift(numpy_fft.fftfreq(shape[1]))
@@ -167,9 +161,7 @@ def define_k_vectors(
     # Include a small factor in the k vectors to remove division by zero issues (min_k)
     # Make a meshgrid to pass back
     if k_vector_epsilon:
-        ky, kx = np.meshgrid(
-            ky_vec - k_vector_epsilon, kx_vec + k_vector_epsilon, indexing="ij"
-        )
+        ky, kx = np.meshgrid(ky_vec - k_vector_epsilon, kx_vec + k_vector_epsilon, indexing="ij")
     else:
         ky, kx = np.meshgrid(ky_vec, kx_vec, indexing="ij")
 
@@ -222,9 +214,7 @@ def hanning_filter_kspace(
     # Define Hanning filter to prevent noise amplification at frequencies higher than the
     # spatial resolution
 
-    if (
-        do_filt and standoff and standoff > 1e-10
-    ):  # standoff greater than an angstrom...
+    if do_filt and standoff and standoff > 1e-10:  # standoff greater than an angstrom...
         hy = np.hanning(k.shape[0])
         hx = np.hanning(k.shape[1])
         img_filt = np.sqrt(np.outer(hy, hx))

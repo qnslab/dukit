@@ -28,25 +28,25 @@ __pdoc__ = {
 # ============================================================================
 
 import os
-from collections import abc
 import pathlib
+from collections import abc
+from collections import defaultdict as dd
+from typing import Union
+
 import numpy as np
 import numpy.typing as npt
-from typing import Union
-from collections import defaultdict as dd
 
 # ============================================================================
-
 import dukit.json2dict
-import dukit.share
-import dukit.pl.scipyfit
 import dukit.pl.model
+import dukit.pl.scipyfit
+import dukit.share
 
 # ============================================================================
 
 CPUFIT_AVAILABLE: bool = False
 try:
-    import pycpufit.cpufit as cf
+    import pycpufit.cpufit as cf  # noqa: F401
 
     CPUFIT_AVAILABLE = True
 except ImportError:
@@ -56,7 +56,7 @@ else:
 
 GPUFIT_AVAILABLE: bool = False
 try:
-    import pygpufit.gpufit as gf
+    import pygpufit.gpufit as gf  # noqa: F401
 
     GPUFIT_AVAILABLE = True
 except ImportError:
@@ -178,7 +178,7 @@ def fit_roi(
                 max_iterations=gf_max_iterations,
             )
         except RuntimeError:
-            pass # modelID not found, that's fine
+            pass  # modelID not found, that's fine
     if GPUFIT_AVAILABLE:
         try:
             result["gpufit"] = dukit.pl.gpufit.fit_roi_avg_pl(
@@ -194,7 +194,7 @@ def fit_roi(
                 max_iterations=gf_max_iterations,
             )
         except RuntimeError:
-            pass # modelID not found, that's fine
+            pass  # modelID not found, that's fine
 
     if opath:
         res_dict = {}
@@ -340,7 +340,7 @@ def fit_aois(
             )
             _recursive_dict_update(result, cf_res)
         except RuntimeError:
-            pass # modelID not found, that's fine
+            pass  # modelID not found, that's fine
     if GPUFIT_AVAILABLE:
         try:
             gf_res = dukit.pl.gpufit.fit_aois_pl(
@@ -358,7 +358,7 @@ def fit_aois(
             )
             _recursive_dict_update(result, gf_res)
         except RuntimeError:
-            pass # modelID not found, that's fine
+            pass  # modelID not found, that's fine
 
     if opath:
         res_dict = dd(dict)

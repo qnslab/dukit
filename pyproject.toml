@@ -1,6 +1,75 @@
 [build-system]
-requires = [
-    "setuptools>=42",
-    "wheel"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/dukit/_version.py"
+
+[project]
+name = "dukit"
+dynamic = ["version"]
+description = "🦆🔬 Defect μscopy toolkit"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "Sam Scholten", email = "samcaspar@gmail.com"}
 ]
-build-backend = "setuptools.build_meta"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+keywords = ["NV", "QDM", "Diamond", "Quantum", "Quantum Sensing", "gpufit", "Widefield Defect Microscopy", "Quantum Diamond Microscopy"]
+
+dependencies = [
+    "numpy",
+    "matplotlib>=3.4.0",
+    "scipy>=1.7",
+    "numba",
+    "matplotlib-scalebar>=0.7.2",
+    "tqdm",
+    "simplejson",
+    "pyfftw",
+    "dill",
+    "scikit-image",
+    "joblib",
+]
+
+[project.optional-dependencies]
+dev = [
+    "prospector[with_bandit,with_pyroma,with_vulture]",
+    "ruff",
+]
+# cpufit and gpufit must be installed manually from local wheels
+# See: just install-cpufit / just install-gpufit
+
+[project.urls]
+Homepage = "https://github.com/casparvitch/dukit"
+Repository = "https://github.com/casparvitch/dukit"
+Issues = "https://github.com/casparvitch/dukit/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dukit"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "/README.md",
+    "/LICENSE",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "W", "F"]
+ignore = ["E501", "E711"]
+
+[tool.ruff.lint.per-file-ignores]
+"**/__init__.py" = ["F403", "F401"]

@@ -32,15 +32,15 @@ __pdoc__ = {
 
 import copy
 from numbers import Integral
+
+import matplotlib.pyplot as plt
 import numpy as np
 import numpy.typing as npt
-from matplotlib.lines import Line2D
-import matplotlib.pyplot as plt
 from matplotlib.image import AxesImage
+from matplotlib.lines import Line2D
 from scipy import integrate
 
 # ============================================================================
-
 import dukit.json2dict
 
 # ======================================================================================
@@ -152,9 +152,7 @@ class _SelectorWidget(AxesWidget):
         self.useblit = useblit and self.canvas.supports_blit
         self.connect_default_events()
 
-        self.state_modifier_keys = dict(
-            move=" ", clear="escape", square="shift", center="control"
-        )
+        self.state_modifier_keys = dict(move=" ", clear="escape", square="shift", center="control")
         self.state_modifier_keys.update(state_modifier_keys or {})
 
         self.background = None
@@ -224,9 +222,7 @@ class _SelectorWidget(AxesWidget):
 
         # If a button was pressed, check if the release-button is the
         # same.
-        return (
-            event.inaxes != self.ax or event.button != self.eventpress.button
-        )
+        return event.inaxes != self.ax or event.button != self.eventpress.button
 
     def update(self):
         """draw using newfangled blit or oldfangled draw depending on
@@ -343,7 +339,7 @@ class _SelectorWidget(AxesWidget):
                     artist.set_visible(False)
                 self.update()
                 return
-            for (state, modifier) in self.state_modifier_keys.items():
+            for state, modifier in self.state_modifier_keys.items():
                 # if modifier in key:
                 if modifier == key:
                     self.state.add(state)
@@ -357,7 +353,7 @@ class _SelectorWidget(AxesWidget):
         """Key release event handler and validator."""
         if self.active:
             key = event.key or ""
-            for (state, modifier) in self.state_modifier_keys.items():
+            for state, modifier in self.state_modifier_keys.items():
                 # if modifier in key:
                 if modifier == key:
                     self.state.discard(state)
@@ -557,11 +553,7 @@ class PolygonSelector(_SelectorWidget):
 
     def _remove_vertex(self, i):
         """Remove vertex with index i."""
-        if (
-            self._nverts > 2
-            and self._polygon_completed
-            and i in (0, self._nverts - 1)
-        ):
+        if self._nverts > 2 and self._polygon_completed and i in (0, self._nverts - 1):
             # If selecting the first or final vertex, remove both first and
             # last vertex as they are the same for a closed polygon
             self._xs.pop(0)
@@ -584,9 +576,7 @@ class PolygonSelector(_SelectorWidget):
         """Button press event handler"""
 
         # Check for selection of a tool handle on current polygon
-        if (self._polygon_completed or "move_vertex" in self.state) and len(
-            self._xs
-        ) > 0:
+        if (self._polygon_completed or "move_vertex" in self.state) and len(self._xs) > 0:
             h_idx, h_dist = self._polygon_handles.closest(event.x, event.y)
             if h_dist < self.vertex_select_radius:
                 self._active_handle_idx = h_idx
@@ -610,11 +600,7 @@ class PolygonSelector(_SelectorWidget):
             self._active_handle_idx = -1
 
         # Complete the polygon.
-        elif (
-            len(self._xs) > 3
-            and self._xs[-1] == self._xs[0]
-            and self._ys[-1] == self._ys[0]
-        ):
+        elif len(self._xs) > 3 and self._xs[-1] == self._xs[0] and self._ys[-1] == self._ys[0]:
             self._polygon_completed = True
 
         # Place new vertex.
@@ -685,9 +671,7 @@ class PolygonSelector(_SelectorWidget):
         else:
             if self._xs:
                 # Calculate distance to the start vertex.
-                x0, y0 = self.current_line.get_transform().transform(
-                    (self._xs[0], self._ys[0])
-                )
+                x0, y0 = self.current_line.get_transform().transform((self._xs[0], self._ys[0]))
                 v0_dist = np.hypot(x0 - event.x, y0 - event.y)
                 # Lock on to the start vertex if near it and ready to complete.
                 if len(self._xs) > 3 and v0_dist < self.vertex_select_radius:
@@ -702,9 +686,7 @@ class PolygonSelector(_SelectorWidget):
         # Remove the pending vertex if entering the 'move_vertex' or
         # 'move_all' mode
         if not self._polygon_completed and (
-            "move_vertex" in self.state
-            or "move_all" in self.state
-            or "rescale_all" in self.state
+            "move_vertex" in self.state or "move_all" in self.state or "rescale_all" in self.state
         ):
             self._xs, self._ys = self._xs[:-1], self._ys[:-1]
             self.draw_polygon()
@@ -763,9 +745,7 @@ class PolygonSelector(_SelectorWidget):
         # if the polygon is completed or the user is locked on to the start
         # vertex.
         if self._polygon_completed or (
-            len(self._xs) > 3
-            and self._xs[-1] == self._xs[0]
-            and self._ys[-1] == self._ys[0]
+            len(self._xs) > 3 and self._xs[-1] == self._xs[0] and self._ys[-1] == self._ys[0]
         ):
             self._polygon_handles.set_data(self._xs[:-1], self._ys[:-1])
         else:
@@ -834,12 +814,8 @@ class PolygonSelector(_SelectorWidget):
             if self._xs and self._ys:
                 center_x, center_y = (np.mean(self._xs), np.mean(self._ys))
                 for k, _ in enumerate(self._xs):
-                    self._xs[k] = (
-                        self._xs[k] - center_x
-                    ) * scale_factor + center_x
-                    self._ys[k] = (
-                        self._ys[k] - center_y
-                    ) * scale_factor + center_y
+                    self._xs[k] = (self._xs[k] - center_x) * scale_factor + center_x
+                    self._ys[k] = (self._ys[k] - center_y) * scale_factor + center_y
 
             # update past lines
             for line in self.lines:
@@ -851,12 +827,8 @@ class PolygonSelector(_SelectorWidget):
                         np.mean(line["ys"]),
                     )
                     for k, _ in enumerate(line["xs"]):
-                        new_xs.append(
-                            (line["xs"][k] - cx_line) * scale_factor + cx_line
-                        )
-                        new_ys.append(
-                            (line["ys"][k] - cy_line) * scale_factor + cy_line
-                        )
+                        new_xs.append((line["xs"][k] - cx_line) * scale_factor + cx_line)
+                        new_ys.append((line["ys"][k] - cy_line) * scale_factor + cy_line)
                     line["xs"] = new_xs
                     line["ys"] = new_ys
                     line["line_obj"].set_data(new_xs, new_ys)
@@ -955,9 +927,7 @@ class LineSelector(_SelectorWidget):
         """Button press event handler"""
 
         # Check for selection of a tool handle on current polygon
-        if (self._line_completed or "move_vertex" in self.state) and len(
-            self._xs
-        ) > 0:
+        if (self._line_completed or "move_vertex" in self.state) and len(self._xs) > 0:
             h_idx, h_dist = self._line_handles.closest(event.x, event.y)
             if h_dist < self.vertex_select_radius:
                 self._active_handle_idx = h_idx
@@ -1030,11 +1000,7 @@ class LineSelector(_SelectorWidget):
                 self.finished_line["ys"] = new_ys
 
         # Do nothing if completed or waiting for a move.
-        elif (
-            self._line_completed
-            or "move_vertex" in self.state
-            or "move_all" in self.state
-        ):
+        elif self._line_completed or "move_vertex" in self.state or "move_all" in self.state:
             return
         else:
             if self._xs:
@@ -1046,9 +1012,7 @@ class LineSelector(_SelectorWidget):
         """Key press event handler"""
         # Remove the pending vertex if entering the 'move_vertex' or
         # 'move_all' mode
-        if not self._line_completed and (
-            "move_vertex" in self.state or "move_all" in self.state
-        ):
+        if not self._line_completed and ("move_vertex" in self.state or "move_all" in self.state):
             self._xs, self._ys = self._xs[:-1], self._ys[:-1]
             self.draw_line()
         elif "finished" in self.state:
@@ -1110,9 +1074,7 @@ class LineSelector(_SelectorWidget):
         # if the line is completed or the user is locked on to the start
         # vertex. --> seems irrelevant here?
         if self._line_completed or (
-            len(self._xs) > 3
-            and self._xs[-1] == self._xs[0]
-            and self._ys[-1] == self._ys[0]
+            len(self._xs) > 3 and self._xs[-1] == self._xs[0] and self._ys[-1] == self._ys[0]
         ):
             self._line_handles.set_data(self._xs[:-1], self._ys[:-1])
         else:
@@ -1152,9 +1114,7 @@ class LineSelector(_SelectorWidget):
 
     @property
     def current_verts(self):
-        ret = list(
-            zip(self.current_line.get_xdata(), self.current_line.get_ydata())
-        )
+        ret = list(zip(self.current_line.get_xdata(), self.current_line.get_ydata()))
         return ret
 
     @property
@@ -1212,9 +1172,7 @@ class BulkLinecutWidget:
     ):
         # check that input ax has an imshow (else not so useful eh)
         if not any([[isinstance(t, AxesImage) for t in imax.get_children()]]):
-            raise ValueError(
-                "input axis does not contain an AxesImage (imshow)."
-            )
+            raise ValueError("input axis does not contain an AxesImage (imshow).")
         self.images = images
         self.xlabels = xlabels
 
@@ -1243,9 +1201,7 @@ class BulkLinecutWidget:
             if "lineprops" in style and isinstance(style["lineprops"], dict):
                 for key, item in style["lineprops"].items():
                     self.lp[key] = item
-            if "markerprops" in style and isinstance(
-                style["markerprops"], dict
-            ):
+            if "markerprops" in style and isinstance(style["markerprops"], dict):
                 for key, item in style["markerprops"].items():
                     self.mp[key] = item
 
@@ -1269,25 +1225,19 @@ class BulkLinecutWidget:
 
         dummy_x = np.zeros((5, len(xlabels)))
         dummy_y = np.zeros((5, len(xlabels)))
-        self.profiles = self.profax.plot(
-            dummy_x, dummy_y, marker="o", ls="-", label=xlabels
-        )
+        self.profiles = self.profax.plot(dummy_x, dummy_y, marker="o", ls="-", label=xlabels)
         # handles, _ = self.profax.get_legend_handles_labels()
         # self.profax.legend(handles, self.xlabels, loc="upper left")
         self.profax.legend()
 
-        (self.integrals_plot,) = self.resax.plot(
-            xlabels, self.integrals, "ko-"
-        )
+        (self.integrals_plot,) = self.resax.plot(xlabels, self.integrals, "ko-")
 
     def ondraw(self, verts):
         if len(verts) == 1:
             # change all profiles
             for p, prof in enumerate(self.profiles):
                 prof.set_xdata([0])
-                prof.set_ydata(
-                    self.images[p][int(verts[0][1]), int(verts[0][0])]
-                )
+                prof.set_ydata(self.images[p][int(verts[0][1]), int(verts[0][0])])
         else:
             idxs, jdxs = zip(*verts)
             pxl_ar = [0]
@@ -1296,9 +1246,7 @@ class BulkLinecutWidget:
             for n in range(len(idxs) - 1):
                 i0, i1 = idxs[n], idxs[n + 1]
                 j0, j1 = jdxs[n], jdxs[n + 1]
-                num = int(
-                    np.sqrt((i1 - i0) ** 2 + (j1 - j0) ** 2) * 2
-                )  # *2 to be safe
+                num = int(np.sqrt((i1 - i0) ** 2 + (j1 - j0) ** 2) * 2)  # *2 to be safe
                 if not num:
                     continue
 
@@ -1322,20 +1270,13 @@ class BulkLinecutWidget:
                 if not (i_ar.ndim and i_ar.size):
                     continue
                 pxl_ar.extend(
-                    (
-                        pxl_ar[-1]
-                        + np.sqrt(
-                            (i_ar - i_ar[0]) ** 2 + (j_ar - j_ar[0]) ** 2
-                        )
-                    ).tolist()
+                    (pxl_ar[-1] + np.sqrt((i_ar - i_ar[0]) ** 2 + (j_ar - j_ar[0]) ** 2)).tolist()
                 )
 
             for p, prof in enumerate(self.profiles):
                 z = self.images[p][j_lst, i_lst]
                 if z.ndim and z.size:  # ensure no empty array
-                    prof.set_xdata(
-                        pxl_ar[1:]
-                    )  # get rid of initial 0 on pxl_ar (bit hacky)
+                    prof.set_xdata(pxl_ar[1:])  # get rid of initial 0 on pxl_ar (bit hacky)
                     prof.set_ydata(list(z))
                     if self.do_integral:
                         self.integrals[p] = integrate.simpson(z, pxl_ar[1:])
@@ -1365,17 +1306,9 @@ class BulkLinecutWidget:
             print(self.xlabels)
             print()
             print("profiles xdata:")
-            print(
-                np.transpose(
-                    [prof.get_xdata() for prof in self.profiles]
-                ).tolist()
-            )
+            print(np.transpose([prof.get_xdata() for prof in self.profiles]).tolist())
             print("profiles ydata:")
-            print(
-                np.transpose(
-                    [prof.get_ydata() for prof in self.profiles]
-                ).tolist()
-            )
+            print(np.transpose([prof.get_ydata() for prof in self.profiles]).tolist())
             print("integrals:")
             print(self.integrals)
             print()
@@ -1383,12 +1316,8 @@ class BulkLinecutWidget:
             output_dict = {
                 "xlabels": self.xlabels,
                 "integrals": self.integrals,
-                "profile_x": np.transpose(
-                    [prof.get_xdata() for prof in self.profiles]
-                ).tolist(),
-                "profile_y": np.transpose(
-                    [prof.get_ydata() for prof in self.profiles]
-                ).tolist(),
+                "profile_x": np.transpose([prof.get_xdata() for prof in self.profiles]).tolist(),
+                "profile_y": np.transpose([prof.get_ydata() for prof in self.profiles]).tolist(),
             }
             dukit.json2dict.dict_to_json(output_dict, path)
         self.line_selector.disconnect_events()
@@ -1410,9 +1339,7 @@ class LinecutSelectionWidget:
     def __init__(self, imax, lineax, data, style=None, useblit=False):
         # check that input ax has an imshow (else not so useful eh)
         if not any([[isinstance(t, AxesImage) for t in imax.get_children()]]):
-            raise ValueError(
-                "input axis does not contain an AxesImage (imshow)."
-            )
+            raise ValueError("input axis does not contain an AxesImage (imshow).")
 
         self.data = data
         self.imax = imax
@@ -1443,15 +1370,11 @@ class LinecutSelectionWidget:
             if "lineprops" in style and isinstance(style["lineprops"], dict):
                 for key, item in style["lineprops"].items():
                     self.lp[key] = item
-            if "markerprops" in style and isinstance(
-                style["markerprops"], dict
-            ):
+            if "markerprops" in style and isinstance(style["markerprops"], dict):
                 for key, item in style["markerprops"].items():
                     self.mp[key] = item
 
-        vsr = (
-            7.5 * self.mp["markersize"]
-        )  # linear scaling on what our select radius is
+        vsr = 7.5 * self.mp["markersize"]  # linear scaling on what our select radius is
 
         (self.profile,) = self.lineax.plot([1, 2, 3], [1, 2, 3], "ko-")
         self.lineax.title.set_text(f"Integral: {self.integral}")
@@ -1470,9 +1393,7 @@ class LinecutSelectionWidget:
     def ondraw(self, verts):
         if len(verts) == 1:
             self.profile.set_xdata([0])
-            self.profile.set_ydata(
-                self.data[int(verts[0][1]), int(verts[0][0])]
-            )
+            self.profile.set_ydata(self.data[int(verts[0][1]), int(verts[0][0])])
             self.lineax.title.set_text(f"Integral: {self.integral}")
         else:
             idxs, jdxs = zip(*verts)
@@ -1485,7 +1406,7 @@ class LinecutSelectionWidget:
                     j0, j1 = jdxs[n], jdxs[n + 1]
                     # *2 in there to be safe
                     num = int(np.sqrt((i1 - i0) ** 2 + (j1 - j0) ** 2) * 2)
-                except:
+                except (IndexError, TypeError, ValueError):
                     num = 0
                 if not num:
                     continue
@@ -1510,19 +1431,12 @@ class LinecutSelectionWidget:
                 if not (i_ar.ndim and i_ar.size):
                     continue
                 t_ar.extend(
-                    (
-                        t_ar[-1]
-                        + np.sqrt(
-                            (i_ar - i_ar[0]) ** 2 + (j_ar - j_ar[0]) ** 2
-                        )
-                    ).tolist()
+                    (t_ar[-1] + np.sqrt((i_ar - i_ar[0]) ** 2 + (j_ar - j_ar[0]) ** 2)).tolist()
                 )
 
             z = self.data[j_lst, i_lst]
             if z.ndim and z.size:  # ensure no empty array
-                self.profile.set_xdata(
-                    t_ar[1:]
-                )  # get rid of initial 0 on t_ar (bit hacky)
+                self.profile.set_xdata(t_ar[1:])  # get rid of initial 0 on t_ar (bit hacky)
                 self.profile.set_ydata(list(z))
                 self.integral = integrate.simpson(z, t_ar[1:])
                 self.lineax.title.set_text(f"Integral: {self.integral:.6e}")

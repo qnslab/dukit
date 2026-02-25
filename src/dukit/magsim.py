@@ -25,21 +25,19 @@ __pdoc__ = {
 
 from collections import defaultdict as dd
 from copy import copy
-import numpy as np
-import numpy.typing as npt
-import numpy.linalg as LA  # noqa: N812
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-from mpl_toolkits.axes_grid1 import make_axes_locatable
-from tqdm.autonotebook import tqdm
 
 import dill as pickle
-
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import numpy as np
+import numpy.linalg as LA  # noqa: N812
+import numpy.typing as npt
+from mpl_toolkits.axes_grid1 import make_axes_locatable
 from pyfftw.interfaces import numpy_fft
 from scipy.ndimage import gaussian_filter
+from tqdm.autonotebook import tqdm
 
 # ============================================================================
-
 import dukit.itool
 import dukit.json2dict
 import dukit.polygon
@@ -65,15 +63,11 @@ class MagSim:
         if polys is not None:
             if isinstance(polys, dict):
                 if check_size and "image_size" in polys:
-                    if (
-                        self.ny != polys["image_size"][0]
-                        or self.nx != polys["image_size"][1]
-                    ):
+                    if self.ny != polys["image_size"][0] or self.nx != polys["image_size"][1]:
                         # TODO massage to match?
                         raise RuntimeError(
                             "Image size polygons were defined on as passed to"
-                            " add_polygons does "
-                            + "not match this MagSim's mesh."
+                            " add_polygons does " + "not match this MagSim's mesh."
                         )
                 return [np.array(p) for p in polys["nodes"]]
             elif isinstance(polys, str):
@@ -117,9 +111,7 @@ class MagSim:
             elif isinstance(image, str):
                 return np.loadtxt(image)
             else:
-                raise TypeError(
-                    "image argument must be an np.ndarray or string?"
-                )
+                raise TypeError("image argument must be an np.ndarray or string?")
         return None
 
     def _polygon_gui(
@@ -165,9 +157,7 @@ class MagSim:
         fig.colorbar(img, cax=cax)
         ax.set_title(prompt)
 
-        psw = dukit.polygon.PolygonSelectionWidget(
-            ax, base_scale=base_scale, style=kwargs
-        )
+        psw = dukit.polygon.PolygonSelectionWidget(ax, base_scale=base_scale, style=kwargs)
 
         if polygon_nodes is not None:
             psw.load_nodes(polygon_nodes)
@@ -178,11 +168,7 @@ class MagSim:
         if len(pgons) < 1:
             raise RuntimeError("You didn't define any polygons")
 
-        pgon_lst = [
-            pgon.get_nodes()
-            for pgon in pgons
-            if np.shape(pgon.get_nodes())[0] > 2
-        ]
+        pgon_lst = [pgon.get_nodes() for pgon in pgons if np.shape(pgon.get_nodes())[0] > 2]
         output_dict = {"nodes": pgon_lst, "image_shape": (self.ny, self.nx)}
 
         return output_dict
@@ -229,9 +215,7 @@ class MagSim:
         """
         # todo: do we want to be able to add _noise_ here too? / other imperfections?
         if isinstance(magnetizations, (float, int)):
-            self.magnetizations_lst = [
-                magnetizations for m, _ in enumerate(self.polygon_nodes)
-            ]
+            self.magnetizations_lst = [magnetizations for m, _ in enumerate(self.polygon_nodes)]
         else:
             if len(magnetizations) != len(self.polygon_nodes):
                 raise ValueError(
@@ -250,18 +234,14 @@ class MagSim:
                     ]
                 else:
                     raise RuntimeError(
-                        "I don't recognise that shape of unit_vectors."
-                        f" ({np.shape(unit_vectors)})"
+                        f"I don't recognise that shape of unit_vectors. ({np.shape(unit_vectors)})"
                     )
             else:
                 # ensure unit vectors
-                self.unit_vectors_lst = [
-                    tuple(np.array(uv) / LA.norm(uv)) for uv in unit_vectors
-                ]
+                self.unit_vectors_lst = [tuple(np.array(uv) / LA.norm(uv)) for uv in unit_vectors]
         else:
             raise TypeError(
-                f"unit_vectors wrong type ({type(unit_vectors)}), not"
-                " ndarray/list/tuple. :("
+                f"unit_vectors wrong type ({type(unit_vectors)}), not ndarray/list/tuple. :("
             )
 
         if len(self.magnetizations_lst) != len(self.unit_vectors_lst):
@@ -273,9 +253,7 @@ class MagSim:
 
         # now construct mag
         self.mag = dd(lambda: np.zeros((self.ny, self.nx)))
-        grid_y, grid_x = np.meshgrid(
-            range(self.ny), range(self.nx), indexing="ij"
-        )
+        grid_y, grid_x = np.meshgrid(range(self.ny), range(self.nx), indexing="ij")
 
         for i, p in tqdm(
             enumerate(self.polygon_nodes),
@@ -288,9 +266,7 @@ class MagSim:
             polygon = dukit.polygon.Polygon(p[:, 0], p[:, 1])
             in_or_out = polygon.is_inside(grid_y, grid_x)
             # 2021-08-04 changed from > 0 -> only defined __inside__ polygon
-            self.mag[self.unit_vectors_lst[i]][
-                in_or_out > 0
-            ] += self.magnetizations_lst[i]
+            self.mag[self.unit_vectors_lst[i]][in_or_out > 0] += self.magnetizations_lst[i]
 
     def save_magnets(self, output_path):
         output_dict = {
@@ -432,9 +408,7 @@ class MagSim:
 
         proj_vec = np.array(projection)
 
-        return np.apply_along_axis(
-            lambda bvec: np.dot(proj_vec, bvec), -1, bfield_reshaped
-        )
+        return np.apply_along_axis(lambda bvec: np.dot(proj_vec, bvec), -1, bfield_reshaped)
 
     def get_magnetization_im(self, unit_vector):
         if self.mag is None:
@@ -478,9 +452,7 @@ class MagSim:
         #   /colorbar_placement.html
         # calculate c_range smartly.
         if self.magnetizations_lst is None:
-            raise AttributeError(
-                "no magnetizations_lst found, define it first aye."
-            )
+            raise AttributeError("no magnetizations_lst found, define it first aye.")
 
         unique_uvs = dd(list)
         for i, uv in enumerate(self.unit_vectors_lst):
@@ -551,17 +523,13 @@ class MagSim:
         if strict_range is not None:
             c_range = strict_range
         else:
-            furthest = np.max(
-                np.abs([np.nanmin(self.bfield), np.nanmax(self.bfield)])
-            )
+            furthest = np.max(np.abs([np.nanmin(self.bfield), np.nanmax(self.bfield)]))
             c_range = (-furthest, furthest)
 
         polys = None if annotate_polygons is None else self.polygon_nodes
 
         fig, ax = plt.subplots()
-        proj_name = (
-            f"({projection[0]:.2f},{projection[1]:.2f},{projection[2]:.2f})"
-        )
+        proj_name = f"({projection[0]:.2f},{projection[1]:.2f},{projection[2]:.2f})"
         c_label_ = f"B . {proj_name}, (G)" if c_label is None else c_label
         dukit.itool.plot_image_on_ax(
             fig,
@@ -608,24 +576,14 @@ class MagSim:
                 if not np.all(crop_polygon.is_inside(p[:, 0], p[:, 1]) > 0):
                     break  # don't append to keep lst
             else:
-                keep_idxs.append(
-                    idx
-                )  # only executes if loop exits normally (not 'break')
-        self.polygon_nodes = [
-            val
-            for idx, val in enumerate(self.polygon_nodes)
-            if idx in keep_idxs
-        ]
+                keep_idxs.append(idx)  # only executes if loop exits normally (not 'break')
+        self.polygon_nodes = [val for idx, val in enumerate(self.polygon_nodes) if idx in keep_idxs]
         if self.magnetizations_lst is not None:
             self.magnetizations_lst = [
-                val
-                for idx, val in enumerate(self.magnetizations_lst)
-                if idx in keep_idxs
+                val for idx, val in enumerate(self.magnetizations_lst) if idx in keep_idxs
             ]
             self.unit_vectors_lst = [
-                val
-                for idx, val in enumerate(self.unit_vectors_lst)
-                if idx in keep_idxs
+                val for idx, val in enumerate(self.unit_vectors_lst) if idx in keep_idxs
             ]
 
     def crop_polygons_gui(self, show_polygons=True, **kwargs):
@@ -635,24 +593,18 @@ class MagSim:
         else:
             pn = None
             n_og_polygons = 0
-        pgon_dict = self._polygon_gui(
-            polygon_nodes=pn, prompt="Select crop polygon", **kwargs
-        )
+        pgon_dict = self._polygon_gui(polygon_nodes=pn, prompt="Select crop polygon", **kwargs)
         new_pgons = [np.array(p) for p in pgon_dict["nodes"][n_og_polygons:]]
         self.crop_polygons(new_pgons)
 
     def crop_magnetization(self, crop_polygon_nodes):
         if self.mag is None:
-            raise AttributeError(
-                "You haven't defined mag yet! (use define_magnets)."
-            )
+            raise AttributeError("You haven't defined mag yet! (use define_magnets).")
         crop_polygons = [
             dukit.polygon.Polygon(crop_nodes[:, 0], crop_nodes[:, 1])
             for crop_nodes in crop_polygon_nodes
         ]
-        grid_y, grid_x = np.meshgrid(
-            range(self.ny), range(self.nx), indexing="ij"
-        )
+        grid_y, grid_x = np.meshgrid(range(self.ny), range(self.nx), indexing="ij")
 
         for polygon in tqdm(
             crop_polygons,
@@ -674,9 +626,7 @@ class MagSim:
         unique_uvs = dd(list)
         for i, uv in enumerate(self.unit_vectors_lst):
             unique_uvs[uv].append(i)
-        mag_image = np.sum(
-            [self.get_magnetization_im(uv) for uv in unique_uvs], axis=0
-        )
+        mag_image = np.sum([self.get_magnetization_im(uv) for uv in unique_uvs], axis=0)
         n_og_polygons = len(self.polygon_nodes)
         crop_dict = self._polygon_gui(
             polygon_nodes=self.polygon_nodes,
@@ -700,31 +650,23 @@ class SandboxMagSim(MagSim):
         pxl_y = fov_dims[0] / self.ny
         pxl_x = fov_dims[1] / self.nx
         if int(np.floor(pxl_y)) != int(np.floor(pxl_x)):
-            raise ValueError(
-                "fov_dims ratio height:width does not match mesh height:width ratio."
-            )
+            raise ValueError("fov_dims ratio height:width does not match mesh height:width ratio.")
         self.pixel_size = pxl_y
 
     def add_template_polygons(self, polygons=None):
         """polygons takes precedence."""
-        self.template_polygon_nodes = self._load_polys(
-            polygons, check_size=True
-        )
+        self.template_polygon_nodes = self._load_polys(polygons, check_size=True)
 
     def rescale_template(self, factor):
         if self.template_polygon_nodes is None:
-            raise RuntimeError(
-                "Add/define template_polygon_nodes before rescaling."
-            )
+            raise RuntimeError("Add/define template_polygon_nodes before rescaling.")
 
         for polygon in self.template_polygon_nodes:
             for node in polygon:
                 node[0] *= factor
                 node[1] *= factor
 
-    def adjust_template(
-        self, output_path=None, mean_plus_minus=None, **kwargs
-    ):
+    def adjust_template(self, output_path=None, mean_plus_minus=None, **kwargs):
         if self.template_polygon_nodes is None:
             raise AttributeError("Add template polygons before adjusting.")
         pgon_dict = self._polygon_gui(
@@ -757,18 +699,14 @@ class ComparisonMagSim(MagSim):
         fov_dims,  # (the height, width of the image in m)
     ):
         if fov_dims is None:
-            raise ValueError(
-                "You need to supply fov_dims (the height, width of the image in m)."
-            )
+            raise ValueError("You need to supply fov_dims (the height, width of the image in m).")
         if (
             not isinstance(fov_dims, (tuple, list, np.ndarray))
             or len(fov_dims) != 2
             or not isinstance(fov_dims[0], (int, float))
             or not isinstance(fov_dims[1], (int, float))
         ):
-            raise TypeError(
-                "fov_dims needs to be length 2 array-like of int/floats"
-            )
+            raise TypeError("fov_dims needs to be length 2 array-like of int/floats")
 
         # check for path etc. here
         self.base_image = self._load_image(image)
@@ -777,9 +715,7 @@ class ComparisonMagSim(MagSim):
         pxl_y = fov_dims[0] / self.ny
         pxl_x = fov_dims[1] / self.nx
         if pxl_y != pxl_x:
-            raise ValueError(
-                "fov_dims ratio height:width does not match image height:width ratio."
-            )
+            raise ValueError("fov_dims ratio height:width does not match image height:width ratio.")
         self.pixel_size = pxl_y
 
     def rescale(self, factor):
@@ -821,12 +757,8 @@ class ComparisonMagSim(MagSim):
 
         c_label_meas_ = "B (G)" if c_label_meas is None else c_label_meas
 
-        proj_name = (
-            f"({projection[0]:.2f},{projection[1]:.2f},{projection[2]:.2f})"
-        )
-        c_label_sim_ = (
-            f"B . {proj_name}, (G)" if c_label_sim is None else c_label_sim
-        )
+        proj_name = f"({projection[0]:.2f},{projection[1]:.2f},{projection[2]:.2f})"
+        c_label_sim_ = f"B . {proj_name}, (G)" if c_label_sim is None else c_label_sim
 
         if annotate_polygons is False:
             unscaled_polys = None

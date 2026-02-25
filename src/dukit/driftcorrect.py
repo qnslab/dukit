@@ -23,17 +23,18 @@ __pdoc__ = {
 # ============================================================================
 
 from typing import Callable
+
+import matplotlib.pyplot as plt
 import numpy as np
 import numpy.typing as npt
-from tqdm.autonotebook import tqdm
 from skimage.registration import phase_cross_correlation as cross_correl
 from skimage.transform import EuclideanTransform, warp
-import matplotlib.pyplot as plt
+from tqdm.autonotebook import tqdm
+
+import dukit.itool
 
 # ============================================================================
-
 import dukit.json2dict
-import dukit.itool
 import dukit.systems
 
 # ============================================================================
@@ -61,9 +62,7 @@ def _drift_correct_stack(
 
     reg_sig_norm = np.empty(move_sig_norm.shape)
     for i in range(move_sig_norm.shape[-1]):
-        reg_sig_norm[:, :, i] = warp(
-            move_sig_norm[:, :, i], tform, mode="edge"
-        )
+        reg_sig_norm[:, :, i] = warp(move_sig_norm[:, :, i], tform, mode="edge")
     return reg_sig_norm, tuple(shift_calc)
 
 
@@ -77,8 +76,7 @@ def read_and_drift_correct(
     system: dukit.systems.System,
     roi_coords: tuple[int, int, int, int],
     ignore_ref: bool = False,
-    mask: npt.NDArray[np.bool_]
-    | None = None,  # True where(i) you want to incl im in accum
+    mask: npt.NDArray[np.bool_] | None = None,  # True where(i) you want to incl im in accum
 ) -> tuple[npt.NDArray, npt.NDArray]:
     first = True
     for i in tqdm(image_seq):
@@ -254,9 +252,7 @@ def drift_correct_test(
     for i in image_seq:
         sig, _, _ = system.read_image(directory + stub(i), ignore_ref, "div")
         pl = np.sum(sig, axis=-1)
-        accum_pl = dukit.itool.crop_roi(
-            pl, (-1, -1, -1, -1)
-        )  # don't crop here
+        accum_pl = dukit.itool.crop_roi(pl, (-1, -1, -1, -1))  # don't crop here
         if first:
             first = False
             prev_accum_pl = accum_pl.copy()
@@ -301,9 +297,7 @@ def drift_correct_test(
         shift_calcs.append(shift_calc)
 
     # plot cropped corrected frames in right column
-    for i, frame, shift_calc, ax in zip(
-        comparison_nums, corrected_frames, shift_calcs, axs[:, 1]
-    ):
+    for i, frame, shift_calc, ax in zip(comparison_nums, corrected_frames, shift_calcs, axs[:, 1]):
         dukit.itool.plot_image_on_ax(
             fig,
             ax,

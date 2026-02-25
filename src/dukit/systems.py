@@ -37,14 +37,13 @@ __pdoc__ = {
 
 import re
 from math import radians
+
 import numpy as np
 import numpy.typing as npt
 
 # ============================================================================
-
 from dukit.json2dict import json_to_dict
 from dukit.warn import warn
-
 
 # ============================================================================
 
@@ -56,7 +55,7 @@ class System:
     """Name of the system."""
 
     _pixel_size: float = -1.0
-    """Specified pixel size (m) (float). 
+    """Specified pixel size (m) (float).
     If negative then obj mag etc. attributes are used to calc. pixel size instead.
     Either _pixel_size or those attributes must be set!
     """
@@ -249,9 +248,7 @@ class System:
 
         f_obj = self._obj_ref_focal_length / self._obj_mag
 
-        camera_pixel_size = (
-            self._sensor_pixel_pitch * f_obj / self._camera_tube_lens
-        )
+        camera_pixel_size = self._sensor_pixel_pitch * f_obj / self._camera_tube_lens
 
         return hardware_binning * camera_pixel_size
 
@@ -280,8 +277,7 @@ class System:
         """
         if None in [self._bias_mag, self._bias_theta, self._bias_phi]:
             raise ValueError(
-                "Bias field not set in System init, "
-                + "and you didn't ask to auto_read"
+                "Bias field not set in System init, " + "and you didn't ask to auto_read"
             )
         return False, (
             self._bias_mag,
@@ -290,9 +286,7 @@ class System:
         )
 
     @staticmethod
-    def norm(
-        sig: npt.NDArray, ref: npt.NDArray, norm: str = "div"
-    ) -> npt.NDArray:
+    def norm(sig: npt.NDArray, ref: npt.NDArray, norm: str = "div") -> npt.NDArray:
         """
 
                 Parameters
@@ -310,23 +304,17 @@ class System:
                     normalised signal
         """
         if norm not in ["div", "sub", "true_sub"]:
-            raise ValueError(
-                "bad norm option, use one of ['sub', 'div', 'true_sub']"
-            )
+            raise ValueError("bad norm option, use one of ['sub', 'div', 'true_sub']")
         if np.mean(sig) > 2 * np.mean(ref):
             # probably didn't use_ref
-            warn(
-                "In renorm assuming not used_ref, norming sig by highest val."
-            )
+            warn("In renorm assuming not used_ref, norming sig by highest val.")
             return sig / np.nanmax(sig, axis=-1)
         if norm == "sub":
             return 1 + (sig - ref) / (sig + ref)
         elif norm == "div":
             return sig / ref
         else:
-            return (sig - ref) / np.nanmax(sig - ref, axis=-1).reshape(
-                sig.shape[:-1] + (1,)
-            )
+            return (sig - ref) / np.nanmax(sig - ref, axis=-1).reshape(sig.shape[:-1] + (1,))
 
 
 # ============================================================================
@@ -345,9 +333,7 @@ class MelbSystem(System):
         npt.NDArray[np.float64],
     ]:
         if norm not in ["div", "sub", "true_sub"]:
-            raise ValueError(
-                "bad norm option, use one of ['sub', 'div', 'true_sub']"
-            )
+            raise ValueError("bad norm option, use one of ['sub', 'div', 'true_sub']")
 
         # now chop up into sig, ref & normalise
         if used_ref:
@@ -397,9 +383,7 @@ class LVControl(MelbSystem):
             sweep_str = fid.readline().rstrip().split("\t")
         sweep_arr = np.array([float(i) for i in sweep_str], dtype=np.float64)
         if np.any(sweep_arr <= 0):
-            warn(
-                "sweep_arr contains negatives or zeroes, check if model can handle!"
-            )
+            warn("sweep_arr contains negatives or zeroes, check if model can handle!")
         return sweep_arr
 
     def get_hardware_binning(self, filepath: str) -> int:
@@ -501,9 +485,7 @@ class LVControl(MelbSystem):
                         int(metadata["AOIHeight"]),
                         int(metadata["AOIWidth"]),
                     ],
-                )[
-                    ::2
-                ]  # hmmm disregard ref -> use every second element.
+                )[::2]  # hmmm disregard ref -> use every second element.
             else:
                 image = np.reshape(
                     raw_data,
@@ -571,14 +553,14 @@ class PyControl(MelbSystem):
         npt.NDArray[np.float64],
     ]:
         if norm not in ["div", "sub", "true_sub"]:
-            raise ValueError(
-                "bad norm option, use one of ['sub', 'div', 'true_sub']"
-            )
+            raise ValueError("bad norm option, use one of ['sub', 'div', 'true_sub']")
 
         # TODO test if moving freqs to last is working here? also the ::2 below.
         dataset = np.load(filepath + ".npz")
-        y_sig, y_ref = (dataset["y_sig"].transpose([1, 2, 0]).copy(), 
-            dataset["y_ref"].transpose([1, 2, 0]).copy())
+        y_sig, y_ref = (
+            dataset["y_sig"].transpose([1, 2, 0]).copy(),
+            dataset["y_ref"].transpose([1, 2, 0]).copy(),
+        )
         if ignore_ref:
             return y_sig, np.ones_like(y_sig), y_sig / np.nanmax(y_sig, axis=-1)
         else:
@@ -595,16 +577,14 @@ class PyControl(MelbSystem):
     def read_sweep_arr(self, filepath: str) -> npt.NDArray[np.float64]:
         sweep_arr = np.array(self._read_metadata(filepath)["meas_metadata"]["sweep_x"])
         if np.any(sweep_arr <= 0):
-            warn(
-                "sweep_arr contains negatives or zeroes, check if model can handle!"
-            )
+            warn("sweep_arr contains negatives or zeroes, check if model can handle!")
         return sweep_arr
 
     def get_hardware_binning(self, filepath: str) -> int:
         metadata = self._read_metadata(filepath)
 
         for key in metadata["sys_metadata"]:
-            this =  metadata["sys_metadata"][key]
+            this = metadata["sys_metadata"][key]
             if isinstance(this, dict) and "MainCamera" in this.get("roles", []):
                 binning = metadata["sys_metadata"][key]["binning"]
         if binning[0] != binning[1]:

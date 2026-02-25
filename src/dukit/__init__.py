@@ -5,12 +5,29 @@ lab at RMIT/UniMelb. For the lab control software see
 [DavidBroadway/qdm-control](https://github.com/DavidBroadway/qdm-control)
 (may not be public, talk to David Broadway).
 
-On this page we will document the API, for other information see the [README.md](https://github.com/casparvitch/dukit/blob/main/README.md),
-[INSTALL.md](https://github.com/casparvitch/dukit/blob/main/INSTALL.md) and [DEVDOCS.md](https://github.com/casparvitch/dukit/blob/main/DEVDOCS.md), or click through the sub-package links below.
+On this page we will document the API, for other information see the
+[README.md](https://github.com/casparvitch/dukit/blob/main/README.md),
+[INSTALL.md](https://github.com/casparvitch/dukit/blob/main/INSTALL.md) and
+[DEVDOCS.md](https://github.com/casparvitch/dukit/blob/main/DEVDOCS.md), or click
+through the sub-package links below.
 
-See the [examples](https://github.com/casparvitch/dukit/tree/main/examples) folder for nice examples of usage.
+See the [examples](https://github.com/casparvitch/dukit/tree/main/examples) folder
+for nice examples of usage.
 
 [Repository here](https://github.com/casparvitch/dukit)
+
+# Typical Workflow
+
+A standard analysis proceeds through several stages. First, load your data using a
+System subclass that matches your microscope configuration. This handles hardware-
+specific metadata parsing and returns the image stack along with sweep parameters.
+Next, apply preprocessing such as drift correction, cropping, or smoothing as needed.
+Then fit the spectra using one of the built-in models or a custom subclass of
+FitModel. The fitting results can be used to calculate magnetic fields or other
+quantities of interest. Finally, visualize the results using the plotting utilities
+or export for further analysis.
+
+See the examples directory for notebooks demonstrating each stage.
 
 # DUKIT Public API
 
@@ -199,49 +216,15 @@ in place.
     - Result from AOI average fit(s).
 """
 
-from ._version import __version__
-
-from dukit.systems import (
-    System,
-    MelbSystem,
-    LVControl,
-    PyControl,
-    Zyla,
-    CryoWidefield,
-    LegacyCryoWidefield,
-    Argus,
-    LegacyArgus,
-    PyCryoWidefield,
-)
-from dukit.itool import (
-    mpl_set_run_config,
-    crop_sweep,
-    crop_roi,
-    smooth_image_stack,
-    rebin_image_stack,
-    sum_spatially,
-    get_im_filtered,
-    get_background,
-    get_colormap_range,
-    plot_image,
-    plot_image_on_ax,
-    mask_polygons,
-    get_background,
-    mu_sigma_inside_polygons,
-    get_aois,
-)
-
-from dukit.widget import (
-    LineSelector,
-    PolygonSelector,
-    LinecutSelectionWidget,
-    BulkLinecutWidget,
-)
-from dukit.polygon import (
-    Polygon,
-    PolygonSelectionWidget,
-    polygon_selector,
-    load_polygon_nodes,
+import dukit.plot
+from dukit.driftcorrect import drift_correct_measurement, drift_correct_test
+from dukit.field import (
+    CPairEnsemble,
+    Defect,
+    NVEnsemble,
+    SpinOne,
+    SpinPair,
+    VBEnsemble,
 )
 
 # Not useful yet, until vector field stuff is implemented
@@ -252,48 +235,73 @@ from dukit.polygon import (
 #     NV_AXES_100_100,
 #     NV_AXES_100_110,
 # )
-
 from dukit.fourier import (
-    define_k_vectors,
-    hanning_filter_kspace,
-    define_current_transform,
-    define_magnetization_transformation,
-    pad_image,
-    unpad_image,
     MAG_UNIT_CONV,
     MU_0,
+    define_current_transform,
+    define_k_vectors,
+    define_magnetization_transformation,
+    hanning_filter_kspace,
+    pad_image,
+    unpad_image,
 )
-
-from dukit.driftcorrect import drift_correct_test, drift_correct_measurement
-
-from dukit.magsim import SandboxMagSim, ComparisonMagSim
-
-from dukit.share import RoiAvgFit, AoiAvgFit
-
-import dukit.plot
-
+from dukit.itool import (
+    crop_roi,
+    crop_sweep,
+    get_aois,
+    get_background,
+    get_colormap_range,
+    get_im_filtered,
+    mask_polygons,
+    mpl_set_run_config,
+    mu_sigma_inside_polygons,
+    plot_image,
+    plot_image_on_ax,
+    rebin_image_stack,
+    smooth_image_stack,
+    sum_spatially,
+)
+from dukit.magsim import ComparisonMagSim, SandboxMagSim
 from dukit.pl import (
-    FitModel,
-    ConstStretchedExp,
     ConstBiExponential,
     ConstDampedRabi,
-    LinearLorentzians,
-    LinearN15Lorentzians,
-    LinearN14Lorentzians,
     ConstLorentzians,
+    ConstStretchedExp,
+    FitModel,
+    LinearLorentzians,
+    LinearN14Lorentzians,
+    LinearN15Lorentzians,
     SkewedLorentzians,
     fit_all_pixels,
-    fit_roi,
     fit_aois,
-    load_fit_results,
+    fit_roi,
     get_fitres_params,
+    load_fit_results,
+)
+from dukit.polygon import (
+    Polygon,
+    PolygonSelectionWidget,
+    load_polygon_nodes,
+    polygon_selector,
+)
+from dukit.share import AoiAvgFit, RoiAvgFit
+from dukit.systems import (
+    Argus,
+    CryoWidefield,
+    LegacyArgus,
+    LegacyCryoWidefield,
+    LVControl,
+    MelbSystem,
+    PyControl,
+    PyCryoWidefield,
+    System,
+    Zyla,
+)
+from dukit.widget import (
+    BulkLinecutWidget,
+    LinecutSelectionWidget,
+    LineSelector,
+    PolygonSelector,
 )
 
-from dukit.field import (
-    Defect,
-    SpinOne,
-    NVEnsemble,
-    VBEnsemble,
-    SpinPair,
-    CPairEnsemble,
-)
+from ._version import __version__

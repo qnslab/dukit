@@ -96,9 +96,7 @@ class FitModel:
 
     @staticmethod
     @njit(fastmath=True)
-    def _resid(
-        x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike
-    ):
+    def _resid(x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike):
         raise NotImplementedError()
 
     # =================================
@@ -115,9 +113,7 @@ class FitModel:
 
     @staticmethod
     @njit(fastmath=True)
-    def _jac(
-        x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike
-    ):
+    def _jac(x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike):
         raise NotImplementedError()
 
     # =================================
@@ -169,9 +165,7 @@ class FitModel:
         if param_name == "residual":
             return "Error: sum( || residual(sweep_params) || ) over affine param (a.u.)"
         if param_name.startswith("sigma_"):
-            return self.get_param_odict()[
-                param_name[6:] + "_" + str(param_number)
-            ]
+            return self.get_param_odict()[param_name[6:] + "_" + str(param_number)]
         return self.get_param_odict()[param_name + "_" + str(param_number)]
 
 
@@ -187,19 +181,13 @@ class ConstStretchedExp(FitModel):
 
     @staticmethod
     @njit(fastmath=True)
-    def _resid(
-        x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike
-    ):
+    def _resid(x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike):
         c, charac_exp_t, amp_exp, power_exp = fit_params
-        return (
-            amp_exp * np.exp(-((x / charac_exp_t) ** power_exp)) + c - pl_vals
-        )
+        return amp_exp * np.exp(-((x / charac_exp_t) ** power_exp)) + c - pl_vals
 
     @staticmethod
     @njit(fastmath=True)
-    def _jac(
-        x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike
-    ):
+    def _jac(x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike):
         c, charac_exp_t, amp_exp, power_exp = fit_params
         j = np.empty((np.shape(x)[0], 4))
         j[:, 0] = 1
@@ -240,9 +228,9 @@ class ConstStretchedExp(FitModel):
 class ConstBiExponential(FitModel):
     """
     Model with two exponential decays plus a constant offset.
-    
+
     f(x) = c + a1*exp(-x/t1) + a2*exp(-x/t2)
-    
+
     Parameters
     ----------
     c : float
@@ -256,6 +244,7 @@ class ConstBiExponential(FitModel):
     a2 : float
         Amplitude for second exponential
     """
+
     @staticmethod
     @njit(fastmath=True)
     def _eval(x: npt.ArrayLike, fit_params: npt.ArrayLike):
@@ -264,17 +253,13 @@ class ConstBiExponential(FitModel):
 
     @staticmethod
     @njit(fastmath=True)
-    def _resid(
-        x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike
-    ):
+    def _resid(x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike):
         c, t1, a1, t2, a2 = fit_params
         return c + a1 * np.exp(-x / t1) + a2 * np.exp(-x / t2) - pl_vals
 
     @staticmethod
     @njit(fastmath=True)
-    def _jac(
-        x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike
-    ):
+    def _jac(x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike):
         c, t1, a1, t2, a2 = fit_params
         j = np.empty((np.shape(x)[0], 5))
         j[:, 0] = 1  # wrt constant
@@ -308,32 +293,20 @@ class ConstDampedRabi(FitModel):
 
     @staticmethod
     @njit(fastmath=True)
-    def _resid(
-        x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike
-    ):
+    def _resid(x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike):
         c, omega, pos, amp, tau = fit_params
-        return (
-            amp * np.exp(-(x / tau)) * np.cos(omega * (x - pos)) + c - pl_vals
-        )
+        return amp * np.exp(-(x / tau)) * np.cos(omega * (x - pos)) + c - pl_vals
 
     @staticmethod
     @njit(fastmath=True)
-    def _jac(
-        x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike
-    ):
+    def _jac(x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike):
         c, omega, pos, amp, tau = fit_params
         j = np.empty((np.shape(x)[0], 5))
         j[:, 0] = 1
-        j[:, 1] = (
-            amp * (pos - x) * np.sin(omega * (x - pos)) * np.exp(-x / tau)
-        )  # wrt omega
-        j[:, 2] = (amp * omega * np.sin(omega * (x - pos))) * np.exp(
-            -x / tau
-        )  # wrt pos
+        j[:, 1] = amp * (pos - x) * np.sin(omega * (x - pos)) * np.exp(-x / tau)  # wrt omega
+        j[:, 2] = (amp * omega * np.sin(omega * (x - pos))) * np.exp(-x / tau)  # wrt pos
         j[:, 3] = np.exp(-x / tau) * np.cos(omega * (x - pos))  # wrt amp
-        j[:, 4] = (amp * x * np.cos(omega * (x - pos))) / (
-            np.exp(x / tau) * tau**2
-        )  # wrt tau
+        j[:, 4] = (amp * x * np.cos(omega * (x - pos))) / (np.exp(x / tau) * tau**2)  # wrt tau
         return j
 
     def get_param_defn(self) -> tuple[str, ...]:
@@ -432,12 +405,8 @@ class LinearLorentzians(FitModel):
             a = fit_params[i * 3 + 4]
             g = fwhm / 2
 
-            j[:, 2 + i * 3] = (a * g * (x - c) ** 2) / (
-                (x - c) ** 2 + g**2
-            ) ** 2
-            j[:, 3 + i * 3] = (2 * a * g**2 * (x - c)) / (
-                g**2 + (x - c) ** 2
-            ) ** 2
+            j[:, 2 + i * 3] = (a * g * (x - c) ** 2) / ((x - c) ** 2 + g**2) ** 2
+            j[:, 3 + i * 3] = (2 * a * g**2 * (x - c)) / (g**2 + (x - c) ** 2) ** 2
             j[:, 4 + i * 3] = g**2 / ((x - c) ** 2 + g**2)
         return j
 
@@ -484,9 +453,9 @@ class LinearN15Lorentzians(FitModel):
             pos = fit_params[i * 3 + 3]
             amp = fit_params[i * 3 + 4]
             hwhmsqr = ((fwhm / 2.0) ** 2) / 4
-            val += (
-                0.5 * amp * hwhmsqr / ((x - pos - 1.515) ** 2 + hwhmsqr)
-            ) + (0.5 * amp * hwhmsqr / ((x - pos + 1.515) ** 2 + hwhmsqr))
+            val += (0.5 * amp * hwhmsqr / ((x - pos - 1.515) ** 2 + hwhmsqr)) + (
+                0.5 * amp * hwhmsqr / ((x - pos + 1.515) ** 2 + hwhmsqr)
+            )
         return val
 
     def residuals_scipyfit(self, param_ar, sweep_arr, pl_vals):
@@ -509,9 +478,9 @@ class LinearN15Lorentzians(FitModel):
             pos = fit_params[i * 3 + 3]
             amp = fit_params[i * 3 + 4]
             hwhmsqr = ((fwhm / 2.0) ** 2) / 4
-            val += (
-                0.5 * amp * hwhmsqr / ((x - pos - 1.515) ** 2 + hwhmsqr)
-            ) + (0.5 * amp * hwhmsqr / ((x - pos + 1.515) ** 2 + hwhmsqr))
+            val += (0.5 * amp * hwhmsqr / ((x - pos - 1.515) ** 2 + hwhmsqr)) + (
+                0.5 * amp * hwhmsqr / ((x - pos + 1.515) ** 2 + hwhmsqr)
+            )
         return val - pl_vals
 
     def jacobian_scipyfit(
@@ -543,10 +512,7 @@ class LinearN15Lorentzians(FitModel):
 
             j[:, 2 + i * 3] = (a * g / 4) * (
                 g**2
-                * (
-                    -1 / (g**2 + (x + 1.515 - c) ** 2) ** 2
-                    - 1 / (g**2 + (x - 1.515 - c) ** 2) ** 2
-                )
+                * (-1 / (g**2 + (x + 1.515 - c) ** 2) ** 2 - 1 / (g**2 + (x - 1.515 - c) ** 2) ** 2)
                 + 1 / (g**2 + (x + 1.515 - c) ** 2)
                 + 1 / (g**2 + (x - 1.515 - c) ** 2)
             )
@@ -559,8 +525,7 @@ class LinearN15Lorentzians(FitModel):
                 )
             )
             j[:, 4 + i * 3] = (g**2 / 2) * (
-                1 / (g**2 + (x - c + 1.515) ** 2)
-                + 1 / (g**2 + (x - 1.515 - c) ** 2)
+                1 / (g**2 + (x - c + 1.515) ** 2) + 1 / (g**2 + (x - 1.515 - c) ** 2)
             )
         return j
 
@@ -791,12 +756,8 @@ class ConstLorentzians(FitModel):
             a = fit_params[i * 3 + 3]
             g = fwhm / 2
 
-            j[:, 1 + i * 3] = (a * g * (x - c) ** 2) / (
-                (x - c) ** 2 + g**2
-            ) ** 2
-            j[:, 2 + i * 3] = (2 * a * g**2 * (x - c)) / (
-                g**2 + (x - c) ** 2
-            ) ** 2
+            j[:, 1 + i * 3] = (a * g * (x - c) ** 2) / ((x - c) ** 2 + g**2) ** 2
+            j[:, 2 + i * 3] = (2 * a * g**2 * (x - c)) / (g**2 + (x - c) ** 2) ** 2
             j[:, 3 + i * 3] = g**2 / ((x - c) ** 2 + g**2)
         return j
 
@@ -839,13 +800,7 @@ class SkewedLorentzians(FitModel):
             pos = fit_params[i * 4 + 2]
             amp = fit_params[i * 4 + 3]
             skew = fit_params[i * 4 + 4]
-            val += amp / (
-                1
-                + (
-                    (x - pos) ** 2
-                    / (sigma**2 * (1 + skew * np.sign(x - pos)) ** 2)
-                )
-            )
+            val += amp / (1 + ((x - pos) ** 2 / (sigma**2 * (1 + skew * np.sign(x - pos)) ** 2)))
         return val
 
     def residuals_scipyfit(
@@ -872,13 +827,7 @@ class SkewedLorentzians(FitModel):
             pos = fit_params[i * 4 + 2]
             amp = fit_params[i * 4 + 3]
             skew = fit_params[i * 4 + 4]
-            val += amp / (
-                1
-                + (
-                    (x - pos) ** 2
-                    / (sigma**2 * (1 + skew * np.sign(x - pos)) ** 2)
-                )
-            )
+            val += amp / (1 + ((x - pos) ** 2 / (sigma**2 * (1 + skew * np.sign(x - pos)) ** 2)))
         return val - pl_vals
 
     def jacobian_scipyfit(
@@ -907,11 +856,14 @@ class SkewedLorentzians(FitModel):
             a = fit_params[i * 4 + 3]
             s = fit_params[i * 4 + 4]
 
-            # (2*a*(c - x)^2)/(w^3*(1 + s*Sign[-c + x])^2*(1 + (c - x)^2/(w + s*w*Sign[-c + x])^2)^2)
-            # (-2*a*w^2*(c - x)*(1 + s*Sign[-c + x])*(1 + s*Sign[-c + x] + s*(c - x)*Derivative[1][Sign][-c + x]))/(w^2 + (c - x)^2 + # s*w^2*(s*Sign[c - x]^2 + 2*Sign[-c + x]))^2
+            # (2*a*(c - x)^2)/(w^3*(1 + s*Sign[-c + x])^2*
+            #   (1 + (c - x)^2/(w + s*w*Sign[-c + x])^2)^2)
+            # (-2*a*w^2*(c - x)*(1 + s*Sign[-c + x])*
+            #   (1 + s*Sign[-c + x] + s*(c - x)*Derivative[1][Sign][-c + x]))/
+            #   (w^2 + (c - x)^2 + s*w^2*(s*Sign[c - x]^2 + 2*Sign[-c + x]))^2
             # (1 + (c - x)^2/(w + s*w*Sign[-c + x])^2)^(-1)
-            # (2*a*(c - x)^2*Sign[-c + x])/(w^2*(1 + s*Sign[-c + x])^3*(1 + (c - x)^2/(w + s*w*Sign[-c + x])^2)^2)
-
+            # (2*a*(c - x)^2*Sign[-c + x])/(w^2*(1 + s*Sign[-c + x])^3*
+            #   (1 + (c - x)^2/(w + s*w*Sign[-c + x])^2)^2)
 
             j[:, 1 + i * 4] = (2 * a * (c - x) ** 2) / (
                 w**3
@@ -919,21 +871,12 @@ class SkewedLorentzians(FitModel):
                 * (1 + (c - x) ** 2 / (w + s * w * np.sign(-c + x)) ** 2) ** 2
             )
             j[:, 2 + i * 4] = (
-                -2
-                * a
-                * w**2
-                * (c - x)
-                * (1 + s * np.sign(-c + x))
-                * (1 + s * np.sign(-c + x))
+                -2 * a * w**2 * (c - x) * (1 + s * np.sign(-c + x)) * (1 + s * np.sign(-c + x))
             ) / (
-                w**2
-                + (c - x) ** 2
-                + s * w**2 * (s * np.sign(c - x) ** 2 + 2 * np.sign(-c + x))
+                w**2 + (c - x) ** 2 + s * w**2 * (s * np.sign(c - x) ** 2 + 2 * np.sign(-c + x))
             ) ** 2
 
-            j[:, 3 + i * 4] = (
-                1 + (c - x) ** 2 / (w + s * w * np.sign(-c + x)) ** 2
-            ) ** (-1)
+            j[:, 3 + i * 4] = (1 + (c - x) ** 2 / (w + s * w * np.sign(-c + x)) ** 2) ** (-1)
             j[:, 4 + i * 4] = (2 * a * (c - x) ** 2 * np.sign(-c + x)) / (
                 w**2
                 * (1 + s * np.sign(-c + x)) ** 3

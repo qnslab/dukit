@@ -24,20 +24,21 @@ __pdoc__ = {
 
 # ==========================================================================
 
+import logging
+from datetime import timedelta
+from timeit import default_timer as timer
+
 import numpy as np
 import numpy.typing as npt
-from scipy.optimize import least_squares
-from timeit import default_timer as timer
-from datetime import timedelta
 from joblib import Parallel, delayed
-import logging
+from scipy.optimize import least_squares
+
+import dukit.itool
 
 # ============================================================================
-
 import dukit.pl.common
-import dukit.warn
 import dukit.share
-import dukit.itool
+import dukit.warn
 
 # ==========================================================================
 
@@ -254,9 +255,7 @@ def fit_aois_pl(
         elif norm == "true_sub":
             pl_vec = np.nanmean((s - r) / np.nanmax(s - r), axis=(0, 1))
         aoi_pl_vecs.append(pl_vec)
-        sig_ref_signorms.append(
-            (np.nanmean(s, axis=(0, 1)), np.nanmean(r, axis=(0, 1)), pl_vec)
-        )
+        sig_ref_signorms.append((np.nanmean(s, axis=(0, 1)), np.nanmean(r, axis=(0, 1)), pl_vec))
 
     results_lst = [
         _spfitter(
@@ -279,14 +278,10 @@ def fit_aois_pl(
     # add the single pixel check on
     output_aoi_coords = list(aoi_coords)
     shp = np.shape(sig)[:-1]
-    output_aoi_coords.insert(
-        0, (shp[0] // 2, shp[1] // 2, shp[0] // 2 + 1, shp[1] // 2 + 1)
-    )
+    output_aoi_coords.insert(0, (shp[0] // 2, shp[1] // 2, shp[0] // 2 + 1, shp[1] // 2 + 1))
 
     ret = dict()
-    for n, ((s_avg, r_avg, pl_vec), result) in enumerate(
-        zip(sig_ref_signorms, results_lst)
-    ):
+    for n, ((s_avg, r_avg, pl_vec), result) in enumerate(zip(sig_ref_signorms, results_lst)):
         best_params = result[: len(pguess)]
         best_sigmas = result[len(pguess) : -1]
         best_residual = fit_model(best_params, sweep_arr) - pl_vec
@@ -397,11 +392,7 @@ def fit_all_pixels_pl(
         fit_model,
         *dukit.pl.common.gen_init_guesses(fit_model, guess_dict, bounds_dict),
     )
-    pguess = (
-        roi_avg_result.best_params
-        if roi_avg_result is not None
-        else init_pguess
-    )
+    pguess = roi_avg_result.best_params if roi_avg_result is not None else init_pguess
 
     # call into the library (measure time)
     t0 = timer()
@@ -426,15 +417,12 @@ def fit_all_pixels_pl(
     dt = timedelta(seconds=t1 - t0).total_seconds()
     logging.info(f"fit time: {dt:.2f}s")
 
-    results_arr = np.array(results_lst).reshape(
-        (*sig_norm.shape[:2], 2 * len(pguess) + 1)
-    )
+    results_arr = np.array(results_lst).reshape((*sig_norm.shape[:2], 2 * len(pguess) + 1))
     names = list(fit_model.get_param_odict().keys())
     names.extend([f"sigma_{n}" for n in names])
     names.append("residual_0")
     fit_image_results = {
-        name: array
-        for name, array in zip(names, dukit.itool._iterframe(results_arr))
+        name: array for name, array in zip(names, dukit.itool._iterframe(results_arr))
     }
 
     return fit_image_results
@@ -460,14 +448,10 @@ def _spfitter(
             args=(sweep_arr, pl_vec),
             **fit_optns,
         )
-        perr = dukit.pl.common.calc_sigmas(
-            fit_model, sweep_arr, pl_vec, fitres.x
-        )
+        perr = dukit.pl.common.calc_sigmas(fit_model, sweep_arr, pl_vec, fitres.x)
         resid = fit_model.residuals_scipyfit(fitres.x, sweep_arr, pl_vec)
     except ValueError:
-        return np.hstack(
-            (np.full_like(p0, np.nan), np.full_like(p0, np.nan), np.nan)
-        )
+        return np.hstack((np.full_like(p0, np.nan), np.full_like(p0, np.nan), np.nan))
     return np.hstack(
         (
             fitres.x,

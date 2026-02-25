@@ -95,9 +95,7 @@ class SpinOne(Defect):
 
 
 class NVEnsemble(SpinOne):
-    temp_coeff: float = (
-        13.51  # K/MHz = -0.074 MHz/K => 10.1038/s41467-021-24725-1
-    )
+    temp_coeff: float = 13.51  # K/MHz = -0.074 MHz/K => 10.1038/s41467-021-24725-1
     zero_field_splitting: float = 2.87e3  # MHz
     gslac: float = 0.1024  # Teslas
     gamma: float = 28.0e3  # MHz/T
@@ -114,21 +112,15 @@ class NVEnsemble(SpinOne):
             if past_gslac:
                 b_defs = (res_freqs[0] / self.gamma + self.gslac,)
             elif np.mean(res_freqs[0]) < self.zero_field_splitting:
-                b_defs = (
-                    (self.zero_field_splitting - res_freqs[0]) / self.gamma,
-                )
+                b_defs = ((self.zero_field_splitting - res_freqs[0]) / self.gamma,)
             else:
-                b_defs = (
-                    (res_freqs[0] - self.zero_field_splitting) / self.gamma,
-                )
+                b_defs = ((res_freqs[0] - self.zero_field_splitting) / self.gamma,)
         elif num_res == 2:
             b_defs = (np.abs(res_freqs[1] - res_freqs[0]) / (2 * self.gamma),)
         else:
             b_defs = []
             for i in range(num_res // 2):
-                b_defs.append(
-                    np.abs(res_freqs[-i - 1] - res_freqs[i]) / (2 * self.gamma)
-                )
+                b_defs.append(np.abs(res_freqs[-i - 1] - res_freqs[i]) / (2 * self.gamma))
             if ((num_res // 2) * 2) + 1 == num_res:
                 peak = res_freqs[num_res // 2 + 1]
                 sign = -1 if np.mean(peak) < self.zero_field_splitting else 1
@@ -139,9 +131,7 @@ class NVEnsemble(SpinOne):
 
 class VBEnsemble(SpinOne):
     # could add full D->T curve later?
-    temp_coeff: float = (
-        -1.605
-    )  # K/MHz = -0.623 MHz/K => 10.1038/s41467-021-24725-1
+    temp_coeff: float = -1.605  # K/MHz = -0.623 MHz/K => 10.1038/s41467-021-24725-1
     zero_field_splitting: float = 3.68e3  # MHz
     gslac: float = 0.1300  # Teslas
     gamma: float = 28.0e3  # MHz/T
@@ -158,13 +148,9 @@ class VBEnsemble(SpinOne):
             if past_gslac:
                 b_defs = (res_freqs[0] / self.gamma + self.gslac,)
             elif np.mean(res_freqs[0]) < self.zero_field_splitting:
-                b_defs = (
-                    (self.zero_field_splitting - res_freqs[0]) / self.gamma,
-                )
+                b_defs = ((self.zero_field_splitting - res_freqs[0]) / self.gamma,)
             else:
-                b_defs = (
-                    (res_freqs[0] - self.zero_field_splitting) / self.gamma,
-                )
+                b_defs = ((res_freqs[0] - self.zero_field_splitting) / self.gamma,)
         elif num_res == 2:
             b_defs = (np.abs(res_freqs[1] - res_freqs[0]) / (2 * self.gamma),)
         else:

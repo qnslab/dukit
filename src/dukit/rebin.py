@@ -113,8 +113,8 @@ will produce ::
 for (2, 2) tiles and a *sum* reduction.
 
 """
-import numpy as np
 
+import numpy as np
 from numpy.lib.stride_tricks import as_strided
 
 __author__ = "Sebastien Brisard"
@@ -168,17 +168,12 @@ def rebin(a, factor, func=None):
     if np.isscalar(factor):
         factor = dim * (factor,)
     elif len(factor) != dim:
-        raise ValueError(
-            "length of factor must be {} (was {})".format(dim, len(factor))
-        )
+        raise ValueError("length of factor must be {} (was {})".format(dim, len(factor)))
     if func is None:
         func = np.mean
     for f in factor:
         if f != int(f):
-            raise ValueError(
-                "factor must be an int or a tuple of ints "
-                "(got {})".format(f)
-            )
+            raise ValueError("factor must be an int or a tuple of ints (got {})".format(f))
 
     new_shape = [n // f for n, f in zip(a.shape, factor)] + list(factor)
     new_strides = [s * f for s, f in zip(a.strides, factor)] + list(a.strides)

@@ -23,22 +23,21 @@ Functions
 - `dukit.pl.interface.load_fit_results`
 """
 
+from dukit.pl.interface import (
+    fit_all_pixels,
+    fit_aois,
+    fit_roi,
+    get_fitres_params,
+    load_fit_results,
+)
 from dukit.pl.model import (
-    FitModel,
-    ConstStretchedExp,
     ConstBiExponential,
     ConstDampedRabi,
+    ConstLorentzians,
+    ConstStretchedExp,
+    FitModel,
     LinearLorentzians,
     LinearN14Lorentzians,
     LinearN15Lorentzians,
-    ConstLorentzians,
     SkewedLorentzians,
-)
-
-from dukit.pl.interface import (
-    fit_all_pixels,
-    fit_roi,
-    fit_aois,
-    load_fit_results,
-    get_fitres_params,
 )

@@ -38,8 +38,8 @@ __pdoc__ = {
 # ============================================================================
 
 import numpy as np
-import numpy.typing as npt
 import numpy.linalg as LA  # noqa: N812
+import numpy.typing as npt
 
 # ============================================================================
 
@@ -71,7 +71,7 @@ CVD Diamonds are usually <100>, <110>. HPHT usually <100>, <100>.
 
 ![](https://i.imgur.com/Rudnzyo.png)
 
-Purple plane corresponds to top (or bottom) face of diamond, orange planes correspond to 
+Purple plane corresponds to top (or bottom) face of diamond, orange planes correspond to
 edge faces.
 """
 
@@ -160,14 +160,9 @@ def get_unvs(
     if unvs:
         unv_arr = np.array(unvs)
         if unv_arr.shape != (4, 3):
-            raise ValueError(
-                "Incorrect unvs format passed. Expected shape: (4,3)."
-            )
+            raise ValueError("Incorrect unvs format passed. Expected shape: (4,3).")
         if auto_order_unvs:
-            nv_axes = [
-                {"nv_number": i, "ori": ori.copy()}
-                for i, ori in enumerate(unv_arr)
-            ]
+            nv_axes = [{"nv_number": i, "ori": ori.copy()} for i, ori in enumerate(unv_arr)]
             for family in nv_axes:
                 projection = np.dot(family["ori"], [bias_x, bias_y, bias_z])
                 family["mag"] = np.abs(projection)
@@ -175,14 +170,9 @@ def get_unvs(
             sorted_dict = sorted(nv_axes, key=lambda x: x["mag"], reverse=True)
 
             for idx in range(len(sorted_dict)):
-                unv_arr[idx, :] = (
-                    np.array(sorted_dict[idx]["ori"])
-                    * sorted_dict[idx]["sign"]
-                )
+                unv_arr[idx, :] = np.array(sorted_dict[idx]["ori"]) * sorted_dict[idx]["sign"]
     else:
-        unv_arr = np.zeros(
-            (4, 3)
-        )  # z unit vectors of unv frame (in lab frame)
+        unv_arr = np.zeros((4, 3))  # z unit vectors of unv frame (in lab frame)
         if diamond_ori == "<100>_<100>":
             nv_axes = NV_AXES_100_100
         elif diamond_ori == "<100>_<110>":
@@ -194,9 +184,7 @@ def get_unvs(
 
         for family in nv_axes:
             projection = (
-                family["ori"][0] * bias_x
-                + family["ori"][1] * bias_y
-                + family["ori"][2] * bias_z
+                family["ori"][0] * bias_x + family["ori"][1] * bias_y + family["ori"][2] * bias_z
             )
             family["mag"] = np.abs(projection)
             family["sign"] = np.sign(projection)
@@ -240,9 +228,7 @@ def get_unv_frames(
     unv_frames : np array
         [ [uNV1_X, uNV1_Y, uNV1_Z], [uNV2_X, uNV2_Y, uNV2_Z], ...]
     """
-    nv_signed_ori = get_unvs(
-        bias_x, bias_y, bias_z, unvs, auto_order_unvs, diamond_ori
-    )
+    nv_signed_ori = get_unvs(bias_x, bias_y, bias_z, unvs, auto_order_unvs, diamond_ori)
     unv_frames = np.zeros((4, 3, 3))
     for i in range(4):
         # calculate uNV frame in the lab frame

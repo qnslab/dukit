@@ -39,12 +39,6 @@ has some tips on how to get started with git & github, which should be helpful.
 - Go through docs carefully, e.g. read each file docstring.
 - Test the asymmetric binning in fourier space.
 
-# Import/dependency graph
-
-Generated with `doit draw`.
-
-![](../../dukit.png)
-
 # How to add a new scipyfit model function
 
 Comparatively simple, just add a subclass of `dukit.pl.model.FitModel` in 
@@ -65,7 +59,7 @@ approximation). So best to provide a jacobian, unless there is no analytic form.
 It is a little trickier to add a model function to `cpufit`/`gpufit` as you'll need to 
 recompile the library (see instructions below). We install `cpufit` and `gpufit` as pip
 extensions (see INSTALL.md), so you will probably want to put any new output wheel files
-in the `ext_wheels` directory.
+in the `gpufit_wheels` directory.
 
 First of all, you will want to work in our fork of 
 [gpufit](https://github.com/gpufit/Gpufit), which can be accessed 
@@ -234,4 +228,4 @@ If your card is relatively modern it shouldn't be such a hastle, fortunately.
     - ENSURE `wheel` installed (`pip install wheel`) BEFORE compilation
     - uninstall any previous version you installed (`pip uninstall pygpufit`)
     - `pip install C:\src\gpufit-build-Release\pyGpufit\dist\wheel_file_here.wh`
-    - Add to `ext_wheels` folder in dukit repo, with appropriate arch (e.g. `win_amd64`).
+    - Add to `gpufit_wheels` folder in dukit repo, with appropriate arch (e.g. `win_amd64`).

@@ -12,7 +12,6 @@ Functions
 
 # ============================================================================
 
-
 __author__ = "Sam Scholten"
 __pdoc__ = {
     "dukit.json2dict.json_to_dict": True,
@@ -25,13 +24,12 @@ __pdoc__ = {
 
 import os
 import re
-import simplejson as json
+
 import numpy as np
+import simplejson as json
 
 # ============================================================================
-
 from dukit.warn import warn
-
 
 # ============================================================================
 
@@ -85,9 +83,7 @@ def _prettyjson(obj, indent=4, maxlinelength=80):
     <Pass the dict as obj and get back a string>
     """
 
-    items, _ = _getsubitems(
-        obj, itemkey="", islast=True, maxlinelength=maxlinelength
-    )
+    items, _ = _getsubitems(obj, itemkey="", islast=True, maxlinelength=maxlinelength)
     res = _indentitems(items, indent, indentcurrent=0)
     return res
 
@@ -134,9 +130,7 @@ def _getsubitems(obj, itemkey: str, islast: bool, maxlinelength: int):
             if isdict:
                 itemkey_ = _basictype2str(k)
             # inner = (items, indent)
-            inner, can_concat_ = _getsubitems(
-                obj[k], itemkey_, islast_, maxlinelength
-            )
+            inner, can_concat_ = _getsubitems(obj[k], itemkey_, islast_, maxlinelength)
             # inner can be a string or a list
             subitems.extend(inner)
             # if a child couldn't concat, then we are not able either
@@ -256,9 +250,7 @@ def _json_remove_comments(string, strip_space=True):
             escaped = end_slashes_re.search(string, 0, match.start())
 
             # start of string or unescaped quote character to end string
-            if not in_string or (
-                escaped is None or len(escaped.group()) % 2 == 0
-            ):  # noqa
+            if not in_string or (escaped is None or len(escaped.group()) % 2 == 0):  # noqa
                 in_string = not in_string
             index -= 1  # include " character in next catch
         elif not (in_string or in_multi or in_single):
@@ -272,9 +264,7 @@ def _json_remove_comments(string, strip_space=True):
                 new_str.append(" " * len(val))
         elif val in "\r\n" and not (in_multi or in_string) and in_single:
             in_single = False
-        elif not (
-            (in_multi or in_single) or (val in " \r\n\t" and strip_space)
-        ):  # noqa
+        elif not ((in_multi or in_single) or (val in " \r\n\t" and strip_space)):  # noqa
             new_str.append(val)
 
         if not strip_space:
