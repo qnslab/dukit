@@ -87,12 +87,54 @@ class TestKVectors:
         """Test that k=0 at image center."""
         shape = (32, 32)
         pixel_size = 1e-6
-        
+
         kx, ky, k_mag = define_k_vectors(shape, pixel_size)
-        
+
         # Center should have k=0 (with epsilon offset)
         center = (shape[0] // 2, shape[1] // 2)
         np.testing.assert_allclose(k_mag[center], 0.0, atol=1e-5)
+
+    def test_k_vector_epsilon_kwargs_only(self):
+        """Regression test: binning & epsilon args must be passed as keywords.
+
+        A bare third positional argument used to silently bind to
+        `applied_binning` - e.g. passing `k_vector_epsilon` positionally
+        shrank the effective pixel size ~10^6 and introduced overflow
+        warnings downstream (source/current.py, source/magnetization.py
+        bugfix).
+        """
+        shape = (32, 32)
+        pixel_size = 1e-6
+
+        with pytest.raises(TypeError):
+            define_k_vectors(shape, pixel_size, 1e-6)
+        with pytest.raises(TypeError):
+            define_k_vectors(shape, pixel_size, applied_binning=1e-6)
+
+    def test_k_vector_epsilon_binding(self):
+        """Epsilon must shift the zero-frequency bins, not rescale the grid."""
+        shape = (16, 16)
+        pixel_size = 1.0
+
+        cy, cx = shape[0] // 2, shape[1] // 2
+        ky_out, kx_out, _ = define_k_vectors(shape, pixel_size, k_vector_epsilon=0)
+        # note first return is -ky (image orientation) - see define_k_vectors
+
+        # zero-frequency bins exactly zero with no epsilon
+        np.testing.assert_allclose(kx_out[:, cx], 0.0, atol=0.0)
+        np.testing.assert_allclose(ky_out[cy, :], 0.0, atol=0.0)
+
+        # grid spacing is set by pixel size * binning only:
+        np.testing.assert_allclose(kx_out[0, cx + 1] - kx_out[0, cx], 2 * np.pi / shape[1])
+
+        # and binning rescales accordingly:
+        _, kx_binned, _ = define_k_vectors(shape, pixel_size, applied_binning=2)
+        np.testing.assert_allclose(kx_binned[0, cx + 1] - kx_binned[0, cx], np.pi / shape[1])
+
+        # epsilon shifts the zero bins by exactly epsilon (ky is returned negated)
+        ky_eps, kx_eps, _ = define_k_vectors(shape, pixel_size, k_vector_epsilon=2e-3)
+        np.testing.assert_allclose(kx_eps[:, cx], 2e-3)
+        np.testing.assert_allclose(ky_eps[cy, :], 2e-3)
 
 
 class TestHanningFilter:

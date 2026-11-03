@@ -36,6 +36,8 @@ __pdoc__ = {
 
 # ============================================================================
 
+from numbers import Integral
+
 import numpy as np
 import numpy.typing as npt
 from pyfftw.interfaces import numpy_fft
@@ -121,6 +123,7 @@ def pad_image(
 def define_k_vectors(
     shape: tuple[int, int],
     raw_pixel_size: float,
+    *,
     applied_binning: tuple[int, int] | int = 1,
     k_vector_epsilon: float = 1e-6,
 ) -> tuple[npt.NDArray, npt.NDArray, npt.NDArray]:
@@ -138,11 +141,21 @@ def define_k_vectors(
     k_vector_epsilon : float
         Add an epsilon value to the k-vectors to avoid some issues with 1/0.
 
+    NOTE `applied_binning` and `k_vector_epsilon` are keyword-only args, to
+    prevent silent mis-binding (e.g. a `k_vector_epsilon` value landing in
+    the `applied_binning` slot, and vice versa).
+
     Returns
     -------
     ky, kx, k : np array
         Wavenumber meshgrids, k = sqrt( kx^2 + ky^2 )
     """
+    # guard against silent mis-binding (e.g. a float epsilon passed positionally)
+    if not isinstance(applied_binning, (Integral, tuple)):
+        raise TypeError(
+            f"applied_binning must be an int or 2-tuple of ints, got {applied_binning!r}"
+        )
+
     # scaling for the k vectors so they are in the right units
     # (allow for asymmetric binning)
     # get the fft frequencies and shift the ordering and forces type to be float64

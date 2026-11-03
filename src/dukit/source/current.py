@@ -84,7 +84,9 @@ def get_divperp_j(
     fft_jx = dukit.fourier.set_naninf_to_zero(fft_jx)
     fft_jy = dukit.fourier.set_naninf_to_zero(fft_jy)
 
-    ky, kx, k = dukit.fourier.define_k_vectors(fft_jx.shape, pixel_size, k_vector_epsilon)
+    ky, kx, k = dukit.fourier.define_k_vectors(
+        fft_jx.shape, pixel_size, k_vector_epsilon=k_vector_epsilon
+    )
 
     # Note: there was a typo in qdmpy - missing '*' operator for ky term. Fixed here.
     fft_divperp_j = -1j * kx * fft_jx + -1j * ky * fft_jy
@@ -205,7 +207,9 @@ def get_current_from_bxyz(
         fft_bx = dukit.fourier.set_naninf_to_zero(fft_bx)
         fft_by = dukit.fourier.set_naninf_to_zero(fft_by)
 
-        ky, kx, k = dukit.fourier.define_k_vectors(fft_bx.shape, pixel_size, k_vector_epsilon)
+        ky, kx, k = dukit.fourier.define_k_vectors(
+            fft_bx.shape, pixel_size, k_vector_epsilon=k_vector_epsilon
+        )
 
         sign = 1 if nv_above_sample else -1
 
@@ -244,7 +248,9 @@ def get_current_from_bxyz(
         fft_bz = numpy_fft.fftshift(numpy_fft.fft2(bz_pad))
         fft_bz = dukit.fourier.set_naninf_to_zero(fft_bz)
 
-        ky, kx, k = dukit.fourier.define_k_vectors(fft_bz.shape, pixel_size, k_vector_epsilon)
+        ky, kx, k = dukit.fourier.define_k_vectors(
+            fft_bz.shape, pixel_size, k_vector_epsilon=k_vector_epsilon
+        )
 
         sign = 1 if nv_above_sample else -1
 
@@ -386,7 +392,9 @@ def get_current_from_bdefect(
 
     fft_bnv = numpy_fft.fftshift(numpy_fft.fft2(bnv_pad))
 
-    ky, kx, k = dukit.fourier.define_k_vectors(fft_bnv.shape, pixel_size, k_vector_epsilon)
+    ky, kx, k = dukit.fourier.define_k_vectors(
+        fft_bnv.shape, pixel_size, k_vector_epsilon=k_vector_epsilon
+    )
 
     if nv_above_sample:
         unv_cpy = np.copy(u_defect)

@@ -133,7 +133,9 @@ def get_magnetization_from_bxyz(
         fft_bx = dukit.fourier.set_naninf_to_zero(fft_bx)
         fft_by = dukit.fourier.set_naninf_to_zero(fft_by)
 
-        ky, kx, k = dukit.fourier.define_k_vectors(fft_bx.shape, pixel_size, k_vector_epsilon)
+        ky, kx, k = dukit.fourier.define_k_vectors(
+            fft_bx.shape, pixel_size, k_vector_epsilon=k_vector_epsilon
+        )
 
         d_matrix = define_magnetization_transformation(ky, kx, k, standoff, nv_layer_thickness)
 
@@ -175,7 +177,9 @@ def get_magnetization_from_bxyz(
         fft_bz = numpy_fft.fftshift(numpy_fft.fft2(bz_pad))
         fft_bz = dukit.fourier.set_naninf_to_zero(fft_bz)
 
-        ky, kx, k = dukit.fourier.define_k_vectors(fft_bz.shape, pixel_size, k_vector_epsilon)
+        ky, kx, k = dukit.fourier.define_k_vectors(
+            fft_bz.shape, pixel_size, k_vector_epsilon=k_vector_epsilon
+        )
 
         d_matrix = define_magnetization_transformation(ky, kx, k, standoff, nv_layer_thickness)
 
@@ -300,7 +304,9 @@ def get_magnetization_from_bdefect(
 
     fft_b = numpy_fft.fftshift(numpy_fft.fft2(b_pad))
 
-    ky, kx, k = dukit.fourier.define_k_vectors(fft_b.shape, pixel_size, k_vector_epsilon)
+    ky, kx, k = dukit.fourier.define_k_vectors(
+        fft_b.shape, pixel_size, k_vector_epsilon=k_vector_epsilon
+    )
 
     d_matrix = define_magnetization_transformation(ky, kx, k, standoff, nv_layer_thickness)
 
