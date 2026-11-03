@@ -1,0 +1,1026 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>dukit.field.hamiltonian API documentation</title>
+<meta name="description" content="Hamiltonian fitting for defect spin systems …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>dukit.field.hamiltonian</code></h1>
+</header>
+<section id="section-intro">
+<p>Hamiltonian fitting for defect spin systems.</p>
+<h2 id="functions">Functions</h2>
+<ul>
+<li><code>dukit.field.hamiltonian.fit_hamiltonian_pixels</code></li>
+<li><code><a title="dukit.field.hamiltonian.ham_gen_init_guesses" href="#dukit.field.hamiltonian.ham_gen_init_guesses">ham_gen_init_guesses()</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.ham_bounds_from_range" href="#dukit.field.hamiltonian.ham_bounds_from_range">ham_bounds_from_range()</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.ham_pixel_generator" href="#dukit.field.hamiltonian.ham_pixel_generator">ham_pixel_generator()</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.ham_shuffle_pixels" href="#dukit.field.hamiltonian.ham_shuffle_pixels">ham_shuffle_pixels()</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.ham_unshuffle_pixels" href="#dukit.field.hamiltonian.ham_unshuffle_pixels">ham_unshuffle_pixels()</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.ham_unshuffle_fit_results" href="#dukit.field.hamiltonian.ham_unshuffle_fit_results">ham_unshuffle_fit_results()</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.ham_get_pixel_fitting_results" href="#dukit.field.hamiltonian.ham_get_pixel_fitting_results">ham_get_pixel_fitting_results()</a></code></li>
+</ul>
+<h2 id="classes">Classes</h2>
+<ul>
+<li><code><a title="dukit.field.hamiltonian.Hamiltonian" href="#dukit.field.hamiltonian.Hamiltonian">Hamiltonian</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.Bxyz" href="#dukit.field.hamiltonian.Bxyz">Bxyz</a></code></li>
+</ul>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-variables">Global variables</h2>
+<dl>
+<dt id="dukit.field.hamiltonian.AVAILABLE_HAMILTONIANS"><code class="name">var <span class="ident">AVAILABLE_HAMILTONIANS</span></code></dt>
+<dd>
+<div class="desc"><p>Dictionary that defines hamiltonians available for use.</p>
+<p>Add any classes you define here so you can use them.</p>
+<p>You do not need to avoid overlapping parameter names as hamiltonian
+classes can not be used in combination.</p></div>
+</dd>
+<dt id="dukit.field.hamiltonian.GAMMA"><code class="name">var <span class="ident">GAMMA</span></code></dt>
+<dd>
+<div class="desc"><p>The Bohr magneton times the Landé g-factor. See <a href="https://doi.org/10.1016/j.physrep.2013.02.001">Doherty2013</a>
+for details of the g-factor anisotropy.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span><span class="MathJax_Preview"> \gamma_{\rm NV} = \mu_{\rm B} g_e
+</span><script type="math/tex"> \gamma_{\rm NV} = \mu_{\rm B} g_e
+</script></span></td>
+<td></td>
+</tr>
+<tr>
+<td><span><span class="MathJax_Preview"> \mu_B = 1.39962449361 \times 10^{10}\ {\rm Hz} \rm{T}^{-1} </span><script type="math/tex"> \mu_B = 1.39962449361 \times 10^{10}\ {\rm Hz} \rm{T}^{-1} </script></span></td>
+<td><a href="https://physics.nist.gov/cgi-bin/cuu/Value?mubshhz">NIST</a></td>
+</tr>
+<tr>
+<td><span><span class="MathJax_Preview"> \mu_B = 1.399...\ {\rm MHz/G} </span><script type="math/tex"> \mu_B = 1.399...\ {\rm MHz/G} </script></span></td>
+<td></td>
+</tr>
+<tr>
+<td><span><span class="MathJax_Preview"> g_e \approx 2.0023 </span><script type="math/tex"> g_e \approx 2.0023 </script></span></td>
+<td><a href="https://doi.org/10.1016/j.physrep.2013.02.001">Doherty2013</a></td>
+</tr>
+<tr>
+<td><span><span class="MathJax_Preview"> \Rightarrow
+\gamma_{\rm NV} \approx 2.80 {\rm MHz/G} </span><script type="math/tex"> \Rightarrow
+\gamma_{\rm NV} \approx 2.80 {\rm MHz/G} </script></span></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+</dd>
+<dt id="dukit.field.hamiltonian.S_MAT_X"><code class="name">var <span class="ident">S_MAT_X</span></code></dt>
+<dd>
+<div class="desc"><p>Spin-1 operator: S_{\rm X}</p></div>
+</dd>
+<dt id="dukit.field.hamiltonian.S_MAT_Y"><code class="name">var <span class="ident">S_MAT_Y</span></code></dt>
+<dd>
+<div class="desc"><p>Spin-1 operator: S_{\rm Y}</p></div>
+</dd>
+<dt id="dukit.field.hamiltonian.S_MAT_Z"><code class="name">var <span class="ident">S_MAT_Z</span></code></dt>
+<dd>
+<div class="desc"><p>Spin-1 operator: S_{\rm Z}</p></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="dukit.field.hamiltonian.ham_bounds_from_range"><code class="name flex">
+<span>def <span class="ident">ham_bounds_from_range</span></span>(<span>guess, rang)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ham_bounds_from_range(guess, rang):
+    &#34;&#34;&#34;Generate parameter bounds (list, len 2) when given a range option.&#34;&#34;&#34;
+    if isinstance(guess, (list, tuple)) and len(guess) &gt; 1:
+        # separate bounds for each fn of this type
+        if isinstance(rang, (list, tuple)) and len(rang) &gt; 1:
+            bounds = [
+                [each_guess - each_range, each_guess + each_range]
+                for each_guess, each_range in zip(guess, rang)
+            ]
+        # separate guess for each fn of this type, all with same range
+        else:
+            bounds = [
+                [
+                    each_guess - rang,
+                    each_guess + rang,
+                ]
+                for each_guess in guess
+            ]
+    else:
+        if isinstance(rang, (list, tuple)):
+            if len(rang) == 1:
+                rang = rang[0]
+            else:
+                raise RuntimeError(&#34;param range len should match guess len&#34;)
+        # param guess and range are just single vals (easy!)
+        else:
+            bounds = [
+                guess - rang,
+                guess + rang,
+            ]
+    return bounds</code></pre>
+</details>
+<div class="desc"><p>Generate parameter bounds (list, len 2) when given a range option.</p></div>
+</dd>
+<dt id="dukit.field.hamiltonian.ham_gen_init_guesses"><code class="name flex">
+<span>def <span class="ident">ham_gen_init_guesses</span></span>(<span>hamiltonian_type: str,<br>bias_field_gauss: tuple[float, float, float],<br>zero_field_splitting: float = 2870.0,<br>auto_guess: bool = True) ‑> tuple[dict, dict]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ham_gen_init_guesses(
+    hamiltonian_type: str,
+    bias_field_gauss: tuple[float, float, float],
+    zero_field_splitting: float = 2870.0,
+    auto_guess: bool = True,
+) -&gt; tuple[dict, dict]:
+    &#34;&#34;&#34;
+    Generate initial guesses (and bounds) for hamiltonian fitting.
+
+    Arguments
+    ---------
+    hamiltonian_type : str
+        Type of hamiltonian, e.g., &#34;bxyz&#34;.
+    bias_field_gauss : tuple[float, float, float]
+        Bias field in Gauss (Bx, By, Bz).
+    zero_field_splitting : float, default=2870.0
+        Zero field splitting D in MHz.
+    auto_guess : bool, default=True
+        If True, use bias_field_gauss as initial guess for Bx, By, Bz.
+
+    Returns
+    -------
+    init_guesses : dict
+        Dict holding guesses for each parameter.
+    init_bounds : dict
+        Dict holding bounds for each parameter.
+    &#34;&#34;&#34;
+    init_guesses = {}
+    init_bounds = {}
+
+    if auto_guess:
+        bias_x, bias_y, bias_z = bias_field_gauss
+        override_guesses = {&#34;Bx&#34;: bias_x, &#34;By&#34;: bias_y, &#34;Bz&#34;: bias_z}
+    else:
+        override_guesses = {}
+
+    ham_class = AVAILABLE_HAMILTONIANS[hamiltonian_type]
+    for param_key in ham_class.param_defn:
+        if param_key in override_guesses:
+            guess = override_guesses[param_key]
+        elif param_key == &#34;D&#34;:
+            guess = zero_field_splitting
+        else:
+            guess = 0.0
+
+        # Set bounds based on parameter type
+        if param_key == &#34;D&#34;:
+            bounds = [guess - 50.0, guess + 50.0]
+        else:  # Bx, By, Bz
+            bounds = [guess - 100.0, guess + 100.0]
+
+        init_guesses[param_key] = guess
+        init_bounds[param_key] = np.array(bounds)
+
+    return init_guesses, init_bounds</code></pre>
+</details>
+<div class="desc"><p>Generate initial guesses (and bounds) for hamiltonian fitting.</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>hamiltonian_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>Type of hamiltonian, e.g., "bxyz".</dd>
+<dt><strong><code>bias_field_gauss</code></strong> :&ensp;<code>tuple[float, float, float]</code></dt>
+<dd>Bias field in Gauss (Bx, By, Bz).</dd>
+<dt><strong><code>zero_field_splitting</code></strong> :&ensp;<code>float</code>, default=<code>2870.0</code></dt>
+<dd>Zero field splitting D in MHz.</dd>
+<dt><strong><code>auto_guess</code></strong> :&ensp;<code>bool</code>, default=<code>True</code></dt>
+<dd>If True, use bias_field_gauss as initial guess for Bx, By, Bz.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>init_guesses</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dict holding guesses for each parameter.</dd>
+<dt><strong><code>init_bounds</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dict holding bounds for each parameter.</dd>
+</dl></div>
+</dd>
+<dt id="dukit.field.hamiltonian.ham_get_pixel_fitting_results"><code class="name flex">
+<span>def <span class="ident">ham_get_pixel_fitting_results</span></span>(<span>hamiltonian, fit_results, pixel_data)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ham_get_pixel_fitting_results(hamiltonian, fit_results, pixel_data):
+    &#34;&#34;&#34;
+    Take the fit result data from scipyfit and back it down to a dictionary of arrays.
+
+    Each array is 2D, representing the values for each parameter (specified by the dict key).
+
+
+    Arguments
+    ---------
+    hamiltonian : `dukit.field.hamiltonian.Hamiltonian`
+        Model we&#39;re fitting to.
+    fit_results : list of [(y, x), result, jac] objects
+        (see `dukit.field.ham_scipy.ham_to_squares_wrapper`)
+        A list of each pixel&#39;s parameter array, as well as position in image denoted by (y, x).
+    pixel_data : np array, 3D
+        Normalised measurement array, shape: [idx, y, x]. i.e. b_defects.
+        May or may not already be shuffled (i.e. matches fit_results).
+
+    Returns
+    -------
+    fit_image_results : dict
+        Dictionary, key: param_keys, val: image (2D) of param values across FOV.
+        Also has &#39;residual&#39; as a key.
+    sigmas: dict
+        As fit_image_results, but containing parameters errors (standard deviations) across FOV.
+    &#34;&#34;&#34;
+
+    roi_shape = np.shape(pixel_data)[1:]
+
+    # initialise dictionary with key: val = param_name: param_units
+    fit_image_results = hamiltonian.get_param_odict()
+    sigmas = copy.copy(fit_image_results)
+
+    # override with correct size empty arrays using np.zeros
+    for key in fit_image_results.keys():
+        fit_image_results[key] = np.zeros((roi_shape[0], roi_shape[1])) * np.nan
+        sigmas[key] = np.zeros((roi_shape[0], roi_shape[1])) * np.nan
+
+    fit_image_results[&#34;residual_field&#34;] = np.zeros((roi_shape[0], roi_shape[1])) * np.nan
+
+    # Fill the arrays element-wise from the results function, which returns a
+    # 1D array of flattened best-fit parameters.
+    for (y, x), result, jac in fit_results:
+        resid = hamiltonian.residuals_scipyfit(result, pixel_data[:, y, x])
+        fit_image_results[&#34;residual_field&#34;][y, x] = np.sum(
+            np.abs(resid, dtype=np.float64), dtype=np.float64
+        )
+        # uncertainty (covariance matrix), copied from scipy.optimize.curve_fit
+        _, s, vt = svd(jac, full_matrices=False)
+        threshold = np.finfo(float).eps * max(jac.shape) * s[0]
+        s = s[s &gt; threshold]
+        vt = vt[: s.size]
+        pcov = np.dot(vt.T / s**2, vt)
+        perr = np.sqrt(np.diag(pcov))  # array of standard deviations
+
+        for param_num, param_name in enumerate(hamiltonian.param_defn):
+            fit_image_results[param_name][y, x] = result[param_num]
+            sigmas[param_name][y, x] = perr[param_num]
+
+    return fit_image_results, sigmas</code></pre>
+</details>
+<div class="desc"><p>Take the fit result data from scipyfit and back it down to a dictionary of arrays.</p>
+<p>Each array is 2D, representing the values for each parameter (specified by the dict key).</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>hamiltonian</code></strong> :&ensp;<code><a title="dukit.field.hamiltonian.Hamiltonian" href="#dukit.field.hamiltonian.Hamiltonian">Hamiltonian</a></code></dt>
+<dd>Model we're fitting to.</dd>
+<dt><strong><code>fit_results</code></strong> :&ensp;<code>list</code> of <code>[(y, x), result, jac] objects</code></dt>
+<dd>(see <code><a title="dukit.field.ham_scipy.ham_to_squares_wrapper" href="ham_scipy.html#dukit.field.ham_scipy.ham_to_squares_wrapper">ham_to_squares_wrapper()</a></code>)
+A list of each pixel's parameter array, as well as position in image denoted by (y, x).</dd>
+<dt><strong><code>pixel_data</code></strong> :&ensp;<code>np array, 3D</code></dt>
+<dd>Normalised measurement array, shape: [idx, y, x]. i.e. b_defects.
+May or may not already be shuffled (i.e. matches fit_results).</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>fit_image_results</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary, key: param_keys, val: image (2D) of param values across FOV.
+Also has 'residual' as a key.</dd>
+<dt><strong><code>sigmas</code></strong> :&ensp;<code>dict</code></dt>
+<dd>As fit_image_results, but containing parameters errors (standard deviations) across FOV.</dd>
+</dl></div>
+</dd>
+<dt id="dukit.field.hamiltonian.ham_pixel_generator"><code class="name flex">
+<span>def <span class="ident">ham_pixel_generator</span></span>(<span>our_array)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ham_pixel_generator(our_array):
+    &#34;&#34;&#34;
+    Simple generator to shape data as expected by to_squares_wrapper in scipy concurrent method.
+
+    Also allows us to track *where* (i.e. which pixel location) each result corresponds to.
+    See also: `dukit.field.ham_scipy.ham_to_squares_wrapper`.
+
+    Arguments
+    ---------
+    our_array : np array, 3D
+        Shape: [idx, y, x] (idx for each b_defect, freq etc.)
+
+    Returns
+    -------
+    generator : list
+        [y, x, our_array[:, y, x]] generator (yielded)
+    &#34;&#34;&#34;
+    _, len_y, len_x = np.shape(our_array)
+    for y in range(len_y):
+        for x in range(len_x):
+            yield [y, x, our_array[:, y, x]]</code></pre>
+</details>
+<div class="desc"><p>Simple generator to shape data as expected by to_squares_wrapper in scipy concurrent method.</p>
+<p>Also allows us to track <em>where</em> (i.e. which pixel location) each result corresponds to.
+See also: <code><a title="dukit.field.ham_scipy.ham_to_squares_wrapper" href="ham_scipy.html#dukit.field.ham_scipy.ham_to_squares_wrapper">ham_to_squares_wrapper()</a></code>.</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>our_array</code></strong> :&ensp;<code>np array, 3D</code></dt>
+<dd>Shape: [idx, y, x] (idx for each b_defect, freq etc.)</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>generator</code></strong> :&ensp;<code>list</code></dt>
+<dd>[y, x, our_array[:, y, x]] generator (yielded)</dd>
+</dl></div>
+</dd>
+<dt id="dukit.field.hamiltonian.ham_shuffle_pixels"><code class="name flex">
+<span>def <span class="ident">ham_shuffle_pixels</span></span>(<span>data_3d)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ham_shuffle_pixels(data_3d):
+    &#34;&#34;&#34;
+    Simple shuffler
+
+    Arguments
+    ---------
+    data_3d : np array, 3D
+        i.e. freqs/b_defect data, [idx, y, x].
+
+    Returns
+    -------
+    shuffled_in_yx : np array, 3D
+        data_3d shuffled in 2nd, 3rd axis.
+    unshuffler : (y_unshuf, x_unshuf)
+        Both np array. Can be used to unshuffle shuffled_in_yx, i.e. through
+        `dukit.field.hamiltonian.ham_unshuffle_pixels`.
+    &#34;&#34;&#34;
+
+    rng = np.random.default_rng()
+
+    y_shuf = rng.permutation(data_3d.shape[1])
+    y_unshuf = np.argsort(y_shuf)
+    x_shuf = rng.permutation(data_3d.shape[2])
+    x_unshuf = np.argsort(x_shuf)
+
+    shuffled_in_y = data_3d[:, y_shuf, :]
+    shuffled_in_yx = shuffled_in_y[:, :, x_shuf]
+
+    # return shuffled pixels, and arrays to unshuffle
+    return shuffled_in_yx.copy(), (y_unshuf, x_unshuf)</code></pre>
+</details>
+<div class="desc"><p>Simple shuffler</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>data_3d</code></strong> :&ensp;<code>np array, 3D</code></dt>
+<dd>i.e. freqs/b_defect data, [idx, y, x].</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>shuffled_in_yx</code></strong> :&ensp;<code>np array, 3D</code></dt>
+<dd>data_3d shuffled in 2nd, 3rd axis.</dd>
+<dt><strong><code>unshuffler</code></strong> :&ensp;<code>(y_unshuf, x_unshuf)</code></dt>
+<dd>Both np array. Can be used to unshuffle shuffled_in_yx, i.e. through
+<code><a title="dukit.field.hamiltonian.ham_unshuffle_pixels" href="#dukit.field.hamiltonian.ham_unshuffle_pixels">ham_unshuffle_pixels()</a></code>.</dd>
+</dl></div>
+</dd>
+<dt id="dukit.field.hamiltonian.ham_unshuffle_fit_results"><code class="name flex">
+<span>def <span class="ident">ham_unshuffle_fit_results</span></span>(<span>fit_result_dict, unshuffler)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ham_unshuffle_fit_results(fit_result_dict, unshuffler):
+    &#34;&#34;&#34;
+    Simple shuffler
+
+    Arguments
+    ---------
+    fit_result_dict : dict
+        Dictionary, key: param_names, val: image (2D) of param values across FOV. Each image
+        requires reshuffling (which this function achieves).
+        Also has &#39;residual&#39; as a key.
+    unshuffler : (y_unshuf, x_unshuf)
+        Two arrays returned by `dukit.field.hamiltonian.ham_shuffle_pixels` that allow
+        unshuffling of data_2d.
+
+    Returns
+    -------
+    fit_result_dict : dict
+        Same as input, but each fit parameter has been unshuffled.
+    &#34;&#34;&#34;
+    for key, array in fit_result_dict.items():
+        fit_result_dict[key] = ham_unshuffle_pixels(array, unshuffler)
+    return fit_result_dict</code></pre>
+</details>
+<div class="desc"><p>Simple shuffler</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>fit_result_dict</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary, key: param_names, val: image (2D) of param values across FOV. Each image
+requires reshuffling (which this function achieves).
+Also has 'residual' as a key.</dd>
+<dt><strong><code>unshuffler</code></strong> :&ensp;<code>(y_unshuf, x_unshuf)</code></dt>
+<dd>Two arrays returned by <code><a title="dukit.field.hamiltonian.ham_shuffle_pixels" href="#dukit.field.hamiltonian.ham_shuffle_pixels">ham_shuffle_pixels()</a></code> that allow
+unshuffling of data_2d.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>fit_result_dict</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Same as input, but each fit parameter has been unshuffled.</dd>
+</dl></div>
+</dd>
+<dt id="dukit.field.hamiltonian.ham_unshuffle_pixels"><code class="name flex">
+<span>def <span class="ident">ham_unshuffle_pixels</span></span>(<span>data_2d, unshuffler)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ham_unshuffle_pixels(data_2d, unshuffler):
+    &#34;&#34;&#34;
+    Simple shuffler
+
+    Arguments
+    ---------
+    data_2d : np array, 2D
+        i.e. &#39;image&#39; of a single fit parameter, all shuffled up!
+    unshuffler : (y_unshuf, x_unshuf)
+        Two arrays returned by `dukit.field.hamiltonian.ham_shuffle_pixels`
+        that allow unshuffling of data_2d.
+
+    Returns
+    -------
+    unshuffled_in_yx: np array, 2D
+        data_2d but the inverse operation of `dukit.field.hamiltonian.ham_shuffle_pixels`
+        has been applied.
+    &#34;&#34;&#34;
+    y_unshuf, x_unshuf = unshuffler
+    unshuffled_in_y = data_2d[y_unshuf, :]
+    unshuffled_in_yx = unshuffled_in_y[:, x_unshuf]
+    return unshuffled_in_yx.copy()</code></pre>
+</details>
+<div class="desc"><p>Simple shuffler</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>data_2d</code></strong> :&ensp;<code>np array, 2D</code></dt>
+<dd>i.e. 'image' of a single fit parameter, all shuffled up!</dd>
+<dt><strong><code>unshuffler</code></strong> :&ensp;<code>(y_unshuf, x_unshuf)</code></dt>
+<dd>Two arrays returned by <code><a title="dukit.field.hamiltonian.ham_shuffle_pixels" href="#dukit.field.hamiltonian.ham_shuffle_pixels">ham_shuffle_pixels()</a></code>
+that allow unshuffling of data_2d.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>unshuffled_in_yx</code></strong> :&ensp;<code>np array, 2D</code></dt>
+<dd>data_2d but the inverse operation of <code><a title="dukit.field.hamiltonian.ham_shuffle_pixels" href="#dukit.field.hamiltonian.ham_shuffle_pixels">ham_shuffle_pixels()</a></code>
+has been applied.</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="dukit.field.hamiltonian.Bxyz"><code class="flex name class">
+<span>class <span class="ident">Bxyz</span></span>
+<span>(</span><span>chooser_obj, u_defect_frames)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Bxyz(Hamiltonian):
+    r&#34;&#34;&#34;
+    $$ H_i = D S_{Z_i}^{2} + \gamma_{\rm{NV}} \bf{B} \cdot \bf{S} $$
+
+    where \( {\bf S}_i = (S_{X_i}, S_{Y_i}, S_{Z_i}) \) are the spin-1 operators.
+    Here \( (X_i, Y_i, Z_i) \) is the coordinate system of the defect and \( i = 1,2,3,4 \) labels
+    each defect orientation with respect to the lab frame.
+    &#34;&#34;&#34;
+
+    param_defn = [&#34;D&#34;, &#34;Bx&#34;, &#34;By&#34;, &#34;Bz&#34;]
+    param_units: Dict[str, str] = {
+        &#34;D&#34;: &#34;Zero field splitting (MHz)&#34;,
+        &#34;Bx&#34;: &#34;Magnetic field, Bx (G)&#34;,
+        &#34;By&#34;: &#34;Magnetic field, By (G)&#34;,
+        &#34;Bz&#34;: &#34;Magnetic field, Bz (G)&#34;,
+    }
+    jac_defined = False
+
+    def __call__(self, param_ar):
+        &#34;&#34;&#34;
+        Hamiltonain of the defect spin using only the zero field splitting D and the magnetic field
+        bxyz. Takes the fit_params in the order [D, bx, by, bz] and returns the defect frequencies.
+
+        The spin operators need to be rotated to the defect reference frame. This is achieved
+        by projecting the magnetic field onto the u_defect frame.
+
+        i.e. we use the spin operatores in the defect frame, the u_defects in the defect frame,
+        and thus project the magnetic field into this frame (from the lab frame) to determine
+        the defect frequencies (eigenvalues of hamiltonian).
+        &#34;&#34;&#34;
+        defect_frequencies = np.zeros(8)
+        # D, Bx, By, Bz = param_ar
+
+        Hzero = param_ar[0] * (S_MAT_Z * S_MAT_Z)  # noqa: N806
+        for i in range(4):
+            bx_proj_onto_u = np.dot(param_ar[1:4], self.u_defect_frames[i, 0, :])
+            by_proj_onto_u = np.dot(param_ar[1:4], self.u_defect_frames[i, 1, :])
+            bz_proj_onto_u = np.dot(param_ar[1:4], self.u_defect_frames[i, 2, :])
+
+            HB = GAMMA * (  # noqa: N806
+                bx_proj_onto_u * S_MAT_X + by_proj_onto_u * S_MAT_Y + bz_proj_onto_u * S_MAT_Z
+            )
+            freq, _ = LA.eig(Hzero + HB)
+            freq = np.sort(np.real(freq))
+            # freqs: ms=0, ms=+-1 -&gt; transition freq is delta
+            defect_frequencies[i] = np.real(freq[1] - freq[0])
+            defect_frequencies[7 - i] = np.real(freq[2] - freq[0])
+        return defect_frequencies</code></pre>
+</details>
+<div class="desc"><p><span><span class="MathJax_Preview"> H_i = D S_{Z_i}^{2} + \gamma_{\rm{NV}} \bf{B} \cdot \bf{S} </span><script type="math/tex; mode=display"> H_i = D S_{Z_i}^{2} + \gamma_{\rm{NV}} \bf{B} \cdot \bf{S} </script></span></p>
+<p>where <span><span class="MathJax_Preview"> {\bf S}_i = (S_{X_i}, S_{Y_i}, S_{Z_i}) </span><script type="math/tex"> {\bf S}_i = (S_{X_i}, S_{Y_i}, S_{Z_i}) </script></span> are the spin-1 operators.
+Here <span><span class="MathJax_Preview"> (X_i, Y_i, Z_i) </span><script type="math/tex"> (X_i, Y_i, Z_i) </script></span> is the coordinate system of the defect and <span><span class="MathJax_Preview"> i = 1,2,3,4 </span><script type="math/tex"> i = 1,2,3,4 </script></span> labels
+each defect orientation with respect to the lab frame.</p>
+<p>chooser_obj is used on <strong>call</strong> and measured_data to return an array
+of only the required parts.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="dukit.field.hamiltonian.Hamiltonian" href="#dukit.field.hamiltonian.Hamiltonian">Hamiltonian</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="dukit.field.hamiltonian.Bxyz.jac_defined"><code class="name">var <span class="ident">jac_defined</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="dukit.field.hamiltonian.Bxyz.param_defn"><code class="name">var <span class="ident">param_defn</span> : List[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="dukit.field.hamiltonian.Bxyz.param_units"><code class="name">var <span class="ident">param_units</span> : Dict[str, str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="dukit.field.hamiltonian.Hamiltonian" href="#dukit.field.hamiltonian.Hamiltonian">Hamiltonian</a></b></code>:
+<ul class="hlist">
+<li><code><a title="dukit.field.hamiltonian.Hamiltonian.get_param_odict" href="#dukit.field.hamiltonian.Hamiltonian.get_param_odict">get_param_odict</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.Hamiltonian.get_param_unit" href="#dukit.field.hamiltonian.Hamiltonian.get_param_unit">get_param_unit</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.Hamiltonian.grad_fn" href="#dukit.field.hamiltonian.Hamiltonian.grad_fn">grad_fn</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.Hamiltonian.jacobian_scipyfit" href="#dukit.field.hamiltonian.Hamiltonian.jacobian_scipyfit">jacobian_scipyfit</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.Hamiltonian.residuals_scipyfit" href="#dukit.field.hamiltonian.Hamiltonian.residuals_scipyfit">residuals_scipyfit</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="dukit.field.hamiltonian.Chooser"><code class="flex name class">
+<span>class <span class="ident">Chooser</span></span>
+<span>(</span><span>chooser_ar)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Chooser:
+    &#34;&#34;&#34;Chooser class.
+
+    Is fed a boolean &#39;chooser_ar&#39; on __init__, of length (len(b_defects) or len(freqs)) that
+    is used in call to return only the chosen (i.e. True indices in chooser_ar) indices
+    of a given array (some_ar in __call__)
+    &#34;&#34;&#34;
+
+    def __init__(self, chooser_ar):
+        self.chooser_ar = chooser_ar
+
+    def __call__(self, some_ar):
+        return np.array([some_ar[i] for i, do_use in enumerate(self.chooser_ar) if do_use])</code></pre>
+</details>
+<div class="desc"><p>Chooser class.</p>
+<p>Is fed a boolean 'chooser_ar' on <strong>init</strong>, of length (len(b_defects) or len(freqs)) that
+is used in call to return only the chosen (i.e. True indices in chooser_ar) indices
+of a given array (some_ar in <strong>call</strong>)</p></div>
+</dd>
+<dt id="dukit.field.hamiltonian.Hamiltonian"><code class="flex name class">
+<span>class <span class="ident">Hamiltonian</span></span>
+<span>(</span><span>chooser_obj, u_defect_frames)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Hamiltonian:
+    param_defn: List[str] = []
+    param_units: Dict[str, str] = {}
+    jac_defined = False
+
+    def __init__(self, chooser_obj, u_defect_frames):
+        &#34;&#34;&#34;
+        chooser_obj is used on __call__ and measured_data to return an array
+        of only the required parts.
+        &#34;&#34;&#34;
+        self.chooser_obj = chooser_obj
+        self.u_defect_frames = u_defect_frames
+        self.u_defects = u_defect_frames[
+            :, 2, :
+        ].copy()  # i.e. z axis of each defect ref. frame in lab frame
+
+    # =================================
+
+    def __call__(self, param_ar):
+        &#34;&#34;&#34;
+        Evaluates Hamiltonian for given parameter values.
+
+        Arguments
+        ---------
+        param_ar : np array, 1D
+            Array of hamiltonian parameters fed in.
+        &#34;&#34;&#34;
+        raise NotImplementedError(&#34;You MUST override __call__, check your spelling.&#34;)
+
+    # =================================
+
+    def grad_fn(self, param_ar):
+        &#34;&#34;&#34;
+        Return jacobian, shape: (len(b_defects/freqs), len(param_ar))
+        Each column is a partial derivative, with respect to each param in param_ar
+            (i.e. rows, or first index, is indexing though the b_defects/freqs.)
+        &#34;&#34;&#34;
+        raise NotImplementedError(&#34;No grad_fn defined for this Hamiltonian.&#34;)
+
+    # =================================
+
+    def residuals_scipyfit(self, param_ar, measured_data):
+        &#34;&#34;&#34;
+        Evaluates residual: fit model - measured_data. Returns a vector!
+        Measured data must be a np array (of the same shape that __call__ returns),
+        i.e. freqs, or b_defects.
+        &#34;&#34;&#34;
+        return self.chooser_obj(self.__call__(param_ar)) - self.chooser_obj(measured_data)
+
+    # =================================
+
+    def jacobian_scipyfit(self, param_ar, measured_data):
+        &#34;&#34;&#34;Evaluates (analytic) jacobian of ham in format expected by scipy least_squares.&#34;&#34;&#34;
+
+        # need to take out rows (first index) according to chooser_obj.
+        keep_rows = self.chooser_obj(list(range(len(measured_data))))
+        delete_rows = [r for r in range(len(measured_data)) if r not in keep_rows]
+        return np.delete(self.grad_fn(param_ar), delete_rows, axis=0)
+
+    # =================================
+
+    def jacobian_defined(self):
+        return self.jac_defined
+
+    # =================================
+
+    def get_param_defn(self):
+        return self.param_defn
+
+    # =================================
+
+    def get_param_odict(self):
+        &#34;&#34;&#34;
+        get ordered dict of key: param_key (param_name), val: param_unit for all parameters in ham
+        &#34;&#34;&#34;
+        return OrderedDict(self.param_units)
+
+    # =================================
+
+    def get_param_unit(self, param_key):
+        &#34;&#34;&#34;
+        Get unit for a given param_key
+        &#34;&#34;&#34;
+        if param_key == &#34;residual_field&#34;:
+            return &#34;Error: sum( || residual(params) || ) over b_defects/freqs (a.u.)&#34;
+        param_dict = self.get_param_odict()
+        return param_dict[param_key]</code></pre>
+</details>
+<div class="desc"><p>chooser_obj is used on <strong>call</strong> and measured_data to return an array
+of only the required parts.</p></div>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="dukit.field.hamiltonian.Bxyz" href="#dukit.field.hamiltonian.Bxyz">Bxyz</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="dukit.field.hamiltonian.Hamiltonian.jac_defined"><code class="name">var <span class="ident">jac_defined</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="dukit.field.hamiltonian.Hamiltonian.param_defn"><code class="name">var <span class="ident">param_defn</span> : List[str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="dukit.field.hamiltonian.Hamiltonian.param_units"><code class="name">var <span class="ident">param_units</span> : Dict[str, str]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="dukit.field.hamiltonian.Hamiltonian.get_param_defn"><code class="name flex">
+<span>def <span class="ident">get_param_defn</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_param_defn(self):
+    return self.param_defn</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="dukit.field.hamiltonian.Hamiltonian.get_param_odict"><code class="name flex">
+<span>def <span class="ident">get_param_odict</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_param_odict(self):
+    &#34;&#34;&#34;
+    get ordered dict of key: param_key (param_name), val: param_unit for all parameters in ham
+    &#34;&#34;&#34;
+    return OrderedDict(self.param_units)</code></pre>
+</details>
+<div class="desc"><p>get ordered dict of key: param_key (param_name), val: param_unit for all parameters in ham</p></div>
+</dd>
+<dt id="dukit.field.hamiltonian.Hamiltonian.get_param_unit"><code class="name flex">
+<span>def <span class="ident">get_param_unit</span></span>(<span>self, param_key)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_param_unit(self, param_key):
+    &#34;&#34;&#34;
+    Get unit for a given param_key
+    &#34;&#34;&#34;
+    if param_key == &#34;residual_field&#34;:
+        return &#34;Error: sum( || residual(params) || ) over b_defects/freqs (a.u.)&#34;
+    param_dict = self.get_param_odict()
+    return param_dict[param_key]</code></pre>
+</details>
+<div class="desc"><p>Get unit for a given param_key</p></div>
+</dd>
+<dt id="dukit.field.hamiltonian.Hamiltonian.grad_fn"><code class="name flex">
+<span>def <span class="ident">grad_fn</span></span>(<span>self, param_ar)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def grad_fn(self, param_ar):
+    &#34;&#34;&#34;
+    Return jacobian, shape: (len(b_defects/freqs), len(param_ar))
+    Each column is a partial derivative, with respect to each param in param_ar
+        (i.e. rows, or first index, is indexing though the b_defects/freqs.)
+    &#34;&#34;&#34;
+    raise NotImplementedError(&#34;No grad_fn defined for this Hamiltonian.&#34;)</code></pre>
+</details>
+<div class="desc"><p>Return jacobian, shape: (len(b_defects/freqs), len(param_ar))
+Each column is a partial derivative, with respect to each param in param_ar
+(i.e. rows, or first index, is indexing though the b_defects/freqs.)</p></div>
+</dd>
+<dt id="dukit.field.hamiltonian.Hamiltonian.jacobian_defined"><code class="name flex">
+<span>def <span class="ident">jacobian_defined</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def jacobian_defined(self):
+    return self.jac_defined</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="dukit.field.hamiltonian.Hamiltonian.jacobian_scipyfit"><code class="name flex">
+<span>def <span class="ident">jacobian_scipyfit</span></span>(<span>self, param_ar, measured_data)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def jacobian_scipyfit(self, param_ar, measured_data):
+    &#34;&#34;&#34;Evaluates (analytic) jacobian of ham in format expected by scipy least_squares.&#34;&#34;&#34;
+
+    # need to take out rows (first index) according to chooser_obj.
+    keep_rows = self.chooser_obj(list(range(len(measured_data))))
+    delete_rows = [r for r in range(len(measured_data)) if r not in keep_rows]
+    return np.delete(self.grad_fn(param_ar), delete_rows, axis=0)</code></pre>
+</details>
+<div class="desc"><p>Evaluates (analytic) jacobian of ham in format expected by scipy least_squares.</p></div>
+</dd>
+<dt id="dukit.field.hamiltonian.Hamiltonian.residuals_scipyfit"><code class="name flex">
+<span>def <span class="ident">residuals_scipyfit</span></span>(<span>self, param_ar, measured_data)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def residuals_scipyfit(self, param_ar, measured_data):
+    &#34;&#34;&#34;
+    Evaluates residual: fit model - measured_data. Returns a vector!
+    Measured data must be a np array (of the same shape that __call__ returns),
+    i.e. freqs, or b_defects.
+    &#34;&#34;&#34;
+    return self.chooser_obj(self.__call__(param_ar)) - self.chooser_obj(measured_data)</code></pre>
+</details>
+<div class="desc"><p>Evaluates residual: fit model - measured_data. Returns a vector!
+Measured data must be a np array (of the same shape that <strong>call</strong> returns),
+i.e. freqs, or b_defects.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<form>
+<input id="lunr-search" name="q" placeholder="🔎 Search ..." aria-label="Search"
+disabled minlength="2">
+</form>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.css" integrity="sha512-b+T2i3P45i1LZM7I00Ci5QquB9szqaxu+uuk5TUSGjZQ4w4n+qujQiIuvTv2BxE7WCGQCifNMksyKILDiHzsOg==" crossorigin>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.js" integrity="sha512-2B9/byNV1KKRm5nQ2RLViPFD6U4dUjDGwuW1GU+ImJh8YinPU9Zlq1GzdTMO+G2ROrB5o1qasJBy1ttYz0wCug==" crossorigin></script>
+<style>
+.modal-dialog iframe {
+width: 100vw;
+height: calc(100vh - 80px);
+}
+@media screen and (min-width: 700px) {
+.modal-dialog iframe {
+width: 70vw;
+height: 80vh;
+}
+}
+.modal-dialog .tingle-modal-box {width: auto;}
+.modal-dialog .tingle-modal-box__content {padding: 0;}
+</style>
+<script>
+const input = document.getElementById('lunr-search');
+input.disabled = false;
+input.form.addEventListener('submit', (ev) => {
+ev.preventDefault();
+const url = new URL(window.location);
+url.searchParams.set('q', input.value);
+history.replaceState({}, null, url.toString());
+search(input.value);
+});
+const query = new URL(window.location).searchParams.get('q');
+if (query)
+search(query);
+function search(query) {
+const url = '../../doc-search.html#' + encodeURIComponent(query);
+new tingle.modal({
+cssClass: ['modal-dialog'],
+onClose: () => {
+const url = new URL(window.location);
+url.searchParams.delete('q');
+history.replaceState({}, null, url.toString());
+setTimeout(() => input.focus(), 100);
+}
+}).setContent('<iframe src="' + url + '"></iframe>').open();
+}
+</script>
+<div class="toc">
+<ul>
+<li><a href="#functions">Functions</a></li>
+<li><a href="#classes">Classes</a></li>
+</ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="dukit.field" href="index.html">dukit.field</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-variables">Global variables</a></h3>
+<ul class="">
+<li><code><a title="dukit.field.hamiltonian.AVAILABLE_HAMILTONIANS" href="#dukit.field.hamiltonian.AVAILABLE_HAMILTONIANS">AVAILABLE_HAMILTONIANS</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.GAMMA" href="#dukit.field.hamiltonian.GAMMA">GAMMA</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.S_MAT_X" href="#dukit.field.hamiltonian.S_MAT_X">S_MAT_X</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.S_MAT_Y" href="#dukit.field.hamiltonian.S_MAT_Y">S_MAT_Y</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.S_MAT_Z" href="#dukit.field.hamiltonian.S_MAT_Z">S_MAT_Z</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="dukit.field.hamiltonian.ham_bounds_from_range" href="#dukit.field.hamiltonian.ham_bounds_from_range">ham_bounds_from_range</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.ham_gen_init_guesses" href="#dukit.field.hamiltonian.ham_gen_init_guesses">ham_gen_init_guesses</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.ham_get_pixel_fitting_results" href="#dukit.field.hamiltonian.ham_get_pixel_fitting_results">ham_get_pixel_fitting_results</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.ham_pixel_generator" href="#dukit.field.hamiltonian.ham_pixel_generator">ham_pixel_generator</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.ham_shuffle_pixels" href="#dukit.field.hamiltonian.ham_shuffle_pixels">ham_shuffle_pixels</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.ham_unshuffle_fit_results" href="#dukit.field.hamiltonian.ham_unshuffle_fit_results">ham_unshuffle_fit_results</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.ham_unshuffle_pixels" href="#dukit.field.hamiltonian.ham_unshuffle_pixels">ham_unshuffle_pixels</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="dukit.field.hamiltonian.Bxyz" href="#dukit.field.hamiltonian.Bxyz">Bxyz</a></code></h4>
+<ul class="">
+<li><code><a title="dukit.field.hamiltonian.Bxyz.jac_defined" href="#dukit.field.hamiltonian.Bxyz.jac_defined">jac_defined</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.Bxyz.param_defn" href="#dukit.field.hamiltonian.Bxyz.param_defn">param_defn</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.Bxyz.param_units" href="#dukit.field.hamiltonian.Bxyz.param_units">param_units</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="dukit.field.hamiltonian.Chooser" href="#dukit.field.hamiltonian.Chooser">Chooser</a></code></h4>
+</li>
+<li>
+<h4><code><a title="dukit.field.hamiltonian.Hamiltonian" href="#dukit.field.hamiltonian.Hamiltonian">Hamiltonian</a></code></h4>
+<ul class="two-column">
+<li><code><a title="dukit.field.hamiltonian.Hamiltonian.get_param_defn" href="#dukit.field.hamiltonian.Hamiltonian.get_param_defn">get_param_defn</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.Hamiltonian.get_param_odict" href="#dukit.field.hamiltonian.Hamiltonian.get_param_odict">get_param_odict</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.Hamiltonian.get_param_unit" href="#dukit.field.hamiltonian.Hamiltonian.get_param_unit">get_param_unit</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.Hamiltonian.grad_fn" href="#dukit.field.hamiltonian.Hamiltonian.grad_fn">grad_fn</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.Hamiltonian.jac_defined" href="#dukit.field.hamiltonian.Hamiltonian.jac_defined">jac_defined</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.Hamiltonian.jacobian_defined" href="#dukit.field.hamiltonian.Hamiltonian.jacobian_defined">jacobian_defined</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.Hamiltonian.jacobian_scipyfit" href="#dukit.field.hamiltonian.Hamiltonian.jacobian_scipyfit">jacobian_scipyfit</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.Hamiltonian.param_defn" href="#dukit.field.hamiltonian.Hamiltonian.param_defn">param_defn</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.Hamiltonian.param_units" href="#dukit.field.hamiltonian.Hamiltonian.param_units">param_units</a></code></li>
+<li><code><a title="dukit.field.hamiltonian.Hamiltonian.residuals_scipyfit" href="#dukit.field.hamiltonian.Hamiltonian.residuals_scipyfit">residuals_scipyfit</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

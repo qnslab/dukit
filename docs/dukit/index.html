@@ -2,21 +2,36 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.9.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
 <title>dukit API documentation</title>
 <meta name="description" content="Package for the analysis of (widefield) defect microscopy image data, from the Tetienne
 lab at RMIT/UniMelb. For the lab control software see
-…" />
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
-<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
-<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
-<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+…">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
 <style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
-<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
 </head>
 <body>
 <main>
@@ -29,10 +44,24 @@ lab at RMIT/UniMelb. For the lab control software see
 lab at RMIT/UniMelb. For the lab control software see
 <a href="https://github.com/DavidBroadway/qdm-control">DavidBroadway/qdm-control</a>
 (may not be public, talk to David Broadway).</p>
-<p>On this page we will document the API, for other information see the <a href="https://github.com/casparvitch/dukit/blob/main/README.md">README.md</a>,
-<a href="https://github.com/casparvitch/dukit/blob/main/INSTALL.md">INSTALL.md</a> and <a href="https://github.com/casparvitch/dukit/blob/main/DEVDOCS.md">DEVDOCS.md</a>, or click through the sub-package links below.</p>
-<p>See the <a href="https://github.com/casparvitch/dukit/tree/main/examples">examples</a> folder for nice examples of usage.</p>
+<p>On this page we will document the API, for other information see the
+<a href="https://github.com/casparvitch/dukit/blob/main/README.md">README.md</a>,
+<a href="https://github.com/casparvitch/dukit/blob/main/INSTALL.md">INSTALL.md</a> and
+<a href="https://github.com/casparvitch/dukit/blob/main/DEVDOCS.md">DEVDOCS.md</a>, or click
+through the sub-package links below.</p>
+<p>See the <a href="https://github.com/casparvitch/dukit/tree/main/examples">examples</a> folder
+for nice examples of usage.</p>
 <p><a href="https://github.com/casparvitch/dukit">Repository here</a></p>
+<h1 id="typical-workflow">Typical Workflow</h1>
+<p>A standard analysis proceeds through several stages. First, load your data using a
+System subclass that matches your microscope configuration. This handles hardware-
+specific metadata parsing and returns the image stack along with sweep parameters.
+Next, apply preprocessing such as drift correction, cropping, or smoothing as needed.
+Then fit the spectra using one of the built-in models or a custom subclass of
+FitModel. The fitting results can be used to calculate magnetic fields or other
+quantities of interest. Finally, visualize the results using the plotting utilities
+or export for further analysis.</p>
+<p>See the examples directory for notebooks demonstrating each stage.</p>
 <h1 id="dukit-public-api">DUKIT Public API</h1>
 <h3 id="systems-dukitsystems">Systems (<code><a title="dukit.systems" href="systems.html">dukit.systems</a></code>)</h3>
 <p>Objects that define the hardware and software configuration of a microscope, and hold
@@ -131,12 +160,26 @@ System sub-class.</p>
 <li>T1 model.</li>
 </ul>
 </li>
+<li><code><a title="dukit.pl.model.ConstBiExponential" href="pl/model.html#dukit.pl.model.ConstBiExponential">ConstBiExponential</a></code><ul>
+<li>T1 model with two exponential decays.</li>
+</ul>
+</li>
 <li><code><a title="dukit.pl.model.ConstDampedRabi" href="pl/model.html#dukit.pl.model.ConstDampedRabi">ConstDampedRabi</a></code><ul>
 <li>Rabi model, constant + damped oscillation.</li>
 </ul>
 </li>
 <li><code><a title="dukit.pl.model.LinearLorentzians" href="pl/model.html#dukit.pl.model.LinearLorentzians">LinearLorentzians</a></code><ul>
 <li>Linear combination of lorentzians, in init pass number of lorentzians.</li>
+</ul>
+</li>
+<li><code><a title="dukit.pl.model.LinearN15Lorentzians" href="pl/model.html#dukit.pl.model.LinearN15Lorentzians">LinearN15Lorentzians</a></code><ul>
+<li>Linear combination of lorentzians, in init pass number of lorentzians.
+This model assumes N15 diamond with fixed HF splitting, 2pk w equal A/w.</li>
+</ul>
+</li>
+<li><code><a title="dukit.pl.model.LinearN14Lorentzians" href="pl/model.html#dukit.pl.model.LinearN14Lorentzians">LinearN14Lorentzians</a></code><ul>
+<li>Linear combination of lorentzians, in init pass number of lorentzians.
+This model assumes N14 diamond with fixed HF splitting, 3pk w equal A/w. each.</li>
 </ul>
 </li>
 <li><code><a title="dukit.pl.model.ConstLorentzians" href="pl/model.html#dukit.pl.model.ConstLorentzians">ConstLorentzians</a></code><ul>
@@ -161,7 +204,8 @@ System sub-class.</p>
 </li>
 </ul>
 <h3 id="field-calculations-dukitfield">Field calculations (<code><a title="dukit.field" href="field/index.html">dukit.field</a></code>)</h3>
-<p>Currently only calculating local field(s) (not vector field)</p>
+<p>Local field extraction and vector magnetic field reconstruction from ODMR data.</p>
+<h4 id="defect-classes">Defect classes:</h4>
 <ul>
 <li><code><a title="dukit.field.defects.Defect" href="field/defects.html#dukit.field.defects.Defect">Defect</a></code><ul>
 <li>Base class for defects.</li>
@@ -192,6 +236,51 @@ System sub-class.</p>
 <ul>
 <li><code><a title="dukit.field.defects.Defect.b_defects" href="field/defects.html#dukit.field.defects.Defect.b_defects">Defect.b_defects()</a></code></li>
 <li><code><a title="dukit.field.defects.Defect.dshift_defects" href="field/defects.html#dukit.field.defects.Defect.dshift_defects">Defect.dshift_defects()</a></code></li>
+</ul>
+<h4 id="vector-field-reconstruction">Vector field reconstruction:</h4>
+<ul>
+<li><code>dukit.field.get_bxyz_from_single_defect</code><ul>
+<li>Fourier propagation from single B_defect component to full Bx, By, Bz.</li>
+</ul>
+</li>
+<li><code>dukit.field.get_bxyz_from_defects</code><ul>
+<li>Matrix inversion from multiple B_defect components (3-4 defects).</li>
+</ul>
+</li>
+<li><code>dukit.field.get_bxyz_from_hamiltonian</code><ul>
+<li>Direct Hamiltonian fitting to frequencies with uncertainty quantification.</li>
+</ul>
+</li>
+<li><code>dukit.field.get_bxyz_from_pre_gslac_ref</code><ul>
+<li>Pre-GSLAC reference subtraction for single resonance reconstruction.</li>
+</ul>
+</li>
+<li><code>dukit.field.get_bdefects_from_frequencies</code><ul>
+<li>Convert resonance frequencies to B_defect components.</li>
+</ul>
+</li>
+<li><code>dukit.field.reconstruct_field_components</code><ul>
+<li>Consistency checking by reconstructing field components from measured data.</li>
+</ul>
+</li>
+<li><code>dukit.field.spherical_to_cartesian</code><ul>
+<li>Helper: convert (mag_T, theta_deg, phi_deg) to Cartesian vector.</li>
+</ul>
+</li>
+</ul>
+<h4 id="geometry-for-vector-reconstruction">Geometry (for vector reconstruction):</h4>
+<ul>
+<li><code><a title="dukit.geom.get_u_defects" href="geom.html#dukit.geom.get_u_defects">get_unvs()</a></code><ul>
+<li>Get defect orientation unit vectors for given bias field and diamond orientation.</li>
+</ul>
+</li>
+<li><code><a title="dukit.geom.get_u_defect_frames" href="geom.html#dukit.geom.get_u_defect_frames">get_unv_frames()</a></code><ul>
+<li>Get full defect coordinate frames.</li>
+</ul>
+</li>
+<li><code><a title="dukit.geom.NV_AXES_111" href="geom.html#dukit.geom.NV_AXES_111">NV_AXES_111</a></code></li>
+<li><code><a title="dukit.geom.NV_AXES_100_100" href="geom.html#dukit.geom.NV_AXES_100_100">NV_AXES_100_100</a></code></li>
+<li><code><a title="dukit.geom.NV_AXES_100_110" href="geom.html#dukit.geom.NV_AXES_100_110">NV_AXES_100_110</a></code></li>
 </ul>
 <h3 id="drift-correction-dukitdriftcorrect">Drift correction (<code><a title="dukit.driftcorrect" href="driftcorrect.html">dukit.driftcorrect</a></code>)</h3>
 <ul>
@@ -225,6 +314,10 @@ System sub-class.</p>
 <li><code><a title="dukit.plot.aoi_spectra_fit" href="plot.html#dukit.plot.aoi_spectra_fit">aoi_spectra_fit()</a></code></li>
 <li><code><a title="dukit.plot.pl_param_image" href="plot.html#dukit.plot.pl_param_image">pl_param_image()</a></code></li>
 <li><code><a title="dukit.plot.pl_param_images" href="plot.html#dukit.plot.pl_param_images">pl_param_images()</a></code></li>
+<li><code><a title="dukit.plot.plot_field_images" href="plot.html#dukit.plot.plot_field_images">plot_field_images()</a></code></li>
+<li><code><a title="dukit.plot.plot_magnetization" href="plot.html#dukit.plot.plot_magnetization">plot_magnetization()</a></code></li>
+<li><code><a title="dukit.plot.plot_current_density" href="plot.html#dukit.plot.plot_current_density">plot_current_density()</a></code></li>
+<li><code><a title="dukit.plot.plot_current_stream" href="plot.html#dukit.plot.plot_current_stream">plot_current_stream()</a></code></li>
 </ul>
 <h3 id="some-matplotlib-interactive-widgets-dukitwidget">Some matplotlib interactive widgets (<code><a title="dukit.widget" href="widget.html">dukit.widget</a></code>)</h3>
 <ul>
@@ -289,6 +382,46 @@ in place.</p>
 </ul>
 </li>
 </ul>
+<h3 id="source-reconstruction-dukitsource">Source reconstruction (<code><a title="dukit.source" href="source/index.html">dukit.source</a></code>)</h3>
+<p>Invert measured B-field maps to calculate sources: current density and magnetization.</p>
+<h4 id="current-density-functions">Current density functions:</h4>
+<ul>
+<li><code><a title="dukit.source.get_current_from_bxyz" href="source/index.html#dukit.source.get_current_from_bxyz">get_current_from_bxyz()</a></code><ul>
+<li>Reconstruct current density Jx, Jy from magnetic field components.</li>
+</ul>
+</li>
+<li><code><a title="dukit.source.get_current_from_bdefect" href="source/index.html#dukit.source.get_current_from_bdefect">get_current_from_bdefect()</a></code><ul>
+<li>Reconstruct current density from single B_defect measurement.</li>
+</ul>
+</li>
+<li><code><a title="dukit.source.get_current_without_ft" href="source/index.html#dukit.source.get_current_without_ft">get_current_without_ft()</a></code><ul>
+<li>Approximate current density without Fourier propagation.</li>
+</ul>
+</li>
+<li><code><a title="dukit.source.get_divperp_j" href="source/index.html#dukit.source.get_divperp_j">get_divperp_j()</a></code><ul>
+<li>Calculate perpendicular divergence of current density.</li>
+</ul>
+</li>
+</ul>
+<h4 id="magnetization-functions">Magnetization functions:</h4>
+<ul>
+<li><code><a title="dukit.source.get_magnetization_from_bxyz" href="source/index.html#dukit.source.get_magnetization_from_bxyz">get_magnetization_from_bxyz()</a></code><ul>
+<li>Reconstruct out-of-plane magnetization Mz from magnetic field components.</li>
+</ul>
+</li>
+<li><code><a title="dukit.source.get_magnetization_from_bdefect" href="source/index.html#dukit.source.get_magnetization_from_bdefect">get_magnetization_from_bdefect()</a></code><ul>
+<li>Reconstruct out-of-plane magnetization Mz from single B_defect measurement.</li>
+</ul>
+</li>
+</ul>
+<h4 id="high-level-interface">High-level interface:</h4>
+<ul>
+<li><code><a title="dukit.source.reconstruct_source" href="source/index.html#dukit.source.reconstruct_source">reconstruct_source()</a></code><ul>
+<li>Unified interface for source reconstruction, supports both current and magnetization.</li>
+<li>Handles routing to appropriate low-level function and optional background subtraction.</li>
+</ul>
+</li>
+</ul>
 <h3 id="other-dukitshare">Other (<code><a title="dukit.share" href="share.html">dukit.share</a></code>)</h3>
 <ul>
 <li><code><a title="dukit.share.RoiAvgFit" href="share.html#dukit.share.RoiAvgFit">RoiAvgFit</a></code><ul>
@@ -300,297 +433,6 @@ in place.</p>
 </ul>
 </li>
 </ul>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python"># -*- coding: utf-8 -*-
-&#34;&#34;&#34;
-Package for the analysis of (widefield) defect microscopy image data, from the Tetienne
-lab at RMIT/UniMelb. For the lab control software see
-[DavidBroadway/qdm-control](https://github.com/DavidBroadway/qdm-control)
-(may not be public, talk to David Broadway).
-
-On this page we will document the API, for other information see the [README.md](https://github.com/casparvitch/dukit/blob/main/README.md),
-[INSTALL.md](https://github.com/casparvitch/dukit/blob/main/INSTALL.md) and [DEVDOCS.md](https://github.com/casparvitch/dukit/blob/main/DEVDOCS.md), or click through the sub-package links below.
-
-See the [examples](https://github.com/casparvitch/dukit/tree/main/examples) folder for nice examples of usage.
-
-[Repository here](https://github.com/casparvitch/dukit)
-
-# DUKIT Public API
-
-### Systems (`dukit.systems`)
-
-Objects that define the hardware and software configuration of a microscope, and hold
-the system-specific methods for reading data from the disk. The `System` class is
-abstract, and the other classes inherit from it. The `System` class is not intended to
-be instantiated directly, but rather to be subclassed. If you are from another group,
-the only thing you should need to do (in the whole package) is write your own
-System sub-class.
-
-- `dukit.systems.System`
-- `dukit.systems.MelbSystem`
-- `dukit.systems.LVControl`
-- `dukit.systems.PyControl`
-- `dukit.systems.Zyla`
-- `dukit.systems.CryoWidefield`
-- `dukit.systems.LegacyCryoWidefield`
-- `dukit.systems.Argus`
-- `dukit.systems.LegacyArgus`
-- `dukit.systems.PyCryoWidefield`
-
-#### System methods
-
-- `dukit.systems.System.read_image`
-- `dukit.systems.System.get_hardware_binning`
-- `dukit.systems.System.read_sweep_arr`
-- `dukit.systems.System.get_raw_pixel_size`
-- `dukit.systems.System.get_bias_field`
-- `dukit.systems.System.norm`
-
-### Working with images (`dukit.itool`)
-
-- `dukit.itool.mpl_set_run_config`
-    - Set matplotlib rcParams to standardise style of plots.
-- `dukit.itool.crop_sweep`
-    - Crop in frequency/tau direction.
-- `dukit.itool.crop_roi`
-    - Crop to region of interest.
-- `dukit.itool.smooth_image_stack`
-    - Smooth image stack in-frame, doesn&#39;t change number of pixels. Can be asymmetric.
-- `dukit.itool.rebin_image_stack`
-    - Rebin image stack in-frame, does change number of pixels. Can be asymmetric.
-- `dukit.itool.sum_spatially`
-    - Sum an image spatially
-- `dukit.itool.get_im_filtered`
-    - Filter an image - currently only gaussian filtering is implemented.
-- `dukit.itool.get_background`
-    - Get background of an image - many different kinds, see function docs.
-- `dukit.itool.get_colormap_range`
-    - Calculate a colormap range for an image. Many kinds, see function docs.
-- `dukit.itool.plot_image`
-    - Base image plotter.
-- `dukit.itool.plot_image_on_ax`
-    - As above, but onto axis already created.
-- `dukit.itool.mask_polygons`
-    - Mask region of image by polygons (see `dukit.polygon` module)
-- `dukit.itool.mu_sigma_inside_polygons`
-    - Calculate mean and standard deviation inside polygons.
-- `dukit.itool.get_aois`
-    - Get areas of interest from AOI coords tuple(s).
-
-### PL fitting (`dukit.pl`)
-
-- `dukit.pl.model.FitModel`
-    - Base class for PL fitting models. Subclass this to make your own.
-- `dukit.pl.model.ConstStretchedExp`
-    - T1 model.
-- `dukit.pl.model.ConstDampedRabi`
-    - Rabi model, constant + damped oscillation.
-- `dukit.pl.model.LinearLorentzians`
-    - Linear combination of lorentzians, in init pass number of lorentzians.
-- `dukit.pl.model.ConstLorentzians`
-    - As above, but with constant background.
-- `dukit.pl.interface.fit_all_pixels`
-    - Fit all pixels in an image stack.
-- `dukit.pl.interface.fit_roi`
-    - Fit ROI average spectrum.
-- `dukit.pl.interface.fit_aois`
-    - Fit AOI average spectra.
-- `dukit.pl.interface.load_fit_results`
-    - Load fit results from file.
-
-### Field calculations (`dukit.field`)
-
-Currently only calculating local field(s) (not vector field)
-
-- `dukit.field.defects.Defect`
-    - Base class for defects.
-- `dukit.field.defects.SpinOne`
-    - Spin-1 defects general class.
-- `dukit.field.defects.NVEnsemble`
-    - NV ensemble.
-- `dukit.field.defects.VBEnsemble`
-    - VB ensemble.
-- `dukit.field.defects.SpinPair`
-    - Spin pair general class.
-- `dukit.field.defects.CPairEnsemble`
-    - C_? spin pair ensemble. I.e. visible emitter.
-
-#### Defect methods:
-
-- `dukit.field.defects.Defect.b_defects`
-- `dukit.field.defects.Defect.dshift_defects`
-
-### Drift correction (`dukit.driftcorrect`)
-
-- `dukit.driftcorrect.drift_correct_test`
-    - Test drift correction params.
-- `dukit.driftcorrect.drift_correct_measurement`
-    - Apply drift correction to image_stack &amp; save output binary.
-
-### Magnetic sample simulation (`dukit.magsim`)
-
-- `dukit.magsim.SandboxMagSim`
-    - Play in an empty sandbox.
-- `dukit.magsim.ComparisonMagSim`
-    - For comparison with a real magnetic field image, to match sim &lt;-&gt; exp.
-
-### Plotting (`dukit.plot`)
-
-Need to be imported via `dukit.plot.&lt;method&gt;` to work properly.
-
-- `dukit.plot.roi_pl_image`
-- `dukit.plot.aoi_pl_image`
-- `dukit.plot.roi_avg_fits`
-- `dukit.plot.aoi_spectra`
-- `dukit.plot.aoi_spectra_fit`
-- `dukit.plot.pl_param_image`
-- `dukit.plot.pl_param_images`
-
-### Some matplotlib interactive widgets (`dukit.widget`)
-
-- `dukit.widget.LineSelector`
-    - Use via `dukit.widget.LinecutSelectionWidget` below.
-- `dukit.widget.PolygonSelector`
-    - Use via `dukit.polygon.PolygonSelectionWidget` below.
-- `dukit.widget.LinecutSelectionWidget`
-    - Simple linecut selection tool.
-- `dukit.widget.BulkLinecutWidget`
-    - Linecut selection tool for multiple images, but in same slice.
-
-### Polygon regions of image, very useful! (`dukit.polygon`)
-
-- `dukit.polygon.Polygon`
-    - Polygon object, with various useful methods.
-- `dukit.polygon.PolygonSelectionWidget`
-    - Widget allowing you to select polygons on an image.
-- `dukit.polygon.polygon_selector`
-    - GUI interface.
-- `dukit.polygon.load_polygon_nodes`
-    - Load polygon nodes from file.
-
-### Fourier tooling (`dukit.fourier`)
-
-Currently unused I think, will be useful for vector mag, source recon etc. so leaving
-in place.
-
-- `dukit.fourier.define_k_vectors`
-    - Allows asymmetric shape, but haven&#39;t tested that yet.
-- `dukit.fourier.hanning_filter_kspace`
-    - Smooth fourier operations below resolvable dimensions, to not amplify noise.
-- `dukit.fourier.define_current_transform`
-- `dukit.fourier.define_magnetization_transformation`
-- `dukit.fourier.pad_image`
-- `dukit.fourier.unpad_image`
-- `dukit.fourier.MAG_UNIT_CONV`
-    - Convert between units of magnetization.
-- `dukit.fourier.MU_0`
-    - Vacuum permeability.
-
-### Other (`dukit.share`)
-
-- `dukit.share.RoiAvgFit`
-    - Result from ROI average fit(s).
-- `dukit.share.AoiAvgFit`
-    - Result from AOI average fit(s).
-&#34;&#34;&#34;
-
-from ._version import __version__
-
-from dukit.systems import (
-    System,
-    MelbSystem,
-    LVControl,
-    PyControl,
-    Zyla,
-    CryoWidefield,
-    LegacyCryoWidefield,
-    Argus,
-    LegacyArgus,
-    PyCryoWidefield,
-)
-from dukit.itool import (
-    mpl_set_run_config,
-    crop_sweep,
-    crop_roi,
-    smooth_image_stack,
-    rebin_image_stack,
-    sum_spatially,
-    get_im_filtered,
-    get_background,
-    get_colormap_range,
-    plot_image,
-    plot_image_on_ax,
-    mask_polygons,
-    get_background,
-    mu_sigma_inside_polygons,
-    get_aois,
-)
-
-from dukit.widget import (
-    LineSelector,
-    PolygonSelector,
-    LinecutSelectionWidget,
-    BulkLinecutWidget,
-)
-from dukit.polygon import (
-    Polygon,
-    PolygonSelectionWidget,
-    polygon_selector,
-    load_polygon_nodes,
-)
-
-# Not useful yet, until vector field stuff is implemented
-# from dukit.geom import (
-#     get_unvs,
-#     get_unv_frames,
-#     NV_AXES_111,
-#     NV_AXES_100_100,
-#     NV_AXES_100_110,
-# )
-
-from dukit.fourier import (
-    define_k_vectors,
-    hanning_filter_kspace,
-    define_current_transform,
-    define_magnetization_transformation,
-    pad_image,
-    unpad_image,
-    MAG_UNIT_CONV,
-    MU_0,
-)
-
-from dukit.driftcorrect import drift_correct_test, drift_correct_measurement
-
-from dukit.magsim import SandboxMagSim, ComparisonMagSim
-
-from dukit.share import RoiAvgFit, AoiAvgFit
-
-import dukit.plot
-
-from dukit.pl import (
-    FitModel,
-    ConstStretchedExp,
-    ConstDampedRabi,
-    LinearLorentzians,
-    ConstLorentzians,
-    fit_all_pixels,
-    fit_roi,
-    fit_aois,
-    load_fit_results,
-)
-
-from dukit.field import (
-    Defect,
-    SpinOne,
-    NVEnsemble,
-    VBEnsemble,
-    SpinPair,
-    CPairEnsemble,
-)</code></pre>
-</details>
 </section>
 <section>
 <h2 class="section-title" id="header-submodules">Sub-modules</h2>
@@ -644,6 +486,10 @@ system etc., required for retrieving/reconstructing vector fields …</p></div>
 <dd>
 <div class="desc"><p>Data structures/types shared between other modules …</p></div>
 </dd>
+<dt><code class="name"><a title="dukit.source" href="source/index.html">dukit.source</a></code></dt>
+<dd>
+<div class="desc"><p>Source reconstruction module - invert B-field to current/magnetization.</p></div>
+</dd>
 <dt><code class="name"><a title="dukit.systems" href="systems.html">dukit.systems</a></code></dt>
 <dd>
 <div class="desc"><p>This sub-package holds classes and functions to define (microscope) systems …</p></div>
@@ -670,8 +516,8 @@ system etc., required for retrieving/reconstructing vector fields …</p></div>
 <input id="lunr-search" name="q" placeholder="🔎 Search ..." aria-label="Search"
 disabled minlength="2">
 </form>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.css" integrity="sha512-j1u8eUJ4f23xPPxwOrLUPQaCD2dwzNqqmDDcWS4deWsMv2ohLqmXXuP3hU7g8TyzbMSakP/mMqoNBYWj8AEIFg==" crossorigin>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.js" integrity="sha512-plGUER9JkeEWPPqQBE4sdLqBoQug5Ap+BCGMc7bJ8BXkm+VVj6QzkpBz5Yv2yPkkq+cqg9IpkBaGCas6uDbW8g==" crossorigin></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.css" integrity="sha512-b+T2i3P45i1LZM7I00Ci5QquB9szqaxu+uuk5TUSGjZQ4w4n+qujQiIuvTv2BxE7WCGQCifNMksyKILDiHzsOg==" crossorigin>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.js" integrity="sha512-2B9/byNV1KKRm5nQ2RLViPFD6U4dUjDGwuW1GU+ImJh8YinPU9Zlq1GzdTMO+G2ROrB5o1qasJBy1ttYz0wCug==" crossorigin></script>
 <style>
 .modal-dialog iframe {
 width: 100vw;
@@ -712,9 +558,9 @@ setTimeout(() => input.focus(), 100);
 }).setContent('<iframe src="' + url + '"></iframe>').open();
 }
 </script>
-<h1>Index</h1>
 <div class="toc">
 <ul>
+<li><a href="#typical-workflow">Typical Workflow</a></li>
 <li><a href="#dukit-public-api">DUKIT Public API</a><ul>
 <li><a href="#systems-dukitsystems">Systems (dukit.systems)</a><ul>
 <li><a href="#system-methods">System methods</a></li>
@@ -723,7 +569,10 @@ setTimeout(() => input.focus(), 100);
 <li><a href="#working-with-images-dukititool">Working with images (dukit.itool)</a></li>
 <li><a href="#pl-fitting-dukitpl">PL fitting (dukit.pl)</a></li>
 <li><a href="#field-calculations-dukitfield">Field calculations (dukit.field)</a><ul>
+<li><a href="#defect-classes">Defect classes:</a></li>
 <li><a href="#defect-methods">Defect methods:</a></li>
+<li><a href="#vector-field-reconstruction">Vector field reconstruction:</a></li>
+<li><a href="#geometry-for-vector-reconstruction">Geometry (for vector reconstruction):</a></li>
 </ul>
 </li>
 <li><a href="#drift-correction-dukitdriftcorrect">Drift correction (dukit.driftcorrect)</a></li>
@@ -732,6 +581,12 @@ setTimeout(() => input.focus(), 100);
 <li><a href="#some-matplotlib-interactive-widgets-dukitwidget">Some matplotlib interactive widgets (dukit.widget)</a></li>
 <li><a href="#polygon-regions-of-image-very-useful-dukitpolygon">Polygon regions of image, very useful! (dukit.polygon)</a></li>
 <li><a href="#fourier-tooling-dukitfourier">Fourier tooling (dukit.fourier)</a></li>
+<li><a href="#source-reconstruction-dukitsource">Source reconstruction (dukit.source)</a><ul>
+<li><a href="#current-density-functions">Current density functions:</a></li>
+<li><a href="#magnetization-functions">Magnetization functions:</a></li>
+<li><a href="#high-level-interface">High-level interface:</a></li>
+</ul>
+</li>
 <li><a href="#other-dukitshare">Other (dukit.share)</a></li>
 </ul>
 </li>
@@ -752,6 +607,7 @@ setTimeout(() => input.focus(), 100);
 <li><code><a title="dukit.polygon" href="polygon.html">dukit.polygon</a></code></li>
 <li><code><a title="dukit.rebin" href="rebin.html">dukit.rebin</a></code></li>
 <li><code><a title="dukit.share" href="share.html">dukit.share</a></code></li>
+<li><code><a title="dukit.source" href="source/index.html">dukit.source</a></code></li>
 <li><code><a title="dukit.systems" href="systems.html">dukit.systems</a></code></li>
 <li><code><a title="dukit.warn" href="warn.html">dukit.warn</a></code></li>
 <li><code><a title="dukit.widget" href="widget.html">dukit.widget</a></code></li>
@@ -761,7 +617,7 @@ setTimeout(() => input.focus(), 100);
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
 </footer>
 </body>
 </html>

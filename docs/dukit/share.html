@@ -2,19 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.9.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
 <title>dukit.share API documentation</title>
-<meta name="description" content="Data structures/types shared between other modules …" />
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
-<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
-<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
-<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<meta name="description" content="Data structures/types shared between other modules …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
 <style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
-<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
 </head>
 <body>
 <main>
@@ -29,284 +44,6 @@
 <li><code><a title="dukit.share.AoiAvgFit" href="#dukit.share.AoiAvgFit">AoiAvgFit</a></code></li>
 <li><code><a title="dukit.share.RoiAvgFit" href="#dukit.share.RoiAvgFit">RoiAvgFit</a></code></li>
 </ul>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python"># -*- coding: utf-8 -*-
-&#34;&#34;&#34;
-Data structures/types shared between other modules.
-
-Classes
--------
- - `dukit.share.AoiAvgFit`
- - `dukit.share.RoiAvgFit`
-&#34;&#34;&#34;
-# ============================================================================
-
-__author__ = &#34;Sam Scholten&#34;
-__pdoc__ = {
-    &#34;dukit.share.AoiAvgFit&#34;: True,
-    &#34;dukit.share.RoiAvgFit&#34;: True,
-}
-
-# ============================================================================
-
-import numpy.typing as npt
-
-# ============================================================================
-
-import dukit.json2dict
-
-
-# ============================================================================
-class AoiAvgFit:
-    &#34;&#34;&#34;Holds result from an AOI fit. Only a method to save.
-
-    Attributes
-    ----------
-    aoi_num : int
-        Number associated with this AOI
-    sweep_arr : ndarray, 1D
-        Freqs/taus
-    avg_sig_norm : ndarray, 1D
-        sig_norm (trace/spectrum) averaged over this aoi
-    avg_sig : ndarray, 1D
-        sig (trace/spectrum) averaged over this aoi
-    avg_ref : ndarray, 1D
-        ref (trace/spectrum) averaged over this aoi
-    fit_backend : str
-        Name of the fit backend (e.g. scipy, gpufit, cpufit, etc.) used.
-    fit_xvec : ndarray, 1D
-        Values where we have calculated the fit function
-    fit_yvec : ndarray, 1D
-        Values of fit function at solution, for fit_xvec values
-    best_params : ndarray, 1D
-        Best (optimal) fit/model parameters
-    best_sigmas : ndarray, 1D
-        Sigmas (stdev of fit error) at solution
-    best_residual : float
-        Residual vec at solution
-    pguess: tuple of floats
-        Guesses for fit parameters
-    pbounds : 2-tuple, of tuples
-        Bounds for fit, first tuple are the lower bounds, second the upper bounds.
-    fit_options : dict
-        Other options passed to fit(s).
-
-    Methods
-    -------
-    save_json(filepath)
-        Save into given filepath, ending in &#39;.json&#39;.
-    &#34;&#34;&#34;
-
-    def __init__(
-        self,
-        aoi_num: int,
-        sweep_arr: npt.NDArray,
-        avg_sig_norm: npt.NDArray,
-        avg_sig: npt.NDArray,
-        avg_ref: npt.NDArray,
-        fit_backend: str,
-        fit_xvec: npt.NDArray,
-        fit_yvec: npt.NDArray,
-        best_params: npt.NDArray,
-        best_sigmas: npt.NDArray,
-        best_residual: float,
-        pguess: npt.ArrayLike,
-        pbounds: tuple[npt.ArrayLike, npt.ArrayLike],
-        aoi_coords: tuple[int, int, int, int],
-    ):
-        &#34;&#34;&#34;
-        Arguments
-        ---------
-        aoi_num : int
-            Number associated with this AOI
-        sweep_arr : ndarray, 1D
-            Freqs/taus
-        avg_sig_norm : ndarray, 1D
-            sig_norm (trace/spectrum) averaged over this aoi
-        avg_sig : ndarray, 1D
-            sig (trace/spectrum) averaged over this aoi
-        avg_ref : ndarray, 1D
-            ref (trace/spectrum) averaged over this aoi
-        fit_backend : str
-            Name of the fit backend (e.g. scipy, gpufit, cpufit, etc.) used.
-        fit_xvec : ndarray, 1D
-            Values where we have calculated the fit function
-        fit_yvec : ndarray, 1D
-            Values of fit function at solution, for fit_xvec values
-        best_params : ndarray, 1D
-            Best (optimal) fit/model parameters
-        best_sigmas : ndarray, 1D
-            Sigmas (stdev of fit error) at solution
-        best_residual : float
-            Residual vec at solution
-        pguess: tuple of floats
-            Guesses for fit parameters
-        pbounds : 2-tuple, of tuples
-            Bounds for fit, first tuple are the lower bounds, second the upper bounds.
-        aoi_coords : 4-tuple of ints
-            start_x, start_y, end_x, end_y
-        &#34;&#34;&#34;
-        self.aoi_num = aoi_num
-        self.sweep_arr = sweep_arr
-        self.avg_sig_norm = avg_sig_norm
-        self.avg_sig = avg_sig
-        self.avg_ref = avg_ref
-        self.fit_backend = fit_backend
-        self.fit_xvec = fit_xvec
-        self.fit_yvec = fit_yvec
-        self.best_params = best_params
-        self.best_sigmas = best_sigmas
-        self.best_residual = best_residual
-        self.pguess = pguess
-        self.pbounds = pbounds
-        self.aoi_coords = aoi_coords
-
-    def to_dict(self):
-        &#34;&#34;&#34;
-        Return a dict of params
-        &#34;&#34;&#34;
-        return {
-            &#34;aoi_num&#34;: self.aoi_num,
-            &#34;sweep_arr&#34;: self.sweep_arr,
-            &#34;avg_sig_norm&#34;: self.avg_sig_norm,
-            &#34;avg_sig&#34;: self.avg_sig,
-            &#34;avg_ref&#34;: self.avg_ref,
-            &#34;fit_backend&#34;: self.fit_backend,
-            &#34;fit_xvec&#34;: self.fit_xvec,
-            &#34;fit_yvec&#34;: self.fit_yvec,
-            &#34;best_params&#34;: self.best_params,
-            &#34;best_sigmas&#34;: self.best_sigmas,
-            &#34;best_residual&#34;: self.best_residual,
-            &#34;pguess&#34;: self.pguess,
-            &#34;pbounds&#34;: self.pbounds,
-            &#34;aoi_coords&#34;: self.aoi_coords,
-        }
-
-
-# ============================================================================
-
-
-class RoiAvgFit:
-    &#34;&#34;&#34;Holds result from an ROI fit. Only a method to save.
-
-    Attributes
-    ----------
-    fit_backend : str
-        Name of the fit backend (e.g. scipy, gpufit, cpufit, etc.) used.
-    sweep_arr : ndarray, 1D
-        Freqs/taus
-    avg_sig_norm : ndarray, 1D
-        sig_norm (trace/spectrum) averaged over ROI
-    avg_sig : ndarray, 1D
-        sig (trace/spectrum) averaged over ROI
-    avg_ref : ndarray, 1D
-        ref (trace/spectrum) averaged over ROI
-    fit_xvec : ndarray, 1D
-        Values where we have calculated the fit function
-    fit_yvec : ndarray, 1D
-        Values of fit function at solution, for fit_xvec values
-    fit_yvec_guess : ndarray, 1D
-        The fit &#39;guess&#39; values
-    best_params : ndarray, 1D
-        Best (optimal) fit/model parameters
-    best_sigmas : ndarray, 1D
-        Sigmas (stdev of fit error) at solution
-    best_residual : float
-        Residual vec at solution
-    pguess: tuple of floats
-        Guesses for fit parameters
-    pbounds : 2-tuple, of tuples
-        Bounds for fit, first tuple are the lower bounds, second the upper bounds.
-
-    Methods
-    -------
-    save_json(filepath)
-        Save into given filepath, ending in &#39;.json&#39;.
-    &#34;&#34;&#34;
-
-    def __init__(
-        self,
-        fit_backend: str,
-        sweep_arr: npt.NDArray,
-        avg_sig_norm: npt.NDArray,
-        avg_sig: npt.NDArray,
-        avg_ref: npt.NDArray,
-        fit_xvec: npt.NDArray,
-        fit_yvec: npt.NDArray,
-        fit_yvec_guess : npt.NDArray,
-        best_params: npt.NDArray,
-        best_sigmas: npt.NDArray,
-        best_residual: float,
-        pguess: npt.ArrayLike,
-        pbounds: tuple[npt.ArrayLike, npt.ArrayLike],
-    ):
-        &#34;&#34;&#34;
-        Arguments
-        ---------
-        fit_backend : str
-            Name of the fit backend (e.g. scipy, gpufit, cpufit, etc.) used.
-        sweep_arr : ndarray, 1D
-            Freqs/taus
-        avg_sig_norm : ndarray, 1D
-            sig_norm (trace/spectrum) averaged over ROI
-        avg_sig : ndarray, 1D
-            sig (trace/spectrum) averaged over ROI
-        avg_ref : ndarray, 1D
-            ref (trace/spectrum) averaged over ROI
-        fit_xvec : ndarray, 1D
-            Values where we have calculated the fit function
-        fit_yvec : ndarray, 1D
-            Values of fit function at solution, for fit_xvec values
-        fit_yvec_guess : ndarray, 1D
-            The fit &#39;guess&#39; values
-        best_params : ndarray, 1D
-            Best (optimal) fit/model parameters
-        best_sigmas : ndarray, 1D
-            Sigmas (stdev of fit error) at solution
-        best_residual : float
-            Residual vec at solution
-        pguess: tuple of floats
-            Guesses for fit parameters
-        pbounds : 2-tuple, of tuples
-            Bounds for fit, first tuple are the lower bounds, second the upper bounds.
-        &#34;&#34;&#34;
-        self.fit_backend = fit_backend
-        self.sweep_arr = sweep_arr
-        self.avg_sig_norm = avg_sig_norm
-        self.avg_sig = avg_sig
-        self.avg_ref = avg_ref
-        self.fit_xvec = fit_xvec
-        self.fit_yvec = fit_yvec
-        self.fit_yvec_guess = fit_yvec_guess
-        self.best_params = best_params
-        self.best_sigmas = best_sigmas
-        self.best_residual = best_residual
-        self.pguess = pguess
-        self.pbounds = pbounds
-
-    def to_dict(self):
-        &#34;&#34;&#34;
-        Return a dict of params
-        &#34;&#34;&#34;
-        return {
-            &#34;fit_backend&#34;: self.fit_backend,
-            &#34;sweep_arr&#34;: self.sweep_arr,
-            &#34;avg_sig_norm&#34;: self.avg_sig_norm,
-            &#34;avg_sig&#34;: self.avg_sig,
-            &#34;avg_ref&#34;: self.avg_ref,
-            &#34;fit_xvec&#34;: self.fit_xvec,
-            &#34;fit_yvec&#34;: self.fit_yvec,
-            &#34;fit_yvec_guess&#34;: self.fit_yvec_guess,
-            &#34;best_params&#34;: self.best_params,
-            &#34;best_sigmas&#34;: self.best_sigmas,
-            &#34;best_residual&#34;: self.best_residual,
-            &#34;init_pguess&#34;: self.pguess,
-            &#34;init_pbounds&#34;: self.pbounds,
-        }</code></pre>
-</details>
 </section>
 <section>
 </section>
@@ -319,75 +56,9 @@ class RoiAvgFit:
 <dl>
 <dt id="dukit.share.AoiAvgFit"><code class="flex name class">
 <span>class <span class="ident">AoiAvgFit</span></span>
-<span>(</span><span>aoi_num: int, sweep_arr: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], avg_sig_norm: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], avg_sig: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], avg_ref: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], fit_backend: str, fit_xvec: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], fit_yvec: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], best_params: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], best_sigmas: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], best_residual: float, pguess: Union[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]], numpy._typing._nested_sequence._NestedSequence[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]]], bool, int, float, complex, str, bytes, numpy._typing._nested_sequence._NestedSequence[Union[bool, int, float, complex, str, bytes]]], pbounds: tuple[typing.Union[numpy._typing._array_like._SupportsArray[numpy.dtype[typing.Any]], numpy._typing._nested_sequence._NestedSequence[numpy._typing._array_like._SupportsArray[numpy.dtype[typing.Any]]], bool, int, float, complex, str, bytes, numpy._typing._nested_sequence._NestedSequence[typing.Union[bool, int, float, complex, str, bytes]]], typing.Union[numpy._typing._array_like._SupportsArray[numpy.dtype[typing.Any]], numpy._typing._nested_sequence._NestedSequence[numpy._typing._array_like._SupportsArray[numpy.dtype[typing.Any]]], bool, int, float, complex, str, bytes, numpy._typing._nested_sequence._NestedSequence[typing.Union[bool, int, float, complex, str, bytes]]]], aoi_coords: tuple[int, int, int, int])</span>
+<span>(</span><span>aoi_num: int,<br>sweep_arr: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>avg_sig_norm: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>avg_sig: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>avg_ref: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>fit_backend: str,<br>fit_xvec: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>fit_yvec: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>best_params: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>best_sigmas: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>best_residual: float,<br>pguess: ArrayLike,<br>pbounds: tuple[ArrayLike, ArrayLike],<br>aoi_coords: tuple[int, int, int, int])</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Holds result from an AOI fit. Only a method to save.</p>
-<h2 id="attributes">Attributes</h2>
-<dl>
-<dt><strong><code>aoi_num</code></strong> :&ensp;<code>int</code></dt>
-<dd>Number associated with this AOI</dd>
-<dt><strong><code>sweep_arr</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Freqs/taus</dd>
-<dt><strong><code>avg_sig_norm</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>sig_norm (trace/spectrum) averaged over this aoi</dd>
-<dt><strong><code>avg_sig</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>sig (trace/spectrum) averaged over this aoi</dd>
-<dt><strong><code>avg_ref</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>ref (trace/spectrum) averaged over this aoi</dd>
-<dt><strong><code>fit_backend</code></strong> :&ensp;<code>str</code></dt>
-<dd>Name of the fit backend (e.g. scipy, gpufit, cpufit, etc.) used.</dd>
-<dt><strong><code>fit_xvec</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Values where we have calculated the fit function</dd>
-<dt><strong><code>fit_yvec</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Values of fit function at solution, for fit_xvec values</dd>
-<dt><strong><code>best_params</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Best (optimal) fit/model parameters</dd>
-<dt><strong><code>best_sigmas</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Sigmas (stdev of fit error) at solution</dd>
-<dt><strong><code>best_residual</code></strong> :&ensp;<code>float</code></dt>
-<dd>Residual vec at solution</dd>
-<dt><strong><code>pguess</code></strong> :&ensp;<code>tuple</code> of <code>floats</code></dt>
-<dd>Guesses for fit parameters</dd>
-<dt><strong><code>pbounds</code></strong> :&ensp;<code>2-tuple,</code> of <code>tuples</code></dt>
-<dd>Bounds for fit, first tuple are the lower bounds, second the upper bounds.</dd>
-<dt><strong><code>fit_options</code></strong> :&ensp;<code>dict</code></dt>
-<dd>Other options passed to fit(s).</dd>
-</dl>
-<h2 id="methods">Methods</h2>
-<p>save_json(filepath)
-Save into given filepath, ending in '.json'.</p>
-<h2 id="arguments">Arguments</h2>
-<dl>
-<dt><strong><code>aoi_num</code></strong> :&ensp;<code>int</code></dt>
-<dd>Number associated with this AOI</dd>
-<dt><strong><code>sweep_arr</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Freqs/taus</dd>
-<dt><strong><code>avg_sig_norm</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>sig_norm (trace/spectrum) averaged over this aoi</dd>
-<dt><strong><code>avg_sig</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>sig (trace/spectrum) averaged over this aoi</dd>
-<dt><strong><code>avg_ref</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>ref (trace/spectrum) averaged over this aoi</dd>
-<dt><strong><code>fit_backend</code></strong> :&ensp;<code>str</code></dt>
-<dd>Name of the fit backend (e.g. scipy, gpufit, cpufit, etc.) used.</dd>
-<dt><strong><code>fit_xvec</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Values where we have calculated the fit function</dd>
-<dt><strong><code>fit_yvec</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Values of fit function at solution, for fit_xvec values</dd>
-<dt><strong><code>best_params</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Best (optimal) fit/model parameters</dd>
-<dt><strong><code>best_sigmas</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Sigmas (stdev of fit error) at solution</dd>
-<dt><strong><code>best_residual</code></strong> :&ensp;<code>float</code></dt>
-<dd>Residual vec at solution</dd>
-<dt><strong><code>pguess</code></strong> :&ensp;<code>tuple</code> of <code>floats</code></dt>
-<dd>Guesses for fit parameters</dd>
-<dt><strong><code>pbounds</code></strong> :&ensp;<code>2-tuple,</code> of <code>tuples</code></dt>
-<dd>Bounds for fit, first tuple are the lower bounds, second the upper bounds.</dd>
-<dt><strong><code>aoi_coords</code></strong> :&ensp;<code>4-tuple</code> of <code>ints</code></dt>
-<dd>start_x, start_y, end_x, end_y</dd>
-</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -517,13 +188,78 @@ Save into given filepath, ending in '.json'.</p>
             &#34;aoi_coords&#34;: self.aoi_coords,
         }</code></pre>
 </details>
+<div class="desc"><p>Holds result from an AOI fit. Only a method to save.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>aoi_num</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number associated with this AOI</dd>
+<dt><strong><code>sweep_arr</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Freqs/taus</dd>
+<dt><strong><code>avg_sig_norm</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>sig_norm (trace/spectrum) averaged over this aoi</dd>
+<dt><strong><code>avg_sig</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>sig (trace/spectrum) averaged over this aoi</dd>
+<dt><strong><code>avg_ref</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>ref (trace/spectrum) averaged over this aoi</dd>
+<dt><strong><code>fit_backend</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the fit backend (e.g. scipy, gpufit, cpufit, etc.) used.</dd>
+<dt><strong><code>fit_xvec</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Values where we have calculated the fit function</dd>
+<dt><strong><code>fit_yvec</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Values of fit function at solution, for fit_xvec values</dd>
+<dt><strong><code>best_params</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Best (optimal) fit/model parameters</dd>
+<dt><strong><code>best_sigmas</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Sigmas (stdev of fit error) at solution</dd>
+<dt><strong><code>best_residual</code></strong> :&ensp;<code>float</code></dt>
+<dd>Residual vec at solution</dd>
+<dt><strong><code>pguess</code></strong> :&ensp;<code>tuple</code> of <code>floats</code></dt>
+<dd>Guesses for fit parameters</dd>
+<dt><strong><code>pbounds</code></strong> :&ensp;<code>2-tuple,</code> of <code>tuples</code></dt>
+<dd>Bounds for fit, first tuple are the lower bounds, second the upper bounds.</dd>
+<dt><strong><code>fit_options</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Other options passed to fit(s).</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<p>save_json(filepath)
+Save into given filepath, ending in '.json'.</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>aoi_num</code></strong> :&ensp;<code>int</code></dt>
+<dd>Number associated with this AOI</dd>
+<dt><strong><code>sweep_arr</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Freqs/taus</dd>
+<dt><strong><code>avg_sig_norm</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>sig_norm (trace/spectrum) averaged over this aoi</dd>
+<dt><strong><code>avg_sig</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>sig (trace/spectrum) averaged over this aoi</dd>
+<dt><strong><code>avg_ref</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>ref (trace/spectrum) averaged over this aoi</dd>
+<dt><strong><code>fit_backend</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the fit backend (e.g. scipy, gpufit, cpufit, etc.) used.</dd>
+<dt><strong><code>fit_xvec</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Values where we have calculated the fit function</dd>
+<dt><strong><code>fit_yvec</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Values of fit function at solution, for fit_xvec values</dd>
+<dt><strong><code>best_params</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Best (optimal) fit/model parameters</dd>
+<dt><strong><code>best_sigmas</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Sigmas (stdev of fit error) at solution</dd>
+<dt><strong><code>best_residual</code></strong> :&ensp;<code>float</code></dt>
+<dd>Residual vec at solution</dd>
+<dt><strong><code>pguess</code></strong> :&ensp;<code>tuple</code> of <code>floats</code></dt>
+<dd>Guesses for fit parameters</dd>
+<dt><strong><code>pbounds</code></strong> :&ensp;<code>2-tuple,</code> of <code>tuples</code></dt>
+<dd>Bounds for fit, first tuple are the lower bounds, second the upper bounds.</dd>
+<dt><strong><code>aoi_coords</code></strong> :&ensp;<code>4-tuple</code> of <code>ints</code></dt>
+<dd>start_x, start_y, end_x, end_y</dd>
+</dl></div>
 <h3>Methods</h3>
 <dl>
 <dt id="dukit.share.AoiAvgFit.to_dict"><code class="name flex">
 <span>def <span class="ident">to_dict</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Return a dict of params</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -549,76 +285,15 @@ Save into given filepath, ending in '.json'.</p>
         &#34;aoi_coords&#34;: self.aoi_coords,
     }</code></pre>
 </details>
+<div class="desc"><p>Return a dict of params</p></div>
 </dd>
 </dl>
 </dd>
 <dt id="dukit.share.RoiAvgFit"><code class="flex name class">
 <span>class <span class="ident">RoiAvgFit</span></span>
-<span>(</span><span>fit_backend: str, sweep_arr: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], avg_sig_norm: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], avg_sig: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], avg_ref: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], fit_xvec: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], fit_yvec: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], fit_yvec_guess: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], best_params: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], best_sigmas: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], best_residual: float, pguess: Union[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]], numpy._typing._nested_sequence._NestedSequence[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]]], bool, int, float, complex, str, bytes, numpy._typing._nested_sequence._NestedSequence[Union[bool, int, float, complex, str, bytes]]], pbounds: tuple[typing.Union[numpy._typing._array_like._SupportsArray[numpy.dtype[typing.Any]], numpy._typing._nested_sequence._NestedSequence[numpy._typing._array_like._SupportsArray[numpy.dtype[typing.Any]]], bool, int, float, complex, str, bytes, numpy._typing._nested_sequence._NestedSequence[typing.Union[bool, int, float, complex, str, bytes]]], typing.Union[numpy._typing._array_like._SupportsArray[numpy.dtype[typing.Any]], numpy._typing._nested_sequence._NestedSequence[numpy._typing._array_like._SupportsArray[numpy.dtype[typing.Any]]], bool, int, float, complex, str, bytes, numpy._typing._nested_sequence._NestedSequence[typing.Union[bool, int, float, complex, str, bytes]]]])</span>
+<span>(</span><span>fit_backend: str,<br>sweep_arr: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>avg_sig_norm: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>avg_sig: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>avg_ref: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>fit_xvec: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>fit_yvec: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>fit_yvec_guess: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>best_params: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>best_sigmas: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>best_residual: float,<br>pguess: ArrayLike,<br>pbounds: tuple[ArrayLike, ArrayLike])</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Holds result from an ROI fit. Only a method to save.</p>
-<h2 id="attributes">Attributes</h2>
-<dl>
-<dt><strong><code>fit_backend</code></strong> :&ensp;<code>str</code></dt>
-<dd>Name of the fit backend (e.g. scipy, gpufit, cpufit, etc.) used.</dd>
-<dt><strong><code>sweep_arr</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Freqs/taus</dd>
-<dt><strong><code>avg_sig_norm</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>sig_norm (trace/spectrum) averaged over ROI</dd>
-<dt><strong><code>avg_sig</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>sig (trace/spectrum) averaged over ROI</dd>
-<dt><strong><code>avg_ref</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>ref (trace/spectrum) averaged over ROI</dd>
-<dt><strong><code>fit_xvec</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Values where we have calculated the fit function</dd>
-<dt><strong><code>fit_yvec</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Values of fit function at solution, for fit_xvec values</dd>
-<dt><strong><code>fit_yvec_guess</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>The fit 'guess' values</dd>
-<dt><strong><code>best_params</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Best (optimal) fit/model parameters</dd>
-<dt><strong><code>best_sigmas</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Sigmas (stdev of fit error) at solution</dd>
-<dt><strong><code>best_residual</code></strong> :&ensp;<code>float</code></dt>
-<dd>Residual vec at solution</dd>
-<dt><strong><code>pguess</code></strong> :&ensp;<code>tuple</code> of <code>floats</code></dt>
-<dd>Guesses for fit parameters</dd>
-<dt><strong><code>pbounds</code></strong> :&ensp;<code>2-tuple,</code> of <code>tuples</code></dt>
-<dd>Bounds for fit, first tuple are the lower bounds, second the upper bounds.</dd>
-</dl>
-<h2 id="methods">Methods</h2>
-<p>save_json(filepath)
-Save into given filepath, ending in '.json'.</p>
-<h2 id="arguments">Arguments</h2>
-<dl>
-<dt><strong><code>fit_backend</code></strong> :&ensp;<code>str</code></dt>
-<dd>Name of the fit backend (e.g. scipy, gpufit, cpufit, etc.) used.</dd>
-<dt><strong><code>sweep_arr</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Freqs/taus</dd>
-<dt><strong><code>avg_sig_norm</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>sig_norm (trace/spectrum) averaged over ROI</dd>
-<dt><strong><code>avg_sig</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>sig (trace/spectrum) averaged over ROI</dd>
-<dt><strong><code>avg_ref</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>ref (trace/spectrum) averaged over ROI</dd>
-<dt><strong><code>fit_xvec</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Values where we have calculated the fit function</dd>
-<dt><strong><code>fit_yvec</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Values of fit function at solution, for fit_xvec values</dd>
-<dt><strong><code>fit_yvec_guess</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>The fit 'guess' values</dd>
-<dt><strong><code>best_params</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Best (optimal) fit/model parameters</dd>
-<dt><strong><code>best_sigmas</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
-<dd>Sigmas (stdev of fit error) at solution</dd>
-<dt><strong><code>best_residual</code></strong> :&ensp;<code>float</code></dt>
-<dd>Residual vec at solution</dd>
-<dt><strong><code>pguess</code></strong> :&ensp;<code>tuple</code> of <code>floats</code></dt>
-<dd>Guesses for fit parameters</dd>
-<dt><strong><code>pbounds</code></strong> :&ensp;<code>2-tuple,</code> of <code>tuples</code></dt>
-<dd>Bounds for fit, first tuple are the lower bounds, second the upper bounds.</dd>
-</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -670,7 +345,7 @@ Save into given filepath, ending in '.json'.</p>
         avg_ref: npt.NDArray,
         fit_xvec: npt.NDArray,
         fit_yvec: npt.NDArray,
-        fit_yvec_guess : npt.NDArray,
+        fit_yvec_guess: npt.NDArray,
         best_params: npt.NDArray,
         best_sigmas: npt.NDArray,
         best_residual: float,
@@ -741,13 +416,74 @@ Save into given filepath, ending in '.json'.</p>
             &#34;init_pbounds&#34;: self.pbounds,
         }</code></pre>
 </details>
+<div class="desc"><p>Holds result from an ROI fit. Only a method to save.</p>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>fit_backend</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the fit backend (e.g. scipy, gpufit, cpufit, etc.) used.</dd>
+<dt><strong><code>sweep_arr</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Freqs/taus</dd>
+<dt><strong><code>avg_sig_norm</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>sig_norm (trace/spectrum) averaged over ROI</dd>
+<dt><strong><code>avg_sig</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>sig (trace/spectrum) averaged over ROI</dd>
+<dt><strong><code>avg_ref</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>ref (trace/spectrum) averaged over ROI</dd>
+<dt><strong><code>fit_xvec</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Values where we have calculated the fit function</dd>
+<dt><strong><code>fit_yvec</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Values of fit function at solution, for fit_xvec values</dd>
+<dt><strong><code>fit_yvec_guess</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>The fit 'guess' values</dd>
+<dt><strong><code>best_params</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Best (optimal) fit/model parameters</dd>
+<dt><strong><code>best_sigmas</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Sigmas (stdev of fit error) at solution</dd>
+<dt><strong><code>best_residual</code></strong> :&ensp;<code>float</code></dt>
+<dd>Residual vec at solution</dd>
+<dt><strong><code>pguess</code></strong> :&ensp;<code>tuple</code> of <code>floats</code></dt>
+<dd>Guesses for fit parameters</dd>
+<dt><strong><code>pbounds</code></strong> :&ensp;<code>2-tuple,</code> of <code>tuples</code></dt>
+<dd>Bounds for fit, first tuple are the lower bounds, second the upper bounds.</dd>
+</dl>
+<h2 id="methods">Methods</h2>
+<p>save_json(filepath)
+Save into given filepath, ending in '.json'.</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>fit_backend</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the fit backend (e.g. scipy, gpufit, cpufit, etc.) used.</dd>
+<dt><strong><code>sweep_arr</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Freqs/taus</dd>
+<dt><strong><code>avg_sig_norm</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>sig_norm (trace/spectrum) averaged over ROI</dd>
+<dt><strong><code>avg_sig</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>sig (trace/spectrum) averaged over ROI</dd>
+<dt><strong><code>avg_ref</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>ref (trace/spectrum) averaged over ROI</dd>
+<dt><strong><code>fit_xvec</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Values where we have calculated the fit function</dd>
+<dt><strong><code>fit_yvec</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Values of fit function at solution, for fit_xvec values</dd>
+<dt><strong><code>fit_yvec_guess</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>The fit 'guess' values</dd>
+<dt><strong><code>best_params</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Best (optimal) fit/model parameters</dd>
+<dt><strong><code>best_sigmas</code></strong> :&ensp;<code>ndarray, 1D</code></dt>
+<dd>Sigmas (stdev of fit error) at solution</dd>
+<dt><strong><code>best_residual</code></strong> :&ensp;<code>float</code></dt>
+<dd>Residual vec at solution</dd>
+<dt><strong><code>pguess</code></strong> :&ensp;<code>tuple</code> of <code>floats</code></dt>
+<dd>Guesses for fit parameters</dd>
+<dt><strong><code>pbounds</code></strong> :&ensp;<code>2-tuple,</code> of <code>tuples</code></dt>
+<dd>Bounds for fit, first tuple are the lower bounds, second the upper bounds.</dd>
+</dl></div>
 <h3>Methods</h3>
 <dl>
 <dt id="dukit.share.RoiAvgFit.to_dict"><code class="name flex">
 <span>def <span class="ident">to_dict</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Return a dict of params</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -772,6 +508,7 @@ Save into given filepath, ending in '.json'.</p>
         &#34;init_pbounds&#34;: self.pbounds,
     }</code></pre>
 </details>
+<div class="desc"><p>Return a dict of params</p></div>
 </dd>
 </dl>
 </dd>
@@ -783,8 +520,8 @@ Save into given filepath, ending in '.json'.</p>
 <input id="lunr-search" name="q" placeholder="🔎 Search ..." aria-label="Search"
 disabled minlength="2">
 </form>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.css" integrity="sha512-j1u8eUJ4f23xPPxwOrLUPQaCD2dwzNqqmDDcWS4deWsMv2ohLqmXXuP3hU7g8TyzbMSakP/mMqoNBYWj8AEIFg==" crossorigin>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.js" integrity="sha512-plGUER9JkeEWPPqQBE4sdLqBoQug5Ap+BCGMc7bJ8BXkm+VVj6QzkpBz5Yv2yPkkq+cqg9IpkBaGCas6uDbW8g==" crossorigin></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.css" integrity="sha512-b+T2i3P45i1LZM7I00Ci5QquB9szqaxu+uuk5TUSGjZQ4w4n+qujQiIuvTv2BxE7WCGQCifNMksyKILDiHzsOg==" crossorigin>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.js" integrity="sha512-2B9/byNV1KKRm5nQ2RLViPFD6U4dUjDGwuW1GU+ImJh8YinPU9Zlq1GzdTMO+G2ROrB5o1qasJBy1ttYz0wCug==" crossorigin></script>
 <style>
 .modal-dialog iframe {
 width: 100vw;
@@ -825,7 +562,6 @@ setTimeout(() => input.focus(), 100);
 }).setContent('<iframe src="' + url + '"></iframe>').open();
 }
 </script>
-<h1>Index</h1>
 <div class="toc">
 <ul>
 <li><a href="#classes">Classes</a></li>
@@ -857,7 +593,7 @@ setTimeout(() => input.focus(), 100);
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
 </footer>
 </body>
 </html>

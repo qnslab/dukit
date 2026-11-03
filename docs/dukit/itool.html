@@ -2,19 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.9.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
 <title>dukit.itool API documentation</title>
-<meta name="description" content="This module holds misc image tooling …" />
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
-<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
-<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
-<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<meta name="description" content="This module holds misc image tooling …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
 <style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
-<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
 </head>
 <body>
 <main>
@@ -43,1473 +58,6 @@
 <li><code><a title="dukit.itool._iterslice" href="#dukit.itool._iterslice">_iterslice()</a></code></li>
 <li><code><a title="dukit.itool._iterframe" href="#dukit.itool._iterframe">_iterframe()</a></code></li>
 </ul>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python"># -*- coding: utf-8 -*-
-&#34;&#34;&#34;
-This module holds misc image tooling.
-
-Functions
----------
- - `dukit.itool.mpl_set_run_config`
- - `dukit.itool.mask_polygons`
- - `dukit.itool.get_im_filtered`
- - `dukit.itool.get_background`
- - `dukit.itool.mu_sigma_inside_polygons`
- - `dukit.itool.plot_image`
- - `dukit.itool.plot_image_on_ax`
- - `dukit.itool.get_colormap_range`
- - `dukit.itool.crop_roi`
- - `dukit.itool.crop_sweep`
- - `dukit.itool.rebin_image_stack`
- - `dukit.itool.smooth_image_stack`
- - `dukit.itool.sum_spatially`
- - `dukit.itool.get_aois`
- - `dukit.itool._iterslice`
- - `dukit.itool._iterframe`
-&#34;&#34;&#34;
-
-# ============================================================================
-
-__author__ = &#34;Sam Scholten&#34;
-__pdoc__ = {
-    &#34;dukit.itool.mpl_set_run_config&#34;: True,
-    &#34;dukit.itool.mask_polygons&#34;: True,
-    &#34;dukit.itool.get_im_filtered&#34;: True,
-    &#34;dukit.itool.get_background&#34;: True,
-    &#34;dukit.itool.mu_sigma_inside_polygons&#34;: True,
-    &#34;dukit.itool.plot_image&#34;: True,
-    &#34;dukit.itool.plot_image_on_ax&#34;: True,
-    &#34;dukit.itool.get_colormap_range&#34;: True,
-    &#34;dukit.itool.crop_roi&#34;: True,
-    &#34;dukit.itool.crop_sweep&#34;: True,
-    &#34;dukit.itool.rebin_image_stack&#34;: True,
-    &#34;dukit.itool.smooth_image_stack&#34;: True,
-    &#34;dukit.itool.sum_spatially&#34;: True,
-    &#34;dukit.itool.get_aois&#34;: True,
-    &#34;dukit.itool._iterslice&#34;: True,
-    &#34;dukit.itool._iterframe&#34;: True,
-}
-
-# ============================================================================
-
-import numpy as np
-from numpy import typing as npt
-from numpy.polynomial.polynomial import polyval2d
-from scipy.optimize import least_squares
-from scipy.interpolate import griddata
-from scipy.ndimage import gaussian_filter
-import scipy.ndimage
-from typing import Callable
-from itertools import product
-
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-import matplotlib.patches
-import matplotlib.colorbar
-from matplotlib_scalebar.scalebar import ScaleBar
-from mpl_toolkits.axes_grid1 import make_axes_locatable, axes_size
-
-# ============================================================================
-
-import dukit.polygon
-import dukit.rebin
-from dukit.warn import warn
-
-# ============================================================================
-
-DEFAULT_RCPARAMS: dict = {
-    &#34;figure.constrained_layout.use&#34;: False,
-    &#34;figure.figsize&#34;: [6.4, 4.8],
-    &#34;figure.dpi&#34;: 80,
-    &#34;figure.max_open_warning&#34;: 30,
-    &#34;lines.linewidth&#34;: 0.8,
-    &#34;lines.markersize&#34;: 3,
-    &#34;xtick.labelsize&#34;: 10,
-    &#34;xtick.major.size&#34;: 4,
-    &#34;xtick.direction&#34;: &#34;in&#34;,
-    &#34;ytick.labelsize&#34;: 10,
-    &#34;ytick.direction&#34;: &#34;in&#34;,
-    &#34;ytick.major.size&#34;: 4,
-    &#34;legend.fontsize&#34;: &#34;small&#34;,
-    &#34;legend.loc&#34;: &#34;lower left&#34;,
-    &#34;scalebar.location&#34;: &#34;lower right&#34;,
-    &#34;scalebar.width_fraction&#34;: 0.015,
-    &#34;scalebar.box_alpha&#34;: 0.5,
-    &#34;scalebar.scale_loc&#34;: &#34;top&#34;,
-    &#34;scalebar.sep&#34;: 1,
-    &#34;axes.formatter.useoffset&#34;: False,
-    &#34;axes.formatter.use_mathtext&#34;: True,
-    &#34;errorbar.capsize&#34;: 3.0,
-}
-&#34;&#34;&#34;Set of rcparams we&#39;ve casually decided are reasonable.&#34;&#34;&#34;
-
-
-def mpl_set_run_config(default: bool = True, **kwargs):
-    &#34;&#34;&#34;
-    Set the matplotlib runtime configuration (rcparams).
-
-    Parameters
-    ----------
-    default : bool
-        Use dukit default rcparams?
-    kwargs
-        kwargs to pass to rcparams, see
-        https://matplotlib.org/stable/users/explain/customizing.html
-    &#34;&#34;&#34;
-    if default:
-        mpl.rcParams.update(DEFAULT_RCPARAMS)
-    else:
-        mpl.rcParams.update(**kwargs)
-
-
-# ============================================================================
-
-
-def mask_polygons(
-    image: npt.NDArray, polygons: list | None = None, invert_mask: bool = False
-) -&gt; npt.NDArray:
-    &#34;&#34;&#34;Mask image for the given polygon regions.
-
-    Arguments
-    ---------
-    image : 2D array-like
-        Image array to mask.
-    polygons : list, optional
-        List of `qdmpy.shared.polygon.Polygon` objects.
-        (the default is None, where image is returned with no mask)
-    invert_mask : bool, optional
-        Invert mask such that background is masked, not polygons (i.e. polygons
-        will be operated on if array is passed to np.mean instead of background).
-        (the default is False)
-
-    Returns
-    -------
-    masked_im : np.ma.MaskedArray
-        image, now masked
-    &#34;&#34;&#34;
-    image = np.array(image)
-    if polygons is None:
-        return np.ma.masked_array(image, mask=np.zeros(image.shape))
-    if len(image.shape) != 2:
-        raise ValueError(&#34;image is not a 2D array&#34;)
-
-    if not isinstance(polygons, (list, tuple)) or not isinstance(
-        polygons[0], dukit.polygon.Polygon
-    ):
-        raise TypeError(&#34;polygons were not None, a list or a list of Polygon objects&#34;)
-
-    ylen, xlen = image.shape
-    masked_area = np.full(image.shape, True)  # all masked to start with
-
-    grid_y, grid_x = np.meshgrid(range(ylen), range(xlen), indexing=&#34;ij&#34;)
-
-    for p in polygons:
-        in_or_out = p.is_inside(grid_y, grid_x)
-        # mask all vals that are not background
-        m = np.ma.masked_greater_equal(in_or_out, 0).mask
-        masked_area = np.logical_and(masked_area, ~m)
-
-    msk = np.logical_not(masked_area) if not invert_mask else masked_area
-
-    return np.ma.masked_array(image, mask=msk)
-
-
-def get_background(
-    image: npt.NDArray,
-    method: str,
-    polygon_nodes: list | None = None,
-    **method_params_dict,
-) -&gt; tuple[npt.NDArray, npt.NDArray]:
-    &#34;&#34;&#34;Returns a background for given image, via chosen method.
-
-    Methods available:
-
-    - &#34;fix_zero&#34;
-        - Fix background to be a constant offset (z value)
-        - params required in method_params_dict:
-            &#34;zero&#34; an int/float, defining the constant offset of the background
-    - &#34;three_point&#34;
-        - Calculate plane background with linear algebra from three [x,y]
-          lateral positions given
-        - params required in method_params_dict:
-            - &#34;points&#34; a len-3 iterable containing [x, y] points
-    - &#34;mean&#34;
-        - background calculated from mean of image
-        - no params required
-    - &#34;poly&#34;
-        - background calculated from polynomial fit to image.
-        - params required in method_params_dict:
-            - &#34;order&#34;: an int, the &#39;order&#39; polynomial to fit. (e.g. 1 = plane).
-    - &#34;gaussian&#34;
-        - background calculated from _gaussian fit to image (with rotation)
-        - no params required
-    - &#34;lorentzian&#34;
-        - as above, but a lorentzian lineshape (with rotation)
-    - &#34;interpolate&#34;
-        - Background defined by the dataset smoothed via a sigma-_gaussian
-            filtering, and method-interpolation over masked (polygon) regions.
-        - params required in method_params_dict:
-            - &#34;interp_method&#34;: nearest, linear, cubic.
-            - &#34;sigma&#34;: sigma passed to _gaussian filter
-                (see scipy.ndimage._gaussian_filter) which is utilized on the
-                background before interpolating
-    - &#34;gaussian_filter&#34;
-        - background calculated from image filtered with a _gaussian filter.
-        - params required in method_params_dict:
-            - &#34;sigma&#34;: sigma passed to _gaussian filter (see
-                    scipy.ndimage._gaussian_filter)
-    - &#34;gaussian_then_poly&#34;
-        - runs gaussian then poly subtraction
-        - params required in method_params_dict:
-            - &#34;order&#34;: an int, the &#39;order&#39; polynomial to fit. (e.g. 1 = plane).
-
-    polygon utilization:
-        - if method is not interpolate, the image is masked where the polygons are
-          and the background is calculated without these regions
-        - if the method is interpolate, these regions are interpolated over
-            (and the rest of the image, _gaussian smoothed, is &#39;background&#39;).
-
-    Arguments
-    ---------
-    image : 2D array-like
-        image to get backgrond of
-    method : str
-        Method to use, available options above
-    **method_params_dict
-        Key-value pairs passed onto each background backend. Required params
-        given above.
-    polygon_nodes : list | None = None
-        Optionally provide polygon nodes.
-
-    Returns
-    -------
-    im_bground : ndarray
-        2D numpy array, representing the &#39;background&#39; of image.
-    mask : ndarray
-        Mask (True pixels were not used to calculate background).
-    &#34;&#34;&#34;
-    # Discuss masking -&gt; if polygons provided, background is calculated but with
-    # polygon regions masked -&gt; background calculated without these.
-    # also used for interpolation method.
-    method_required_settings: dict[str, list] = {
-        &#34;fix_zero&#34;: [&#34;zero&#34;],
-        &#34;three_point&#34;: [&#34;points&#34;],
-        &#34;mean&#34;: [],
-        &#34;poly&#34;: [&#34;order&#34;],
-        &#34;gaussian&#34;: [],
-        &#34;lorentzian&#34;: [],
-        &#34;interpolate&#34;: [&#34;interp_method&#34;, &#34;sigma&#34;],
-        &#34;gaussian_filter&#34;: [&#34;sigma&#34;],
-        &#34;gaussian_then_poly&#34;: [&#34;order&#34;],
-    }
-    method_fns: dict[str, Callable] = {
-        &#34;fix_zero&#34;: _zero_background,
-        &#34;three_point&#34;: _three_point_background,
-        &#34;mean&#34;: _mean_background,
-        &#34;poly&#34;: _poly_background,
-        &#34;gaussian&#34;: _gaussian_background,
-        &#34;lorentzian&#34;: _lorentzian_background,
-        &#34;interpolate&#34;: _interpolated_background,
-        &#34;gaussian_filter&#34;: _filtered_background,
-        &#34;gaussian_then_poly&#34;: _gaussian_then_poly,
-    }
-    image = np.ma.array(image, mask=np.zeros(np.shape(image)))
-    if len(image.shape) != 2:
-        raise ValueError(&#34;image is not a 2D array&#34;)
-    if not isinstance(method, str):
-        raise TypeError(&#34;method must be a string.&#34;)
-    if not isinstance(method_params_dict, dict):
-        raise TypeError(&#34;method_params_dict must be a dict.&#34;)
-    if method not in method_required_settings:
-        raise ValueError(
-            &#34;&#39;method&#39; argument to get_background not in implemented_methods: &#34;
-            + f&#34;{method_required_settings.keys()}&#34;
-        )
-    for setting in method_required_settings[method]:
-        if setting not in method_params_dict:
-            raise ValueError(
-                f&#34;{setting} key missing from method_params_dict for method: {method}&#34;
-            )
-
-    if polygon_nodes:
-        polygons = [
-            dukit.polygon.Polygon(nodes[:, 0], nodes[:, 1])
-            for nodes in polygon_nodes
-        ]
-    else:
-        polygons = None
-
-    if method != &#34;interpolate&#34;:
-        # can&#39;t mask it for interpolate as we need that info!
-        image = mask_polygons(image, polygons)
-
-    if method == &#34;gaussian_filter&#34;:
-        method_params_dict[&#34;filter_type&#34;] = &#34;gaussian&#34;
-
-    if method == &#34;interpolate&#34;:
-        method_params_dict[&#34;polygons&#34;] = polygons
-
-    if method == &#34;three_point&#34; and &#34;sample_size&#34; not in method_params_dict:
-        method_params_dict[&#34;sample_size&#34;] = 0
-    return (
-        method_fns[method](image, **method_params_dict),
-        np.ma.getmaskarray(image).astype(int),
-    )
-
-
-# ============================================================================
-
-
-def mu_sigma_inside_polygons(
-    image: npt.NDArray, polygons: list | None = None
-) -&gt; tuple[float, float]:
-    &#34;&#34;&#34;returns (mean, standard_deviation) for image, only _within_ polygon areas.&#34;&#34;&#34;
-    image = mask_polygons(image, polygons, invert_mask=True)
-    return np.mean(image), np.std(image)
-
-
-# ============================================================================
-
-
-# hands off to other filters
-def get_im_filtered(image: npt.NDArray, filter_type: str, **kwargs) -&gt; npt.NDArray:
-    &#34;&#34;&#34;Wrapped over other filters.
-    Current filters defined:
-        - filter_type = gaussian, `qdmpy.shared.itool._get_im_filtered_gaussian`
-    &#34;&#34;&#34;
-    if not isinstance(image, np.ma.core.MaskedArray):
-        image = np.ma.masked_array(image)
-    filter_fns = {
-        &#34;gaussian&#34;: _get_im_filtered_gaussian,
-    }
-    # filter not so great with nans (and mask doesn&#39;t work w filters) -&gt; set to nanmean
-    if &#34;upper_threshold&#34; in kwargs and kwargs[&#34;upper_threshold&#34;]:
-        image[image &gt; kwargs[&#34;upper_threshold&#34;]] = np.nan
-    if &#34;lower_threshold&#34; in kwargs and kwargs[&#34;lower_threshold&#34;]:
-        image[image &lt; kwargs[&#34;lower_threshold&#34;]] = np.nan
-    image[np.logical_or(np.isnan(image), image.mask)] = np.nanmean(image)
-
-    return filter_fns[filter_type](image, **kwargs)
-
-
-# ============================================================================
-
-
-def _get_im_filtered_gaussian(image: npt.NDArray, sigma: float) -&gt; npt.NDArray:
-    &#34;&#34;&#34;Returns image filtered through scipy.ndimage.gaussian_filter with
-    parameter &#39;sigma&#39;.&#34;&#34;&#34;
-    return scipy.ndimage.gaussian_filter(
-        image,
-        sigma=sigma,
-    )
-
-
-# ============================================================================
-
-
-def _zero_background(image: npt.NDArray, zero: float) -&gt; npt.NDArray:
-    &#34;&#34;&#34;Background defined by z level of &#39;zero&#39;&#34;&#34;&#34;
-    if not isinstance(zero, (int, float)):
-        raise TypeError(&#34;&#39;zero&#39; must be an int or a float.&#34;)
-    mn = zero
-    bg = np.empty(image.shape)
-    bg[:] = mn
-    return bg
-
-
-# ============================================================================
-
-
-def _equation_plane(
-    params: list | tuple | npt.NDArray, y: npt.NDArray, x: npt.NDArray
-) -&gt; npt.NDArray:
-    &#34;&#34;&#34;params: [a, b, c, d] s.t. d = a*y + b*x + c*z
-    so z = (1/c) * (d - (ay + bx)) -&gt; return this.&#34;&#34;&#34;
-    return (1 / params[2]) * (params[3] - params[0] * y - params[1] * x)
-
-
-def _points_to_params(points: list | tuple | npt.NDArray) -&gt; tuple:
-    &#34;&#34;&#34;
-    http://pi.math.cornell.edz/~froh/231f08e1a.pdf
-    points: iterable of 3 iterables: [x, y, z]
-    returns a,b,c,d parameters (see _equation_plane)
-    &#34;&#34;&#34;
-    rearranged_points = [[p[1], p[0], p[2]] for p in points]  # change to [y, x, z]
-    pts = np.array(rearranged_points)
-    vec1_in_plane = pts[1] - pts[0]
-    vec2_in_plane = pts[2] - pts[0]
-    a_normal = np.cross(vec1_in_plane, vec2_in_plane)
-
-    d = np.dot(pts[2], a_normal)
-    return *a_normal, d
-
-
-def _three_point_background(
-    image: npt.NDArray, points: list | tuple | npt.NDArray, sample_size: int
-) -&gt; npt.NDArray:
-    &#34;&#34;&#34;points: len 3 iterable of len 2 iterables: [[x1, y1], [x2, y2], [x3, y3]]
-    sample_size: integer
-    https://stackoverflow.com/questions/20699821/find-and-draw-regression-plane-to-a-set-of-points
-    https://www.geeksforgeeks.org/program-to-find-equation-of-a-plane-passing-through-3-points/
-    &#34;&#34;&#34;
-
-    if len(points) != 3:
-        raise ValueError(&#34;points needs to be len 3 of format: [x, y] (int or floats).&#34;)
-    if not isinstance(sample_size, int) or sample_size &lt; 0:
-        raise TypeError(&#34;sample_size must be an integer &gt;= 0&#34;)
-    for p in points:
-        if len(p) != 2:
-            raise ValueError(
-                &#34;points needs to be len 3 of format: [x, y] (int or floats).&#34;
-            )
-        for c in p:
-            if not isinstance(c, (int, float)):
-                raise ValueError(
-                    &#34;points needs to be len 3 of format: [x, y] (int or floats).&#34;
-                )
-        if image.mask[p[1], p[0]]:
-            warn(
-                &#34;One of the input points was masked (inside a polygon?), &#34;
-                + &#34;falling back on polyfit, order 1&#34;
-            )
-            return _poly_background(image, order=1)
-
-    def _mean_sample(image: npt.NDArray, sample_size: int, yx: tuple) -&gt; float:
-        &#34;&#34;&#34;Mean of samples of &#39;image&#39; centered on &#39;yx&#39; out to pixels &#39;sample_size&#39;
-        in both x &amp; y.&#34;&#34;&#34;
-
-        def _sample_generator(image, sample_size, yx):
-            &#34;&#34;&#34;sample &#39;image&#39; centered on &#39;yx&#39; out to pixels &#39;sample_size&#39;
-            in both x &amp; y.&#34;&#34;&#34;
-            for y in range(yx[0] - sample_size, yx[0] + sample_size + 1):
-                for x in range(yx[1] - sample_size, yx[1] + sample_size + 1):
-                    try:
-                        yield image[y, x]
-                    except IndexError:
-                        continue
-
-        return np.mean(list(_sample_generator(image, sample_size, yx)))
-
-    points = np.array(
-        [np.append(p, _mean_sample(image, sample_size, (p[1], p[0]))) for p in points]
-    )
-    Y, X = np.indices(image.shape)  # noqa: N806
-    return _equation_plane(_points_to_params(points), Y, X)
-
-
-# ============================================================================
-
-
-def _mean_background(image: npt.NDArray) -&gt; npt.NDArray:
-    &#34;&#34;&#34;Background defined by mean of image.&#34;&#34;&#34;
-    bg = np.empty(image.shape)
-    mn = np.nanmean(image)
-    bg[:] = mn
-    return bg
-
-
-# ============================================================================
-
-
-def _residual_poly(
-    params: list | tuple | npt.NDArray,
-    y: npt.NDArray,
-    x: npt.NDArray,
-    z: npt.NDArray,
-    order: int,
-) -&gt; npt.NDArray:
-    &#34;&#34;&#34;
-    z = image data, order = highest polynomial order to go to
-    y, x: index meshgrids
-    &#34;&#34;&#34;
-    # get params to matrix form (as expected by polyval)
-    params = np.append(
-        params, 0
-    )  # add on c[-1, -1] term we don&#39;t want (i.e. cross term of next order)
-    c = params.reshape((order + 1, order + 1))
-    return polyval2d(y, x, c) - z  # note z is flattened, as is polyval
-
-
-def _poly_background(image: npt.NDArray, order: int) -&gt; npt.NDArray:
-    &#34;&#34;&#34;Background defined by a polynomial fit up to order &#39;order&#39;.&#34;&#34;&#34;
-    if order == 0:
-        return _mean_background(image)
-
-    init_params = np.zeros((order + 1, order + 1))
-    init_params[0, 0] = np.nanmean(
-        image
-    )  # set zeroth term to be mean to get it started
-    Y, X = np.indices(image.shape)  # noqa: N806
-    good_vals = np.logical_and(~np.isnan(image), ~image.mask)
-    y = Y[good_vals]
-    x = X[good_vals]
-
-    data = image[good_vals]  # flattened
-    best_c = least_squares(
-        _residual_poly, init_params.flatten()[:-1], args=(y, x, data, order)
-    ).x
-    best_c = np.append(best_c, 0)
-    c = best_c.reshape((order + 1, order + 1))
-    return polyval2d(Y.flatten(), X.flatten(), c).reshape(
-        image.shape
-    )  # eval over full image
-
-
-# ============================================================================
-
-
-def _gaussian(
-    p: list | tuple | npt.NDArray, y: npt.NDArray, x: npt.NDArray
-) -&gt; npt.NDArray:
-    &#34;&#34;&#34;Simple Gaussian function, height, center_y, center_x, width_y, width_x, rot = p.&#34;&#34;&#34;
-    height, center_y, center_x, width_y, width_x, rot, offset = p
-    return offset + height * np.exp(
-        -(
-            (((y - center_y) * np.cos(rot) + (x - center_x) * np.sin(rot)) / width_y)
-            ** 2
-            + (((x - center_x) * np.cos(rot) - (y - center_y) * np.sin(rot)) / width_x)
-            ** 2
-        )
-        / 2
-    )
-
-
-def _moments(image: npt.NDArray) -&gt; tuple:
-    &#34;&#34;&#34;Calculate _moments of image (get initial guesses for _gaussian and _lorentzian
-    function), rot=0.0 assumed&#34;&#34;&#34;
-    offset = np.nanmin(image)
-    total = np.nansum(image)
-    Y, X = np.indices(image.shape)  # noqa: N806
-
-    center_y = np.nansum(Y * image) / total
-    center_x = np.nansum(X * image) / total
-    if center_y &gt; np.max(Y) or center_y &lt; 0:
-        center_y = np.max(Y) / 2
-    if center_x &gt; np.max(X) or center_x &lt; 0:
-        center_x = np.max(X) / 2
-
-    col = image[int(center_y), :]
-    row = image[:, int(center_x)]
-    width_x = np.nansum(
-        np.sqrt(abs((np.arange(col.size) - center_y) ** 2 * col)) / np.nansum(col)
-    )
-    width_y = np.nansum(
-        np.sqrt(abs((np.arange(row.size) - center_x) ** 2 * row)) / np.nansum(row)
-    )
-    height = np.nanmax(image)
-    return height, center_y, center_x, width_y, width_x, 0.0, offset
-
-
-def _residual_gaussian(
-    p: list | tuple | npt.NDArray, y: npt.NDArray, x: npt.NDArray, data: npt.NDArray
-) -&gt; npt.NDArray:
-    &#34;&#34;&#34;Residual of data with a _gaussian model.&#34;&#34;&#34;
-    return _gaussian(p, y, x) - data
-
-
-def _gaussian_background(image: npt.NDArray) -&gt; npt.NDArray:
-    &#34;&#34;&#34;Background defined by a Gaussian function.&#34;&#34;&#34;
-    params = _moments(image)
-    Y, X = np.indices(image.shape)  # noqa: N806
-    good_vals = np.logical_and(~np.isnan(image), ~image.mask)
-    y = Y[good_vals]
-    x = X[good_vals]
-    data = image[good_vals]
-    p = least_squares(
-        _residual_gaussian,
-        params,
-        method=&#34;trf&#34;,
-        bounds=(0, np.inf),
-        args=(y, x, data),
-    ).x
-    return _gaussian(p, Y, X)
-
-
-def _lorentzian(
-    p: list | tuple | npt.NDArray, y: npt.NDArray, x: npt.NDArray
-) -&gt; npt.NDArray:
-    height, center_y, center_x, width_y, width_x, rot, offset = p
-    xp = (x - center_x) * np.cos(rot) - (y - center_y) * np.sin(rot)
-    yp = (x - center_x) * np.sin(rot) + (y - center_y) * np.cos(rot)
-
-    R = (xp / width_x) ** 2 + (yp / width_y) ** 2
-
-    return offset + height * (1 / (1 + R))
-
-
-def _residual_lorentzian(
-    p: list | tuple | npt.NDArray, y: npt.NDArray, x: npt.NDArray, data: npt.NDArray
-) -&gt; npt.NDArray:
-    return _lorentzian(p, y, x) - data
-
-
-def _lorentzian_background(image: npt.NDArray) -&gt; tuple[npt.NDArray, npt.NDArray]:
-    params = _moments(image)
-    Y, X = np.indices(image.shape)  # noqa: N806
-    good_vals = np.logical_and(~np.isnan(image), ~image.mask)
-    y = Y[good_vals]
-    x = X[good_vals]
-    data = image[good_vals]
-    p = least_squares(
-        _residual_lorentzian,
-        params,
-        bounds=(0, np.inf),
-        method=&#34;trf&#34;,
-        args=(y, x, data),
-    ).x
-
-    return p, _lorentzian(p, Y, X)
-
-
-# ============================================================================
-
-
-def _interpolated_background(
-    image: npt.NDArray,
-    interp_method: str,
-    polygons: list[&#34;dukit.polygon.Polygon&#34;],
-    sigma: float,
-) -&gt; npt.NDArray:
-    &#34;&#34;&#34;Background defined by the dataset smoothed via a sigma-_gaussian filtering,
-    and method-interpolation over masked (polygon) regions.
-
-    method available: nearest, linear, cubic.
-    &#34;&#34;&#34;
-    if not isinstance(polygons, list) or not isinstance(
-        polygons[0], dukit.polygon.Polygon
-    ):
-        raise TypeError(&#34;polygons arg was not a list of Polygon objects&#34;)
-
-    ylen, xlen = image.shape
-    isnt_poly = np.full(image.shape, True)  # all masked to start with
-
-    # coordinate grid for all coordinates
-    grid_y, grid_x = np.meshgrid(range(ylen), range(xlen), indexing=&#34;ij&#34;)
-
-    for p in polygons:
-        in_or_out = p.is_inside(grid_y, grid_x)
-        # mask all vals that are not background
-        is_this_poly = np.ma.masked_greater_equal(
-            in_or_out, 0
-        ).mask  # &gt;= 0 =&gt; inside/on poly
-        isnt_poly = np.logical_and(
-            isnt_poly, ~is_this_poly
-        )  # prev isnt_poly and isnt this poly
-
-    # now we want to send all of the values in indexes that is_bg is True to griddata
-    pts = []
-    vals = []
-    for i in range(ylen):
-        for j in range(xlen):
-            if isnt_poly[i, j]:
-                pts.append([i, j])
-                vals.append(image[i, j])
-
-    bg_interp = griddata(pts, vals, (grid_y, grid_x), method=interp_method)
-
-    return get_im_filtered(bg_interp, &#34;gaussian&#34;, sigma=sigma)
-
-
-# ============================================================================
-
-
-def _filtered_background(image: npt.NDArray, filter_type: str, **kwargs) -&gt; npt.NDArray:
-    &#34;&#34;&#34;Background defined by a filter_type-filtering of the image.
-    Passed to `qdmpy.shared.itool.get_background&#34;&#34;&#34;
-    return get_im_filtered(image, filter_type, **kwargs)
-
-
-# ============================================================================
-
-
-def _gaussian_then_poly(image: npt.NDArray, order: int) -&gt; npt.NDArray:
-    &#34;&#34;&#34;Background defines as: fit of a gaussian then a polynomial to image.&#34;&#34;&#34;
-    gauss_back = _gaussian_background(image)
-    return _poly_background(image - gauss_back, order) + gauss_back
-
-
-# ============================================================================
-
-
-def plot_image(
-    image_data: npt.NDArray,
-    title: str = &#34;title&#34;,
-    c_map: str = &#34;viridis&#34;,
-    c_range: tuple[float, float] | tuple[None, None] = (None, None),
-    c_label: str = &#34;label&#34;,
-    opath: str = &#34;&#34;,
-    show_scalebar: bool = True,
-    raw_pixel_size: float = float(&#34;nan&#34;),
-    applied_binning: tuple[int, int] | int = 0,
-    annotate_polygons: bool = False,
-    polygon_nodes: list | None = None,
-    show_tick_marks: bool = False,
-    polygon_patch_params: dict | None = None,
-) -&gt; tuple[plt.Figure, plt.Axes]:
-    &#34;&#34;&#34;
-    Plots an image given by image_data. Only saves figure if path given.
-
-    Arguments
-    ---------
-    image_data : np array, 3D
-        Data that is plot.
-    title : str
-        Title of figure, as well as name for save files
-    c_map : str
-        Colormap object used to map image_data values to a color.
-    c_range : 2-tuple of floats
-        Range of values in image_data to map to colors
-    c_label : str
-        Label for colormap axis
-    opath: str  = &#34;&#34;,
-        If given saves figure here.
-    show_scalebar: bool = True
-        Show the scalebar(s)?
-    raw_pixel_size: float = float(&#34;nan&#34;)
-        Pixel size from hardware
-    applied_binning: tuple[int, int] | int = 0,
-        Any additional binning that HAS been applied
-    annotate_polygons: bool = False,
-        Annotate the polygons on image?
-    polygon_nodes: list | None = None,
-        List of polygon nodes, see TODO for format
-    show_tick_marks: bool = False
-        Show tick marks on axes
-    polygon_patch_params: dict | None, default = None
-        Passed to mpl.patches.Polygon.
-
-    Returns
-    -------
-    fig : matplotlib Figure object
-    ax : matplotlib Axis object
-    &#34;&#34;&#34;
-
-    fig, ax = plt.subplots()
-
-    fig, ax = plot_image_on_ax(
-        fig,
-        ax,
-        image_data,
-        title,
-        c_map,
-        c_range,
-        c_label,
-        show_scalebar=show_scalebar,
-        raw_pixel_size=raw_pixel_size,
-        applied_binning=applied_binning,
-        annotate_polygons=annotate_polygons,
-        polygon_nodes=polygon_nodes,
-        show_tick_marks=show_tick_marks,
-        polygon_patch_params=polygon_patch_params,
-    )
-    if opath:
-        fig.savefig(opath)
-
-    return fig, ax
-
-
-# ============================================================================
-
-
-def plot_image_on_ax(
-    fig: plt.Figure,
-    ax: plt.Axes,
-    image_data: npt.NDArray,
-    title: str = &#34;title&#34;,
-    c_map: str = &#34;viridis&#34;,
-    c_range: tuple[float, float] | tuple[None, None] = (None, None),
-    c_label: str = &#34;label&#34;,
-    show_scalebar: bool = True,
-    raw_pixel_size: float = float(&#34;nan&#34;),
-    applied_binning: tuple[int, int] | int = 0,
-    annotate_polygons: bool = False,
-    polygon_nodes: list | None = None,
-    show_tick_marks: bool = False,
-    polygon_patch_params: dict | None = None,
-) -&gt; tuple[plt.Figure, plt.Axes]:
-    &#34;&#34;&#34;
-    Plots an image given by image_data onto given figure and ax.
-
-    Does not save any data.
-
-    Arguments
-    ---------
-    fig : matplotlib Figure object
-    ax : matplotlib Axis object
-    image_data : np array, 3D
-        Data that is plot.
-    title : str
-        Title of figure, as well as name for save files
-    c_map : str
-        Colormap object used to map image_data values to a color.
-    c_range : 2-tuple of floats
-        Range of values in image_data to map to colors
-    c_label : str
-        Label for colormap axis
-    show_scalebar: bool = True
-        Show the scalebar(s)?
-    raw_pixel_size: float = float(&#34;nan&#34;)
-        Pixel size from hardware
-    applied_binning: tuple[int, int] | int = 0,
-        Any additional binning that HAS been applied
-    annotate_polygons: bool = False,
-        Annotate the polygons on image?
-    polygon_nodes: list | None = None,
-        List of polygon nodes, see TODO for format
-    show_tick_marks: bool = False
-        Show tick marks on axes
-    polygon_patch_params: dict | None, default = None
-        Passed to mpl.patches.Polygon.
-
-    Returns
-    -------
-    fig : matplotlib Figure object
-    ax : matplotlib Axis object
-    &#34;&#34;&#34;
-
-    imshowed = ax.imshow(image_data, cmap=c_map, vmin=c_range[0], vmax=c_range[1])
-
-    ax.set_title(title)
-
-    cbar = _add_colorbar(imshowed, fig, ax)
-    cbar.ax.set_ylabel(c_label, rotation=270)
-
-    if show_scalebar and raw_pixel_size:
-        if isinstance(applied_binning, tuple):
-            bin_x, bin_y = applied_binning
-            pixel_x = raw_pixel_size * bin_x if bin_x else raw_pixel_size
-            pixel_y = raw_pixel_size * bin_y if bin_y else raw_pixel_size
-            scalebar_x = ScaleBar(pixel_x)
-            scalebar_y = ScaleBar(pixel_y, rotation=&#34;vertical&#34;)
-            ax.add_artist(scalebar_x)
-            ax.add_artist(scalebar_y)
-        else:
-            pixel = (
-                raw_pixel_size * applied_binning if applied_binning else raw_pixel_size
-            )
-            scalebar = ScaleBar(pixel)
-            ax.add_artist(scalebar)
-
-    if polygon_nodes and annotate_polygons:
-        if polygon_patch_params is None:
-            polygon_patch_params = {
-                &#34;facecolor&#34;: None,
-                &#34;edgecolor&#34;: &#34;k&#34;,
-                &#34;linestyle&#34;: &#34;dashed&#34;,
-                &#34;fill&#34;: False,
-            }
-        for poly in polygon_nodes:
-            # polygons reversed to (x,y) indexing for patch
-            ax.add_patch(
-                matplotlib.patches.Polygon(
-                    np.dstack((poly[:, 1], poly[:, 0]))[0],
-                    **polygon_patch_params,
-                )
-            )
-
-    if not show_tick_marks:
-        ax.get_xaxis().set_ticks([])
-        ax.get_yaxis().set_ticks([])
-
-    return fig, ax
-
-
-# ============================================================================
-
-
-def _add_colorbar(
-    imshowed: mpl.cm.ScalarMappable,
-    fig: plt.Figure,
-    ax: plt.Axes,
-    aspect: float = 20.0,
-    pad_fraction: float = 1.0,
-    **kwargs,
-) -&gt; matplotlib.colorbar.Colorbar:
-    &#34;&#34;&#34;
-    Adds a colorbar to matplotlib axis
-
-    Arguments
-    ---------
-    imshowed : image as returned by ax.imshow
-    fig : matplotlib Figure object
-    ax : matplotlib Axis object
-
-    Returns
-    -------
-    cbar : matplotlib colorbar object
-
-    Optional Arguments
-    ------------------
-    aspect : int
-        Reciprocal of aspect ratio passed to new colorbar axis width. Default: 20.
-    pad_fraction : int
-        Fraction of new colorbar axis width to pad from image. Default: 1.
-
-    **kwargs : other keyword arguments
-        Passed to fig.colorbar.
-
-    &#34;&#34;&#34;
-    divider = make_axes_locatable(ax)
-    width = axes_size.AxesY(ax, aspect=1.0 / aspect)
-    pad = axes_size.Fraction(pad_fraction, width)
-    cax = divider.append_axes(&#34;right&#34;, size=width, pad=pad)
-    cbar = fig.colorbar(imshowed, cax=cax, **kwargs)
-    tick_locator = mpl.ticker.MaxNLocator(nbins=5)
-    cbar.locator = tick_locator
-    cbar.update_ticks()
-    cbar.ax.get_yaxis().labelpad = 15
-    cbar.ax.linewidth = 0.5  # type: ignore
-    return cbar
-
-
-# ============================================================================
-
-
-def get_colormap_range(
-    c_range_type: str,
-    c_range_vals: tuple[float, ...],
-    image: npt.NDArray,
-    auto_sym_zero: bool = True,
-) -&gt; tuple[float, float]:
-    &#34;&#34;&#34;
-    Produce a colormap range to plot image from, using the options in c_range_dict.
-
-    Arguments
-    ---------
-    c_range_type : str
-         - &#34;min_max&#34; : map between minimum and maximum values in image.
-         - &#34;deviation_from_mean&#34; : requires c_range_vals be a 1-tuple float
-           between 0 and 1 &#39;dev&#39;. Maps between (1 - dev) * mean and (1 + dev) * mean.
-         - &#34;min_max_symmetric_about_mean&#34; : map symmetrically about mean, capturing all
-            values in image (default).
-         - &#34;min_max_symmetric_about_zero&#34; : map symmetrically about zero, capturing all
-            values in image.
-         - &#34;percentile&#34; : requires c_range_vals be a 2-tuple w vals between 0 and 100.
-            Maps the range between those percentiles of the data.
-         - &#34;percentile_symmetric_about_zero&#34; : requires c_range_vals be a 2-tuple
-            w vals between 0 and 100. Maps symmetrically about zero, capturing
-            all values between those percentiles in the data (plus perhaps a bit more to
-            ensure symmety)
-         - &#34;strict_range&#34; : requiresc_range_vals 2-tuple.
-            Maps colors directly between the values given.
-         - &#34;mean_plus_minus&#34; : mean plus or minus this value.
-            c_range_vals must be a 1-tuple float
-    c_range_vals : tuple
-        See above for allowed options
-    auto_sym_zero : bool, default=True
-        Try and make symmetric around zero, if logical?
-
-    image : array-like
-        2D array (image) that fn returns colormap range for.
-
-    Returns
-    -------
-    c_range : tuple length 2
-        i.e. [min value to map to a color, max value to map to a color]
-    &#34;&#34;&#34;
-
-    # mostly these are just checking that the input values are valid
-
-    warning_messages = {
-        &#34;deviation_from_mean&#34;: &#34;&#34;&#34;Invalid c_range_dict[&#39;values&#39;] encountered.
-        For c_range type &#39;deviation_from_mean&#39;, c_range_dict[&#39;values&#39;] must be a float,
-        between 0 and 1. Changing to &#39;min_max_symmetric_about_mean&#39; c_range.&#34;&#34;&#34;,
-        &#34;strict_range&#34;: &#34;&#34;&#34;Invalid c_range_dict[&#39;values&#39;] encountered.
-        For c_range type &#39;strict_range&#39;, c_range_dict[&#39;values&#39;] must be a 2-tup, 
-        with elements that are floats or ints.
-        Changing to &#39;min_max_symmetric_about_mean&#39; c_range.&#34;&#34;&#34;,
-        &#34;mean_plus_minus&#34;: &#34;&#34;&#34;Invalid c_range_dict[&#39;values&#39;] encountered.
-        For c_range type &#39;mean_plus_minus&#39;, c_range_dict[&#39;values&#39;] must be an int or 
-        float. Changing to &#39;min_max_symmetric_about_mean&#39; c_range.&#34;&#34;&#34;,
-        &#34;percentile&#34;: &#34;&#34;&#34;Invalid c_range_dict[&#39;values&#39;] encountered.
-        For c_range type &#39;percentile&#39;, c_range_dict[&#39;values&#39;] must be a 2-tup,
-         with elements (preferably ints) in [0, 100].
-         Changing to &#39;min_max_symmetric_about_mean&#39; c_range.&#34;&#34;&#34;,
-        &#34;percentile_symmetric_about_zero&#34;: &#34;&#34;&#34;Invalid c_range_dict[&#39;values&#39;] encountered.
-        For c_range type &#39;percentile&#39;, c_range_dict[&#39;values&#39;] must be a 2-tup,
-         with elements (preferably ints) in [0, 100].
-         Changing to &#39;min_max_symmetric_about_mean&#39; c_range.&#34;&#34;&#34;,
-    }
-    if not c_range_type:
-        c_range_type = &#34;min_max_symmetric_about_mean&#34;
-        c_range_vals = ()
-
-    if c_range_type not in [&#34;percentile&#34;, &#34;min_max&#34;]:
-        auto_sym_zero = False
-
-    if auto_sym_zero and np.any(image &lt; 0) and np.any(image &gt; 0):
-        if c_range_type == &#34;min_max&#34;:
-            c_range_type = &#34;min_max_symmetric_about_zero&#34;
-        elif c_range_type == &#34;percentile&#34;:
-            c_range_type = &#34;percentile_symmetric_about_zero&#34;
-
-    range_calculator_dict = {
-        &#34;min_max&#34;: _min_max,
-        &#34;deviation_from_mean&#34;: _deviation_from_mean,
-        &#34;min_max_symmetric_about_mean&#34;: _min_max_sym_mean,
-        &#34;min_max_symmetric_about_zero&#34;: _min_max_sym_zero,
-        &#34;percentile&#34;: _percentile,
-        &#34;percentile_symmetric_about_zero&#34;: _percentile_sym_zero,
-        &#34;strict_range&#34;: _strict_range,
-        &#34;mean_plus_minus&#34;: _mean_plus_minus,
-    }
-
-    if c_range_type == &#34;strict_range&#34;:
-        if (
-            not isinstance(c_range_vals, (float, int))
-            or len(c_range_vals) != 2  # noqa: W503
-            or (not isinstance(c_range_vals[0], (float, int)))  # noqa: W503
-            or (not isinstance(c_range_vals[1], (float, int)))  # noqa: W503
-            or c_range_vals[0] &gt; c_range_vals[1]  # noqa: W503
-        ):
-            warn(warning_messages[c_range_type])
-            return _min_max_sym_mean(image, ())
-    elif c_range_type == &#34;mean_plus_minus&#34;:
-        if not isinstance(c_range_vals[0], (float, int)):
-            warn(warning_messages[c_range_type])
-            return _min_max_sym_mean(image, ())
-    elif c_range_type == &#34;deviation_from_mean&#34;:
-        if (
-            not isinstance(c_range_vals, (float, int))
-            or c_range_vals &lt; 0  # noqa: W503
-            or c_range_vals &gt; 1  # noqa: W503
-        ):
-            warn(warning_messages[c_range_type])
-            return _min_max_sym_mean(image, ())
-
-    elif c_range_type.startswith(&#34;percentile&#34;):
-        if (
-            not isinstance(c_range_vals, (list, tuple))
-            or len(c_range_vals) != 2  # noqa: W503
-            or not isinstance(c_range_vals[0], (float, int))
-            or not isinstance(c_range_vals[1], (float, int))
-            or not 100 &gt;= c_range_vals[0] &gt;= 0
-            or not 100 &gt;= c_range_vals[1] &gt;= 0
-        ):
-            warn(warning_messages[c_range_type])
-            return _min_max_sym_mean(image, ())
-    return range_calculator_dict[c_range_type](image, c_range_vals)
-
-
-# ============================
-
-
-def _min_max(
-    image: npt.NDArray, c_range_values: tuple[float, ...]
-) -&gt; tuple[float, float]:
-    &#34;&#34;&#34;
-    Map between minimum and maximum values in image
-
-    Arguments
-    ---------
-    image : np array, 3D
-        image data being shown as ax.imshow
-    c_range_values : tuple[float, ...]
-        See `dukit.plot.get_colormap_range`
-    &#34;&#34;&#34;
-    return np.nanmin(image), np.nanmax(image)
-
-
-def _strict_range(
-    image: npt.NDArray, c_range_values: tuple[float, ...]
-) -&gt; tuple[float, float]:
-    &#34;&#34;&#34;
-    Map between c_range_values
-
-    Arguments
-    ---------
-    image : np array, 3D
-        image data being shown as ax.imshow
-    c_range_values : tuple[float, ...]
-        See `dukit.plot.get_colormap_range`
-    &#34;&#34;&#34;
-    return c_range_values[0], c_range_values[1]
-
-
-def _min_max_sym_mean(
-    image: npt.NDArray, c_range_values: tuple[float, ...]
-) -&gt; tuple[float, float]:
-    &#34;&#34;&#34;
-    Map symmetrically about mean, capturing all values in image.
-
-    Arguments
-    ---------
-    image : np array, 3D
-        image data being shown as ax.imshow
-    c_range_values : tuple[float, ...]
-        See `dukit.plot.get_colormap_range`
-    &#34;&#34;&#34;
-    minimum = np.nanmin(image)
-    maximum = np.nanmax(image)
-    mean = np.mean(image)
-    max_distance_from_mean = np.max([abs(maximum - mean), abs(minimum - mean)])
-    return mean - max_distance_from_mean, mean + max_distance_from_mean
-
-
-def _min_max_sym_zero(
-    image: npt.NDArray, c_range_values: tuple[float, ...]
-) -&gt; tuple[float, float]:
-    &#34;&#34;&#34;
-    Map symmetrically about zero, capturing all values in image.
-
-    Arguments
-    ---------
-    image : np array, 3D
-        image data being shown as ax.imshow
-    c_range_values : tuple[float, ...]
-        See `dukit.plot.get_colormap_range`
-    &#34;&#34;&#34;
-    min_abs = np.abs(np.nanmin(image))
-    max_abs = np.abs(np.nanmax(image))
-    larger = np.nanmax([min_abs, max_abs])
-    return -larger, larger
-
-
-def _deviation_from_mean(
-    image: npt.NDArray, c_range_values: tuple[float, ...]
-) -&gt; tuple[float, float]:
-    &#34;&#34;&#34;
-    Map a (decimal) deviation from mean,
-    i.e. between (1 - dev) * mean and (1 + dev) * mean
-
-    Arguments
-    ---------
-    image : np array, 3D
-        image data being shown as ax.imshow
-    c_range_values : tuple[float, ...]
-        See `dukit.plot.get_colormap_range`
-    &#34;&#34;&#34;
-    return (1 - c_range_values[0]) * np.mean(image), (1 + c_range_values[0]) * np.mean(
-        image
-    )
-
-
-def _percentile(
-    image: npt.NDArray, c_range_values: tuple[float, ...]
-) -&gt; tuple[float, float]:
-    &#34;&#34;&#34;
-    Maps the range between two percentiles of the data.
-
-    Arguments
-    ---------
-    image : np array, 3D
-        image data being shown as ax.imshow
-    c_range_values : tuple[float, ...]
-        See `dukit.plot.get_colormap_range`
-    &#34;&#34;&#34;
-    return tuple(np.nanpercentile(image, c_range_values))
-
-
-def _percentile_sym_zero(
-    image: npt.NDArray, c_range_values: tuple[float, ...]
-) -&gt; tuple[float, float]:
-    &#34;&#34;&#34;
-    Maps the range between two percentiles of the data, but ensuring symmetry about zero
-
-    Arguments
-    ---------
-    image : np array, 3D
-        image data being shown as ax.imshow
-    c_range_values : tuple[float, ...]
-        See `dukit.plot.get_colormap_range`
-    &#34;&#34;&#34;
-    plow, phigh = np.nanpercentile(image, c_range_values)  # e.g. [10, 90]
-    val = max(abs(plow), abs(phigh))
-    return -val, val
-
-
-def _mean_plus_minus(
-    image: npt.NDArray, c_range_values: tuple[float, ...]
-) -&gt; tuple[float, float]:
-    &#34;&#34;&#34;
-    Maps the range to mean +- value given in c_range_values
-
-    Arguments
-    ---------
-    image : np array, 3D
-        image data being shown as ax.imshow
-    c_range_values : tuple[float, ...]
-        See `dukit.plot.get_colormap_range`
-    &#34;&#34;&#34;
-    mean = np.mean(image)
-    return mean - c_range_values, mean + c_range_values
-
-
-# ============================================================================
-
-
-def crop_roi(seq: npt.ArrayLike, roi_coords: tuple[int, int, int, int]) -&gt; npt.NDArray:
-    &#34;&#34;&#34;
-
-    Parameters
-    ----------
-    seq : array-like
-        Image or image-stack you want to crop
-    roi_coords: 4-tuple
-        start_x: int, start_y: int, end_x: int, end_y: int
-        If any are -1, then it sets to the edge of image.
-
-    Returns
-    -------
-    seq_cropped : np.ndarray
-        Image or image-stack cropped.
-    &#34;&#34;&#34;
-    seq = np.asarray(seq)
-    roi = _define_roi(seq, roi_coords)
-    if len(np.shape(seq)) == 2:
-        return seq[roi[0], roi[1]].copy()
-    return seq[roi[0], roi[1], :]
-
-
-def _define_roi(
-    img: npt.ArrayLike, roi_coords: tuple[int, int, int, int]
-) -&gt; tuple[npt.NDArray, npt.NDArray]:
-    &#34;&#34;&#34;
-    Returns
-    -------
-    roi : 2-tuple of ndarrays
-        Meshgrid that can be used to index into arrays,
-        e.g. sig[roi[0], roi[1], sweep_param]
-    &#34;&#34;&#34;
-    try:
-        size_h, size_w = np.shape(img)[:-1]
-    except ValueError:  # not enough values to unpack -&gt; 2d image not 3d
-        size_h, size_w = np.shape(img)
-    start_x, start_y, end_x, end_y = _check_start_end_rectangle(
-        *roi_coords, size_w, size_h
-    )
-    return _define_area_roi(start_x, start_y, end_x, end_y)
-
-
-# ============================================================================
-
-
-def _define_area_roi(
-    start_x: int, start_y: int, end_x: int, end_y: int
-) -&gt; tuple[slice, slice]:
-    &#34;&#34;&#34;
-    Returns
-    -------
-    roi : 2-tuple of ndarrays
-        Meshgrid that can be used to index into arrays,
-        e.g. sig[sweep_param, roi[0], roi[1]]
-    &#34;&#34;&#34;
-    # x: npt.NDArray = np.linspace(start_x, end_x, end_x - start_x + 1, dtype=int)
-    # y: npt.NDArray = np.linspace(start_y, end_y, end_y - start_y + 1, dtype=int)
-    # xv, yv = np.meshgrid(x, y)
-    # return yv, xv
-    return slice(start_y, end_y + 1), slice(start_x, end_x + 1)
-
-
-# ============================================================================
-
-
-def _check_start_end_rectangle(
-    start_x: int,
-    start_y: int,
-    end_x: int,
-    end_y: int,
-    full_size_w: int,
-    full_size_h: int,
-) -&gt; tuple[int, int, int, int]:
-    &#34;&#34;&#34;Restricts roi params to be within image dimensions.&#34;&#34;&#34;
-    start_x = max(start_x, 0)
-    start_y = max(start_y, 0)
-    if end_x &lt; 0:
-        end_x = full_size_w - 1
-    if end_y &lt; 0:
-        end_y = full_size_h - 1
-    if start_x &gt;= end_x:
-        warn(
-            f&#34;Rectangle ends [{end_x}] before it starts [{start_x}] (in x), &#34;
-            + &#34;swapping them&#34;
-        )
-        start_x, end_x = end_x, start_x
-    if start_y &gt;= end_y:
-        warn(
-            f&#34;Rectangle ends [{end_y}] before it starts [{start_y}] (in y), &#34;
-            + &#34;swapping them&#34;
-        )
-        start_y, end_y = end_y, start_y
-    if start_x &gt;= full_size_w:
-        warn(
-            f&#34;Rectangle starts [{start_x}] outside image [{full_size_w}] &#34;
-            + &#34;(too large in x), setting to zero.&#34;
-        )
-        start_x = 0
-
-    if start_y &gt;= full_size_h:
-        warn(
-            f&#34;Rectangle starts outside [{start_y}] image [{full_size_h}] &#34;
-            + &#34;(too large in y), setting to zero.&#34;
-        )
-        start_y = 0
-
-    if end_x &gt;= full_size_w:
-        warn(f&#34;Rectangle too big in x [{end_x}], cropping to image [{full_size_w}].\n&#34;)
-        end_x = full_size_w - 1
-    if end_y &gt;= full_size_h:
-        warn(f&#34;Rectangle too big in y [{end_y}], cropping to image [{full_size_h}].\n&#34;)
-        end_y = full_size_h - 1
-
-    return start_x, start_y, end_x, end_y
-
-
-# ============================================================================
-
-
-def crop_sweep(
-    sweep_arr: npt.NDArray,
-    sig: npt.NDArray,
-    ref: npt.NDArray,
-    sig_norm: npt.NDArray,
-    rem_start=1,
-    rem_end=0,
-) -&gt; tuple[npt.NDArray, npt.NDArray, npt.NDArray, npt.NDArray]:
-    &#34;&#34;&#34;
-    Crop spectral dimension. Usually used to remove first one/few points of e.g. ODMR.
-
-    Parameters
-    ----------
-    sweep_arr, sig, ref, sig_norm : npdarray&#39;s
-        ndarrays to be cropped in spectral dimension. (sweep_arr only has spec dim).
-    rem_start, rem_end : int
-        How many pts to remove from start &amp; end of spectral dimension.
-
-    Returns
-    -------
-    sweep_arr, sig, ref, sig_norm : npdarray&#39;s
-        All as input, put with spectral dimension cropped to arr[rem_start:-rem_end]
-    &#34;&#34;&#34;
-    end = -rem_end if rem_end &gt; 0 else None
-
-    if rem_start &lt; 0:
-        warn(&#34;rem_start must be &gt;=0, setting to zero now.&#34;)
-        rem_start = 0
-    if rem_end &lt; 0:
-        warn(&#34;rem_end must be &gt;=0, setting to zero now.&#34;)
-        rem_end = 0
-
-    return (
-        sweep_arr[rem_start:end].copy(),
-        sig[:, :, rem_start:end].copy(),
-        ref[:, :, rem_start:end].copy(),
-        sig_norm[:, :, rem_start:end].copy(),
-    )
-
-
-# ============================================================================
-
-
-def smooth_image_stack(
-    stack: npt.NDArray, sigma: tuple[float, float] | float, truncate: float = 4.0
-) -&gt; npt.NDArray:
-    &#34;&#34;&#34;
-    Smooth image stack in spatial dimensions with gaussian.
-
-    Parameters
-    ----------
-    stack : ndarray
-    sigma : 2-tuple of floats or float
-        If float, then symmetric smoothing in each dim, otherwise tuple(x, y)
-    truncate : float, default=4.0
-        Truncate the filter at this many standard deviations.
-        See scipy.ndimage.gaussian_filter.
-
-    Returns
-    -------
-    smooth_stack : ndarray
-        Image stack smoothed in spatial dimensions.
-    &#34;&#34;&#34;
-    if isinstance(sigma, (list, tuple)):
-        return gaussian_filter(stack, sigma=(sigma[1], sigma[0], 0), truncate=truncate)
-    return gaussian_filter(stack, sigma=(sigma, sigma, 0), truncate=truncate)
-
-
-# ============================================================================
-
-
-def rebin_image_stack(
-    stack: npt.NDArray, additional_bins: tuple[int, int] | int
-) -&gt; npt.NDArray:
-    &#34;&#34;&#34;
-    Rebin image stack in spatial dimensions.
-
-    Parameters
-    ----------
-    stack : ndarray
-    additional_bins : 2-tuple of ints, or int
-        Binning in-plane.  Make it a power of 2.
-        Binning in x then y if 2-tuple, else symmetric.
-
-    Returns
-    -------
-    smooth_stack : ndarray
-        Image stack smoothed in spatial dimensions.
-    &#34;&#34;&#34;
-    if not additional_bins:
-        return stack
-    if isinstance(additional_bins, (tuple, list)):
-        return dukit.rebin.rebin(
-            stack, factor=(additional_bins[1], additional_bins[0], 1), func=np.mean
-        )
-    return dukit.rebin.rebin(
-        stack,
-        factor=(additional_bins, additional_bins, 1),
-        func=np.mean,
-    )
-
-
-# ============================================================================
-def sum_spatially(seq: npt.ArrayLike) -&gt; npt.NDArray:
-    &#34;&#34;&#34;Sum over 0th (spectral) dim of seq if 3D, else return as is.&#34;&#34;&#34;
-    seq = np.asarray(seq)
-    if len(np.shape(seq)) == 3:
-        return np.sum(seq, axis=-1)
-    return seq
-
-
-# ============================================================================
-
-
-def get_aois(
-    image_shape: tuple[int, int, int] | tuple[int, int],
-    *aoi_coords: tuple[int, int, int, int],
-) -&gt; tuple[tuple[slice, slice]]:
-    aois: list = (
-        [] if not aoi_coords else [_define_area_roi(*aoi) for aoi in aoi_coords]
-    )
-
-    if len(image_shape) == 3:
-        shp = image_shape[:-1]
-    else:
-        shp = image_shape
-    aois.insert(
-        0,
-        _define_area_roi(shp[0] // 2, shp[1] // 2, shp[0] // 2 + 1, shp[1] // 2 + 1),
-    )
-    return tuple(aois)
-
-# ============================================================================
-
-def _iterslice(x: npt.NDArray, axis: int = 0):
-    &#34;&#34;&#34;Iterate through array x in slices along axis &#39;axis&#39; (defaults to 0).
-    E.g. iterslice(shape(y,x,freqs), axis=-1) will give iter. of 1d freq slices.&#34;&#34;&#34;
-    sub = [range(s) for s in x.shape]
-    sub[axis] = (slice(None),)
-    for p in product(*sub):
-        yield x[p]
-
-# ============================================================================
-
-def _iterframe(x_3d: npt.NDArray):
-    &#34;&#34;&#34;iterframe(shape(y,x,freqs)) will give iter. of 2d y,x frames.&#34;&#34;&#34;
-    for frame in range(x_3d.shape[2]):
-        yield x_3d[:, :, frame]</code></pre>
-</details>
 </section>
 <section>
 </section>
@@ -1526,10 +74,9 @@ def _iterframe(x_3d: npt.NDArray):
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="dukit.itool._iterframe"><code class="name flex">
-<span>def <span class="ident">_iterframe</span></span>(<span>x_3d: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]])</span>
+<span>def <span class="ident">_iterframe</span></span>(<span>x_3d: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]])</span>
 </code></dt>
 <dd>
-<div class="desc"><p>iterframe(shape(y,x,freqs)) will give iter. of 2d y,x frames.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1539,13 +86,12 @@ def _iterframe(x_3d: npt.NDArray):
     for frame in range(x_3d.shape[2]):
         yield x_3d[:, :, frame]</code></pre>
 </details>
+<div class="desc"><p>iterframe(shape(y,x,freqs)) will give iter. of 2d y,x frames.</p></div>
 </dd>
 <dt id="dukit.itool._iterslice"><code class="name flex">
-<span>def <span class="ident">_iterslice</span></span>(<span>x: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], axis: int = 0)</span>
+<span>def <span class="ident">_iterslice</span></span>(<span>x: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>axis: int = 0)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Iterate through array x in slices along axis 'axis' (defaults to 0).
-E.g. iterslice(shape(y,x,freqs), axis=-1) will give iter. of 1d freq slices.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1558,24 +104,13 @@ E.g. iterslice(shape(y,x,freqs), axis=-1) will give iter. of 1d freq slices.</p>
     for p in product(*sub):
         yield x[p]</code></pre>
 </details>
+<div class="desc"><p>Iterate through array x in slices along axis 'axis' (defaults to 0).
+E.g. iterslice(shape(y,x,freqs), axis=-1) will give iter. of 1d freq slices.</p></div>
 </dd>
 <dt id="dukit.itool.crop_roi"><code class="name flex">
-<span>def <span class="ident">crop_roi</span></span>(<span>seq: Union[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]], numpy._typing._nested_sequence._NestedSequence[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]]], bool, int, float, complex, str, bytes, numpy._typing._nested_sequence._NestedSequence[Union[bool, int, float, complex, str, bytes]]], roi_coords: tuple[int, int, int, int]) ‑> numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]]</span>
+<span>def <span class="ident">crop_roi</span></span>(<span>seq: ArrayLike, roi_coords: tuple[int, int, int, int]) ‑> numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]</span>
 </code></dt>
 <dd>
-<div class="desc"><h2 id="parameters">Parameters</h2>
-<dl>
-<dt><strong><code>seq</code></strong> :&ensp;<code>array-like</code></dt>
-<dd>Image or image-stack you want to crop</dd>
-<dt><strong><code>roi_coords</code></strong> :&ensp;<code>4-tuple</code></dt>
-<dd>start_x: int, start_y: int, end_x: int, end_y: int
-If any are -1, then it sets to the edge of image.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><strong><code>seq_cropped</code></strong> :&ensp;<code>np.ndarray</code></dt>
-<dd>Image or image-stack cropped.</dd>
-</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1602,24 +137,24 @@ If any are -1, then it sets to the edge of image.</dd>
         return seq[roi[0], roi[1]].copy()
     return seq[roi[0], roi[1], :]</code></pre>
 </details>
-</dd>
-<dt id="dukit.itool.crop_sweep"><code class="name flex">
-<span>def <span class="ident">crop_sweep</span></span>(<span>sweep_arr: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], sig: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], ref: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], sig_norm: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], rem_start=1, rem_end=0) ‑> tuple[numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]]]</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Crop spectral dimension. Usually used to remove first one/few points of e.g. ODMR.</p>
-<h2 id="parameters">Parameters</h2>
+<div class="desc"><h2 id="parameters">Parameters</h2>
 <dl>
-<dt><strong><code>sweep_arr</code></strong>, <strong><code>sig</code></strong>, <strong><code>ref</code></strong>, <strong><code>sig_norm</code></strong> :&ensp;<code>npdarray's</code></dt>
-<dd>ndarrays to be cropped in spectral dimension. (sweep_arr only has spec dim).</dd>
-<dt><strong><code>rem_start</code></strong>, <strong><code>rem_end</code></strong> :&ensp;<code>int</code></dt>
-<dd>How many pts to remove from start &amp; end of spectral dimension.</dd>
+<dt><strong><code>seq</code></strong> :&ensp;<code>array-like</code></dt>
+<dd>Image or image-stack you want to crop</dd>
+<dt><strong><code>roi_coords</code></strong> :&ensp;<code>4-tuple</code></dt>
+<dd>start_x: int, start_y: int, end_x: int, end_y: int
+If any are -1, then it sets to the edge of image.</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><strong><code>sweep_arr</code></strong>, <strong><code>sig</code></strong>, <strong><code>ref</code></strong>, <strong><code>sig_norm</code></strong> :&ensp;<code>npdarray's</code></dt>
-<dd>All as input, put with spectral dimension cropped to arr[rem_start:-rem_end]</dd>
+<dt><strong><code>seq_cropped</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>Image or image-stack cropped.</dd>
 </dl></div>
+</dd>
+<dt id="dukit.itool.crop_sweep"><code class="name flex">
+<span>def <span class="ident">crop_sweep</span></span>(<span>sweep_arr: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>sig: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>ref: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>sig_norm: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>rem_start=1,<br>rem_end=0) ‑> tuple[numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]], numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]], numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]], numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]]</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1647,7 +182,10 @@ If any are -1, then it sets to the edge of image.</dd>
     sweep_arr, sig, ref, sig_norm : npdarray&#39;s
         All as input, put with spectral dimension cropped to arr[rem_start:-rem_end]
     &#34;&#34;&#34;
-    end = -rem_end if rem_end &gt; 0 else None
+    if rem_end &gt; 0:
+        end = sweep_arr.shape[0] - rem_end
+    else:
+        end = None
 
     if rem_start &lt; 0:
         warn(&#34;rem_start must be &gt;=0, setting to zero now.&#34;)
@@ -1663,12 +201,24 @@ If any are -1, then it sets to the edge of image.</dd>
         sig_norm[:, :, rem_start:end].copy(),
     )</code></pre>
 </details>
+<div class="desc"><p>Crop spectral dimension. Usually used to remove first one/few points of e.g. ODMR.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>sweep_arr</code></strong>, <strong><code>sig</code></strong>, <strong><code>ref</code></strong>, <strong><code>sig_norm</code></strong> :&ensp;<code>npdarray's</code></dt>
+<dd>ndarrays to be cropped in spectral dimension. (sweep_arr only has spec dim).</dd>
+<dt><strong><code>rem_start</code></strong>, <strong><code>rem_end</code></strong> :&ensp;<code>int</code></dt>
+<dd>How many pts to remove from start &amp; end of spectral dimension.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>sweep_arr</code></strong>, <strong><code>sig</code></strong>, <strong><code>ref</code></strong>, <strong><code>sig_norm</code></strong> :&ensp;<code>npdarray's</code></dt>
+<dd>All as input, put with spectral dimension cropped to arr[rem_start:-rem_end]</dd>
+</dl></div>
 </dd>
 <dt id="dukit.itool.get_aois"><code class="name flex">
-<span>def <span class="ident">get_aois</span></span>(<span>image_shape: tuple[int, int, int] | tuple[int, int], *aoi_coords: tuple[int, int, int, int]) ‑> tuple[tuple[slice, slice]]</span>
+<span>def <span class="ident">get_aois</span></span>(<span>image_shape: tuple[int, int, int] | tuple[int, int],<br>*aoi_coords: tuple[int, int, int, int]) ‑> tuple[tuple[slice, slice]]</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1677,9 +227,7 @@ If any are -1, then it sets to the edge of image.</dd>
     image_shape: tuple[int, int, int] | tuple[int, int],
     *aoi_coords: tuple[int, int, int, int],
 ) -&gt; tuple[tuple[slice, slice]]:
-    aois: list = (
-        [] if not aoi_coords else [_define_area_roi(*aoi) for aoi in aoi_coords]
-    )
+    aois: list = [] if not aoi_coords else [_define_area_roi(*aoi) for aoi in aoi_coords]
 
     if len(image_shape) == 3:
         shp = image_shape[:-1]
@@ -1691,105 +239,12 @@ If any are -1, then it sets to the edge of image.</dd>
     )
     return tuple(aois)</code></pre>
 </details>
+<div class="desc"></div>
 </dd>
 <dt id="dukit.itool.get_background"><code class="name flex">
-<span>def <span class="ident">get_background</span></span>(<span>image: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], method: str, polygon_nodes: list | None = None, **method_params_dict) ‑> tuple[numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]]]</span>
+<span>def <span class="ident">get_background</span></span>(<span>image: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>method: str,<br>polygon_nodes: list | None = None,<br>**method_params_dict) ‑> tuple[numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]], numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]]</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Returns a background for given image, via chosen method.</p>
-<p>Methods available:</p>
-<ul>
-<li>"fix_zero"<ul>
-<li>Fix background to be a constant offset (z value)</li>
-<li>params required in method_params_dict:
-"zero" an int/float, defining the constant offset of the background</li>
-</ul>
-</li>
-<li>"three_point"<ul>
-<li>Calculate plane background with linear algebra from three [x,y]
-lateral positions given</li>
-<li>params required in method_params_dict:<ul>
-<li>"points" a len-3 iterable containing [x, y] points</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>"mean"<ul>
-<li>background calculated from mean of image</li>
-<li>no params required</li>
-</ul>
-</li>
-<li>"poly"<ul>
-<li>background calculated from polynomial fit to image.</li>
-<li>params required in method_params_dict:<ul>
-<li>"order": an int, the 'order' polynomial to fit. (e.g. 1 = plane).</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>"gaussian"<ul>
-<li>background calculated from _gaussian fit to image (with rotation)</li>
-<li>no params required</li>
-</ul>
-</li>
-<li>"lorentzian"<ul>
-<li>as above, but a lorentzian lineshape (with rotation)</li>
-</ul>
-</li>
-<li>"interpolate"<ul>
-<li>Background defined by the dataset smoothed via a sigma-_gaussian
-filtering, and method-interpolation over masked (polygon) regions.</li>
-<li>params required in method_params_dict:<ul>
-<li>"interp_method": nearest, linear, cubic.</li>
-<li>"sigma": sigma passed to _gaussian filter
-(see scipy.ndimage._gaussian_filter) which is utilized on the
-background before interpolating</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>"gaussian_filter"<ul>
-<li>background calculated from image filtered with a _gaussian filter.</li>
-<li>params required in method_params_dict:<ul>
-<li>"sigma": sigma passed to _gaussian filter (see
-scipy.ndimage._gaussian_filter)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>"gaussian_then_poly"<ul>
-<li>runs gaussian then poly subtraction</li>
-<li>params required in method_params_dict:<ul>
-<li>"order": an int, the 'order' polynomial to fit. (e.g. 1 = plane).</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>polygon utilization:
-- if method is not interpolate, the image is masked where the polygons are
-and the background is calculated without these regions
-- if the method is interpolate, these regions are interpolated over
-(and the rest of the image, _gaussian smoothed, is 'background').</p>
-<h2 id="arguments">Arguments</h2>
-<dl>
-<dt><strong><code>image</code></strong> :&ensp;<code>2D array-like</code></dt>
-<dd>image to get backgrond of</dd>
-<dt><strong><code>method</code></strong> :&ensp;<code>str</code></dt>
-<dd>Method to use, available options above</dd>
-<dt><strong><code>**method_params_dict</code></strong></dt>
-<dd>Key-value pairs passed onto each background backend. Required params
-given above.</dd>
-<dt><strong><code>polygon_nodes</code></strong> :&ensp;<code>list | None = None</code></dt>
-<dd>Optionally provide polygon nodes.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><strong><code>im_bground</code></strong> :&ensp;<code>ndarray</code></dt>
-<dd>2D numpy array, representing the 'background' of image.</dd>
-<dt><strong><code>mask</code></strong> :&ensp;<code>ndarray</code></dt>
-<dd>Mask (True pixels were not used to calculate background).</dd>
-</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1907,15 +362,10 @@ given above.</dd>
         )
     for setting in method_required_settings[method]:
         if setting not in method_params_dict:
-            raise ValueError(
-                f&#34;{setting} key missing from method_params_dict for method: {method}&#34;
-            )
+            raise ValueError(f&#34;{setting} key missing from method_params_dict for method: {method}&#34;)
 
     if polygon_nodes:
-        polygons = [
-            dukit.polygon.Polygon(nodes[:, 0], nodes[:, 1])
-            for nodes in polygon_nodes
-        ]
+        polygons = [dukit.polygon.Polygon(nodes[:, 0], nodes[:, 1]) for nodes in polygon_nodes]
     else:
         polygons = None
 
@@ -1936,48 +386,105 @@ given above.</dd>
         np.ma.getmaskarray(image).astype(int),
     )</code></pre>
 </details>
-</dd>
-<dt id="dukit.itool.get_colormap_range"><code class="name flex">
-<span>def <span class="ident">get_colormap_range</span></span>(<span>c_range_type: str, c_range_vals: tuple[float, ...], image: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], auto_sym_zero: bool = True) ‑> tuple[float, float]</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Produce a colormap range to plot image from, using the options in c_range_dict.</p>
+<div class="desc"><p>Returns a background for given image, via chosen method.</p>
+<p>Methods available:</p>
+<ul>
+<li>"fix_zero"<ul>
+<li>Fix background to be a constant offset (z value)</li>
+<li>params required in method_params_dict:
+"zero" an int/float, defining the constant offset of the background</li>
+</ul>
+</li>
+<li>"three_point"<ul>
+<li>Calculate plane background with linear algebra from three [x,y]
+lateral positions given</li>
+<li>params required in method_params_dict:<ul>
+<li>"points" a len-3 iterable containing [x, y] points</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>"mean"<ul>
+<li>background calculated from mean of image</li>
+<li>no params required</li>
+</ul>
+</li>
+<li>"poly"<ul>
+<li>background calculated from polynomial fit to image.</li>
+<li>params required in method_params_dict:<ul>
+<li>"order": an int, the 'order' polynomial to fit. (e.g. 1 = plane).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>"gaussian"<ul>
+<li>background calculated from _gaussian fit to image (with rotation)</li>
+<li>no params required</li>
+</ul>
+</li>
+<li>"lorentzian"<ul>
+<li>as above, but a lorentzian lineshape (with rotation)</li>
+</ul>
+</li>
+<li>"interpolate"<ul>
+<li>Background defined by the dataset smoothed via a sigma-_gaussian
+filtering, and method-interpolation over masked (polygon) regions.</li>
+<li>params required in method_params_dict:<ul>
+<li>"interp_method": nearest, linear, cubic.</li>
+<li>"sigma": sigma passed to _gaussian filter
+(see scipy.ndimage._gaussian_filter) which is utilized on the
+background before interpolating</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>"gaussian_filter"<ul>
+<li>background calculated from image filtered with a _gaussian filter.</li>
+<li>params required in method_params_dict:<ul>
+<li>"sigma": sigma passed to _gaussian filter (see
+scipy.ndimage._gaussian_filter)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>"gaussian_then_poly"<ul>
+<li>runs gaussian then poly subtraction</li>
+<li>params required in method_params_dict:<ul>
+<li>"order": an int, the 'order' polynomial to fit. (e.g. 1 = plane).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>polygon utilization:
+- if method is not interpolate, the image is masked where the polygons are
+and the background is calculated without these regions
+- if the method is interpolate, these regions are interpolated over
+(and the rest of the image, _gaussian smoothed, is 'background').</p>
 <h2 id="arguments">Arguments</h2>
 <dl>
-<dt><strong><code>c_range_type</code></strong> :&ensp;<code>str</code></dt>
-<dd>
-<ul>
-<li>"min_max" : map between minimum and maximum values in image.</li>
-<li>"deviation_from_mean" : requires c_range_vals be a 1-tuple float
-between 0 and 1 'dev'. Maps between (1 - dev) * mean and (1 + dev) * mean.</li>
-<li>"min_max_symmetric_about_mean" : map symmetrically about mean, capturing all
-values in image (default).</li>
-<li>"min_max_symmetric_about_zero" : map symmetrically about zero, capturing all
-values in image.</li>
-<li>"percentile" : requires c_range_vals be a 2-tuple w vals between 0 and 100.
-Maps the range between those percentiles of the data.</li>
-<li>"percentile_symmetric_about_zero" : requires c_range_vals be a 2-tuple
-w vals between 0 and 100. Maps symmetrically about zero, capturing
-all values between those percentiles in the data (plus perhaps a bit more to
-ensure symmety)</li>
-<li>"strict_range" : requiresc_range_vals 2-tuple.
-Maps colors directly between the values given.</li>
-<li>"mean_plus_minus" : mean plus or minus this value.
-c_range_vals must be a 1-tuple float</li>
-</ul>
-</dd>
-<dt><strong><code>c_range_vals</code></strong> :&ensp;<code>tuple</code></dt>
-<dd>See above for allowed options</dd>
-<dt><strong><code>auto_sym_zero</code></strong> :&ensp;<code>bool</code>, default=<code>True</code></dt>
-<dd>Try and make symmetric around zero, if logical?</dd>
-<dt><strong><code>image</code></strong> :&ensp;<code>array-like</code></dt>
-<dd>2D array (image) that fn returns colormap range for.</dd>
+<dt><strong><code>image</code></strong> :&ensp;<code>2D array-like</code></dt>
+<dd>image to get backgrond of</dd>
+<dt><strong><code>method</code></strong> :&ensp;<code>str</code></dt>
+<dd>Method to use, available options above</dd>
+<dt><strong><code>**method_params_dict</code></strong></dt>
+<dd>Key-value pairs passed onto each background backend. Required params
+given above.</dd>
+<dt><strong><code>polygon_nodes</code></strong> :&ensp;<code>list | None = None</code></dt>
+<dd>Optionally provide polygon nodes.</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><strong><code>c_range</code></strong> :&ensp;<code>tuple length 2</code></dt>
-<dd>i.e. [min value to map to a color, max value to map to a color]</dd>
+<dt><strong><code>im_bground</code></strong> :&ensp;<code>ndarray</code></dt>
+<dd>2D numpy array, representing the 'background' of image.</dd>
+<dt><strong><code>mask</code></strong> :&ensp;<code>ndarray</code></dt>
+<dd>Mask (True pixels were not used to calculate background).</dd>
 </dl></div>
+</dd>
+<dt id="dukit.itool.get_colormap_range"><code class="name flex">
+<span>def <span class="ident">get_colormap_range</span></span>(<span>c_range_type: str,<br>c_range_vals: tuple[float, ...],<br>image: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>auto_sym_zero: bool = True) ‑> tuple[float, float]</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2032,11 +539,11 @@ c_range_vals must be a 1-tuple float</li>
         For c_range type &#39;deviation_from_mean&#39;, c_range_dict[&#39;values&#39;] must be a float,
         between 0 and 1. Changing to &#39;min_max_symmetric_about_mean&#39; c_range.&#34;&#34;&#34;,
         &#34;strict_range&#34;: &#34;&#34;&#34;Invalid c_range_dict[&#39;values&#39;] encountered.
-        For c_range type &#39;strict_range&#39;, c_range_dict[&#39;values&#39;] must be a 2-tup, 
+        For c_range type &#39;strict_range&#39;, c_range_dict[&#39;values&#39;] must be a 2-tup,
         with elements that are floats or ints.
         Changing to &#39;min_max_symmetric_about_mean&#39; c_range.&#34;&#34;&#34;,
         &#34;mean_plus_minus&#34;: &#34;&#34;&#34;Invalid c_range_dict[&#39;values&#39;] encountered.
-        For c_range type &#39;mean_plus_minus&#39;, c_range_dict[&#39;values&#39;] must be an int or 
+        For c_range type &#39;mean_plus_minus&#39;, c_range_dict[&#39;values&#39;] must be an int or
         float. Changing to &#39;min_max_symmetric_about_mean&#39; c_range.&#34;&#34;&#34;,
         &#34;percentile&#34;: &#34;&#34;&#34;Invalid c_range_dict[&#39;values&#39;] encountered.
         For c_range type &#39;percentile&#39;, c_range_dict[&#39;values&#39;] must be a 2-tup,
@@ -2073,7 +580,7 @@ c_range_vals must be a 1-tuple float</li>
 
     if c_range_type == &#34;strict_range&#34;:
         if (
-            not isinstance(c_range_vals, (float, int))
+            not isinstance(c_range_vals, (list, tuple))
             or len(c_range_vals) != 2  # noqa: W503
             or (not isinstance(c_range_vals[0], (float, int)))  # noqa: W503
             or (not isinstance(c_range_vals[1], (float, int)))  # noqa: W503
@@ -2107,14 +614,48 @@ c_range_vals must be a 1-tuple float</li>
             return _min_max_sym_mean(image, ())
     return range_calculator_dict[c_range_type](image, c_range_vals)</code></pre>
 </details>
+<div class="desc"><p>Produce a colormap range to plot image from, using the options in c_range_dict.</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>c_range_type</code></strong> :&ensp;<code>str</code></dt>
+<dd>
+<ul>
+<li>"min_max" : map between minimum and maximum values in image.</li>
+<li>"deviation_from_mean" : requires c_range_vals be a 1-tuple float
+between 0 and 1 'dev'. Maps between (1 - dev) * mean and (1 + dev) * mean.</li>
+<li>"min_max_symmetric_about_mean" : map symmetrically about mean, capturing all
+values in image (default).</li>
+<li>"min_max_symmetric_about_zero" : map symmetrically about zero, capturing all
+values in image.</li>
+<li>"percentile" : requires c_range_vals be a 2-tuple w vals between 0 and 100.
+Maps the range between those percentiles of the data.</li>
+<li>"percentile_symmetric_about_zero" : requires c_range_vals be a 2-tuple
+w vals between 0 and 100. Maps symmetrically about zero, capturing
+all values between those percentiles in the data (plus perhaps a bit more to
+ensure symmety)</li>
+<li>"strict_range" : requiresc_range_vals 2-tuple.
+Maps colors directly between the values given.</li>
+<li>"mean_plus_minus" : mean plus or minus this value.
+c_range_vals must be a 1-tuple float</li>
+</ul>
+</dd>
+<dt><strong><code>c_range_vals</code></strong> :&ensp;<code>tuple</code></dt>
+<dd>See above for allowed options</dd>
+<dt><strong><code>auto_sym_zero</code></strong> :&ensp;<code>bool</code>, default=<code>True</code></dt>
+<dd>Try and make symmetric around zero, if logical?</dd>
+<dt><strong><code>image</code></strong> :&ensp;<code>array-like</code></dt>
+<dd>2D array (image) that fn returns colormap range for.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>c_range</code></strong> :&ensp;<code>tuple length 2</code></dt>
+<dd>i.e. [min value to map to a color, max value to map to a color]</dd>
+</dl></div>
 </dd>
 <dt id="dukit.itool.get_im_filtered"><code class="name flex">
-<span>def <span class="ident">get_im_filtered</span></span>(<span>image: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], filter_type: str, **kwargs) ‑> numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]]</span>
+<span>def <span class="ident">get_im_filtered</span></span>(<span>image: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>filter_type: str,<br>**kwargs) ‑> numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Wrapped over other filters.
-Current filters defined:
-- filter_type = gaussian, <code>qdmpy.shared.itool._get_im_filtered_gaussian</code></p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2138,29 +679,14 @@ Current filters defined:
 
     return filter_fns[filter_type](image, **kwargs)</code></pre>
 </details>
+<div class="desc"><p>Wrapped over other filters.
+Current filters defined:
+- filter_type = gaussian, <code>qdmpy.shared.itool._get_im_filtered_gaussian</code></p></div>
 </dd>
 <dt id="dukit.itool.mask_polygons"><code class="name flex">
-<span>def <span class="ident">mask_polygons</span></span>(<span>image: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], polygons: list | None = None, invert_mask: bool = False) ‑> numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]]</span>
+<span>def <span class="ident">mask_polygons</span></span>(<span>image: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>polygons: list | None = None,<br>invert_mask: bool = False) ‑> numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Mask image for the given polygon regions.</p>
-<h2 id="arguments">Arguments</h2>
-<dl>
-<dt><strong><code>image</code></strong> :&ensp;<code>2D array-like</code></dt>
-<dd>Image array to mask.</dd>
-<dt><strong><code>polygons</code></strong> :&ensp;<code>list</code>, optional</dt>
-<dd>List of <code>qdmpy.shared.polygon.Polygon</code> objects.
-(the default is None, where image is returned with no mask)</dd>
-<dt><strong><code>invert_mask</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>Invert mask such that background is masked, not polygons (i.e. polygons
-will be operated on if array is passed to np.mean instead of background).
-(the default is False)</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><strong><code>masked_im</code></strong> :&ensp;<code>np.ma.MaskedArray</code></dt>
-<dd>image, now masked</dd>
-</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2213,20 +739,29 @@ will be operated on if array is passed to np.mean instead of background).
 
     return np.ma.masked_array(image, mask=msk)</code></pre>
 </details>
+<div class="desc"><p>Mask image for the given polygon regions.</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>image</code></strong> :&ensp;<code>2D array-like</code></dt>
+<dd>Image array to mask.</dd>
+<dt><strong><code>polygons</code></strong> :&ensp;<code>list</code>, optional</dt>
+<dd>List of <code>qdmpy.shared.polygon.Polygon</code> objects.
+(the default is None, where image is returned with no mask)</dd>
+<dt><strong><code>invert_mask</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>Invert mask such that background is masked, not polygons (i.e. polygons
+will be operated on if array is passed to np.mean instead of background).
+(the default is False)</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>masked_im</code></strong> :&ensp;<code>np.ma.MaskedArray</code></dt>
+<dd>image, now masked</dd>
+</dl></div>
 </dd>
 <dt id="dukit.itool.mpl_set_run_config"><code class="name flex">
 <span>def <span class="ident">mpl_set_run_config</span></span>(<span>default: bool = True, **kwargs)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Set the matplotlib runtime configuration (rcparams).</p>
-<h2 id="parameters">Parameters</h2>
-<dl>
-<dt><strong><code>default</code></strong> :&ensp;<code>bool</code></dt>
-<dd>Use dukit default rcparams?</dd>
-<dt><strong><code>kwargs</code></strong></dt>
-<dd>kwargs to pass to rcparams, see
-<a href="https://matplotlib.org/stable/users/explain/customizing.html">https://matplotlib.org/stable/users/explain/customizing.html</a></dd>
-</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2248,12 +783,20 @@ will be operated on if array is passed to np.mean instead of background).
     else:
         mpl.rcParams.update(**kwargs)</code></pre>
 </details>
+<div class="desc"><p>Set the matplotlib runtime configuration (rcparams).</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>default</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Use dukit default rcparams?</dd>
+<dt><strong><code>kwargs</code></strong></dt>
+<dd>kwargs to pass to rcparams, see
+<a href="https://matplotlib.org/stable/users/explain/customizing.html">https://matplotlib.org/stable/users/explain/customizing.html</a></dd>
+</dl></div>
 </dd>
 <dt id="dukit.itool.mu_sigma_inside_polygons"><code class="name flex">
-<span>def <span class="ident">mu_sigma_inside_polygons</span></span>(<span>image: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], polygons: list | None = None) ‑> tuple[float, float]</span>
+<span>def <span class="ident">mu_sigma_inside_polygons</span></span>(<span>image: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>polygons: list | None = None) ‑> tuple[float, float]</span>
 </code></dt>
 <dd>
-<div class="desc"><p>returns (mean, standard_deviation) for image, only <em>within</em> polygon areas.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2265,49 +808,12 @@ will be operated on if array is passed to np.mean instead of background).
     image = mask_polygons(image, polygons, invert_mask=True)
     return np.mean(image), np.std(image)</code></pre>
 </details>
+<div class="desc"><p>returns (mean, standard_deviation) for image, only <em>within</em> polygon areas.</p></div>
 </dd>
 <dt id="dukit.itool.plot_image"><code class="name flex">
-<span>def <span class="ident">plot_image</span></span>(<span>image_data: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], title: str = 'title', c_map: str = 'viridis', c_range: tuple[float, float] | tuple[None, None] = (None, None), c_label: str = 'label', opath: str = '', show_scalebar: bool = True, raw_pixel_size: float = nan, applied_binning: tuple[int, int] | int = 0, annotate_polygons: bool = False, polygon_nodes: list | None = None, show_tick_marks: bool = False, polygon_patch_params: dict | None = None) ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
+<span>def <span class="ident">plot_image</span></span>(<span>image_data: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>title: str = 'title',<br>c_map: str = 'viridis',<br>c_range: tuple[float, float] | tuple[None, None] = (None, None),<br>c_label: str = 'label',<br>opath: str = '',<br>show_scalebar: bool = True,<br>raw_pixel_size: float = nan,<br>applied_binning: tuple[int, int] | int = 0,<br>annotate_polygons: bool = False,<br>polygon_nodes: list | None = None,<br>show_tick_marks: bool = False,<br>polygon_patch_params: dict | None = None) ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Plots an image given by image_data. Only saves figure if path given.</p>
-<h2 id="arguments">Arguments</h2>
-<dl>
-<dt><strong><code>image_data</code></strong> :&ensp;<code>np array, 3D</code></dt>
-<dd>Data that is plot.</dd>
-<dt><strong><code>title</code></strong> :&ensp;<code>str</code></dt>
-<dd>Title of figure, as well as name for save files</dd>
-<dt><strong><code>c_map</code></strong> :&ensp;<code>str</code></dt>
-<dd>Colormap object used to map image_data values to a color.</dd>
-<dt><strong><code>c_range</code></strong> :&ensp;<code>2-tuple</code> of <code>floats</code></dt>
-<dd>Range of values in image_data to map to colors</dd>
-<dt><strong><code>c_label</code></strong> :&ensp;<code>str</code></dt>
-<dd>Label for colormap axis</dd>
-<dt><strong><code>opath</code></strong> :&ensp;<code>str
-= "",</code></dt>
-<dd>If given saves figure here.</dd>
-<dt><strong><code>show_scalebar</code></strong> :&ensp;<code>bool = True</code></dt>
-<dd>Show the scalebar(s)?</dd>
-<dt><strong><code>raw_pixel_size</code></strong> :&ensp;<code>float = float("nan")</code></dt>
-<dd>Pixel size from hardware</dd>
-<dt><strong><code>applied_binning</code></strong> :&ensp;<code>tuple[int, int] | int = 0,</code></dt>
-<dd>Any additional binning that HAS been applied</dd>
-<dt><strong><code>annotate_polygons</code></strong> :&ensp;<code>bool = False,</code></dt>
-<dd>Annotate the polygons on image?</dd>
-<dt><strong><code>polygon_nodes</code></strong> :&ensp;<code>list | None = None,</code></dt>
-<dd>List of polygon nodes, see TODO for format</dd>
-<dt><strong><code>show_tick_marks</code></strong> :&ensp;<code>bool = False</code></dt>
-<dd>Show tick marks on axes</dd>
-<dt><strong><code>polygon_patch_params</code></strong> :&ensp;<code>dict | None</code>, default <code>= None</code></dt>
-<dd>Passed to mpl.patches.Polygon.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><strong><code>fig</code></strong> :&ensp;<code>matplotlib Figure object</code></dt>
-<dd>&nbsp;</dd>
-<dt><strong><code>ax</code></strong> :&ensp;<code>matplotlib Axis object</code></dt>
-<dd>&nbsp;</dd>
-</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2388,19 +894,9 @@ will be operated on if array is passed to np.mean instead of background).
 
     return fig, ax</code></pre>
 </details>
-</dd>
-<dt id="dukit.itool.plot_image_on_ax"><code class="name flex">
-<span>def <span class="ident">plot_image_on_ax</span></span>(<span>fig: matplotlib.figure.Figure, ax: matplotlib.axes._axes.Axes, image_data: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], title: str = 'title', c_map: str = 'viridis', c_range: tuple[float, float] | tuple[None, None] = (None, None), c_label: str = 'label', show_scalebar: bool = True, raw_pixel_size: float = nan, applied_binning: tuple[int, int] | int = 0, annotate_polygons: bool = False, polygon_nodes: list | None = None, show_tick_marks: bool = False, polygon_patch_params: dict | None = None) ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Plots an image given by image_data onto given figure and ax.</p>
-<p>Does not save any data.</p>
+<div class="desc"><p>Plots an image given by image_data. Only saves figure if path given.</p>
 <h2 id="arguments">Arguments</h2>
 <dl>
-<dt><strong><code>fig</code></strong> :&ensp;<code>matplotlib Figure object</code></dt>
-<dd>&nbsp;</dd>
-<dt><strong><code>ax</code></strong> :&ensp;<code>matplotlib Axis object</code></dt>
-<dd>&nbsp;</dd>
 <dt><strong><code>image_data</code></strong> :&ensp;<code>np array, 3D</code></dt>
 <dd>Data that is plot.</dd>
 <dt><strong><code>title</code></strong> :&ensp;<code>str</code></dt>
@@ -2411,6 +907,9 @@ will be operated on if array is passed to np.mean instead of background).
 <dd>Range of values in image_data to map to colors</dd>
 <dt><strong><code>c_label</code></strong> :&ensp;<code>str</code></dt>
 <dd>Label for colormap axis</dd>
+<dt><strong><code>opath</code></strong> :&ensp;<code>str
+= "",</code></dt>
+<dd>If given saves figure here.</dd>
 <dt><strong><code>show_scalebar</code></strong> :&ensp;<code>bool = True</code></dt>
 <dd>Show the scalebar(s)?</dd>
 <dt><strong><code>raw_pixel_size</code></strong> :&ensp;<code>float = float("nan")</code></dt>
@@ -2433,6 +932,11 @@ will be operated on if array is passed to np.mean instead of background).
 <dt><strong><code>ax</code></strong> :&ensp;<code>matplotlib Axis object</code></dt>
 <dd>&nbsp;</dd>
 </dl></div>
+</dd>
+<dt id="dukit.itool.plot_image_on_ax"><code class="name flex">
+<span>def <span class="ident">plot_image_on_ax</span></span>(<span>fig: matplotlib.figure.Figure,<br>ax: matplotlib.axes._axes.Axes,<br>image_data: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>title: str = 'title',<br>c_map: str = 'viridis',<br>c_range: tuple[float, float] | tuple[None, None] = (None, None),<br>c_label: str = 'label',<br>show_scalebar: bool = True,<br>raw_pixel_size: float = nan,<br>applied_binning: tuple[int, int] | int = 0,<br>annotate_polygons: bool = False,<br>polygon_nodes: list | None = None,<br>show_tick_marks: bool = False,<br>polygon_patch_params: dict | None = None) ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2510,9 +1014,7 @@ will be operated on if array is passed to np.mean instead of background).
             ax.add_artist(scalebar_x)
             ax.add_artist(scalebar_y)
         else:
-            pixel = (
-                raw_pixel_size * applied_binning if applied_binning else raw_pixel_size
-            )
+            pixel = raw_pixel_size * applied_binning if applied_binning else raw_pixel_size
             scalebar = ScaleBar(pixel)
             ax.add_artist(scalebar)
 
@@ -2539,33 +1041,56 @@ will be operated on if array is passed to np.mean instead of background).
 
     return fig, ax</code></pre>
 </details>
-</dd>
-<dt id="dukit.itool.rebin_image_stack"><code class="name flex">
-<span>def <span class="ident">rebin_image_stack</span></span>(<span>stack: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], additional_bins: tuple[int, int] | int) ‑> numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]]</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Rebin image stack in spatial dimensions.</p>
-<h2 id="parameters">Parameters</h2>
+<div class="desc"><p>Plots an image given by image_data onto given figure and ax.</p>
+<p>Does not save any data.</p>
+<h2 id="arguments">Arguments</h2>
 <dl>
-<dt><strong><code>stack</code></strong> :&ensp;<code>ndarray</code></dt>
+<dt><strong><code>fig</code></strong> :&ensp;<code>matplotlib Figure object</code></dt>
 <dd>&nbsp;</dd>
-<dt><strong><code>additional_bins</code></strong> :&ensp;<code>2-tuple</code> of <code>ints,</code> or <code>int</code></dt>
-<dd>Binning in-plane.
-Make it a power of 2.
-Binning in x then y if 2-tuple, else symmetric.</dd>
+<dt><strong><code>ax</code></strong> :&ensp;<code>matplotlib Axis object</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>image_data</code></strong> :&ensp;<code>np array, 3D</code></dt>
+<dd>Data that is plot.</dd>
+<dt><strong><code>title</code></strong> :&ensp;<code>str</code></dt>
+<dd>Title of figure, as well as name for save files</dd>
+<dt><strong><code>c_map</code></strong> :&ensp;<code>str</code></dt>
+<dd>Colormap object used to map image_data values to a color.</dd>
+<dt><strong><code>c_range</code></strong> :&ensp;<code>2-tuple</code> of <code>floats</code></dt>
+<dd>Range of values in image_data to map to colors</dd>
+<dt><strong><code>c_label</code></strong> :&ensp;<code>str</code></dt>
+<dd>Label for colormap axis</dd>
+<dt><strong><code>show_scalebar</code></strong> :&ensp;<code>bool = True</code></dt>
+<dd>Show the scalebar(s)?</dd>
+<dt><strong><code>raw_pixel_size</code></strong> :&ensp;<code>float = float("nan")</code></dt>
+<dd>Pixel size from hardware</dd>
+<dt><strong><code>applied_binning</code></strong> :&ensp;<code>tuple[int, int] | int = 0,</code></dt>
+<dd>Any additional binning that HAS been applied</dd>
+<dt><strong><code>annotate_polygons</code></strong> :&ensp;<code>bool = False,</code></dt>
+<dd>Annotate the polygons on image?</dd>
+<dt><strong><code>polygon_nodes</code></strong> :&ensp;<code>list | None = None,</code></dt>
+<dd>List of polygon nodes, see TODO for format</dd>
+<dt><strong><code>show_tick_marks</code></strong> :&ensp;<code>bool = False</code></dt>
+<dd>Show tick marks on axes</dd>
+<dt><strong><code>polygon_patch_params</code></strong> :&ensp;<code>dict | None</code>, default <code>= None</code></dt>
+<dd>Passed to mpl.patches.Polygon.</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><strong><code>smooth_stack</code></strong> :&ensp;<code>ndarray</code></dt>
-<dd>Image stack smoothed in spatial dimensions.</dd>
+<dt><strong><code>fig</code></strong> :&ensp;<code>matplotlib Figure object</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>ax</code></strong> :&ensp;<code>matplotlib Axis object</code></dt>
+<dd>&nbsp;</dd>
 </dl></div>
+</dd>
+<dt id="dukit.itool.rebin_image_stack"><code class="name flex">
+<span>def <span class="ident">rebin_image_stack</span></span>(<span>stack: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>additional_bins: tuple[int, int] | int) ‑> numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def rebin_image_stack(
-    stack: npt.NDArray, additional_bins: tuple[int, int] | int
-) -&gt; npt.NDArray:
+<pre><code class="python">def rebin_image_stack(stack: npt.NDArray, additional_bins: tuple[int, int] | int) -&gt; npt.NDArray:
     &#34;&#34;&#34;
     Rebin image stack in spatial dimensions.
 
@@ -2574,7 +1099,7 @@ Binning in x then y if 2-tuple, else symmetric.</dd>
     stack : ndarray
     additional_bins : 2-tuple of ints, or int
         Binning in-plane.  Make it a power of 2.
-        Binning in x then y if 2-tuple, else symmetric.
+        Binning in y then x if 2-tuple, else symmetric.
 
     Returns
     -------
@@ -2585,7 +1110,9 @@ Binning in x then y if 2-tuple, else symmetric.</dd>
         return stack
     if isinstance(additional_bins, (tuple, list)):
         return dukit.rebin.rebin(
-            stack, factor=(additional_bins[1], additional_bins[0], 1), func=np.mean
+            stack,
+            factor=(additional_bins[0], additional_bins[1], 1),
+            func=np.mean,
         )
     return dukit.rebin.rebin(
         stack,
@@ -2593,33 +1120,34 @@ Binning in x then y if 2-tuple, else symmetric.</dd>
         func=np.mean,
     )</code></pre>
 </details>
-</dd>
-<dt id="dukit.itool.smooth_image_stack"><code class="name flex">
-<span>def <span class="ident">smooth_image_stack</span></span>(<span>stack: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], sigma: tuple[float, float] | float, truncate: float = 4.0) ‑> numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]]</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Smooth image stack in spatial dimensions with gaussian.</p>
+<div class="desc"><p>Rebin image stack in spatial dimensions.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>stack</code></strong> :&ensp;<code>ndarray</code></dt>
 <dd>&nbsp;</dd>
-<dt><strong><code>sigma</code></strong> :&ensp;<code>2-tuple</code> of <code>floats</code> or <code>float</code></dt>
-<dd>If float, then symmetric smoothing in each dim, otherwise tuple(x, y)</dd>
-<dt><strong><code>truncate</code></strong> :&ensp;<code>float</code>, default=<code>4.0</code></dt>
-<dd>Truncate the filter at this many standard deviations.
-See scipy.ndimage.gaussian_filter.</dd>
+<dt><strong><code>additional_bins</code></strong> :&ensp;<code>2-tuple</code> of <code>ints,</code> or <code>int</code></dt>
+<dd>Binning in-plane.
+Make it a power of 2.
+Binning in y then x if 2-tuple, else symmetric.</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
 <dt><strong><code>smooth_stack</code></strong> :&ensp;<code>ndarray</code></dt>
 <dd>Image stack smoothed in spatial dimensions.</dd>
 </dl></div>
+</dd>
+<dt id="dukit.itool.smooth_image_stack"><code class="name flex">
+<span>def <span class="ident">smooth_image_stack</span></span>(<span>stack: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>sigma: tuple[float, float] | float,<br>truncate: float = 4.0) ‑> numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def smooth_image_stack(
-    stack: npt.NDArray, sigma: tuple[float, float] | float, truncate: float = 4.0
+    stack: npt.NDArray,
+    sigma: tuple[float, float] | float,
+    truncate: float = 4.0,
 ) -&gt; npt.NDArray:
     &#34;&#34;&#34;
     Smooth image stack in spatial dimensions with gaussian.
@@ -2642,12 +1170,27 @@ See scipy.ndimage.gaussian_filter.</dd>
         return gaussian_filter(stack, sigma=(sigma[1], sigma[0], 0), truncate=truncate)
     return gaussian_filter(stack, sigma=(sigma, sigma, 0), truncate=truncate)</code></pre>
 </details>
+<div class="desc"><p>Smooth image stack in spatial dimensions with gaussian.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>stack</code></strong> :&ensp;<code>ndarray</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>sigma</code></strong> :&ensp;<code>2-tuple</code> of <code>floats</code> or <code>float</code></dt>
+<dd>If float, then symmetric smoothing in each dim, otherwise tuple(x, y)</dd>
+<dt><strong><code>truncate</code></strong> :&ensp;<code>float</code>, default=<code>4.0</code></dt>
+<dd>Truncate the filter at this many standard deviations.
+See scipy.ndimage.gaussian_filter.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>smooth_stack</code></strong> :&ensp;<code>ndarray</code></dt>
+<dd>Image stack smoothed in spatial dimensions.</dd>
+</dl></div>
 </dd>
 <dt id="dukit.itool.sum_spatially"><code class="name flex">
-<span>def <span class="ident">sum_spatially</span></span>(<span>seq: Union[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]], numpy._typing._nested_sequence._NestedSequence[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]]], bool, int, float, complex, str, bytes, numpy._typing._nested_sequence._NestedSequence[Union[bool, int, float, complex, str, bytes]]]) ‑> numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]]</span>
+<span>def <span class="ident">sum_spatially</span></span>(<span>seq: ArrayLike) ‑> numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Sum over 0th (spectral) dim of seq if 3D, else return as is.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2659,6 +1202,7 @@ See scipy.ndimage.gaussian_filter.</dd>
         return np.sum(seq, axis=-1)
     return seq</code></pre>
 </details>
+<div class="desc"><p>Sum over 0th (spectral) dim of seq if 3D, else return as is.</p></div>
 </dd>
 </dl>
 </section>
@@ -2670,8 +1214,8 @@ See scipy.ndimage.gaussian_filter.</dd>
 <input id="lunr-search" name="q" placeholder="🔎 Search ..." aria-label="Search"
 disabled minlength="2">
 </form>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.css" integrity="sha512-j1u8eUJ4f23xPPxwOrLUPQaCD2dwzNqqmDDcWS4deWsMv2ohLqmXXuP3hU7g8TyzbMSakP/mMqoNBYWj8AEIFg==" crossorigin>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.js" integrity="sha512-plGUER9JkeEWPPqQBE4sdLqBoQug5Ap+BCGMc7bJ8BXkm+VVj6QzkpBz5Yv2yPkkq+cqg9IpkBaGCas6uDbW8g==" crossorigin></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.css" integrity="sha512-b+T2i3P45i1LZM7I00Ci5QquB9szqaxu+uuk5TUSGjZQ4w4n+qujQiIuvTv2BxE7WCGQCifNMksyKILDiHzsOg==" crossorigin>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.js" integrity="sha512-2B9/byNV1KKRm5nQ2RLViPFD6U4dUjDGwuW1GU+ImJh8YinPU9Zlq1GzdTMO+G2ROrB5o1qasJBy1ttYz0wCug==" crossorigin></script>
 <style>
 .modal-dialog iframe {
 width: 100vw;
@@ -2712,7 +1256,6 @@ setTimeout(() => input.focus(), 100);
 }).setContent('<iframe src="' + url + '"></iframe>').open();
 }
 </script>
-<h1>Index</h1>
 <div class="toc">
 <ul>
 <li><a href="#functions">Functions</a></li>
@@ -2753,7 +1296,7 @@ setTimeout(() => input.focus(), 100);
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
 </footer>
 </body>
 </html>

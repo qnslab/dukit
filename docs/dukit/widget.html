@@ -2,19 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.9.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
 <title>dukit.widget API documentation</title>
-<meta name="description" content="Various GUI widgets for use in the DUKIT …" />
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
-<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
-<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
-<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<meta name="description" content="Various GUI widgets for use in the DUKIT …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
 <style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
-<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
 </head>
 <body>
 <main>
@@ -36,1521 +51,6 @@ But it does currently <em>just work</em>.</p>
 <li><code><a title="dukit.widget.LinecutSelectionWidget" href="#dukit.widget.LinecutSelectionWidget">LinecutSelectionWidget</a></code></li>
 <li><code><a title="dukit.widget.BulkLinecutWidget" href="#dukit.widget.BulkLinecutWidget">BulkLinecutWidget</a></code></li>
 </ul>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python"># -*- coding: utf-8 -*-
-&#34;&#34;&#34;
-Various GUI widgets for use in the DUKIT.
-
-Not very well documented. But I don&#39;t really understand it so that&#39;s fine.
-How to use? See polygon.py and linecut.py
-
-Don&#39;t import any other dukit modules, ensure this is a leaf in the dep. tree.
-
-Apologies for lack of typing, I don&#39;t understand this stuff sufficiently.
-But it does currently *just work*.
-
-Classes
--------
- - `dukit.widget.PolygonSelector`
- - `dukit.widget.LineSelector`
- - `dukit.widget.LinecutSelectionWidget`
- - `dukit.widget.BulkLinecutWidget`
-&#34;&#34;&#34;
-
-# ============================================================================
-
-__author__ = &#34;Sam Scholten&#34;
-__pdoc__ = {
-    &#34;dukit.widget.PolygonSelector&#34;: True,
-    &#34;dukit.widget.LineSelector&#34;: True,
-    &#34;dukit.widget.LinecutSelectionWidget&#34;: True,
-    &#34;dukit.widget.BulkLinecutWidget&#34;: True,
-}
-
-# ============================================================================
-
-import copy
-from numbers import Integral
-import numpy as np
-import numpy.typing as npt
-from matplotlib.lines import Line2D
-import matplotlib.pyplot as plt
-from matplotlib.image import AxesImage
-from scipy import integrate
-
-# ============================================================================
-
-import dukit.json2dict
-
-# ======================================================================================
-# ======================================================================================
-# ======================================================================================
-# code from:
-# https://matplotlib.org/_modules/matplotlib/widgets.html#PolygonSelector
-# vendored, as I wanted to tweak some things - not the best idea I know.
-# ======================================================================================
-# ======================================================================================
-# ======================================================================================
-
-
-class Widget:
-    &#34;&#34;&#34;
-    Abstract base class for GUI neutral widgets
-    &#34;&#34;&#34;
-
-    drawon = True
-    eventson = True
-    _active = True
-
-    def set_active(self, active):
-        &#34;&#34;&#34;Set whether the widget is active.&#34;&#34;&#34;
-        self._active = active
-
-    def get_active(self):
-        &#34;&#34;&#34;Get whether the widget is active.&#34;&#34;&#34;
-        return self._active
-
-    # set_active is overridden by SelectorWidgets.
-    active = property(
-        get_active,
-        lambda self, active: self.set_active(active),
-        doc=&#34;Is the widget active?&#34;,
-    )
-
-    def ignore(self, event):
-        &#34;&#34;&#34;Return True if event should be ignored.
-
-        This method (or a version of it) should be called at the beginning
-        of any event callback.
-        &#34;&#34;&#34;
-        return not self.active
-
-
-# =======================================================================================
-
-
-class AxesWidget(Widget):
-    &#34;&#34;&#34;Widget that is connected to a single
-    :class:`~matplotlib.axes.Axes`.
-
-    To guarantee that the widget remains responsive and not garbage-collected,
-    a reference to the object should be maintained by the user.
-
-    This is necessary because the callback registry
-    maintains only weak-refs to the functions, which are member
-    functions of the widget.  If there are no references to the widget
-    object it may be garbage collected which will disconnect the
-    callbacks.
-
-    Attributes:
-
-    *ax* : :class:`~matplotlib.axes.Axes`
-        The parent axes for the widget
-    *canvas* : :class:`~matplotlib.backend_bases.FigureCanvasBase` subclass
-        The parent figure canvas for the widget.
-    *active* : bool
-        If False, the widget does not respond to events.
-    &#34;&#34;&#34;
-
-    def __init__(self, ax):
-        self.ax = ax
-        self.canvas = ax.figure.canvas
-        self.cids = []
-
-    def connect_event(self, event, callback):
-        &#34;&#34;&#34;Connect callback with an event.
-
-        This should be used in lieu of `figure.canvas.mpl_connect` since this
-        function stores callback ids for later clean up.
-        &#34;&#34;&#34;
-        cid = self.canvas.mpl_connect(event, callback)
-        self.cids.append(cid)
-
-    def disconnect_events(self):
-        &#34;&#34;&#34;Disconnect all events created by this widget.&#34;&#34;&#34;
-        for c in self.cids:
-            self.canvas.mpl_disconnect(c)
-
-
-# =======================================================================================
-
-
-class _SelectorWidget(AxesWidget):
-    def __init__(
-        self,
-        ax,
-        onselect,
-        useblit=False,
-        button=None,
-        state_modifier_keys=None,
-    ):
-        AxesWidget.__init__(self, ax)
-
-        self.visible = True
-        self.onselect = onselect
-        self.useblit = useblit and self.canvas.supports_blit
-        self.connect_default_events()
-
-        self.state_modifier_keys = dict(
-            move=&#34; &#34;, clear=&#34;escape&#34;, square=&#34;shift&#34;, center=&#34;control&#34;
-        )
-        self.state_modifier_keys.update(state_modifier_keys or {})
-
-        self.background = None
-        self.artists = []
-
-        if isinstance(button, Integral):
-            self.validButtons = [button]
-        else:
-            self.validButtons = button
-
-        # will save the data (position at mouseclick)
-        self.eventpress = None
-        # will save the data (pos. at mouserelease)
-        self.eventrelease = None
-        self._prev_event = None
-        self.state = set()
-
-    def set_active(self, active):
-        AxesWidget.set_active(self, active)
-        if active:
-            self.update_background(None)
-
-    def update_background(self, event):
-        &#34;&#34;&#34;force an update of the background&#34;&#34;&#34;
-        # If you add a call to `ignore` here, you&#39;ll want to check edge case:
-        # `release` can call a draw event even when `ignore` is True.
-        if self.useblit:
-            self.background = self.canvas.copy_from_bbox(self.ax.bbox)
-
-    def connect_default_events(self):
-        &#34;&#34;&#34;Connect the major canvas events to methods.&#34;&#34;&#34;
-        self.connect_event(&#34;motion_notify_event&#34;, self.onmove)
-        self.connect_event(&#34;button_press_event&#34;, self.press)
-        self.connect_event(&#34;button_release_event&#34;, self.release)
-        self.connect_event(&#34;draw_event&#34;, self.update_background)
-        self.connect_event(&#34;key_press_event&#34;, self.on_key_press)
-        self.connect_event(&#34;key_release_event&#34;, self.on_key_release)
-        self.connect_event(&#34;scroll_event&#34;, self.on_scroll)
-
-    def ignore(self, event):
-        &#34;&#34;&#34;return *True* if *event* should be ignored&#34;&#34;&#34;
-        if not self.active or not self.ax.get_visible():
-            return True
-
-        # If canvas was locked
-        if not self.canvas.widgetlock.available(self):
-            return True
-
-        if not hasattr(event, &#34;button&#34;):
-            event.button = None
-
-        # Only do rectangle selection if event was triggered
-        # with a desired button
-        if self.validButtons is not None:
-            if event.button not in self.validButtons:
-                return True
-
-        # If no button was pressed yet ignore the event if it was out
-        # of the axes
-        if self.eventpress is None:
-            return event.inaxes != self.ax
-
-        # If a button was pressed, check if the release-button is the
-        # same.
-        if event.button == self.eventpress.button:
-            return False
-
-        # If a button was pressed, check if the release-button is the
-        # same.
-        return event.inaxes != self.ax or event.button != self.eventpress.button
-
-    def update(self):
-        &#34;&#34;&#34;draw using newfangled blit or oldfangled draw depending on
-        useblit
-
-        &#34;&#34;&#34;
-        if not self.ax.get_visible():
-            return False
-
-        if self.useblit:
-            if self.background is not None:
-                self.canvas.restore_region(self.background)
-            for artist in self.artists:
-                self.ax.draw_artist(artist)
-
-            self.canvas.blit(self.ax.bbox)
-
-        else:
-            self.canvas.draw_idle()
-        return False
-
-    def _get_data(self, event):
-        &#34;&#34;&#34;Get the xdata and ydata for event, with limits&#34;&#34;&#34;
-        # 2021-03-12 @samsc added &#39;if event is None or...&#39; here due to error
-        if event is None or event.xdata is None:
-            return None, None
-        x0, x1 = self.ax.get_xbound()
-        y0, y1 = self.ax.get_ybound()
-        xdata = max(x0, event.xdata)
-        xdata = min(x1, xdata)
-        ydata = max(y0, event.ydata)
-        ydata = min(y1, ydata)
-        return xdata, ydata
-
-    def _clean_event(self, event):
-        &#34;&#34;&#34;Clean up an event
-
-        Use prev event if there is no xdata
-        Limit the xdata and ydata to the axes limits
-        Set the prev event
-        &#34;&#34;&#34;
-        if event.xdata is None:
-            event = self._prev_event
-        else:
-            event = copy.copy(event)
-        event.xdata, event.ydata = self._get_data(event)
-
-        self._prev_event = event
-        return event
-
-    def press(self, event):
-        &#34;&#34;&#34;Button press handler and validator&#34;&#34;&#34;
-        if not self.ignore(event):
-            event = self._clean_event(event)
-            self.eventpress = event
-            self._prev_event = event
-            key = event.key or &#34;&#34;
-            key = key.replace(&#34;ctrl&#34;, &#34;control&#34;)
-            # move state is locked in on a button press
-            if key == self.state_modifier_keys[&#34;move&#34;]:
-                self.state.add(&#34;move&#34;)
-            self._press(event)
-            return True
-        return False
-
-    def _press(self, event):
-        &#34;&#34;&#34;Button press handler&#34;&#34;&#34;
-        pass
-
-    def release(self, event):
-        &#34;&#34;&#34;Button release event handler and validator&#34;&#34;&#34;
-        if not self.ignore(event) and self.eventpress:
-            event = self._clean_event(event)
-            self.eventrelease = event
-            self._release(event)
-            self.eventpress = None
-            self.eventrelease = None
-            self.state.discard(&#34;move&#34;)
-            return True
-        return False
-
-    def _release(self, event):
-        &#34;&#34;&#34;Button release event handler&#34;&#34;&#34;
-        pass
-
-    def onmove(self, event):
-        &#34;&#34;&#34;Cursor move event handler and validator&#34;&#34;&#34;
-        if not self.ignore(event) and self.eventpress:
-            event = self._clean_event(event)
-            self._onmove(event)
-            return True
-        return False
-
-    def _onmove(self, event):
-        &#34;&#34;&#34;Cursor move event handler&#34;&#34;&#34;
-        pass
-
-    def on_scroll(self, event):
-        &#34;&#34;&#34;Mouse scroll event handler and validator&#34;&#34;&#34;
-        if not self.ignore(event):
-            self._on_scroll(event)
-
-    def _on_scroll(self, event):
-        &#34;&#34;&#34;Mouse scroll event handler&#34;&#34;&#34;
-        pass
-
-    def on_key_press(self, event):
-        &#34;&#34;&#34;Key press event handler and validator for all selection widgets&#34;&#34;&#34;
-        if self.active:
-            key = event.key or &#34;&#34;
-            key = key.replace(&#34;ctrl&#34;, &#34;control&#34;)
-            if key == self.state_modifier_keys[&#34;clear&#34;]:
-                for artist in self.artists:
-                    artist.set_visible(False)
-                self.update()
-                return
-            for (state, modifier) in self.state_modifier_keys.items():
-                # if modifier in key:
-                if modifier == key:
-                    self.state.add(state)
-            self._on_key_press(event)
-
-    def _on_key_press(self, event):
-        &#34;&#34;&#34;Key press event handler - use for widget-specific key press actions.&#34;&#34;&#34;
-        pass
-
-    def on_key_release(self, event):
-        &#34;&#34;&#34;Key release event handler and validator.&#34;&#34;&#34;
-        if self.active:
-            key = event.key or &#34;&#34;
-            for (state, modifier) in self.state_modifier_keys.items():
-                # if modifier in key:
-                if modifier == key:
-                    self.state.discard(state)
-            self._on_key_release(event)
-
-    def _on_key_release(self, event):
-        &#34;&#34;&#34;Key release event handler.&#34;&#34;&#34;
-        pass  # I added this (Sam)
-
-    def set_visible(self, visible):
-        &#34;&#34;&#34;Set the visibility of our artists.&#34;&#34;&#34;
-        self.visible = visible
-        for artist in self.artists:
-            artist.set_visible(visible)
-
-
-# =======================================================================================
-
-
-class ToolHandles:
-    &#34;&#34;&#34;Control handles for canvas tools.
-
-    Arguments
-    ---------
-    ax : :class:`matplotlib.axes.Axes`
-        Matplotlib axes where tool handles are displayed.
-    x, y : 1D arrays
-        Coordinates of control handles.
-    marker : str
-        Shape of marker used to display handle. See `matplotlib.pyplot.plot`.
-    marker_props : dict
-        Additional marker properties. See :class:`matplotlib.lines.Line2D`.
-    &#34;&#34;&#34;
-
-    def __init__(self, ax, x, y, marker=&#34;o&#34;, marker_props=None, useblit=True):
-        self.ax = ax
-
-        props = dict(
-            marker=marker,
-            markersize=7,
-            mfc=&#34;w&#34;,
-            ls=&#34;none&#34;,
-            alpha=0.5,
-            visible=False,
-            label=&#34;_nolegend_&#34;,
-        )
-        props.update(marker_props if marker_props is not None else {})
-        self._markers = Line2D(x, y, animated=useblit, **props)
-        self.ax.add_line(self._markers)
-        self.artist = self._markers
-
-    @property
-    def x(self):
-        return self._markers.get_xdata()
-
-    @property
-    def y(self):
-        return self._markers.get_ydata()
-
-    def set_data(self, pts, y=None):
-        &#34;&#34;&#34;Set x and y positions of handles&#34;&#34;&#34;
-        if y is not None:
-            x = pts
-            pts = np.array([x, y])
-        self._markers.set_data(pts)
-
-    def set_visible(self, val):
-        self._markers.set_visible(val)
-
-    def set_animated(self, val):
-        self._markers.set_animated(val)
-
-    def closest(self, x, y):
-        &#34;&#34;&#34;Return index and pixel distance to closest index.&#34;&#34;&#34;
-        pts = np.transpose((self.x, self.y))
-        # Transform data coordinates to pixel coordinates.
-        pts = self.ax.transData.transform(pts)
-        diff = pts - ((x, y))
-        if diff.ndim == 2:
-            dist = np.sqrt(np.sum(diff**2, axis=1))
-            return np.argmin(dist), np.min(dist)
-        else:
-            return 0, np.sqrt(np.sum(diff**2))
-
-
-class PolygonSelector(_SelectorWidget):
-    &#34;&#34;&#34;OLD DOCSTRING
-    Select a polygon region of an axes.
-
-    Place vertices with each mouse click, and make the selection by completing
-    the polygon (clicking on the first vertex). Hold the *ctrl* key and click
-    and drag a vertex to reposition it (the *ctrl* key is not necessary if the
-    polygon has already been completed). Hold the *shift* key and click and
-    drag anywhere in the axes to move all vertices. Press the *esc* key to
-    start a new polygon.
-
-    For the selector to remain responsive you must keep a reference to
-    it.
-
-    Arguments
-    ---------
-    ax : :class:`~matplotlib.axes.Axes`
-        The parent axes for the widget.
-    onselect : function
-        When a polygon is completed or modified after completion,
-        the `onselect` function is called and passed a list of the vertices as
-        ``(xdata, ydata)`` tuples.
-    useblit : bool, optional
-    lineprops : dict, optional
-        The line for the sides of the polygon is drawn with the properties
-        given by `lineprops`. The default is ``dict(color=&#39;k&#39;, linestyle=&#39;-&#39;,
-        linewidth=2, alpha=0.5)``.
-    markerprops : dict, optional
-        The markers for the vertices of the polygon are drawn with the
-        properties given by `markerprops`. The default is ``dict(marker=&#39;o&#39;,
-        markersize=7, mec=&#39;k&#39;, mfc=&#39;k&#39;, alpha=0.5)``.
-    vertex_select_radius : float, optional
-        A vertex is selected (to complete the polygon or to move a vertex)
-        if the mouse click is within `vertex_select_radius` pixels of the
-        vertex. The default radius is 15 pixels.
-
-    Examples
-    --------
-    :doc:`/gallery/widgets/polygon_selector_demo`
-    &#34;&#34;&#34;
-
-    def __init__(
-        self,
-        ax,
-        onselect,
-        useblit=False,
-        lineprops=None,
-        markerprops=None,
-        vertex_select_radius=15.,
-        base_scale=1.05,
-    ):
-        # The state modifiers &#39;move&#39;, &#39;square&#39;, and &#39;center&#39; are expected by
-        # _SelectorWidget but are not supported by PolygonSelector
-        # Note: could not use the existing &#39;move&#39; state modifier in-place of
-        # &#39;move_all&#39; because _SelectorWidget automatically discards &#39;move&#39;
-        # from the state on button release.
-
-        state_modifier_keys = dict(
-            clear=&#34;escape&#34;,
-            move_vertex=&#34;control&#34;,
-            move_all=&#34;shift&#34;,
-            finished=&#34;enter&#34;,
-            next=&#34;alt&#34;,
-            delete=&#34;del&#34;,
-            move=&#34;not-applicable&#34;,
-            square=&#34;not-applicable&#34;,
-            center=&#34;not-applicable&#34;,
-            rescale_all=&#34;r&#34;,
-        )
-        _SelectorWidget.__init__(
-            self,
-            ax,
-            onselect,
-            useblit=useblit,
-            state_modifier_keys=state_modifier_keys,
-        )
-
-        self._xs, self._ys = [0], [0]
-        self._polygon_completed = False
-
-        if lineprops is None:
-            lineprops = dict(color=&#34;k&#34;, linestyle=&#34;-&#34;, linewidth=2, alpha=0.5)
-        lineprops[&#34;animated&#34;] = self.useblit
-        self.lineprops = lineprops
-        self.current_line = Line2D(self._xs, self._ys, **self.lineprops)
-        self.lines = []  # list of line dicts (see _finalise_polygon)
-        self.ax.add_line(self.current_line)
-
-        if markerprops is None:
-            self.markerprops = dict(mec=&#34;k&#34;, mfc=lineprops.get(&#34;color&#34;, &#34;k&#34;))
-        else:
-            self.markerprops = markerprops
-        self._polygon_handles = ToolHandles(
-            self.ax,
-            self._xs,
-            self._ys,
-            useblit=self.useblit,
-            marker_props=self.markerprops,
-        )
-
-        self._active_handle_idx = -1
-        self.vertex_select_radius = vertex_select_radius
-
-        self.artists = [self.current_line, self._polygon_handles.artist]
-        self.set_visible(True)
-
-        self.base_scale = base_scale
-
-    @property
-    def _nverts(self):
-        return len(self._xs)
-
-    def _remove_vertex(self, i):
-        &#34;&#34;&#34;Remove vertex with index i.&#34;&#34;&#34;
-        if self._nverts &gt; 2 and self._polygon_completed and i in (0, self._nverts - 1):
-            # If selecting the first or final vertex, remove both first and
-            # last vertex as they are the same for a closed polygon
-            self._xs.pop(0)
-            self._ys.pop(0)
-            self._xs.pop(-1)
-            self._ys.pop(-1)
-            # Close the polygon again by appending the new first vertex to the
-            # end
-            self._xs.append(self._xs[0])
-            self._ys.append(self._ys[0])
-        else:
-            self._xs.pop(i)
-            self._ys.pop(i)
-        if self._nverts &lt;= 2:
-            # If only one point left, return to incomplete state to let user
-            # start drawing again
-            self._polygon_completed = False
-
-    def _press(self, event):
-        &#34;&#34;&#34;Button press event handler&#34;&#34;&#34;
-
-        # Check for selection of a tool handle on current polygon
-        if (self._polygon_completed or &#34;move_vertex&#34; in self.state) and len(
-            self._xs
-        ) &gt; 0:
-            h_idx, h_dist = self._polygon_handles.closest(event.x, event.y)
-            if h_dist &lt; self.vertex_select_radius:
-                self._active_handle_idx = h_idx
-
-        # Save the vertex positions at the time of the press event (needed to
-        # support the &#39;move_all&#39; state modifier). Also used for rescale_all
-        self._xs_at_press, self._ys_at_press = self._xs[:], self._ys[:]
-
-        for line in self.lines:
-            line[&#34;xs_at_press&#34;] = line[&#34;xs&#34;]
-            line[&#34;ys_at_press&#34;] = line[&#34;ys&#34;]
-
-    def _release(self, event):
-        &#34;&#34;&#34;Button release event handler&#34;&#34;&#34;
-
-        # Release active tool handle.
-        if self._active_handle_idx &gt;= 0:
-            if event.button == 3:
-                self._remove_vertex(self._active_handle_idx)
-                self.draw_polygon()
-            self._active_handle_idx = -1
-
-        # Complete the polygon.
-        elif (
-            len(self._xs) &gt; 3
-            and self._xs[-1] == self._xs[0]
-            and self._ys[-1] == self._ys[0]
-        ):
-            self._polygon_completed = True
-
-        # Place new vertex.
-        elif (
-            not self._polygon_completed
-            and &#34;move_all&#34; not in self.state
-            and &#34;move_vertex&#34; not in self.state
-            and &#34;rescale_all&#34; not in self.state
-        ):
-            self._xs.insert(-1, event.xdata)
-            self._ys.insert(-1, event.ydata)
-
-        if self._polygon_completed:
-            self.onselect(self.verts)
-
-    def onmove(self, event):
-        &#34;&#34;&#34;Cursor move event handler and validator&#34;&#34;&#34;
-        # Method overrides _SelectorWidget.onmove because the polygon selector
-        # needs to process the move callback even if there is no button press.
-        # _SelectorWidget.onmove include logic to ignore move event if
-        # eventpress is None.
-        if not self.ignore(event):
-            event = self._clean_event(event)
-            self._onmove(event)
-            return True
-        return False
-
-    def _onmove(self, event):
-        &#34;&#34;&#34;Cursor move event handler&#34;&#34;&#34;
-
-        # Move the active vertex (ToolHandle).
-        if self._active_handle_idx &gt;= 0:
-            idx = self._active_handle_idx
-            self._xs[idx], self._ys[idx] = event.xdata, event.ydata
-            # Also update the end of the polygon line if the first vertex is
-            # the active handle and the polygon is completed.
-            if idx == 0 and self._polygon_completed:
-                self._xs[-1], self._ys[-1] = event.xdata, event.ydata
-
-        # Move all vertices.
-        elif &#34;move_all&#34; in self.state and self.eventpress:
-            dx = event.xdata - self.eventpress.xdata
-            dy = event.ydata - self.eventpress.ydata
-            for k in range(len(self._xs)):
-                self._xs[k] = self._xs_at_press[k] + dx
-                self._ys[k] = self._ys_at_press[k] + dy
-            # also need to update all of the past lines
-            for line in self.lines:
-                new_xs = []
-                new_ys = []
-                for k in range(len(line[&#34;xs&#34;])):
-                    new_xs.append(line[&#34;xs_at_press&#34;][k] + dx)
-                    new_ys.append(line[&#34;ys_at_press&#34;][k] + dy)
-                line[&#34;xs&#34;] = new_xs
-                line[&#34;ys&#34;] = new_ys
-                # line[&#34;line_obj&#34;].set_data(new_xs, new_ys)
-
-        # Do nothing if completed or waiting for a move.
-        elif (
-            self._polygon_completed
-            or &#34;move_vertex&#34; in self.state
-            or &#34;move_all&#34; in self.state
-            or &#34;rescale_all&#34; in self.state
-        ):
-            return
-
-        # Position pending vertex.
-        else:
-            if self._xs:
-                # Calculate distance to the start vertex.
-                x0, y0 = self.current_line.get_transform().transform(
-                    (self._xs[0], self._ys[0])
-                )
-                v0_dist = np.hypot(x0 - event.x, y0 - event.y)
-                # Lock on to the start vertex if near it and ready to complete.
-                if len(self._xs) &gt; 3 and v0_dist &lt; self.vertex_select_radius:
-                    self._xs[-1], self._ys[-1] = self._xs[0], self._ys[0]
-                else:
-                    self._xs[-1], self._ys[-1] = event.xdata, event.ydata
-
-        self.draw_polygon()
-
-    def _on_key_press(self, event):
-        &#34;&#34;&#34;Key press event handler&#34;&#34;&#34;
-        # Remove the pending vertex if entering the &#39;move_vertex&#39; or
-        # &#39;move_all&#39; mode
-        if not self._polygon_completed and (
-            &#34;move_vertex&#34; in self.state
-            or &#34;move_all&#34; in self.state
-            or &#34;rescale_all&#34; in self.state
-        ):
-            self._xs, self._ys = self._xs[:-1], self._ys[:-1]
-            self.draw_polygon()
-        elif &#34;finished&#34; in self.state:
-            # we&#39;re finished, move on from everything
-            if self._polygon_completed:
-                self._finalise_polygon()
-            plt.close(self.ax.figure)
-        elif &#34;next&#34; in self.state:
-            # do exactly the same as clear, but finalise this polygon first
-            self._finalise_polygon()
-            event = self._clean_event(event)
-            self._xs, self._ys = [event.xdata], [event.ydata]
-            self._polygon_completed = False
-            self.set_visible(True)
-            self.update()
-        elif &#34;delete&#34; in self.state:
-            # clear
-            event = self._clean_event(event)
-            self._xs, self._ys = [event.xdata], [event.ydata]
-            self._polygon_completed = False
-            self.set_visible(True)
-            # clear all finalised lines
-            for line in self.lines:
-                line[&#34;line_obj&#34;].remove()
-            self.lines = []
-            self.artists = [self.current_line, self._polygon_handles.artist]
-            self.draw_polygon()
-
-    def _on_key_release(self, event):
-        &#34;&#34;&#34;Key release event handler&#34;&#34;&#34;
-        # Add back the pending vertex if leaving the &#39;move_vertex&#39; or
-        # &#39;move_all&#39; mode (by checking the released key)
-        if not self._polygon_completed and (
-            event.key == self.state_modifier_keys.get(&#34;move_vertex&#34;)
-            or event.key == self.state_modifier_keys.get(&#34;move_all&#34;)
-            or event.key == self.state_modifier_keys.get(&#34;rescale_all&#34;)
-        ):
-            self._xs.append(event.xdata)
-            self._ys.append(event.ydata)
-            self.draw_polygon()
-        # Reset the polygon if the released key is the &#39;clear&#39; key.
-        elif event.key == self.state_modifier_keys.get(&#34;clear&#34;):
-            event = self._clean_event(event)
-            self._xs, self._ys = [event.xdata], [event.ydata]
-            self._polygon_completed = False
-            self.set_visible(True)
-
-    def draw_polygon(self):
-        &#34;&#34;&#34;Redraw the polygon(s) based on the new vertex positions.&#34;&#34;&#34;
-        self.current_line.set_data(self._xs, self._ys)
-
-        for line in self.lines:
-            line[&#34;line_obj&#34;].set_data(line[&#34;xs&#34;], line[&#34;ys&#34;])
-        # Only show one tool handle at the start and end vertex of the polygon
-        # if the polygon is completed or the user is locked on to the start
-        # vertex.
-        if self._polygon_completed or (
-            len(self._xs) &gt; 3
-            and self._xs[-1] == self._xs[0]
-            and self._ys[-1] == self._ys[0]
-        ):
-            self._polygon_handles.set_data(self._xs[:-1], self._ys[:-1])
-        else:
-            self._polygon_handles.set_data(self._xs, self._ys)
-        self.update()
-
-    def _finalise_polygon(self):
-        &#34;&#34;&#34;Copy the current polygon so we can move on to another one&#34;&#34;&#34;
-        new_line = copy.copy(self.current_line)
-
-        new_line_dict = dict(line_obj=new_line, xs=self._xs, ys=self._ys)
-
-        self.ax.add_line(new_line)
-        self.artists.append(new_line)
-        self.lines.append(new_line_dict)  # list of line dicts
-        self.update()
-
-    @property
-    def verts(self):
-        &#34;&#34;&#34;Get the polygon vertices.
-
-        Returns
-        -------
-        list
-            A list of the vertices of the polygon as ``(xdata, ydata)`` tuples. for each
-            polygon (A, B, ...) selected
-            ``[ [(Ax1, Ay1), (Ax2, Ay2)], [(Bx1, By1), (Bx2, By2)] ]``
-        &#34;&#34;&#34;
-        # return list(zip(self._xs[:-1], self._ys[:-1]))
-        pts = []
-        for line in self.lines:
-            pts.append(list(zip(line[&#34;xs&#34;], line[&#34;ys&#34;])))
-        return pts
-
-    @property
-    def xy_verts(self):
-        &#34;&#34;&#34;
-        Return list of the vertices for each polygon in the format:
-        [ ( [Ax1, Ax2, ...], [Ay1, Ay2, ...] ), ( [Bx1, Bx2, ...], [By1, By2, ...] ) ]
-        &#34;&#34;&#34;
-        pts = []
-        for line in self.lines:
-            pts.append(list(zip(line[&#34;xs&#34;], line[&#34;ys&#34;])))
-
-        polygons = []
-        for p in pts:
-            x = []
-            y = []
-            for c in p:
-                x.append(c[0])
-                y.append(c[1])
-            polygons.append((x, y))
-        return polygons
-
-    def _on_scroll(self, event):
-        if &#34;rescale_all&#34; in self.state:
-            if event.button == &#34;up&#34;:
-                # zoom in
-                scale_factor = self.base_scale
-            elif event.button == &#34;down&#34;:
-                # zoom out
-                scale_factor = 1 / self.base_scale
-            else:
-                scale_factor = 1
-
-            if self._xs and self._ys:
-                center_x, center_y = (np.mean(self._xs), np.mean(self._ys))
-                for k, _ in enumerate(self._xs):
-                    self._xs[k] = (self._xs[k] - center_x) * scale_factor + center_x
-                    self._ys[k] = (self._ys[k] - center_y) * scale_factor + center_y
-
-            # update past lines
-            for line in self.lines:
-                if line[&#34;xs&#34;] and line[&#34;ys&#34;]:
-                    new_xs = []
-                    new_ys = []
-                    cx_line, cy_line = (np.mean(line[&#34;xs&#34;]), np.mean(line[&#34;ys&#34;]))
-                    for k, _ in enumerate(line[&#34;xs&#34;]):
-                        new_xs.append((line[&#34;xs&#34;][k] - cx_line) * scale_factor + cx_line)
-                        new_ys.append((line[&#34;ys&#34;][k] - cy_line) * scale_factor + cy_line)
-                    line[&#34;xs&#34;] = new_xs
-                    line[&#34;ys&#34;] = new_ys
-                    line[&#34;line_obj&#34;].set_data(new_xs, new_ys)
-        else:
-            return
-
-        self.draw_polygon()
-
-
-# ======================================================================================
-# ======================================================================================
-# ======================================================================================
-# end old code
-# ======================================================================================
-# ======================================================================================
-# ======================================================================================
-
-
-class LineSelector(_SelectorWidget):
-    &#34;&#34;&#34;similar to PolygonSelector but an open line.&#34;&#34;&#34;
-
-    def __init__(
-        self,
-        ax,
-        onselect,
-        useblit=False,
-        lineprops=None,
-        markerprops=None,
-        vertex_select_radius=15.,
-        ondraw=lambda x: None,
-    ):
-        # The state modifiers &#39;move&#39;, &#39;square&#39;, and &#39;center&#39; are expected by
-        # _SelectorWidget but are not supported by LineSelector
-        # Note: could not use the existing &#39;move&#39; state modifier in-place of
-        # &#39;move_all&#39; because _SelectorWidget automatically discards &#39;move&#39;
-        # from the state on button release.
-
-        state_modifier_keys = dict(
-            clear=&#34;escape&#34;,
-            move_vertex=&#34;control&#34;,
-            move_all=&#34;shift&#34;,
-            delete=&#34;del&#34;,
-            finished=&#34;enter&#34;,
-            next=&#34;alt&#34;,
-            move=&#34;not-applicable&#34;,
-            square=&#34;not-applicable&#34;,
-            center=&#34;not-applicable&#34;,
-        )
-        _SelectorWidget.__init__(
-            self,
-            ax,
-            onselect,
-            useblit=useblit,
-            state_modifier_keys=state_modifier_keys,
-        )
-        self._xs, self._ys = [0], [0]
-        self._line_completed = False
-
-        if lineprops is None:
-            lineprops = dict(color=&#34;k&#34;, linestyle=&#34;-&#34;, linewidth=2, alpha=0.5)
-        lineprops[&#34;animated&#34;] = self.useblit
-        self.lineprops = lineprops
-        self.current_line = Line2D(self._xs, self._ys, **self.lineprops)
-        self.finished_line = None
-        self.ax.add_line(self.current_line)
-
-        if markerprops is None:
-            self.markerprops = dict(mec=&#34;k&#34;, mfc=lineprops.get(&#34;color&#34;, &#34;k&#34;))
-        else:
-            self.markerprops = markerprops
-        self._line_handles = ToolHandles(
-            self.ax,
-            self._xs,
-            self._ys,
-            useblit=self.useblit,
-            marker_props=self.markerprops,
-        )
-
-        self._active_handle_idx = -1
-        self.vertex_select_radius = vertex_select_radius
-
-        self.artists = [self.current_line, self._line_handles.artist]
-        self.set_visible(True)
-        self.ondraw = (
-            ondraw  # fn that takes single arg (verts) and does whatever with it.
-        )
-
-    @property
-    def _nverts(self):
-        return len(self._xs)
-
-    def _remove_vertex(self, i):
-        &#34;&#34;&#34;Remove vertex with index i.&#34;&#34;&#34;
-        self._xs.pop(i)
-        self._ys.pop(i)
-
-    def _press(self, event):
-        &#34;&#34;&#34;Button press event handler&#34;&#34;&#34;
-
-        # Check for selection of a tool handle on current polygon
-        if (self._line_completed or &#34;move_vertex&#34; in self.state) and len(self._xs) &gt; 0:
-            h_idx, h_dist = self._line_handles.closest(event.x, event.y)
-            if h_dist &lt; self.vertex_select_radius:
-                self._active_handle_idx = h_idx
-
-        # Save the vertex positions at the time of the press event (needed to
-        # support the &#39;move_all&#39; state modifier). Also used for rescale_all
-        self._xs_at_press, self._ys_at_press = self._xs[:], self._ys[:]
-
-        if self.finished_line is not None:
-            self.finished_line[&#34;xs_at_press&#34;] = self.finished_line[&#34;xs&#34;]
-            self.finished_line[&#34;ys_at_press&#34;] = self.finished_line[&#34;ys&#34;]
-
-    def _release(self, event):
-        &#34;&#34;&#34;Button release event handler&#34;&#34;&#34;
-
-        # Release active tool handle.
-        if self._active_handle_idx &gt;= 0:
-            if event.button == 3:
-                self._remove_vertex(self._active_handle_idx)
-                self.draw_line()
-            self._active_handle_idx = -1
-
-        # Place new vertex.
-        elif (
-            not self._line_completed
-            and &#34;move_all&#34; not in self.state
-            and &#34;move_vertex&#34; not in self.state
-        ):
-            self._xs.insert(-1, event.xdata)
-            self._ys.insert(-1, event.ydata)
-
-    def onmove(self, event):
-        &#34;&#34;&#34;Cursor move event handler and validator&#34;&#34;&#34;
-        # Method overrides _SelectorWidget.onmove because the polygon selector
-        # needs to process the move callback even if there is no button press.
-        # _SelectorWidget.onmove include logic to ignore move event if
-        # eventpress is None.
-        if not self.ignore(event):
-            event = self._clean_event(event)
-            self._onmove(event)
-            return True
-        return False
-
-    def _onmove(self, event):
-        &#34;&#34;&#34;Cursor move event handler&#34;&#34;&#34;
-
-        # Move the active vertex (ToolHandle).
-        if self._active_handle_idx &gt;= 0:
-            idx = self._active_handle_idx
-            self._xs[idx], self._ys[idx] = event.xdata, event.ydata
-            # Also update the end of the polygon line if the first vertex is
-            # the active handle and the polygon is completed.
-            if idx == 0 and self._line_completed:
-                self._xs[-1], self._ys[-1] = event.xdata, event.ydata
-
-        # Move all vertices.
-        elif &#34;move_all&#34; in self.state and self.eventpress:
-            dx = event.xdata - self.eventpress.xdata
-            dy = event.ydata - self.eventpress.ydata
-            for k in range(len(self._xs)):
-                self._xs[k] = self._xs_at_press[k] + dx
-                self._ys[k] = self._ys_at_press[k] + dy
-
-            if self.finished_line is not None:
-                new_xs, new_ys = [], []
-                for k in range(len(self.finished_line[&#34;xs&#34;])):
-                    new_xs.append(self.finished_line[&#34;xs_at_press&#34;][k] + dx)
-                    new_ys.append(self.finished_line[&#34;ys_at_press&#34;][k] + dy)
-                self.finished_line[&#34;xs&#34;] = new_xs
-                self.finished_line[&#34;ys&#34;] = new_ys
-
-        # Do nothing if completed or waiting for a move.
-        elif (
-            self._line_completed
-            or &#34;move_vertex&#34; in self.state
-            or &#34;move_all&#34; in self.state
-        ):
-            return
-        else:
-            if self._xs:
-                self._xs[-1], self._ys[-1] = event.xdata, event.ydata
-
-        self.draw_line()
-
-    def _on_key_press(self, event):
-        &#34;&#34;&#34;Key press event handler&#34;&#34;&#34;
-        # Remove the pending vertex if entering the &#39;move_vertex&#39; or
-        # &#39;move_all&#39; mode
-        if not self._line_completed and (
-            &#34;move_vertex&#34; in self.state or &#34;move_all&#34; in self.state
-        ):
-            self._xs, self._ys = self._xs[:-1], self._ys[:-1]
-            self.draw_line()
-        elif &#34;finished&#34; in self.state:
-            # we&#39;re finished, move on from everything
-            if self._line_completed:
-                self._finalise_line()
-            plt.close(self.ax.figure)
-        elif &#34;next&#34; in self.state:
-            # do exactly the same as clear, but finalise the line first
-            # new for lineselector: remove last point (added by &#39;alt&#39;), and redraw.
-            self._xs, self._ys = self._xs[:-1], self._ys[:-1]
-            self.draw_line()
-            self._finalise_line()
-            event = self._clean_event(event)
-            self._xs, self._ys = [event.xdata], [event.ydata]
-            self._line_completed = True
-            self.set_visible(True)
-            self.update()
-            self.onselect(self.verts)
-        elif &#34;delete&#34; in self.state:
-            # clear
-            event = self._clean_event(event)
-            self._xs, self._ys = [event.xdata], [event.ydata]
-            self._line_completed = False
-            self.set_visible(True)
-            # clear finished line
-            if self.finished_line is not None:
-                self.finished_line[&#34;line_obj&#34;].remove()
-                self.finished_line = None
-            self.artists = [self.current_line, self._line_handles.artist]
-            self.draw_line()
-
-    def _on_key_release(self, event):
-        &#34;&#34;&#34;Key release event handler&#34;&#34;&#34;
-        # Add back the pending vertex if leaving the &#39;move_vertex&#39; or
-        # &#39;move_all&#39; mode (by checking the released key)
-        if not self._line_completed and (
-            event.key == self.state_modifier_keys.get(&#34;move_vertex&#34;)
-            or event.key == self.state_modifier_keys.get(&#34;move_all&#34;)
-        ):
-            self._xs.append(event.xdata)
-            self._ys.append(event.ydata)
-            self.draw_line()
-        # Reset the polygon if the released key is the &#39;clear&#39; key.
-        elif event.key == self.state_modifier_keys.get(&#34;clear&#34;):
-            event = self._clean_event(event)
-            self._xs, self._ys = [event.xdata], [event.ydata]
-            self.set_visible(True)
-
-    def draw_line(self):
-        &#34;&#34;&#34;Redraw the line based on the new vertex positions.&#34;&#34;&#34;
-        self.current_line.set_data(self._xs, self._ys)
-
-        if self.finished_line is not None:
-            self.finished_line[&#34;line_obj&#34;].set_data(
-                self.finished_line[&#34;xs&#34;], self.finished_line[&#34;ys&#34;]
-            )
-        # Only show one tool handle at the start and end vertex of the polygon
-        # if the line is completed or the user is locked on to the start
-        # vertex. --&gt; seems irrelevant here?
-        if self._line_completed or (
-            len(self._xs) &gt; 3
-            and self._xs[-1] == self._xs[0]
-            and self._ys[-1] == self._ys[0]
-        ):
-            self._line_handles.set_data(self._xs[:-1], self._ys[:-1])
-        else:
-            self._line_handles.set_data(self._xs, self._ys)
-        self.update()
-        if self.finished_line:
-            self.ondraw(self.verts)
-        else:
-            self.ondraw(self.current_verts)
-
-    def _finalise_line(self):
-        &#34;&#34;&#34;Copy the current line so we can move on to another one&#34;&#34;&#34;
-        new_line = copy.copy(self.current_line)
-
-        new_line_dict = dict(line_obj=new_line, xs=self._xs, ys=self._ys)
-
-        self.ax.add_line(new_line)
-        self.artists.append(new_line)
-        self.finished_line = new_line_dict
-        self.update()
-
-    @property
-    def verts(self):
-        &#34;&#34;&#34;Get the line vertices.
-
-        Returns
-        -------
-        list
-            A list of the vertices of the line as ``(xdata, ydata)`` tuples.
-            `[(Ax1, Ay1), (Ax2, Ay2)]`
-        &#34;&#34;&#34;
-        # return list(zip(self._xs[:-1], self._ys[:-1]))
-        pts = []
-        if self.finished_line is not None:
-            pts = list(zip(self.finished_line[&#34;xs&#34;], self.finished_line[&#34;ys&#34;]))
-        return pts
-
-    @property
-    def current_verts(self):
-        ret = list(zip(self.current_line.get_xdata(), self.current_line.get_ydata()))
-        return ret
-
-    @property
-    def xy_verts(self):
-        &#34;&#34;&#34;
-        Return list of the vertices for the line in this format:
-        ( [Ax1, Ax2, ...], [Ay1, Ay2, ...] )
-        &#34;&#34;&#34;
-        pts = []
-        if self.finished_line is not None:
-            pts = list(zip(self.finished_line[&#34;xs&#34;], self.finished_line[&#34;ys&#34;]))
-
-        x, y = [], []
-        for p in pts:
-            x.append(p[0])
-            y.append(p[1])
-        return (x, y)
-
-# ======================================================================================
-
-class BulkLinecutWidget:
-    &#34;&#34;&#34;
-    How to use
-    ----------
-    import matplotlib.pyplot as plt
-    import numpy as np
-    from qdmpy.shared.linecut import BulkLinecutWidget
-    # TODO update
-
-    path = &#34;&lt;WHATEVER&gt;&#34;
-    times = [0.325, 1, 5, 10, 20, 21, 22, 25, 30, 40]
-    paths = [f&#34;{path}/{t}.txt&#34; for t in times]
-    images = [np.loadtxt(p) for p in paths]
-    selector_image = images[4]
-
-    fig, axs = plt.subplots(ncols=3, figsize=(12, 6))
-    axs[0].imshow(selector_image)  # (data can be nans if you want an empty selector)
-    selector = BulkLinecutWidget(*axs, images, times)
-    plt.show()
-    selector.disconnect(path=&#34;/home/samsc/share/result.json&#34;)
-    &#34;&#34;&#34;
-
-    def __init__(
-        self,
-        imax: plt.Axes,
-        profax: plt.Axes,
-        resax: plt.Axes,
-        images: list[npt.NDArray] | tuple[npt.NDArray],
-        xlabels: list[str] | tuple[str],
-        style: dict | None = None,
-        useblit: bool = False,
-        dointegral: bool = True,
-    ):
-        # check that input ax has an imshow (else not so useful eh)
-        if not any([[isinstance(t, AxesImage) for t in imax.get_children()]]):
-            raise ValueError(&#34;input axis does not contain an AxesImage (imshow).&#34;)
-        self.images = images
-        self.xlabels = xlabels
-
-        self.pts = []
-
-        dflt_style = {
-            &#34;lineprops&#34;: {
-                &#34;color&#34;: &#34;k&#34;,
-                &#34;linestyle&#34;: &#34;-&#34;,
-                &#34;linewidth&#34;: 1.0,
-                &#34;alpha&#34;: 0.5,
-            },
-            &#34;markerprops&#34;: {
-                &#34;marker&#34;: &#34;o&#34;,
-                &#34;markersize&#34;: 2.0,
-                &#34;mec&#34;: &#34;k&#34;,
-                &#34;mfc&#34;: &#34;k&#34;,
-                &#34;alpha&#34;: 0.5,
-            },
-        }
-
-        self.lp = dflt_style[&#34;lineprops&#34;]
-        self.mp = dflt_style[&#34;markerprops&#34;]
-
-        if style is not None:
-            if &#34;lineprops&#34; in style and isinstance(style[&#34;lineprops&#34;], dict):
-                for key, item in style[&#34;lineprops&#34;].items():
-                    self.lp[key] = item
-            if &#34;markerprops&#34; in style and isinstance(style[&#34;markerprops&#34;], dict):
-                for key, item in style[&#34;markerprops&#34;].items():
-                    self.mp[key] = item
-
-        self.line_selector = LineSelector(
-            imax,
-            self.onselect,
-            ondraw=self.ondraw,
-            lineprops=self.lp,
-            markerprops=self.mp,
-            vertex_select_radius=7.5 * 2.0,
-            useblit=useblit,
-        )
-        self.imax = imax
-        self.profax = profax
-        self.resax = resax
-        self.integrals = [0 for i in xlabels]
-        self.integral = 0
-        self.do_integral = dointegral
-
-        self.canvas = self.imax.figure.canvas
-
-        dummy_x = np.zeros((5, len(xlabels)))
-        dummy_y = np.zeros((5, len(xlabels)))
-        self.profiles = self.profax.plot(
-            dummy_x, dummy_y, marker=&#34;o&#34;, ls=&#34;-&#34;, label=xlabels
-        )
-        # handles, _ = self.profax.get_legend_handles_labels()
-        # self.profax.legend(handles, self.xlabels, loc=&#34;upper left&#34;)
-        self.profax.legend()
-
-        (self.integrals_plot,) = self.resax.plot(xlabels, self.integrals, &#34;ko-&#34;)
-
-    def ondraw(self, verts):
-        if len(verts) == 1:
-            # change all profiles
-            for p, prof in enumerate(self.profiles):
-                prof.set_xdata([0])
-                prof.set_ydata(self.images[p][int(verts[0][1]), int(verts[0][0])])
-        else:
-            idxs, jdxs = zip(*verts)
-            pxl_ar = [0]
-            i_lst = []
-            j_lst = []
-            for n in range(len(idxs) - 1):
-                i0, i1 = idxs[n], idxs[n + 1]
-                j0, j1 = jdxs[n], jdxs[n + 1]
-                num = int(np.sqrt((i1 - i0) ** 2 + (j1 - j0) ** 2) * 2)  # *2 to be safe
-                if not num:
-                    continue
-
-                ivec = np.linspace(i0, i1, num).astype(int)
-                jvec = np.linspace(j0, j1, num).astype(int)
-
-                new_ij = [
-                    (ivec[v], jvec[u])
-                    for v, u in zip(range(len(ivec) - 1), range(len(jvec) - 1))
-                    if ivec[v + 1] != ivec[v] or jvec[u + 1] != jvec[u]
-                ]
-                new_ij.append((ivec[-1], jvec[-1]))
-                new_is, new_js = zip(*new_ij)
-                if not i_lst:
-                    i_lst, j_lst = list(new_is), list(new_js)
-                    i_ar, j_ar = np.asarray(new_is), np.asarray(new_js)
-                else:
-                    i_lst.extend(list(new_is[1:]))
-                    j_lst.extend(list(new_js[1:]))
-                    i_ar, j_ar = np.asarray(new_is[1:]), np.asarray(new_js[1:])
-                if not (i_ar.ndim and i_ar.size):
-                    continue
-                pxl_ar.extend(
-                    (
-                        pxl_ar[-1]
-                        + np.sqrt((i_ar - i_ar[0]) ** 2 + (j_ar - j_ar[0]) ** 2)
-                    ).tolist()
-                )
-
-            for p, prof in enumerate(self.profiles):
-                z = self.images[p][j_lst, i_lst]
-                if z.ndim and z.size:  # ensure no empty array
-                    prof.set_xdata(
-                        pxl_ar[1:]
-                    )  # get rid of initial 0 on pxl_ar (bit hacky)
-                    prof.set_ydata(list(z))
-                    if self.do_integral:
-                        self.integrals[p] = integrate.simpson(z, pxl_ar[1:])
-                    else:
-                        self.integrals[p] = np.nan
-                else:
-                    # dummy data for this guy...
-                    prof.set_xdata((np.nan,))
-                    prof.set_ydata((np.nan,))
-            self.integrals_plot.set_ydata(self.integrals)
-        self.profax.relim()
-        self.profax.autoscale_view()
-        self.resax.relim()
-        self.resax.autoscale_view()
-        self.canvas.draw()
-        self.canvas.flush_events()
-
-    def onselect(self, verts):
-        # only called when line is finished
-        self.pts = verts  # list of vertices `[(Ax1, Ay1), (Ax2, Ay2)]`
-        self.canvas.draw_idle()
-
-    def disconnect(self, path=None):
-        if path is None:
-            print()
-            print(&#34;xlabels:&#34;)
-            print(self.xlabels)
-            print()
-            print(&#34;profiles xdata:&#34;)
-            print(np.transpose(
-                    [prof.get_xdata() for prof in self.profiles]
-                ).tolist())
-            print(&#34;profiles ydata:&#34;)
-            print(np.transpose(
-                    [prof.get_ydata() for prof in self.profiles]
-                ).tolist())
-            print(&#34;integrals:&#34;)
-            print(self.integrals)
-            print()
-        else:
-            output_dict = {
-                &#34;xlabels&#34;: self.xlabels,
-                &#34;integrals&#34;: self.integrals,
-                &#34;profile_x&#34;: np.transpose(
-                    [prof.get_xdata() for prof in self.profiles]
-                ).tolist(),
-                &#34;profile_y&#34;: np.transpose(
-                    [prof.get_ydata() for prof in self.profiles]
-                ).tolist(),
-            }
-            dukit.json2dict.dict_to_json(output_dict, path)
-        self.line_selector.disconnect_events()
-        self.canvas.draw_idle()
-
-
-class LinecutSelectionWidget:
-    &#34;&#34;&#34;
-    How to Use
-    ----------
-    fig, axs = plt.subplots(ncols=2)
-    axs[0].imshow(data) # (data may be nans if you want empty selector)
-    selector = LinecutSelectionWidget(axs[0], axs[1], ...)
-    plt.show()
-    selector.disconnect()
-
-    &#34;&#34;&#34;
-
-    def __init__(self, imax, lineax, data, style=None, useblit=False):
-        # check that input ax has an imshow (else not so useful eh)
-        if not any([[isinstance(t, AxesImage) for t in imax.get_children()]]):
-            raise ValueError(&#34;input axis does not contain an AxesImage (imshow).&#34;)
-
-        self.data = data
-        self.imax = imax
-        self.lineax = lineax
-        self.integral = 0
-
-        self.canvas = self.imax.figure.canvas
-
-        dflt_style = {
-            &#34;lineprops&#34;: {
-                &#34;color&#34;: &#34;k&#34;,
-                &#34;linestyle&#34;: &#34;-&#34;,
-                &#34;linewidth&#34;: 1.0,
-                &#34;alpha&#34;: 0.5,
-            },
-            &#34;markerprops&#34;: {
-                &#34;marker&#34;: &#34;o&#34;,
-                &#34;markersize&#34;: 2.0,
-                &#34;mec&#34;: &#34;k&#34;,
-                &#34;mfc&#34;: &#34;k&#34;,
-                &#34;alpha&#34;: 0.5,
-            },
-        }
-
-        self.lp = dflt_style[&#34;lineprops&#34;]
-        self.mp = dflt_style[&#34;markerprops&#34;]
-        if style is not None:
-            if &#34;lineprops&#34; in style and isinstance(style[&#34;lineprops&#34;], dict):
-                for key, item in style[&#34;lineprops&#34;].items():
-                    self.lp[key] = item
-            if &#34;markerprops&#34; in style and isinstance(style[&#34;markerprops&#34;], dict):
-                for key, item in style[&#34;markerprops&#34;].items():
-                    self.mp[key] = item
-
-        vsr = 7.5 * self.mp[&#34;markersize&#34;]  # linear scaling on what our select radius is
-
-        (self.profile,) = self.lineax.plot([1, 2, 3], [1, 2, 3], &#34;ko-&#34;)
-        self.lineax.title.set_text(f&#34;Integral: {self.integral}&#34;)
-
-        self.pts = []
-        self.line_selector = LineSelector(
-            imax,
-            self.onselect,
-            ondraw=self.ondraw,
-            lineprops=self.lp,
-            markerprops=self.mp,
-            vertex_select_radius=vsr,
-            useblit=useblit,
-        )
-
-    def ondraw(self, verts):
-        if len(verts) == 1:
-            self.profile.set_xdata([0])
-            self.profile.set_ydata(self.data[int(verts[0][1]), int(verts[0][0])])
-            self.lineax.title.set_text(f&#34;Integral: {self.integral}&#34;)
-        else:
-            idxs, jdxs = zip(*verts)
-            t_ar = [0]
-            i_lst = []
-            j_lst = []
-            for n in range(len(idxs) - 1):
-                try:
-                    i0, i1 = idxs[n], idxs[n + 1]
-                    j0, j1 = jdxs[n], jdxs[n + 1]
-                    # *2 in there to be safe
-                    num = int(np.sqrt((i1 - i0) ** 2 + (j1 - j0) ** 2) * 2)
-                except:
-                    num = 0
-                if not num:
-                    continue
-
-                ivec = np.linspace(i0, i1, num).astype(int)
-                jvec = np.linspace(j0, j1, num).astype(int)
-
-                new_ij = [
-                    (ivec[v], jvec[u])
-                    for v, u in zip(range(len(ivec) - 1), range(len(jvec) - 1))
-                    if ivec[v + 1] != ivec[v] or jvec[u + 1] != jvec[u]
-                ]
-                new_ij.append((ivec[-1], jvec[-1]))
-                new_is, new_js = zip(*new_ij)
-                if not i_lst:
-                    i_lst, j_lst = list(new_is), list(new_js)
-                    i_ar, j_ar = np.asarray(new_is), np.asarray(new_js)
-                else:
-                    i_lst.extend(list(new_is[1:]))
-                    j_lst.extend(list(new_js[1:]))
-                    i_ar, j_ar = np.asarray(new_is[1:]), np.asarray(new_js[1:])
-                if not (i_ar.ndim and i_ar.size):
-                    continue
-                t_ar.extend(
-                    (
-                        t_ar[-1]
-                        + np.sqrt((i_ar - i_ar[0]) ** 2 + (j_ar - j_ar[0]) ** 2)
-                    ).tolist()
-                )
-
-            z = self.data[j_lst, i_lst]
-            if z.ndim and z.size:  # ensure no empty array
-                self.profile.set_xdata(
-                    t_ar[1:]
-                )  # get rid of initial 0 on t_ar (bit hacky)
-                self.profile.set_ydata(list(z))
-                self.integral = integrate.simpson(z, t_ar[1:])
-                self.lineax.title.set_text(f&#34;Integral: {self.integral:.6e}&#34;)
-        self.lineax.relim()
-        self.lineax.autoscale_view()
-        self.canvas.draw()
-        self.canvas.flush_events()
-
-    def onselect(self, verts):
-        # only called when line is finished
-        self.pts = verts  # list of vertices `[(Ax1, Ay1), (Ax2, Ay2)]`
-        self.canvas.draw_idle()
-
-    def disconnect(self, path=None):
-        if path is None:
-            print()
-            print(&#34;profile xdata:&#34;)
-            print(self.profile.get_xdata())
-            print(&#34;profile ydata:&#34;)
-            print(self.profile.get_ydata())
-            print(&#34;integral:&#34;)
-            print(self.integral)
-            print()
-        else:
-            output_dict = {
-                &#34;profile_x&#34;: self.profile.get_xdata(),
-                &#34;profile_y&#34;: self.profile.get_ydata(),
-                &#34;integral&#34;: self.integral,
-            }
-            dukit.json2dict.dict_to_json(output_dict, path)
-        self.line_selector.disconnect_events()
-        self.canvas.draw_idle()</code></pre>
-</details>
 </section>
 <section>
 </section>
@@ -1566,23 +66,6 @@ class LinecutSelectionWidget:
 <span>(</span><span>ax)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Widget that is connected to a single
-:class:<code>~matplotlib.axes.Axes</code>.</p>
-<p>To guarantee that the widget remains responsive and not garbage-collected,
-a reference to the object should be maintained by the user.</p>
-<p>This is necessary because the callback registry
-maintains only weak-refs to the functions, which are member
-functions of the widget.
-If there are no references to the widget
-object it may be garbage collected which will disconnect the
-callbacks.</p>
-<p>Attributes:</p>
-<p><em>ax</em> : :class:<code>~matplotlib.axes.Axes</code>
-The parent axes for the widget
-<em>canvas</em> : :class:<code>~matplotlib.backend_bases.FigureCanvasBase</code> subclass
-The parent figure canvas for the widget.
-<em>active</em> : bool
-If False, the widget does not respond to events.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1629,6 +112,23 @@ If False, the widget does not respond to events.</p></div>
         for c in self.cids:
             self.canvas.mpl_disconnect(c)</code></pre>
 </details>
+<div class="desc"><p>Widget that is connected to a single
+:class:<code>~matplotlib.axes.Axes</code>.</p>
+<p>To guarantee that the widget remains responsive and not garbage-collected,
+a reference to the object should be maintained by the user.</p>
+<p>This is necessary because the callback registry
+maintains only weak-refs to the functions, which are member
+functions of the widget.
+If there are no references to the widget
+object it may be garbage collected which will disconnect the
+callbacks.</p>
+<p>Attributes:</p>
+<p><em>ax</em> : :class:<code>~matplotlib.axes.Axes</code>
+The parent axes for the widget
+<em>canvas</em> : :class:<code>~matplotlib.backend_bases.FigureCanvasBase</code> subclass
+The parent figure canvas for the widget.
+<em>active</em> : bool
+If False, the widget does not respond to events.</p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li><a title="dukit.widget.Widget" href="#dukit.widget.Widget">Widget</a></li>
@@ -1643,9 +143,6 @@ If False, the widget does not respond to events.</p></div>
 <span>def <span class="ident">connect_event</span></span>(<span>self, event, callback)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Connect callback with an event.</p>
-<p>This should be used in lieu of <code>figure.canvas.mpl_connect</code> since this
-function stores callback ids for later clean up.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1659,12 +156,14 @@ function stores callback ids for later clean up.</p></div>
     cid = self.canvas.mpl_connect(event, callback)
     self.cids.append(cid)</code></pre>
 </details>
+<div class="desc"><p>Connect callback with an event.</p>
+<p>This should be used in lieu of <code>figure.canvas.mpl_connect</code> since this
+function stores callback ids for later clean up.</p></div>
 </dd>
 <dt id="dukit.widget.AxesWidget.disconnect_events"><code class="name flex">
 <span>def <span class="ident">disconnect_events</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Disconnect all events created by this widget.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1674,6 +173,7 @@ function stores callback ids for later clean up.</p></div>
     for c in self.cids:
         self.canvas.mpl_disconnect(c)</code></pre>
 </details>
+<div class="desc"><p>Disconnect all events created by this widget.</p></div>
 </dd>
 </dl>
 <h3>Inherited members</h3>
@@ -1690,25 +190,9 @@ function stores callback ids for later clean up.</p></div>
 </dd>
 <dt id="dukit.widget.BulkLinecutWidget"><code class="flex name class">
 <span>class <span class="ident">BulkLinecutWidget</span></span>
-<span>(</span><span>imax: matplotlib.axes._axes.Axes, profax: matplotlib.axes._axes.Axes, resax: matplotlib.axes._axes.Axes, images: list[numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]]] | tuple[numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]]], xlabels: list[str] | tuple[str], style: dict | None = None, useblit: bool = False, dointegral: bool = True)</span>
+<span>(</span><span>imax: matplotlib.axes._axes.Axes,<br>profax: matplotlib.axes._axes.Axes,<br>resax: matplotlib.axes._axes.Axes,<br>images: list[numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]] | tuple[numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]],<br>xlabels: list[str] | tuple[str],<br>style: dict | None = None,<br>useblit: bool = False,<br>dointegral: bool = True)</span>
 </code></dt>
 <dd>
-<div class="desc"><h2 id="how-to-use">How To Use</h2>
-<p>import matplotlib.pyplot as plt
-import numpy as np
-from qdmpy.shared.linecut import BulkLinecutWidget</p>
-<h1 id="todo-update">TODO update</h1>
-<p>path = "<WHATEVER>"
-times = [0.325, 1, 5, 10, 20, 21, 22, 25, 30, 40]
-paths = [f"{path}/{t}.txt" for t in times]
-images = [np.loadtxt(p) for p in paths]
-selector_image = images[4]</p>
-<p>fig, axs = plt.subplots(ncols=3, figsize=(12, 6))
-axs[0].imshow(selector_image)
-# (data can be nans if you want an empty selector)
-selector = BulkLinecutWidget(*axs, images, times)
-plt.show()
-selector.disconnect(path="/home/samsc/share/result.json")</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1801,9 +285,7 @@ selector.disconnect(path="/home/samsc/share/result.json")</p></div>
 
         dummy_x = np.zeros((5, len(xlabels)))
         dummy_y = np.zeros((5, len(xlabels)))
-        self.profiles = self.profax.plot(
-            dummy_x, dummy_y, marker=&#34;o&#34;, ls=&#34;-&#34;, label=xlabels
-        )
+        self.profiles = self.profax.plot(dummy_x, dummy_y, marker=&#34;o&#34;, ls=&#34;-&#34;, label=xlabels)
         # handles, _ = self.profax.get_legend_handles_labels()
         # self.profax.legend(handles, self.xlabels, loc=&#34;upper left&#34;)
         self.profax.legend()
@@ -1848,18 +330,13 @@ selector.disconnect(path="/home/samsc/share/result.json")</p></div>
                 if not (i_ar.ndim and i_ar.size):
                     continue
                 pxl_ar.extend(
-                    (
-                        pxl_ar[-1]
-                        + np.sqrt((i_ar - i_ar[0]) ** 2 + (j_ar - j_ar[0]) ** 2)
-                    ).tolist()
+                    (pxl_ar[-1] + np.sqrt((i_ar - i_ar[0]) ** 2 + (j_ar - j_ar[0]) ** 2)).tolist()
                 )
 
             for p, prof in enumerate(self.profiles):
                 z = self.images[p][j_lst, i_lst]
                 if z.ndim and z.size:  # ensure no empty array
-                    prof.set_xdata(
-                        pxl_ar[1:]
-                    )  # get rid of initial 0 on pxl_ar (bit hacky)
+                    prof.set_xdata(pxl_ar[1:])  # get rid of initial 0 on pxl_ar (bit hacky)
                     prof.set_ydata(list(z))
                     if self.do_integral:
                         self.integrals[p] = integrate.simpson(z, pxl_ar[1:])
@@ -1889,13 +366,9 @@ selector.disconnect(path="/home/samsc/share/result.json")</p></div>
             print(self.xlabels)
             print()
             print(&#34;profiles xdata:&#34;)
-            print(np.transpose(
-                    [prof.get_xdata() for prof in self.profiles]
-                ).tolist())
+            print(np.transpose([prof.get_xdata() for prof in self.profiles]).tolist())
             print(&#34;profiles ydata:&#34;)
-            print(np.transpose(
-                    [prof.get_ydata() for prof in self.profiles]
-                ).tolist())
+            print(np.transpose([prof.get_ydata() for prof in self.profiles]).tolist())
             print(&#34;integrals:&#34;)
             print(self.integrals)
             print()
@@ -1903,24 +376,35 @@ selector.disconnect(path="/home/samsc/share/result.json")</p></div>
             output_dict = {
                 &#34;xlabels&#34;: self.xlabels,
                 &#34;integrals&#34;: self.integrals,
-                &#34;profile_x&#34;: np.transpose(
-                    [prof.get_xdata() for prof in self.profiles]
-                ).tolist(),
-                &#34;profile_y&#34;: np.transpose(
-                    [prof.get_ydata() for prof in self.profiles]
-                ).tolist(),
+                &#34;profile_x&#34;: np.transpose([prof.get_xdata() for prof in self.profiles]).tolist(),
+                &#34;profile_y&#34;: np.transpose([prof.get_ydata() for prof in self.profiles]).tolist(),
             }
             dukit.json2dict.dict_to_json(output_dict, path)
         self.line_selector.disconnect_events()
         self.canvas.draw_idle()</code></pre>
 </details>
+<div class="desc"><h2 id="how-to-use">How To Use</h2>
+<p>import matplotlib.pyplot as plt
+import numpy as np
+from qdmpy.shared.linecut import BulkLinecutWidget</p>
+<h1 id="todo-update">TODO update</h1>
+<p>path = "<WHATEVER>"
+times = [0.325, 1, 5, 10, 20, 21, 22, 25, 30, 40]
+paths = [f"{path}/{t}.txt" for t in times]
+images = [np.loadtxt(p) for p in paths]
+selector_image = images[4]</p>
+<p>fig, axs = plt.subplots(ncols=3, figsize=(12, 6))
+axs[0].imshow(selector_image)
+# (data can be nans if you want an empty selector)
+selector = BulkLinecutWidget(*axs, images, times)
+plt.show()
+selector.disconnect(path="/home/samsc/share/result.json")</p></div>
 <h3>Methods</h3>
 <dl>
 <dt id="dukit.widget.BulkLinecutWidget.disconnect"><code class="name flex">
 <span>def <span class="ident">disconnect</span></span>(<span>self, path=None)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1932,13 +416,9 @@ selector.disconnect(path="/home/samsc/share/result.json")</p></div>
         print(self.xlabels)
         print()
         print(&#34;profiles xdata:&#34;)
-        print(np.transpose(
-                [prof.get_xdata() for prof in self.profiles]
-            ).tolist())
+        print(np.transpose([prof.get_xdata() for prof in self.profiles]).tolist())
         print(&#34;profiles ydata:&#34;)
-        print(np.transpose(
-                [prof.get_ydata() for prof in self.profiles]
-            ).tolist())
+        print(np.transpose([prof.get_ydata() for prof in self.profiles]).tolist())
         print(&#34;integrals:&#34;)
         print(self.integrals)
         print()
@@ -1946,23 +426,19 @@ selector.disconnect(path="/home/samsc/share/result.json")</p></div>
         output_dict = {
             &#34;xlabels&#34;: self.xlabels,
             &#34;integrals&#34;: self.integrals,
-            &#34;profile_x&#34;: np.transpose(
-                [prof.get_xdata() for prof in self.profiles]
-            ).tolist(),
-            &#34;profile_y&#34;: np.transpose(
-                [prof.get_ydata() for prof in self.profiles]
-            ).tolist(),
+            &#34;profile_x&#34;: np.transpose([prof.get_xdata() for prof in self.profiles]).tolist(),
+            &#34;profile_y&#34;: np.transpose([prof.get_ydata() for prof in self.profiles]).tolist(),
         }
         dukit.json2dict.dict_to_json(output_dict, path)
     self.line_selector.disconnect_events()
     self.canvas.draw_idle()</code></pre>
 </details>
+<div class="desc"></div>
 </dd>
 <dt id="dukit.widget.BulkLinecutWidget.ondraw"><code class="name flex">
 <span>def <span class="ident">ondraw</span></span>(<span>self, verts)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2005,18 +481,13 @@ selector.disconnect(path="/home/samsc/share/result.json")</p></div>
             if not (i_ar.ndim and i_ar.size):
                 continue
             pxl_ar.extend(
-                (
-                    pxl_ar[-1]
-                    + np.sqrt((i_ar - i_ar[0]) ** 2 + (j_ar - j_ar[0]) ** 2)
-                ).tolist()
+                (pxl_ar[-1] + np.sqrt((i_ar - i_ar[0]) ** 2 + (j_ar - j_ar[0]) ** 2)).tolist()
             )
 
         for p, prof in enumerate(self.profiles):
             z = self.images[p][j_lst, i_lst]
             if z.ndim and z.size:  # ensure no empty array
-                prof.set_xdata(
-                    pxl_ar[1:]
-                )  # get rid of initial 0 on pxl_ar (bit hacky)
+                prof.set_xdata(pxl_ar[1:])  # get rid of initial 0 on pxl_ar (bit hacky)
                 prof.set_ydata(list(z))
                 if self.do_integral:
                     self.integrals[p] = integrate.simpson(z, pxl_ar[1:])
@@ -2034,12 +505,12 @@ selector.disconnect(path="/home/samsc/share/result.json")</p></div>
     self.canvas.draw()
     self.canvas.flush_events()</code></pre>
 </details>
+<div class="desc"></div>
 </dd>
 <dt id="dukit.widget.BulkLinecutWidget.onselect"><code class="name flex">
 <span>def <span class="ident">onselect</span></span>(<span>self, verts)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2049,15 +520,15 @@ selector.disconnect(path="/home/samsc/share/result.json")</p></div>
     self.pts = verts  # list of vertices `[(Ax1, Ay1), (Ax2, Ay2)]`
     self.canvas.draw_idle()</code></pre>
 </details>
+<div class="desc"></div>
 </dd>
 </dl>
 </dd>
 <dt id="dukit.widget.LineSelector"><code class="flex name class">
 <span>class <span class="ident">LineSelector</span></span>
-<span>(</span><span>ax, onselect, useblit=False, lineprops=None, markerprops=None, vertex_select_radius=15.0, ondraw=&lt;function LineSelector.&lt;lambda&gt;&gt;)</span>
+<span>(</span><span>ax,<br>onselect,<br>useblit=False,<br>lineprops=None,<br>markerprops=None,<br>vertex_select_radius=15.0,<br>ondraw=&lt;function LineSelector.&lt;lambda&gt;&gt;)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>similar to PolygonSelector but an open line.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2072,7 +543,7 @@ selector.disconnect(path="/home/samsc/share/result.json")</p></div>
         useblit=False,
         lineprops=None,
         markerprops=None,
-        vertex_select_radius=15.,
+        vertex_select_radius=15.0,
         ondraw=lambda x: None,
     ):
         # The state modifiers &#39;move&#39;, &#39;square&#39;, and &#39;center&#39; are expected by
@@ -2127,9 +598,7 @@ selector.disconnect(path="/home/samsc/share/result.json")</p></div>
 
         self.artists = [self.current_line, self._line_handles.artist]
         self.set_visible(True)
-        self.ondraw = (
-            ondraw  # fn that takes single arg (verts) and does whatever with it.
-        )
+        self.ondraw = ondraw  # fn that takes single arg (verts) and does whatever with it.
 
     @property
     def _nverts(self):
@@ -2217,11 +686,7 @@ selector.disconnect(path="/home/samsc/share/result.json")</p></div>
                 self.finished_line[&#34;ys&#34;] = new_ys
 
         # Do nothing if completed or waiting for a move.
-        elif (
-            self._line_completed
-            or &#34;move_vertex&#34; in self.state
-            or &#34;move_all&#34; in self.state
-        ):
+        elif self._line_completed or &#34;move_vertex&#34; in self.state or &#34;move_all&#34; in self.state:
             return
         else:
             if self._xs:
@@ -2233,9 +698,7 @@ selector.disconnect(path="/home/samsc/share/result.json")</p></div>
         &#34;&#34;&#34;Key press event handler&#34;&#34;&#34;
         # Remove the pending vertex if entering the &#39;move_vertex&#39; or
         # &#39;move_all&#39; mode
-        if not self._line_completed and (
-            &#34;move_vertex&#34; in self.state or &#34;move_all&#34; in self.state
-        ):
+        if not self._line_completed and (&#34;move_vertex&#34; in self.state or &#34;move_all&#34; in self.state):
             self._xs, self._ys = self._xs[:-1], self._ys[:-1]
             self.draw_line()
         elif &#34;finished&#34; in self.state:
@@ -2297,9 +760,7 @@ selector.disconnect(path="/home/samsc/share/result.json")</p></div>
         # if the line is completed or the user is locked on to the start
         # vertex. --&gt; seems irrelevant here?
         if self._line_completed or (
-            len(self._xs) &gt; 3
-            and self._xs[-1] == self._xs[0]
-            and self._ys[-1] == self._ys[0]
+            len(self._xs) &gt; 3 and self._xs[-1] == self._xs[0] and self._ys[-1] == self._ys[0]
         ):
             self._line_handles.set_data(self._xs[:-1], self._ys[:-1])
         else:
@@ -2358,6 +819,7 @@ selector.disconnect(path="/home/samsc/share/result.json")</p></div>
             y.append(p[1])
         return (x, y)</code></pre>
 </details>
+<div class="desc"><p>similar to PolygonSelector but an open line.</p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li>dukit.widget._SelectorWidget</li>
@@ -2366,9 +828,8 @@ selector.disconnect(path="/home/samsc/share/result.json")</p></div>
 </ul>
 <h3>Instance variables</h3>
 <dl>
-<dt id="dukit.widget.LineSelector.current_verts"><code class="name">var <span class="ident">current_verts</span></code></dt>
+<dt id="dukit.widget.LineSelector.current_verts"><code class="name">prop <span class="ident">current_verts</span></code></dt>
 <dd>
-<div class="desc"></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2378,16 +839,10 @@ def current_verts(self):
     ret = list(zip(self.current_line.get_xdata(), self.current_line.get_ydata()))
     return ret</code></pre>
 </details>
+<div class="desc"></div>
 </dd>
-<dt id="dukit.widget.LineSelector.verts"><code class="name">var <span class="ident">verts</span></code></dt>
+<dt id="dukit.widget.LineSelector.verts"><code class="name">prop <span class="ident">verts</span></code></dt>
 <dd>
-<div class="desc"><p>Get the line vertices.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>list</code></dt>
-<dd>A list of the vertices of the line as <code>(xdata, ydata)</code> tuples.
-<code>[(Ax1, Ay1), (Ax2, Ay2)]</code></dd>
-</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2408,11 +863,16 @@ def verts(self):
         pts = list(zip(self.finished_line[&#34;xs&#34;], self.finished_line[&#34;ys&#34;]))
     return pts</code></pre>
 </details>
+<div class="desc"><p>Get the line vertices.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>A list of the vertices of the line as <code>(xdata, ydata)</code> tuples.
+<code>[(Ax1, Ay1), (Ax2, Ay2)]</code></dd>
+</dl></div>
 </dd>
-<dt id="dukit.widget.LineSelector.xy_verts"><code class="name">var <span class="ident">xy_verts</span></code></dt>
+<dt id="dukit.widget.LineSelector.xy_verts"><code class="name">prop <span class="ident">xy_verts</span></code></dt>
 <dd>
-<div class="desc"><p>Return list of the vertices for the line in this format:
-( [Ax1, Ax2, &hellip;], [Ay1, Ay2, &hellip;] )</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2433,6 +893,8 @@ def xy_verts(self):
         y.append(p[1])
     return (x, y)</code></pre>
 </details>
+<div class="desc"><p>Return list of the vertices for the line in this format:
+( [Ax1, Ax2, &hellip;], [Ay1, Ay2, &hellip;] )</p></div>
 </dd>
 </dl>
 <h3>Methods</h3>
@@ -2441,7 +903,6 @@ def xy_verts(self):
 <span>def <span class="ident">draw_line</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Redraw the line based on the new vertex positions.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2458,9 +919,7 @@ def xy_verts(self):
     # if the line is completed or the user is locked on to the start
     # vertex. --&gt; seems irrelevant here?
     if self._line_completed or (
-        len(self._xs) &gt; 3
-        and self._xs[-1] == self._xs[0]
-        and self._ys[-1] == self._ys[0]
+        len(self._xs) &gt; 3 and self._xs[-1] == self._xs[0] and self._ys[-1] == self._ys[0]
     ):
         self._line_handles.set_data(self._xs[:-1], self._ys[:-1])
     else:
@@ -2471,12 +930,12 @@ def xy_verts(self):
     else:
         self.ondraw(self.current_verts)</code></pre>
 </details>
+<div class="desc"><p>Redraw the line based on the new vertex positions.</p></div>
 </dd>
 <dt id="dukit.widget.LineSelector.onmove"><code class="name flex">
 <span>def <span class="ident">onmove</span></span>(<span>self, event)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Cursor move event handler and validator</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2493,6 +952,7 @@ def xy_verts(self):
         return True
     return False</code></pre>
 </details>
+<div class="desc"><p>Cursor move event handler and validator</p></div>
 </dd>
 </dl>
 <h3>Inherited members</h3>
@@ -2514,12 +974,6 @@ def xy_verts(self):
 <span>(</span><span>imax, lineax, data, style=None, useblit=False)</span>
 </code></dt>
 <dd>
-<div class="desc"><h2 id="how-to-use">How To Use</h2>
-<p>fig, axs = plt.subplots(ncols=2)
-axs[0].imshow(data) # (data may be nans if you want empty selector)
-selector = LinecutSelectionWidget(axs[0], axs[1], &hellip;)
-plt.show()
-selector.disconnect()</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2606,7 +1060,7 @@ selector.disconnect()</p></div>
                     j0, j1 = jdxs[n], jdxs[n + 1]
                     # *2 in there to be safe
                     num = int(np.sqrt((i1 - i0) ** 2 + (j1 - j0) ** 2) * 2)
-                except:
+                except (IndexError, TypeError, ValueError):
                     num = 0
                 if not num:
                     continue
@@ -2631,17 +1085,12 @@ selector.disconnect()</p></div>
                 if not (i_ar.ndim and i_ar.size):
                     continue
                 t_ar.extend(
-                    (
-                        t_ar[-1]
-                        + np.sqrt((i_ar - i_ar[0]) ** 2 + (j_ar - j_ar[0]) ** 2)
-                    ).tolist()
+                    (t_ar[-1] + np.sqrt((i_ar - i_ar[0]) ** 2 + (j_ar - j_ar[0]) ** 2)).tolist()
                 )
 
             z = self.data[j_lst, i_lst]
             if z.ndim and z.size:  # ensure no empty array
-                self.profile.set_xdata(
-                    t_ar[1:]
-                )  # get rid of initial 0 on t_ar (bit hacky)
+                self.profile.set_xdata(t_ar[1:])  # get rid of initial 0 on t_ar (bit hacky)
                 self.profile.set_ydata(list(z))
                 self.integral = integrate.simpson(z, t_ar[1:])
                 self.lineax.title.set_text(f&#34;Integral: {self.integral:.6e}&#34;)
@@ -2675,13 +1124,18 @@ selector.disconnect()</p></div>
         self.line_selector.disconnect_events()
         self.canvas.draw_idle()</code></pre>
 </details>
+<div class="desc"><h2 id="how-to-use">How To Use</h2>
+<p>fig, axs = plt.subplots(ncols=2)
+axs[0].imshow(data) # (data may be nans if you want empty selector)
+selector = LinecutSelectionWidget(axs[0], axs[1], &hellip;)
+plt.show()
+selector.disconnect()</p></div>
 <h3>Methods</h3>
 <dl>
 <dt id="dukit.widget.LinecutSelectionWidget.disconnect"><code class="name flex">
 <span>def <span class="ident">disconnect</span></span>(<span>self, path=None)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2706,12 +1160,12 @@ selector.disconnect()</p></div>
     self.line_selector.disconnect_events()
     self.canvas.draw_idle()</code></pre>
 </details>
+<div class="desc"></div>
 </dd>
 <dt id="dukit.widget.LinecutSelectionWidget.ondraw"><code class="name flex">
 <span>def <span class="ident">ondraw</span></span>(<span>self, verts)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2732,7 +1186,7 @@ selector.disconnect()</p></div>
                 j0, j1 = jdxs[n], jdxs[n + 1]
                 # *2 in there to be safe
                 num = int(np.sqrt((i1 - i0) ** 2 + (j1 - j0) ** 2) * 2)
-            except:
+            except (IndexError, TypeError, ValueError):
                 num = 0
             if not num:
                 continue
@@ -2757,17 +1211,12 @@ selector.disconnect()</p></div>
             if not (i_ar.ndim and i_ar.size):
                 continue
             t_ar.extend(
-                (
-                    t_ar[-1]
-                    + np.sqrt((i_ar - i_ar[0]) ** 2 + (j_ar - j_ar[0]) ** 2)
-                ).tolist()
+                (t_ar[-1] + np.sqrt((i_ar - i_ar[0]) ** 2 + (j_ar - j_ar[0]) ** 2)).tolist()
             )
 
         z = self.data[j_lst, i_lst]
         if z.ndim and z.size:  # ensure no empty array
-            self.profile.set_xdata(
-                t_ar[1:]
-            )  # get rid of initial 0 on t_ar (bit hacky)
+            self.profile.set_xdata(t_ar[1:])  # get rid of initial 0 on t_ar (bit hacky)
             self.profile.set_ydata(list(z))
             self.integral = integrate.simpson(z, t_ar[1:])
             self.lineax.title.set_text(f&#34;Integral: {self.integral:.6e}&#34;)
@@ -2776,12 +1225,12 @@ selector.disconnect()</p></div>
     self.canvas.draw()
     self.canvas.flush_events()</code></pre>
 </details>
+<div class="desc"></div>
 </dd>
 <dt id="dukit.widget.LinecutSelectionWidget.onselect"><code class="name flex">
 <span>def <span class="ident">onselect</span></span>(<span>self, verts)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2791,49 +1240,15 @@ selector.disconnect()</p></div>
     self.pts = verts  # list of vertices `[(Ax1, Ay1), (Ax2, Ay2)]`
     self.canvas.draw_idle()</code></pre>
 </details>
+<div class="desc"></div>
 </dd>
 </dl>
 </dd>
 <dt id="dukit.widget.PolygonSelector"><code class="flex name class">
 <span>class <span class="ident">PolygonSelector</span></span>
-<span>(</span><span>ax, onselect, useblit=False, lineprops=None, markerprops=None, vertex_select_radius=15.0, base_scale=1.05)</span>
+<span>(</span><span>ax,<br>onselect,<br>useblit=False,<br>lineprops=None,<br>markerprops=None,<br>vertex_select_radius=15.0,<br>base_scale=1.05)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>OLD DOCSTRING
-Select a polygon region of an axes.</p>
-<p>Place vertices with each mouse click, and make the selection by completing
-the polygon (clicking on the first vertex). Hold the <em>ctrl</em> key and click
-and drag a vertex to reposition it (the <em>ctrl</em> key is not necessary if the
-polygon has already been completed). Hold the <em>shift</em> key and click and
-drag anywhere in the axes to move all vertices. Press the <em>esc</em> key to
-start a new polygon.</p>
-<p>For the selector to remain responsive you must keep a reference to
-it.</p>
-<h2 id="arguments">Arguments</h2>
-<dl>
-<dt><strong><code>ax</code></strong> :&ensp;<code>:class:</code>~matplotlib.axes.Axes``</dt>
-<dd>The parent axes for the widget.</dd>
-<dt><strong><code>onselect</code></strong> :&ensp;<code>function</code></dt>
-<dd>When a polygon is completed or modified after completion,
-the <code>onselect</code> function is called and passed a list of the vertices as
-<code>(xdata, ydata)</code> tuples.</dd>
-<dt><strong><code>useblit</code></strong> :&ensp;<code>bool</code>, optional</dt>
-<dd>&nbsp;</dd>
-<dt><strong><code>lineprops</code></strong> :&ensp;<code>dict</code>, optional</dt>
-<dd>The line for the sides of the polygon is drawn with the properties
-given by <code>lineprops</code>. The default is <code>dict(color='k', linestyle='-',
-linewidth=2, alpha=0.5)</code>.</dd>
-<dt><strong><code>markerprops</code></strong> :&ensp;<code>dict</code>, optional</dt>
-<dd>The markers for the vertices of the polygon are drawn with the
-properties given by <code>markerprops</code>. The default is <code>dict(marker='o',
-markersize=7, mec='k', mfc='k', alpha=0.5)</code>.</dd>
-<dt><strong><code>vertex_select_radius</code></strong> :&ensp;<code>float</code>, optional</dt>
-<dd>A vertex is selected (to complete the polygon or to move a vertex)
-if the mouse click is within <code>vertex_select_radius</code> pixels of the
-vertex. The default radius is 15 pixels.</dd>
-</dl>
-<h2 id="examples">Examples</h2>
-<p>:doc:<code>/gallery/widgets/polygon_selector_demo</code></p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2886,7 +1301,7 @@ vertex. The default radius is 15 pixels.</dd>
         useblit=False,
         lineprops=None,
         markerprops=None,
-        vertex_select_radius=15.,
+        vertex_select_radius=15.0,
         base_scale=1.05,
     ):
         # The state modifiers &#39;move&#39;, &#39;square&#39;, and &#39;center&#39; are expected by
@@ -2975,9 +1390,7 @@ vertex. The default radius is 15 pixels.</dd>
         &#34;&#34;&#34;Button press event handler&#34;&#34;&#34;
 
         # Check for selection of a tool handle on current polygon
-        if (self._polygon_completed or &#34;move_vertex&#34; in self.state) and len(
-            self._xs
-        ) &gt; 0:
+        if (self._polygon_completed or &#34;move_vertex&#34; in self.state) and len(self._xs) &gt; 0:
             h_idx, h_dist = self._polygon_handles.closest(event.x, event.y)
             if h_dist &lt; self.vertex_select_radius:
                 self._active_handle_idx = h_idx
@@ -3001,11 +1414,7 @@ vertex. The default radius is 15 pixels.</dd>
             self._active_handle_idx = -1
 
         # Complete the polygon.
-        elif (
-            len(self._xs) &gt; 3
-            and self._xs[-1] == self._xs[0]
-            and self._ys[-1] == self._ys[0]
-        ):
+        elif len(self._xs) &gt; 3 and self._xs[-1] == self._xs[0] and self._ys[-1] == self._ys[0]:
             self._polygon_completed = True
 
         # Place new vertex.
@@ -3076,9 +1485,7 @@ vertex. The default radius is 15 pixels.</dd>
         else:
             if self._xs:
                 # Calculate distance to the start vertex.
-                x0, y0 = self.current_line.get_transform().transform(
-                    (self._xs[0], self._ys[0])
-                )
+                x0, y0 = self.current_line.get_transform().transform((self._xs[0], self._ys[0]))
                 v0_dist = np.hypot(x0 - event.x, y0 - event.y)
                 # Lock on to the start vertex if near it and ready to complete.
                 if len(self._xs) &gt; 3 and v0_dist &lt; self.vertex_select_radius:
@@ -3093,9 +1500,7 @@ vertex. The default radius is 15 pixels.</dd>
         # Remove the pending vertex if entering the &#39;move_vertex&#39; or
         # &#39;move_all&#39; mode
         if not self._polygon_completed and (
-            &#34;move_vertex&#34; in self.state
-            or &#34;move_all&#34; in self.state
-            or &#34;rescale_all&#34; in self.state
+            &#34;move_vertex&#34; in self.state or &#34;move_all&#34; in self.state or &#34;rescale_all&#34; in self.state
         ):
             self._xs, self._ys = self._xs[:-1], self._ys[:-1]
             self.draw_polygon()
@@ -3154,9 +1559,7 @@ vertex. The default radius is 15 pixels.</dd>
         # if the polygon is completed or the user is locked on to the start
         # vertex.
         if self._polygon_completed or (
-            len(self._xs) &gt; 3
-            and self._xs[-1] == self._xs[0]
-            and self._ys[-1] == self._ys[0]
+            len(self._xs) &gt; 3 and self._xs[-1] == self._xs[0] and self._ys[-1] == self._ys[0]
         ):
             self._polygon_handles.set_data(self._xs[:-1], self._ys[:-1])
         else:
@@ -3233,7 +1636,10 @@ vertex. The default radius is 15 pixels.</dd>
                 if line[&#34;xs&#34;] and line[&#34;ys&#34;]:
                     new_xs = []
                     new_ys = []
-                    cx_line, cy_line = (np.mean(line[&#34;xs&#34;]), np.mean(line[&#34;ys&#34;]))
+                    cx_line, cy_line = (
+                        np.mean(line[&#34;xs&#34;]),
+                        np.mean(line[&#34;ys&#34;]),
+                    )
                     for k, _ in enumerate(line[&#34;xs&#34;]):
                         new_xs.append((line[&#34;xs&#34;][k] - cx_line) * scale_factor + cx_line)
                         new_ys.append((line[&#34;ys&#34;][k] - cy_line) * scale_factor + cy_line)
@@ -3245,6 +1651,41 @@ vertex. The default radius is 15 pixels.</dd>
 
         self.draw_polygon()</code></pre>
 </details>
+<div class="desc"><p>OLD DOCSTRING
+Select a polygon region of an axes.</p>
+<p>Place vertices with each mouse click, and make the selection by completing
+the polygon (clicking on the first vertex). Hold the <em>ctrl</em> key and click
+and drag a vertex to reposition it (the <em>ctrl</em> key is not necessary if the
+polygon has already been completed). Hold the <em>shift</em> key and click and
+drag anywhere in the axes to move all vertices. Press the <em>esc</em> key to
+start a new polygon.</p>
+<p>For the selector to remain responsive you must keep a reference to
+it.</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>ax</code></strong> :&ensp;<code>:class:</code>~matplotlib.axes.Axes``</dt>
+<dd>The parent axes for the widget.</dd>
+<dt><strong><code>onselect</code></strong> :&ensp;<code>function</code></dt>
+<dd>When a polygon is completed or modified after completion,
+the <code>onselect</code> function is called and passed a list of the vertices as
+<code>(xdata, ydata)</code> tuples.</dd>
+<dt><strong><code>useblit</code></strong> :&ensp;<code>bool</code>, optional</dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>lineprops</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>The line for the sides of the polygon is drawn with the properties
+given by <code>lineprops</code>. The default is <code>dict(color='k', linestyle='-',
+linewidth=2, alpha=0.5)</code>.</dd>
+<dt><strong><code>markerprops</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>The markers for the vertices of the polygon are drawn with the
+properties given by <code>markerprops</code>. The default is <code>dict(marker='o',
+markersize=7, mec='k', mfc='k', alpha=0.5)</code>.</dd>
+<dt><strong><code>vertex_select_radius</code></strong> :&ensp;<code>float</code>, optional</dt>
+<dd>A vertex is selected (to complete the polygon or to move a vertex)
+if the mouse click is within <code>vertex_select_radius</code> pixels of the
+vertex. The default radius is 15 pixels.</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<p>:doc:<code>/gallery/widgets/polygon_selector_demo</code></p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li>dukit.widget._SelectorWidget</li>
@@ -3253,16 +1694,8 @@ vertex. The default radius is 15 pixels.</dd>
 </ul>
 <h3>Instance variables</h3>
 <dl>
-<dt id="dukit.widget.PolygonSelector.verts"><code class="name">var <span class="ident">verts</span></code></dt>
+<dt id="dukit.widget.PolygonSelector.verts"><code class="name">prop <span class="ident">verts</span></code></dt>
 <dd>
-<div class="desc"><p>Get the polygon vertices.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>list</code></dt>
-<dd>A list of the vertices of the polygon as <code>(xdata, ydata)</code> tuples. for each
-polygon (A, B, &hellip;) selected
-<code>[ [(Ax1, Ay1), (Ax2, Ay2)], [(Bx1, By1), (Bx2, By2)] ]</code></dd>
-</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3284,11 +1717,17 @@ def verts(self):
         pts.append(list(zip(line[&#34;xs&#34;], line[&#34;ys&#34;])))
     return pts</code></pre>
 </details>
+<div class="desc"><p>Get the polygon vertices.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>A list of the vertices of the polygon as <code>(xdata, ydata)</code> tuples. for each
+polygon (A, B, &hellip;) selected
+<code>[ [(Ax1, Ay1), (Ax2, Ay2)], [(Bx1, By1), (Bx2, By2)] ]</code></dd>
+</dl></div>
 </dd>
-<dt id="dukit.widget.PolygonSelector.xy_verts"><code class="name">var <span class="ident">xy_verts</span></code></dt>
+<dt id="dukit.widget.PolygonSelector.xy_verts"><code class="name">prop <span class="ident">xy_verts</span></code></dt>
 <dd>
-<div class="desc"><p>Return list of the vertices for each polygon in the format:
-[ ( [Ax1, Ax2, &hellip;], [Ay1, Ay2, &hellip;] ), ( [Bx1, Bx2, &hellip;], [By1, By2, &hellip;] ) ]</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3313,6 +1752,8 @@ def xy_verts(self):
         polygons.append((x, y))
     return polygons</code></pre>
 </details>
+<div class="desc"><p>Return list of the vertices for each polygon in the format:
+[ ( [Ax1, Ax2, &hellip;], [Ay1, Ay2, &hellip;] ), ( [Bx1, Bx2, &hellip;], [By1, By2, &hellip;] ) ]</p></div>
 </dd>
 </dl>
 <h3>Methods</h3>
@@ -3321,7 +1762,6 @@ def xy_verts(self):
 <span>def <span class="ident">draw_polygon</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Redraw the polygon(s) based on the new vertex positions.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3336,21 +1776,19 @@ def xy_verts(self):
     # if the polygon is completed or the user is locked on to the start
     # vertex.
     if self._polygon_completed or (
-        len(self._xs) &gt; 3
-        and self._xs[-1] == self._xs[0]
-        and self._ys[-1] == self._ys[0]
+        len(self._xs) &gt; 3 and self._xs[-1] == self._xs[0] and self._ys[-1] == self._ys[0]
     ):
         self._polygon_handles.set_data(self._xs[:-1], self._ys[:-1])
     else:
         self._polygon_handles.set_data(self._xs, self._ys)
     self.update()</code></pre>
 </details>
+<div class="desc"><p>Redraw the polygon(s) based on the new vertex positions.</p></div>
 </dd>
 <dt id="dukit.widget.PolygonSelector.onmove"><code class="name flex">
 <span>def <span class="ident">onmove</span></span>(<span>self, event)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Cursor move event handler and validator</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3367,6 +1805,7 @@ def xy_verts(self):
         return True
     return False</code></pre>
 </details>
+<div class="desc"><p>Cursor move event handler and validator</p></div>
 </dd>
 </dl>
 <h3>Inherited members</h3>
@@ -3388,18 +1827,6 @@ def xy_verts(self):
 <span>(</span><span>ax, x, y, marker='o', marker_props=None, useblit=True)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Control handles for canvas tools.</p>
-<h2 id="arguments">Arguments</h2>
-<dl>
-<dt><strong><code>ax</code></strong> :&ensp;<code>:class:</code>matplotlib.axes.Axes``</dt>
-<dd>Matplotlib axes where tool handles are displayed.</dd>
-<dt><strong><code>x</code></strong>, <strong><code>y</code></strong> :&ensp;<code>1D arrays</code></dt>
-<dd>Coordinates of control handles.</dd>
-<dt><strong><code>marker</code></strong> :&ensp;<code>str</code></dt>
-<dd>Shape of marker used to display handle. See <code>matplotlib.pyplot.plot</code>.</dd>
-<dt><strong><code>marker_props</code></strong> :&ensp;<code>dict</code></dt>
-<dd>Additional marker properties. See :class:<code>matplotlib.lines.Line2D</code>.</dd>
-</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3469,11 +1896,22 @@ def xy_verts(self):
         else:
             return 0, np.sqrt(np.sum(diff**2))</code></pre>
 </details>
+<div class="desc"><p>Control handles for canvas tools.</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>ax</code></strong> :&ensp;<code>:class:</code>matplotlib.axes.Axes``</dt>
+<dd>Matplotlib axes where tool handles are displayed.</dd>
+<dt><strong><code>x</code></strong>, <strong><code>y</code></strong> :&ensp;<code>1D arrays</code></dt>
+<dd>Coordinates of control handles.</dd>
+<dt><strong><code>marker</code></strong> :&ensp;<code>str</code></dt>
+<dd>Shape of marker used to display handle. See <code>matplotlib.pyplot.plot</code>.</dd>
+<dt><strong><code>marker_props</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Additional marker properties. See :class:<code>matplotlib.lines.Line2D</code>.</dd>
+</dl></div>
 <h3>Instance variables</h3>
 <dl>
-<dt id="dukit.widget.ToolHandles.x"><code class="name">var <span class="ident">x</span></code></dt>
+<dt id="dukit.widget.ToolHandles.x"><code class="name">prop <span class="ident">x</span></code></dt>
 <dd>
-<div class="desc"></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3482,10 +1920,10 @@ def xy_verts(self):
 def x(self):
     return self._markers.get_xdata()</code></pre>
 </details>
-</dd>
-<dt id="dukit.widget.ToolHandles.y"><code class="name">var <span class="ident">y</span></code></dt>
-<dd>
 <div class="desc"></div>
+</dd>
+<dt id="dukit.widget.ToolHandles.y"><code class="name">prop <span class="ident">y</span></code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3494,6 +1932,7 @@ def x(self):
 def y(self):
     return self._markers.get_ydata()</code></pre>
 </details>
+<div class="desc"></div>
 </dd>
 </dl>
 <h3>Methods</h3>
@@ -3502,7 +1941,6 @@ def y(self):
 <span>def <span class="ident">closest</span></span>(<span>self, x, y)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Return index and pixel distance to closest index.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3519,12 +1957,12 @@ def y(self):
     else:
         return 0, np.sqrt(np.sum(diff**2))</code></pre>
 </details>
+<div class="desc"><p>Return index and pixel distance to closest index.</p></div>
 </dd>
 <dt id="dukit.widget.ToolHandles.set_animated"><code class="name flex">
 <span>def <span class="ident">set_animated</span></span>(<span>self, val)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3532,12 +1970,12 @@ def y(self):
 <pre><code class="python">def set_animated(self, val):
     self._markers.set_animated(val)</code></pre>
 </details>
+<div class="desc"></div>
 </dd>
 <dt id="dukit.widget.ToolHandles.set_data"><code class="name flex">
 <span>def <span class="ident">set_data</span></span>(<span>self, pts, y=None)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Set x and y positions of handles</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3549,12 +1987,12 @@ def y(self):
         pts = np.array([x, y])
     self._markers.set_data(pts)</code></pre>
 </details>
+<div class="desc"><p>Set x and y positions of handles</p></div>
 </dd>
 <dt id="dukit.widget.ToolHandles.set_visible"><code class="name flex">
 <span>def <span class="ident">set_visible</span></span>(<span>self, val)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3562,6 +2000,7 @@ def y(self):
 <pre><code class="python">def set_visible(self, val):
     self._markers.set_visible(val)</code></pre>
 </details>
+<div class="desc"></div>
 </dd>
 </dl>
 </dd>
@@ -3569,7 +2008,6 @@ def y(self):
 <span>class <span class="ident">Widget</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>Abstract base class for GUI neutral widgets</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3606,6 +2044,7 @@ def y(self):
         &#34;&#34;&#34;
         return not self.active</code></pre>
 </details>
+<div class="desc"><p>Abstract base class for GUI neutral widgets</p></div>
 <h3>Subclasses</h3>
 <ul class="hlist">
 <li><a title="dukit.widget.AxesWidget" href="#dukit.widget.AxesWidget">AxesWidget</a></li>
@@ -3623,9 +2062,8 @@ def y(self):
 </dl>
 <h3>Instance variables</h3>
 <dl>
-<dt id="dukit.widget.Widget.active"><code class="name">var <span class="ident">active</span></code></dt>
+<dt id="dukit.widget.Widget.active"><code class="name">prop <span class="ident">active</span></code></dt>
 <dd>
-<div class="desc"><p>Is the widget active?</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3634,6 +2072,7 @@ def y(self):
     &#34;&#34;&#34;Get whether the widget is active.&#34;&#34;&#34;
     return self._active</code></pre>
 </details>
+<div class="desc"><p>Is the widget active?</p></div>
 </dd>
 </dl>
 <h3>Methods</h3>
@@ -3642,7 +2081,6 @@ def y(self):
 <span>def <span class="ident">get_active</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Get whether the widget is active.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3651,14 +2089,12 @@ def y(self):
     &#34;&#34;&#34;Get whether the widget is active.&#34;&#34;&#34;
     return self._active</code></pre>
 </details>
+<div class="desc"><p>Get whether the widget is active.</p></div>
 </dd>
 <dt id="dukit.widget.Widget.ignore"><code class="name flex">
 <span>def <span class="ident">ignore</span></span>(<span>self, event)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Return True if event should be ignored.</p>
-<p>This method (or a version of it) should be called at the beginning
-of any event callback.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3671,12 +2107,14 @@ of any event callback.</p></div>
     &#34;&#34;&#34;
     return not self.active</code></pre>
 </details>
+<div class="desc"><p>Return True if event should be ignored.</p>
+<p>This method (or a version of it) should be called at the beginning
+of any event callback.</p></div>
 </dd>
 <dt id="dukit.widget.Widget.set_active"><code class="name flex">
 <span>def <span class="ident">set_active</span></span>(<span>self, active)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Set whether the widget is active.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3685,6 +2123,7 @@ of any event callback.</p></div>
     &#34;&#34;&#34;Set whether the widget is active.&#34;&#34;&#34;
     self._active = active</code></pre>
 </details>
+<div class="desc"><p>Set whether the widget is active.</p></div>
 </dd>
 </dl>
 </dd>
@@ -3696,8 +2135,8 @@ of any event callback.</p></div>
 <input id="lunr-search" name="q" placeholder="🔎 Search ..." aria-label="Search"
 disabled minlength="2">
 </form>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.css" integrity="sha512-j1u8eUJ4f23xPPxwOrLUPQaCD2dwzNqqmDDcWS4deWsMv2ohLqmXXuP3hU7g8TyzbMSakP/mMqoNBYWj8AEIFg==" crossorigin>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.js" integrity="sha512-plGUER9JkeEWPPqQBE4sdLqBoQug5Ap+BCGMc7bJ8BXkm+VVj6QzkpBz5Yv2yPkkq+cqg9IpkBaGCas6uDbW8g==" crossorigin></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.css" integrity="sha512-b+T2i3P45i1LZM7I00Ci5QquB9szqaxu+uuk5TUSGjZQ4w4n+qujQiIuvTv2BxE7WCGQCifNMksyKILDiHzsOg==" crossorigin>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.js" integrity="sha512-2B9/byNV1KKRm5nQ2RLViPFD6U4dUjDGwuW1GU+ImJh8YinPU9Zlq1GzdTMO+G2ROrB5o1qasJBy1ttYz0wCug==" crossorigin></script>
 <style>
 .modal-dialog iframe {
 width: 100vw;
@@ -3738,7 +2177,6 @@ setTimeout(() => input.focus(), 100);
 }).setContent('<iframe src="' + url + '"></iframe>').open();
 }
 </script>
-<h1>Index</h1>
 <div class="toc">
 <ul>
 <li><a href="#classes">Classes</a></li>
@@ -3822,7 +2260,7 @@ setTimeout(() => input.focus(), 100);
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
 </footer>
 </body>
 </html>

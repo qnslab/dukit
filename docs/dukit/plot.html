@@ -2,19 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.9.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
 <title>dukit.plot API documentation</title>
-<meta name="description" content="This module holds functions for plotting …" />
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
-<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
-<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
-<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<meta name="description" content="This module holds functions for plotting …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
 <style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
-<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
 </head>
 <body>
 <main>
@@ -33,1181 +48,12 @@
 <li><code><a title="dukit.plot.aoi_spectra_fit" href="#dukit.plot.aoi_spectra_fit">aoi_spectra_fit()</a></code></li>
 <li><code><a title="dukit.plot.pl_param_image" href="#dukit.plot.pl_param_image">pl_param_image()</a></code></li>
 <li><code><a title="dukit.plot.pl_param_images" href="#dukit.plot.pl_param_images">pl_param_images()</a></code></li>
+<li><code><a title="dukit.plot.plot_field_images" href="#dukit.plot.plot_field_images">plot_field_images()</a></code></li>
+<li><code><a title="dukit.plot.plot_magnetization" href="#dukit.plot.plot_magnetization">plot_magnetization()</a></code></li>
+<li><code><a title="dukit.plot.plot_current_density" href="#dukit.plot.plot_current_density">plot_current_density()</a></code></li>
+<li><code><a title="dukit.plot.plot_current_stream" href="#dukit.plot.plot_current_stream">plot_current_stream()</a></code></li>
 <li><code><a title="dukit.plot._add_patch_rect" href="#dukit.plot._add_patch_rect">_add_patch_rect()</a></code></li>
 </ul>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python"># -*- coding: utf-8 -*-
-&#34;&#34;&#34;
-This module holds functions for plotting.
-
-Functions
----------
- - `dukit.plot.roi_pl_image`
- - `dukit.plot.aoi_pl_image`
- - `dukit.plot.roi_avg_fits`
- - `dukit.plot.aoi_spectra`
- - `dukit.plot.aoi_spectra_fit`
- - `dukit.plot.pl_param_image`
- - `dukit.plot.pl_param_images`
- - `dukit.plot._add_patch_rect`
-&#34;&#34;&#34;
-
-# ============================================================================
-
-__author__ = &#34;Sam Scholten&#34;
-__pdoc__ = {
-    &#34;dukit.plot.roi_pl_image&#34;: True,
-    &#34;dukit.plot.aoi_pl_image&#34;: True,
-    &#34;dukit.plot.roi_avg_fits&#34;: True,
-    &#34;dukit.plot.aoi_spectra&#34;: True,
-    &#34;dukit.plot.aoi_spectra_fit&#34;: True,
-    &#34;dukit.plot.pl_param_image&#34;: True,
-    &#34;dukit.plot.pl_param_images&#34;: True,
-    &#34;dukit.plot._add_patch_rect&#34;: True,
-}
-
-# ============================================================================
-
-import math
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-from matplotlib.lines import Line2D
-from matplotlib import patches
-import numpy as np
-import numpy.typing as npt
-
-# ============================================================================
-
-import dukit.json2dict
-import dukit.warn
-import dukit.itool
-import dukit.pl
-import dukit.share
-
-# ===========================================================================
-
-AOI_COLORS: list[str] = [
-    &#34;blue&#34;,
-    &#34;tab:brown&#34;,
-    &#34;purple&#34;,
-    &#34;darkslategrey&#34;,
-    &#34;magenta&#34;,
-    &#34;olive&#34;,
-    &#34;cyan&#34;,
-]
-
-FIT_BACKEND_COLORS: dict[str, dict[str, str]] = {
-    &#34;scipyfit&#34;: {
-        &#34;ROIfit_linecolor&#34;: &#34;mediumblue&#34;,
-        &#34;residual_linecolor&#34;: &#34;black&#34;,
-        &#34;AOI_ROI_fit_linecolor&#34;: &#34;indigo&#34;,
-        &#34;AOI_best_fit_linecolor&#34;: &#34;crimson&#34;,
-    },
-    &#34;gpufit&#34;: {
-        &#34;ROIfit_linecolor&#34;: &#34;cornflowerblue&#34;,
-        &#34;residual_linecolor&#34;: &#34;dimgrey&#34;,
-        &#34;AOI_ROI_fit_linecolor&#34;: &#34;mediumpurple&#34;,
-        &#34;AOI_best_fit_linecolor&#34;: &#34;coral&#34;,
-    },
-    &#34;cpufit&#34;: {
-        &#34;ROIfit_linecolor&#34;: &#34;lightskyblue&#34;,
-        &#34;residual_linecolor&#34;: &#34;lightgrey&#34;,
-        &#34;AOI_ROI_fit_linecolor&#34;: &#34;plum&#34;,
-        &#34;AOI_best_fit_linecolor&#34;: &#34;goldenrod&#34;,
-    },
-}
-
-
-# ===========================================================================
-
-
-def roi_pl_image(
-    pl_image: npt.NDArray,
-    roi_coords: tuple[int, int, int, int],
-    c_range_type: str = &#34;&#34;,
-    c_range_values: tuple[float, float] = (),
-    opath: str = &#34;&#34;,
-    **kwargs,
-):
-    &#34;&#34;&#34;
-    Plots full pl image with ROI region annotated.
-
-    Arguments
-    ---------
-    pl_image : np array, 2D
-        UNCCROPPED pl image, but binned
-    roi_coords : tuple[int, int, int, int]
-        ROI coordinates
-    c_range_type : str = &#34;&#34;
-        Type of colormap range to use. See `dukit.itool.get_colormap_range`
-    c_range_values : tuple[float, float] = ()
-        Values to use for colormap range. See `dukit.itool.get_colormap_range`
-    opath : str = &#34;&#34;
-        If supplied, saves figure here.
-    **kwargs
-        Plotting options passed to `dukit.itool.plot_image_on_ax`
-    Returns
-    -------
-    fig : plt.Figure
-
-    ax : plt.Axes
-    &#34;&#34;&#34;
-
-    fig, ax = plt.subplots()
-    if &#34;c_range&#34; not in kwargs and c_range_type and c_range_values:
-        c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, pl_image)
-    else:
-        c_range = dukit.itool.get_colormap_range(&#34;min_max&#34;, (), pl_image)
-
-    if &#34;c_map&#34; in kwargs:
-        c_map = kwargs[&#34;c_map&#34;]
-        del kwargs[&#34;c_map&#34;]
-    else:
-        c_map = &#34;grey&#34;
-
-    fig, ax = dukit.itool.plot_image_on_ax(
-        fig,
-        ax,
-        pl_image,
-        title=&#34;PL - Full &amp; Rebinned&#34;,
-        c_range=c_range,
-        c_label=&#34;Counts&#34;,
-        c_map=c_map,
-        **kwargs,
-    )
-
-    _add_patch_rect(ax, roi_coords, label=&#34;ROI&#34;, edgecolor=&#34;r&#34;)
-    if opath:
-        fig.savefig(opath)
-
-
-# ============================================================================
-
-
-def aoi_pl_image(
-    pl_image: npt.NDArray,
-    *aoi_coords: tuple[int, int, int, int],
-    c_range_type: str = &#34;&#34;,
-    c_range_values: tuple[float, float] = (),
-    opath: str = &#34;&#34;,
-    **kwargs,
-) -&gt; tuple[plt.Figure, plt.Axes]:
-    &#34;&#34;&#34;
-    Plots pl image cut down to ROI, with annotated AOI regions.
-
-    Arguments
-    ---------
-    pl_image : np array, 2D
-        pl image AFTER cropping.
-    *aoi_coords : tuple[int, int, int, int]
-        AOI coordinates
-    c_range_type : str = &#34;&#34;
-        Type of colormap range to use. See `dukit.itool.get_colormap_range`
-    c_range_values : tuple[float, float] = ()
-        Values to use for colormap range. See `dukit.itool.get_colormap_range`
-    opath : str
-        If supplied, saves figure here.
-    **kwargs
-        Plotting options passed to `dukit.itool.plot_image_on_ax`
-
-    Returns
-    -------
-    fig : plt.Figure
-
-    ax : plt.Axes
-
-    &#34;&#34;&#34;
-    fig, ax = plt.subplots()
-    if &#34;c_range&#34; not in kwargs and c_range_type and c_range_values:
-        c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, pl_image)
-    else:
-        c_range = dukit.itool.get_colormap_range(&#34;min_max&#34;, (), pl_image)
-
-    if &#34;c_map&#34; in kwargs:
-        c_map = kwargs[&#34;c_map&#34;]
-        del kwargs[&#34;c_map&#34;]
-    else:
-        c_map = &#34;grey&#34;
-
-    fig, ax = dukit.itool.plot_image_on_ax(
-        fig,
-        ax,
-        pl_image,
-        title=&#34;PL - ROI &amp; Rebinned&#34;,
-        c_range=c_range,
-        c_label=&#34;Counts&#34;,
-        c_map=c_map,
-        **kwargs,
-    )
-
-    # add single pixel aoi first
-    shp = pl_image.shape
-    _add_patch_rect(
-        ax,
-        (shp[0] // 2, shp[1] // 2, shp[0] // 2 + 1, shp[1] // 2 + 1),
-        label=&#34;AOI 0&#34;,
-        edgecolor=AOI_COLORS[0],
-    )
-    for i, aoi in enumerate(aoi_coords):
-        _add_patch_rect(ax, aoi, label=&#34;AOI &#34; + str(i + 1), edgecolor=AOI_COLORS[i + 1])
-
-    if opath:
-        fig.savefig(opath)
-
-    return fig, ax
-
-
-# ============================================================================
-
-
-def roi_avg_fits(roi_results: dict[str, dukit.share.RoiAvgFit], opath: str = &#34;&#34;):
-    &#34;&#34;&#34;
-    Plots fit of spectrum averaged across ROI, as well as corresponding residual values.
-
-    Arguments
-    ---------
-    roi_results : dict[str, dukit.share.RoiAvgFit
-        dict[&#34;fit_backend&#34;] =&gt; RoiAvgFit
-    opath : str
-        If given, save figure here.
-    Returns
-    -------
-    fig : matplotlib Figure object
-    &#34;&#34;&#34;
-    figsize = mpl.rcParams[&#34;figure.figsize&#34;].copy()
-    figsize[0] *= 2
-    figsize[1] *= 1.5
-
-    fig = plt.figure(figsize=figsize)
-    # xstart, ystart, xend, yend
-    # [units are fraction of the image frame, from bottom left corner]
-    spectrum_frame = fig.add_axes((0.1, 0.3, 0.8, 0.6))
-
-    rr = next(iter(roi_results.values()))  # any result, just to plot raw data
-    lspec_names = []
-    lspec_lines = []
-
-    spectrum_frame.plot(
-        rr.sweep_arr,
-        rr.avg_sig_norm,
-        label=&#34;raw data&#34;,
-        ls=&#34; &#34;,
-        marker=&#34;o&#34;,
-        mfc=&#34;w&#34;,
-        mec=&#34;firebrick&#34;,
-    )
-    lspec_names.append(&#34;raw data&#34;)
-    lspec_lines.append(Line2D([0], [0], ls=&#34; &#34;, marker=&#34;o&#34;, mfc=&#34;w&#34;, mec=&#34;firebrick&#34;))
-
-    arb_result = next(iter(roi_results.values()))
-
-    spectrum_frame.plot(
-        arb_result.fit_xvec,
-        arb_result.fit_yvec_guess,
-        linestyle=(0, (1, 1)),
-        label=&#34;init guess&#34;,
-        c=&#34;darkgreen&#34;,
-    )
-    lspec_names.append(&#34;init guess&#34;)
-    lspec_lines.append(Line2D([0], [0], linestyle=(0, (1, 1)), c=&#34;darkgreen&#34;))
-
-    plt.setp(spectrum_frame.get_xticklabels(), visible=False)
-
-    spectrum_frame.grid()
-    spectrum_frame.set_ylabel(&#34;PL (a.u.)&#34;)
-
-    # residual plot
-    residual_frame = fig.add_axes((0.1, 0.1, 0.8, 0.2), sharex=spectrum_frame)
-
-    lresid_names = []
-    lresid_lines = []
-
-    residual_frame.grid()
-
-    residual_frame.set_xlabel(&#34;Sweep parameter&#34;)
-    residual_frame.set_ylabel(&#34;Fit - data (a.u.)&#34;)
-
-    for _, res in roi_results.items():
-        # ODMR spectrum_frame
-        spectrum_frame.plot(
-            res.fit_xvec,
-            res.fit_yvec,
-            linestyle=&#34;--&#34;,
-            label=f&#34;{res.fit_backend} best fit&#34;,
-            c=FIT_BACKEND_COLORS[res.fit_backend][&#34;ROIfit_linecolor&#34;],
-        )
-        lspec_names.append(f&#34;{res.fit_backend} best fit&#34;)
-        lspec_lines.append(
-            Line2D(
-                [0],
-                [0],
-                linestyle=&#34;--&#34;,
-                c=FIT_BACKEND_COLORS[res.fit_backend][&#34;ROIfit_linecolor&#34;],
-            )
-        )
-
-        residual_frame.plot(
-            res.sweep_arr,
-            res.best_residual,
-            label=f&#34;{res.fit_backend} residual&#34;,
-            ls=&#34;dashed&#34;,
-            c=FIT_BACKEND_COLORS[res.fit_backend][&#34;residual_linecolor&#34;],
-            marker=&#34;o&#34;,
-            mfc=&#34;w&#34;,
-            mec=FIT_BACKEND_COLORS[res.fit_backend][&#34;residual_linecolor&#34;],
-        )
-        lresid_names.append(f&#34;{res.fit_backend} residual&#34;)
-        lresid_lines.append(
-            Line2D(
-                [0],
-                [0],
-                ls=&#34;dashed&#34;,
-                c=FIT_BACKEND_COLORS[res.fit_backend][&#34;residual_linecolor&#34;],
-                marker=&#34;o&#34;,
-                mfc=&#34;w&#34;,
-                mec=FIT_BACKEND_COLORS[res.fit_backend][&#34;residual_linecolor&#34;],
-            )
-        )
-
-    # https://jdhao.github.io/2018/01/23/matplotlib-legend-outside-of-axes/
-    # https://matplotlib.org/3.2.1/gallery/lines_bars_and_markers/linestyles.html
-    legend_names = lspec_names.copy()
-    legend_names.extend(lresid_names)
-
-    legend_lines = lspec_lines.copy()
-    legend_lines.extend(lresid_lines)
-
-    spectrum_frame.legend(
-        legend_lines,
-        legend_names,
-        loc=&#34;lower left&#34;,
-        bbox_to_anchor=(0.0, 1.01),
-        fontsize=&#34;medium&#34;,
-        ncol=len(legend_names),
-        borderaxespad=0,
-        frameon=False,
-    )
-    fig.subplots_adjust(left=0, bottom=0, right=1, top=1, wspace=0, hspace=0)
-    # spectrum_frame.legend()
-
-    if opath:
-        fig.savefig(opath)
-
-    return fig
-
-
-# ============================================================================
-
-
-def aoi_spectra(
-    sig: npt.NDArray,
-    ref: npt.NDArray,
-    sweep_arr: npt.NDArray,
-    *aoi_coords: tuple[int, int, int, int],
-    specpath: str = &#34;&#34;,
-    opath: str = &#34;&#34;,
-) -&gt; tuple[plt.Figure, plt.Axes]:
-    &#34;&#34;&#34;
-    Plots spectra from each AOI, as well as subtraction and division norms.
-
-    Arguments
-    ---------
-    sig : np array, 3D
-        Signal component of raw data, reshaped and rebinned. Unwanted sweeps removed.
-        Cut down to ROI.
-        Format: [sweep_vals, y, x]
-    ref : np array, 3D
-        Reference component of raw data, reshaped and rebinned. Unwanted sweeps removed.
-        Cut down to ROI.
-        Format: [sweep_vals, y, x]
-    sweep_arr : ndarray
-        List of sweep parameter values (with removed unwanted sweeps at start/end)
-    specpath : str
-        Path (preferably to json) to save spectra in.
-        Note you *probably* want to use TODO(fit_aois) to output instead.
-    opath : str
-        Path to save figure in.
-
-    Returns
-    -------
-    fig : matplotlib Figure object
-    &#34;&#34;&#34;
-
-    aois = dukit.itool.get_aois(sig.shape, *aoi_coords)  # type: ignore
-
-    # pre-process data to plot
-    sig_avgs = []
-    ref_avgs = []
-    sub_norms = []
-    div_norms = []
-    true_sub_norms = []
-    for i, aoi in enumerate(aois):
-        sig_aoi = sig[aoi[0], aoi[1], :]
-        ref_aoi = ref[aoi[0], aoi[1], :]
-        sig_avg = np.nanmean(sig_aoi, axis=(0, 1))
-        ref_avg = np.nanmean(ref_aoi, axis=(0, 1))
-        sub_norm = np.nanmean(
-            1 + (sig_aoi - ref_aoi) / (sig_aoi + ref_aoi), axis=(0, 1)
-        )
-        div_norm = np.nanmean(sig_aoi / ref_aoi, axis=(0, 1))
-        true_sub_norm = np.nanmean(
-            (sig_aoi - ref_aoi)
-            / np.nanmax(sig_aoi - ref_aoi, axis=-1).reshape(
-                sig_aoi.shape[:-1] + (1,)
-            ),
-            axis=(0, 1),
-        )
-        sig_avgs.append(sig_avg)
-        ref_avgs.append(ref_avg)
-        sub_norms.append(sub_norm)
-        div_norms.append(div_norm)
-        true_sub_norms.append(true_sub_norm)
-
-    figsize = mpl.rcParams[&#34;figure.figsize&#34;].copy()
-    num_wide = 3 if len(aois) &lt; 3 else len(aois)
-    figsize[0] *= 0.6 * num_wide
-    figsize[1] *= 1.75
-    fig, axs = plt.subplots(2, num_wide, figsize=figsize, sharex=True, sharey=False)
-
-    for i, aoi in enumerate(aois):
-        # plot sig
-        axs[0, i].plot(
-            sweep_arr,
-            sig_avgs[i],
-            label=&#34;sig&#34;,
-            c=&#34;blue&#34;,
-            ls=&#34;dashed&#34;,
-            marker=&#34;o&#34;,
-            mfc=&#34;cornflowerblue&#34;,
-            mec=&#34;mediumblue&#34;,
-        )
-        # plot ref
-        axs[0, i].plot(
-            sweep_arr,
-            ref_avgs[i],
-            label=&#34;ref&#34;,
-            c=&#34;green&#34;,
-            ls=&#34;dashed&#34;,
-            marker=&#34;o&#34;,
-            mfc=&#34;limegreen&#34;,
-            mec=&#34;darkgreen&#34;,
-        )
-
-        axs[0, i].legend()
-        axs[0, i].grid(True)
-        axs[0, i].set_title(
-            &#34;AOI &#34; + str(i),
-            fontdict={&#34;color&#34;: AOI_COLORS[i]},
-        )
-        axs[0, i].set_ylabel(&#34;pl (a.u.)&#34;)
-
-    linestyles = [
-        &#34;--&#34;,
-        &#34;-.&#34;,
-        (0, (1, 1)),
-        (0, (5, 10)),
-        (0, (5, 5)),
-        (0, (5, 1)),
-        (0, (3, 10, 1, 10)),
-        (0, (3, 5, 1, 5)),
-        (0, (3, 1, 1, 1)),
-        (0, (3, 5, 1, 5, 1, 5)),
-        (0, (3, 10, 1, 10, 1, 10)),
-        (0, (3, 1, 1, 1, 1, 1)),
-    ]
-
-    for i in range(len(aois)):
-        # plot subtraction norm
-        axs[1, 0].plot(
-            sweep_arr,
-            sub_norms[i],
-            label=&#34;AOI &#34; + str(i + 1),
-            c=AOI_COLORS[i],
-            ls=linestyles[i],
-            marker=&#34;o&#34;,
-            mfc=&#34;w&#34;,
-            mec=AOI_COLORS[i],
-        )
-        axs[1, 0].legend()
-        axs[1, 0].grid(True)
-        axs[1, 0].set_title(&#34;sub: 1 + (sig - ref / sig +&#34; &#34; ref)&#34;)
-        axs[1, 0].set_xlabel(&#34;Sweep parameter&#34;)
-        axs[1, 0].set_ylabel(&#34;pl (a.u.)&#34;)
-
-        # plot division norm
-        axs[1, 1].plot(
-            sweep_arr,
-            div_norms[i],
-            label=&#34;AOI &#34; + str(i),
-            c=AOI_COLORS[i],
-            ls=linestyles[i],
-            marker=&#34;o&#34;,
-            mfc=&#34;w&#34;,
-            mec=AOI_COLORS[i],
-        )
-        axs[1, 1].legend()
-        axs[1, 1].grid(True)
-        axs[1, 1].set_title(&#34;div: sig / ref&#34;)
-        axs[1, 1].set_xlabel(&#34;Sweep parameter&#34;)
-        axs[1, 1].set_ylabel(&#34;pl (a.u.)&#34;)
-
-        # plot true-sub norm
-        axs[1, 2].plot(
-            sweep_arr,
-            true_sub_norms[i],
-            label=&#34;AOI &#34; + str(i),
-            c=AOI_COLORS[i],
-            ls=linestyles[i],
-            marker=&#34;o&#34;,
-            mfc=&#34;w&#34;,
-            mec=AOI_COLORS[i],
-        )
-        axs[1, 2].legend()
-        axs[1, 2].grid(True)
-        axs[1, 2].set_title(&#34;True-sub: (sig - ref) / mx&#34;)
-        axs[1, 2].set_xlabel(&#34;Sweep parameter&#34;)
-        axs[1, 2].set_ylabel(&#34;pl (a.u.)&#34;)
-
-    # delete axes that we didn&#39;t use
-    for i in range(len(aois)):
-        if i &lt; 3:  # we used these (3 normalisation types)
-            continue
-        else:  # we didn&#39;t use these
-            fig.delaxes(axs[1, i])
-
-    if len(aois) == 2:
-        fig.delaxes(axs[0, 2])
-    if len(aois) == 1:
-        fig.delaxes(axs[0, 1])
-        fig.delaxes(axs[0, 2])
-
-    output_dict = {&#34;sweep_arr&#34;: sweep_arr}
-    for i in range(len(aois)):
-        output_dict[&#34;AOI_sig_avg&#34; + &#34;_&#34; + str(i)] = sig_avgs[i]
-        output_dict[&#34;AOI_ref_avg&#34; + &#34;_&#34; + str(i)] = ref_avgs[i]
-
-    if specpath:
-        dukit.json2dict.dict_to_json(
-            output_dict,
-            specpath,
-        )
-
-    if opath:
-        fig.savefig(opath)
-
-    return fig, axs
-
-
-# ============================================================================
-
-
-def aoi_spectra_fit(
-    aoi_fit_results: dict,
-    roi_fit_results: dict,
-    img_shape: tuple[int, int],
-    *aoi_coords: tuple[int, int, int, int],
-    opath: str = &#34;&#34;,
-) -&gt; tuple[plt.Figure, plt.Axes]:
-    &#34;&#34;&#34;
-    Plots sig and ref spectra, sub and div normalisation and fit for the ROI average,
-    a single pixel, and each of the AOIs. Stacked on top of each other for comparison.
-    The ROI average fit is plot against the fit of all of the others for comparison.
-
-    Note here and elsewhere the single pixel check is the first element of the AOI array.
-
-    Arguments
-    ---------
-    aoi_fit_results : dict
-        dict[&#34;AOI_num&#34;] =&gt; dict[&#34;fit_backend&#34;] =&gt; dukit.share.AoiFit
-    roi_fit_results : dict
-        dict[&#34;fit_backend&#34;] =&gt; dukit.share.RoiAvgFit
-    aoi_coords : tuple[int, int, int, int]
-        AOI coordinates
-    img_shape : tuple[int, int]
-        Shape of the image, used to get the single pixel AOI.
-    opath : str
-        If given, save figure here.
-
-    Returns
-    -------
-    fig : plt.Figure
-
-    ax : plt.Axes
-
-    &#34;&#34;&#34;
-
-    # rows:
-    # ROI avg then each AOI
-    # columns:
-    # sig &amp; ref, sub &amp; div norm, fit -&gt; compared to ROI {raw, fit, ROI_avg_fit}
-
-    aois = dukit.itool.get_aois(img_shape, *aoi_coords)  # type: ignore
-
-    figsize = mpl.rcParams[&#34;figure.figsize&#34;].copy()
-    figsize[0] *= 3  # number of columns
-    figsize[1] *= 1 + len(aoi_fit_results.keys())  # number of rows
-
-    fig, axs = plt.subplots(
-        1 + len(aoi_fit_results.keys()), 3, figsize=figsize, sharex=True, sharey=False
-    )
-    axs[-1, 0].set_xlabel(&#34;Sweep parameter&#34;)
-    axs[-1, 1].set_xlabel(&#34;Sweep parameter&#34;)
-    axs[-1, 2].set_xlabel(&#34;Sweep parameter&#34;)
-
-    fit_results = {&#34;ROI&#34;: roi_fit_results}
-    fit_results.update(aoi_fit_results)
-    for i, name in enumerate(fit_results.keys()):
-        fr = next(
-            iter(fit_results[name].values())
-        )  # any fit res, just to plot raw data
-        # === plot sig, ref data as first column
-        # plot sig
-        axs[i, 0].plot(
-            fr.sweep_arr,
-            fr.avg_sig,
-            label=&#34;sig&#34;,
-            c=&#34;blue&#34;,
-            ls=&#34;dashed&#34;,
-            marker=&#34;o&#34;,
-            mfc=&#34;cornflowerblue&#34;,
-            mec=&#34;mediumblue&#34;,
-        )
-        # plot ref
-        axs[i, 0].plot(
-            fr.sweep_arr,
-            fr.avg_ref,
-            label=&#34;ref&#34;,
-            c=&#34;green&#34;,
-            ls=&#34;dashed&#34;,
-            marker=&#34;o&#34;,
-            mfc=&#34;limegreen&#34;,
-            mec=&#34;darkgreen&#34;,
-        )
-
-        axs[i, 0].legend()
-        axs[i, 0].grid(True)
-        axs[i, 0].set_title(name, color=([&#34;k&#34;] + AOI_COLORS)[i])
-        axs[i, 0].set_ylabel(&#34;PL (a.u.)&#34;)
-
-        # === plot normalisation as second column
-        axs[i, 1].plot(
-            fr.sweep_arr,
-            1 + (fr.avg_sig - fr.avg_ref) / (fr.avg_sig + fr.avg_ref),
-            label=&#34;subtraction&#34;,
-            c=&#34;firebrick&#34;,
-            ls=&#34;dashed&#34;,
-            marker=&#34;o&#34;,
-            mfc=&#34;lightcoral&#34;,
-            mec=&#34;maroon&#34;,
-        )
-        axs[i, 1].plot(
-            fr.sweep_arr,
-            fr.avg_sig / fr.avg_ref,
-            label=&#34;division&#34;,
-            c=&#34;cadetblue&#34;,
-            ls=&#34;dashed&#34;,
-            marker=&#34;o&#34;,
-            mfc=&#34;powderblue&#34;,
-            mec=&#34;darkslategrey&#34;,
-        )
-
-        axs[i, 1].legend()
-        axs[i, 1].grid(True)
-        axs[i, 1].set_title(name + &#34; - norm.&#34;, color=([&#34;k&#34;] + AOI_COLORS)[i])
-        axs[i, 1].set_ylabel(&#34;PL (a.u.)&#34;)
-
-        axs[i, 2].plot(
-            fr.sweep_arr,
-            fr.avg_sig_norm,
-            label=&#34;raw data&#34;,
-            ls=&#34;&#34;,
-            marker=&#34;o&#34;,
-            ms=3.5,
-            mfc=&#34;goldenrod&#34;,
-            mec=&#34;k&#34;,
-        )
-        axs[i, 2].set_title(name + &#34; - fit&#34;, color=([&#34;k&#34;] + AOI_COLORS)[i])
-
-        # === now plot fits
-        for fit_backend in fit_results[name].keys():
-            fit_result = fit_results[name][fit_backend]
-
-            # plot ROI for comparison
-            if i and name != &#34;ROI&#34;:
-                axs[i, 2].plot(
-                    fit_results[&#34;ROI&#34;][fit_backend].fit_xvec,
-                    fit_results[&#34;ROI&#34;][fit_backend].fit_yvec,
-                    label=f&#34;ROI fit - {fit_backend}&#34;,
-                    ls=&#34;dashed&#34;,
-                    c=FIT_BACKEND_COLORS[fit_backend][&#34;AOI_ROI_fit_linecolor&#34;],
-                )
-
-            axs[i, 2].plot(
-                fit_result.fit_xvec,
-                fit_result.fit_yvec,
-                label=f&#34;{name} fit - {fit_result.fit_backend}&#34;,
-                ls=&#34;dashed&#34;,
-                c=FIT_BACKEND_COLORS[fit_backend][
-                    f&#34;AOI_{&#39;ROI&#39; if name == &#39;ROI&#39; else &#39;best&#39;}_fit_linecolor&#34;
-                ],
-            )
-            axs[i, 2].legend()
-            axs[i, 2].grid(True)
-            axs[i, 2].set_ylabel(&#34;PL (a.u.)&#34;)
-
-    if opath:
-        fig.savefig(opath)
-
-    return fig, axs
-
-
-# ============================================================================
-
-
-def pl_param_image(
-    fit_model: dukit.pl.FitModel,
-    pixel_fit_params: dict,
-    param_name: str,
-    param_number: int = 0,
-    c_range_type: str = &#34;&#34;,
-    c_range_values: tuple[float, float] = (),
-    errorplot: bool = False,
-    opath: str = &#34;&#34;,
-    **kwargs,
-) -&gt; tuple[plt.Figure, plt.Axes]:
-    &#34;&#34;&#34;
-    Plots an image corresponding to a single parameter in pixel_fit_params.
-
-    Arguments
-    ---------
-    options : dict
-        Generic options dict holding all the user options.
-    fit_model : dukit.pl.model.FitModel
-        Model we&#39;re fitting to.
-    pixel_fit_params : dict
-        Dictionary, key: param_keys, val: image (2D) of param values across FOV.
-    param_name : str
-        Name of parameter you want to plot, e.g. &#39;fwhm&#39;. Can also be &#39;residual&#39;.
-
-    Optional arguments
-    ------------------
-    c_range_type : str = &#34;&#34;
-        Type of colormap range to use. See `dukit.itool.get_colormap_range`
-    c_range_values : tuple[float, float] = ()
-        Values to use for colormap range. See `dukit.itool.get_colormap_range`
-    param_number : int, default-0
-        Which version of the parameter you want. I.e. there might be 8 independent
-         parameters in the fit model called &#39;pos&#39;, each labeled &#39;pos_0&#39;, &#39;pos_1&#39; etc.
-    errorplot : bool
-        Default: false. Denotes that errors dict has been passed in (e.g. sigmas), so
-        ylabel &amp; save names are changed accordingly.
-        Can&#39;t be True if param_name=&#39;residual&#39;.
-    opath : str
-        If given, tries to save figure here.
-    **kwargs
-        Plotting options passed to `dukit.itool.plot_image_on_ax`
-
-    Returns
-    -------
-    fig : matplotlib Figure object
-    &#34;&#34;&#34;
-
-    image = pixel_fit_params[param_name + &#34;_&#34; + str(param_number)]
-    if param_name == &#34;residual&#34; and errorplot:
-        dukit.warn.warn(
-            &#34;residual doesn&#39;t have an error, can&#39;t plot residual sigma (ret. None).&#34;
-        )
-        return None
-
-    if errorplot:
-        c_label = &#34;SD: &#34; + fit_model.get_param_unit(param_name, param_number)
-    else:
-        c_label = fit_model.get_param_unit(param_name, param_number)
-
-    if &#34;c_range&#34; not in kwargs and c_range_type and c_range_values:
-        c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, image)
-    else:
-        c_range = dukit.itool.get_colormap_range(&#34;min_max&#34;, (), image)
-
-    fig, ax = plt.subplots()
-    fig, ax = dukit.itool.plot_image_on_ax(
-        fig,
-        ax,
-        image,
-        title=param_name + &#34;_&#34; + str(param_number),
-        c_range=c_range,
-        c_label=c_label,
-        **kwargs,
-    )
-
-    if opath:
-        fig.savefig(opath)
-
-    return fig, ax
-
-
-# ============================================================================
-
-
-def pl_param_images(
-    fit_model: dukit.pl.FitModel,
-    pixel_fit_params: dict,
-    param_name: str,
-    c_range_type: str = &#34;&#34;,
-    c_range_values: tuple[float, float] = (),
-    errorplot: bool = False,
-    opath: str = &#34;&#34;,
-    **kwargs,
-):
-    &#34;&#34;&#34;
-    Plots images for all independent versions of a single parameter type in
-    pixel_fit_params.
-
-    Arguments
-    ---------
-    fit_model : `qdmpy.pl.model.FitModel`
-        Model we&#39;re fitting to.
-    pixel_fit_params : dict
-        Dictionary, key: param_keys, val: image (2D) of param values across FOV.
-    param_name : str
-        Name of parameter you want to plot, e.g. &#39;fwhm&#39;. Can also be &#39;residual&#39;.
-    c_range_type : str = &#34;&#34;
-        Type of colormap range to use. See `dukit.itool.get_colormap_range`
-    c_range_values : tuple[float, float] = ()
-        Values to use for colormap range. See `dukit.itool.get_colormap_range`
-    errorplot : bool
-        Default: false. Denotes that errors dict has been passed in (e.g. sigmas), so
-        ylabel &amp; save names are changed accordingly.
-        Can&#39;t be True if param_name=&#39;residual&#39;.
-    opath : str
-        If given, tries to save figure here.
-    **kwargs
-        Plotting options passed to `dukit.itool.plot_image_on_ax`
-
-    Returns
-    -------
-    fig : plt.Figure
-
-    ax : plt.Axes
-    &#34;&#34;&#34;
-
-    # if no fit completed
-    if pixel_fit_params is None:
-        dukit.warn.warn(
-            &#34;&#39;pixel_fit_params&#39; arg to function &#39;pl_param_images&#39; is &#39;None&#39;.\n&#34;
-            + &#34;Probably no pixel fitting completed.&#34;  # noqa: W503
-        )
-        return None
-
-    if param_name == &#34;residual&#34; and errorplot:
-        dukit.warn.warn(
-            &#34;residual doesn&#39;t have an error, can&#39;t plot residual sigma (ret. None).&#34;
-        )
-        return None
-
-    # plot 2 columns wide, as many rows as required
-
-    # first get keys we need
-    our_keys = []
-    for key in pixel_fit_params:
-        if key.startswith(param_name) and not key.endswith(&#34;sigma&#34;):
-            our_keys.append(key)
-
-    # this is an inner function so no one uses it elsewhere/protect namespace
-    def param_sorter(param):
-        strings = param.split(&#34;_&#34;)  # e.g. &#34;amp_exp_2&#34; -&gt; [&#34;amp&#34;, &#34;exp&#34;, &#34;2&#34;]
-        # all we need here is the number at the end actually
-        # param_name_split = strings[:-1]  # list of &#39;words&#39;, e.g. [&#34;amp&#34;, &#34;exp&#34;]
-        num = strings[-1]  # grab the number e.g. &#34;2
-        return int(num)
-
-    # sort based on number (just in case)
-    our_keys.sort(key=param_sorter)  # i.e. key = lambda x: int(x.split(&#34;_&#34;)[-1])
-    nk = len(our_keys)
-
-    if nk == 1:
-        # just one image, so plot normally
-        fig, axs = pl_param_image(
-            fit_model,
-            pixel_fit_params,
-            param_name,
-            0,
-            c_range_type,
-            c_range_values,
-            errorplot,
-        )
-    else:
-        if nk &lt;= 8:
-            num_columns = 4
-            num_rows = 2
-        else:
-            num_columns = 2
-            num_rows = math.ceil(nk / 2)
-
-        figsize = mpl.rcParams[&#34;figure.figsize&#34;].copy()
-        figsize[0] *= num_columns
-        figsize[1] *= num_rows
-
-        fig, axs = plt.subplots(
-            num_rows,
-            num_columns,
-            figsize=figsize,
-            sharex=False,
-            sharey=False,
-        )
-        # plot 8-lorentzian peaks in a more helpful way
-        if nk &lt;= 8 and fit_model in [
-            dukit.pl.ConstLorentzians,
-            dukit.pl.LinearLorentzians,
-        ]:
-            param_nums = []  # [0, 1, 2, 3, 7, 6, 5, 4] etc.
-            param_nums.extend(list(range(nk // 2)))
-            if nk % 2:
-                param_nums.append(nk // 2 + 1)
-            if len(param_nums) &lt; 4:
-                param_nums.extend([-1 for _ in range(4 - len(param_nums))])  # dummies
-            param_nums.extend(
-                list(range(nk - 1, (nk - 1) // 2, -1))
-            )  # range(start, stop, step)
-            param_nums.extend(
-                [-1 for _ in range(8 - len(param_nums))]
-            )  # add on dummies
-            param_axis_iterator = zip(param_nums, axs.flatten())
-        # otherwise plot in a more conventional order
-        else:
-            param_axis_iterator = enumerate(axs.flatten())  # type: ignore
-
-        for param_number, ax in param_axis_iterator:
-            param_key = param_name + &#34;_&#34; + str(param_number)
-            try:
-                image_data = pixel_fit_params[param_key]
-            except KeyError:
-                # we have too many axes (i.e. 7 params, 8 subplots), delete the axs
-                fig.delaxes(ax)
-                continue
-
-            if errorplot:
-                c_label = &#34;SD: &#34; + fit_model.get_param_unit(param_name, param_number)
-            else:
-                c_label = fit_model.get_param_unit(param_name, param_number)
-
-            if &#34;c_range&#34; not in kwargs and c_range_type and c_range_values:
-                c_range = dukit.itool.get_colormap_range(
-                    c_range_type, c_range_values, image_data
-                )
-            else:
-                c_range = dukit.itool.get_colormap_range(&#34;min_max&#34;, (), image_data)
-
-            fig, ax = dukit.itool.plot_image_on_ax(
-                fig,
-                ax,
-                image_data,
-                title=param_key,
-                c_range=c_range,
-                c_label=c_label,
-                **kwargs,
-            )
-
-        if opath:
-            fig.savefig(opath)
-
-    return fig, axs
-
-
-# ============================================================================
-
-
-def _add_patch_rect(
-    ax: plt.Axes,
-    aoi_coord: tuple[int, int, int, int],
-    label: str | None = None,
-    edgecolor: str = &#34;b&#34;,
-) -&gt; None:
-    &#34;&#34;&#34;
-    Adds a rectangular annotation onto ax.
-
-    Arguments
-    ---------
-    ax : matplotlib Axis object
-
-    aoi_coord: tuple[int, int, int, int]
-        start_x, start_y, end_x, end_y for aoi/roi
-
-    Optional arguments
-    ------------------
-    label : str
-        Text to label annotated square with. Color is defined by edgecolor. Default: None.
-    edgecolor : str
-        Color of label and edge of annotation. Default: &#34;b&#34;.
-    &#34;&#34;&#34;
-    start_x, start_y, end_x, end_y = aoi_coord
-    start_x = 0 if start_x &lt; 0 else start_x
-    start_y = 0 if start_y &lt; 0 else start_y
-    end_x = ax.get_xlim()[1] if end_x &lt; 0 else end_x
-    end_y = ax.get_ylim()[1] if end_y &lt; 0 else end_y
-    rect = patches.Rectangle(
-        (start_x, start_y),
-        int(end_x - start_x),
-        int(end_y - start_y),
-        linewidth=1,
-        edgecolor=edgecolor,
-        facecolor=&#34;none&#34;,
-    )
-    ax.add_patch(rect)
-    if label:
-        ax.text(
-            start_x + 0.95 * int(end_x - start_x),  # label posn.: top right
-            start_y,
-            label,
-            {
-                &#34;color&#34;: edgecolor,
-                &#34;fontsize&#34;: 10,
-                &#34;ha&#34;: &#34;center&#34;,
-                &#34;va&#34;: &#34;bottom&#34;,
-            },
-        )
-
-
-# ============================================================================
-
-
-def b_defects(
-    b_defects: tuple[npt.ArrayLike],
-    name: str = &#34;&#34;,
-    c_range_type: str = &#34;&#34;,
-    c_range_values: tuple[float, float] = (),
-    opath: str = &#34;&#34;,
-    **kwargs,
-) -&gt; tuple[plt.Figure, plt.Axes]:
-    &#34;&#34;&#34;
-    Plots the b_defects.
-
-    Parameters
-    ----------
-    b_defects : tuple[npt.ArrayLike]
-        b_defect images or values.
-    name : str = &#34;&#34;
-        title etc.
-    c_range_type : str = &#34;&#34;
-        Type of colormap range to use. See `dukit.itool.get_colormap_range`
-    c_range_values : tuple[float, float] = ()
-        Values to use for colormap range. See `dukit.itool.get_colormap_range`
-    opath : str = &#34;&#34;
-        If given, save figure here.
-    **kwargs
-        Plotting options passed to `dukit.itool.plot_image_on_ax`
-
-    Returns
-    -------
-    fig : plt.Figure
-
-    ax : plt.Axes
-    &#34;&#34;&#34;
-
-    figsize = mpl.rcParams[&#34;figure.figsize&#34;].copy()
-    width = len(b_defects)
-    figsize[0] *= width  # number of columns
-
-    fig, axs = plt.subplots(ncols=width, figsize=figsize)
-
-    if &#34;c_map&#34; in kwargs:
-        c_map = kwargs[&#34;c_map&#34;]
-        del kwargs[&#34;c_map&#34;]
-    else:
-        c_map = &#34;RdBu_r&#34;
-
-    # axs index: axs[row, col]
-    for i, bd in enumerate(b_defects):
-        if &#34;c_range&#34; not in kwargs and c_range_type and c_range_values:
-            c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, bd)
-        else:
-            c_range = dukit.itool.get_colormap_range(&#34;min_max&#34;, (), bd)
-
-        if width == 1:
-            ax = axs
-        else:
-            ax = axs[i]
-        dukit.itool.plot_image_on_ax(
-            fig, ax, bd, name, c_map, c_range, &#34;B (T)&#34;, **kwargs
-        )
-
-    if opath:
-        fig.savefig(opath)
-    return fig, axs
-
-
-# ============================================================================
-
-
-def dshifts(
-    dshifts: tuple[npt.ArrayLike],
-    name: str = &#34;&#34;,
-    c_range_type: str = &#34;&#34;,
-    c_range_values: tuple[float, float] = (),
-    opath: str = &#34;&#34;,
-    **kwargs,
-) -&gt; tuple[plt.Figure, plt.Axes]:
-    &#34;&#34;&#34;
-    Plots the b_defects.
-
-    Parameters
-    ----------
-    dshifts : tuple[npt.ArrayLike]
-        b_defect images or values.
-    name : str = &#34;&#34;
-        title etc.
-    c_range_type : str = &#34;&#34;
-        Type of colormap range to use. See `dukit.itool.get_colormap_range`
-    c_range_values : tuple[float, float] = ()
-        Values to use for colormap range. See `dukit.itool.get_colormap_range`
-    opath : str = &#34;&#34;
-        If given, save figure here.
-    **kwargs
-        Plotting options passed to `dukit.itool.plot_image_on_ax`
-
-    Returns
-    -------
-    fig : plt.Figure
-
-    ax : plt.Axes
-    &#34;&#34;&#34;
-
-    figsize = mpl.rcParams[&#34;figure.figsize&#34;].copy()
-    width = len(dshifts)
-    figsize[0] *= width  # number of columns
-
-    fig, axs = plt.subplots(ncols=width, figsize=figsize)
-
-    if &#34;c_map&#34; in kwargs:
-        c_map = kwargs[&#34;c_map&#34;]
-        del kwargs[&#34;c_map&#34;]
-    else:
-        c_map = &#34;PRGn&#34;
-
-    # axs index: axs[row, col]
-    for i, dshift in enumerate(dshifts):
-        if &#34;c_range&#34; not in kwargs and c_range_type and c_range_values:
-            c_range = dukit.itool.get_colormap_range(
-                c_range_type, c_range_values, dshift
-            )
-        else:
-            c_range = dukit.itool.get_colormap_range(&#34;min_max&#34;, (), dshift)
-
-        if width == 1:
-            ax = axs
-        else:
-            ax = axs[i]
-        dukit.itool.plot_image_on_ax(
-            fig, ax, dshift, name, c_map, c_range, &#34;D (MHz)&#34;, **kwargs
-        )
-
-    if opath:
-        fig.savefig(opath)
-    return fig, axs</code></pre>
-</details>
 </section>
 <section>
 </section>
@@ -1217,22 +63,9 @@ def dshifts(
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="dukit.plot._add_patch_rect"><code class="name flex">
-<span>def <span class="ident">_add_patch_rect</span></span>(<span>ax: matplotlib.axes._axes.Axes, aoi_coord: tuple[int, int, int, int], label: str | None = None, edgecolor: str = 'b') ‑> NoneType</span>
+<span>def <span class="ident">_add_patch_rect</span></span>(<span>ax: matplotlib.axes._axes.Axes,<br>aoi_coord: tuple[int, int, int, int],<br>label: str | None = None,<br>edgecolor: str = 'b') ‑> None</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Adds a rectangular annotation onto ax.</p>
-<h2 id="arguments">Arguments</h2>
-<dl>
-<dt><strong><code>ax</code></strong> :&ensp;<code>matplotlib Axis object</code></dt>
-<dd>&nbsp;</dd>
-<dt><strong><code>aoi_coord</code></strong> :&ensp;<code>tuple[int, int, int, int]</code></dt>
-<dd>start_x, start_y, end_x, end_y for aoi/roi</dd>
-</dl>
-<h2 id="optional-arguments">Optional Arguments</h2>
-<p>label : str
-Text to label annotated square with. Color is defined by edgecolor. Default: None.
-edgecolor : str
-Color of label and edge of annotation. Default: "b".</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1287,34 +120,24 @@ Color of label and edge of annotation. Default: "b".</p></div>
             },
         )</code></pre>
 </details>
-</dd>
-<dt id="dukit.plot.aoi_pl_image"><code class="name flex">
-<span>def <span class="ident">aoi_pl_image</span></span>(<span>pl_image: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], *aoi_coords: tuple[int, int, int, int], c_range_type: str = '', c_range_values: tuple[float, float] = (), opath: str = '', **kwargs) ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Plots pl image cut down to ROI, with annotated AOI regions.</p>
+<div class="desc"><p>Adds a rectangular annotation onto ax.</p>
 <h2 id="arguments">Arguments</h2>
 <dl>
-<dt><strong><code>pl_image</code></strong> :&ensp;<code>np array, 2D</code></dt>
-<dd>pl image AFTER cropping.</dd>
-<dt><strong><code>*aoi_coords</code></strong> :&ensp;<code>tuple[int, int, int, int]</code></dt>
-<dd>AOI coordinates</dd>
-<dt><strong><code>c_range_type</code></strong> :&ensp;<code>str = ""</code></dt>
-<dd>Type of colormap range to use. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code></dd>
-<dt><strong><code>c_range_values</code></strong> :&ensp;<code>tuple[float, float] = ()</code></dt>
-<dd>Values to use for colormap range. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code></dd>
-<dt><strong><code>opath</code></strong> :&ensp;<code>str</code></dt>
-<dd>If supplied, saves figure here.</dd>
-<dt><strong><code>**kwargs</code></strong></dt>
-<dd>Plotting options passed to <code><a title="dukit.itool.plot_image_on_ax" href="itool.html#dukit.itool.plot_image_on_ax">plot_image_on_ax()</a></code></dd>
+<dt><strong><code>ax</code></strong> :&ensp;<code>matplotlib Axis object</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>aoi_coord</code></strong> :&ensp;<code>tuple[int, int, int, int]</code></dt>
+<dd>start_x, start_y, end_x, end_y for aoi/roi</dd>
 </dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><strong><code>fig</code></strong> :&ensp;<code>plt.Figure</code></dt>
-<dd>&nbsp;</dd>
-<dt><strong><code>ax</code></strong> :&ensp;<code>plt.Axes</code></dt>
-<dd>&nbsp;</dd>
-</dl></div>
+<h2 id="optional-arguments">Optional Arguments</h2>
+<p>label : str
+Text to label annotated square with. Color is defined by edgecolor. Default: None.
+edgecolor : str
+Color of label and edge of annotation. Default: "b".</p></div>
+</dd>
+<dt id="dukit.plot.aoi_pl_image"><code class="name flex">
+<span>def <span class="ident">aoi_pl_image</span></span>(<span>pl_image: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>*aoi_coords: tuple[int, int, int, int],<br>c_range_type: str = '',<br>c_range_values: tuple[float, float] = (),<br>opath: str = '',<br>**kwargs) ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1391,35 +214,34 @@ Color of label and edge of annotation. Default: "b".</p></div>
 
     return fig, ax</code></pre>
 </details>
-</dd>
-<dt id="dukit.plot.aoi_spectra"><code class="name flex">
-<span>def <span class="ident">aoi_spectra</span></span>(<span>sig: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], ref: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], sweep_arr: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], *aoi_coords: tuple[int, int, int, int], specpath: str = '', opath: str = '') ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Plots spectra from each AOI, as well as subtraction and division norms.</p>
+<div class="desc"><p>Plots pl image cut down to ROI, with annotated AOI regions.</p>
 <h2 id="arguments">Arguments</h2>
 <dl>
-<dt><strong><code>sig</code></strong> :&ensp;<code>np array, 3D</code></dt>
-<dd>Signal component of raw data, reshaped and rebinned. Unwanted sweeps removed.
-Cut down to ROI.
-Format: [sweep_vals, y, x]</dd>
-<dt><strong><code>ref</code></strong> :&ensp;<code>np array, 3D</code></dt>
-<dd>Reference component of raw data, reshaped and rebinned. Unwanted sweeps removed.
-Cut down to ROI.
-Format: [sweep_vals, y, x]</dd>
-<dt><strong><code>sweep_arr</code></strong> :&ensp;<code>ndarray</code></dt>
-<dd>List of sweep parameter values (with removed unwanted sweeps at start/end)</dd>
-<dt><strong><code>specpath</code></strong> :&ensp;<code>str</code></dt>
-<dd>Path (preferably to json) to save spectra in.
-Note you <em>probably</em> want to use TODO(fit_aois) to output instead.</dd>
+<dt><strong><code>pl_image</code></strong> :&ensp;<code>np array, 2D</code></dt>
+<dd>pl image AFTER cropping.</dd>
+<dt><strong><code>*aoi_coords</code></strong> :&ensp;<code>tuple[int, int, int, int]</code></dt>
+<dd>AOI coordinates</dd>
+<dt><strong><code>c_range_type</code></strong> :&ensp;<code>str = ""</code></dt>
+<dd>Type of colormap range to use. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code></dd>
+<dt><strong><code>c_range_values</code></strong> :&ensp;<code>tuple[float, float] = ()</code></dt>
+<dd>Values to use for colormap range. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code></dd>
 <dt><strong><code>opath</code></strong> :&ensp;<code>str</code></dt>
-<dd>Path to save figure in.</dd>
+<dd>If supplied, saves figure here.</dd>
+<dt><strong><code>**kwargs</code></strong></dt>
+<dd>Plotting options passed to <code><a title="dukit.itool.plot_image_on_ax" href="itool.html#dukit.itool.plot_image_on_ax">plot_image_on_ax()</a></code></dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><strong><code>fig</code></strong> :&ensp;<code>matplotlib Figure object</code></dt>
+<dt><strong><code>fig</code></strong> :&ensp;<code>plt.Figure</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>ax</code></strong> :&ensp;<code>plt.Axes</code></dt>
 <dd>&nbsp;</dd>
 </dl></div>
+</dd>
+<dt id="dukit.plot.aoi_spectra"><code class="name flex">
+<span>def <span class="ident">aoi_spectra</span></span>(<span>sig: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>ref: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>sweep_arr: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>*aoi_coords: tuple[int, int, int, int],<br>specpath: str = '',<br>opath: str = '') ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1471,15 +293,11 @@ Note you <em>probably</em> want to use TODO(fit_aois) to output instead.</dd>
         ref_aoi = ref[aoi[0], aoi[1], :]
         sig_avg = np.nanmean(sig_aoi, axis=(0, 1))
         ref_avg = np.nanmean(ref_aoi, axis=(0, 1))
-        sub_norm = np.nanmean(
-            1 + (sig_aoi - ref_aoi) / (sig_aoi + ref_aoi), axis=(0, 1)
-        )
+        sub_norm = np.nanmean(1 + (sig_aoi - ref_aoi) / (sig_aoi + ref_aoi), axis=(0, 1))
         div_norm = np.nanmean(sig_aoi / ref_aoi, axis=(0, 1))
         true_sub_norm = np.nanmean(
             (sig_aoi - ref_aoi)
-            / np.nanmax(sig_aoi - ref_aoi, axis=-1).reshape(
-                sig_aoi.shape[:-1] + (1,)
-            ),
+            / np.nanmax(sig_aoi - ref_aoi, axis=-1).reshape(sig_aoi.shape[:-1] + (1,)),
             axis=(0, 1),
         )
         sig_avgs.append(sig_avg)
@@ -1555,7 +373,7 @@ Note you <em>probably</em> want to use TODO(fit_aois) to output instead.</dd>
         )
         axs[1, 0].legend()
         axs[1, 0].grid(True)
-        axs[1, 0].set_title(&#34;sub: 1 + (sig - ref / sig +&#34; &#34; ref)&#34;)
+        axs[1, 0].set_title(&#34;sub: 1 + (sig - ref / sig + ref)&#34;)
         axs[1, 0].set_xlabel(&#34;Sweep parameter&#34;)
         axs[1, 0].set_ylabel(&#34;pl (a.u.)&#34;)
 
@@ -1622,35 +440,35 @@ Note you <em>probably</em> want to use TODO(fit_aois) to output instead.</dd>
 
     return fig, axs</code></pre>
 </details>
-</dd>
-<dt id="dukit.plot.aoi_spectra_fit"><code class="name flex">
-<span>def <span class="ident">aoi_spectra_fit</span></span>(<span>aoi_fit_results: dict, roi_fit_results: dict, img_shape: tuple[int, int], *aoi_coords: tuple[int, int, int, int], opath: str = '') ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Plots sig and ref spectra, sub and div normalisation and fit for the ROI average,
-a single pixel, and each of the AOIs. Stacked on top of each other for comparison.
-The ROI average fit is plot against the fit of all of the others for comparison.</p>
-<p>Note here and elsewhere the single pixel check is the first element of the AOI array.</p>
+<div class="desc"><p>Plots spectra from each AOI, as well as subtraction and division norms.</p>
 <h2 id="arguments">Arguments</h2>
 <dl>
-<dt><strong><code>aoi_fit_results</code></strong> :&ensp;<code>dict</code></dt>
-<dd>dict["AOI_num"] =&gt; dict["fit_backend"] =&gt; dukit.share.AoiFit</dd>
-<dt><strong><code>roi_fit_results</code></strong> :&ensp;<code>dict</code></dt>
-<dd>dict["fit_backend"] =&gt; dukit.share.RoiAvgFit</dd>
-<dt><strong><code>aoi_coords</code></strong> :&ensp;<code>tuple[int, int, int, int]</code></dt>
-<dd>AOI coordinates</dd>
-<dt><strong><code>img_shape</code></strong> :&ensp;<code>tuple[int, int]</code></dt>
-<dd>Shape of the image, used to get the single pixel AOI.</dd>
+<dt><strong><code>sig</code></strong> :&ensp;<code>np array, 3D</code></dt>
+<dd>Signal component of raw data, reshaped and rebinned. Unwanted sweeps removed.
+Cut down to ROI.
+Format: [sweep_vals, y, x]</dd>
+<dt><strong><code>ref</code></strong> :&ensp;<code>np array, 3D</code></dt>
+<dd>Reference component of raw data, reshaped and rebinned. Unwanted sweeps removed.
+Cut down to ROI.
+Format: [sweep_vals, y, x]</dd>
+<dt><strong><code>sweep_arr</code></strong> :&ensp;<code>ndarray</code></dt>
+<dd>List of sweep parameter values (with removed unwanted sweeps at start/end)</dd>
+<dt><strong><code>specpath</code></strong> :&ensp;<code>str</code></dt>
+<dd>Path (preferably to json) to save spectra in.
+Note you <em>probably</em> want to use TODO(fit_aois) to output instead.</dd>
 <dt><strong><code>opath</code></strong> :&ensp;<code>str</code></dt>
-<dd>If given, save figure here.</dd>
+<dd>Path to save figure in.</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><strong><code>fig</code></strong> :&ensp;<code>plt.Figure</code></dt>
-<dd>&nbsp;</dd>
-<dt><strong><code>ax</code></strong> :&ensp;<code>plt.Axes</code></dt>
+<dt><strong><code>fig</code></strong> :&ensp;<code>matplotlib Figure object</code></dt>
 <dd>&nbsp;</dd>
 </dl></div>
+</dd>
+<dt id="dukit.plot.aoi_spectra_fit"><code class="name flex">
+<span>def <span class="ident">aoi_spectra_fit</span></span>(<span>aoi_fit_results: dict,<br>roi_fit_results: dict,<br>img_shape: tuple[int, int],<br>*aoi_coords: tuple[int, int, int, int],<br>opath: str = '') ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1695,14 +513,16 @@ The ROI average fit is plot against the fit of all of the others for comparison.
     # columns:
     # sig &amp; ref, sub &amp; div norm, fit -&gt; compared to ROI {raw, fit, ROI_avg_fit}
 
-    aois = dukit.itool.get_aois(img_shape, *aoi_coords)  # type: ignore
-
     figsize = mpl.rcParams[&#34;figure.figsize&#34;].copy()
     figsize[0] *= 3  # number of columns
     figsize[1] *= 1 + len(aoi_fit_results.keys())  # number of rows
 
     fig, axs = plt.subplots(
-        1 + len(aoi_fit_results.keys()), 3, figsize=figsize, sharex=True, sharey=False
+        1 + len(aoi_fit_results.keys()),
+        3,
+        figsize=figsize,
+        sharex=True,
+        sharey=False,
     )
     axs[-1, 0].set_xlabel(&#34;Sweep parameter&#34;)
     axs[-1, 1].set_xlabel(&#34;Sweep parameter&#34;)
@@ -1711,9 +531,7 @@ The ROI average fit is plot against the fit of all of the others for comparison.
     fit_results = {&#34;ROI&#34;: roi_fit_results}
     fit_results.update(aoi_fit_results)
     for i, name in enumerate(fit_results.keys()):
-        fr = next(
-            iter(fit_results[name].values())
-        )  # any fit res, just to plot raw data
+        fr = next(iter(fit_results[name].values()))  # any fit res, just to plot raw data
         # === plot sig, ref data as first column
         # plot sig
         axs[i, 0].plot(
@@ -1814,26 +632,22 @@ The ROI average fit is plot against the fit of all of the others for comparison.
 
     return fig, axs</code></pre>
 </details>
-</dd>
-<dt id="dukit.plot.b_defects"><code class="name flex">
-<span>def <span class="ident">b_defects</span></span>(<span>b_defects: tuple[typing.Union[numpy._typing._array_like._SupportsArray[numpy.dtype[typing.Any]], numpy._typing._nested_sequence._NestedSequence[numpy._typing._array_like._SupportsArray[numpy.dtype[typing.Any]]], bool, int, float, complex, str, bytes, numpy._typing._nested_sequence._NestedSequence[typing.Union[bool, int, float, complex, str, bytes]]]], name: str = '', c_range_type: str = '', c_range_values: tuple[float, float] = (), opath: str = '', **kwargs) ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Plots the b_defects.</p>
-<h2 id="parameters">Parameters</h2>
+<div class="desc"><p>Plots sig and ref spectra, sub and div normalisation and fit for the ROI average,
+a single pixel, and each of the AOIs. Stacked on top of each other for comparison.
+The ROI average fit is plot against the fit of all of the others for comparison.</p>
+<p>Note here and elsewhere the single pixel check is the first element of the AOI array.</p>
+<h2 id="arguments">Arguments</h2>
 <dl>
-<dt><strong><code>b_defects</code></strong> :&ensp;<code>tuple[npt.ArrayLike]</code></dt>
-<dd>b_defect images or values.</dd>
-<dt><strong><code>name</code></strong> :&ensp;<code>str = ""</code></dt>
-<dd>title etc.</dd>
-<dt><strong><code>c_range_type</code></strong> :&ensp;<code>str = ""</code></dt>
-<dd>Type of colormap range to use. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code></dd>
-<dt><strong><code>c_range_values</code></strong> :&ensp;<code>tuple[float, float] = ()</code></dt>
-<dd>Values to use for colormap range. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code></dd>
-<dt><strong><code>opath</code></strong> :&ensp;<code>str = ""</code></dt>
+<dt><strong><code>aoi_fit_results</code></strong> :&ensp;<code>dict</code></dt>
+<dd>dict["AOI_num"] =&gt; dict["fit_backend"] =&gt; dukit.share.AoiFit</dd>
+<dt><strong><code>roi_fit_results</code></strong> :&ensp;<code>dict</code></dt>
+<dd>dict["fit_backend"] =&gt; dukit.share.RoiAvgFit</dd>
+<dt><strong><code>aoi_coords</code></strong> :&ensp;<code>tuple[int, int, int, int]</code></dt>
+<dd>AOI coordinates</dd>
+<dt><strong><code>img_shape</code></strong> :&ensp;<code>tuple[int, int]</code></dt>
+<dd>Shape of the image, used to get the single pixel AOI.</dd>
+<dt><strong><code>opath</code></strong> :&ensp;<code>str</code></dt>
 <dd>If given, save figure here.</dd>
-<dt><strong><code>**kwargs</code></strong></dt>
-<dd>Plotting options passed to <code><a title="dukit.itool.plot_image_on_ax" href="itool.html#dukit.itool.plot_image_on_ax">plot_image_on_ax()</a></code></dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
@@ -1842,6 +656,11 @@ The ROI average fit is plot against the fit of all of the others for comparison.
 <dt><strong><code>ax</code></strong> :&ensp;<code>plt.Axes</code></dt>
 <dd>&nbsp;</dd>
 </dl></div>
+</dd>
+<dt id="dukit.plot.b_defects"><code class="name flex">
+<span>def <span class="ident">b_defects</span></span>(<span>b_defects: tuple[ArrayLike],<br>name: str = '',<br>c_range_type: str = '',<br>c_range_values: tuple[float, float] = (),<br>opath: str = '',<br>**kwargs) ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1902,23 +721,16 @@ The ROI average fit is plot against the fit of all of the others for comparison.
             ax = axs
         else:
             ax = axs[i]
-        dukit.itool.plot_image_on_ax(
-            fig, ax, bd, name, c_map, c_range, &#34;B (T)&#34;, **kwargs
-        )
+        dukit.itool.plot_image_on_ax(fig, ax, bd, name, c_map, c_range, &#34;B (T)&#34;, **kwargs)
 
     if opath:
         fig.savefig(opath)
     return fig, axs</code></pre>
 </details>
-</dd>
-<dt id="dukit.plot.dshifts"><code class="name flex">
-<span>def <span class="ident">dshifts</span></span>(<span>dshifts: tuple[typing.Union[numpy._typing._array_like._SupportsArray[numpy.dtype[typing.Any]], numpy._typing._nested_sequence._NestedSequence[numpy._typing._array_like._SupportsArray[numpy.dtype[typing.Any]]], bool, int, float, complex, str, bytes, numpy._typing._nested_sequence._NestedSequence[typing.Union[bool, int, float, complex, str, bytes]]]], name: str = '', c_range_type: str = '', c_range_values: tuple[float, float] = (), opath: str = '', **kwargs) ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
-</code></dt>
-<dd>
 <div class="desc"><p>Plots the b_defects.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
-<dt><strong><code>dshifts</code></strong> :&ensp;<code>tuple[npt.ArrayLike]</code></dt>
+<dt><strong><code>b_defects</code></strong> :&ensp;<code>tuple[npt.ArrayLike]</code></dt>
 <dd>b_defect images or values.</dd>
 <dt><strong><code>name</code></strong> :&ensp;<code>str = ""</code></dt>
 <dd>title etc.</dd>
@@ -1938,6 +750,11 @@ The ROI average fit is plot against the fit of all of the others for comparison.
 <dt><strong><code>ax</code></strong> :&ensp;<code>plt.Axes</code></dt>
 <dd>&nbsp;</dd>
 </dl></div>
+</dd>
+<dt id="dukit.plot.dshifts"><code class="name flex">
+<span>def <span class="ident">dshifts</span></span>(<span>dshifts: tuple[ArrayLike],<br>name: str = '',<br>c_range_type: str = '',<br>c_range_values: tuple[float, float] = (),<br>opath: str = '',<br>**kwargs) ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1951,7 +768,7 @@ The ROI average fit is plot against the fit of all of the others for comparison.
     **kwargs,
 ) -&gt; tuple[plt.Figure, plt.Axes]:
     &#34;&#34;&#34;
-    Plots the b_defects.
+    Plots b_defects.
 
     Parameters
     ----------
@@ -1990,9 +807,7 @@ The ROI average fit is plot against the fit of all of the others for comparison.
     # axs index: axs[row, col]
     for i, dshift in enumerate(dshifts):
         if &#34;c_range&#34; not in kwargs and c_range_type and c_range_values:
-            c_range = dukit.itool.get_colormap_range(
-                c_range_type, c_range_values, dshift
-            )
+            c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, dshift)
         else:
             c_range = dukit.itool.get_colormap_range(&#34;min_max&#34;, (), dshift)
 
@@ -2000,52 +815,40 @@ The ROI average fit is plot against the fit of all of the others for comparison.
             ax = axs
         else:
             ax = axs[i]
-        dukit.itool.plot_image_on_ax(
-            fig, ax, dshift, name, c_map, c_range, &#34;D (MHz)&#34;, **kwargs
-        )
+        dukit.itool.plot_image_on_ax(fig, ax, dshift, name, c_map, c_range, &#34;D (MHz)&#34;, **kwargs)
 
     if opath:
         fig.savefig(opath)
     return fig, axs</code></pre>
 </details>
-</dd>
-<dt id="dukit.plot.pl_param_image"><code class="name flex">
-<span>def <span class="ident">pl_param_image</span></span>(<span>fit_model: <a title="dukit.pl.model.FitModel" href="pl/model.html#dukit.pl.model.FitModel">FitModel</a>, pixel_fit_params: dict, param_name: str, param_number: int = 0, c_range_type: str = '', c_range_values: tuple[float, float] = (), errorplot: bool = False, opath: str = '', **kwargs) ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Plots an image corresponding to a single parameter in pixel_fit_params.</p>
-<h2 id="arguments">Arguments</h2>
+<div class="desc"><p>Plots b_defects.</p>
+<h2 id="parameters">Parameters</h2>
 <dl>
-<dt><strong><code>options</code></strong> :&ensp;<code>dict</code></dt>
-<dd>Generic options dict holding all the user options.</dd>
-<dt><strong><code>fit_model</code></strong> :&ensp;<code><a title="dukit.pl.model.FitModel" href="pl/model.html#dukit.pl.model.FitModel">FitModel</a></code></dt>
-<dd>Model we're fitting to.</dd>
-<dt><strong><code>pixel_fit_params</code></strong> :&ensp;<code>dict</code></dt>
-<dd>Dictionary, key: param_keys, val: image (2D) of param values across FOV.</dd>
-<dt><strong><code>param_name</code></strong> :&ensp;<code>str</code></dt>
-<dd>Name of parameter you want to plot, e.g. 'fwhm'. Can also be 'residual'.</dd>
+<dt><strong><code>dshifts</code></strong> :&ensp;<code>tuple[npt.ArrayLike]</code></dt>
+<dd>b_defect images or values.</dd>
+<dt><strong><code>name</code></strong> :&ensp;<code>str = ""</code></dt>
+<dd>title etc.</dd>
+<dt><strong><code>c_range_type</code></strong> :&ensp;<code>str = ""</code></dt>
+<dd>Type of colormap range to use. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code></dd>
+<dt><strong><code>c_range_values</code></strong> :&ensp;<code>tuple[float, float] = ()</code></dt>
+<dd>Values to use for colormap range. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code></dd>
+<dt><strong><code>opath</code></strong> :&ensp;<code>str = ""</code></dt>
+<dd>If given, save figure here.</dd>
+<dt><strong><code>**kwargs</code></strong></dt>
+<dd>Plotting options passed to <code><a title="dukit.itool.plot_image_on_ax" href="itool.html#dukit.itool.plot_image_on_ax">plot_image_on_ax()</a></code></dd>
 </dl>
-<h2 id="optional-arguments">Optional Arguments</h2>
-<p>c_range_type : str = ""
-Type of colormap range to use. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code>
-c_range_values : tuple[float, float] = ()
-Values to use for colormap range. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code>
-param_number : int, default-0
-Which version of the parameter you want. I.e. there might be 8 independent
-parameters in the fit model called 'pos', each labeled 'pos_0', 'pos_1' etc.
-errorplot : bool
-Default: false. Denotes that errors dict has been passed in (e.g. sigmas), so
-ylabel &amp; save names are changed accordingly.
-Can't be True if param_name='residual'.
-opath : str
-If given, tries to save figure here.
-**kwargs
-Plotting options passed to <code><a title="dukit.itool.plot_image_on_ax" href="itool.html#dukit.itool.plot_image_on_ax">plot_image_on_ax()</a></code></p>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><strong><code>fig</code></strong> :&ensp;<code>matplotlib Figure object</code></dt>
+<dt><strong><code>fig</code></strong> :&ensp;<code>plt.Figure</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>ax</code></strong> :&ensp;<code>plt.Axes</code></dt>
 <dd>&nbsp;</dd>
 </dl></div>
+</dd>
+<dt id="dukit.plot.pl_param_image"><code class="name flex">
+<span>def <span class="ident">pl_param_image</span></span>(<span>fit_model: <a title="dukit.pl.model.FitModel" href="pl/model.html#dukit.pl.model.FitModel">FitModel</a>,<br>pixel_fit_params: dict,<br>param_name: str,<br>param_number: int = 0,<br>c_range_type: str = '',<br>c_range_values: tuple[float, float] = (),<br>errorplot: bool = False,<br>opath: str = '',<br>**kwargs) ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2100,9 +903,7 @@ Plotting options passed to <code><a title="dukit.itool.plot_image_on_ax" href="i
 
     image = pixel_fit_params[param_name + &#34;_&#34; + str(param_number)]
     if param_name == &#34;residual&#34; and errorplot:
-        dukit.warn.warn(
-            &#34;residual doesn&#39;t have an error, can&#39;t plot residual sigma (ret. None).&#34;
-        )
+        dukit.warn.warn(&#34;residual doesn&#39;t have an error, can&#39;t plot residual sigma (ret. None).&#34;)
         return None
 
     if errorplot:
@@ -2131,41 +932,44 @@ Plotting options passed to <code><a title="dukit.itool.plot_image_on_ax" href="i
 
     return fig, ax</code></pre>
 </details>
-</dd>
-<dt id="dukit.plot.pl_param_images"><code class="name flex">
-<span>def <span class="ident">pl_param_images</span></span>(<span>fit_model: <a title="dukit.pl.model.FitModel" href="pl/model.html#dukit.pl.model.FitModel">FitModel</a>, pixel_fit_params: dict, param_name: str, c_range_type: str = '', c_range_values: tuple[float, float] = (), errorplot: bool = False, opath: str = '', **kwargs)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Plots images for all independent versions of a single parameter type in
-pixel_fit_params.</p>
+<div class="desc"><p>Plots an image corresponding to a single parameter in pixel_fit_params.</p>
 <h2 id="arguments">Arguments</h2>
 <dl>
-<dt><strong><code>fit_model</code></strong> :&ensp;<code>qdmpy.pl.model.FitModel</code></dt>
+<dt><strong><code>options</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Generic options dict holding all the user options.</dd>
+<dt><strong><code>fit_model</code></strong> :&ensp;<code><a title="dukit.pl.model.FitModel" href="pl/model.html#dukit.pl.model.FitModel">FitModel</a></code></dt>
 <dd>Model we're fitting to.</dd>
 <dt><strong><code>pixel_fit_params</code></strong> :&ensp;<code>dict</code></dt>
 <dd>Dictionary, key: param_keys, val: image (2D) of param values across FOV.</dd>
 <dt><strong><code>param_name</code></strong> :&ensp;<code>str</code></dt>
 <dd>Name of parameter you want to plot, e.g. 'fwhm'. Can also be 'residual'.</dd>
-<dt><strong><code>c_range_type</code></strong> :&ensp;<code>str = ""</code></dt>
-<dd>Type of colormap range to use. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code></dd>
-<dt><strong><code>c_range_values</code></strong> :&ensp;<code>tuple[float, float] = ()</code></dt>
-<dd>Values to use for colormap range. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code></dd>
-<dt><strong><code>errorplot</code></strong> :&ensp;<code>bool</code></dt>
-<dd>Default: false. Denotes that errors dict has been passed in (e.g. sigmas), so
-ylabel &amp; save names are changed accordingly.
-Can't be True if param_name='residual'.</dd>
-<dt><strong><code>opath</code></strong> :&ensp;<code>str</code></dt>
-<dd>If given, tries to save figure here.</dd>
-<dt><strong><code>**kwargs</code></strong></dt>
-<dd>Plotting options passed to <code><a title="dukit.itool.plot_image_on_ax" href="itool.html#dukit.itool.plot_image_on_ax">plot_image_on_ax()</a></code></dd>
 </dl>
+<h2 id="optional-arguments">Optional Arguments</h2>
+<p>c_range_type : str = ""
+Type of colormap range to use. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code>
+c_range_values : tuple[float, float] = ()
+Values to use for colormap range. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code>
+param_number : int, default-0
+Which version of the parameter you want. I.e. there might be 8 independent
+parameters in the fit model called 'pos', each labeled 'pos_0', 'pos_1' etc.
+errorplot : bool
+Default: false. Denotes that errors dict has been passed in (e.g. sigmas), so
+ylabel &amp; save names are changed accordingly.
+Can't be True if param_name='residual'.
+opath : str
+If given, tries to save figure here.
+**kwargs
+Plotting options passed to <code><a title="dukit.itool.plot_image_on_ax" href="itool.html#dukit.itool.plot_image_on_ax">plot_image_on_ax()</a></code></p>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><strong><code>fig</code></strong> :&ensp;<code>plt.Figure</code></dt>
-<dd>&nbsp;</dd>
-<dt><strong><code>ax</code></strong> :&ensp;<code>plt.Axes</code></dt>
+<dt><strong><code>fig</code></strong> :&ensp;<code>matplotlib Figure object</code></dt>
 <dd>&nbsp;</dd>
 </dl></div>
+</dd>
+<dt id="dukit.plot.pl_param_images"><code class="name flex">
+<span>def <span class="ident">pl_param_images</span></span>(<span>fit_model: <a title="dukit.pl.model.FitModel" href="pl/model.html#dukit.pl.model.FitModel">FitModel</a>,<br>pixel_fit_params: dict,<br>param_name: str,<br>c_range_type: str = '',<br>c_range_values: tuple[float, float] = (),<br>errorplot: bool = False,<br>opath: str = '',<br>**kwargs)</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2221,9 +1025,7 @@ Can't be True if param_name='residual'.</dd>
         return None
 
     if param_name == &#34;residual&#34; and errorplot:
-        dukit.warn.warn(
-            &#34;residual doesn&#39;t have an error, can&#39;t plot residual sigma (ret. None).&#34;
-        )
+        dukit.warn.warn(&#34;residual doesn&#39;t have an error, can&#39;t plot residual sigma (ret. None).&#34;)
         return None
 
     # plot 2 columns wide, as many rows as required
@@ -2287,12 +1089,8 @@ Can't be True if param_name='residual'.</dd>
                 param_nums.append(nk // 2 + 1)
             if len(param_nums) &lt; 4:
                 param_nums.extend([-1 for _ in range(4 - len(param_nums))])  # dummies
-            param_nums.extend(
-                list(range(nk - 1, (nk - 1) // 2, -1))
-            )  # range(start, stop, step)
-            param_nums.extend(
-                [-1 for _ in range(8 - len(param_nums))]
-            )  # add on dummies
+            param_nums.extend(list(range(nk - 1, (nk - 1) // 2, -1)))  # range(start, stop, step)
+            param_nums.extend([-1 for _ in range(8 - len(param_nums))])  # add on dummies
             param_axis_iterator = zip(param_nums, axs.flatten())
         # otherwise plot in a more conventional order
         else:
@@ -2313,9 +1111,7 @@ Can't be True if param_name='residual'.</dd>
                 c_label = fit_model.get_param_unit(param_name, param_number)
 
             if &#34;c_range&#34; not in kwargs and c_range_type and c_range_values:
-                c_range = dukit.itool.get_colormap_range(
-                    c_range_type, c_range_values, image_data
-                )
+                c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, image_data)
             else:
                 c_range = dukit.itool.get_colormap_range(&#34;min_max&#34;, (), image_data)
 
@@ -2334,24 +1130,807 @@ Can't be True if param_name='residual'.</dd>
 
     return fig, axs</code></pre>
 </details>
-</dd>
-<dt id="dukit.plot.roi_avg_fits"><code class="name flex">
-<span>def <span class="ident">roi_avg_fits</span></span>(<span>roi_results: dict[str, <a title="dukit.share.RoiAvgFit" href="share.html#dukit.share.RoiAvgFit">RoiAvgFit</a>], opath: str = '')</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Plots fit of spectrum averaged across ROI, as well as corresponding residual values.</p>
+<div class="desc"><p>Plots images for all independent versions of a single parameter type in
+pixel_fit_params.</p>
 <h2 id="arguments">Arguments</h2>
 <dl>
-<dt><strong><code>roi_results</code></strong> :&ensp;<code>dict[str, <a title="dukit.share.RoiAvgFit" href="share.html#dukit.share.RoiAvgFit">RoiAvgFit</a></code></dt>
-<dd>dict["fit_backend"] =&gt; RoiAvgFit</dd>
+<dt><strong><code>fit_model</code></strong> :&ensp;<code>qdmpy.pl.model.FitModel</code></dt>
+<dd>Model we're fitting to.</dd>
+<dt><strong><code>pixel_fit_params</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary, key: param_keys, val: image (2D) of param values across FOV.</dd>
+<dt><strong><code>param_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of parameter you want to plot, e.g. 'fwhm'. Can also be 'residual'.</dd>
+<dt><strong><code>c_range_type</code></strong> :&ensp;<code>str = ""</code></dt>
+<dd>Type of colormap range to use. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code></dd>
+<dt><strong><code>c_range_values</code></strong> :&ensp;<code>tuple[float, float] = ()</code></dt>
+<dd>Values to use for colormap range. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code></dd>
+<dt><strong><code>errorplot</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Default: false. Denotes that errors dict has been passed in (e.g. sigmas), so
+ylabel &amp; save names are changed accordingly.
+Can't be True if param_name='residual'.</dd>
 <dt><strong><code>opath</code></strong> :&ensp;<code>str</code></dt>
-<dd>If given, save figure here.</dd>
+<dd>If given, tries to save figure here.</dd>
+<dt><strong><code>**kwargs</code></strong></dt>
+<dd>Plotting options passed to <code><a title="dukit.itool.plot_image_on_ax" href="itool.html#dukit.itool.plot_image_on_ax">plot_image_on_ax()</a></code></dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><strong><code>fig</code></strong> :&ensp;<code>matplotlib Figure object</code></dt>
+<dt><strong><code>fig</code></strong> :&ensp;<code>plt.Figure</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>ax</code></strong> :&ensp;<code>plt.Axes</code></dt>
 <dd>&nbsp;</dd>
 </dl></div>
+</dd>
+<dt id="dukit.plot.plot_current_density"><code class="name flex">
+<span>def <span class="ident">plot_current_density</span></span>(<span>current_data: dict[str, numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]],<br>name: str = 'Current Density',<br>c_range_type: str = 'percentile',<br>c_range_values: tuple[float, float] = (2, 98),<br>opath: str = '',<br>raw_pixel_size: float | None = None,<br>applied_binning: tuple[int, int] | int = 1,<br>annotate_polygons: bool = False,<br>polygon_nodes: list | None = None,<br>**kwargs) ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_current_density(
+    current_data: dict[str, npt.NDArray],
+    name: str = &#34;Current Density&#34;,
+    c_range_type: str = &#34;percentile&#34;,
+    c_range_values: tuple[float, float] = (2, 98),
+    opath: str = &#34;&#34;,
+    raw_pixel_size: float | None = None,
+    applied_binning: int | tuple[int, int] = 1,
+    annotate_polygons: bool = False,
+    polygon_nodes: list | None = None,
+    **kwargs,
+) -&gt; tuple[plt.Figure, plt.Axes]:
+    &#34;&#34;&#34;
+    Plot current density components (Jx, Jy) and magnitude (Jnorm).
+
+    Parameters
+    ----------
+    current_data : dict[str, npt.NDArray]
+        Dictionary with keys &#34;Jx&#34;, &#34;Jy&#34;, &#34;Jnorm&#34; containing 2D arrays in A/m.
+    name : str, default=&#34;Current Density&#34;
+        Base title for the plots.
+    c_range_type : str, default=&#34;percentile&#34;
+        Type of colormap range. See `dukit.itool.get_colormap_range`.
+    c_range_values : tuple[float, float], default=(2, 98)
+        Values for colormap range.
+    opath : str, default=&#34;&#34;
+        If given, saves figure to this path.
+    raw_pixel_size : float | None, optional
+        Raw pixel size in nm for scalebar.
+    applied_binning : int | tuple[int, int], default=1
+        Binning applied to determine effective pixel size.
+    annotate_polygons : bool, default=False
+        If True, annotate polygons on the plot.
+    polygon_nodes : list | None, optional
+        List of polygon node lists for annotation.
+    **kwargs
+        Additional plotting options passed to `dukit.itool.plot_image_on_ax`.
+
+    Returns
+    -------
+    fig : plt.Figure
+        The matplotlib figure object.
+    ax : np.ndarray of plt.Axes
+        Array of matplotlib axes objects (Jx, Jy, Jnorm).
+
+    Examples
+    --------
+    &gt;&gt;&gt; # Plot current density from source reconstruction
+    &gt;&gt;&gt; current = dukit.source.get_current_from_bxyz(Bx, By, pixel_size=1e-6)
+    &gt;&gt;&gt; dukit.plot.plot_current_density(
+    ...     current,
+    ...     name=&#34;Reconstructed Current&#34;,
+    ...     c_range_type=&#34;percentile&#34;
+    ... )
+    &#34;&#34;&#34;
+    required_keys = [&#34;Jx&#34;, &#34;Jy&#34;, &#34;Jnorm&#34;]
+    for key in required_keys:
+        if key not in current_data:
+            raise ValueError(f&#34;current_data must contain &#39;{key}&#39; key&#34;)
+
+    figsize = mpl.rcParams[&#34;figure.figsize&#34;].copy()
+    figsize[0] *= 3  # Three panels: Jx, Jy, Jnorm
+    fig, axs = plt.subplots(ncols=3, figsize=figsize)
+
+    components = [&#34;Jx&#34;, &#34;Jy&#34;, &#34;Jnorm&#34;]
+    c_labels = [&#34;Jx (A/m)&#34;, &#34;Jy (A/m)&#34;, &#34;|J| (A/m)&#34;]
+
+    for i, (comp, c_label) in enumerate(zip(components, c_labels)):
+        data = current_data[comp]
+
+        if &#34;c_map&#34; in kwargs:
+            c_map = kwargs.pop(&#34;c_map&#34;)
+        else:
+            c_map = &#34;viridis&#34; if comp == &#34;Jnorm&#34; else &#34;RdBu_r&#34;
+
+        c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, data)
+        title = f&#34;{name} - {comp}&#34;
+
+        dukit.itool.plot_image_on_ax(
+            fig,
+            axs[i],
+            data,
+            title=title,
+            c_range=c_range,
+            c_label=c_label,
+            c_map=c_map,
+            raw_pixel_size=raw_pixel_size,
+            applied_binning=applied_binning,
+            annotate_polygons=annotate_polygons,
+            polygon_nodes=polygon_nodes,
+            **kwargs,
+        )
+
+    if opath:
+        fig.savefig(opath)
+
+    return fig, axs</code></pre>
+</details>
+<div class="desc"><p>Plot current density components (Jx, Jy) and magnitude (Jnorm).</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>current_data</code></strong> :&ensp;<code>dict[str, npt.NDArray]</code></dt>
+<dd>Dictionary with keys "Jx", "Jy", "Jnorm" containing 2D arrays in A/m.</dd>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code>, default=<code>"Current Density"</code></dt>
+<dd>Base title for the plots.</dd>
+<dt><strong><code>c_range_type</code></strong> :&ensp;<code>str</code>, default=<code>"percentile"</code></dt>
+<dd>Type of colormap range. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code>.</dd>
+<dt><strong><code>c_range_values</code></strong> :&ensp;<code>tuple[float, float]</code>, default=<code>(2, 98)</code></dt>
+<dd>Values for colormap range.</dd>
+<dt><strong><code>opath</code></strong> :&ensp;<code>str</code>, default=<code>""</code></dt>
+<dd>If given, saves figure to this path.</dd>
+<dt><strong><code>raw_pixel_size</code></strong> :&ensp;<code>float | None</code>, optional</dt>
+<dd>Raw pixel size in nm for scalebar.</dd>
+<dt><strong><code>applied_binning</code></strong> :&ensp;<code>int | tuple[int, int]</code>, default=<code>1</code></dt>
+<dd>Binning applied to determine effective pixel size.</dd>
+<dt><strong><code>annotate_polygons</code></strong> :&ensp;<code>bool</code>, default=<code>False</code></dt>
+<dd>If True, annotate polygons on the plot.</dd>
+<dt><strong><code>polygon_nodes</code></strong> :&ensp;<code>list | None</code>, optional</dt>
+<dd>List of polygon node lists for annotation.</dd>
+<dt><strong><code>**kwargs</code></strong></dt>
+<dd>Additional plotting options passed to <code><a title="dukit.itool.plot_image_on_ax" href="itool.html#dukit.itool.plot_image_on_ax">plot_image_on_ax()</a></code>.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>fig</code></strong> :&ensp;<code>plt.Figure</code></dt>
+<dd>The matplotlib figure object.</dd>
+<dt><strong><code>ax</code></strong> :&ensp;<code>np.ndarray</code> of <code>plt.Axes</code></dt>
+<dd>Array of matplotlib axes objects (Jx, Jy, Jnorm).</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; # Plot current density from source reconstruction
+&gt;&gt;&gt; current = dukit.source.get_current_from_bxyz(Bx, By, pixel_size=1e-6)
+&gt;&gt;&gt; dukit.plot.plot_current_density(
+...     current,
+...     name=&quot;Reconstructed Current&quot;,
+...     c_range_type=&quot;percentile&quot;
+... )
+</code></pre></div>
+</dd>
+<dt id="dukit.plot.plot_current_stream"><code class="name flex">
+<span>def <span class="ident">plot_current_stream</span></span>(<span>current_data: dict[str, numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]],<br>name: str = 'Current Streamlines',<br>background_image: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]] | None = None,<br>c_range_type: str = 'percentile',<br>c_range_values: tuple[float, float] = (2, 98),<br>opath: str = '',<br>raw_pixel_size: float | None = None,<br>applied_binning: tuple[int, int] | int = 1,<br>density: float = 1.5,<br>linewidth: float | None = None,<br>arrowsize: float = 1.5,<br>color: str = 'white',<br>vary_linewidth: bool = True,<br>min_linewidth: float = 0.5,<br>max_linewidth: float = 3.0,<br>annotate_polygons: bool = False,<br>polygon_nodes: list | None = None,<br>**kwargs) ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_current_stream(
+    current_data: dict[str, npt.NDArray],
+    name: str = &#34;Current Streamlines&#34;,
+    background_image: npt.NDArray | None = None,
+    c_range_type: str = &#34;percentile&#34;,
+    c_range_values: tuple[float, float] = (2, 98),
+    opath: str = &#34;&#34;,
+    raw_pixel_size: float | None = None,
+    applied_binning: int | tuple[int, int] = 1,
+    density: float = 1.5,
+    linewidth: float | None = None,
+    arrowsize: float = 1.5,
+    color: str = &#34;white&#34;,
+    vary_linewidth: bool = True,
+    min_linewidth: float = 0.5,
+    max_linewidth: float = 3.0,
+    annotate_polygons: bool = False,
+    polygon_nodes: list | None = None,
+    **kwargs,
+) -&gt; tuple[plt.Figure, plt.Axes]:
+    &#34;&#34;&#34;
+    Plot current density as streamlines overlaid on Jnorm magnitude.
+
+    This creates a visualization similar to those in Broadway et al. 2020,
+    showing current flow patterns overlaid on the current magnitude.
+
+    Parameters
+    ----------
+    current_data : dict[str, npt.NDArray]
+        Dictionary with keys &#34;Jx&#34;, &#34;Jy&#34;, &#34;Jnorm&#34; containing 2D arrays in A/m.
+    name : str, default=&#34;Current Streamlines&#34;
+        Title for the plot.
+    background_image : npt.NDArray | None, optional
+        Optional background image (e.g., PL image) to display behind streamlines.
+    c_range_type : str, default=&#34;percentile&#34;
+        Type of colormap range for Jnorm background. See `dukit.itool.get_colormap_range`.
+    c_range_values : tuple[float, float], default=(2, 98)
+        Values for colormap range.
+    opath : str, default=&#34;&#34;
+        If given, saves figure to this path.
+    raw_pixel_size : float | None, optional
+        Raw pixel size in nm for scalebar.
+    applied_binning : int | tuple[int, int], default=1
+        Binning applied to determine effective pixel size.
+    density : float, default=1.5
+        Density of streamlines. Higher values = more lines.
+    linewidth : float | None, optional
+        Fixed linewidth for streamlines. If None and vary_linewidth=True,
+        linewidth varies with current magnitude.
+    arrowsize : float, default=1.5
+        Size of arrows on streamlines.
+    color : str, default=&#34;white&#34;
+        Color for streamlines.
+    vary_linewidth : bool, default=True
+        If True, vary linewidth based on current magnitude.
+    min_linewidth : float, default=0.5
+        Minimum linewidth when varying.
+    max_linewidth : float, default=3.0
+        Maximum linewidth when varying.
+    annotate_polygons : bool, default=False
+        If True, annotate polygons on the plot.
+    polygon_nodes : list | None, optional
+        List of polygon node lists for annotation.
+    **kwargs
+        Additional plotting options passed to `dukit.itool.plot_image_on_ax`.
+
+    Returns
+    -------
+    fig : plt.Figure
+        The matplotlib figure object.
+    ax : plt.Axes
+        The matplotlib axes object.
+
+    Examples
+    --------
+    &gt;&gt;&gt; # Plot current streamlines with variable linewidth
+    &gt;&gt;&gt; current = dukit.source.get_current_from_bxyz(Bx, By, pixel_size=1e-6)
+    &gt;&gt;&gt; dukit.plot.plot_current_stream(
+    ...     current,
+    ...     name=&#34;Current Flow&#34;,
+    ...     vary_linewidth=True,
+    ...     density=2.0
+    ... )
+
+    Reference
+    ---------
+    D. A. Broadway et al., Phys. Rev. Applied 14, 024076 (2020)
+    &#34;&#34;&#34;
+    required_keys = [&#34;Jx&#34;, &#34;Jy&#34;, &#34;Jnorm&#34;]
+    for key in required_keys:
+        if key not in current_data:
+            raise ValueError(f&#34;current_data must contain &#39;{key}&#39; key&#34;)
+
+    Jx = current_data[&#34;Jx&#34;]
+    Jy = current_data[&#34;Jy&#34;]
+    Jnorm = current_data[&#34;Jnorm&#34;]
+
+    fig, ax = plt.subplots()
+
+    # Plot background if provided
+    if background_image is not None:
+        bg_norm = (background_image - np.nanmin(background_image)) / (
+            np.nanmax(background_image) - np.nanmin(background_image)
+        )
+        ax.imshow(bg_norm, cmap=&#34;Greys_r&#34;, alpha=0.5)
+
+    # Determine colormap range for Jnorm
+    c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, Jnorm)
+
+    # Plot Jnorm as background
+    im = ax.imshow(
+        Jnorm,
+        cmap=&#34;viridis&#34;,
+        vmin=c_range[0],
+        vmax=c_range[1],
+        alpha=0.8 if background_image is not None else 1.0,
+    )
+
+    # Calculate streamline linewidths
+    if vary_linewidth and linewidth is None:
+        # Normalize Jnorm to linewidth range
+        jnorm_norm = (Jnorm - np.nanmin(Jnorm)) / (np.nanmax(Jnorm) - np.nanmin(Jnorm))
+        lw = min_linewidth + jnorm_norm * (max_linewidth - min_linewidth)
+    else:
+        lw = linewidth if linewidth is not None else 1.0
+
+    # Create streamplot
+    # Note: streamplot expects (x, y) meshgrid, but our arrays are (row, col) = (y, x)
+    # So we swap Jx and Jy appropriately
+    shape = Jx.shape
+    y_grid, x_grid = np.mgrid[0 : shape[0], 0 : shape[1]]
+
+    if isinstance(lw, np.ndarray):
+        # Variable linewidth - need to use a trick with multiple streamplots
+        # or use linewidth as an array (supported in newer matplotlib versions)
+        try:
+            ax.streamplot(
+                x_grid,
+                y_grid,
+                Jx,
+                Jy,
+                color=color,
+                linewidth=lw,
+                density=density,
+                arrowsize=arrowsize,
+            )
+        except TypeError:
+            # Fall back to fixed linewidth if array not supported
+            ax.streamplot(
+                x_grid,
+                y_grid,
+                Jx,
+                Jy,
+                color=color,
+                linewidth=1.5,
+                density=density,
+                arrowsize=arrowsize,
+            )
+    else:
+        ax.streamplot(
+            x_grid,
+            y_grid,
+            Jx,
+            Jy,
+            color=color,
+            linewidth=lw,
+            density=density,
+            arrowsize=arrowsize,
+        )
+
+    ax.set_title(name)
+    ax.set_aspect(&#34;equal&#34;)
+
+    # Add colorbar for Jnorm
+    from mpl_toolkits.axes_grid1 import make_axes_locatable
+
+    divider = make_axes_locatable(ax)
+    cax = divider.append_axes(&#34;right&#34;, size=&#34;5%&#34;, pad=0.05)
+    cbar = fig.colorbar(im, cax=cax)
+    cbar.set_label(&#34;|J| (A/m)&#34;, rotation=270, labelpad=15)
+
+    # Add scalebar if pixel size provided
+    if raw_pixel_size is not None:
+        from matplotlib_scalebar.scalebar import ScaleBar
+
+        effective_pixel_size = (
+            raw_pixel_size * applied_binning * 1e-9
+            if isinstance(applied_binning, int)
+            else raw_pixel_size * applied_binning[0] * 1e-9
+        )
+        scalebar = ScaleBar(effective_pixel_size)
+        ax.add_artist(scalebar)
+
+    # Annotate polygons if requested
+    if annotate_polygons and polygon_nodes is not None:
+        for nodes in polygon_nodes:
+            patch = patches.Polygon(
+                np.array(nodes),
+                fill=False,
+                edgecolor=&#34;white&#34;,
+                linewidth=1.5,
+                linestyle=&#34;--&#34;,
+            )
+            ax.add_patch(patch)
+
+    # Remove ticks for cleaner look
+    ax.set_xticks([])
+    ax.set_yticks([])
+
+    if opath:
+        fig.savefig(opath)
+
+    return fig, ax</code></pre>
+</details>
+<div class="desc"><p>Plot current density as streamlines overlaid on Jnorm magnitude.</p>
+<p>This creates a visualization similar to those in Broadway et al. 2020,
+showing current flow patterns overlaid on the current magnitude.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>current_data</code></strong> :&ensp;<code>dict[str, npt.NDArray]</code></dt>
+<dd>Dictionary with keys "Jx", "Jy", "Jnorm" containing 2D arrays in A/m.</dd>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code>, default=<code>"Current Streamlines"</code></dt>
+<dd>Title for the plot.</dd>
+<dt><strong><code>background_image</code></strong> :&ensp;<code>npt.NDArray | None</code>, optional</dt>
+<dd>Optional background image (e.g., PL image) to display behind streamlines.</dd>
+<dt><strong><code>c_range_type</code></strong> :&ensp;<code>str</code>, default=<code>"percentile"</code></dt>
+<dd>Type of colormap range for Jnorm background. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code>.</dd>
+<dt><strong><code>c_range_values</code></strong> :&ensp;<code>tuple[float, float]</code>, default=<code>(2, 98)</code></dt>
+<dd>Values for colormap range.</dd>
+<dt><strong><code>opath</code></strong> :&ensp;<code>str</code>, default=<code>""</code></dt>
+<dd>If given, saves figure to this path.</dd>
+<dt><strong><code>raw_pixel_size</code></strong> :&ensp;<code>float | None</code>, optional</dt>
+<dd>Raw pixel size in nm for scalebar.</dd>
+<dt><strong><code>applied_binning</code></strong> :&ensp;<code>int | tuple[int, int]</code>, default=<code>1</code></dt>
+<dd>Binning applied to determine effective pixel size.</dd>
+<dt><strong><code>density</code></strong> :&ensp;<code>float</code>, default=<code>1.5</code></dt>
+<dd>Density of streamlines. Higher values = more lines.</dd>
+<dt><strong><code>linewidth</code></strong> :&ensp;<code>float | None</code>, optional</dt>
+<dd>Fixed linewidth for streamlines. If None and vary_linewidth=True,
+linewidth varies with current magnitude.</dd>
+<dt><strong><code>arrowsize</code></strong> :&ensp;<code>float</code>, default=<code>1.5</code></dt>
+<dd>Size of arrows on streamlines.</dd>
+<dt><strong><code>color</code></strong> :&ensp;<code>str</code>, default=<code>"white"</code></dt>
+<dd>Color for streamlines.</dd>
+<dt><strong><code>vary_linewidth</code></strong> :&ensp;<code>bool</code>, default=<code>True</code></dt>
+<dd>If True, vary linewidth based on current magnitude.</dd>
+<dt><strong><code>min_linewidth</code></strong> :&ensp;<code>float</code>, default=<code>0.5</code></dt>
+<dd>Minimum linewidth when varying.</dd>
+<dt><strong><code>max_linewidth</code></strong> :&ensp;<code>float</code>, default=<code>3.0</code></dt>
+<dd>Maximum linewidth when varying.</dd>
+<dt><strong><code>annotate_polygons</code></strong> :&ensp;<code>bool</code>, default=<code>False</code></dt>
+<dd>If True, annotate polygons on the plot.</dd>
+<dt><strong><code>polygon_nodes</code></strong> :&ensp;<code>list | None</code>, optional</dt>
+<dd>List of polygon node lists for annotation.</dd>
+<dt><strong><code>**kwargs</code></strong></dt>
+<dd>Additional plotting options passed to <code><a title="dukit.itool.plot_image_on_ax" href="itool.html#dukit.itool.plot_image_on_ax">plot_image_on_ax()</a></code>.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>fig</code></strong> :&ensp;<code>plt.Figure</code></dt>
+<dd>The matplotlib figure object.</dd>
+<dt><strong><code>ax</code></strong> :&ensp;<code>plt.Axes</code></dt>
+<dd>The matplotlib axes object.</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; # Plot current streamlines with variable linewidth
+&gt;&gt;&gt; current = dukit.source.get_current_from_bxyz(Bx, By, pixel_size=1e-6)
+&gt;&gt;&gt; dukit.plot.plot_current_stream(
+...     current,
+...     name=&quot;Current Flow&quot;,
+...     vary_linewidth=True,
+...     density=2.0
+... )
+</code></pre>
+<h2 id="reference">Reference</h2>
+<p>D. A. Broadway et al., Phys. Rev. Applied 14, 024076 (2020)</p></div>
+</dd>
+<dt id="dukit.plot.plot_field_images"><code class="name flex">
+<span>def <span class="ident">plot_field_images</span></span>(<span>field_data: dict[str, numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]],<br>field_names: list[str] | None = None,<br>name: str = '',<br>c_range_type: str = '',<br>c_range_values: tuple[float, float] | None = None,<br>c_label: str = '',<br>c_map: str = 'RdBu_r',<br>opath: str = '',<br>**kwargs) ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_field_images(
+    field_data: dict[str, npt.NDArray],
+    field_names: list[str] | None = None,
+    name: str = &#34;&#34;,
+    c_range_type: str = &#34;&#34;,
+    c_range_values: tuple[float, float] | None = None,
+    c_label: str = &#34;&#34;,
+    c_map: str = &#34;RdBu_r&#34;,
+    opath: str = &#34;&#34;,
+    **kwargs,
+) -&gt; tuple[plt.Figure, plt.Axes]:
+    &#34;&#34;&#34;
+    Plots field component images (e.g., Bx, By, Bz from field reconstruction).
+
+    This is a general-purpose function for plotting any 2D field data, particularly
+    useful for visualizing results from field reconstruction methods.
+
+    Parameters
+    ----------
+    field_data : dict[str, npt.NDArray]
+        Dictionary containing field component arrays. Keys are field names
+        (e.g., &#34;Bx&#34;, &#34;By&#34;, &#34;Bz&#34;, &#34;sigma_Bx&#34;), values are 2D arrays.
+    field_names : list[str] | None, optional
+        List of field names to plot. If None, plots all fields in field_data.
+        Can be used to select specific fields or control plotting order.
+    name : str, default=&#34;&#34;
+        Base title for the plot. Individual field names will be appended.
+    c_range_type : str, default=&#34;&#34;
+        Type of colormap range to use. See `dukit.itool.get_colormap_range`.
+        Common values: &#34;percentile&#34;, &#34;min_max&#34;, &#34;strict_range&#34;.
+    c_range_values : tuple[float, float] | None, optional
+        Values to use for colormap range when c_range_type=&#34;strict_range&#34;.
+        If None and c_range_type=&#34;percentile&#34;, uses (2, 98) as default.
+    c_label : str, default=&#34;&#34;
+        Label for colorbar. If empty, attempts to infer from field names.
+    c_map : str, default=&#34;RdBu_r&#34;
+        Colormap to use.
+    opath : str, default=&#34;&#34;
+        If given, saves figure to this path.
+    **kwargs
+        Additional plotting options passed to `dukit.itool.plot_image_on_ax`.
+
+    Returns
+    -------
+    fig : plt.Figure
+        The matplotlib figure object.
+    ax : plt.Axes or np.ndarray of plt.Axes
+        The matplotlib axes object(s). For multiple fields, returns an array.
+
+    Examples
+    --------
+    &gt;&gt;&gt; # Plot reconstructed magnetic field components
+    &gt;&gt;&gt; bxyz = dukit.field.get_bxyz_from_hamiltonian(...)
+    &gt;&gt;&gt; dukit.plot.plot_field_images(
+    ...     {&#34;Bx&#34;: bxyz[&#34;Bx&#34;], &#34;By&#34;: bxyz[&#34;By&#34;], &#34;Bz&#34;: bxyz[&#34;Bz&#34;]},
+    ...     name=&#34;Hamiltonian Reconstruction&#34;,
+    ...     c_range_type=&#34;percentile&#34;,
+    ...     c_label=&#34;Magnetic Field (G)&#34;
+    ... )
+
+    &gt;&gt;&gt; # Plot uncertainties with specific range
+    &gt;&gt;&gt; dukit.plot.plot_field_images(
+    ...     {&#34;sigma_Bx&#34;: bxyz[&#34;sigma_Bx&#34;], &#34;sigma_By&#34;: bxyz[&#34;sigma_By&#34;]},
+    ...     name=&#34;Field Uncertainties&#34;,
+    ...     c_range_type=&#34;strict_range&#34;,
+    ...     c_range_values=(0, 1e-6),
+    ...     c_label=&#34;Uncertainty (G)&#34;
+    ... )
+    &#34;&#34;&#34;
+    # Determine which fields to plot
+    if field_names is None:
+        field_names = list(field_data.keys())
+    else:
+        # Filter to only include requested fields that exist
+        field_names = [name for name in field_names if name in field_data]
+
+    if not field_names:
+        raise ValueError(&#34;No valid field names provided or field_data is empty&#34;)
+
+    # Set up figure
+    n_fields = len(field_names)
+    figsize = mpl.rcParams[&#34;figure.figsize&#34;].copy()
+    figsize[0] *= n_fields  # Width scales with number of fields
+    fig, axs = plt.subplots(ncols=n_fields, figsize=figsize)
+
+    # Handle single field case
+    if n_fields == 1:
+        axs = np.array([axs])
+
+    # Infer colorbar label if not provided
+    if not c_label:
+        if any(&#34;sigma&#34; in name.lower() for name in field_names):
+            c_label = &#34;Uncertainty (G)&#34;
+        elif any(name in [&#34;Bx&#34;, &#34;By&#34;, &#34;Bz&#34;] for name in field_names):
+            c_label = &#34;Magnetic Field (G)&#34;
+        elif name == &#34;D&#34;:
+            c_label = &#34;Zero-field Splitting (MHz)&#34;
+        else:
+            c_label = &#34;Field Value&#34;
+
+    # Set default percentile range
+    if c_range_type == &#34;percentile&#34; and c_range_values is None:
+        c_range_values = (2, 98)
+
+    # Plot each field
+    for i, field_name in enumerate(field_names):
+        field_array = field_data[field_name]
+
+        # Determine colormap range
+        if c_range_type and c_range_values:
+            c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, field_array)
+        else:
+            c_range = dukit.itool.get_colormap_range(&#34;min_max&#34;, (), field_array)
+
+        # Create title
+        title = f&#34;{name} - {field_name}&#34; if name else field_name
+
+        # Plot
+        dukit.itool.plot_image_on_ax(
+            fig,
+            axs[i],
+            field_array,
+            title=title,
+            c_range=c_range,
+            c_label=c_label,
+            c_map=c_map,
+            **kwargs,
+        )
+
+    # Save if requested
+    if opath:
+        fig.savefig(opath)
+
+    # Return appropriate axes object
+    return fig, axs[0] if n_fields == 1 else axs</code></pre>
+</details>
+<div class="desc"><p>Plots field component images (e.g., Bx, By, Bz from field reconstruction).</p>
+<p>This is a general-purpose function for plotting any 2D field data, particularly
+useful for visualizing results from field reconstruction methods.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>field_data</code></strong> :&ensp;<code>dict[str, npt.NDArray]</code></dt>
+<dd>Dictionary containing field component arrays. Keys are field names
+(e.g., "Bx", "By", "Bz", "sigma_Bx"), values are 2D arrays.</dd>
+<dt><strong><code>field_names</code></strong> :&ensp;<code>list[str] | None</code>, optional</dt>
+<dd>List of field names to plot. If None, plots all fields in field_data.
+Can be used to select specific fields or control plotting order.</dd>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code>, default=<code>""</code></dt>
+<dd>Base title for the plot. Individual field names will be appended.</dd>
+<dt><strong><code>c_range_type</code></strong> :&ensp;<code>str</code>, default=<code>""</code></dt>
+<dd>Type of colormap range to use. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code>.
+Common values: "percentile", "min_max", "strict_range".</dd>
+<dt><strong><code>c_range_values</code></strong> :&ensp;<code>tuple[float, float] | None</code>, optional</dt>
+<dd>Values to use for colormap range when c_range_type="strict_range".
+If None and c_range_type="percentile", uses (2, 98) as default.</dd>
+<dt><strong><code>c_label</code></strong> :&ensp;<code>str</code>, default=<code>""</code></dt>
+<dd>Label for colorbar. If empty, attempts to infer from field names.</dd>
+<dt><strong><code>c_map</code></strong> :&ensp;<code>str</code>, default=<code>"RdBu_r"</code></dt>
+<dd>Colormap to use.</dd>
+<dt><strong><code>opath</code></strong> :&ensp;<code>str</code>, default=<code>""</code></dt>
+<dd>If given, saves figure to this path.</dd>
+<dt><strong><code>**kwargs</code></strong></dt>
+<dd>Additional plotting options passed to <code><a title="dukit.itool.plot_image_on_ax" href="itool.html#dukit.itool.plot_image_on_ax">plot_image_on_ax()</a></code>.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>fig</code></strong> :&ensp;<code>plt.Figure</code></dt>
+<dd>The matplotlib figure object.</dd>
+<dt><strong><code>ax</code></strong> :&ensp;<code>plt.Axes</code> or <code>np.ndarray</code> of <code>plt.Axes</code></dt>
+<dd>The matplotlib axes object(s). For multiple fields, returns an array.</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; # Plot reconstructed magnetic field components
+&gt;&gt;&gt; bxyz = dukit.field.get_bxyz_from_hamiltonian(...)
+&gt;&gt;&gt; dukit.plot.plot_field_images(
+...     {&quot;Bx&quot;: bxyz[&quot;Bx&quot;], &quot;By&quot;: bxyz[&quot;By&quot;], &quot;Bz&quot;: bxyz[&quot;Bz&quot;]},
+...     name=&quot;Hamiltonian Reconstruction&quot;,
+...     c_range_type=&quot;percentile&quot;,
+...     c_label=&quot;Magnetic Field (G)&quot;
+... )
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; # Plot uncertainties with specific range
+&gt;&gt;&gt; dukit.plot.plot_field_images(
+...     {&quot;sigma_Bx&quot;: bxyz[&quot;sigma_Bx&quot;], &quot;sigma_By&quot;: bxyz[&quot;sigma_By&quot;]},
+...     name=&quot;Field Uncertainties&quot;,
+...     c_range_type=&quot;strict_range&quot;,
+...     c_range_values=(0, 1e-6),
+...     c_label=&quot;Uncertainty (G)&quot;
+... )
+</code></pre></div>
+</dd>
+<dt id="dukit.plot.plot_magnetization"><code class="name flex">
+<span>def <span class="ident">plot_magnetization</span></span>(<span>magnetization: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>name: str = 'Mz',<br>c_range_type: str = 'percentile',<br>c_range_values: tuple[float, float] = (2, 98),<br>opath: str = '',<br>raw_pixel_size: float | None = None,<br>applied_binning: tuple[int, int] | int = 1,<br>annotate_polygons: bool = False,<br>polygon_nodes: list | None = None,<br>**kwargs) ‑> tuple[matplotlib.figure.Figure, matplotlib.axes._axes.Axes]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_magnetization(
+    magnetization: npt.NDArray,
+    name: str = &#34;Mz&#34;,
+    c_range_type: str = &#34;percentile&#34;,
+    c_range_values: tuple[float, float] = (2, 98),
+    opath: str = &#34;&#34;,
+    raw_pixel_size: float | None = None,
+    applied_binning: int | tuple[int, int] = 1,
+    annotate_polygons: bool = False,
+    polygon_nodes: list | None = None,
+    **kwargs,
+) -&gt; tuple[plt.Figure, plt.Axes]:
+    &#34;&#34;&#34;
+    Plot magnetization (out-of-plane Mz or in-plane Mpsi).
+
+    Parameters
+    ----------
+    magnetization : npt.NDArray
+        2D array of magnetization values in μB/nm².
+    name : str, default=&#34;Mz&#34;
+        Title for the plot. Use &#34;Mz&#34; for out-of-plane, &#34;Mpsi&#34; for in-plane.
+    c_range_type : str, default=&#34;percentile&#34;
+        Type of colormap range. See `dukit.itool.get_colormap_range`.
+    c_range_values : tuple[float, float], default=(2, 98)
+        Values for colormap range.
+    opath : str, default=&#34;&#34;
+        If given, saves figure to this path.
+    raw_pixel_size : float | None, optional
+        Raw pixel size in nm for scalebar.
+    applied_binning : int | tuple[int, int], default=1
+        Binning applied to determine effective pixel size.
+    annotate_polygons : bool, default=False
+        If True, annotate polygons on the plot.
+    polygon_nodes : list | None, optional
+        List of polygon node lists for annotation.
+    **kwargs
+        Additional plotting options passed to `dukit.itool.plot_image_on_ax`.
+
+    Returns
+    -------
+    fig : plt.Figure
+        The matplotlib figure object.
+    ax : plt.Axes
+        The matplotlib axes object.
+
+    Examples
+    --------
+    &gt;&gt;&gt; # Plot out-of-plane magnetization
+    &gt;&gt;&gt; mag = dukit.source.get_magnetization_from_bxyz(Bx, By, pixel_size=1e-6)
+    &gt;&gt;&gt; dukit.plot.plot_magnetization(
+    ...     mag[&#34;Mz&#34;],
+    ...     name=&#34;Out-of-plane Magnetization&#34;,
+    ...     c_range_type=&#34;percentile&#34;,
+    ...     c_range_values=(1, 99)
+    ... )
+    &#34;&#34;&#34;
+    fig, ax = plt.subplots()
+
+    if &#34;c_map&#34; in kwargs:
+        c_map = kwargs.pop(&#34;c_map&#34;)
+    else:
+        c_map = &#34;RdBu_r&#34;
+
+    c_range = dukit.itool.get_colormap_range(c_range_type, c_range_values, magnetization)
+
+    fig, ax = dukit.itool.plot_image_on_ax(
+        fig,
+        ax,
+        magnetization,
+        title=name,
+        c_range=c_range,
+        c_label=r&#34;Magnetization ($\mu_B$/nm$^2$)&#34;,
+        c_map=c_map,
+        raw_pixel_size=raw_pixel_size,
+        applied_binning=applied_binning,
+        annotate_polygons=annotate_polygons,
+        polygon_nodes=polygon_nodes,
+        **kwargs,
+    )
+
+    if opath:
+        fig.savefig(opath)
+
+    return fig, ax</code></pre>
+</details>
+<div class="desc"><p>Plot magnetization (out-of-plane Mz or in-plane Mpsi).</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>magnetization</code></strong> :&ensp;<code>npt.NDArray</code></dt>
+<dd>2D array of magnetization values in μB/nm².</dd>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code>, default=<code>"Mz"</code></dt>
+<dd>Title for the plot. Use "Mz" for out-of-plane, "Mpsi" for in-plane.</dd>
+<dt><strong><code>c_range_type</code></strong> :&ensp;<code>str</code>, default=<code>"percentile"</code></dt>
+<dd>Type of colormap range. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code>.</dd>
+<dt><strong><code>c_range_values</code></strong> :&ensp;<code>tuple[float, float]</code>, default=<code>(2, 98)</code></dt>
+<dd>Values for colormap range.</dd>
+<dt><strong><code>opath</code></strong> :&ensp;<code>str</code>, default=<code>""</code></dt>
+<dd>If given, saves figure to this path.</dd>
+<dt><strong><code>raw_pixel_size</code></strong> :&ensp;<code>float | None</code>, optional</dt>
+<dd>Raw pixel size in nm for scalebar.</dd>
+<dt><strong><code>applied_binning</code></strong> :&ensp;<code>int | tuple[int, int]</code>, default=<code>1</code></dt>
+<dd>Binning applied to determine effective pixel size.</dd>
+<dt><strong><code>annotate_polygons</code></strong> :&ensp;<code>bool</code>, default=<code>False</code></dt>
+<dd>If True, annotate polygons on the plot.</dd>
+<dt><strong><code>polygon_nodes</code></strong> :&ensp;<code>list | None</code>, optional</dt>
+<dd>List of polygon node lists for annotation.</dd>
+<dt><strong><code>**kwargs</code></strong></dt>
+<dd>Additional plotting options passed to <code><a title="dukit.itool.plot_image_on_ax" href="itool.html#dukit.itool.plot_image_on_ax">plot_image_on_ax()</a></code>.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>fig</code></strong> :&ensp;<code>plt.Figure</code></dt>
+<dd>The matplotlib figure object.</dd>
+<dt><strong><code>ax</code></strong> :&ensp;<code>plt.Axes</code></dt>
+<dd>The matplotlib axes object.</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; # Plot out-of-plane magnetization
+&gt;&gt;&gt; mag = dukit.source.get_magnetization_from_bxyz(Bx, By, pixel_size=1e-6)
+&gt;&gt;&gt; dukit.plot.plot_magnetization(
+...     mag[&quot;Mz&quot;],
+...     name=&quot;Out-of-plane Magnetization&quot;,
+...     c_range_type=&quot;percentile&quot;,
+...     c_range_values=(1, 99)
+... )
+</code></pre></div>
+</dd>
+<dt id="dukit.plot.roi_avg_fits"><code class="name flex">
+<span>def <span class="ident">roi_avg_fits</span></span>(<span>roi_results: dict[str, <a title="dukit.share.RoiAvgFit" href="share.html#dukit.share.RoiAvgFit">RoiAvgFit</a>],<br>opath: str = '')</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2491,34 +2070,24 @@ Can't be True if param_name='residual'.</dd>
 
     return fig</code></pre>
 </details>
-</dd>
-<dt id="dukit.plot.roi_pl_image"><code class="name flex">
-<span>def <span class="ident">roi_pl_image</span></span>(<span>pl_image: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], roi_coords: tuple[int, int, int, int], c_range_type: str = '', c_range_values: tuple[float, float] = (), opath: str = '', **kwargs)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Plots full pl image with ROI region annotated.</p>
+<div class="desc"><p>Plots fit of spectrum averaged across ROI, as well as corresponding residual values.</p>
 <h2 id="arguments">Arguments</h2>
 <dl>
-<dt><strong><code>pl_image</code></strong> :&ensp;<code>np array, 2D</code></dt>
-<dd>UNCCROPPED pl image, but binned</dd>
-<dt><strong><code>roi_coords</code></strong> :&ensp;<code>tuple[int, int, int, int]</code></dt>
-<dd>ROI coordinates</dd>
-<dt><strong><code>c_range_type</code></strong> :&ensp;<code>str = ""</code></dt>
-<dd>Type of colormap range to use. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code></dd>
-<dt><strong><code>c_range_values</code></strong> :&ensp;<code>tuple[float, float] = ()</code></dt>
-<dd>Values to use for colormap range. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code></dd>
-<dt><strong><code>opath</code></strong> :&ensp;<code>str = ""</code></dt>
-<dd>If supplied, saves figure here.</dd>
-<dt><strong><code>**kwargs</code></strong></dt>
-<dd>Plotting options passed to <code><a title="dukit.itool.plot_image_on_ax" href="itool.html#dukit.itool.plot_image_on_ax">plot_image_on_ax()</a></code></dd>
+<dt><strong><code>roi_results</code></strong> :&ensp;<code>dict[str, <a title="dukit.share.RoiAvgFit" href="share.html#dukit.share.RoiAvgFit">RoiAvgFit</a></code></dt>
+<dd>dict["fit_backend"] =&gt; RoiAvgFit</dd>
+<dt><strong><code>opath</code></strong> :&ensp;<code>str</code></dt>
+<dd>If given, save figure here.</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><strong><code>fig</code></strong> :&ensp;<code>plt.Figure</code></dt>
-<dd>&nbsp;</dd>
-<dt><strong><code>ax</code></strong> :&ensp;<code>plt.Axes</code></dt>
+<dt><strong><code>fig</code></strong> :&ensp;<code>matplotlib Figure object</code></dt>
 <dd>&nbsp;</dd>
 </dl></div>
+</dd>
+<dt id="dukit.plot.roi_pl_image"><code class="name flex">
+<span>def <span class="ident">roi_pl_image</span></span>(<span>pl_image: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>roi_coords: tuple[int, int, int, int],<br>c_range_type: str = '',<br>c_range_values: tuple[float, float] = (),<br>opath: str = '',<br>**kwargs)</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2582,6 +2151,29 @@ Can't be True if param_name='residual'.</dd>
     if opath:
         fig.savefig(opath)</code></pre>
 </details>
+<div class="desc"><p>Plots full pl image with ROI region annotated.</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>pl_image</code></strong> :&ensp;<code>np array, 2D</code></dt>
+<dd>UNCCROPPED pl image, but binned</dd>
+<dt><strong><code>roi_coords</code></strong> :&ensp;<code>tuple[int, int, int, int]</code></dt>
+<dd>ROI coordinates</dd>
+<dt><strong><code>c_range_type</code></strong> :&ensp;<code>str = ""</code></dt>
+<dd>Type of colormap range to use. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code></dd>
+<dt><strong><code>c_range_values</code></strong> :&ensp;<code>tuple[float, float] = ()</code></dt>
+<dd>Values to use for colormap range. See <code><a title="dukit.itool.get_colormap_range" href="itool.html#dukit.itool.get_colormap_range">get_colormap_range()</a></code></dd>
+<dt><strong><code>opath</code></strong> :&ensp;<code>str = ""</code></dt>
+<dd>If supplied, saves figure here.</dd>
+<dt><strong><code>**kwargs</code></strong></dt>
+<dd>Plotting options passed to <code><a title="dukit.itool.plot_image_on_ax" href="itool.html#dukit.itool.plot_image_on_ax">plot_image_on_ax()</a></code></dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>fig</code></strong> :&ensp;<code>plt.Figure</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>ax</code></strong> :&ensp;<code>plt.Axes</code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
 </dd>
 </dl>
 </section>
@@ -2593,8 +2185,8 @@ Can't be True if param_name='residual'.</dd>
 <input id="lunr-search" name="q" placeholder="🔎 Search ..." aria-label="Search"
 disabled minlength="2">
 </form>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.css" integrity="sha512-j1u8eUJ4f23xPPxwOrLUPQaCD2dwzNqqmDDcWS4deWsMv2ohLqmXXuP3hU7g8TyzbMSakP/mMqoNBYWj8AEIFg==" crossorigin>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.js" integrity="sha512-plGUER9JkeEWPPqQBE4sdLqBoQug5Ap+BCGMc7bJ8BXkm+VVj6QzkpBz5Yv2yPkkq+cqg9IpkBaGCas6uDbW8g==" crossorigin></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.css" integrity="sha512-b+T2i3P45i1LZM7I00Ci5QquB9szqaxu+uuk5TUSGjZQ4w4n+qujQiIuvTv2BxE7WCGQCifNMksyKILDiHzsOg==" crossorigin>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.js" integrity="sha512-2B9/byNV1KKRm5nQ2RLViPFD6U4dUjDGwuW1GU+ImJh8YinPU9Zlq1GzdTMO+G2ROrB5o1qasJBy1ttYz0wCug==" crossorigin></script>
 <style>
 .modal-dialog iframe {
 width: 100vw;
@@ -2635,7 +2227,6 @@ setTimeout(() => input.focus(), 100);
 }).setContent('<iframe src="' + url + '"></iframe>').open();
 }
 </script>
-<h1>Index</h1>
 <div class="toc">
 <ul>
 <li><a href="#functions">Functions</a></li>
@@ -2648,7 +2239,7 @@ setTimeout(() => input.focus(), 100);
 </ul>
 </li>
 <li><h3><a href="#header-functions">Functions</a></h3>
-<ul class="two-column">
+<ul class="">
 <li><code><a title="dukit.plot._add_patch_rect" href="#dukit.plot._add_patch_rect">_add_patch_rect</a></code></li>
 <li><code><a title="dukit.plot.aoi_pl_image" href="#dukit.plot.aoi_pl_image">aoi_pl_image</a></code></li>
 <li><code><a title="dukit.plot.aoi_spectra" href="#dukit.plot.aoi_spectra">aoi_spectra</a></code></li>
@@ -2657,6 +2248,10 @@ setTimeout(() => input.focus(), 100);
 <li><code><a title="dukit.plot.dshifts" href="#dukit.plot.dshifts">dshifts</a></code></li>
 <li><code><a title="dukit.plot.pl_param_image" href="#dukit.plot.pl_param_image">pl_param_image</a></code></li>
 <li><code><a title="dukit.plot.pl_param_images" href="#dukit.plot.pl_param_images">pl_param_images</a></code></li>
+<li><code><a title="dukit.plot.plot_current_density" href="#dukit.plot.plot_current_density">plot_current_density</a></code></li>
+<li><code><a title="dukit.plot.plot_current_stream" href="#dukit.plot.plot_current_stream">plot_current_stream</a></code></li>
+<li><code><a title="dukit.plot.plot_field_images" href="#dukit.plot.plot_field_images">plot_field_images</a></code></li>
+<li><code><a title="dukit.plot.plot_magnetization" href="#dukit.plot.plot_magnetization">plot_magnetization</a></code></li>
 <li><code><a title="dukit.plot.roi_avg_fits" href="#dukit.plot.roi_avg_fits">roi_avg_fits</a></code></li>
 <li><code><a title="dukit.plot.roi_pl_image" href="#dukit.plot.roi_pl_image">roi_pl_image</a></code></li>
 </ul>
@@ -2665,7 +2260,7 @@ setTimeout(() => input.focus(), 100);
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
 </footer>
 </body>
 </html>

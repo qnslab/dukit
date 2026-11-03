@@ -2,19 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.9.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
 <title>dukit.pl.model API documentation</title>
-<meta name="description" content="Faster numba-compiled fit model(s) …" />
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
-<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
-<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
-<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<meta name="description" content="Faster numba-compiled fit model(s) …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
 <style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
-<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
 </head>
 <body>
 <main>
@@ -30,445 +45,14 @@
 <ul>
 <li><code>qdmpy.pl.model.FitModel</code></li>
 <li><code>qdmpy.pl.model.ConstStretchedExp</code></li>
+<li><code>qdmpy.pl.model.ConstBiExponential</code></li>
 <li><code>qdmpy.pl.model.ConstDampedRabi</code></li>
 <li><code>qdmpy.pl.model.LinearLorentzians</code></li>
+<li><code>qdmpy.pl.model.LinearN15Lorentzians</code></li>
+<li><code>qdmpy.pl.model.LinearN14Lorentzians</code></li>
 <li><code>qdmpy.pl.model.ConstLorentzians</code></li>
+<li><code>qdmpy.pl.model.SkewedLorentzians</code></li>
 </ul>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python"># -*- coding: utf-8 -*-
-
-&#34;&#34;&#34;
-Faster numba-compiled fit model(s).
-
-It&#39;s a little messy to keep a relatively similar API to old FitModel.
-
-TODO include Ella&#39;s newer T1 models.
-
-Classes
--------
- - `qdmpy.pl.model.FitModel`
- - `qdmpy.pl.model.ConstStretchedExp`
- - `qdmpy.pl.model.ConstDampedRabi`
- - `qdmpy.pl.model.LinearLorentzians`
- - `qdmpy.pl.model.ConstLorentzians`
-&#34;&#34;&#34;
-
-# ============================================================================
-
-__author__ = &#34;Sam Scholten&#34;
-__pdoc__ = {
-    &#34;qdmpy.pl.model.FitModel&#34;: True,
-    &#34;qdmpy.pl.model.ConstStretchedExp&#34;: True,
-    &#34;qdmpy.pl.model.ConstDampedRabi&#34;: True,
-    &#34;qdmpy.pl.model.LinearLorentzians&#34;: True,
-    &#34;qdmpy.pl.model.ConstLorentzians&#34;: True,
-}
-
-# ============================================================================
-
-import numpy as np
-import numpy.typing as npt
-from numba import njit
-
-# ============================================================================
-
-
-# =======================================================================================
-# =======================================================================================
-#
-# FitModel Class
-#
-# =======================================================================================
-# =======================================================================================
-
-
-class FitModel:
-    &#34;&#34;&#34;
-    FitModel used to fit to data.
-    &#34;&#34;&#34;
-
-    # =================================
-
-    def __call__(self, param_ar: npt.ArrayLike, sweep_arr: npt.ArrayLike):
-        &#34;&#34;&#34;
-        Evaluates fitmodel for given parameter values and sweep (affine) parameter values
-
-        Arguments
-        ---------
-        param_ar : np array, 1D
-            Array of parameters fed into each fitfunc (these are what are fit by sc)
-        sweep_arr : np array, 1D or number
-            Affine parameter where the fit model is evaluated
-
-        Returns
-        -------
-        Fit model evaluates at sweep_arr (output is same format as sweep_arr input)
-        &#34;&#34;&#34;
-        return self._eval(sweep_arr, param_ar)
-
-    @staticmethod
-    @njit(fastmath=True)
-    def _eval(x: npt.ArrayLike, fit_params: npt.ArrayLike):
-        raise NotImplementedError()
-
-    # =================================
-
-    def residuals_scipyfit(
-        self, param_ar: npt.ArrayLike, sweep_arr: npt.ArrayLike, pl_vals: npt.ArrayLike
-    ):
-        &#34;&#34;&#34;Evaluates residual: fit model (affine params/sweep_arr) - pl values&#34;&#34;&#34;
-        # NB: pl_vals unused, but left for compat with FitModel &amp; Hamiltonian
-        return self._resid(sweep_arr, pl_vals, param_ar)
-
-    @staticmethod
-    @njit(fastmath=True)
-    def _resid(x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike):
-        raise NotImplementedError()
-
-    # =================================
-
-    def jacobian_scipyfit(
-        self, param_ar: npt.ArrayLike, sweep_arr: npt.ArrayLike, pl_vals: npt.ArrayLike
-    ):
-        &#34;&#34;&#34;Evaluates (analytic) jacobian of fitmodel in format expected by scipy
-        least_squares&#34;&#34;&#34;
-        return self._jac(sweep_arr, pl_vals, param_ar)
-
-    @staticmethod
-    @njit(fastmath=True)
-    def _jac(x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike):
-        raise NotImplementedError()
-
-    # =================================
-
-    def get_param_defn(self) -&gt; tuple[str, ...]:
-        &#34;&#34;&#34;
-        Returns list of parameters in fit_model, note there will be duplicates, and they
-        do not have numbers e.g. &#39;pos_0&#39;. Use `qdmpy.pl.model.FitModel.get_param_odict`
-        for that purpose.
-
-        Returns
-        -------
-        param_defn_ar : tuple
-            List of parameter names (param_defn) in fit model.
-        &#34;&#34;&#34;
-        raise NotImplementedError()
-
-    # =================================
-
-    def get_param_odict(self) -&gt; dict[str, str]:
-        &#34;&#34;&#34;
-        get ordered dict of key: param_key (param_name), val: param_unit for all
-        parameters in fit_model
-
-        Returns
-        -------
-        param_dict : dict
-            Dictionary containing key: params, values: units.
-        &#34;&#34;&#34;
-        raise NotImplementedError()
-
-    # =================================
-
-    def get_param_unit(self, param_name: str, param_number: int) -&gt; str:
-        &#34;&#34;&#34;Get unit for a given param_key (given by param_name + &#34;_&#34; + param_number)
-
-        Arguments
-        ---------
-        param_name : str
-            Name of parameter, e.g. &#39;pos&#39; or &#39;sigma_pos&#39;
-        param_number : float or int
-            Which parameter to use, e.g. 0 for &#39;pos_0&#39;
-
-        Returns
-        -------
-        unit : str
-            Unit for that parameter, e.g. &#34;constant&#34; -&gt; &#34;Amplitude (a.u.)&#34;&#34;
-        &#34;&#34;&#34;
-        if param_name == &#34;residual&#34;:
-            return &#34;Error: sum( || residual(sweep_params) || ) over affine param (a.u.)&#34;
-        if param_name.startswith(&#34;sigma_&#34;):
-            return self.get_param_odict()[param_name[6:] + &#34;_&#34; + str(param_number)]
-        return self.get_param_odict()[param_name + &#34;_&#34; + str(param_number)]
-
-
-# ====================================================================================
-
-
-class ConstStretchedExp(FitModel):
-
-    @staticmethod
-    @njit(fastmath=True)
-    def _eval(x: npt.ArrayLike, fit_params: npt.ArrayLike):
-        c, charac_exp_t, amp_exp, power_exp = fit_params
-        return amp_exp * np.exp(-((x / charac_exp_t) ** power_exp)) + c
-
-    @staticmethod
-    @njit(fastmath=True)
-    def _resid(x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike):
-        c, charac_exp_t, amp_exp, power_exp = fit_params
-        return amp_exp * np.exp(-((x / charac_exp_t) ** power_exp)) + c - pl_vals
-
-    @staticmethod
-    @njit(fastmath=True)
-    def _jac(x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike):
-        c, charac_exp_t, amp_exp, power_exp = fit_params
-        j = np.empty((np.shape(x)[0], 4))
-        j[:, 0] = 1
-        j[:, 1] = (1 / charac_exp_t) * (
-            amp_exp
-            * power_exp
-            * np.exp(-((x / charac_exp_t) ** power_exp))
-            * (x / charac_exp_t) ** power_exp
-        )
-        # just lose the &#39;a&#39;
-        j[:, 2] = np.exp(-((x / charac_exp_t) ** power_exp))
-        # a e^(-(x/t)^p) (x/t)^p log(x/t)
-        j[:, 3] = (
-            -amp_exp
-            * np.exp(-((x / charac_exp_t) ** power_exp))
-            * (x / charac_exp_t) ** power_exp
-            * np.log(x / charac_exp_t)
-        )
-        return j
-
-    def get_param_defn(self) -&gt; tuple[str, ...]:
-        return &#34;constant&#34;, &#34;charac_exp_t&#34;, &#34;amp_exp&#34;, &#34;power_exp&#34;
-
-    def get_param_odict(self) -&gt; dict[str, str]:
-        return dict(
-            [
-                (&#34;constant_0&#34;, &#34;Amplitude (a.u.)&#34;),
-                (&#34;charac_exp_t_0&#34;, &#34;Time (s)&#34;),
-                (&#34;amp_exp_0&#34;, &#34;Amplitude (a.u.)&#34;),
-                (&#34;power_exp_0&#34;, &#34;Unitless&#34;),
-            ]
-        )
-
-
-# ====================================================================================
-
-
-class ConstDampedRabi(FitModel):
-
-    @staticmethod
-    @njit(fastmath=True)
-    def _eval(x: npt.ArrayLike, fit_params: npt.ArrayLike):
-        c, omega, pos, amp, tau = fit_params
-        return amp * np.exp(-(x / tau)) * np.cos(omega * (x - pos)) + c
-
-    @staticmethod
-    @njit(fastmath=True)
-    def _resid(x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike):
-        c, omega, pos, amp, tau = fit_params
-        return amp * np.exp(-(x / tau)) * np.cos(omega * (x - pos)) + c - pl_vals
-
-    @staticmethod
-    @njit(fastmath=True)
-    def _jac(x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike):
-        c, omega, pos, amp, tau = fit_params
-        j = np.empty((np.shape(x)[0], 5))
-        j[:, 0] = 1
-        j[:, 1] = (
-            amp * (pos - x) * np.sin(omega * (x - pos)) * np.exp(-x / tau)
-        )  # wrt omega
-        j[:, 2] = (amp * omega * np.sin(omega * (x - pos))) * np.exp(
-            -x / tau
-        )  # wrt pos
-        j[:, 3] = np.exp(-x / tau) * np.cos(omega * (x - pos))  # wrt amp
-        j[:, 4] = (amp * x * np.cos(omega * (x - pos))) / (
-            np.exp(x / tau) * tau**2
-        )  # wrt tau
-        return j
-
-    def get_param_defn(self) -&gt; tuple[str, ...]:
-        return &#34;constant&#34;, &#34;rabi_freq&#34;, &#34;rabi_t_offset&#34;, &#34;rabi_amp&#34;, &#34;rabi_decay_time&#34;
-
-    def get_param_odict(self) -&gt; dict[str, str]:
-        return dict(
-            [
-                (&#34;constant_0&#34;, &#34;Amplitude (a.u.)&#34;),
-                (&#34;rabi_freq_0&#34;, &#34;Omega (rad/s)&#34;),
-                (&#34;rabi_t_offset_0&#34;, &#34;Tau_0 (s)&#34;),
-                (&#34;rabi_amp_0&#34;, &#34;Amp (a.u.)&#34;),
-                (&#34;rabi_decay_time_0&#34;, &#34;Tau_d (s)&#34;),
-            ]
-        )
-
-
-# ====================================================================================
-
-
-class LinearLorentzians(FitModel):
-    def __init__(self, n_lorentzians: int):
-        self.n_lorentzians = n_lorentzians
-        self.fit_functions = {&#34;linear&#34;: 1, &#34;lorentzian&#34;: n_lorentzians}
-
-    def __call__(self, param_ar: npt.ArrayLike, sweep_arr: npt.ArrayLike):
-        return self._eval(self.n_lorentzians, sweep_arr, param_ar)
-
-    @staticmethod
-    @njit(fastmath=True)
-    def _eval(n: int, x: npt.ArrayLike, fit_params: npt.ArrayLike):
-        c = fit_params[0]
-        m = fit_params[1]
-        val = m * x + c
-        for i in range(n):
-            fwhm = fit_params[i * 3 + 2]
-            pos = fit_params[i * 3 + 3]
-            amp = fit_params[i * 3 + 4]
-            hwhmsqr = (fwhm**2) / 4
-            val += amp * hwhmsqr / ((x - pos) ** 2 + hwhmsqr)
-        return val
-
-    def residuals_scipyfit(self, param_ar, sweep_arr, pl_vals):
-        &#34;&#34;&#34;Evaluates residual: fit model (affine params/sweep_arr) - pl values&#34;&#34;&#34;
-        return self._resid(self.n_lorentzians, sweep_arr, pl_vals, param_ar)
-
-    @staticmethod
-    @njit(fastmath=True)
-    def _resid(
-        n: int, x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike
-    ):
-        c = fit_params[0]
-        m = fit_params[1]
-        val = m * x + c
-        for i in range(n):
-            fwhm = fit_params[i * 3 + 2]
-            pos = fit_params[i * 3 + 3]
-            amp = fit_params[i * 3 + 4]
-            hwhmsqr = (fwhm**2) / 4
-            val += amp * hwhmsqr / ((x - pos) ** 2 + hwhmsqr)
-        return val - pl_vals
-
-    def jacobian_scipyfit(
-        self, param_ar: npt.ArrayLike, sweep_arr: npt.ArrayLike, pl_vals: npt.ArrayLike
-    ):
-        &#34;&#34;&#34;Evaluates (analytic) jacobian of fitmodel in format expected by scipy
-        least_squares&#34;&#34;&#34;
-        return self._jac(self.n_lorentzians, sweep_arr, pl_vals, param_ar)
-
-    @staticmethod
-    @njit(fastmath=True)
-    def _jac(
-        n: int, x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike
-    ):
-        j = np.empty((np.shape(x)[0], 2 + 3 * n), dtype=np.float64)
-        j[:, 0] = 1  # wrt constant
-        j[:, 1] = x  # wrt m
-        for i in range(n):
-            fwhm = fit_params[i * 3 + 2]
-            c = fit_params[i * 3 + 3]
-            a = fit_params[i * 3 + 4]
-            g = fwhm / 2
-
-            j[:, 2 + i * 3] = (a * g * (x - c) ** 2) / ((x - c) ** 2 + g**2) ** 2
-            j[:, 3 + i * 3] = (2 * a * g**2 * (x - c)) / (g**2 + (x - c) ** 2) ** 2
-            j[:, 4 + i * 3] = g**2 / ((x - c) ** 2 + g**2)
-        return j
-
-    def get_param_defn(self) -&gt; tuple[str, ...]:
-        defn = [&#34;c&#34;, &#34;m&#34;]
-        for i in range(self.n_lorentzians):
-            defn += [&#34;fwhm&#34;, &#34;pos&#34;, &#34;amp&#34;]
-        return tuple(defn)
-
-    def get_param_odict(self) -&gt; dict[str, str]:
-        defn = [(&#34;c_0&#34;, &#34;Amplitude (a.u.)&#34;), (&#34;m_0&#34;, &#34;Amplitude per Freq (a.u.)&#34;)]
-        for i in range(self.n_lorentzians):
-            defn += [(f&#34;fwhm_{i}&#34;, &#34;Freq (MHz)&#34;)]
-            defn += [(f&#34;pos_{i}&#34;, &#34;Freq (MHz)&#34;)]
-            defn += [(f&#34;amp_{i}&#34;, &#34;Amp (a.u.)&#34;)]
-        return dict(defn)
-
-
-# ====================================================================================
-
-
-class ConstLorentzians(FitModel):
-    def __init__(self, n_lorentzians):
-        self.n_lorentzians = n_lorentzians
-        self.fit_functions = {&#34;constant&#34;: 1, &#34;lorentzian&#34;: n_lorentzians}
-
-    def __call__(self, param_ar: npt.ArrayLike, sweep_arr: npt.ArrayLike):
-        return self._eval(self.n_lorentzians, sweep_arr, param_ar)
-
-    @staticmethod
-    @njit(fastmath=True)
-    def _eval(n: int, x: npt.ArrayLike, fit_params: npt.ArrayLike):
-        c = fit_params[0]
-        val = c * np.ones(np.shape(x))
-        for i in range(n):
-            fwhm = fit_params[i * 3 + 1]
-            pos = fit_params[i * 3 + 2]
-            amp = fit_params[i * 3 + 3]
-            hwhmsqr = (fwhm**2) / 4
-            val += amp * hwhmsqr / ((x - pos) ** 2 + hwhmsqr)
-        return val
-
-    def residuals_scipyfit(
-        self, param_ar: npt.ArrayLike, sweep_arr: npt.ArrayLike, pl_vals: npt.ArrayLike
-    ):
-        &#34;&#34;&#34;Evaluates residual: fit model (affine params/sweep_arr) - pl values&#34;&#34;&#34;
-        return self._resid(self.n_lorentzians, sweep_arr, pl_vals, param_ar)
-
-    @staticmethod
-    @njit(fastmath=True)
-    def _resid(
-        n: int, x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike
-    ):
-        c = fit_params[0]
-        val = c * np.ones(np.shape(x))
-        for i in range(n):
-            fwhm = fit_params[i * 3 + 1]
-            pos = fit_params[i * 3 + 2]
-            amp = fit_params[i * 3 + 3]
-            hwhmsqr = (fwhm**2) / 4
-            val += amp * hwhmsqr / ((x - pos) ** 2 + hwhmsqr)
-        return val - pl_vals
-
-    def jacobian_scipyfit(
-        self, param_ar: npt.ArrayLike, sweep_arr: npt.ArrayLike, pl_vals: npt.ArrayLike
-    ):
-        &#34;&#34;&#34;Evaluates (analytic) jacobian of fitmodel in format expected by
-        scipy least_squares&#34;&#34;&#34;
-        return self._jac(self.n_lorentzians, sweep_arr, pl_vals, param_ar)
-
-    @staticmethod
-    @njit(fastmath=True)
-    def _jac(
-        n: int, x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike
-    ):
-        j = np.empty((np.shape(x)[0], 1 + 3 * n), dtype=np.float64)
-        j[:, 0] = 1  # wrt constant
-        for i in range(n):
-            fwhm = fit_params[i * 3 + 1]
-            c = fit_params[i * 3 + 2]
-            a = fit_params[i * 3 + 3]
-            g = fwhm / 2
-
-            j[:, 2 + i * 3] = (a * g * (x - c) ** 2) / ((x - c) ** 2 + g**2) ** 2
-            j[:, 3 + i * 3] = (2 * a * g**2 * (x - c)) / (g**2 + (x - c) ** 2) ** 2
-            j[:, 4 + i * 3] = g**2 / ((x - c) ** 2 + g**2)
-        return j
-
-    def get_param_defn(self) -&gt; tuple[str, ...]:
-        defn = [&#34;constant&#34;]
-        for i in range(self.n_lorentzians):
-            defn += [&#34;fwhm&#34;, &#34;pos&#34;, &#34;amp&#34;]
-        return tuple(defn)
-
-    def get_param_odict(self) -&gt; dict[str, str]:
-        defn = [(&#34;constant_0&#34;, &#34;Amplitude (a.u.)&#34;)]
-        for i in range(self.n_lorentzians):
-            defn += [(f&#34;fwhm_{i}&#34;, &#34;Freq (MHz)&#34;)]
-            defn += [(f&#34;pos_{i}&#34;, &#34;Freq (MHz)&#34;)]
-            defn += [(f&#34;amp_{i}&#34;, &#34;Amp (a.u.)&#34;)]
-        return dict(defn)</code></pre>
-</details>
 </section>
 <section>
 </section>
@@ -479,17 +63,113 @@ class ConstLorentzians(FitModel):
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
+<dt id="dukit.pl.model.ConstBiExponential"><code class="flex name class">
+<span>class <span class="ident">ConstBiExponential</span></span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ConstBiExponential(FitModel):
+    &#34;&#34;&#34;
+    Model with two exponential decays plus a constant offset.
+
+    f(x) = c + a1*exp(-x/t1) + a2*exp(-x/t2)
+
+    Parameters
+    ----------
+    c : float
+        Constant offset
+    t1 : float
+        Time constant for first exponential
+    a1 : float
+        Amplitude for first exponential
+    t2 : float
+        Time constant for second exponential
+    a2 : float
+        Amplitude for second exponential
+    &#34;&#34;&#34;
+
+    @staticmethod
+    @njit(fastmath=True)
+    def _eval(x: npt.ArrayLike, fit_params: npt.ArrayLike):
+        c, t1, a1, t2, a2 = fit_params
+        return c + a1 * np.exp(-x / t1) + a2 * np.exp(-x / t2)
+
+    @staticmethod
+    @njit(fastmath=True)
+    def _resid(x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike):
+        c, t1, a1, t2, a2 = fit_params
+        return c + a1 * np.exp(-x / t1) + a2 * np.exp(-x / t2) - pl_vals
+
+    @staticmethod
+    @njit(fastmath=True)
+    def _jac(x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike):
+        c, t1, a1, t2, a2 = fit_params
+        j = np.empty((np.shape(x)[0], 5))
+        j[:, 0] = 1  # wrt constant
+        j[:, 1] = a1 * (x / t1**2) * np.exp(-x / t1)  # wrt t1
+        j[:, 2] = np.exp(-x / t1)  # wrt a1
+        j[:, 3] = a2 * (x / t2**2) * np.exp(-x / t2)  # wrt t2
+        j[:, 4] = np.exp(-x / t2)  # wrt a2
+        return j
+
+    def get_param_defn(self) -&gt; tuple[str, ...]:
+        return &#34;constant&#34;, &#34;exp1_t&#34;, &#34;exp1_amp&#34;, &#34;exp2_t&#34;, &#34;exp2_amp&#34;
+
+    def get_param_odict(self) -&gt; dict[str, str]:
+        return dict(
+            [
+                (&#34;constant_0&#34;, &#34;Amplitude (a.u.)&#34;),
+                (&#34;exp1_t_0&#34;, &#34;Time (s)&#34;),
+                (&#34;exp1_amp_0&#34;, &#34;Amplitude (a.u.)&#34;),
+                (&#34;exp2_t_0&#34;, &#34;Time (s)&#34;),
+                (&#34;exp2_amp_0&#34;, &#34;Amplitude (a.u.)&#34;),
+            ]
+        )</code></pre>
+</details>
+<div class="desc"><p>Model with two exponential decays plus a constant offset.</p>
+<p>f(x) = c + a1<em>exp(-x/t1) + a2</em>exp(-x/t2)</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>c</code></strong> :&ensp;<code>float</code></dt>
+<dd>Constant offset</dd>
+<dt><strong><code>t1</code></strong> :&ensp;<code>float</code></dt>
+<dd>Time constant for first exponential</dd>
+<dt><strong><code>a1</code></strong> :&ensp;<code>float</code></dt>
+<dd>Amplitude for first exponential</dd>
+<dt><strong><code>t2</code></strong> :&ensp;<code>float</code></dt>
+<dd>Time constant for second exponential</dd>
+<dt><strong><code>a2</code></strong> :&ensp;<code>float</code></dt>
+<dd>Amplitude for second exponential</dd>
+</dl></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="dukit.pl.model.FitModel" href="#dukit.pl.model.FitModel">FitModel</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="dukit.pl.model.FitModel" href="#dukit.pl.model.FitModel">FitModel</a></b></code>:
+<ul class="hlist">
+<li><code><a title="dukit.pl.model.FitModel.get_param_defn" href="#dukit.pl.model.FitModel.get_param_defn">get_param_defn</a></code></li>
+<li><code><a title="dukit.pl.model.FitModel.get_param_odict" href="#dukit.pl.model.FitModel.get_param_odict">get_param_odict</a></code></li>
+<li><code><a title="dukit.pl.model.FitModel.get_param_unit" href="#dukit.pl.model.FitModel.get_param_unit">get_param_unit</a></code></li>
+<li><code><a title="dukit.pl.model.FitModel.jacobian_scipyfit" href="#dukit.pl.model.FitModel.jacobian_scipyfit">jacobian_scipyfit</a></code></li>
+<li><code><a title="dukit.pl.model.FitModel.residuals_scipyfit" href="#dukit.pl.model.FitModel.residuals_scipyfit">residuals_scipyfit</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
 <dt id="dukit.pl.model.ConstDampedRabi"><code class="flex name class">
 <span>class <span class="ident">ConstDampedRabi</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>FitModel used to fit to data.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class ConstDampedRabi(FitModel):
-
     @staticmethod
     @njit(fastmath=True)
     def _eval(x: npt.ArrayLike, fit_params: npt.ArrayLike):
@@ -508,20 +188,20 @@ class ConstLorentzians(FitModel):
         c, omega, pos, amp, tau = fit_params
         j = np.empty((np.shape(x)[0], 5))
         j[:, 0] = 1
-        j[:, 1] = (
-            amp * (pos - x) * np.sin(omega * (x - pos)) * np.exp(-x / tau)
-        )  # wrt omega
-        j[:, 2] = (amp * omega * np.sin(omega * (x - pos))) * np.exp(
-            -x / tau
-        )  # wrt pos
+        j[:, 1] = amp * (pos - x) * np.sin(omega * (x - pos)) * np.exp(-x / tau)  # wrt omega
+        j[:, 2] = (amp * omega * np.sin(omega * (x - pos))) * np.exp(-x / tau)  # wrt pos
         j[:, 3] = np.exp(-x / tau) * np.cos(omega * (x - pos))  # wrt amp
-        j[:, 4] = (amp * x * np.cos(omega * (x - pos))) / (
-            np.exp(x / tau) * tau**2
-        )  # wrt tau
+        j[:, 4] = (amp * x * np.cos(omega * (x - pos))) / (np.exp(x / tau) * tau**2)  # wrt tau
         return j
 
     def get_param_defn(self) -&gt; tuple[str, ...]:
-        return &#34;constant&#34;, &#34;rabi_freq&#34;, &#34;rabi_t_offset&#34;, &#34;rabi_amp&#34;, &#34;rabi_decay_time&#34;
+        return (
+            &#34;constant&#34;,
+            &#34;rabi_freq&#34;,
+            &#34;rabi_t_offset&#34;,
+            &#34;rabi_amp&#34;,
+            &#34;rabi_decay_time&#34;,
+        )
 
     def get_param_odict(self) -&gt; dict[str, str]:
         return dict(
@@ -534,6 +214,7 @@ class ConstLorentzians(FitModel):
             ]
         )</code></pre>
 </details>
+<div class="desc"><p>FitModel used to fit to data.</p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li><a title="dukit.pl.model.FitModel" href="#dukit.pl.model.FitModel">FitModel</a></li>
@@ -556,7 +237,6 @@ class ConstLorentzians(FitModel):
 <span>(</span><span>n_lorentzians)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>FitModel used to fit to data.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -583,7 +263,10 @@ class ConstLorentzians(FitModel):
         return val
 
     def residuals_scipyfit(
-        self, param_ar: npt.ArrayLike, sweep_arr: npt.ArrayLike, pl_vals: npt.ArrayLike
+        self,
+        param_ar: npt.ArrayLike,
+        sweep_arr: npt.ArrayLike,
+        pl_vals: npt.ArrayLike,
     ):
         &#34;&#34;&#34;Evaluates residual: fit model (affine params/sweep_arr) - pl values&#34;&#34;&#34;
         return self._resid(self.n_lorentzians, sweep_arr, pl_vals, param_ar)
@@ -591,7 +274,10 @@ class ConstLorentzians(FitModel):
     @staticmethod
     @njit(fastmath=True)
     def _resid(
-        n: int, x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike
+        n: int,
+        x: npt.ArrayLike,
+        pl_vals: npt.ArrayLike,
+        fit_params: npt.ArrayLike,
     ):
         c = fit_params[0]
         val = c * np.ones(np.shape(x))
@@ -604,7 +290,10 @@ class ConstLorentzians(FitModel):
         return val - pl_vals
 
     def jacobian_scipyfit(
-        self, param_ar: npt.ArrayLike, sweep_arr: npt.ArrayLike, pl_vals: npt.ArrayLike
+        self,
+        param_ar: npt.ArrayLike,
+        sweep_arr: npt.ArrayLike,
+        pl_vals: npt.ArrayLike,
     ):
         &#34;&#34;&#34;Evaluates (analytic) jacobian of fitmodel in format expected by
         scipy least_squares&#34;&#34;&#34;
@@ -613,7 +302,10 @@ class ConstLorentzians(FitModel):
     @staticmethod
     @njit(fastmath=True)
     def _jac(
-        n: int, x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike
+        n: int,
+        x: npt.ArrayLike,
+        pl_vals: npt.ArrayLike,
+        fit_params: npt.ArrayLike,
     ):
         j = np.empty((np.shape(x)[0], 1 + 3 * n), dtype=np.float64)
         j[:, 0] = 1  # wrt constant
@@ -623,9 +315,9 @@ class ConstLorentzians(FitModel):
             a = fit_params[i * 3 + 3]
             g = fwhm / 2
 
-            j[:, 2 + i * 3] = (a * g * (x - c) ** 2) / ((x - c) ** 2 + g**2) ** 2
-            j[:, 3 + i * 3] = (2 * a * g**2 * (x - c)) / (g**2 + (x - c) ** 2) ** 2
-            j[:, 4 + i * 3] = g**2 / ((x - c) ** 2 + g**2)
+            j[:, 1 + i * 3] = (a * g * (x - c) ** 2) / ((x - c) ** 2 + g**2) ** 2
+            j[:, 2 + i * 3] = (2 * a * g**2 * (x - c)) / (g**2 + (x - c) ** 2) ** 2
+            j[:, 3 + i * 3] = g**2 / ((x - c) ** 2 + g**2)
         return j
 
     def get_param_defn(self) -&gt; tuple[str, ...]:
@@ -642,6 +334,7 @@ class ConstLorentzians(FitModel):
             defn += [(f&#34;amp_{i}&#34;, &#34;Amp (a.u.)&#34;)]
         return dict(defn)</code></pre>
 </details>
+<div class="desc"><p>FitModel used to fit to data.</p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li><a title="dukit.pl.model.FitModel" href="#dukit.pl.model.FitModel">FitModel</a></li>
@@ -649,22 +342,25 @@ class ConstLorentzians(FitModel):
 <h3>Methods</h3>
 <dl>
 <dt id="dukit.pl.model.ConstLorentzians.jacobian_scipyfit"><code class="name flex">
-<span>def <span class="ident">jacobian_scipyfit</span></span>(<span>self, param_ar: Union[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]], numpy._typing._nested_sequence._NestedSequence[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]]], bool, int, float, complex, str, bytes, numpy._typing._nested_sequence._NestedSequence[Union[bool, int, float, complex, str, bytes]]], sweep_arr: Union[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]], numpy._typing._nested_sequence._NestedSequence[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]]], bool, int, float, complex, str, bytes, numpy._typing._nested_sequence._NestedSequence[Union[bool, int, float, complex, str, bytes]]], pl_vals: Union[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]], numpy._typing._nested_sequence._NestedSequence[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]]], bool, int, float, complex, str, bytes, numpy._typing._nested_sequence._NestedSequence[Union[bool, int, float, complex, str, bytes]]])</span>
+<span>def <span class="ident">jacobian_scipyfit</span></span>(<span>self, param_ar: ArrayLike, sweep_arr: ArrayLike, pl_vals: ArrayLike)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Evaluates (analytic) jacobian of fitmodel in format expected by
-scipy least_squares</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def jacobian_scipyfit(
-    self, param_ar: npt.ArrayLike, sweep_arr: npt.ArrayLike, pl_vals: npt.ArrayLike
+    self,
+    param_ar: npt.ArrayLike,
+    sweep_arr: npt.ArrayLike,
+    pl_vals: npt.ArrayLike,
 ):
     &#34;&#34;&#34;Evaluates (analytic) jacobian of fitmodel in format expected by
     scipy least_squares&#34;&#34;&#34;
     return self._jac(self.n_lorentzians, sweep_arr, pl_vals, param_ar)</code></pre>
 </details>
+<div class="desc"><p>Evaluates (analytic) jacobian of fitmodel in format expected by
+scipy least_squares</p></div>
 </dd>
 </dl>
 <h3>Inherited members</h3>
@@ -683,13 +379,11 @@ scipy least_squares</p></div>
 <span>class <span class="ident">ConstStretchedExp</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>FitModel used to fit to data.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class ConstStretchedExp(FitModel):
-
     @staticmethod
     @njit(fastmath=True)
     def _eval(x: npt.ArrayLike, fit_params: npt.ArrayLike):
@@ -738,6 +432,7 @@ scipy least_squares</p></div>
             ]
         )</code></pre>
 </details>
+<div class="desc"><p>FitModel used to fit to data.</p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li><a title="dukit.pl.model.FitModel" href="#dukit.pl.model.FitModel">FitModel</a></li>
@@ -759,7 +454,6 @@ scipy least_squares</p></div>
 <span>class <span class="ident">FitModel</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>FitModel used to fit to data.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -796,7 +490,10 @@ scipy least_squares</p></div>
     # =================================
 
     def residuals_scipyfit(
-        self, param_ar: npt.ArrayLike, sweep_arr: npt.ArrayLike, pl_vals: npt.ArrayLike
+        self,
+        param_ar: npt.ArrayLike,
+        sweep_arr: npt.ArrayLike,
+        pl_vals: npt.ArrayLike,
     ):
         &#34;&#34;&#34;Evaluates residual: fit model (affine params/sweep_arr) - pl values&#34;&#34;&#34;
         # NB: pl_vals unused, but left for compat with FitModel &amp; Hamiltonian
@@ -810,7 +507,10 @@ scipy least_squares</p></div>
     # =================================
 
     def jacobian_scipyfit(
-        self, param_ar: npt.ArrayLike, sweep_arr: npt.ArrayLike, pl_vals: npt.ArrayLike
+        self,
+        param_ar: npt.ArrayLike,
+        sweep_arr: npt.ArrayLike,
+        pl_vals: npt.ArrayLike,
     ):
         &#34;&#34;&#34;Evaluates (analytic) jacobian of fitmodel in format expected by scipy
         least_squares&#34;&#34;&#34;
@@ -873,12 +573,17 @@ scipy least_squares</p></div>
             return self.get_param_odict()[param_name[6:] + &#34;_&#34; + str(param_number)]
         return self.get_param_odict()[param_name + &#34;_&#34; + str(param_number)]</code></pre>
 </details>
+<div class="desc"><p>FitModel used to fit to data.</p></div>
 <h3>Subclasses</h3>
 <ul class="hlist">
+<li><a title="dukit.pl.model.ConstBiExponential" href="#dukit.pl.model.ConstBiExponential">ConstBiExponential</a></li>
 <li><a title="dukit.pl.model.ConstDampedRabi" href="#dukit.pl.model.ConstDampedRabi">ConstDampedRabi</a></li>
 <li><a title="dukit.pl.model.ConstLorentzians" href="#dukit.pl.model.ConstLorentzians">ConstLorentzians</a></li>
 <li><a title="dukit.pl.model.ConstStretchedExp" href="#dukit.pl.model.ConstStretchedExp">ConstStretchedExp</a></li>
 <li><a title="dukit.pl.model.LinearLorentzians" href="#dukit.pl.model.LinearLorentzians">LinearLorentzians</a></li>
+<li><a title="dukit.pl.model.LinearN14Lorentzians" href="#dukit.pl.model.LinearN14Lorentzians">LinearN14Lorentzians</a></li>
+<li><a title="dukit.pl.model.LinearN15Lorentzians" href="#dukit.pl.model.LinearN15Lorentzians">LinearN15Lorentzians</a></li>
+<li><a title="dukit.pl.model.SkewedLorentzians" href="#dukit.pl.model.SkewedLorentzians">SkewedLorentzians</a></li>
 </ul>
 <h3>Methods</h3>
 <dl>
@@ -886,14 +591,6 @@ scipy least_squares</p></div>
 <span>def <span class="ident">get_param_defn</span></span>(<span>self) ‑> tuple[str, ...]</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Returns list of parameters in fit_model, note there will be duplicates, and they
-do not have numbers e.g. 'pos_0'. Use <code>qdmpy.pl.model.FitModel.get_param_odict</code>
-for that purpose.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><strong><code>param_defn_ar</code></strong> :&ensp;<code>tuple</code></dt>
-<dd>List of parameter names (param_defn) in fit model.</dd>
-</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -911,18 +608,19 @@ for that purpose.</p>
     &#34;&#34;&#34;
     raise NotImplementedError()</code></pre>
 </details>
+<div class="desc"><p>Returns list of parameters in fit_model, note there will be duplicates, and they
+do not have numbers e.g. 'pos_0'. Use <code>qdmpy.pl.model.FitModel.get_param_odict</code>
+for that purpose.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>param_defn_ar</code></strong> :&ensp;<code>tuple</code></dt>
+<dd>List of parameter names (param_defn) in fit model.</dd>
+</dl></div>
 </dd>
 <dt id="dukit.pl.model.FitModel.get_param_odict"><code class="name flex">
 <span>def <span class="ident">get_param_odict</span></span>(<span>self) ‑> dict[str, str]</span>
 </code></dt>
 <dd>
-<div class="desc"><p>get ordered dict of key: param_key (param_name), val: param_unit for all
-parameters in fit_model</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><strong><code>param_dict</code></strong> :&ensp;<code>dict</code></dt>
-<dd>Dictionary containing key: params, values: units.</dd>
-</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -939,24 +637,18 @@ parameters in fit_model</p>
     &#34;&#34;&#34;
     raise NotImplementedError()</code></pre>
 </details>
+<div class="desc"><p>get ordered dict of key: param_key (param_name), val: param_unit for all
+parameters in fit_model</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>param_dict</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary containing key: params, values: units.</dd>
+</dl></div>
 </dd>
 <dt id="dukit.pl.model.FitModel.get_param_unit"><code class="name flex">
 <span>def <span class="ident">get_param_unit</span></span>(<span>self, param_name: str, param_number: int) ‑> str</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Get unit for a given param_key (given by param_name + "_" + param_number)</p>
-<h2 id="arguments">Arguments</h2>
-<dl>
-<dt><strong><code>param_name</code></strong> :&ensp;<code>str</code></dt>
-<dd>Name of parameter, e.g. 'pos' or 'sigma_pos'</dd>
-<dt><strong><code>param_number</code></strong> :&ensp;<code>float</code> or <code>int</code></dt>
-<dd>Which parameter to use, e.g. 0 for 'pos_0'</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><strong><code>unit</code></strong> :&ensp;<code>str</code></dt>
-<dd>Unit for that parameter, e.g. "constant" -&gt; "Amplitude (a.u.)""</dd>
-</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -982,41 +674,60 @@ parameters in fit_model</p>
         return self.get_param_odict()[param_name[6:] + &#34;_&#34; + str(param_number)]
     return self.get_param_odict()[param_name + &#34;_&#34; + str(param_number)]</code></pre>
 </details>
+<div class="desc"><p>Get unit for a given param_key (given by param_name + "_" + param_number)</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>param_name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of parameter, e.g. 'pos' or 'sigma_pos'</dd>
+<dt><strong><code>param_number</code></strong> :&ensp;<code>float</code> or <code>int</code></dt>
+<dd>Which parameter to use, e.g. 0 for 'pos_0'</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>unit</code></strong> :&ensp;<code>str</code></dt>
+<dd>Unit for that parameter, e.g. "constant" -&gt; "Amplitude (a.u.)""</dd>
+</dl></div>
 </dd>
 <dt id="dukit.pl.model.FitModel.jacobian_scipyfit"><code class="name flex">
-<span>def <span class="ident">jacobian_scipyfit</span></span>(<span>self, param_ar: Union[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]], numpy._typing._nested_sequence._NestedSequence[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]]], bool, int, float, complex, str, bytes, numpy._typing._nested_sequence._NestedSequence[Union[bool, int, float, complex, str, bytes]]], sweep_arr: Union[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]], numpy._typing._nested_sequence._NestedSequence[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]]], bool, int, float, complex, str, bytes, numpy._typing._nested_sequence._NestedSequence[Union[bool, int, float, complex, str, bytes]]], pl_vals: Union[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]], numpy._typing._nested_sequence._NestedSequence[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]]], bool, int, float, complex, str, bytes, numpy._typing._nested_sequence._NestedSequence[Union[bool, int, float, complex, str, bytes]]])</span>
+<span>def <span class="ident">jacobian_scipyfit</span></span>(<span>self, param_ar: ArrayLike, sweep_arr: ArrayLike, pl_vals: ArrayLike)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Evaluates (analytic) jacobian of fitmodel in format expected by scipy
-least_squares</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def jacobian_scipyfit(
-    self, param_ar: npt.ArrayLike, sweep_arr: npt.ArrayLike, pl_vals: npt.ArrayLike
+    self,
+    param_ar: npt.ArrayLike,
+    sweep_arr: npt.ArrayLike,
+    pl_vals: npt.ArrayLike,
 ):
     &#34;&#34;&#34;Evaluates (analytic) jacobian of fitmodel in format expected by scipy
     least_squares&#34;&#34;&#34;
     return self._jac(sweep_arr, pl_vals, param_ar)</code></pre>
 </details>
+<div class="desc"><p>Evaluates (analytic) jacobian of fitmodel in format expected by scipy
+least_squares</p></div>
 </dd>
 <dt id="dukit.pl.model.FitModel.residuals_scipyfit"><code class="name flex">
-<span>def <span class="ident">residuals_scipyfit</span></span>(<span>self, param_ar: Union[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]], numpy._typing._nested_sequence._NestedSequence[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]]], bool, int, float, complex, str, bytes, numpy._typing._nested_sequence._NestedSequence[Union[bool, int, float, complex, str, bytes]]], sweep_arr: Union[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]], numpy._typing._nested_sequence._NestedSequence[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]]], bool, int, float, complex, str, bytes, numpy._typing._nested_sequence._NestedSequence[Union[bool, int, float, complex, str, bytes]]], pl_vals: Union[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]], numpy._typing._nested_sequence._NestedSequence[numpy._typing._array_like._SupportsArray[numpy.dtype[Any]]], bool, int, float, complex, str, bytes, numpy._typing._nested_sequence._NestedSequence[Union[bool, int, float, complex, str, bytes]]])</span>
+<span>def <span class="ident">residuals_scipyfit</span></span>(<span>self, param_ar: ArrayLike, sweep_arr: ArrayLike, pl_vals: ArrayLike)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Evaluates residual: fit model (affine params/sweep_arr) - pl values</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def residuals_scipyfit(
-    self, param_ar: npt.ArrayLike, sweep_arr: npt.ArrayLike, pl_vals: npt.ArrayLike
+    self,
+    param_ar: npt.ArrayLike,
+    sweep_arr: npt.ArrayLike,
+    pl_vals: npt.ArrayLike,
 ):
     &#34;&#34;&#34;Evaluates residual: fit model (affine params/sweep_arr) - pl values&#34;&#34;&#34;
     # NB: pl_vals unused, but left for compat with FitModel &amp; Hamiltonian
     return self._resid(sweep_arr, pl_vals, param_ar)</code></pre>
 </details>
+<div class="desc"><p>Evaluates residual: fit model (affine params/sweep_arr) - pl values</p></div>
 </dd>
 </dl>
 </dd>
@@ -1025,7 +736,6 @@ least_squares</p></div>
 <span>(</span><span>n_lorentzians: int)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>FitModel used to fit to data.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1059,7 +769,10 @@ least_squares</p></div>
     @staticmethod
     @njit(fastmath=True)
     def _resid(
-        n: int, x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike
+        n: int,
+        x: npt.ArrayLike,
+        pl_vals: npt.ArrayLike,
+        fit_params: npt.ArrayLike,
     ):
         c = fit_params[0]
         m = fit_params[1]
@@ -1073,7 +786,10 @@ least_squares</p></div>
         return val - pl_vals
 
     def jacobian_scipyfit(
-        self, param_ar: npt.ArrayLike, sweep_arr: npt.ArrayLike, pl_vals: npt.ArrayLike
+        self,
+        param_ar: npt.ArrayLike,
+        sweep_arr: npt.ArrayLike,
+        pl_vals: npt.ArrayLike,
     ):
         &#34;&#34;&#34;Evaluates (analytic) jacobian of fitmodel in format expected by scipy
         least_squares&#34;&#34;&#34;
@@ -1082,7 +798,10 @@ least_squares</p></div>
     @staticmethod
     @njit(fastmath=True)
     def _jac(
-        n: int, x: npt.ArrayLike, pl_vals: npt.ArrayLike, fit_params: npt.ArrayLike
+        n: int,
+        x: npt.ArrayLike,
+        pl_vals: npt.ArrayLike,
+        fit_params: npt.ArrayLike,
     ):
         j = np.empty((np.shape(x)[0], 2 + 3 * n), dtype=np.float64)
         j[:, 0] = 1  # wrt constant
@@ -1105,13 +824,17 @@ least_squares</p></div>
         return tuple(defn)
 
     def get_param_odict(self) -&gt; dict[str, str]:
-        defn = [(&#34;c_0&#34;, &#34;Amplitude (a.u.)&#34;), (&#34;m_0&#34;, &#34;Amplitude per Freq (a.u.)&#34;)]
+        defn = [
+            (&#34;c_0&#34;, &#34;Amplitude (a.u.)&#34;),
+            (&#34;m_0&#34;, &#34;Amplitude per Freq (a.u.)&#34;),
+        ]
         for i in range(self.n_lorentzians):
             defn += [(f&#34;fwhm_{i}&#34;, &#34;Freq (MHz)&#34;)]
             defn += [(f&#34;pos_{i}&#34;, &#34;Freq (MHz)&#34;)]
             defn += [(f&#34;amp_{i}&#34;, &#34;Amp (a.u.)&#34;)]
         return dict(defn)</code></pre>
 </details>
+<div class="desc"><p>FitModel used to fit to data.</p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li><a title="dukit.pl.model.FitModel" href="#dukit.pl.model.FitModel">FitModel</a></li>
@@ -1129,6 +852,474 @@ least_squares</p></div>
 </li>
 </ul>
 </dd>
+<dt id="dukit.pl.model.LinearN14Lorentzians"><code class="flex name class">
+<span>class <span class="ident">LinearN14Lorentzians</span></span>
+<span>(</span><span>n_lorentzians: int)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class LinearN14Lorentzians(FitModel):
+    def __init__(self, n_lorentzians: int):
+        self.n_lorentzians = n_lorentzians
+        self.fit_functions = {&#34;linear&#34;: 1, &#34;n14lorentzian&#34;: n_lorentzians}
+
+    def __call__(self, param_ar: npt.ArrayLike, sweep_arr: npt.ArrayLike):
+        return self._eval(self.n_lorentzians, sweep_arr, param_ar)
+
+    @staticmethod
+    @njit(fastmath=True)
+    def _eval(n: int, x: npt.ArrayLike, fit_params: npt.ArrayLike):
+        &#34;&#34;&#34;N15 has 3 resonances separated by 2.14MHz.
+        We keep widths, heights fixed for the trio &amp; split the amp/fwhm between
+        the three HF levels.&#34;&#34;&#34;
+        c = fit_params[0]
+        m = fit_params[1]
+        val = m * x + c
+        for i in range(n):
+            fwhm = fit_params[i * 3 + 2]
+            pos = fit_params[i * 3 + 3]
+            amp = fit_params[i * 3 + 4]
+            hwhmsqr = ((fwhm / 3) ** 2) / 4
+            val += (
+                (amp / 3) * hwhmsqr / ((x - pos - 2.14) ** 2 + hwhmsqr)
+                + (amp / 3) * hwhmsqr / ((x - pos) ** 2 + hwhmsqr)
+                + (amp / 3) * hwhmsqr / ((x - pos + 2.14) ** 2 + hwhmsqr)
+            )
+        return val
+
+    def residuals_scipyfit(self, param_ar, sweep_arr, pl_vals):
+        &#34;&#34;&#34;Evaluates residual: fit model (affine params/sweep_arr) - pl values&#34;&#34;&#34;
+        return self._resid(self.n_lorentzians, sweep_arr, pl_vals, param_ar)
+
+    @staticmethod
+    @njit(fastmath=True)
+    def _resid(
+        n: int,
+        x: npt.ArrayLike,
+        pl_vals: npt.ArrayLike,
+        fit_params: npt.ArrayLike,
+    ):
+        c = fit_params[0]
+        m = fit_params[1]
+        val = m * x + c
+        for i in range(n):
+            fwhm = fit_params[i * 3 + 2]
+            pos = fit_params[i * 3 + 3]
+            amp = fit_params[i * 3 + 4]
+            hwhmsqr = ((fwhm / 3) ** 2) / 4
+            val += (
+                (amp / 3) * hwhmsqr / ((x - pos - 2.14) ** 2 + hwhmsqr)
+                + (amp / 3) * hwhmsqr / ((x - pos) ** 2 + hwhmsqr)
+                + (amp / 3) * hwhmsqr / ((x - pos + 2.14) ** 2 + hwhmsqr)
+            )
+        return val - pl_vals
+
+    def jacobian_scipyfit(
+        self,
+        param_ar: npt.ArrayLike,
+        sweep_arr: npt.ArrayLike,
+        pl_vals: npt.ArrayLike,
+    ):
+        &#34;&#34;&#34;Evaluates (analytic) jacobian of fitmodel in format expected by scipy
+        least_squares&#34;&#34;&#34;
+        return self._jac(self.n_lorentzians, sweep_arr, pl_vals, param_ar)
+
+    @staticmethod
+    @njit(fastmath=True)
+    def _jac(
+        n: int,
+        x: npt.ArrayLike,
+        pl_vals: npt.ArrayLike,
+        fit_params: npt.ArrayLike,
+    ):
+        j = np.empty((np.shape(x)[0], 2 + 3 * n), dtype=np.float64)
+        j[:, 0] = 1  # wrt constant
+        j[:, 1] = x  # wrt m
+        for i in range(n):
+            fwhm = fit_params[i * 3 + 2]
+            c = fit_params[i * 3 + 3]
+            a = fit_params[i * 3 + 4]
+            g = (fwhm / 3) / 2
+
+            j[:, 2 + i * 3] = (a * g / 9) * (
+                g**2
+                * (
+                    -1 / (g**2 + (x - c) ** 2) ** 2
+                    - 1 / (g**2 + (x + 2.14 - c) ** 2) ** 2
+                    - 1 / (g**2 + (x - c - 2.14) ** 2) ** 2
+                )
+                + 1 / (g**2 + (x - c) ** 2)
+                + 1 / (g**2 + (x + 2.14 - c) ** 2)
+                + 1 / (g**2 + (x - 2.14 - c) ** 2)
+            )
+            j[:, 3 + i * 3] = (
+                (2 / 3)
+                * a
+                * g**2
+                * (
+                    (x - c - 2.14) / ((g**2 + (x - 2.14 - c) ** 2) ** 2)
+                    + (x + 2.14 - c) / (g**2 + (x + 2.14 - c) ** 2) ** 2
+                    + (x - c) / (g**2 + (x - c) ** 2) ** 2
+                )
+            )
+            j[:, 4 + i * 3] = (g**2 / 3) * (
+                1 / (g**2 + (x - c) ** 2)
+                + 1 / (g**2 + (x - c + 2.14) ** 2)
+                + 1 / (g**2 + (x - 2.14 - c) ** 2)
+            )
+        return j
+
+    def get_param_defn(self) -&gt; tuple[str, ...]:
+        defn = [&#34;c&#34;, &#34;m&#34;]
+        for i in range(self.n_lorentzians):
+            defn += [&#34;fwhm&#34;, &#34;pos&#34;, &#34;amp&#34;]
+        return tuple(defn)
+
+    def get_param_odict(self) -&gt; dict[str, str]:
+        defn = [
+            (&#34;c_0&#34;, &#34;Amplitude (a.u.)&#34;),
+            (&#34;m_0&#34;, &#34;Amplitude per Freq (a.u.)&#34;),
+        ]
+        for i in range(self.n_lorentzians):
+            defn += [(f&#34;fwhm_{i}&#34;, &#34;Freq (MHz)&#34;)]
+            defn += [(f&#34;pos_{i}&#34;, &#34;Freq (MHz)&#34;)]
+            defn += [(f&#34;amp_{i}&#34;, &#34;Amp (a.u.)&#34;)]
+        return dict(defn)</code></pre>
+</details>
+<div class="desc"><p>FitModel used to fit to data.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="dukit.pl.model.FitModel" href="#dukit.pl.model.FitModel">FitModel</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="dukit.pl.model.FitModel" href="#dukit.pl.model.FitModel">FitModel</a></b></code>:
+<ul class="hlist">
+<li><code><a title="dukit.pl.model.FitModel.get_param_defn" href="#dukit.pl.model.FitModel.get_param_defn">get_param_defn</a></code></li>
+<li><code><a title="dukit.pl.model.FitModel.get_param_odict" href="#dukit.pl.model.FitModel.get_param_odict">get_param_odict</a></code></li>
+<li><code><a title="dukit.pl.model.FitModel.get_param_unit" href="#dukit.pl.model.FitModel.get_param_unit">get_param_unit</a></code></li>
+<li><code><a title="dukit.pl.model.FitModel.jacobian_scipyfit" href="#dukit.pl.model.FitModel.jacobian_scipyfit">jacobian_scipyfit</a></code></li>
+<li><code><a title="dukit.pl.model.FitModel.residuals_scipyfit" href="#dukit.pl.model.FitModel.residuals_scipyfit">residuals_scipyfit</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="dukit.pl.model.LinearN15Lorentzians"><code class="flex name class">
+<span>class <span class="ident">LinearN15Lorentzians</span></span>
+<span>(</span><span>n_lorentzians: int)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class LinearN15Lorentzians(FitModel):
+    def __init__(self, n_lorentzians: int):
+        self.n_lorentzians = n_lorentzians
+        self.fit_functions = {&#34;linear&#34;: 1, &#34;n15lorentzian&#34;: n_lorentzians}
+
+    def __call__(self, param_ar: npt.ArrayLike, sweep_arr: npt.ArrayLike):
+        return self._eval(self.n_lorentzians, sweep_arr, param_ar)
+
+    @staticmethod
+    @njit(fastmath=True)
+    def _eval(n: int, x: npt.ArrayLike, fit_params: npt.ArrayLike):
+        &#34;&#34;&#34;N14 has 2 resonances separated by 3.03MHz.
+        We keep widths, heights fixed for the pair &amp; split the amp/fwhm between
+        the two HF levels.&#34;&#34;&#34;
+        c = fit_params[0]
+        m = fit_params[1]
+        val = m * x + c
+        for i in range(n):
+            fwhm = fit_params[i * 3 + 2]
+            pos = fit_params[i * 3 + 3]
+            amp = fit_params[i * 3 + 4]
+            hwhmsqr = ((fwhm / 2.0) ** 2) / 4
+            val += (0.5 * amp * hwhmsqr / ((x - pos - 1.515) ** 2 + hwhmsqr)) + (
+                0.5 * amp * hwhmsqr / ((x - pos + 1.515) ** 2 + hwhmsqr)
+            )
+        return val
+
+    def residuals_scipyfit(self, param_ar, sweep_arr, pl_vals):
+        &#34;&#34;&#34;Evaluates residual: fit model (affine params/sweep_arr) - pl values&#34;&#34;&#34;
+        return self._resid(self.n_lorentzians, sweep_arr, pl_vals, param_ar)
+
+    @staticmethod
+    @njit(fastmath=True)
+    def _resid(
+        n: int,
+        x: npt.ArrayLike,
+        pl_vals: npt.ArrayLike,
+        fit_params: npt.ArrayLike,
+    ):
+        c = fit_params[0]
+        m = fit_params[1]
+        val = m * x + c
+        for i in range(n):
+            fwhm = fit_params[i * 3 + 2]
+            pos = fit_params[i * 3 + 3]
+            amp = fit_params[i * 3 + 4]
+            hwhmsqr = ((fwhm / 2.0) ** 2) / 4
+            val += (0.5 * amp * hwhmsqr / ((x - pos - 1.515) ** 2 + hwhmsqr)) + (
+                0.5 * amp * hwhmsqr / ((x - pos + 1.515) ** 2 + hwhmsqr)
+            )
+        return val - pl_vals
+
+    def jacobian_scipyfit(
+        self,
+        param_ar: npt.ArrayLike,
+        sweep_arr: npt.ArrayLike,
+        pl_vals: npt.ArrayLike,
+    ):
+        &#34;&#34;&#34;Evaluates (analytic) jacobian of fitmodel in format expected by scipy
+        least_squares&#34;&#34;&#34;
+        return self._jac(self.n_lorentzians, sweep_arr, pl_vals, param_ar)
+
+    @staticmethod
+    @njit(fastmath=True)
+    def _jac(
+        n: int,
+        x: npt.ArrayLike,
+        pl_vals: npt.ArrayLike,
+        fit_params: npt.ArrayLike,
+    ):
+        j = np.empty((np.shape(x)[0], 2 + 3 * n), dtype=np.float64)
+        j[:, 0] = 1  # wrt constant
+        j[:, 1] = x  # wrt m
+        for i in range(n):
+            fwhm = fit_params[i * 3 + 2]
+            c = fit_params[i * 3 + 3]
+            a = fit_params[i * 3 + 4]
+            g = (fwhm / 2) / 2
+
+            j[:, 2 + i * 3] = (a * g / 4) * (
+                g**2
+                * (-1 / (g**2 + (x + 1.515 - c) ** 2) ** 2 - 1 / (g**2 + (x - 1.515 - c) ** 2) ** 2)
+                + 1 / (g**2 + (x + 1.515 - c) ** 2)
+                + 1 / (g**2 + (x - 1.515 - c) ** 2)
+            )
+            j[:, 3 + i * 3] = (
+                a
+                * g**2
+                * (
+                    (x - c - 1.515) / ((g**2 + (x - 1.515 - c) ** 2) ** 2)
+                    + (x + 1.515 - c) / (g**2 + (x + 1.515 - c) ** 2) ** 2
+                )
+            )
+            j[:, 4 + i * 3] = (g**2 / 2) * (
+                1 / (g**2 + (x - c + 1.515) ** 2) + 1 / (g**2 + (x - 1.515 - c) ** 2)
+            )
+        return j
+
+    def get_param_defn(self) -&gt; tuple[str, ...]:
+        defn = [&#34;c&#34;, &#34;m&#34;]
+        for i in range(self.n_lorentzians):
+            defn += [&#34;fwhm&#34;, &#34;pos&#34;, &#34;amp&#34;]
+        return tuple(defn)
+
+    def get_param_odict(self) -&gt; dict[str, str]:
+        defn = [
+            (&#34;c_0&#34;, &#34;Amplitude (a.u.)&#34;),
+            (&#34;m_0&#34;, &#34;Amplitude per Freq (a.u.)&#34;),
+        ]
+        for i in range(self.n_lorentzians):
+            defn += [(f&#34;fwhm_{i}&#34;, &#34;Freq (MHz)&#34;)]
+            defn += [(f&#34;pos_{i}&#34;, &#34;Freq (MHz)&#34;)]
+            defn += [(f&#34;amp_{i}&#34;, &#34;Amp (a.u.)&#34;)]
+        return dict(defn)</code></pre>
+</details>
+<div class="desc"><p>FitModel used to fit to data.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="dukit.pl.model.FitModel" href="#dukit.pl.model.FitModel">FitModel</a></li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="dukit.pl.model.FitModel" href="#dukit.pl.model.FitModel">FitModel</a></b></code>:
+<ul class="hlist">
+<li><code><a title="dukit.pl.model.FitModel.get_param_defn" href="#dukit.pl.model.FitModel.get_param_defn">get_param_defn</a></code></li>
+<li><code><a title="dukit.pl.model.FitModel.get_param_odict" href="#dukit.pl.model.FitModel.get_param_odict">get_param_odict</a></code></li>
+<li><code><a title="dukit.pl.model.FitModel.get_param_unit" href="#dukit.pl.model.FitModel.get_param_unit">get_param_unit</a></code></li>
+<li><code><a title="dukit.pl.model.FitModel.jacobian_scipyfit" href="#dukit.pl.model.FitModel.jacobian_scipyfit">jacobian_scipyfit</a></code></li>
+<li><code><a title="dukit.pl.model.FitModel.residuals_scipyfit" href="#dukit.pl.model.FitModel.residuals_scipyfit">residuals_scipyfit</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="dukit.pl.model.SkewedLorentzians"><code class="flex name class">
+<span>class <span class="ident">SkewedLorentzians</span></span>
+<span>(</span><span>n_lorentzians)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SkewedLorentzians(FitModel):
+    def __init__(self, n_lorentzians):
+        self.n_lorentzians = n_lorentzians
+        self.fit_functions = {
+            &#34;constant&#34;: 1,
+            &#34;skewed_lorentzian&#34;: n_lorentzians,
+        }
+
+    def __call__(self, param_ar: npt.ArrayLike, sweep_arr: npt.ArrayLike):
+        return self._eval(self.n_lorentzians, sweep_arr, param_ar)
+
+    @staticmethod
+    @njit(fastmath=True)
+    def _eval(n: int, x: npt.ArrayLike, fit_params: npt.ArrayLike):
+        c = fit_params[0]
+        val = c * np.ones(np.shape(x))
+        for i in range(n):
+            sigma = fit_params[i * 4 + 1]
+            pos = fit_params[i * 4 + 2]
+            amp = fit_params[i * 4 + 3]
+            skew = fit_params[i * 4 + 4]
+            val += amp / (1 + ((x - pos) ** 2 / (sigma**2 * (1 + skew * np.sign(x - pos)) ** 2)))
+        return val
+
+    def residuals_scipyfit(
+        self,
+        param_ar: npt.ArrayLike,
+        sweep_arr: npt.ArrayLike,
+        pl_vals: npt.ArrayLike,
+    ):
+        &#34;&#34;&#34;Evaluates residual: fit model (affine params/sweep_arr) - pl values&#34;&#34;&#34;
+        return self._resid(self.n_lorentzians, sweep_arr, pl_vals, param_ar)
+
+    @staticmethod
+    @njit(fastmath=True)
+    def _resid(
+        n: int,
+        x: npt.ArrayLike,
+        pl_vals: npt.ArrayLike,
+        fit_params: npt.ArrayLike,
+    ):
+        c = fit_params[0]
+        val = c * np.ones(np.shape(x))
+        for i in range(n):
+            sigma = fit_params[i * 4 + 1]
+            pos = fit_params[i * 4 + 2]
+            amp = fit_params[i * 4 + 3]
+            skew = fit_params[i * 4 + 4]
+            val += amp / (1 + ((x - pos) ** 2 / (sigma**2 * (1 + skew * np.sign(x - pos)) ** 2)))
+        return val - pl_vals
+
+    def jacobian_scipyfit(
+        self,
+        param_ar: npt.ArrayLike,
+        sweep_arr: npt.ArrayLike,
+        pl_vals: npt.ArrayLike,
+    ):
+        &#34;&#34;&#34;Evaluates (analytic) jacobian of fitmodel in format expected by
+        scipy least_squares&#34;&#34;&#34;
+        return self._jac(self.n_lorentzians, sweep_arr, pl_vals, param_ar)
+
+    @staticmethod
+    @njit(fastmath=True)
+    def _jac(
+        n: int,
+        x: npt.ArrayLike,
+        pl_vals: npt.ArrayLike,
+        fit_params: npt.ArrayLike,
+    ):
+        j = np.empty((np.shape(x)[0], 1 + 3 * n), dtype=np.float64)
+        j[:, 0] = 1  # wrt constant
+        for i in range(n):
+            w = fit_params[i * 4 + 1]
+            c = fit_params[i * 4 + 2]
+            a = fit_params[i * 4 + 3]
+            s = fit_params[i * 4 + 4]
+
+            # (2*a*(c - x)^2)/(w^3*(1 + s*Sign[-c + x])^2*
+            #   (1 + (c - x)^2/(w + s*w*Sign[-c + x])^2)^2)
+            # (-2*a*w^2*(c - x)*(1 + s*Sign[-c + x])*
+            #   (1 + s*Sign[-c + x] + s*(c - x)*Derivative[1][Sign][-c + x]))/
+            #   (w^2 + (c - x)^2 + s*w^2*(s*Sign[c - x]^2 + 2*Sign[-c + x]))^2
+            # (1 + (c - x)^2/(w + s*w*Sign[-c + x])^2)^(-1)
+            # (2*a*(c - x)^2*Sign[-c + x])/(w^2*(1 + s*Sign[-c + x])^3*
+            #   (1 + (c - x)^2/(w + s*w*Sign[-c + x])^2)^2)
+
+            j[:, 1 + i * 4] = (2 * a * (c - x) ** 2) / (
+                w**3
+                * (1 + s * np.sign(-c + x)) ** 2
+                * (1 + (c - x) ** 2 / (w + s * w * np.sign(-c + x)) ** 2) ** 2
+            )
+            j[:, 2 + i * 4] = (
+                -2 * a * w**2 * (c - x) * (1 + s * np.sign(-c + x)) * (1 + s * np.sign(-c + x))
+            ) / (
+                w**2 + (c - x) ** 2 + s * w**2 * (s * np.sign(c - x) ** 2 + 2 * np.sign(-c + x))
+            ) ** 2
+
+            j[:, 3 + i * 4] = (1 + (c - x) ** 2 / (w + s * w * np.sign(-c + x)) ** 2) ** (-1)
+            j[:, 4 + i * 4] = (2 * a * (c - x) ** 2 * np.sign(-c + x)) / (
+                w**2
+                * (1 + s * np.sign(-c + x)) ** 3
+                * (1 + (c - x) ** 2 / (w + s * w * np.sign(-c + x)) ** 2) ** 2
+            )
+
+        return j
+
+    def get_param_defn(self) -&gt; tuple[str, ...]:
+        defn = [&#34;constant&#34;]
+        for i in range(self.n_lorentzians):
+            defn += [&#34;sigma&#34;, &#34;pos&#34;, &#34;amp&#34;, &#34;skew&#34;]
+        return tuple(defn)
+
+    def get_param_odict(self) -&gt; dict[str, str]:
+        defn = [(&#34;constant_0&#34;, &#34;Amplitude (a.u.)&#34;)]
+        for i in range(self.n_lorentzians):
+            defn += [(f&#34;sigma_{i}&#34;, &#34;Freq (MHz)&#34;)]
+            defn += [(f&#34;pos_{i}&#34;, &#34;Freq (MHz)&#34;)]
+            defn += [(f&#34;amp_{i}&#34;, &#34;Amp (a.u.)&#34;)]
+            defn += [(f&#34;skew_{i}&#34;, &#34;Skew (a.u.)&#34;)]
+        return dict(defn)</code></pre>
+</details>
+<div class="desc"><p>FitModel used to fit to data.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="dukit.pl.model.FitModel" href="#dukit.pl.model.FitModel">FitModel</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="dukit.pl.model.SkewedLorentzians.jacobian_scipyfit"><code class="name flex">
+<span>def <span class="ident">jacobian_scipyfit</span></span>(<span>self, param_ar: ArrayLike, sweep_arr: ArrayLike, pl_vals: ArrayLike)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def jacobian_scipyfit(
+    self,
+    param_ar: npt.ArrayLike,
+    sweep_arr: npt.ArrayLike,
+    pl_vals: npt.ArrayLike,
+):
+    &#34;&#34;&#34;Evaluates (analytic) jacobian of fitmodel in format expected by
+    scipy least_squares&#34;&#34;&#34;
+    return self._jac(self.n_lorentzians, sweep_arr, pl_vals, param_ar)</code></pre>
+</details>
+<div class="desc"><p>Evaluates (analytic) jacobian of fitmodel in format expected by
+scipy least_squares</p></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="dukit.pl.model.FitModel" href="#dukit.pl.model.FitModel">FitModel</a></b></code>:
+<ul class="hlist">
+<li><code><a title="dukit.pl.model.FitModel.get_param_defn" href="#dukit.pl.model.FitModel.get_param_defn">get_param_defn</a></code></li>
+<li><code><a title="dukit.pl.model.FitModel.get_param_odict" href="#dukit.pl.model.FitModel.get_param_odict">get_param_odict</a></code></li>
+<li><code><a title="dukit.pl.model.FitModel.get_param_unit" href="#dukit.pl.model.FitModel.get_param_unit">get_param_unit</a></code></li>
+<li><code><a title="dukit.pl.model.FitModel.residuals_scipyfit" href="#dukit.pl.model.FitModel.residuals_scipyfit">residuals_scipyfit</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
 </dl>
 </section>
 </article>
@@ -1137,8 +1328,8 @@ least_squares</p></div>
 <input id="lunr-search" name="q" placeholder="🔎 Search ..." aria-label="Search"
 disabled minlength="2">
 </form>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.css" integrity="sha512-j1u8eUJ4f23xPPxwOrLUPQaCD2dwzNqqmDDcWS4deWsMv2ohLqmXXuP3hU7g8TyzbMSakP/mMqoNBYWj8AEIFg==" crossorigin>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.js" integrity="sha512-plGUER9JkeEWPPqQBE4sdLqBoQug5Ap+BCGMc7bJ8BXkm+VVj6QzkpBz5Yv2yPkkq+cqg9IpkBaGCas6uDbW8g==" crossorigin></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.css" integrity="sha512-b+T2i3P45i1LZM7I00Ci5QquB9szqaxu+uuk5TUSGjZQ4w4n+qujQiIuvTv2BxE7WCGQCifNMksyKILDiHzsOg==" crossorigin>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.js" integrity="sha512-2B9/byNV1KKRm5nQ2RLViPFD6U4dUjDGwuW1GU+ImJh8YinPU9Zlq1GzdTMO+G2ROrB5o1qasJBy1ttYz0wCug==" crossorigin></script>
 <style>
 .modal-dialog iframe {
 width: 100vw;
@@ -1179,7 +1370,6 @@ setTimeout(() => input.focus(), 100);
 }).setContent('<iframe src="' + url + '"></iframe>').open();
 }
 </script>
-<h1>Index</h1>
 <div class="toc">
 <ul>
 <li><a href="#classes">Classes</a></li>
@@ -1193,6 +1383,9 @@ setTimeout(() => input.focus(), 100);
 </li>
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
+<li>
+<h4><code><a title="dukit.pl.model.ConstBiExponential" href="#dukit.pl.model.ConstBiExponential">ConstBiExponential</a></code></h4>
+</li>
 <li>
 <h4><code><a title="dukit.pl.model.ConstDampedRabi" href="#dukit.pl.model.ConstDampedRabi">ConstDampedRabi</a></code></h4>
 </li>
@@ -1218,13 +1411,25 @@ setTimeout(() => input.focus(), 100);
 <li>
 <h4><code><a title="dukit.pl.model.LinearLorentzians" href="#dukit.pl.model.LinearLorentzians">LinearLorentzians</a></code></h4>
 </li>
+<li>
+<h4><code><a title="dukit.pl.model.LinearN14Lorentzians" href="#dukit.pl.model.LinearN14Lorentzians">LinearN14Lorentzians</a></code></h4>
+</li>
+<li>
+<h4><code><a title="dukit.pl.model.LinearN15Lorentzians" href="#dukit.pl.model.LinearN15Lorentzians">LinearN15Lorentzians</a></code></h4>
+</li>
+<li>
+<h4><code><a title="dukit.pl.model.SkewedLorentzians" href="#dukit.pl.model.SkewedLorentzians">SkewedLorentzians</a></code></h4>
+<ul class="">
+<li><code><a title="dukit.pl.model.SkewedLorentzians.jacobian_scipyfit" href="#dukit.pl.model.SkewedLorentzians.jacobian_scipyfit">jacobian_scipyfit</a></code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
 </footer>
 </body>
 </html>

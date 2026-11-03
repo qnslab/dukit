@@ -1,0 +1,1404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>dukit.field.reconstruction API documentation</title>
+<meta name="description" content="Field reconstruction functions for defect microscopy …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>dukit.field.reconstruction</code></h1>
+</header>
+<section id="section-intro">
+<p>Field reconstruction functions for defect microscopy.</p>
+<p>This module provides vector magnetic field reconstruction methods for defect-based
+widefield microscopy. Functions convert between different representations of magnetic
+field data and perform vector reconstruction from single or multiple defect orientations.</p>
+<h2 id="functions">Functions</h2>
+<ul>
+<li><code><a title="dukit.field.reconstruction.spherical_to_cartesian" href="#dukit.field.reconstruction.spherical_to_cartesian">spherical_to_cartesian()</a></code></li>
+<li><code><a title="dukit.field.reconstruction.get_bdefects_from_frequencies" href="#dukit.field.reconstruction.get_bdefects_from_frequencies">get_bdefects_from_frequencies()</a></code></li>
+<li><code><a title="dukit.field.reconstruction.get_bxyz_from_single_defect" href="#dukit.field.reconstruction.get_bxyz_from_single_defect">get_bxyz_from_single_defect()</a></code></li>
+<li><code><a title="dukit.field.reconstruction.get_bxyz_from_bdefects_inversion" href="#dukit.field.reconstruction.get_bxyz_from_bdefects_inversion">get_bxyz_from_bdefects_inversion()</a></code></li>
+<li><code><a title="dukit.field.reconstruction.get_bxyz_from_hamiltonian" href="#dukit.field.reconstruction.get_bxyz_from_hamiltonian">get_bxyz_from_hamiltonian()</a></code></li>
+<li><code><a title="dukit.field.reconstruction.get_bxyz_from_pre_gslac_ref" href="#dukit.field.reconstruction.get_bxyz_from_pre_gslac_ref">get_bxyz_from_pre_gslac_ref()</a></code></li>
+<li><code><a title="dukit.field.reconstruction._normalize_u_defects" href="#dukit.field.reconstruction._normalize_u_defects">_normalize_u_defects()</a></code></li>
+</ul>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="dukit.field.reconstruction._normalize_u_defects"><code class="name flex">
+<span>def <span class="ident">_normalize_u_defects</span></span>(<span>u_defects: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]) ‑> numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def _normalize_u_defects(u_defects: npt.NDArray) -&gt; npt.NDArray:
+    &#34;&#34;&#34;
+    Normalize defect orientation unit vectors internally (copy first).
+
+    Parameters
+    ----------
+    u_defects : npt.NDArray
+        Defect orientation unit vectors, shape (n_defects, 3).
+
+    Returns
+    -------
+    u_defects_normalized : npt.NDArray
+        Normalized orientation vectors, same shape as input.
+        Input is NOT modified.
+    &#34;&#34;&#34;
+    u_defects_normalized = u_defects.copy()
+    norms = np.linalg.norm(u_defects_normalized, axis=1, keepdims=True)
+    u_defects_normalized /= norms
+    return u_defects_normalized</code></pre>
+</details>
+<div class="desc"><p>Normalize defect orientation unit vectors internally (copy first).</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>u_defects</code></strong> :&ensp;<code>npt.NDArray</code></dt>
+<dd>Defect orientation unit vectors, shape (n_defects, 3).</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>u_defects_normalized</code></strong> :&ensp;<code>npt.NDArray</code></dt>
+<dd>Normalized orientation vectors, same shape as input.
+Input is NOT modified.</dd>
+</dl></div>
+</dd>
+<dt id="dukit.field.reconstruction.get_bdefects_from_frequencies"><code class="name flex">
+<span>def <span class="ident">get_bdefects_from_frequencies</span></span>(<span>freqs: Tuple[numpy.ndarray[tuple[Any, ...], numpy.dtype[~_ScalarT]], ...],<br>defect: <a title="dukit.field.defects.Defect" href="defects.html#dukit.field.defects.Defect">Defect</a>,<br>past_gslac: bool = False) ‑> Tuple[Tuple[numpy.ndarray[tuple[Any, ...], numpy.dtype[~_ScalarT]], ...], Tuple[numpy.ndarray[tuple[Any, ...], numpy.dtype[~_ScalarT]], ...]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_bdefects_from_frequencies(
+    freqs: Tuple[npt.NDArray, ...],
+    defect: Defect,
+    past_gslac: bool = False,
+) -&gt; Tuple[Tuple[npt.NDArray, ...], Tuple[npt.NDArray, ...]]:
+    &#34;&#34;&#34;
+    Convert resonance frequencies → B_defects and D-shifts.
+
+    Calls defect.b_defects(freqs) and defect.dshift_defects(freqs).
+    Frequencies auto-sorted by mean value before conversion.
+
+    Parameters
+    ----------
+    freqs : tuple of npt.NDArray
+        Tuple of 2D frequency arrays (MHz), auto-sorted.
+
+    defect : Defect
+        Defect instance defining conversion physics.
+
+    past_gslac : bool, default=False
+        For single frequency: whether measurement is past GSLAC (affects sign).
+
+    Returns
+    -------
+    b_defects : tuple of npt.NDArray
+        B-field components along each defect orientation (Gauss).
+
+    dshifts : tuple of npt.NDArray
+        D-field shifts (MHz), may contain NaN for single resonances.
+
+    Notes
+    -----
+    Input frequencies in MHz → output B_defects in Gauss (via defect.GAMMA in MHz/T).
+    &#34;&#34;&#34;
+    freqs_sorted = tuple(sorted(freqs, key=lambda f: np.nanmean(f)))
+    b_defects_tesla = defect.b_defects(freqs_sorted, past_gslac=past_gslac)
+    dshifts = defect.dshift_defects(freqs_sorted)
+
+    # Convert Tesla to Gauss (1 T = 1e4 G)
+    b_defects = tuple(b * 1e4 for b in b_defects_tesla)
+
+    return b_defects, dshifts</code></pre>
+</details>
+<div class="desc"><p>Convert resonance frequencies → B_defects and D-shifts.</p>
+<p>Calls defect.b_defects(freqs) and defect.dshift_defects(freqs).
+Frequencies auto-sorted by mean value before conversion.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>freqs</code></strong> :&ensp;<code>tuple</code> of <code>npt.NDArray</code></dt>
+<dd>Tuple of 2D frequency arrays (MHz), auto-sorted.</dd>
+<dt><strong><code>defect</code></strong> :&ensp;<code>Defect</code></dt>
+<dd>Defect instance defining conversion physics.</dd>
+<dt><strong><code>past_gslac</code></strong> :&ensp;<code>bool</code>, default=<code>False</code></dt>
+<dd>For single frequency: whether measurement is past GSLAC (affects sign).</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>b_defects</code></strong> :&ensp;<code>tuple</code> of <code>npt.NDArray</code></dt>
+<dd>B-field components along each defect orientation (Gauss).</dd>
+<dt><strong><code>dshifts</code></strong> :&ensp;<code>tuple</code> of <code>npt.NDArray</code></dt>
+<dd>D-field shifts (MHz), may contain NaN for single resonances.</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<p>Input frequencies in MHz → output B_defects in Gauss (via defect.GAMMA in MHz/T).</p></div>
+</dd>
+<dt id="dukit.field.reconstruction.get_bxyz_from_bdefects_inversion"><code class="name flex">
+<span>def <span class="ident">get_bxyz_from_bdefects_inversion</span></span>(<span>b_defects: tuple[numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]], ...],<br>u_defects: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>bias_field: tuple[float, float, float]) ‑> dict[str, numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_bxyz_from_bdefects_inversion(
+    b_defects: tuple[npt.NDArray, ...],
+    u_defects: npt.NDArray,
+    bias_field: tuple[float, float, float],
+) -&gt; dict[str, npt.NDArray]:
+    &#34;&#34;&#34;
+    Matrix inversion: multiple B_defects → Bxyz.
+
+    Inverts B_defect = u_defects · B to get B = u_defects^-1 · b_defects.
+    Uses diagonal approximation (only field along defect axis considered).
+
+    Parameters
+    ----------
+    b_defects : tuple of npt.NDArray
+        Tuple of 2D arrays, each B_defect along one defect orientation.
+        Requires 3 or 4 defect orientations for well-conditioned inversion.
+
+    u_defects : npt.NDArray
+        Defect orientation unit vectors, shape (n_defects, 3).
+        Will be normalized internally. Must have same number of rows as len(b_defects).
+
+    bias_field : tuple[float, float, float]
+        Bias field (mag_T, theta_deg, phi_deg). Used for validation.
+        Should be consistent with ordering of u_defects.
+
+    Returns
+    -------
+    result : dict[str, npt.NDArray]
+        Dictionary with keys:
+        - &#34;Bx&#34;, &#34;By&#34;, &#34;Bz&#34;: magnetic field components (2D arrays, Gauss)
+        - &#34;residual_field&#34;: zeros (2D array), for consistency
+        - &#34;_metadata&#34;: dict with method info
+
+    Raises
+    ------
+    ValueError
+        If fewer than 3 defect orientations provided.
+    UserWarning
+        If u_defects matrix is ill-conditioned (cond &gt; 1e10).
+
+    Notes
+    -----
+    Requires at least 3 defect orientations. Best with 4 (full NV ensemble).
+    Warns if condition number of u_defects matrix exceeds 1e10.
+    &#34;&#34;&#34;
+    from datetime import datetime
+
+    # Validation: need at least 3 defect orientations
+    if len(b_defects) &lt; 3:
+        raise ValueError(
+            f&#34;Need at least 3 defect orientations for matrix inversion, got {len(b_defects)}&#34;
+        )
+
+    # Validation: shapes match
+    n_defects = len(b_defects)
+    if u_defects.shape[0] != n_defects:
+        raise ValueError(
+            f&#34;u_defects has {u_defects.shape[0]} orientations but {n_defects} b_defects provided&#34;
+        )
+
+    # Validation: all b_defects have same shape
+    shapes = [b.shape for b in b_defects]
+    if not all(s == shapes[0] for s in shapes):
+        raise ValueError(f&#34;All b_defects must have same shape, got shapes: {shapes}&#34;)
+
+    # Normalize u_defects internally
+    u_defects_normalized = _normalize_u_defects(u_defects)
+
+    # For 4 orientations, pick the best-conditioned 3x3 subset
+    # For exactly 3, use all of them
+    if n_defects == 3:
+        u_inv_matrix = u_defects_normalized
+        b_defects_to_use = b_defects
+    else:
+        # For 4 defects, find the best-conditioned 3x3 subset
+        cond_numbers = []
+        indices_list = []
+        for i in range(n_defects):
+            for j in range(i + 1, n_defects):
+                for k in range(j + 1, n_defects):
+                    subset = np.vstack(
+                        [u_defects_normalized[i], u_defects_normalized[j], u_defects_normalized[k]]
+                    )
+                    try:
+                        cond_numbers.append(np.linalg.cond(subset))
+                    except np.linalg.LinAlgError:
+                        # If SVD fails, use large condition number
+                        cond_numbers.append(1e15)
+                    indices_list.append((i, j, k))
+
+        # Pick the subset with smallest condition number
+        best_idx = np.argmin(cond_numbers)
+        best_indices = indices_list[best_idx]
+
+        u_inv_matrix = np.vstack([u_defects_normalized[i] for i in best_indices])
+        b_defects_to_use = [b_defects[i] for i in best_indices]
+
+    try:
+        cond = np.linalg.cond(u_inv_matrix)
+    except np.linalg.LinAlgError:
+        cond = np.inf
+
+    if cond &gt; 1e10:
+        warnings.warn(
+            f&#34;u_defects matrix ill-conditioned (cond={cond:.2e}), results may be unstable&#34;
+        )
+
+    # Compute inverse
+    u_inv = np.linalg.inv(u_inv_matrix)
+
+    # Select corresponding b_defects
+    b_defects_stacked = np.stack(b_defects_to_use, axis=-1)
+
+    # Multiply inverse matrix by b_defects for each pixel using einsum
+    bxyz = np.einsum(&#34;ij,yxj-&gt;yxi&#34;, u_inv, b_defects_stacked)
+
+    return {
+        &#34;Bx&#34;: bxyz[:, :, 0],
+        &#34;By&#34;: bxyz[:, :, 1],
+        &#34;Bz&#34;: bxyz[:, :, 2],
+        &#34;residual_field&#34;: np.zeros_like(bxyz[:, :, 0]),
+        &#34;_metadata&#34;: {
+            &#34;method&#34;: &#34;bdefects_inversion&#34;,
+            &#34;bias_field&#34;: bias_field,
+            &#34;timestamp&#34;: datetime.now(timezone.utc).isoformat(),
+            &#34;image_shape&#34;: bxyz[:, :, 0].shape,
+            &#34;n_defects_used&#34;: len(b_defects_to_use),
+            &#34;condition_number&#34;: float(cond),
+        },
+    }</code></pre>
+</details>
+<div class="desc"><p>Matrix inversion: multiple B_defects → Bxyz.</p>
+<p>Inverts B_defect = u_defects · B to get B = u_defects^-1 · b_defects.
+Uses diagonal approximation (only field along defect axis considered).</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>b_defects</code></strong> :&ensp;<code>tuple</code> of <code>npt.NDArray</code></dt>
+<dd>Tuple of 2D arrays, each B_defect along one defect orientation.
+Requires 3 or 4 defect orientations for well-conditioned inversion.</dd>
+<dt><strong><code>u_defects</code></strong> :&ensp;<code>npt.NDArray</code></dt>
+<dd>Defect orientation unit vectors, shape (n_defects, 3).
+Will be normalized internally. Must have same number of rows as len(b_defects).</dd>
+<dt><strong><code>bias_field</code></strong> :&ensp;<code>tuple[float, float, float]</code></dt>
+<dd>Bias field (mag_T, theta_deg, phi_deg). Used for validation.
+Should be consistent with ordering of u_defects.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>result</code></strong> :&ensp;<code>dict[str, npt.NDArray]</code></dt>
+<dd>Dictionary with keys:
+- "Bx", "By", "Bz": magnetic field components (2D arrays, Gauss)
+- "residual_field": zeros (2D array), for consistency
+- "_metadata": dict with method info</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>If fewer than 3 defect orientations provided.</dd>
+<dt><code>UserWarning</code></dt>
+<dd>If u_defects matrix is ill-conditioned (cond &gt; 1e10).</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<p>Requires at least 3 defect orientations. Best with 4 (full NV ensemble).
+Warns if condition number of u_defects matrix exceeds 1e10.</p></div>
+</dd>
+<dt id="dukit.field.reconstruction.get_bxyz_from_hamiltonian"><code class="name flex">
+<span>def <span class="ident">get_bxyz_from_hamiltonian</span></span>(<span>freqs: tuple[numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]], ...],<br>defect: <a title="dukit.field.defects.Defect" href="defects.html#dukit.field.defects.Defect">Defect</a>,<br>u_defects: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>bias_field: tuple[float, float, float],<br>n_jobs: int = -2,<br>joblib_verbosity: int = 0,<br>method: str = 'trf',<br>gtol: float = 1e-12,<br>xtol: float = 1e-12,<br>ftol: float = 1e-12,<br>loss: str = 'linear',<br>guesses: dict[str, float] | None = None,<br>progress_bar: bool = True,<br>freq_mask: tuple[bool, ...] | None = None) ‑> dict[str, numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_bxyz_from_hamiltonian(
+    freqs: tuple[npt.NDArray, ...],
+    defect: Defect,
+    u_defects: npt.NDArray,
+    bias_field: tuple[float, float, float],
+    n_jobs: int = -2,
+    joblib_verbosity: int = 0,
+    method: str = &#34;trf&#34;,
+    gtol: float = 1e-12,
+    xtol: float = 1e-12,
+    ftol: float = 1e-12,
+    loss: str = &#34;linear&#34;,
+    guesses: dict[str, float] | None = None,
+    progress_bar: bool = True,
+    freq_mask: tuple[bool, ...] | None = None,
+) -&gt; dict[str, npt.NDArray]:
+    &#34;&#34;&#34;
+    Hamiltonian fitting: frequencies → Bxyz (+ D).
+
+    Fits the defect spin Hamiltonian directly to resonance frequencies:
+    H = D·S_z^2 + γ·B·S (full NV ensemble with D parameter)
+
+    Parameters
+    ----------
+    freqs : tuple of npt.NDArray
+        Tuple of 2D frequency arrays (MHz), one per resonance.
+        Auto-sorted by mean value. Requires 2-8 frequencies.
+
+    defect : Defect
+        Defect instance (e.g., NVEnsemble) defining physical constants:
+        - GAMMA (gyromagnetic ratio)
+        - zero_field_splitting D
+
+    u_defects : npt.NDArray
+        Defect orientation unit vectors, shape (n_defects, 3), normalized internally.
+        For NV: typically 4 orientations from geom.get_u_defects().
+
+    bias_field : tuple[float, float, float]
+        Bias field (mag_T, theta_deg, phi_deg). Used for initial guesses.
+
+    n_jobs : int, default=-2
+        Number of parallel jobs for pixel fitting. -1 uses all processors,
+        -2 uses all but one, 1 disables parallelization.
+
+    joblib_verbosity : int, default=0
+        Verbosity level for joblib parallelization.
+
+    method : str, default=&#34;trf&#34;
+        scipy.optimize.least_squares method: &#34;trf&#34;, &#34;dogbox&#34;, or &#34;lm&#34;.
+
+    gtol, xtol, ftol : float, default=1e-12
+        Convergence tolerances for scipy least_squares.
+
+    loss : str, default=&#34;linear&#34;
+        Loss function for robust fitting. &#34;linear&#34;, &#34;huber&#34;, &#34;soft_l1&#34;, etc.
+
+    guesses : dict, optional
+        Initial parameter guesses. Keys: {&#34;D&#34;, &#34;Bx&#34;, &#34;By&#34;, &#34;Bz&#34;}.
+        If None, auto-guessed from bias field (converted to Gauss).
+
+    progress_bar : bool, default=True
+        Show tqdm progress bar during fitting.
+
+    freq_mask : tuple[bool, ...] | None, default=None
+        Boolean mask selecting which frequencies to use. Must match length of freqs.
+        If None, all frequencies are used.
+        Example: (True, True, False, False, False, False, True, True) uses 4 freqs.
+
+    Returns
+    -------
+    result : dict[str, npt.NDArray]
+        Dictionary with keys:
+        - &#34;Bx&#34;, &#34;By&#34;, &#34;Bz&#34;: magnetic field (2D arrays, Gauss)
+        - &#34;sigma_Bx&#34;, &#34;sigma_By&#34;, &#34;sigma_Bz&#34;: uncertainties (2D arrays)
+        - &#34;D&#34;: zero-field splitting (2D array, MHz)
+        - &#34;sigma_D&#34;: uncertainty of D (2D array)
+        - &#34;residual_field&#34;: sum of absolute residuals (2D array, arbitrary units).
+          This is sum(|model - data|) over all frequencies used.
+        - &#34;_metadata&#34;: dict with fit info
+
+    Raises
+    ------
+    ValueError
+        If fewer than 2 frequencies provided (underdetermined for 4 params).
+    RuntimeError
+        If all pixels fail to converge.
+
+    Notes
+    -----
+    - Requires at least 2 frequencies to fit 4 parameters (D, Bx, By, Bz).
+    - NaN pixels are skipped during fitting and returned as NaN in output.
+    - Prints warning at end showing count of failed pixels (if any).
+    - For failed pixels: params and sigmas are set to NaN.
+    &#34;&#34;&#34;
+    from datetime import datetime
+
+    # Validation
+    if len(freqs) &lt; 2:
+        raise ValueError(
+            f&#34;Need at least 2 frequencies for Hamiltonian fit (4 params: D, Bx, By, Bz), &#34;
+            f&#34;got {len(freqs)}&#34;
+        )
+    if len(freqs) &gt; 8:
+        raise ValueError(f&#34;Too many frequencies: {len(freqs)} (max 8)&#34;)
+    if not isinstance(defect, Defect):
+        raise TypeError(f&#34;defect must be Defect instance, got {type(defect)}&#34;)
+
+    # Auto-sort frequencies by mean value
+    freqs_sorted = tuple(sorted(freqs, key=lambda f: np.nanmean(f)))
+
+    # Apply freq_mask if provided
+    if freq_mask is not None:
+        if len(freq_mask) != len(freqs_sorted):
+            raise ValueError(
+                f&#34;freq_mask length {len(freq_mask)} must match freqs length {len(freqs_sorted)}&#34;
+            )
+        freqs_sorted = tuple(f for f, use in zip(freqs_sorted, freq_mask) if use)
+        if len(freqs_sorted) &lt; 2:
+            raise ValueError(
+                f&#34;freq_mask left only {len(freqs_sorted)} frequencies, need at least 2&#34;
+            )
+
+    # Convert to 3D array [idx, y, x]
+    freq_data = np.array(freqs_sorted)
+    if freq_data.ndim != 3:
+        raise ValueError(f&#34;freqs must be tuple of 2D arrays, got shape {freq_data.shape}&#34;)
+
+    # Get image shape
+    _, ny, nx = freq_data.shape
+
+    # Normalize u_defects
+    u_defects_normalized = _normalize_u_defects(u_defects)
+
+    # Construct full u_defect_frames for Hamiltonian
+    u_defect_frames = _construct_u_defect_frames(u_defects_normalized)
+
+    # Create chooser (selects which frequencies to use)
+    if freq_mask is not None:
+        chooser_ar = np.array([use for use in freq_mask if use])
+    else:
+        chooser_ar = np.ones(len(freqs_sorted), dtype=bool)
+    chooser_obj = hamiltonian.Chooser(chooser_ar)
+
+    # Generate initial guesses
+    if guesses is None:
+        # Convert bias field from spherical to cartesian (Tesla)
+        bias_cartesian = spherical_to_cartesian(*bias_field)  # T
+        # Convert to Gauss for initial guesses
+        bias_gauss = tuple(b * 1e4 for b in bias_cartesian)
+        init_guesses, init_bounds = hamiltonian.ham_gen_init_guesses(
+            &#34;bxyz&#34;,
+            bias_gauss,
+            zero_field_splitting=defect.zero_field_splitting,
+            auto_guess=True,
+        )
+    else:
+        # User provided guesses
+        ham_class = hamiltonian.AVAILABLE_HAMILTONIANS[&#34;bxyz&#34;]
+        init_guesses = guesses.copy()
+        init_bounds = {}
+        for param_key in ham_class.param_defn:
+            if param_key not in init_guesses:
+                if param_key == &#34;D&#34;:
+                    init_guesses[param_key] = defect.zero_field_splitting
+                else:
+                    init_guesses[param_key] = 0.0
+            # Set bounds based on parameter type
+            if param_key == &#34;D&#34;:
+                guess = init_guesses[param_key]
+                init_bounds[param_key] = np.array([guess - 50.0, guess + 50.0])
+            else:  # Bx, By, Bz
+                guess = init_guesses[param_key]
+                init_bounds[param_key] = np.array([guess - 100.0, guess + 100.0])
+
+    # Create Hamiltonian
+    ham_obj = hamiltonian.Bxyz(chooser_obj, u_defect_frames)
+
+    # Run fitting
+    t0 = timer()
+    fit_results, sigmas = ham_scipy.fit_hamiltonian_scipyfit(
+        data=freq_data,
+        hamiltonian_obj=ham_obj,
+        init_guesses=init_guesses,
+        init_bounds=init_bounds,
+        freq_mask=None,
+        n_jobs=n_jobs,
+        joblib_verbosity=joblib_verbosity,
+        method=method,
+        gtol=gtol,
+        xtol=xtol,
+        ftol=ftol,
+        loss=loss,
+        use_analytic_jac=False,
+        scale_x=False,
+        shuffle_pixels=True,
+        progress_bar=progress_bar,
+    )
+    t1 = timer()
+
+    # Check for failed pixels
+    n_failed = np.sum(np.isnan(fit_results[&#34;D&#34;]))
+    if n_failed &gt; 0:
+        warnings.warn(f&#34;{n_failed} of {ny * nx} pixels failed to converge&#34;)
+    if n_failed == ny * nx:
+        raise RuntimeError(&#34;All pixels failed to converge&#34;)
+
+    # Build result dictionary with sigma_ prefix
+    result = {
+        &#34;Bx&#34;: fit_results[&#34;Bx&#34;],
+        &#34;By&#34;: fit_results[&#34;By&#34;],
+        &#34;Bz&#34;: fit_results[&#34;Bz&#34;],
+        &#34;sigma_Bx&#34;: sigmas[&#34;Bx&#34;],
+        &#34;sigma_By&#34;: sigmas[&#34;By&#34;],
+        &#34;sigma_Bz&#34;: sigmas[&#34;Bz&#34;],
+        &#34;D&#34;: fit_results[&#34;D&#34;],
+        &#34;sigma_D&#34;: sigmas[&#34;D&#34;],
+        &#34;residual_field&#34;: fit_results[&#34;residual_field&#34;],
+        &#34;_metadata&#34;: {
+            &#34;method&#34;: &#34;hamiltonian&#34;,
+            &#34;bias_field&#34;: bias_field,
+            &#34;timestamp&#34;: datetime.now(timezone.utc).isoformat(),
+            &#34;image_shape&#34;: (ny, nx),
+            &#34;n_freqs&#34;: len(freqs_sorted),
+            &#34;n_failed_pixels&#34;: int(n_failed),
+            &#34;fit_time_s&#34;: t1 - t0,
+            &#34;hamiltonian_type&#34;: &#34;bxyz&#34;,
+            &#34;scipy_method&#34;: method,
+            &#34;gtol&#34;: gtol,
+            &#34;xtol&#34;: xtol,
+            &#34;ftol&#34;: ftol,
+            &#34;loss&#34;: loss,
+        },
+    }
+
+    return result</code></pre>
+</details>
+<div class="desc"><p>Hamiltonian fitting: frequencies → Bxyz (+ D).</p>
+<p>Fits the defect spin Hamiltonian directly to resonance frequencies:
+H = D·S_z^2 + γ·B·S (full NV ensemble with D parameter)</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>freqs</code></strong> :&ensp;<code>tuple</code> of <code>npt.NDArray</code></dt>
+<dd>Tuple of 2D frequency arrays (MHz), one per resonance.
+Auto-sorted by mean value. Requires 2-8 frequencies.</dd>
+<dt><strong><code>defect</code></strong> :&ensp;<code>Defect</code></dt>
+<dd>Defect instance (e.g., NVEnsemble) defining physical constants:
+- GAMMA (gyromagnetic ratio)
+- zero_field_splitting D</dd>
+<dt><strong><code>u_defects</code></strong> :&ensp;<code>npt.NDArray</code></dt>
+<dd>Defect orientation unit vectors, shape (n_defects, 3), normalized internally.
+For NV: typically 4 orientations from geom.get_u_defects().</dd>
+<dt><strong><code>bias_field</code></strong> :&ensp;<code>tuple[float, float, float]</code></dt>
+<dd>Bias field (mag_T, theta_deg, phi_deg). Used for initial guesses.</dd>
+<dt><strong><code>n_jobs</code></strong> :&ensp;<code>int</code>, default=<code>-2</code></dt>
+<dd>Number of parallel jobs for pixel fitting. -1 uses all processors,
+-2 uses all but one, 1 disables parallelization.</dd>
+<dt><strong><code>joblib_verbosity</code></strong> :&ensp;<code>int</code>, default=<code>0</code></dt>
+<dd>Verbosity level for joblib parallelization.</dd>
+<dt><strong><code>method</code></strong> :&ensp;<code>str</code>, default=<code>"trf"</code></dt>
+<dd>scipy.optimize.least_squares method: "trf", "dogbox", or "lm".</dd>
+<dt><strong><code>gtol</code></strong>, <strong><code>xtol</code></strong>, <strong><code>ftol</code></strong> :&ensp;<code>float</code>, default=<code>1e-12</code></dt>
+<dd>Convergence tolerances for scipy least_squares.</dd>
+<dt><strong><code>loss</code></strong> :&ensp;<code>str</code>, default=<code>"linear"</code></dt>
+<dd>Loss function for robust fitting. "linear", "huber", "soft_l1", etc.</dd>
+<dt><strong><code>guesses</code></strong> :&ensp;<code>dict</code>, optional</dt>
+<dd>Initial parameter guesses. Keys: {"D", "Bx", "By", "Bz"}.
+If None, auto-guessed from bias field (converted to Gauss).</dd>
+<dt><strong><code>progress_bar</code></strong> :&ensp;<code>bool</code>, default=<code>True</code></dt>
+<dd>Show tqdm progress bar during fitting.</dd>
+<dt><strong><code>freq_mask</code></strong> :&ensp;<code>tuple[bool, ...] | None</code>, default=<code>None</code></dt>
+<dd>Boolean mask selecting which frequencies to use. Must match length of freqs.
+If None, all frequencies are used.
+Example: (True, True, False, False, False, False, True, True) uses 4 freqs.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>result</code></strong> :&ensp;<code>dict[str, npt.NDArray]</code></dt>
+<dd>Dictionary with keys:
+- "Bx", "By", "Bz": magnetic field (2D arrays, Gauss)
+- "sigma_Bx", "sigma_By", "sigma_Bz": uncertainties (2D arrays)
+- "D": zero-field splitting (2D array, MHz)
+- "sigma_D": uncertainty of D (2D array)
+- "residual_field": sum of absolute residuals (2D array, arbitrary units).
+This is sum(|model - data|) over all frequencies used.
+- "_metadata": dict with fit info</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>If fewer than 2 frequencies provided (underdetermined for 4 params).</dd>
+<dt><code>RuntimeError</code></dt>
+<dd>If all pixels fail to converge.</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Requires at least 2 frequencies to fit 4 parameters (D, Bx, By, Bz).</li>
+<li>NaN pixels are skipped during fitting and returned as NaN in output.</li>
+<li>Prints warning at end showing count of failed pixels (if any).</li>
+<li>For failed pixels: params and sigmas are set to NaN.</li>
+</ul></div>
+</dd>
+<dt id="dukit.field.reconstruction.get_bxyz_from_pre_gslac_ref"><code class="name flex">
+<span>def <span class="ident">get_bxyz_from_pre_gslac_ref</span></span>(<span>sig_freqs: tuple[numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]], ...],<br>ref_freqs: tuple[numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]], ...],<br>defect: <a title="dukit.field.defects.Defect" href="defects.html#dukit.field.defects.Defect">Defect</a>,<br>bias_field_sig: tuple[float, float, float],<br>bias_field_ref: tuple[float, float, float],<br>u_defects: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>u_defect_idx: int,<br>pixel_size: float,<br>pad_mode: str | None = 'edge',<br>pad_factor: int = 2,<br>k_vector_epsilon: float = 1e-06,<br>nv_above_sample: bool = True) ‑> dict[str, numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_bxyz_from_pre_gslac_ref(
+    sig_freqs: tuple[npt.NDArray, ...],
+    ref_freqs: tuple[npt.NDArray, ...],
+    defect: Defect,
+    bias_field_sig: tuple[float, float, float],
+    bias_field_ref: tuple[float, float, float],
+    u_defects: npt.NDArray,
+    u_defect_idx: int,
+    pixel_size: float,
+    pad_mode: str | None = &#34;edge&#34;,
+    pad_factor: int = 2,
+    k_vector_epsilon: float = 1e-6,
+    nv_above_sample: bool = True,
+) -&gt; dict[str, npt.NDArray]:
+    &#34;&#34;&#34;
+    Pre-GSLAC reference subtraction: reconstruct Bxyz from signal minus pre-GSLAC reference.
+
+    For when signal measurement has 1 resonance (post-GSLAC) and reference has 2 resonances
+    (pre-GSLAC). Enables field reconstruction with only a single resonance.
+
+    Parameters
+    ----------
+    sig_freqs : tuple of npt.NDArray
+        Signal frequencies (1 element, post-GSLAC, single resonance).
+
+    ref_freqs : tuple of npt.NDArray
+        Reference frequencies (2 elements, pre-GSLAC, both resonances visible).
+
+    defect : Defect
+        Defect instance (e.g., NVEnsemble).
+
+    bias_field_sig : tuple[float, float, float]
+        Signal bias field (mag_T, theta_deg, phi_deg). Must be post-GSLAC
+        (|B| &gt; 0.1024 T for NV) so only single resonance visible.
+
+    bias_field_ref : tuple[float, float, float]
+        Reference bias field (mag_T, theta_deg, phi_deg). Must be pre-GSLAC
+        (|B| &lt; 0.1024 T for NV) so both resonances visible. Required to be
+        different from sig bias (this is the whole point of the method).
+
+    u_defects : npt.NDArray
+        Defect orientations, shape (4, 3).
+
+    u_defect_idx : int
+        Which defect orientation (0-3) to use for single-defect reconstruction.
+        Typically 0 (highest projection onto bias field).
+
+    pixel_size : float
+        Effective pixel size in meters.
+
+    pad_mode, pad_factor, k_vector_epsilon, nv_above_sample
+        Passed to get_bxyz_from_single_defect.
+
+    Returns
+    -------
+    result : dict[str, npt.NDArray]
+        Same format as get_bxyz_from_single_defect, with keys:
+        - &#34;Bx&#34;, &#34;By&#34;, &#34;Bz&#34;: reconstructed field (Gauss)
+        - &#34;residual_field&#34;: zeros
+        - &#34;_metadata&#34;: includes method=&#34;pre_gslac_ref&#34;
+
+    Raises
+    ------
+    ValueError
+        If sig_freqs doesn&#39;t have exactly 1 frequency or ref_freqs doesn&#39;t have exactly 2.
+
+    Notes
+    -----
+    - Assumes sig and ref measured along the same defect orientation.
+    - Reference must be measured pre-GSLAC (both transitions visible).
+    - Signal should have single resonance selected by transition relative to bias.
+    - Two bias fields required because signal and reference are independent measurements.
+    &#34;&#34;&#34;
+
+    # Validate inputs
+    if len(sig_freqs) != 1:
+        raise ValueError(f&#34;sig_freqs must have exactly 1 frequency, got {len(sig_freqs)}&#34;)
+    if len(ref_freqs) != 2:
+        raise ValueError(f&#34;ref_freqs must have exactly 2 frequencies, got {len(ref_freqs)}&#34;)
+
+    # Convert frequencies to B_defects
+    # Signal: post-GSLAC, single resonance
+    b_defects_sig, _ = get_bdefects_from_frequencies(sig_freqs, defect, past_gslac=True)
+
+    # Reference: pre-GSLAC, two resonances
+    b_defects_ref, _ = get_bdefects_from_frequencies(ref_freqs, defect, past_gslac=False)
+
+    # We now have:
+    # b_defects_sig: tuple of 1 element (single B_defect from post-GSLAC measurement)
+    # b_defects_ref: tuple of 1 element (single B_defect from pre-GSLAC, averaged from 2 resonances)
+
+    # For the pre-GSLAC ref method, we compute the difference
+    # This gives us the field change between reference and signal
+    b_defect_diff = b_defects_sig[0] - b_defects_ref[0]
+
+    # Normalize u_defects to get the specific orientation
+    u_defects_normalized = _normalize_u_defects(u_defects)
+    u_defect = u_defects_normalized[u_defect_idx]
+
+    # Use single defect reconstruction on the difference
+    result = get_bxyz_from_single_defect(
+        b_defect_diff,
+        u_defect,
+        bias_field_sig,  # Use signal bias field for metadata
+        pixel_size,
+        pad_mode=pad_mode,
+        pad_factor=pad_factor,
+        k_vector_epsilon=k_vector_epsilon,
+        nv_above_sample=nv_above_sample,
+    )
+
+    # Update metadata to indicate this is pre_gslac_ref method
+    result[&#34;_metadata&#34;][&#34;method&#34;] = &#34;pre_gslac_ref&#34;
+    result[&#34;_metadata&#34;][&#34;bias_field_sig&#34;] = bias_field_sig
+    result[&#34;_metadata&#34;][&#34;bias_field_ref&#34;] = bias_field_ref
+    result[&#34;_metadata&#34;][&#34;u_defect_idx&#34;] = u_defect_idx
+
+    return result</code></pre>
+</details>
+<div class="desc"><p>Pre-GSLAC reference subtraction: reconstruct Bxyz from signal minus pre-GSLAC reference.</p>
+<p>For when signal measurement has 1 resonance (post-GSLAC) and reference has 2 resonances
+(pre-GSLAC). Enables field reconstruction with only a single resonance.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>sig_freqs</code></strong> :&ensp;<code>tuple</code> of <code>npt.NDArray</code></dt>
+<dd>Signal frequencies (1 element, post-GSLAC, single resonance).</dd>
+<dt><strong><code>ref_freqs</code></strong> :&ensp;<code>tuple</code> of <code>npt.NDArray</code></dt>
+<dd>Reference frequencies (2 elements, pre-GSLAC, both resonances visible).</dd>
+<dt><strong><code>defect</code></strong> :&ensp;<code>Defect</code></dt>
+<dd>Defect instance (e.g., NVEnsemble).</dd>
+<dt><strong><code>bias_field_sig</code></strong> :&ensp;<code>tuple[float, float, float]</code></dt>
+<dd>Signal bias field (mag_T, theta_deg, phi_deg). Must be post-GSLAC
+(|B| &gt; 0.1024 T for NV) so only single resonance visible.</dd>
+<dt><strong><code>bias_field_ref</code></strong> :&ensp;<code>tuple[float, float, float]</code></dt>
+<dd>Reference bias field (mag_T, theta_deg, phi_deg). Must be pre-GSLAC
+(|B| &lt; 0.1024 T for NV) so both resonances visible. Required to be
+different from sig bias (this is the whole point of the method).</dd>
+<dt><strong><code>u_defects</code></strong> :&ensp;<code>npt.NDArray</code></dt>
+<dd>Defect orientations, shape (4, 3).</dd>
+<dt><strong><code>u_defect_idx</code></strong> :&ensp;<code>int</code></dt>
+<dd>Which defect orientation (0-3) to use for single-defect reconstruction.
+Typically 0 (highest projection onto bias field).</dd>
+<dt><strong><code>pixel_size</code></strong> :&ensp;<code>float</code></dt>
+<dd>Effective pixel size in meters.</dd>
+<dt><strong><code>pad_mode</code></strong>, <strong><code>pad_factor</code></strong>, <strong><code>k_vector_epsilon</code></strong>, <strong><code>nv_above_sample</code></strong></dt>
+<dd>Passed to get_bxyz_from_single_defect.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>result</code></strong> :&ensp;<code>dict[str, npt.NDArray]</code></dt>
+<dd>Same format as get_bxyz_from_single_defect, with keys:
+- "Bx", "By", "Bz": reconstructed field (Gauss)
+- "residual_field": zeros
+- "_metadata": includes method="pre_gslac_ref"</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>If sig_freqs doesn't have exactly 1 frequency or ref_freqs doesn't have exactly 2.</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Assumes sig and ref measured along the same defect orientation.</li>
+<li>Reference must be measured pre-GSLAC (both transitions visible).</li>
+<li>Signal should have single resonance selected by transition relative to bias.</li>
+<li>Two bias fields required because signal and reference are independent measurements.</li>
+</ul></div>
+</dd>
+<dt id="dukit.field.reconstruction.get_bxyz_from_single_defect"><code class="name flex">
+<span>def <span class="ident">get_bxyz_from_single_defect</span></span>(<span>b_defect: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>u_defect: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>bias_field: tuple[float, float, float],<br>pixel_size: float,<br>pad_mode: str | None = 'edge',<br>pad_factor: int = 2,<br>k_vector_epsilon: float = 1e-06,<br>nv_above_sample: bool = True) ‑> dict[str, numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_bxyz_from_single_defect(
+    b_defect: npt.NDArray,
+    u_defect: npt.NDArray,
+    bias_field: tuple[float, float, float],
+    pixel_size: float,
+    pad_mode: str | None = &#34;edge&#34;,
+    pad_factor: int = 2,
+    k_vector_epsilon: float = 1e-6,
+    nv_above_sample: bool = True,
+) -&gt; dict[str, npt.NDArray]:
+    &#34;&#34;&#34;
+    Fourier propagation: single B_defect → Bxyz.
+
+    From a single component of magnetic field aligned with one defect orientation,
+    reconstruct the full 3D vector field using fourier methods.
+
+    Parameters
+    ----------
+    b_defect : npt.NDArray
+        2D array of magnetic field component along defect axis (Gauss).
+        From defect.b_defects() or calculated directly.
+
+    u_defect : npt.NDArray
+        Defect orientation unit vector, shape (3,). Will be normalized internally.
+        E.g., for NV: [0.816, 0.0, 0.577] (normalized [1,0,1] direction).
+
+    bias_field : tuple[float, float, float]
+        Bias magnetic field (mag_T, theta_deg, phi_deg).
+        - mag_T: magnitude in Tesla
+        - theta_deg: polar angle in degrees (from +z towards equator)
+        - phi_deg: azimuthal angle in degrees (from +x towards +y)
+        Used for validation, not directly in calculation.
+
+    pixel_size : float
+        Effective pixel size in meters (after all binning).
+
+    pad_mode : str or None, default=&#34;edge&#34;
+        Padding mode for fourier transform. Passed to numpy.pad.
+        Set to None for no padding.
+
+    pad_factor : int, default=2
+        Padding factor on each side. E.g., 2 → 2× width on left and right.
+
+    k_vector_epsilon : float, default=1e-6
+        Small epsilon added to k-vectors to avoid division by zero.
+
+    nv_above_sample : bool, default=True
+        True if NV layer is above sample (higher z in lab frame).
+        Affects sign conventions in fourier propagation.
+
+    Returns
+    -------
+    result : dict[str, npt.NDArray]
+        Dictionary with keys:
+        - &#34;Bx&#34;, &#34;By&#34;, &#34;Bz&#34;: magnetic field components (2D arrays, Gauss).
+          Note: These are zero-mean (DC component cannot be determined by
+          Fourier propagation). Add mean back manually if needed.
+        - &#34;residual_field&#34;: zeros (2D array), for consistency with other methods.
+          (No fitting performed, so no residuals.)
+        - &#34;_metadata&#34;: dict with method info and parameters
+
+    Reference
+    ---------
+    Casola et al., Nature Reviews Materials 3, 17088 (2018)
+    &#34;&#34;&#34;
+    from datetime import datetime
+
+    b_defect = np.array(b_defect).copy()
+
+    padded_bdefect, padder = dukit.fourier.pad_image(b_defect, pad_mode, pad_factor)
+
+    fft_bdefect = numpy_fft.fftshift(numpy_fft.fft2(padded_bdefect))
+    ky, kx, k = dukit.fourier.define_k_vectors(
+        fft_bdefect.shape, pixel_size, k_vector_epsilon=k_vector_epsilon
+    )
+
+    u_defect_normalized = u_defect / np.linalg.norm(u_defect)
+    u_defect_copy = (
+        u_defect_normalized.copy()
+        if nv_above_sample
+        else np.array([-u_defect_normalized[0], -u_defect_normalized[1], u_defect_normalized[2]])
+    )
+
+    kappa = [-1j * kx / k, -1j * ky / k, 1]
+    u_dot_kappa = (
+        u_defect_copy[0] * kappa[0] + u_defect_copy[1] * kappa[1] + u_defect_copy[2] * kappa[2]
+    )
+
+    bdefect2bx = kappa[0] / u_dot_kappa
+    bdefect2by = kappa[1] / u_dot_kappa
+    bdefect2bz = kappa[2] / u_dot_kappa
+
+    bdefect2bx = dukit.fourier.set_naninf_to_zero(bdefect2bx)
+    bdefect2by = dukit.fourier.set_naninf_to_zero(bdefect2by)
+    bdefect2bz = dukit.fourier.set_naninf_to_zero(bdefect2bz)
+
+    fft_bx = fft_bdefect * bdefect2bx
+    fft_by = fft_bdefect * bdefect2by
+    fft_bz = fft_bdefect * bdefect2bz
+
+    bx = numpy_fft.ifft2(numpy_fft.ifftshift(fft_bx)).real
+    by = numpy_fft.ifft2(numpy_fft.ifftshift(fft_by)).real
+    bz = numpy_fft.ifft2(numpy_fft.ifftshift(fft_bz)).real
+
+    bx_reg = dukit.fourier.unpad_image(bx, padder)
+    by_reg = dukit.fourier.unpad_image(by, padder)
+    bz_reg = dukit.fourier.unpad_image(bz, padder)
+
+    result = {
+        &#34;Bx&#34;: bx_reg,
+        &#34;By&#34;: by_reg,
+        &#34;Bz&#34;: bz_reg,
+        &#34;residual_field&#34;: np.zeros_like(bx_reg),
+        &#34;_metadata&#34;: {
+            &#34;method&#34;: &#34;single_defect&#34;,
+            &#34;bias_field&#34;: bias_field,
+            &#34;timestamp&#34;: datetime.now(timezone.utc).isoformat(),
+            &#34;image_shape&#34;: bx_reg.shape,
+            &#34;pixel_size&#34;: pixel_size,
+            &#34;pad_mode&#34;: pad_mode,
+            &#34;pad_factor&#34;: pad_factor,
+            &#34;k_vector_epsilon&#34;: k_vector_epsilon,
+            &#34;nv_above_sample&#34;: nv_above_sample,
+            &#34;u_defect&#34;: u_defect.tolist(),
+        },
+    }
+
+    return result</code></pre>
+</details>
+<div class="desc"><p>Fourier propagation: single B_defect → Bxyz.</p>
+<p>From a single component of magnetic field aligned with one defect orientation,
+reconstruct the full 3D vector field using fourier methods.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>b_defect</code></strong> :&ensp;<code>npt.NDArray</code></dt>
+<dd>2D array of magnetic field component along defect axis (Gauss).
+From defect.b_defects() or calculated directly.</dd>
+<dt><strong><code>u_defect</code></strong> :&ensp;<code>npt.NDArray</code></dt>
+<dd>Defect orientation unit vector, shape (3,). Will be normalized internally.
+E.g., for NV: [0.816, 0.0, 0.577] (normalized [1,0,1] direction).</dd>
+<dt><strong><code>bias_field</code></strong> :&ensp;<code>tuple[float, float, float]</code></dt>
+<dd>Bias magnetic field (mag_T, theta_deg, phi_deg).
+- mag_T: magnitude in Tesla
+- theta_deg: polar angle in degrees (from +z towards equator)
+- phi_deg: azimuthal angle in degrees (from +x towards +y)
+Used for validation, not directly in calculation.</dd>
+<dt><strong><code>pixel_size</code></strong> :&ensp;<code>float</code></dt>
+<dd>Effective pixel size in meters (after all binning).</dd>
+<dt><strong><code>pad_mode</code></strong> :&ensp;<code>str</code> or <code>None</code>, default=<code>"edge"</code></dt>
+<dd>Padding mode for fourier transform. Passed to numpy.pad.
+Set to None for no padding.</dd>
+<dt><strong><code>pad_factor</code></strong> :&ensp;<code>int</code>, default=<code>2</code></dt>
+<dd>Padding factor on each side. E.g., 2 → 2× width on left and right.</dd>
+<dt><strong><code>k_vector_epsilon</code></strong> :&ensp;<code>float</code>, default=<code>1e-6</code></dt>
+<dd>Small epsilon added to k-vectors to avoid division by zero.</dd>
+<dt><strong><code>nv_above_sample</code></strong> :&ensp;<code>bool</code>, default=<code>True</code></dt>
+<dd>True if NV layer is above sample (higher z in lab frame).
+Affects sign conventions in fourier propagation.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>result</code></strong> :&ensp;<code>dict[str, npt.NDArray]</code></dt>
+<dd>Dictionary with keys:
+- "Bx", "By", "Bz": magnetic field components (2D arrays, Gauss).
+Note: These are zero-mean (DC component cannot be determined by
+Fourier propagation). Add mean back manually if needed.
+- "residual_field": zeros (2D array), for consistency with other methods.
+(No fitting performed, so no residuals.)
+- "_metadata": dict with method info and parameters</dd>
+</dl>
+<h2 id="reference">Reference</h2>
+<p>Casola et al., Nature Reviews Materials 3, 17088 (2018)</p></div>
+</dd>
+<dt id="dukit.field.reconstruction.reconstruct_field_components"><code class="name flex">
+<span>def <span class="ident">reconstruct_field_components</span></span>(<span>b_measured: tuple[numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]], numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]], numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]] | dict[str, numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]],<br>pixel_size: float,<br>pad_mode: str | None = 'edge',<br>pad_factor: int = 2,<br>k_vector_epsilon: float = 1e-06,<br>nv_above_sample: bool = True) ‑> dict[str, numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reconstruct_field_components(
+    b_measured: tuple[npt.NDArray, npt.NDArray, npt.NDArray] | dict[str, npt.NDArray],
+    pixel_size: float,
+    pad_mode: str | None = &#34;edge&#34;,
+    pad_factor: int = 2,
+    k_vector_epsilon: float = 1e-6,
+    nv_above_sample: bool = True,
+) -&gt; dict[str, npt.NDArray]:
+    &#34;&#34;&#34;
+    Reconstruct field components from measured field for consistency checking.
+
+    Useful for verifying geometry/u_defects are correct by comparing measured
+    Bx, By, Bz with reconstructed components.
+
+    - Reconstructs Bx and By from measured Bz alone (div B = 0 constraint)
+    - Reconstructs Bz from measured Bx and By combined
+
+    Users can plot the difference between measured and reconstructed fields
+    to check if their geometry assumptions are correct.
+
+    Parameters
+    ----------
+    b_measured : tuple of npt.NDArray or dict[str, npt.NDArray]
+        Measured magnetic field components. Either:
+        - Tuple (Bx, By, Bz): three 2D arrays in Gauss
+        - Dict with keys &#34;Bx&#34;, &#34;By&#34;, &#34;Bz&#34;: three 2D arrays in Gauss
+
+    pixel_size : float
+        Effective pixel size in meters (after all binning).
+
+    pad_mode : str or None, default=&#34;edge&#34;
+        Padding mode for fourier transform. Passed to numpy.pad.
+        Set to None for no padding.
+
+    pad_factor : int, default=2
+        Padding factor on each side. E.g., 2 → 2× width on left and right.
+
+    k_vector_epsilon : float, default=1e-6
+        Small epsilon added to k-vectors to avoid division by zero.
+
+    nv_above_sample : bool, default=True
+        True if NV layer is above sample (higher z in lab frame).
+        Affects sign conventions in fourier propagation.
+
+    Returns
+    -------
+    result : dict[str, npt.NDArray]
+        Dictionary with keys:
+        - &#34;Bx_from_Bz&#34;: Bx reconstructed from Bz alone
+        - &#34;By_from_Bz&#34;: By reconstructed from Bz alone
+        - &#34;Bz_from_xy&#34;: Bz reconstructed from Bx and By combined
+        - &#34;_metadata&#34;: dict with method info
+
+    Example
+    -------
+    &gt;&gt;&gt; import dukit
+    &gt;&gt;&gt; import matplotlib.pyplot as plt
+    &gt;&gt;&gt;
+    &gt;&gt;&gt; # Get measured field from reconstruction
+    &gt;&gt;&gt; bxyz = dukit.field.get_bxyz_from_defects(b_defects, u_defects, bias_field)
+    &gt;&gt;&gt;
+    &gt;&gt;&gt; # Reconstruct components for consistency check
+    &gt;&gt;&gt; recon = dukit.field.reconstruct_field_components(
+    &gt;&gt;&gt;     (bxyz[&#34;Bx&#34;], bxyz[&#34;By&#34;], bxyz[&#34;Bz&#34;]), pixel_size=1e-6
+    &gt;&gt;&gt; )
+    &gt;&gt;&gt;
+    &gt;&gt;&gt; # Plot: measured vs reconstructed
+    &gt;&gt;&gt; fig, axes = plt.subplots(1, 2)
+    &gt;&gt;&gt; im1 = axes[0].imshow(bxyz[&#34;Bx&#34;])
+    &gt;&gt;&gt; im2 = axes[1].imshow(recon[&#34;Bx_from_Bz&#34;])
+    &gt;&gt;&gt; plt.colorbar(im1, ax=axes[0])
+    &gt;&gt;&gt; plt.colorbar(im2, ax=axes[1])
+    &gt;&gt;&gt; axes[0].set_title(&#34;Measured Bx&#34;)
+    &gt;&gt;&gt; axes[1].set_title(&#34;Bx reconstructed from Bz&#34;)
+    &gt;&gt;&gt;
+    &gt;&gt;&gt; # Plot difference
+    &gt;&gt;&gt; fig, ax = plt.subplots()
+    &gt;&gt;&gt; im = ax.imshow(bxyz[&#34;Bx&#34;] - recon[&#34;Bx_from_Bz&#34;])
+    &gt;&gt;&gt; plt.colorbar(im)
+    &gt;&gt;&gt; ax.set_title(&#34;Difference (should be small if geometry is correct)&#34;)
+
+    Reference
+    ---------
+    E. A. Lima and B. P. Weiss, Obtaining Vector Magnetic Field Maps from
+    Single-Component Measurements of Geological Samples,
+    Journal of Geophysical Research: Solid Earth 114, (2009).
+    https://doi.org/10.1029/2008JB006006
+    &#34;&#34;&#34;
+    from datetime import datetime
+
+    # Parse input
+    if isinstance(b_measured, dict):
+        if &#34;Bx&#34; not in b_measured or &#34;By&#34; not in b_measured or &#34;Bz&#34; not in b_measured:
+            raise KeyError(&#34;b_measured dict must contain &#39;Bx&#39;, &#39;By&#39;, and &#39;Bz&#39; keys&#34;)
+        bx, by, bz = b_measured[&#34;Bx&#34;], b_measured[&#34;By&#34;], b_measured[&#34;Bz&#34;]
+    elif isinstance(b_measured, (tuple, list)) and len(b_measured) == 3:
+        bx, by, bz = b_measured
+    else:
+        raise ValueError(
+            &#34;b_measured must be a tuple (Bx, By, Bz) or dict with &#39;Bx&#39;, &#39;By&#39;, &#39;Bz&#39; keys&#34;
+        )
+
+    # Make copies
+    bx = np.array(bx).copy()
+    by = np.array(by).copy()
+    bz = np.array(bz).copy()
+
+    # Pad each component
+    bx_pad, padder = dukit.fourier.pad_image(bx, pad_mode, pad_factor)
+    by_pad, _ = dukit.fourier.pad_image(by, pad_mode, pad_factor)
+    bz_pad, _ = dukit.fourier.pad_image(bz, pad_mode, pad_factor)
+
+    # FFT
+    fft_bx = numpy_fft.fftshift(numpy_fft.fft2(bx_pad))
+    fft_by = numpy_fft.fftshift(numpy_fft.fft2(by_pad))
+    fft_bz = numpy_fft.fftshift(numpy_fft.fft2(bz_pad))
+
+    fft_bx = dukit.fourier.set_naninf_to_zero(fft_bx)
+    fft_by = dukit.fourier.set_naninf_to_zero(fft_by)
+    fft_bz = dukit.fourier.set_naninf_to_zero(fft_bz)
+
+    # Get k vectors
+    ky, kx, k = dukit.fourier.define_k_vectors(
+        fft_bx.shape, pixel_size, k_vector_epsilon=k_vector_epsilon
+    )
+
+    # Sign convention
+    sign = 1 if nv_above_sample else -1
+
+    # Reconstruction coefficients
+    # From Bz → Bx, By
+    bz2bx = -sign * (1j / k) * kx
+    bz2by = -sign * (1j / k) * ky
+
+    # From Bx, By → Bz
+    bx2bz = sign * (1j / k) * kx
+    by2bz = sign * (1j / k) * ky
+
+    # Handle NaN/inf
+    bz2bx = dukit.fourier.set_naninf_to_zero(bz2bx)
+    bz2by = dukit.fourier.set_naninf_to_zero(bz2by)
+    bx2bz = dukit.fourier.set_naninf_to_zero(bx2bz)
+    by2bz = dukit.fourier.set_naninf_to_zero(by2bz)
+
+    # Reconstruct in Fourier space
+    fft_bx_from_bz = fft_bz * bz2bx
+    fft_by_from_bz = fft_bz * bz2by
+    fft_bz_from_xy = fft_bx * bx2bz + fft_by * by2bz
+
+    # Inverse FFT
+    bx_from_bz = numpy_fft.ifft2(numpy_fft.ifftshift(fft_bx_from_bz)).real
+    by_from_bz = numpy_fft.ifft2(numpy_fft.ifftshift(fft_by_from_bz)).real
+    bz_from_xy = numpy_fft.ifft2(numpy_fft.ifftshift(fft_bz_from_xy)).real
+
+    # Unpad
+    bx_from_bz_reg = dukit.fourier.unpad_image(bx_from_bz, padder)
+    by_from_bz_reg = dukit.fourier.unpad_image(by_from_bz, padder)
+    bz_from_xy_reg = dukit.fourier.unpad_image(bz_from_xy, padder)
+
+    result = {
+        &#34;Bx_from_Bz&#34;: bx_from_bz_reg,
+        &#34;By_from_Bz&#34;: by_from_bz_reg,
+        &#34;Bz_from_xy&#34;: bz_from_xy_reg,
+        &#34;_metadata&#34;: {
+            &#34;method&#34;: &#34;reconstruct_field_components&#34;,
+            &#34;timestamp&#34;: datetime.now(timezone.utc).isoformat(),
+            &#34;image_shape&#34;: bx_from_bz_reg.shape,
+            &#34;pixel_size&#34;: pixel_size,
+            &#34;pad_mode&#34;: pad_mode,
+            &#34;pad_factor&#34;: pad_factor,
+            &#34;k_vector_epsilon&#34;: k_vector_epsilon,
+            &#34;nv_above_sample&#34;: nv_above_sample,
+        },
+    }
+
+    return result</code></pre>
+</details>
+<div class="desc"><p>Reconstruct field components from measured field for consistency checking.</p>
+<p>Useful for verifying geometry/u_defects are correct by comparing measured
+Bx, By, Bz with reconstructed components.</p>
+<ul>
+<li>Reconstructs Bx and By from measured Bz alone (div B = 0 constraint)</li>
+<li>Reconstructs Bz from measured Bx and By combined</li>
+</ul>
+<p>Users can plot the difference between measured and reconstructed fields
+to check if their geometry assumptions are correct.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>b_measured</code></strong> :&ensp;<code>tuple</code> of <code>npt.NDArray</code> or <code>dict[str, npt.NDArray]</code></dt>
+<dd>Measured magnetic field components. Either:
+- Tuple (Bx, By, Bz): three 2D arrays in Gauss
+- Dict with keys "Bx", "By", "Bz": three 2D arrays in Gauss</dd>
+<dt><strong><code>pixel_size</code></strong> :&ensp;<code>float</code></dt>
+<dd>Effective pixel size in meters (after all binning).</dd>
+<dt><strong><code>pad_mode</code></strong> :&ensp;<code>str</code> or <code>None</code>, default=<code>"edge"</code></dt>
+<dd>Padding mode for fourier transform. Passed to numpy.pad.
+Set to None for no padding.</dd>
+<dt><strong><code>pad_factor</code></strong> :&ensp;<code>int</code>, default=<code>2</code></dt>
+<dd>Padding factor on each side. E.g., 2 → 2× width on left and right.</dd>
+<dt><strong><code>k_vector_epsilon</code></strong> :&ensp;<code>float</code>, default=<code>1e-6</code></dt>
+<dd>Small epsilon added to k-vectors to avoid division by zero.</dd>
+<dt><strong><code>nv_above_sample</code></strong> :&ensp;<code>bool</code>, default=<code>True</code></dt>
+<dd>True if NV layer is above sample (higher z in lab frame).
+Affects sign conventions in fourier propagation.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>result</code></strong> :&ensp;<code>dict[str, npt.NDArray]</code></dt>
+<dd>Dictionary with keys:
+- "Bx_from_Bz": Bx reconstructed from Bz alone
+- "By_from_Bz": By reconstructed from Bz alone
+- "Bz_from_xy": Bz reconstructed from Bx and By combined
+- "_metadata": dict with method info</dd>
+</dl>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; import dukit
+&gt;&gt;&gt; import matplotlib.pyplot as plt
+&gt;&gt;&gt;
+&gt;&gt;&gt; # Get measured field from reconstruction
+&gt;&gt;&gt; bxyz = dukit.field.get_bxyz_from_defects(b_defects, u_defects, bias_field)
+&gt;&gt;&gt;
+&gt;&gt;&gt; # Reconstruct components for consistency check
+&gt;&gt;&gt; recon = dukit.field.reconstruct_field_components(
+&gt;&gt;&gt;     (bxyz[&quot;Bx&quot;], bxyz[&quot;By&quot;], bxyz[&quot;Bz&quot;]), pixel_size=1e-6
+&gt;&gt;&gt; )
+&gt;&gt;&gt;
+&gt;&gt;&gt; # Plot: measured vs reconstructed
+&gt;&gt;&gt; fig, axes = plt.subplots(1, 2)
+&gt;&gt;&gt; im1 = axes[0].imshow(bxyz[&quot;Bx&quot;])
+&gt;&gt;&gt; im2 = axes[1].imshow(recon[&quot;Bx_from_Bz&quot;])
+&gt;&gt;&gt; plt.colorbar(im1, ax=axes[0])
+&gt;&gt;&gt; plt.colorbar(im2, ax=axes[1])
+&gt;&gt;&gt; axes[0].set_title(&quot;Measured Bx&quot;)
+&gt;&gt;&gt; axes[1].set_title(&quot;Bx reconstructed from Bz&quot;)
+&gt;&gt;&gt;
+&gt;&gt;&gt; # Plot difference
+&gt;&gt;&gt; fig, ax = plt.subplots()
+&gt;&gt;&gt; im = ax.imshow(bxyz[&quot;Bx&quot;] - recon[&quot;Bx_from_Bz&quot;])
+&gt;&gt;&gt; plt.colorbar(im)
+&gt;&gt;&gt; ax.set_title(&quot;Difference (should be small if geometry is correct)&quot;)
+</code></pre>
+<h2 id="reference">Reference</h2>
+<p>E. A. Lima and B. P. Weiss, Obtaining Vector Magnetic Field Maps from
+Single-Component Measurements of Geological Samples,
+Journal of Geophysical Research: Solid Earth 114, (2009).
+<a href="https://doi.org/10.1029/2008JB006006">https://doi.org/10.1029/2008JB006006</a></p></div>
+</dd>
+<dt id="dukit.field.reconstruction.spherical_to_cartesian"><code class="name flex">
+<span>def <span class="ident">spherical_to_cartesian</span></span>(<span>mag_T: float, theta_deg: float, phi_deg: float) ‑> numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[numpy.float64]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def spherical_to_cartesian(
+    mag_T: float, theta_deg: float, phi_deg: float
+) -&gt; npt.NDArray[np.float64]:
+    &#34;&#34;&#34;
+    Convert spherical coordinates to Cartesian vector.
+
+    Parameters
+    ----------
+    mag_T : float
+        Magnitude in Tesla.
+    theta_deg : float
+        Polar angle in degrees (from +z towards equator).
+    phi_deg : float
+        Azimuthal angle in degrees (from +x towards +y).
+
+    Returns
+    -------
+    xyz : npt.NDArray
+        Shape (3,), Cartesian components [x, y, z] in Tesla.
+    &#34;&#34;&#34;
+    theta_rad = np.radians(theta_deg)
+    phi_rad = np.radians(phi_deg)
+    x = mag_T * np.sin(theta_rad) * np.cos(phi_rad)
+    y = mag_T * np.sin(theta_rad) * np.sin(phi_rad)
+    z = mag_T * np.cos(theta_rad)
+    return np.array([x, y, z])</code></pre>
+</details>
+<div class="desc"><p>Convert spherical coordinates to Cartesian vector.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>mag_T</code></strong> :&ensp;<code>float</code></dt>
+<dd>Magnitude in Tesla.</dd>
+<dt><strong><code>theta_deg</code></strong> :&ensp;<code>float</code></dt>
+<dd>Polar angle in degrees (from +z towards equator).</dd>
+<dt><strong><code>phi_deg</code></strong> :&ensp;<code>float</code></dt>
+<dd>Azimuthal angle in degrees (from +x towards +y).</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>xyz</code></strong> :&ensp;<code>npt.NDArray</code></dt>
+<dd>Shape (3,), Cartesian components [x, y, z] in Tesla.</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<form>
+<input id="lunr-search" name="q" placeholder="🔎 Search ..." aria-label="Search"
+disabled minlength="2">
+</form>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.css" integrity="sha512-b+T2i3P45i1LZM7I00Ci5QquB9szqaxu+uuk5TUSGjZQ4w4n+qujQiIuvTv2BxE7WCGQCifNMksyKILDiHzsOg==" crossorigin>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.js" integrity="sha512-2B9/byNV1KKRm5nQ2RLViPFD6U4dUjDGwuW1GU+ImJh8YinPU9Zlq1GzdTMO+G2ROrB5o1qasJBy1ttYz0wCug==" crossorigin></script>
+<style>
+.modal-dialog iframe {
+width: 100vw;
+height: calc(100vh - 80px);
+}
+@media screen and (min-width: 700px) {
+.modal-dialog iframe {
+width: 70vw;
+height: 80vh;
+}
+}
+.modal-dialog .tingle-modal-box {width: auto;}
+.modal-dialog .tingle-modal-box__content {padding: 0;}
+</style>
+<script>
+const input = document.getElementById('lunr-search');
+input.disabled = false;
+input.form.addEventListener('submit', (ev) => {
+ev.preventDefault();
+const url = new URL(window.location);
+url.searchParams.set('q', input.value);
+history.replaceState({}, null, url.toString());
+search(input.value);
+});
+const query = new URL(window.location).searchParams.get('q');
+if (query)
+search(query);
+function search(query) {
+const url = '../../doc-search.html#' + encodeURIComponent(query);
+new tingle.modal({
+cssClass: ['modal-dialog'],
+onClose: () => {
+const url = new URL(window.location);
+url.searchParams.delete('q');
+history.replaceState({}, null, url.toString());
+setTimeout(() => input.focus(), 100);
+}
+}).setContent('<iframe src="' + url + '"></iframe>').open();
+}
+</script>
+<div class="toc">
+<ul>
+<li><a href="#functions">Functions</a></li>
+</ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="dukit.field" href="index.html">dukit.field</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="dukit.field.reconstruction._normalize_u_defects" href="#dukit.field.reconstruction._normalize_u_defects">_normalize_u_defects</a></code></li>
+<li><code><a title="dukit.field.reconstruction.get_bdefects_from_frequencies" href="#dukit.field.reconstruction.get_bdefects_from_frequencies">get_bdefects_from_frequencies</a></code></li>
+<li><code><a title="dukit.field.reconstruction.get_bxyz_from_bdefects_inversion" href="#dukit.field.reconstruction.get_bxyz_from_bdefects_inversion">get_bxyz_from_bdefects_inversion</a></code></li>
+<li><code><a title="dukit.field.reconstruction.get_bxyz_from_hamiltonian" href="#dukit.field.reconstruction.get_bxyz_from_hamiltonian">get_bxyz_from_hamiltonian</a></code></li>
+<li><code><a title="dukit.field.reconstruction.get_bxyz_from_pre_gslac_ref" href="#dukit.field.reconstruction.get_bxyz_from_pre_gslac_ref">get_bxyz_from_pre_gslac_ref</a></code></li>
+<li><code><a title="dukit.field.reconstruction.get_bxyz_from_single_defect" href="#dukit.field.reconstruction.get_bxyz_from_single_defect">get_bxyz_from_single_defect</a></code></li>
+<li><code><a title="dukit.field.reconstruction.reconstruct_field_components" href="#dukit.field.reconstruction.reconstruct_field_components">reconstruct_field_components</a></code></li>
+<li><code><a title="dukit.field.reconstruction.spherical_to_cartesian" href="#dukit.field.reconstruction.spherical_to_cartesian">spherical_to_cartesian</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

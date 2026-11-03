@@ -2,19 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.9.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
 <title>dukit.pl.scipyfit API documentation</title>
-<meta name="description" content="This module holds tools for fitting raw data via scipy. (scipy backend) …" />
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
-<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
-<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
-<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<meta name="description" content="This module holds tools for fitting raw data via scipy. (scipy backend) …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
 <style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
-<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
 </head>
 <body>
 <main>
@@ -32,527 +47,6 @@
 <li><code><a title="dukit.pl.scipyfit._gen_sf_guesses_bounds" href="#dukit.pl.scipyfit._gen_sf_guesses_bounds">_gen_sf_guesses_bounds()</a></code></li>
 <li><code><a title="dukit.pl.scipyfit._spfitter" href="#dukit.pl.scipyfit._spfitter">_spfitter()</a></code></li>
 </ul>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python"># -*- coding: utf-8 -*-
-&#34;&#34;&#34;
-This module holds tools for fitting raw data via scipy. (scipy backend)
-
-Functions
----------
- - `dukit.pl.scipyfit.fit_roi_avg_pl`
- - `dukit.pl.scipyfit.fit_aois_pl`
- - `qdmpy.pl.scipyfit.fit_all_pixels_pl`
- - `dukit.pl.scipyfit._gen_sf_guesses_bounds`
- - `dukit.pl.scipyfit._spfitter`
-&#34;&#34;&#34;
-
-# ============================================================================
-
-__author__ = &#34;Sam Scholten&#34;
-__pdoc__ = {
-    &#34;dukit.pl.scipyfit.fit_roi_avg_pl&#34;: True,
-    &#34;dukit.pl.scipyfit.fit_aois_pl&#34;: True,
-    &#34;dukit.pl.scipyfit.fit_all_pixels_pl&#34;: True,
-    &#34;dukit.pl.scipyfit._gen_sf_guesses_bounds&#34;: True,
-    &#34;dukit.pl.scipyfit._spfitter&#34;: True,
-}
-
-# ==========================================================================
-
-import numpy as np
-import numpy.typing as npt
-from scipy.optimize import least_squares
-from timeit import default_timer as timer
-from datetime import timedelta
-from joblib import Parallel, delayed
-import logging
-
-# ============================================================================
-
-import dukit.pl.common
-import dukit.warn
-import dukit.share
-import dukit.itool
-
-# ==========================================================================
-
-
-def fit_roi_avg_pl(
-    sig: npt.NDArray,
-    ref: npt.NDArray,
-    sweep_arr: npt.NDArray,
-    fit_model: &#34;dukit.pl.model.FitModel&#34;,
-    guess_dict: dict,
-    bounds_dict: dict,
-    norm: str = &#34;div&#34;,
-    method: str = &#34;trf&#34;,
-    verbose: int =0,
-    gtol: float = 1e-12,
-    xtol: float = 1e-12,
-    ftol: float = 1e-12,
-    loss: str = &#34;linear&#34;,
-    jac: str | None = None,
-):
-    &#34;&#34;&#34;
-    Fit AOI averages
-
-    Arguments
-    ---------
-    sig : np array, 3D
-        Sig measurement array, shape: [y, x, sweep_arr]. CROPPED etc. already.
-    ref : np array, 3D
-        Ref measurement array, shape: [y, x, sweep_arr]. CROPPED etc. already.
-    sweep_arr : np array, 1D
-        Affine parameter list (e.g. tau or freq)
-    fit_model : `dukit.pl.model.FitModel`
-        The model we&#39;re fitting to.
-    guess_dict : dict
-        dict holding guesses for each parameter type, e.g.
-        {&#39;pos&#39;: [.., ..], &#39;amp&#39;: [.., ..], ...}
-    bounds_dict : dict
-        dict holding bound options for each parameter type, e.g.
-        {&#34;pos_range&#34;: 5.0, &#34;amp_bounds&#34;: [0.0, 1.0], ...}
-    norm : str default=&#34;div&#34;
-        Normalisation method
-
-    Optional parameters passed to scipy least_squares
-    -------------------------------------------------
-    method: str = &#34;trf&#34;
-        Fit method, &#34;trf&#34;, &#34;dogbox&#34; or &#34;lm&#34;
-    verbose: int =0
-        Verbosity of fit -&gt; probably want to keep at 0
-    gtol: float = 1e-12
-        Tolerance for termination by the change of the independent variables.
-    xtol: float = 1e-12
-        Tolerance for termination by the norm of the gradient.
-    ftol: float = 1e-12
-        Tolerance for termination by the change of the cost function.
-    loss: str = &#34;linear&#34;
-        Determines the loss function. This in non trivial check the scipy documentation.
-        Best you don&#39;t change this.
-    jac: str | None = None
-        Jacobian. If None uses algebraic jac, otherwise:
-        &#39;2-point&#39; is probably best, then &#39;3-point&#39;, &#39;cs&#39; are other options.
-
-    Returns
-    -------
-    fit_image_results : dukit.share.RoiAvgFit
-    &#34;&#34;&#34;
-    if jac is None:
-        jac = fit_model.jacobian_scipyfit
-
-    pguess, pbounds = _gen_sf_guesses_bounds(
-        fit_model, *dukit.pl.common.gen_init_guesses(fit_model, guess_dict, bounds_dict)
-    )
-
-    if norm == &#34;div&#34;:
-        sig_norm = sig / ref
-    elif norm == &#34;sub&#34;:
-        sig_norm = 1 + (sig - ref) / (sig + ref)
-    elif norm == &#34;true_sub&#34;:
-        sig_norm = (sig - ref) / np.nanmax(sig - ref).reshape(
-                sig.shape[:-1] + (1,)
-            ),
-
-    avg_sig_norm = np.nanmean(sig_norm, axis=(0, 1))
-    avg_sig = np.nanmean(sig, axis=(0, 1))
-    avg_ref = np.nanmean(ref, axis=(0, 1))
-    result = _spfitter(
-        fit_model,
-        sweep_arr,
-        avg_sig_norm,
-        pguess,
-        bounds=pbounds,
-        method=method,
-        verbose=verbose,
-        gtol=gtol,
-        xtol=xtol,
-        ftol=ftol,
-        loss=loss,
-        jac=jac,
-    )
-
-    best_params = result[: len(pguess)]
-    best_sigmas = result[len(pguess) : -1]
-    best_residual = fit_model(best_params, sweep_arr) - avg_sig_norm
-    fit_xvec = np.linspace(
-        np.min(sweep_arr),
-        np.max(sweep_arr),
-        10000,
-    )
-    fit_yvec = fit_model(best_params, fit_xvec)
-    fit_yvec_guess = fit_model(pguess, fit_xvec)
-    return dukit.share.RoiAvgFit(
-        &#34;scipyfit&#34;,
-        sweep_arr,
-        avg_sig_norm,
-        avg_sig,
-        avg_ref,
-        fit_xvec,
-        fit_yvec,
-        fit_yvec_guess,
-        best_params,
-        best_sigmas,
-        best_residual,
-        pguess,
-        pbounds,
-    )
-
-
-# ==========================================================================
-
-
-def fit_aois_pl(
-    sig: npt.NDArray,
-    ref: npt.NDArray,
-    sweep_arr: npt.NDArray,
-    fit_model: &#34;dukit.pl.model.FitModel&#34;,
-    guess_dict: dict,
-    bounds_dict: dict,
-    *aoi_coords: tuple[int, int, int, int],
-    norm: str = &#34;div&#34;,
-    method: str = &#34;trf&#34;,
-    verbose=0,
-    gtol: float = 1e-12,
-    xtol: float = 1e-12,
-    ftol: float = 1e-12,
-    loss: str = &#34;linear&#34;,
-    jac: str | None = None,
-) -&gt; dict[str, dict[str, dukit.share.AoiAvgFit]]:
-    &#34;&#34;&#34;
-    Fit AOI averages
-
-    Arguments
-    ---------
-    sig : np array, 3D
-        Sig measurement array, shape: [y, x, sweep_arr].
-    ref : np array, 3D
-        Ref measurement array, shape: [y, x, sweep_arr].
-    sweep_arr : np array, 1D
-        Affine parameter list (e.g. tau or freq)
-    fit_model : `dukit.pl.model.FitModel`
-        The model we&#39;re fitting to.
-    guess_dict : dict
-        dict holding guesses for each parameter type, e.g.
-        {&#39;pos&#39;: [.., ..], &#39;amp&#39;: [.., ..], ...}
-    bounds_dict : dict
-        dict holding bound options for each parameter type, e.g.
-        {&#34;pos_range&#34;: 5.0, &#34;amp_bounds&#34;: [0.0, 1.0], ...}
-    *aoi_coords : tuple of 4-tuples
-        As elsewhere
-    norm : str default=&#34;div&#34;
-        Normalisation method
-
-    Optional parameters passed to scipy least_squares
-    -------------------------------------------------
-    method: str = &#34;trf&#34;
-        Fit method, &#34;trf&#34;, &#34;dogbox&#34; or &#34;lm&#34;
-    verbose=0
-        Verbosity of fit -&gt; probably want to keep at 0
-    gtol: float = 1e-12
-        Tolerance for termination by the change of the independent variables.
-    xtol: float = 1e-12
-        Tolerance for termination by the norm of the gradient.
-    ftol: float = 1e-12
-        Tolerance for termination by the change of the cost function.
-    loss: str = &#34;linear&#34;
-        Determines the loss function. This in non trivial check the scipy documentation.
-        Best you don&#39;t change this.
-    jac: str | None = None
-        Jacobian. If None uses algebraic jac, otherwise:
-        &#39;2-point&#39; is probably best, then &#39;3-point&#39;, &#39;cs&#39; are other options.
-
-    Returns
-    -------
-    fit_image_results : dict
-        Format: {&#34;AOI_n&#34;: {&#34;scipyfit&#34;: AoiAvgFit}, ...}
-    &#34;&#34;&#34;
-    if jac is None:
-        jac = fit_model.jacobian_scipyfit
-
-    pguess, pbounds = _gen_sf_guesses_bounds(
-        fit_model, *dukit.pl.common.gen_init_guesses(fit_model, guess_dict, bounds_dict)
-    )
-    aois = dukit.itool.get_aois(np.shape(sig), *aoi_coords)
-    aoi_pl_vecs = []
-    sig_ref_signorms = []
-
-    for a in aois:
-        s = sig[a[0], a[1], :]
-        r = ref[a[0], a[1], :]
-        if norm == &#34;div&#34;:
-            pl_vec = np.nanmean(s / r, axis=(0, 1))
-        elif norm == &#34;sub&#34;:
-            pl_vec = np.nanmean(1 + (s - r) / (s + r), axis=(0, 1))
-        elif norm == &#34;true_sub&#34;:
-            pl_vec = np.nanmean((s - r) / np.nanmax(s - r).reshape(*s.shape[:-1] + (1,)), axis=(0, 1))
-        aoi_pl_vecs.append(pl_vec)
-        sig_ref_signorms.append(
-            (np.nanmean(s, axis=(0, 1)), np.nanmean(r, axis=(0, 1)), pl_vec)
-        )
-
-    results_lst = [
-        _spfitter(
-            fit_model,
-            sweep_arr,
-            pl_vec,
-            pguess,
-            bounds=pbounds,
-            method=method,
-            verbose=verbose,
-            gtol=gtol,
-            xtol=xtol,
-            ftol=ftol,
-            loss=loss,
-            jac=jac,
-        )
-        for pl_vec in aoi_pl_vecs
-    ]
-
-    # add the single pixel check on
-    output_aoi_coords = list(aoi_coords)
-    shp = np.shape(sig)[:-1]
-    output_aoi_coords.insert(
-        0, (shp[0] // 2, shp[1] // 2, shp[0] // 2 + 1, shp[1] // 2 + 1)
-    )
-
-    ret = dict()
-    for n, ((s_avg, r_avg, pl_vec), result) in enumerate(
-        zip(sig_ref_signorms, results_lst)
-    ):
-        best_params = result[: len(pguess)]
-        best_sigmas = result[len(pguess) : -1]
-        best_residual = fit_model(best_params, sweep_arr) - pl_vec
-        fit_xvec = np.linspace(
-            np.min(sweep_arr),
-            np.max(sweep_arr),
-            10000,
-        )
-        fit_yvec = fit_model(best_params, fit_xvec)
-        ret[f&#34;AOI_{n}&#34;] = {
-            &#34;scipyfit&#34;: dukit.share.AoiAvgFit(
-                n,
-                sweep_arr,
-                pl_vec,
-                s_avg,
-                r_avg,
-                &#34;scipyfit&#34;,
-                fit_xvec,
-                fit_yvec,
-                best_params,
-                best_sigmas,
-                best_residual,
-                pguess,
-                pbounds,
-                output_aoi_coords[n],
-            )
-        }
-
-    return ret
-
-
-# ==========================================================================
-
-
-def fit_all_pixels_pl(
-    sig_norm: npt.NDArray,
-    sweep_arr: npt.NDArray,
-    fit_model: &#34;dukit.pl.model.FitModel&#34;,
-    guess_dict: dict,
-    bounds_dict: dict,
-    roi_avg_result: dukit.share.RoiAvgFit | None = None,
-    n_jobs: int = -2,
-    joblib_verbosity=5,
-    method: str = &#34;trf&#34;,
-    verbose=0,
-    gtol: float = 1e-12,
-    xtol: float = 1e-12,
-    ftol: float = 1e-12,
-    loss: float = &#34;linear&#34;,
-    jac: str | None = None,
-):
-    &#34;&#34;&#34;
-    Fits each pixel and returns dictionary of param_name -&gt; param_image.
-
-    Arguments
-    ---------
-    sig_norm : np array, 3D
-        Normalised measurement array, shape: [sweep_arr, y, x].
-    sweep_arr : np array, 1D
-        Affine parameter list (e.g. tau or freq)
-    fit_model : `dukit.pl.model.FitModel`
-        The model we&#39;re fitting to.
-    guess_dict : dict
-        dict holding guesses for each parameter type, e.g.
-        {&#39;pos&#39;: [.., ..], &#39;amp&#39;: [.., ..], ...}
-    bounds_dict : dict
-        dict holding bound options for each parameter type, e.g.
-        {&#34;pos_range&#34;: 5.0, &#34;amp_bounds&#34;: [0.0, 1.0], ...}
-    roi_avg_result : dukit.share.RoiAvgFit | None
-        The result of fitting the ROI average.
-        If done, directly uses guesses provided.
-    n_jobs : int, default=-2
-        Number of jobs to run concurrently, see joblib docs.
-        -2 === leaving one cpu free, etc. for neg numbers.
-    joblib_verbosity:int = 5
-        How often to update progress bar.
-
-    Optional parameters passed to scipy least_squares
-    -------------------------------------------------
-    method: str = &#34;trf&#34;
-        Fit method, &#34;trf&#34;, &#34;dogbox&#34; or &#34;lm&#34;
-    verbose=0
-        Verbosity of fit -&gt; probably want to keep at 0
-    gtol: float = 1e-12
-        Tolerance for termination by the change of the independent variables.
-    xtol: float = 1e-12
-        Tolerance for termination by the norm of the gradient.
-    ftol: float = 1e-12
-        Tolerance for termination by the change of the cost function.
-    loss: float = &#34;linear&#34;
-        Determines the loss function. This in non trivial check the scipy documentation.
-        Best you don&#39;t change this.
-    jac: str | None = None
-        Jacobian. If None uses algebraic jac, otherwise:
-        &#39;2-point&#39; is probably best, then &#39;3-point&#39;, &#39;cs&#39; are other options.
-
-    Returns
-    -------
-    fit_image_results : dict
-        Dictionary, key: param_keys, val: image (2D) of param values across FOV.
-        Also has &#39;residual_0&#39; as a key.
-        Sigmas (stdev on fit error) are given as e.g. pos_0_sigma
-    &#34;&#34;&#34;
-    if jac is None:
-        jac = fit_model.jacobian_scipyfit
-
-    init_pguess, pbounds = _gen_sf_guesses_bounds(
-        fit_model, *dukit.pl.common.gen_init_guesses(fit_model, guess_dict, bounds_dict)
-    )
-    pguess = roi_avg_result.best_params if roi_avg_result is not None else init_pguess
-
-    # call into the library (measure time)
-    t0 = timer()
-    results_lst = Parallel(n_jobs=n_jobs, verbose=joblib_verbosity)(
-            delayed(_spfitter)(
-            fit_model,
-            sweep_arr,
-            pl_vec,
-            pguess,
-            bounds=pbounds,
-            method=method,
-            verbose=verbose,
-            gtol=gtol,
-            xtol=xtol,
-            ftol=ftol,
-            loss=loss,
-            jac=jac,
-        )
-            for pl_vec in dukit.itool._iterslice(sig_norm, axis=-1)
-    )
-    t1 = timer()
-    dt = timedelta(seconds=t1 - t0).total_seconds()
-    logging.info(f&#34;fit time: {dt:.2f}s&#34;)
-
-    results_arr = np.array(results_lst).reshape(
-        (*sig_norm.shape[:2], 2 * len(pguess) + 1)
-    )
-    names = list(fit_model.get_param_odict().keys())
-    names.extend([f&#34;sigma_{n}&#34; for n in names])
-    names.append(&#34;residual_0&#34;)
-    fit_image_results = {
-        name: array for name, array in zip(names, dukit.itool._iterframe(results_arr))
-    }
-
-    return fit_image_results
-
-
-# =======================================================================================
-
-
-def _spfitter(
-    fit_model: &#34;dukit.pl.model.FitModel&#34;,
-    sweep_arr: npt.NDArray,
-    pl_vec: npt.NDArray,
-    p0: npt.NDArray,
-    **fit_optns,
-) -&gt; npt.NDArray:
-    &#34;&#34;&#34;Single pixel fitter.
-    ~ Fit inputs -&gt; (params; param_std_dev; sum(resid)) @ solution.
-    &#34;&#34;&#34;
-    try:
-        fitres = least_squares(
-            fit_model.residuals_scipyfit, p0, args=(sweep_arr, pl_vec), **fit_optns
-        )
-        perr = dukit.pl.common.calc_sigmas(fit_model, sweep_arr, pl_vec, fitres.x)
-        resid = fit_model.residuals_scipyfit(fitres.x, sweep_arr, pl_vec)
-    except ValueError:
-        return np.hstack(
-            (np.full_like(p0, np.nan), np.full_like(p0, np.nan), np.nan)
-        )
-    return np.hstack(
-        (fitres.x, perr, np.sum(np.abs(resid, dtype=np.float64), dtype=np.float64))
-    )
-
-
-
-
-
-
-
-def _gen_sf_guesses_bounds(
-    fit_model: &#34;dukit.pl.model.FitModel&#34;, init_guesses: dict, init_bounds: dict
-) -&gt; tuple[npt.NDArray, tuple[npt.NDArray, npt.NDArray]]:
-    &#34;&#34;&#34;
-    Generate arrays of initial fit guesses and bounds in correct form for scipy
-    least_squares.
-
-    init_guesses and init_bounds are dictionaries up to this point, we now convert to
-    np arrays, that scipy will recognise. In particular, we specificy that each of the
-    &#39;num&#39; of each &#39;fn_type&#39; have independent parameters, so must have independent
-    init_guesses and init_bounds when plugged into scipy.
-
-    Arguments
-    ---------
-    fit_model : dukit.pl.model.FitModel
-        Model definition.
-    init_guesses : dict
-        Dict holding guesses for each parameter,
-         e.g. key -&gt; list of guesses for each independent version of that fn_type.
-    init_bounds : dict
-        Dict holding guesses for each parameter,
-        e.g. key -&gt; list of bounds for each independent version of that fn_type.
-
-    Returns
-    -------
-    fit_param_ar : np array, shape: num_params
-        The initial fit parameter guesses.
-    fit_param_bound_ar : np array, shape: (num_params, 2)
-        Fit parameter bounds.
-    &#34;&#34;&#34;
-    param_lst = []
-    bound_lst = []
-    for param_name in fit_model.get_param_odict():
-        split_param = param_name.split(&#34;_&#34;)
-        param_num_str = int(split_param[-1])
-        param_key = &#34;_&#34;.join(split_param[:-1])
-        param_num = int(param_num_str)  # i.e. pos_0
-        try:
-            param_lst.append(init_guesses[param_key][param_num])
-        except (TypeError, KeyError, IndexError):
-            param_lst.append(init_guesses[param_key])
-        if len(np.array(init_bounds[param_key]).shape) == 2:
-            bound_lst.append(init_bounds[param_key][param_num])
-        else:
-            bound_lst.append(init_bounds[param_key])
-
-    bound_ar = np.array(bound_lst)
-    pbounds = (bound_ar[:, 0], bound_ar[:, 1])
-    return np.array(param_lst), pbounds</code></pre>
-</details>
 </section>
 <section>
 </section>
@@ -562,33 +56,9 @@ def _gen_sf_guesses_bounds(
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="dukit.pl.scipyfit._gen_sf_guesses_bounds"><code class="name flex">
-<span>def <span class="ident">_gen_sf_guesses_bounds</span></span>(<span>fit_model: <a title="dukit.pl.model.FitModel" href="model.html#dukit.pl.model.FitModel">FitModel</a>, init_guesses: dict, init_bounds: dict) ‑> tuple[numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], tuple[numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]]]]</span>
+<span>def <span class="ident">_gen_sf_guesses_bounds</span></span>(<span>fit_model: <a title="dukit.pl.model.FitModel" href="model.html#dukit.pl.model.FitModel">FitModel</a>,<br>init_guesses: dict,<br>init_bounds: dict) ‑> tuple[numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]], tuple[numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]], numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]]]</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Generate arrays of initial fit guesses and bounds in correct form for scipy
-least_squares.</p>
-<p>init_guesses and init_bounds are dictionaries up to this point, we now convert to
-np arrays, that scipy will recognise. In particular, we specificy that each of the
-'num' of each 'fn_type' have independent parameters, so must have independent
-init_guesses and init_bounds when plugged into scipy.</p>
-<h2 id="arguments">Arguments</h2>
-<dl>
-<dt><strong><code>fit_model</code></strong> :&ensp;<code><a title="dukit.pl.model.FitModel" href="model.html#dukit.pl.model.FitModel">FitModel</a></code></dt>
-<dd>Model definition.</dd>
-<dt><strong><code>init_guesses</code></strong> :&ensp;<code>dict</code></dt>
-<dd>Dict holding guesses for each parameter,
-e.g. key -&gt; list of guesses for each independent version of that fn_type.</dd>
-<dt><strong><code>init_bounds</code></strong> :&ensp;<code>dict</code></dt>
-<dd>Dict holding guesses for each parameter,
-e.g. key -&gt; list of bounds for each independent version of that fn_type.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><strong><code>fit_param_ar</code></strong> :&ensp;<code>np array, shape: num_params</code></dt>
-<dd>The initial fit parameter guesses.</dd>
-<dt><strong><code>fit_param_bound_ar</code></strong> :&ensp;<code>np array, shape: (num_params, 2)</code></dt>
-<dd>Fit parameter bounds.</dd>
-</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -643,13 +113,35 @@ e.g. key -&gt; list of bounds for each independent version of that fn_type.</dd>
     pbounds = (bound_ar[:, 0], bound_ar[:, 1])
     return np.array(param_lst), pbounds</code></pre>
 </details>
+<div class="desc"><p>Generate arrays of initial fit guesses and bounds in correct form for scipy
+least_squares.</p>
+<p>init_guesses and init_bounds are dictionaries up to this point, we now convert to
+np arrays, that scipy will recognise. In particular, we specificy that each of the
+'num' of each 'fn_type' have independent parameters, so must have independent
+init_guesses and init_bounds when plugged into scipy.</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>fit_model</code></strong> :&ensp;<code><a title="dukit.pl.model.FitModel" href="model.html#dukit.pl.model.FitModel">FitModel</a></code></dt>
+<dd>Model definition.</dd>
+<dt><strong><code>init_guesses</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dict holding guesses for each parameter,
+e.g. key -&gt; list of guesses for each independent version of that fn_type.</dd>
+<dt><strong><code>init_bounds</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dict holding guesses for each parameter,
+e.g. key -&gt; list of bounds for each independent version of that fn_type.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>fit_param_ar</code></strong> :&ensp;<code>np array, shape: num_params</code></dt>
+<dd>The initial fit parameter guesses.</dd>
+<dt><strong><code>fit_param_bound_ar</code></strong> :&ensp;<code>np array, shape: (num_params, 2)</code></dt>
+<dd>Fit parameter bounds.</dd>
+</dl></div>
 </dd>
 <dt id="dukit.pl.scipyfit._spfitter"><code class="name flex">
-<span>def <span class="ident">_spfitter</span></span>(<span>fit_model: <a title="dukit.pl.model.FitModel" href="model.html#dukit.pl.model.FitModel">FitModel</a>, sweep_arr: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], pl_vec: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], p0: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], **fit_optns) ‑> numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]]</span>
+<span>def <span class="ident">_spfitter</span></span>(<span>fit_model: <a title="dukit.pl.model.FitModel" href="model.html#dukit.pl.model.FitModel">FitModel</a>,<br>sweep_arr: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>pl_vec: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>p0: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>**fit_optns) ‑> numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Single pixel fitter.
-~ Fit inputs -&gt; (params; param_std_dev; sum(resid)) @ solution.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -666,69 +158,30 @@ e.g. key -&gt; list of bounds for each independent version of that fn_type.</dd>
     &#34;&#34;&#34;
     try:
         fitres = least_squares(
-            fit_model.residuals_scipyfit, p0, args=(sweep_arr, pl_vec), **fit_optns
+            fit_model.residuals_scipyfit,
+            p0,
+            args=(sweep_arr, pl_vec),
+            **fit_optns,
         )
         perr = dukit.pl.common.calc_sigmas(fit_model, sweep_arr, pl_vec, fitres.x)
         resid = fit_model.residuals_scipyfit(fitres.x, sweep_arr, pl_vec)
     except ValueError:
-        return np.hstack(
-            (np.full_like(p0, np.nan), np.full_like(p0, np.nan), np.nan)
-        )
+        return np.hstack((np.full_like(p0, np.nan), np.full_like(p0, np.nan), np.nan))
     return np.hstack(
-        (fitres.x, perr, np.sum(np.abs(resid, dtype=np.float64), dtype=np.float64))
+        (
+            fitres.x,
+            perr,
+            np.sum(np.abs(resid, dtype=np.float64), dtype=np.float64),
+        )
     )</code></pre>
 </details>
+<div class="desc"><p>Single pixel fitter.
+~ Fit inputs -&gt; (params; param_std_dev; sum(resid)) @ solution.</p></div>
 </dd>
 <dt id="dukit.pl.scipyfit.fit_all_pixels_pl"><code class="name flex">
-<span>def <span class="ident">fit_all_pixels_pl</span></span>(<span>sig_norm: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], sweep_arr: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], fit_model: <a title="dukit.pl.model.FitModel" href="model.html#dukit.pl.model.FitModel">FitModel</a>, guess_dict: dict, bounds_dict: dict, roi_avg_result: <a title="dukit.share.RoiAvgFit" href="../share.html#dukit.share.RoiAvgFit">RoiAvgFit</a> | None = None, n_jobs: int = -2, joblib_verbosity=5, method: str = 'trf', verbose=0, gtol: float = 1e-12, xtol: float = 1e-12, ftol: float = 1e-12, loss: float = 'linear', jac: str | None = None)</span>
+<span>def <span class="ident">fit_all_pixels_pl</span></span>(<span>sig_norm: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>sweep_arr: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>fit_model: <a title="dukit.pl.model.FitModel" href="model.html#dukit.pl.model.FitModel">FitModel</a>,<br>guess_dict: dict,<br>bounds_dict: dict,<br>roi_avg_result: <a title="dukit.share.RoiAvgFit" href="../share.html#dukit.share.RoiAvgFit">RoiAvgFit</a> | None = None,<br>n_jobs: int = -2,<br>joblib_verbosity=5,<br>method: str = 'trf',<br>verbose=0,<br>gtol: float = 1e-12,<br>xtol: float = 1e-12,<br>ftol: float = 1e-12,<br>loss: float = 'linear',<br>jac: str | None = None)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Fits each pixel and returns dictionary of param_name -&gt; param_image.</p>
-<h2 id="arguments">Arguments</h2>
-<dl>
-<dt><strong><code>sig_norm</code></strong> :&ensp;<code>np array, 3D</code></dt>
-<dd>Normalised measurement array, shape: [sweep_arr, y, x].</dd>
-<dt><strong><code>sweep_arr</code></strong> :&ensp;<code>np array, 1D</code></dt>
-<dd>Affine parameter list (e.g. tau or freq)</dd>
-<dt><strong><code>fit_model</code></strong> :&ensp;<code><a title="dukit.pl.model.FitModel" href="model.html#dukit.pl.model.FitModel">FitModel</a></code></dt>
-<dd>The model we're fitting to.</dd>
-<dt><strong><code>guess_dict</code></strong> :&ensp;<code>dict</code></dt>
-<dd _.._="[..," _amp_:="'amp':" _pos_:="'pos':" class=".], .], ..">dict holding guesses for each parameter type, e.g.</dd>
-<dt><strong><code>bounds_dict</code></strong> :&ensp;<code>dict</code></dt>
-<dd 1.0_="1.0]," 5.0_="5.0," _0.0_="[0.0," _amp_bounds_:="&quot;amp_bounds&quot;:" _pos_range_:="&quot;pos_range&quot;:" class="..">dict holding bound options for each parameter type, e.g.</dd>
-<dt><strong><code>roi_avg_result</code></strong> :&ensp;<code>dukit.share.RoiAvgFit | None</code></dt>
-<dd>The result of fitting the ROI average.
-If done, directly uses guesses provided.</dd>
-<dt><strong><code>n_jobs</code></strong> :&ensp;<code>int</code>, default=<code>-2</code></dt>
-<dd>Number of jobs to run concurrently, see joblib docs.
--2 === leaving one cpu free, etc. for neg numbers.</dd>
-</dl>
-<p>joblib_verbosity:int = 5
-How often to update progress bar.</p>
-<h2 id="optional-parameters-passed-to-scipy-least_squares">Optional Parameters Passed To Scipy Least_Squares</h2>
-<p>method: str = "trf"
-Fit method, "trf", "dogbox" or "lm"
-verbose=0
-Verbosity of fit -&gt; probably want to keep at 0
-gtol: float = 1e-12
-Tolerance for termination by the change of the independent variables.
-xtol: float = 1e-12
-Tolerance for termination by the norm of the gradient.
-ftol: float = 1e-12
-Tolerance for termination by the change of the cost function.
-loss: float = "linear"
-Determines the loss function. This in non trivial check the scipy documentation.
-Best you don't change this.
-jac: str | None = None
-Jacobian. If None uses algebraic jac, otherwise:
-'2-point' is probably best, then '3-point', 'cs' are other options.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><strong><code>fit_image_results</code></strong> :&ensp;<code>dict</code></dt>
-<dd>Dictionary, key: param_keys, val: image (2D) of param values across FOV.
-Also has 'residual_0' as a key.
-Sigmas (stdev on fit error) are given as e.g. pos_0_sigma</dd>
-</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -756,7 +209,7 @@ Sigmas (stdev on fit error) are given as e.g. pos_0_sigma</dd>
     Arguments
     ---------
     sig_norm : np array, 3D
-        Normalised measurement array, shape: [sweep_arr, y, x].
+        Normalised measurement array, shape: [y, x, sweep_ar].
     sweep_arr : np array, 1D
         Affine parameter list (e.g. tau or freq)
     fit_model : `dukit.pl.model.FitModel`
@@ -806,14 +259,15 @@ Sigmas (stdev on fit error) are given as e.g. pos_0_sigma</dd>
         jac = fit_model.jacobian_scipyfit
 
     init_pguess, pbounds = _gen_sf_guesses_bounds(
-        fit_model, *dukit.pl.common.gen_init_guesses(fit_model, guess_dict, bounds_dict)
+        fit_model,
+        *dukit.pl.common.gen_init_guesses(fit_model, guess_dict, bounds_dict),
     )
     pguess = roi_avg_result.best_params if roi_avg_result is not None else init_pguess
 
     # call into the library (measure time)
     t0 = timer()
     results_lst = Parallel(n_jobs=n_jobs, verbose=joblib_verbosity)(
-            delayed(_spfitter)(
+        delayed(_spfitter)(
             fit_model,
             sweep_arr,
             pl_vec,
@@ -827,15 +281,13 @@ Sigmas (stdev on fit error) are given as e.g. pos_0_sigma</dd>
             loss=loss,
             jac=jac,
         )
-            for pl_vec in dukit.itool._iterslice(sig_norm, axis=-1)
+        for pl_vec in dukit.itool._iterslice(sig_norm, axis=-1)
     )
     t1 = timer()
     dt = timedelta(seconds=t1 - t0).total_seconds()
     logging.info(f&#34;fit time: {dt:.2f}s&#34;)
 
-    results_arr = np.array(results_lst).reshape(
-        (*sig_norm.shape[:2], 2 * len(pguess) + 1)
-    )
+    results_arr = np.array(results_lst).reshape((*sig_norm.shape[:2], 2 * len(pguess) + 1))
     names = list(fit_model.get_param_odict().keys())
     names.extend([f&#34;sigma_{n}&#34; for n in names])
     names.append(&#34;residual_0&#34;)
@@ -845,18 +297,11 @@ Sigmas (stdev on fit error) are given as e.g. pos_0_sigma</dd>
 
     return fit_image_results</code></pre>
 </details>
-</dd>
-<dt id="dukit.pl.scipyfit.fit_aois_pl"><code class="name flex">
-<span>def <span class="ident">fit_aois_pl</span></span>(<span>sig: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], ref: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], sweep_arr: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], fit_model: <a title="dukit.pl.model.FitModel" href="model.html#dukit.pl.model.FitModel">FitModel</a>, guess_dict: dict, bounds_dict: dict, *aoi_coords: tuple[int, int, int, int], norm: str = 'div', method: str = 'trf', verbose=0, gtol: float = 1e-12, xtol: float = 1e-12, ftol: float = 1e-12, loss: str = 'linear', jac: str | None = None) ‑> dict[str, dict[str, <a title="dukit.share.AoiAvgFit" href="../share.html#dukit.share.AoiAvgFit">AoiAvgFit</a>]]</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Fit AOI averages</p>
+<div class="desc"><p>Fits each pixel and returns dictionary of param_name -&gt; param_image.</p>
 <h2 id="arguments">Arguments</h2>
 <dl>
-<dt><strong><code>sig</code></strong> :&ensp;<code>np array, 3D</code></dt>
-<dd>Sig measurement array, shape: [y, x, sweep_arr].</dd>
-<dt><strong><code>ref</code></strong> :&ensp;<code>np array, 3D</code></dt>
-<dd>Ref measurement array, shape: [y, x, sweep_arr].</dd>
+<dt><strong><code>sig_norm</code></strong> :&ensp;<code>np array, 3D</code></dt>
+<dd>Normalised measurement array, shape: [y, x, sweep_ar].</dd>
 <dt><strong><code>sweep_arr</code></strong> :&ensp;<code>np array, 1D</code></dt>
 <dd>Affine parameter list (e.g. tau or freq)</dd>
 <dt><strong><code>fit_model</code></strong> :&ensp;<code><a title="dukit.pl.model.FitModel" href="model.html#dukit.pl.model.FitModel">FitModel</a></code></dt>
@@ -865,11 +310,15 @@ Sigmas (stdev on fit error) are given as e.g. pos_0_sigma</dd>
 <dd _.._="[..," _amp_:="'amp':" _pos_:="'pos':" class=".], .], ..">dict holding guesses for each parameter type, e.g.</dd>
 <dt><strong><code>bounds_dict</code></strong> :&ensp;<code>dict</code></dt>
 <dd 1.0_="1.0]," 5.0_="5.0," _0.0_="[0.0," _amp_bounds_:="&quot;amp_bounds&quot;:" _pos_range_:="&quot;pos_range&quot;:" class="..">dict holding bound options for each parameter type, e.g.</dd>
-<dt><strong><code>*aoi_coords</code></strong> :&ensp;<code>tuple</code> of <code>4-tuples</code></dt>
-<dd>As elsewhere</dd>
-<dt><strong><code>norm</code></strong> :&ensp;<code>str default="div"</code></dt>
-<dd>Normalisation method</dd>
+<dt><strong><code>roi_avg_result</code></strong> :&ensp;<code>dukit.share.RoiAvgFit | None</code></dt>
+<dd>The result of fitting the ROI average.
+If done, directly uses guesses provided.</dd>
+<dt><strong><code>n_jobs</code></strong> :&ensp;<code>int</code>, default=<code>-2</code></dt>
+<dd>Number of jobs to run concurrently, see joblib docs.
+-2 === leaving one cpu free, etc. for neg numbers.</dd>
 </dl>
+<p>joblib_verbosity:int = 5
+How often to update progress bar.</p>
 <h2 id="optional-parameters-passed-to-scipy-least_squares">Optional Parameters Passed To Scipy Least_Squares</h2>
 <p>method: str = "trf"
 Fit method, "trf", "dogbox" or "lm"
@@ -881,7 +330,7 @@ xtol: float = 1e-12
 Tolerance for termination by the norm of the gradient.
 ftol: float = 1e-12
 Tolerance for termination by the change of the cost function.
-loss: str = "linear"
+loss: float = "linear"
 Determines the loss function. This in non trivial check the scipy documentation.
 Best you don't change this.
 jac: str | None = None
@@ -890,8 +339,15 @@ Jacobian. If None uses algebraic jac, otherwise:
 <h2 id="returns">Returns</h2>
 <dl>
 <dt><strong><code>fit_image_results</code></strong> :&ensp;<code>dict</code></dt>
-<dd>Format: {"AOI_n": {"scipyfit": AoiAvgFit}, &hellip;}</dd>
+<dd>Dictionary, key: param_keys, val: image (2D) of param values across FOV.
+Also has 'residual_0' as a key.
+Sigmas (stdev on fit error) are given as e.g. pos_0_sigma</dd>
 </dl></div>
+</dd>
+<dt id="dukit.pl.scipyfit.fit_aois_pl"><code class="name flex">
+<span>def <span class="ident">fit_aois_pl</span></span>(<span>sig: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>ref: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>sweep_arr: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>fit_model: <a title="dukit.pl.model.FitModel" href="model.html#dukit.pl.model.FitModel">FitModel</a>,<br>guess_dict: dict,<br>bounds_dict: dict,<br>*aoi_coords: tuple[int, int, int, int],<br>norm: str = 'div',<br>method: str = 'trf',<br>verbose=0,<br>gtol: float = 1e-12,<br>xtol: float = 1e-12,<br>ftol: float = 1e-12,<br>loss: str = 'linear',<br>jac: str | None = None) ‑> dict[str, dict[str, <a title="dukit.share.AoiAvgFit" href="../share.html#dukit.share.AoiAvgFit">AoiAvgFit</a>]]</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -965,7 +421,8 @@ Jacobian. If None uses algebraic jac, otherwise:
         jac = fit_model.jacobian_scipyfit
 
     pguess, pbounds = _gen_sf_guesses_bounds(
-        fit_model, *dukit.pl.common.gen_init_guesses(fit_model, guess_dict, bounds_dict)
+        fit_model,
+        *dukit.pl.common.gen_init_guesses(fit_model, guess_dict, bounds_dict),
     )
     aois = dukit.itool.get_aois(np.shape(sig), *aoi_coords)
     aoi_pl_vecs = []
@@ -979,11 +436,9 @@ Jacobian. If None uses algebraic jac, otherwise:
         elif norm == &#34;sub&#34;:
             pl_vec = np.nanmean(1 + (s - r) / (s + r), axis=(0, 1))
         elif norm == &#34;true_sub&#34;:
-            pl_vec = np.nanmean((s - r) / np.nanmax(s - r).reshape(*s.shape[:-1] + (1,)), axis=(0, 1))
+            pl_vec = np.nanmean((s - r) / np.nanmax(s - r), axis=(0, 1))
         aoi_pl_vecs.append(pl_vec)
-        sig_ref_signorms.append(
-            (np.nanmean(s, axis=(0, 1)), np.nanmean(r, axis=(0, 1)), pl_vec)
-        )
+        sig_ref_signorms.append((np.nanmean(s, axis=(0, 1)), np.nanmean(r, axis=(0, 1)), pl_vec))
 
     results_lst = [
         _spfitter(
@@ -1006,14 +461,10 @@ Jacobian. If None uses algebraic jac, otherwise:
     # add the single pixel check on
     output_aoi_coords = list(aoi_coords)
     shp = np.shape(sig)[:-1]
-    output_aoi_coords.insert(
-        0, (shp[0] // 2, shp[1] // 2, shp[0] // 2 + 1, shp[1] // 2 + 1)
-    )
+    output_aoi_coords.insert(0, (shp[0] // 2, shp[1] // 2, shp[0] // 2 + 1, shp[1] // 2 + 1))
 
     ret = dict()
-    for n, ((s_avg, r_avg, pl_vec), result) in enumerate(
-        zip(sig_ref_signorms, results_lst)
-    ):
+    for n, ((s_avg, r_avg, pl_vec), result) in enumerate(zip(sig_ref_signorms, results_lst)):
         best_params = result[: len(pguess)]
         best_sigmas = result[len(pguess) : -1]
         best_residual = fit_model(best_params, sweep_arr) - pl_vec
@@ -1044,18 +495,13 @@ Jacobian. If None uses algebraic jac, otherwise:
 
     return ret</code></pre>
 </details>
-</dd>
-<dt id="dukit.pl.scipyfit.fit_roi_avg_pl"><code class="name flex">
-<span>def <span class="ident">fit_roi_avg_pl</span></span>(<span>sig: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], ref: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], sweep_arr: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], fit_model: <a title="dukit.pl.model.FitModel" href="model.html#dukit.pl.model.FitModel">FitModel</a>, guess_dict: dict, bounds_dict: dict, norm: str = 'div', method: str = 'trf', verbose: int = 0, gtol: float = 1e-12, xtol: float = 1e-12, ftol: float = 1e-12, loss: str = 'linear', jac: str | None = None)</span>
-</code></dt>
-<dd>
 <div class="desc"><p>Fit AOI averages</p>
 <h2 id="arguments">Arguments</h2>
 <dl>
 <dt><strong><code>sig</code></strong> :&ensp;<code>np array, 3D</code></dt>
-<dd>Sig measurement array, shape: [y, x, sweep_arr]. CROPPED etc. already.</dd>
+<dd>Sig measurement array, shape: [y, x, sweep_arr].</dd>
 <dt><strong><code>ref</code></strong> :&ensp;<code>np array, 3D</code></dt>
-<dd>Ref measurement array, shape: [y, x, sweep_arr]. CROPPED etc. already.</dd>
+<dd>Ref measurement array, shape: [y, x, sweep_arr].</dd>
 <dt><strong><code>sweep_arr</code></strong> :&ensp;<code>np array, 1D</code></dt>
 <dd>Affine parameter list (e.g. tau or freq)</dd>
 <dt><strong><code>fit_model</code></strong> :&ensp;<code><a title="dukit.pl.model.FitModel" href="model.html#dukit.pl.model.FitModel">FitModel</a></code></dt>
@@ -1064,13 +510,15 @@ Jacobian. If None uses algebraic jac, otherwise:
 <dd _.._="[..," _amp_:="'amp':" _pos_:="'pos':" class=".], .], ..">dict holding guesses for each parameter type, e.g.</dd>
 <dt><strong><code>bounds_dict</code></strong> :&ensp;<code>dict</code></dt>
 <dd 1.0_="1.0]," 5.0_="5.0," _0.0_="[0.0," _amp_bounds_:="&quot;amp_bounds&quot;:" _pos_range_:="&quot;pos_range&quot;:" class="..">dict holding bound options for each parameter type, e.g.</dd>
+<dt><strong><code>*aoi_coords</code></strong> :&ensp;<code>tuple</code> of <code>4-tuples</code></dt>
+<dd>As elsewhere</dd>
 <dt><strong><code>norm</code></strong> :&ensp;<code>str default="div"</code></dt>
 <dd>Normalisation method</dd>
 </dl>
 <h2 id="optional-parameters-passed-to-scipy-least_squares">Optional Parameters Passed To Scipy Least_Squares</h2>
 <p>method: str = "trf"
 Fit method, "trf", "dogbox" or "lm"
-verbose: int =0
+verbose=0
 Verbosity of fit -&gt; probably want to keep at 0
 gtol: float = 1e-12
 Tolerance for termination by the change of the independent variables.
@@ -1086,9 +534,14 @@ Jacobian. If None uses algebraic jac, otherwise:
 '2-point' is probably best, then '3-point', 'cs' are other options.</p>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><strong><code>fit_image_results</code></strong> :&ensp;<code><a title="dukit.share.RoiAvgFit" href="../share.html#dukit.share.RoiAvgFit">RoiAvgFit</a></code></dt>
-<dd>&nbsp;</dd>
+<dt><strong><code>fit_image_results</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Format: {"AOI_n": {"scipyfit": AoiAvgFit}, &hellip;}</dd>
 </dl></div>
+</dd>
+<dt id="dukit.pl.scipyfit.fit_roi_avg_pl"><code class="name flex">
+<span>def <span class="ident">fit_roi_avg_pl</span></span>(<span>sig: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>ref: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>sweep_arr: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>fit_model: <a title="dukit.pl.model.FitModel" href="model.html#dukit.pl.model.FitModel">FitModel</a>,<br>guess_dict: dict,<br>bounds_dict: dict,<br>norm: str = 'div',<br>method: str = 'trf',<br>verbose: int = 0,<br>gtol: float = 1e-12,<br>xtol: float = 1e-12,<br>ftol: float = 1e-12,<br>loss: str = 'linear',<br>jac: str | None = None)</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -1102,7 +555,7 @@ Jacobian. If None uses algebraic jac, otherwise:
     bounds_dict: dict,
     norm: str = &#34;div&#34;,
     method: str = &#34;trf&#34;,
-    verbose: int =0,
+    verbose: int = 0,
     gtol: float = 1e-12,
     xtol: float = 1e-12,
     ftol: float = 1e-12,
@@ -1110,7 +563,7 @@ Jacobian. If None uses algebraic jac, otherwise:
     jac: str | None = None,
 ):
     &#34;&#34;&#34;
-    Fit AOI averages
+    Fit ROI average
 
     Arguments
     ---------
@@ -1158,17 +611,18 @@ Jacobian. If None uses algebraic jac, otherwise:
         jac = fit_model.jacobian_scipyfit
 
     pguess, pbounds = _gen_sf_guesses_bounds(
-        fit_model, *dukit.pl.common.gen_init_guesses(fit_model, guess_dict, bounds_dict)
+        fit_model,
+        *dukit.pl.common.gen_init_guesses(fit_model, guess_dict, bounds_dict),
     )
+    # NOTE do we want to average over spectra per-pixel, or average over counts?
+    # I guess we want the local average, so this is ok.
 
     if norm == &#34;div&#34;:
         sig_norm = sig / ref
     elif norm == &#34;sub&#34;:
         sig_norm = 1 + (sig - ref) / (sig + ref)
     elif norm == &#34;true_sub&#34;:
-        sig_norm = (sig - ref) / np.nanmax(sig - ref).reshape(
-                sig.shape[:-1] + (1,)
-            ),
+        sig_norm = (sig - ref) / np.nanmax(sig - ref)
 
     avg_sig_norm = np.nanmean(sig_norm, axis=(0, 1))
     avg_sig = np.nanmean(sig, axis=(0, 1))
@@ -1214,6 +668,46 @@ Jacobian. If None uses algebraic jac, otherwise:
         pbounds,
     )</code></pre>
 </details>
+<div class="desc"><p>Fit ROI average</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>sig</code></strong> :&ensp;<code>np array, 3D</code></dt>
+<dd>Sig measurement array, shape: [y, x, sweep_arr]. CROPPED etc. already.</dd>
+<dt><strong><code>ref</code></strong> :&ensp;<code>np array, 3D</code></dt>
+<dd>Ref measurement array, shape: [y, x, sweep_arr]. CROPPED etc. already.</dd>
+<dt><strong><code>sweep_arr</code></strong> :&ensp;<code>np array, 1D</code></dt>
+<dd>Affine parameter list (e.g. tau or freq)</dd>
+<dt><strong><code>fit_model</code></strong> :&ensp;<code><a title="dukit.pl.model.FitModel" href="model.html#dukit.pl.model.FitModel">FitModel</a></code></dt>
+<dd>The model we're fitting to.</dd>
+<dt><strong><code>guess_dict</code></strong> :&ensp;<code>dict</code></dt>
+<dd _.._="[..," _amp_:="'amp':" _pos_:="'pos':" class=".], .], ..">dict holding guesses for each parameter type, e.g.</dd>
+<dt><strong><code>bounds_dict</code></strong> :&ensp;<code>dict</code></dt>
+<dd 1.0_="1.0]," 5.0_="5.0," _0.0_="[0.0," _amp_bounds_:="&quot;amp_bounds&quot;:" _pos_range_:="&quot;pos_range&quot;:" class="..">dict holding bound options for each parameter type, e.g.</dd>
+<dt><strong><code>norm</code></strong> :&ensp;<code>str default="div"</code></dt>
+<dd>Normalisation method</dd>
+</dl>
+<h2 id="optional-parameters-passed-to-scipy-least_squares">Optional Parameters Passed To Scipy Least_Squares</h2>
+<p>method: str = "trf"
+Fit method, "trf", "dogbox" or "lm"
+verbose: int =0
+Verbosity of fit -&gt; probably want to keep at 0
+gtol: float = 1e-12
+Tolerance for termination by the change of the independent variables.
+xtol: float = 1e-12
+Tolerance for termination by the norm of the gradient.
+ftol: float = 1e-12
+Tolerance for termination by the change of the cost function.
+loss: str = "linear"
+Determines the loss function. This in non trivial check the scipy documentation.
+Best you don't change this.
+jac: str | None = None
+Jacobian. If None uses algebraic jac, otherwise:
+'2-point' is probably best, then '3-point', 'cs' are other options.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>fit_image_results</code></strong> :&ensp;<code><a title="dukit.share.RoiAvgFit" href="../share.html#dukit.share.RoiAvgFit">RoiAvgFit</a></code></dt>
+<dd>&nbsp;</dd>
+</dl></div>
 </dd>
 </dl>
 </section>
@@ -1225,8 +719,8 @@ Jacobian. If None uses algebraic jac, otherwise:
 <input id="lunr-search" name="q" placeholder="🔎 Search ..." aria-label="Search"
 disabled minlength="2">
 </form>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.css" integrity="sha512-j1u8eUJ4f23xPPxwOrLUPQaCD2dwzNqqmDDcWS4deWsMv2ohLqmXXuP3hU7g8TyzbMSakP/mMqoNBYWj8AEIFg==" crossorigin>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.js" integrity="sha512-plGUER9JkeEWPPqQBE4sdLqBoQug5Ap+BCGMc7bJ8BXkm+VVj6QzkpBz5Yv2yPkkq+cqg9IpkBaGCas6uDbW8g==" crossorigin></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.css" integrity="sha512-b+T2i3P45i1LZM7I00Ci5QquB9szqaxu+uuk5TUSGjZQ4w4n+qujQiIuvTv2BxE7WCGQCifNMksyKILDiHzsOg==" crossorigin>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.js" integrity="sha512-2B9/byNV1KKRm5nQ2RLViPFD6U4dUjDGwuW1GU+ImJh8YinPU9Zlq1GzdTMO+G2ROrB5o1qasJBy1ttYz0wCug==" crossorigin></script>
 <style>
 .modal-dialog iframe {
 width: 100vw;
@@ -1267,7 +761,6 @@ setTimeout(() => input.focus(), 100);
 }).setContent('<iframe src="' + url + '"></iframe>').open();
 }
 </script>
-<h1>Index</h1>
 <div class="toc">
 <ul>
 <li><a href="#functions">Functions</a></li>
@@ -1292,7 +785,7 @@ setTimeout(() => input.focus(), 100);
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
 </footer>
 </body>
 </html>

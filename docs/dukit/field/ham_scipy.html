@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>dukit.field.ham_scipy API documentation</title>
+<meta name="description" content="Scipy least_squares backend for hamiltonian fitting …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>dukit.field.ham_scipy</code></h1>
+</header>
+<section id="section-intro">
+<p>Scipy least_squares backend for hamiltonian fitting.</p>
+<h2 id="functions">Functions</h2>
+<ul>
+<li><code><a title="dukit.field.ham_scipy.gen_ham_scipyfit_init_guesses" href="#dukit.field.ham_scipy.gen_ham_scipyfit_init_guesses">gen_ham_scipyfit_init_guesses()</a></code></li>
+<li><code><a title="dukit.field.ham_scipy.prep_ham_scipyfit_options" href="#dukit.field.ham_scipy.prep_ham_scipyfit_options">prep_ham_scipyfit_options()</a></code></li>
+<li><code><a title="dukit.field.ham_scipy.fit_hamiltonian_scipyfit" href="#dukit.field.ham_scipy.fit_hamiltonian_scipyfit">fit_hamiltonian_scipyfit()</a></code></li>
+<li><code><a title="dukit.field.ham_scipy.fit_hamiltonian_roi_avg_scipyfit" href="#dukit.field.ham_scipy.fit_hamiltonian_roi_avg_scipyfit">fit_hamiltonian_roi_avg_scipyfit()</a></code></li>
+<li><code><a title="dukit.field.ham_scipy.ham_to_squares_wrapper" href="#dukit.field.ham_scipy.ham_to_squares_wrapper">ham_to_squares_wrapper()</a></code></li>
+</ul>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="dukit.field.ham_scipy.fit_hamiltonian_roi_avg_scipyfit"><code class="name flex">
+<span>def <span class="ident">fit_hamiltonian_roi_avg_scipyfit</span></span>(<span>data: numpy.ndarray,<br>hamiltonian_obj,<br>init_guesses: dict,<br>init_bounds: dict,<br>method: str = 'trf',<br>gtol: float = 1e-12,<br>xtol: float = 1e-12,<br>ftol: float = 1e-12,<br>loss: str = 'linear',<br>use_analytic_jac: bool = False,<br>scale_x: bool = False) ‑> tuple[numpy.ndarray, dict]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fit_hamiltonian_roi_avg_scipyfit(
+    data: np.ndarray,
+    hamiltonian_obj,
+    init_guesses: dict,
+    init_bounds: dict,
+    method: str = &#34;trf&#34;,
+    gtol: float = 1e-12,
+    xtol: float = 1e-12,
+    ftol: float = 1e-12,
+    loss: str = &#34;linear&#34;,
+    use_analytic_jac: bool = False,
+    scale_x: bool = False,
+) -&gt; tuple[np.ndarray, dict]:
+    &#34;&#34;&#34;
+    Fits ROI average to hamiltonian.
+
+    Arguments
+    ---------
+    data : np array, 3D
+        Normalised measurement array, shape: [idx, y, x]. E.g. b_defects or freqs
+    hamiltonian_obj : `dukit.field.hamiltonian.Hamiltonian`
+        Model we&#39;re fitting to.
+    init_guesses : dict
+        Initial parameter guesses.
+    init_bounds : dict
+        Parameter bounds.
+    method : str, default=&#34;trf&#34;
+        scipy.optimize.least_squares method.
+    gtol : float, default=1e-12
+        Tolerance for gradient.
+    xtol : float, default=1e-12
+        Tolerance for parameters.
+    ftol : float, default=1e-12
+        Tolerance for cost function.
+    loss : str, default=&#34;linear&#34;
+        Loss function for robust fitting.
+    use_analytic_jac : bool, default=False
+        Use analytic jacobian if available.
+    scale_x : bool, default=False
+        Scale parameters by jacobian.
+
+    Returns
+    -------
+    best_params : array
+        Array of best parameters from ROI average.
+    fit_options : dict
+        Options dictionary for this fit method.
+    &#34;&#34;&#34;
+
+    # average freqs/b_defects over image -&gt; ignore nanmean of empty slice warning (for nan b_defects etc.)
+    with warnings.catch_warnings():
+        warnings.simplefilter(&#34;ignore&#34;, category=RuntimeWarning)
+        data_roi = np.nanmean(data, axis=(1, 2))
+
+    fit_options = prep_ham_scipyfit_options(
+        hamiltonian_obj,
+        init_guesses,
+        init_bounds,
+        method=method,
+        gtol=gtol,
+        xtol=xtol,
+        ftol=ftol,
+        loss=loss,
+        use_analytic_jac=use_analytic_jac,
+        scale_x=scale_x,
+    )
+
+    init_param_ar, _ = gen_ham_scipyfit_init_guesses(init_guesses, init_bounds)
+
+    ham_result = least_squares(
+        hamiltonian_obj.residuals_scipyfit,
+        init_param_ar,
+        args=(data_roi,),
+        **fit_options,
+    )
+    best_params = ham_result.x
+
+    return best_params, fit_options</code></pre>
+</details>
+<div class="desc"><p>Fits ROI average to hamiltonian.</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>data</code></strong> :&ensp;<code>np array, 3D</code></dt>
+<dd>Normalised measurement array, shape: [idx, y, x]. E.g. b_defects or freqs</dd>
+<dt><strong><code>hamiltonian_obj</code></strong> :&ensp;<code><a title="dukit.field.hamiltonian.Hamiltonian" href="hamiltonian.html#dukit.field.hamiltonian.Hamiltonian">Hamiltonian</a></code></dt>
+<dd>Model we're fitting to.</dd>
+<dt><strong><code>init_guesses</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Initial parameter guesses.</dd>
+<dt><strong><code>init_bounds</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Parameter bounds.</dd>
+<dt><strong><code>method</code></strong> :&ensp;<code>str</code>, default=<code>"trf"</code></dt>
+<dd>scipy.optimize.least_squares method.</dd>
+<dt><strong><code>gtol</code></strong> :&ensp;<code>float</code>, default=<code>1e-12</code></dt>
+<dd>Tolerance for gradient.</dd>
+<dt><strong><code>xtol</code></strong> :&ensp;<code>float</code>, default=<code>1e-12</code></dt>
+<dd>Tolerance for parameters.</dd>
+<dt><strong><code>ftol</code></strong> :&ensp;<code>float</code>, default=<code>1e-12</code></dt>
+<dd>Tolerance for cost function.</dd>
+<dt><strong><code>loss</code></strong> :&ensp;<code>str</code>, default=<code>"linear"</code></dt>
+<dd>Loss function for robust fitting.</dd>
+<dt><strong><code>use_analytic_jac</code></strong> :&ensp;<code>bool</code>, default=<code>False</code></dt>
+<dd>Use analytic jacobian if available.</dd>
+<dt><strong><code>scale_x</code></strong> :&ensp;<code>bool</code>, default=<code>False</code></dt>
+<dd>Scale parameters by jacobian.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>best_params</code></strong> :&ensp;<code>array</code></dt>
+<dd>Array of best parameters from ROI average.</dd>
+<dt><strong><code>fit_options</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Options dictionary for this fit method.</dd>
+</dl></div>
+</dd>
+<dt id="dukit.field.ham_scipy.fit_hamiltonian_scipyfit"><code class="name flex">
+<span>def <span class="ident">fit_hamiltonian_scipyfit</span></span>(<span>data: numpy.ndarray,<br>hamiltonian_obj,<br>init_guesses: dict,<br>init_bounds: dict,<br>freq_mask: tuple[bool, ...] | None = None,<br>n_jobs: int = -2,<br>method: str = 'trf',<br>gtol: float = 1e-12,<br>xtol: float = 1e-12,<br>ftol: float = 1e-12,<br>loss: str = 'linear',<br>use_analytic_jac: bool = False,<br>scale_x: bool = False,<br>shuffle_pixels: bool = True,<br>progress_bar: bool = True,<br>joblib_verbosity: int = 0) ‑> tuple[dict, dict]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fit_hamiltonian_scipyfit(
+    data: np.ndarray,
+    hamiltonian_obj,
+    init_guesses: dict,
+    init_bounds: dict,
+    freq_mask: tuple[bool, ...] | None = None,
+    n_jobs: int = -2,
+    method: str = &#34;trf&#34;,
+    gtol: float = 1e-12,
+    xtol: float = 1e-12,
+    ftol: float = 1e-12,
+    loss: str = &#34;linear&#34;,
+    use_analytic_jac: bool = False,
+    scale_x: bool = False,
+    shuffle_pixels: bool = True,
+    progress_bar: bool = True,
+    joblib_verbosity: int = 0,
+) -&gt; tuple[dict, dict]:
+    &#34;&#34;&#34;
+    Fits each pixel ODMR result to hamiltonian and returns dictionary of
+    param_name -&gt; param_image.
+
+    Uses joblib for parallelization (matches dukit pixel fitting style).
+
+    Arguments
+    ---------
+    data : np array, 3D
+        Normalised measurement array, shape: [idx, y, x]. E.g. b_defects or freqs
+    hamiltonian_obj : `dukit.field.hamiltonian.Hamiltonian`
+        Model we&#39;re fitting to.
+    init_guesses : dict
+        Initial parameter guesses.
+    init_bounds : dict
+        Parameter bounds.
+    freq_mask : tuple[bool, ...] | None, default=None
+        Boolean mask for which frequencies to use.
+    n_jobs : int, default=-2
+        Number of parallel jobs. -1 uses all, -2 uses all but one.
+    method : str, default=&#34;trf&#34;
+        scipy.optimize.least_squares method.
+    gtol : float, default=1e-12
+        Tolerance for gradient.
+    xtol : float, default=1e-12
+        Tolerance for parameters.
+    ftol : float, default=1e-12
+        Tolerance for cost function.
+    loss : str, default=&#34;linear&#34;
+        Loss function for robust fitting.
+    use_analytic_jac : bool, default=False
+        Use analytic jacobian if available.
+    scale_x : bool, default=False
+        Scale parameters by jacobian.
+    shuffle_pixels : bool, default=True
+        Randomize pixel order for better ETA estimation.
+    progress_bar : bool, default=True
+        Show progress bar.
+    joblib_verbosity : int, default=0
+        Verbosity level for joblib.
+
+    Returns
+    -------
+    ham_results : dict
+        Dictionary, key: param_keys, val: image (2D) of param values across FOV.
+        Also has &#39;residual&#39; as a key.
+    sigmas: dict
+        As ham_results, but containing standard deviations for each parameter across FOV.
+    &#34;&#34;&#34;
+    num_pixels = np.shape(data)[1] * np.shape(data)[2]
+
+    # randomize order of fitting pixels (will un-scramble later) so ETA is more correct
+    if shuffle_pixels:
+        pixel_data, unshuffler = hamiltonian.ham_shuffle_pixels(data)
+    else:
+        pixel_data = data
+        unshuffler = None
+
+    # Get fit options
+    fit_options = prep_ham_scipyfit_options(
+        hamiltonian_obj,
+        init_guesses,
+        init_bounds,
+        method=method,
+        gtol=gtol,
+        xtol=xtol,
+        ftol=ftol,
+        loss=loss,
+        use_analytic_jac=use_analytic_jac,
+        scale_x=scale_x,
+    )
+
+    # Convert dict guesses to array
+    init_param_ar, _ = gen_ham_scipyfit_init_guesses(init_guesses, init_bounds)
+
+    # call into the library (measure time)
+    t0 = timer()
+
+    # Use joblib for parallelization (like dukit pixel fitting)
+    results = Parallel(n_jobs=n_jobs, verbose=joblib_verbosity)(
+        delayed(_fit_single_pixel)(
+            hamiltonian_obj.residuals_scipyfit,
+            init_param_ar,
+            pixel_info,
+            fit_options,
+        )
+        for pixel_info in tqdm(
+            hamiltonian.ham_pixel_generator(pixel_data),
+            desc=&#34;hamiltonian fitting&#34;,
+            ascii=True,
+            mininterval=1,
+            total=num_pixels,
+            unit=&#34; PX&#34;,
+            disable=(not progress_bar),
+        )
+    )
+
+    t1 = timer()
+    fit_time = timedelta(seconds=t1 - t0).total_seconds()
+
+    res, sigmas = hamiltonian.ham_get_pixel_fitting_results(hamiltonian_obj, results, pixel_data)
+
+    if shuffle_pixels and unshuffler is not None:
+        res = hamiltonian.ham_unshuffle_fit_results(res, unshuffler)
+        sigmas = hamiltonian.ham_unshuffle_fit_results(sigmas, unshuffler)
+
+    # Add metadata
+    res[&#34;_metadata&#34;] = {
+        &#34;fit_time_s&#34;: fit_time,
+        &#34;method&#34;: method,
+        &#34;n_pixels&#34;: num_pixels,
+    }
+    sigmas[&#34;_metadata&#34;] = res[&#34;_metadata&#34;].copy()
+
+    return res, sigmas</code></pre>
+</details>
+<div class="desc"><p>Fits each pixel ODMR result to hamiltonian and returns dictionary of
+param_name -&gt; param_image.</p>
+<p>Uses joblib for parallelization (matches dukit pixel fitting style).</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>data</code></strong> :&ensp;<code>np array, 3D</code></dt>
+<dd>Normalised measurement array, shape: [idx, y, x]. E.g. b_defects or freqs</dd>
+<dt><strong><code>hamiltonian_obj</code></strong> :&ensp;<code><a title="dukit.field.hamiltonian.Hamiltonian" href="hamiltonian.html#dukit.field.hamiltonian.Hamiltonian">Hamiltonian</a></code></dt>
+<dd>Model we're fitting to.</dd>
+<dt><strong><code>init_guesses</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Initial parameter guesses.</dd>
+<dt><strong><code>init_bounds</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Parameter bounds.</dd>
+<dt><strong><code>freq_mask</code></strong> :&ensp;<code>tuple[bool, ...] | None</code>, default=<code>None</code></dt>
+<dd>Boolean mask for which frequencies to use.</dd>
+<dt><strong><code>n_jobs</code></strong> :&ensp;<code>int</code>, default=<code>-2</code></dt>
+<dd>Number of parallel jobs. -1 uses all, -2 uses all but one.</dd>
+<dt><strong><code>method</code></strong> :&ensp;<code>str</code>, default=<code>"trf"</code></dt>
+<dd>scipy.optimize.least_squares method.</dd>
+<dt><strong><code>gtol</code></strong> :&ensp;<code>float</code>, default=<code>1e-12</code></dt>
+<dd>Tolerance for gradient.</dd>
+<dt><strong><code>xtol</code></strong> :&ensp;<code>float</code>, default=<code>1e-12</code></dt>
+<dd>Tolerance for parameters.</dd>
+<dt><strong><code>ftol</code></strong> :&ensp;<code>float</code>, default=<code>1e-12</code></dt>
+<dd>Tolerance for cost function.</dd>
+<dt><strong><code>loss</code></strong> :&ensp;<code>str</code>, default=<code>"linear"</code></dt>
+<dd>Loss function for robust fitting.</dd>
+<dt><strong><code>use_analytic_jac</code></strong> :&ensp;<code>bool</code>, default=<code>False</code></dt>
+<dd>Use analytic jacobian if available.</dd>
+<dt><strong><code>scale_x</code></strong> :&ensp;<code>bool</code>, default=<code>False</code></dt>
+<dd>Scale parameters by jacobian.</dd>
+<dt><strong><code>shuffle_pixels</code></strong> :&ensp;<code>bool</code>, default=<code>True</code></dt>
+<dd>Randomize pixel order for better ETA estimation.</dd>
+<dt><strong><code>progress_bar</code></strong> :&ensp;<code>bool</code>, default=<code>True</code></dt>
+<dd>Show progress bar.</dd>
+<dt><strong><code>joblib_verbosity</code></strong> :&ensp;<code>int</code>, default=<code>0</code></dt>
+<dd>Verbosity level for joblib.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>ham_results</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary, key: param_keys, val: image (2D) of param values across FOV.
+Also has 'residual' as a key.</dd>
+<dt><strong><code>sigmas</code></strong> :&ensp;<code>dict</code></dt>
+<dd>As ham_results, but containing standard deviations for each parameter across FOV.</dd>
+</dl></div>
+</dd>
+<dt id="dukit.field.ham_scipy.gen_ham_scipyfit_init_guesses"><code class="name flex">
+<span>def <span class="ident">gen_ham_scipyfit_init_guesses</span></span>(<span>init_guesses: dict, init_bounds: dict) ‑> tuple</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def gen_ham_scipyfit_init_guesses(init_guesses: dict, init_bounds: dict) -&gt; tuple:
+    &#34;&#34;&#34;
+    Generate arrays of initial fit guesses and bounds in correct form for scipy least_squares.
+
+    init_guesses and init_bounds are dictionaries up to this point, we now convert to np arrays,
+    that scipy will recognise.
+
+    Arguments
+    ---------
+    init_guesses : dict
+        Dict holding guesses for each parameter, e.g. key -&gt; value for the ham.
+    init_bounds : dict
+        Dict holding bounds for each parameter, e.g. key -&gt; [lower, upper] for the ham.
+
+    Returns
+    -------
+    fit_param_ar : np array, shape: num_params
+        The initial fit parameter guesses.
+    fit_param_bound_ar : np array, shape: (num_params, 2)
+        Fit parameter bounds.
+    &#34;&#34;&#34;
+    param_lst = []
+    bound_lst = []
+
+    for key in init_guesses.keys():
+        param_lst.append(init_guesses[key])
+        bound_lst.append(init_bounds[key])
+
+    fit_param_ar = np.array(param_lst)
+    fit_param_bound_ar = np.array(bound_lst)
+    return fit_param_ar, fit_param_bound_ar</code></pre>
+</details>
+<div class="desc"><p>Generate arrays of initial fit guesses and bounds in correct form for scipy least_squares.</p>
+<p>init_guesses and init_bounds are dictionaries up to this point, we now convert to np arrays,
+that scipy will recognise.</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>init_guesses</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dict holding guesses for each parameter, e.g. key -&gt; value for the ham.</dd>
+<dt><strong><code>init_bounds</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dict holding bounds for each parameter, e.g. key -&gt; [lower, upper] for the ham.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>fit_param_ar</code></strong> :&ensp;<code>np array, shape: num_params</code></dt>
+<dd>The initial fit parameter guesses.</dd>
+<dt><strong><code>fit_param_bound_ar</code></strong> :&ensp;<code>np array, shape: (num_params, 2)</code></dt>
+<dd>Fit parameter bounds.</dd>
+</dl></div>
+</dd>
+<dt id="dukit.field.ham_scipy.ham_to_squares_wrapper"><code class="name flex">
+<span>def <span class="ident">ham_to_squares_wrapper</span></span>(<span>fun, p0, shaped_data, fit_optns)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ham_to_squares_wrapper(fun, p0, shaped_data, fit_optns):
+    &#34;&#34;&#34;
+    Simple wrapper of scipy.optimize.least_squares to allow us to keep track of which
+    solution is which (or where).
+
+    Arguments
+    ---------
+    fun : function
+        Function object acting as residual
+    p0 : np array
+        Initial guess: array of parameters
+    shaped_data : list (3 elements)
+        array returned by `dukit.field.hamiltonian.ham_pixel_generator`: [y, x, data[:, y, x]]
+    fit_optns : dict
+        Other options (dict) passed to least_squares
+
+    Returns
+    -------
+    wrapped_squares : tuple
+        (y, x), least_squares(...).x, least_squares(...).jac
+        I.e. the position of the fit result, the fit result parameters array and the jacobian
+        at the solution.
+    &#34;&#34;&#34;
+    # shaped_data: [y, x, pl]
+    # output: (y, x), result_params
+    res = least_squares(fun, p0, args=(shaped_data[2],), **fit_optns)
+    return ((shaped_data[0], shaped_data[1]), res.x, res.jac)</code></pre>
+</details>
+<div class="desc"><p>Simple wrapper of scipy.optimize.least_squares to allow us to keep track of which
+solution is which (or where).</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>fun</code></strong> :&ensp;<code>function</code></dt>
+<dd>Function object acting as residual</dd>
+<dt><strong><code>p0</code></strong> :&ensp;<code>np array</code></dt>
+<dd>Initial guess: array of parameters</dd>
+<dt><strong><code>shaped_data</code></strong> :&ensp;<code>list (3 elements)</code></dt>
+<dd>array returned by <code><a title="dukit.field.hamiltonian.ham_pixel_generator" href="hamiltonian.html#dukit.field.hamiltonian.ham_pixel_generator">ham_pixel_generator()</a></code>: [y, x, data[:, y, x]]</dd>
+<dt><strong><code>fit_optns</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Other options (dict) passed to least_squares</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>wrapped_squares</code></strong> :&ensp;<code>tuple</code></dt>
+<dd>(y, x), least_squares(&hellip;).x, least_squares(&hellip;).jac
+I.e. the position of the fit result, the fit result parameters array and the jacobian
+at the solution.</dd>
+</dl></div>
+</dd>
+<dt id="dukit.field.ham_scipy.prep_ham_scipyfit_options"><code class="name flex">
+<span>def <span class="ident">prep_ham_scipyfit_options</span></span>(<span>ham,<br>init_guesses: dict,<br>init_bounds: dict,<br>method: str = 'trf',<br>gtol: float = 1e-12,<br>xtol: float = 1e-12,<br>ftol: float = 1e-12,<br>loss: str = 'linear',<br>use_analytic_jac: bool = False,<br>scale_x: bool = False) ‑> dict</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def prep_ham_scipyfit_options(
+    ham,
+    init_guesses: dict,
+    init_bounds: dict,
+    method: str = &#34;trf&#34;,
+    gtol: float = 1e-12,
+    xtol: float = 1e-12,
+    ftol: float = 1e-12,
+    loss: str = &#34;linear&#34;,
+    use_analytic_jac: bool = False,
+    scale_x: bool = False,
+) -&gt; dict:
+    &#34;&#34;&#34;
+    Prepare options dict in format that scipy least_squares expects.
+
+    Arguments
+    ---------
+    ham : `dukit.field.hamiltonian.Hamiltonian`
+        Hamiltonian object.
+    init_guesses : dict
+        Initial parameter guesses.
+    init_bounds : dict
+        Parameter bounds.
+    method : str, default=&#34;trf&#34;
+        scipy.optimize.least_squares method.
+    gtol : float, default=1e-12
+        Tolerance for gradient.
+    xtol : float, default=1e-12
+        Tolerance for parameters.
+    ftol : float, default=1e-12
+        Tolerance for cost function.
+    loss : str, default=&#34;linear&#34;
+        Loss function for robust fitting.
+    use_analytic_jac : bool, default=False
+        Use analytic jacobian if available.
+    scale_x : bool, default=False
+        Scale parameters by jacobian.
+
+    Returns
+    -------
+    scipy_fit_options : dict
+        Dictionary with options that scipy.optimize.least_squares expects.
+    &#34;&#34;&#34;
+    _, fit_param_bound_ar = gen_ham_scipyfit_init_guesses(init_guesses, init_bounds)
+    fit_bounds = (fit_param_bound_ar[:, 0], fit_param_bound_ar[:, 1])
+
+    # see scipy.optimize.least_squares
+    scipyfit_options = {
+        &#34;method&#34;: method,
+        &#34;gtol&#34;: gtol,
+        &#34;xtol&#34;: xtol,
+        &#34;ftol&#34;: ftol,
+        &#34;loss&#34;: loss,
+    }
+
+    if method != &#34;lm&#34;:
+        scipyfit_options[&#34;bounds&#34;] = fit_bounds
+
+    if scale_x:
+        scipyfit_options[&#34;x_scale&#34;] = &#34;jac&#34;
+
+    # define jacobian option for least_squares fitting
+    if not ham.jacobian_defined() or not use_analytic_jac:
+        scipyfit_options[&#34;jac&#34;] = &#34;2-point&#34;
+    else:
+        scipyfit_options[&#34;jac&#34;] = ham.jacobian_scipyfit
+
+    return scipyfit_options</code></pre>
+</details>
+<div class="desc"><p>Prepare options dict in format that scipy least_squares expects.</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>ham</code></strong> :&ensp;<code><a title="dukit.field.hamiltonian.Hamiltonian" href="hamiltonian.html#dukit.field.hamiltonian.Hamiltonian">Hamiltonian</a></code></dt>
+<dd>Hamiltonian object.</dd>
+<dt><strong><code>init_guesses</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Initial parameter guesses.</dd>
+<dt><strong><code>init_bounds</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Parameter bounds.</dd>
+<dt><strong><code>method</code></strong> :&ensp;<code>str</code>, default=<code>"trf"</code></dt>
+<dd>scipy.optimize.least_squares method.</dd>
+<dt><strong><code>gtol</code></strong> :&ensp;<code>float</code>, default=<code>1e-12</code></dt>
+<dd>Tolerance for gradient.</dd>
+<dt><strong><code>xtol</code></strong> :&ensp;<code>float</code>, default=<code>1e-12</code></dt>
+<dd>Tolerance for parameters.</dd>
+<dt><strong><code>ftol</code></strong> :&ensp;<code>float</code>, default=<code>1e-12</code></dt>
+<dd>Tolerance for cost function.</dd>
+<dt><strong><code>loss</code></strong> :&ensp;<code>str</code>, default=<code>"linear"</code></dt>
+<dd>Loss function for robust fitting.</dd>
+<dt><strong><code>use_analytic_jac</code></strong> :&ensp;<code>bool</code>, default=<code>False</code></dt>
+<dd>Use analytic jacobian if available.</dd>
+<dt><strong><code>scale_x</code></strong> :&ensp;<code>bool</code>, default=<code>False</code></dt>
+<dd>Scale parameters by jacobian.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>scipy_fit_options</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary with options that scipy.optimize.least_squares expects.</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<form>
+<input id="lunr-search" name="q" placeholder="🔎 Search ..." aria-label="Search"
+disabled minlength="2">
+</form>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.css" integrity="sha512-b+T2i3P45i1LZM7I00Ci5QquB9szqaxu+uuk5TUSGjZQ4w4n+qujQiIuvTv2BxE7WCGQCifNMksyKILDiHzsOg==" crossorigin>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.js" integrity="sha512-2B9/byNV1KKRm5nQ2RLViPFD6U4dUjDGwuW1GU+ImJh8YinPU9Zlq1GzdTMO+G2ROrB5o1qasJBy1ttYz0wCug==" crossorigin></script>
+<style>
+.modal-dialog iframe {
+width: 100vw;
+height: calc(100vh - 80px);
+}
+@media screen and (min-width: 700px) {
+.modal-dialog iframe {
+width: 70vw;
+height: 80vh;
+}
+}
+.modal-dialog .tingle-modal-box {width: auto;}
+.modal-dialog .tingle-modal-box__content {padding: 0;}
+</style>
+<script>
+const input = document.getElementById('lunr-search');
+input.disabled = false;
+input.form.addEventListener('submit', (ev) => {
+ev.preventDefault();
+const url = new URL(window.location);
+url.searchParams.set('q', input.value);
+history.replaceState({}, null, url.toString());
+search(input.value);
+});
+const query = new URL(window.location).searchParams.get('q');
+if (query)
+search(query);
+function search(query) {
+const url = '../../doc-search.html#' + encodeURIComponent(query);
+new tingle.modal({
+cssClass: ['modal-dialog'],
+onClose: () => {
+const url = new URL(window.location);
+url.searchParams.delete('q');
+history.replaceState({}, null, url.toString());
+setTimeout(() => input.focus(), 100);
+}
+}).setContent('<iframe src="' + url + '"></iframe>').open();
+}
+</script>
+<div class="toc">
+<ul>
+<li><a href="#functions">Functions</a></li>
+</ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="dukit.field" href="index.html">dukit.field</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="dukit.field.ham_scipy.fit_hamiltonian_roi_avg_scipyfit" href="#dukit.field.ham_scipy.fit_hamiltonian_roi_avg_scipyfit">fit_hamiltonian_roi_avg_scipyfit</a></code></li>
+<li><code><a title="dukit.field.ham_scipy.fit_hamiltonian_scipyfit" href="#dukit.field.ham_scipy.fit_hamiltonian_scipyfit">fit_hamiltonian_scipyfit</a></code></li>
+<li><code><a title="dukit.field.ham_scipy.gen_ham_scipyfit_init_guesses" href="#dukit.field.ham_scipy.gen_ham_scipyfit_init_guesses">gen_ham_scipyfit_init_guesses</a></code></li>
+<li><code><a title="dukit.field.ham_scipy.ham_to_squares_wrapper" href="#dukit.field.ham_scipy.ham_to_squares_wrapper">ham_to_squares_wrapper</a></code></li>
+<li><code><a title="dukit.field.ham_scipy.prep_ham_scipyfit_options" href="#dukit.field.ham_scipy.prep_ham_scipyfit_options">prep_ham_scipyfit_options</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

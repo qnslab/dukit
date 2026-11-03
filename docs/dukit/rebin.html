@@ -2,19 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.9.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
 <title>dukit.rebin API documentation</title>
-<meta name="description" content="Python/NumPy implementation of IDL&#39;s rebin function …" />
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
-<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
-<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
-<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<meta name="description" content="Python/NumPy implementation of IDL&#39;s rebin function …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
 <style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
-<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
 </head>
 <body>
 <main>
@@ -84,196 +99,6 @@ discarded. For example ::</p>
 +----+----+----+----+
 </code></pre>
 <p>for (2, 2) tiles and a <em>sum</em> reduction.</p>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python"># -*- coding: utf-8 -*-
-# Copyright (c) 2016, Sébastien Brisard
-# All rights reserved.
-#
-# Redistribution and use in source and binary forms, with or without
-# modification, are permitted provided that the following conditions are met:
-#
-# * Redistributions of source code must retain the above copyright notice, this
-#   list of conditions and the following disclaimer.
-#
-# * Redistributions in binary form must reproduce the above copyright notice,
-#   this list of conditions and the following disclaimer in the documentation
-#   and/or other materials provided with the distribution.
-#
-# * Neither the name of rebin nor the names of its
-#   contributors may be used to endorse or promote products derived from
-#   this software without specific prior written permission.
-#
-# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &#34;AS IS&#34;
-# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-# DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-# SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-# CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-# OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-#
-
-&#34;&#34;&#34;
-Python/NumPy implementation of IDL&#39;s rebin function.
-
-NOTE: vendored from https://github.com/sbrisard/rebin as it has no conda-forge package
-
-========
-
-Python/NumPy implementation of IDL&#39;s rebin function.
-
-See http://www.harrisgeospatial.com/docs/rebin.html.
-
-The ``rebin`` function defined in this module first groups the cells of
-the input array in tiles of specified size. Then, a reduction function
-is applied to each tile, which is replaced by a single value. The
-resulting array is returned: its dimensions are the number of tiles in
-the input array.
-
-Rebin is released under a BSD 3-clause license.
-
-Rationale
----------
-
-The input array, ``a`` is assumed to be *strided*. In other words, if ::
-
-    a.strides = (s0, s1, ...),
-
-then ::
-
-    a[i0, i1, ...] = a[[s0*i0 + s1*i1 + ...]],
-
-where ``[[...]]`` denotes the offset operator. To compute the output
-array, we first create a tiled version of ``a``. The number of
-dimensions of ``tiled`` is twice that of ``a``: for each index in ``a``,
-``tiled`` has one *slow* index and one *fast* index ::
-
-    tiled[i0, i1, ..., j0, j1, ...] = a[f0*i0 + j0, f1*i1 + j1, ...],
-
-where ``factor=(f0, f1, ...)`` is the binning factor (size of the
-tiles). Upon using the strides of ``a`` ::
-
-    tiled[i0, i1, ..., j0, j1, ...] = a[[s0*f0*i0 + s1*f1*i1 + ... +
-                                         s0*j0 + s1*j1 + ...]],
-
-which shows that the strides of ``tiled`` are ::
-
-    tiled.strides = (s0*f0, s1*f1, ..., s0, s1, ...).
-
-In other words, ``tiled`` is a *view* of ``a`` with modified
-strides. Restriding an array can be done with the ``as_strided``
-function from ``numpy.lib.stride_tricks``. Then, the output array is
-readily computed as follows ::
-
-    out = func(tiled, axis = tuple(range(-a.ndim, 0)))
-
-where reduction is carried out on the fast indices.
-
-Boundary cases
---------------
-
-When the dimensions of the input array are not integer multiples of the
-dimensions of the tiles, the remainding rows/columns are simply
-discarded. For example ::
-
-    +--------+--------+--------+--------+----+
-    |  1   1 |  2   2 |  3   3 |  4   4 |  5 |
-    |  1   1 |  2   2 |  3   3 |  4   4 |  5 |
-    +--------+--------+--------+--------+----+
-    |  6   6 |  7   7 |  8   8 |  9   9 | 10 |
-    |  6   6 |  7   7 |  8   8 |  9   9 | 10 |
-    +--------+--------+--------+--------+----+
-    | 11  11 | 12  12 | 13  13 | 14  14 | 15 |
-    +--------+--------+--------+--------+----+
-
-will produce ::
-
-    +----+----+----+----+
-    |  4 |  8 | 12 | 16 |
-    +----+----+----+----+
-    | 24 | 28 | 32 | 36 |
-    +----+----+----+----+
-
-for (2, 2) tiles and a *sum* reduction.
-
-&#34;&#34;&#34;
-import numpy as np
-
-from numpy.lib.stride_tricks import as_strided
-
-__author__ = &#34;Sebastien Brisard&#34;
-# __version__ = &#34;1.0.1&#34;
-# __release__ = __version__
-
-
-def rebin(a, factor, func=None):
-    &#34;&#34;&#34;Aggregate data from the input array ``a`` into rectangular tiles.
-
-    The output array results from tiling ``a`` and applying `func` to
-    each tile. ``factor`` specifies the size of the tiles. More
-    precisely, the returned array ``out`` is such that::
-
-        out[i0, i1, ...] = func(a[f0*i0:f0*(i0+1), f1*i1:f1*(i1+1), ...])
-
-    If ``factor`` is an integer-like scalar, then
-    ``f0 = f1 = ... = factor`` in the above formula. If ``factor`` is a
-    sequence of integer-like scalars, then ``f0 = factor[0]``,
-    ``f1 = factor[1]``, ... and the length of ``factor`` must equal the
-    number of dimensions of ``a``.
-
-    The reduction function ``func`` must accept an ``axis`` argument.
-    Examples of such function are
-
-      - ``numpy.mean`` (default),
-      - ``numpy.sum``,
-      - ``numpy.product``,
-      - ...
-
-    The following example shows how a (4, 6) array is reduced to a
-    (2, 2) array
-
-    &gt;&gt;&gt; import numpy
-    &gt;&gt;&gt; from rebin import rebin
-    &gt;&gt;&gt; a = numpy.arange(24).reshape(4, 6)
-    &gt;&gt;&gt; rebin(a, factor=(2, 3), func=numpy.sum)
-    array([[ 24,  42],
-           [ 96, 114]])
-
-    If the elements of `factor` are not integer multiples of the
-    dimensions of `a`, the remainding cells are discarded.
-
-    &gt;&gt;&gt; rebin(a, factor=(2, 2), func=numpy.sum)
-    array([[16, 24, 32],
-           [72, 80, 88]])
-
-    &#34;&#34;&#34;
-    a = np.asarray(a)
-    dim = a.ndim
-    if np.isscalar(factor):
-        factor = dim * (factor,)
-    elif len(factor) != dim:
-        raise ValueError(
-            &#34;length of factor must be {} (was {})&#34;.format(dim, len(factor))
-        )
-    if func is None:
-        func = np.mean
-    for f in factor:
-        if f != int(f):
-            raise ValueError(
-                &#34;factor must be an int or a tuple of ints &#34; &#34;(got {})&#34;.format(f)
-            )
-
-    new_shape = [n // f for n, f in zip(a.shape, factor)] + list(factor)
-    new_strides = [s * f for s, f in zip(a.strides, factor)] + list(a.strides)
-    aa = as_strided(a, shape=new_shape, strides=new_strides)
-    return func(aa, axis=tuple(range(-dim, 0)))</code></pre>
-</details>
 </section>
 <section>
 </section>
@@ -286,40 +111,6 @@ def rebin(a, factor, func=None):
 <span>def <span class="ident">rebin</span></span>(<span>a, factor, func=None)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Aggregate data from the input array <code>a</code> into rectangular tiles.</p>
-<p>The output array results from tiling <code>a</code> and applying <code>func</code> to
-each tile. <code>factor</code> specifies the size of the tiles. More
-precisely, the returned array <code>out</code> is such that::</p>
-<pre><code>out[i0, i1, ...] = func(a[f0*i0:f0*(i0+1), f1*i1:f1*(i1+1), ...])
-</code></pre>
-<p>If <code>factor</code> is an integer-like scalar, then
-<code>f0 = f1 = ... = factor</code> in the above formula. If <code>factor</code> is a
-sequence of integer-like scalars, then <code>f0 = factor[0]</code>,
-<code>f1 = factor[1]</code>, &hellip; and the length of <code>factor</code> must equal the
-number of dimensions of <code>a</code>.</p>
-<p>The reduction function <code>func</code> must accept an <code>axis</code> argument.
-Examples of such function are</p>
-<ul>
-<li><code>numpy.mean</code> (default),</li>
-<li><code>numpy.sum</code>,</li>
-<li><code>numpy.product</code>,</li>
-<li>&hellip;</li>
-</ul>
-<p>The following example shows how a (4, 6) array is reduced to a
-(2, 2) array</p>
-<pre><code class="language-python-repl">&gt;&gt;&gt; import numpy
-&gt;&gt;&gt; from rebin import rebin
-&gt;&gt;&gt; a = numpy.arange(24).reshape(4, 6)
-&gt;&gt;&gt; rebin(a, factor=(2, 3), func=numpy.sum)
-array([[ 24,  42],
-       [ 96, 114]])
-</code></pre>
-<p>If the elements of <code>factor</code> are not integer multiples of the
-dimensions of <code>a</code>, the remainding cells are discarded.</p>
-<pre><code class="language-python-repl">&gt;&gt;&gt; rebin(a, factor=(2, 2), func=numpy.sum)
-array([[16, 24, 32],
-       [72, 80, 88]])
-</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -370,22 +161,52 @@ array([[16, 24, 32],
     if np.isscalar(factor):
         factor = dim * (factor,)
     elif len(factor) != dim:
-        raise ValueError(
-            &#34;length of factor must be {} (was {})&#34;.format(dim, len(factor))
-        )
+        raise ValueError(&#34;length of factor must be {} (was {})&#34;.format(dim, len(factor)))
     if func is None:
         func = np.mean
     for f in factor:
         if f != int(f):
-            raise ValueError(
-                &#34;factor must be an int or a tuple of ints &#34; &#34;(got {})&#34;.format(f)
-            )
+            raise ValueError(&#34;factor must be an int or a tuple of ints (got {})&#34;.format(f))
 
     new_shape = [n // f for n, f in zip(a.shape, factor)] + list(factor)
     new_strides = [s * f for s, f in zip(a.strides, factor)] + list(a.strides)
     aa = as_strided(a, shape=new_shape, strides=new_strides)
     return func(aa, axis=tuple(range(-dim, 0)))</code></pre>
 </details>
+<div class="desc"><p>Aggregate data from the input array <code>a</code> into rectangular tiles.</p>
+<p>The output array results from tiling <code>a</code> and applying <code>func</code> to
+each tile. <code>factor</code> specifies the size of the tiles. More
+precisely, the returned array <code>out</code> is such that::</p>
+<pre><code>out[i0, i1, ...] = func(a[f0*i0:f0*(i0+1), f1*i1:f1*(i1+1), ...])
+</code></pre>
+<p>If <code>factor</code> is an integer-like scalar, then
+<code>f0 = f1 = ... = factor</code> in the above formula. If <code>factor</code> is a
+sequence of integer-like scalars, then <code>f0 = factor[0]</code>,
+<code>f1 = factor[1]</code>, &hellip; and the length of <code>factor</code> must equal the
+number of dimensions of <code>a</code>.</p>
+<p>The reduction function <code>func</code> must accept an <code>axis</code> argument.
+Examples of such function are</p>
+<ul>
+<li><code>numpy.mean</code> (default),</li>
+<li><code>numpy.sum</code>,</li>
+<li><code>numpy.product</code>,</li>
+<li>&hellip;</li>
+</ul>
+<p>The following example shows how a (4, 6) array is reduced to a
+(2, 2) array</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; import numpy
+&gt;&gt;&gt; from rebin import rebin
+&gt;&gt;&gt; a = numpy.arange(24).reshape(4, 6)
+&gt;&gt;&gt; rebin(a, factor=(2, 3), func=numpy.sum)
+array([[ 24,  42],
+       [ 96, 114]])
+</code></pre>
+<p>If the elements of <code>factor</code> are not integer multiples of the
+dimensions of <code>a</code>, the remainding cells are discarded.</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; rebin(a, factor=(2, 2), func=numpy.sum)
+array([[16, 24, 32],
+       [72, 80, 88]])
+</code></pre></div>
 </dd>
 </dl>
 </section>
@@ -397,8 +218,8 @@ array([[16, 24, 32],
 <input id="lunr-search" name="q" placeholder="🔎 Search ..." aria-label="Search"
 disabled minlength="2">
 </form>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.css" integrity="sha512-j1u8eUJ4f23xPPxwOrLUPQaCD2dwzNqqmDDcWS4deWsMv2ohLqmXXuP3hU7g8TyzbMSakP/mMqoNBYWj8AEIFg==" crossorigin>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.js" integrity="sha512-plGUER9JkeEWPPqQBE4sdLqBoQug5Ap+BCGMc7bJ8BXkm+VVj6QzkpBz5Yv2yPkkq+cqg9IpkBaGCas6uDbW8g==" crossorigin></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.css" integrity="sha512-b+T2i3P45i1LZM7I00Ci5QquB9szqaxu+uuk5TUSGjZQ4w4n+qujQiIuvTv2BxE7WCGQCifNMksyKILDiHzsOg==" crossorigin>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.js" integrity="sha512-2B9/byNV1KKRm5nQ2RLViPFD6U4dUjDGwuW1GU+ImJh8YinPU9Zlq1GzdTMO+G2ROrB5o1qasJBy1ttYz0wCug==" crossorigin></script>
 <style>
 .modal-dialog iframe {
 width: 100vw;
@@ -439,7 +260,6 @@ setTimeout(() => input.focus(), 100);
 }).setContent('<iframe src="' + url + '"></iframe>').open();
 }
 </script>
-<h1>Index</h1>
 <div class="toc">
 <ul>
 <li><a href="#rationale">Rationale</a></li>
@@ -461,7 +281,7 @@ setTimeout(() => input.focus(), 100);
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
 </footer>
 </body>
 </html>

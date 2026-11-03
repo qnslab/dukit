@@ -1,0 +1,1484 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>dukit.source API documentation</title>
+<meta name="description" content="Source reconstruction module - invert B-field to current/magnetization.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>dukit.source</code></h1>
+</header>
+<section id="section-intro">
+<p>Source reconstruction module - invert B-field to current/magnetization.</p>
+</section>
+<section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="dukit.source.current" href="current.html">dukit.source.current</a></code></dt>
+<dd>
+<div class="desc"><p>Implement inversion of magnetic field to current density …</p></div>
+</dd>
+<dt><code class="name"><a title="dukit.source.magnetization" href="magnetization.html">dukit.source.magnetization</a></code></dt>
+<dd>
+<div class="desc"><p>Magnetization reconstruction - invert B-field to out-of-plane magnetization Mz</p></div>
+</dd>
+<dt><code class="name"><a title="dukit.source.reconstruct" href="reconstruct.html">dukit.source.reconstruct</a></code></dt>
+<dd>
+<div class="desc"><p>High-level source reconstruction interface.</p></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="dukit.source.get_current_from_bdefect"><code class="name flex">
+<span>def <span class="ident">get_current_from_bdefect</span></span>(<span>b_defect: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>u_defect: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>pixel_size: float = 1e-06,<br>standoff: float | None = None,<br>nv_layer_thickness: float | None = None,<br>nv_above_sample: bool = True,<br>pad_mode: str | None = 'edge',<br>pad_factor: int = 2,<br>k_vector_epsilon: float = 1e-06,<br>do_hanning_filter: bool = False,<br>hanning_low_cutoff: float | None = None,<br>hanning_high_cutoff: float | None = None) ‑> dict[str, numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_current_from_bdefect(
+    b_defect: npt.NDArray,
+    u_defect: npt.NDArray,
+    pixel_size: float = 1e-6,
+    standoff: float | None = None,
+    nv_layer_thickness: float | None = None,
+    nv_above_sample: bool = True,
+    pad_mode: str | None = &#34;edge&#34;,
+    pad_factor: int = 2,
+    k_vector_epsilon: float = 1e-6,
+    do_hanning_filter: bool = False,
+    hanning_low_cutoff: float | None = None,
+    hanning_high_cutoff: float | None = None,
+) -&gt; dict[str, npt.NDArray]:
+    &#34;&#34;&#34;
+    Reconstruct current density from single B_defect measurement.
+
+    Parameters
+    ----------
+    b_defect : npt.NDArray
+        2D array of B-field along defect axis (Gauss).
+    u_defect : npt.NDArray
+        Defect orientation unit vector, shape (3,). Normalized internally.
+    pixel_size : float, default=1e-6
+        Effective pixel size in meters.
+    standoff : float | None
+        Distance from NV layer to sample in meters.
+    nv_layer_thickness : float | None
+        Thickness of NV layer in meters.
+    nv_above_sample : bool, default=True
+        True if NV layer is above sample (higher z).
+    pad_mode : str or None, default=&#34;edge&#34;
+        Padding mode for fourier transform. Set to None for no padding.
+    pad_factor : int, default=2
+        Padding factor on each side.
+    k_vector_epsilon : float, default=1e-6
+        Small epsilon added to k-vectors to avoid division by zero.
+    do_hanning_filter : bool, default=False
+        Apply Hanning filter to reduce noise amplification.
+    hanning_low_cutoff, hanning_high_cutoff : float | None
+        Cutoff wavelengths in meters for Hanning filter.
+
+    Returns
+    -------
+    dict with keys:
+        - &#34;Jx&#34;: Current density x-component (A/m)
+        - &#34;Jy&#34;: Current density y-component (A/m)
+        - &#34;Jnorm&#34;: Current density magnitude sqrt(Jx² + Jy²) (A/m)
+        - &#34;_metadata&#34;: Dict with parameters used
+
+    Reference
+    ---------
+    D. A. Broadway, S. E. Lillie, S. C. Scholten, D. Rohner,
+    N. Dontschuk, P. Maletinsky, J.-P. Tetienne, and L. C. L. Hollenberg,
+    Improved Current Density and Magnetization Reconstruction Through
+    Vector Magnetic Field Measurements, Phys. Rev. Applied 14, 024076 (2020).
+    https://doi.org/10.1103/PhysRevApplied.14.024076
+    &#34;&#34;&#34;
+    b = np.copy(b_defect) * 1e-4  # copy and convert Gauss to Tesla
+    bnv_pad, padder = dukit.fourier.pad_image(b, pad_mode, pad_factor)
+
+    fft_bnv = numpy_fft.fftshift(numpy_fft.fft2(bnv_pad))
+
+    ky, kx, k = dukit.fourier.define_k_vectors(
+        fft_bnv.shape, pixel_size, k_vector_epsilon=k_vector_epsilon
+    )
+
+    if nv_above_sample:
+        unv_cpy = np.copy(u_defect)
+    else:
+        unv_cpy = np.array([-u_defect[0], -u_defect[1], u_defect[2]])
+
+    # define transform
+    bnv_to_jx, bnv_to_jy = define_current_transform(
+        unv_cpy, ky, kx, k, standoff, nv_layer_thickness
+    )
+
+    hanning_filt = dukit.fourier.hanning_filter_kspace(
+        k, do_hanning_filter, hanning_low_cutoff, hanning_high_cutoff, standoff
+    )
+
+    bnv_to_jx = dukit.fourier.set_naninf_to_zero(hanning_filt * bnv_to_jx)
+    bnv_to_jy = dukit.fourier.set_naninf_to_zero(hanning_filt * bnv_to_jy)
+
+    fft_jx = bnv_to_jx * fft_bnv
+    fft_jy = bnv_to_jy * fft_bnv
+
+    # fourier transform back into real space
+    jx = numpy_fft.ifft2(numpy_fft.ifftshift(fft_jx)).real
+    jy = numpy_fft.ifft2(numpy_fft.ifftshift(fft_jy)).real
+
+    # only return non-padded region
+    jx_reg = dukit.fourier.unpad_image(jx, padder)
+    jy_reg = dukit.fourier.unpad_image(jy, padder)
+
+    return {
+        &#34;Jx&#34;: jx_reg,
+        &#34;Jy&#34;: jy_reg,
+        &#34;Jnorm&#34;: np.sqrt(jx_reg**2 + jy_reg**2),
+        &#34;_metadata&#34;: {
+            &#34;method&#34;: &#34;get_current_from_bdefect&#34;,
+            &#34;nv_above_sample&#34;: nv_above_sample,
+            &#34;standoff&#34;: standoff,
+            &#34;nv_layer_thickness&#34;: nv_layer_thickness,
+            &#34;timestamp&#34;: datetime.utcnow().isoformat(),
+            &#34;image_shape&#34;: jx_reg.shape,
+            &#34;pixel_size&#34;: pixel_size,
+        },
+    }</code></pre>
+</details>
+<div class="desc"><p>Reconstruct current density from single B_defect measurement.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>b_defect</code></strong> :&ensp;<code>npt.NDArray</code></dt>
+<dd>2D array of B-field along defect axis (Gauss).</dd>
+<dt><strong><code>u_defect</code></strong> :&ensp;<code>npt.NDArray</code></dt>
+<dd>Defect orientation unit vector, shape (3,). Normalized internally.</dd>
+<dt><strong><code>pixel_size</code></strong> :&ensp;<code>float</code>, default=<code>1e-6</code></dt>
+<dd>Effective pixel size in meters.</dd>
+<dt><strong><code>standoff</code></strong> :&ensp;<code>float | None</code></dt>
+<dd>Distance from NV layer to sample in meters.</dd>
+<dt><strong><code>nv_layer_thickness</code></strong> :&ensp;<code>float | None</code></dt>
+<dd>Thickness of NV layer in meters.</dd>
+<dt><strong><code>nv_above_sample</code></strong> :&ensp;<code>bool</code>, default=<code>True</code></dt>
+<dd>True if NV layer is above sample (higher z).</dd>
+<dt><strong><code>pad_mode</code></strong> :&ensp;<code>str</code> or <code>None</code>, default=<code>"edge"</code></dt>
+<dd>Padding mode for fourier transform. Set to None for no padding.</dd>
+<dt><strong><code>pad_factor</code></strong> :&ensp;<code>int</code>, default=<code>2</code></dt>
+<dd>Padding factor on each side.</dd>
+<dt><strong><code>k_vector_epsilon</code></strong> :&ensp;<code>float</code>, default=<code>1e-6</code></dt>
+<dd>Small epsilon added to k-vectors to avoid division by zero.</dd>
+<dt><strong><code>do_hanning_filter</code></strong> :&ensp;<code>bool</code>, default=<code>False</code></dt>
+<dd>Apply Hanning filter to reduce noise amplification.</dd>
+<dt><strong><code>hanning_low_cutoff</code></strong>, <strong><code>hanning_high_cutoff</code></strong> :&ensp;<code>float | None</code></dt>
+<dd>Cutoff wavelengths in meters for Hanning filter.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict with keys:</code></dt>
+<dd>
+<ul>
+<li>"Jx": Current density x-component (A/m)</li>
+<li>"Jy": Current density y-component (A/m)</li>
+<li>"Jnorm": Current density magnitude sqrt(Jx² + Jy²) (A/m)</li>
+<li>"_metadata": Dict with parameters used</li>
+</ul>
+</dd>
+</dl>
+<h2 id="reference">Reference</h2>
+<p>D. A. Broadway, S. E. Lillie, S. C. Scholten, D. Rohner,
+N. Dontschuk, P. Maletinsky, J.-P. Tetienne, and L. C. L. Hollenberg,
+Improved Current Density and Magnetization Reconstruction Through
+Vector Magnetic Field Measurements, Phys. Rev. Applied 14, 024076 (2020).
+<a href="https://doi.org/10.1103/PhysRevApplied.14.024076">https://doi.org/10.1103/PhysRevApplied.14.024076</a></p></div>
+</dd>
+<dt id="dukit.source.get_current_from_bxyz"><code class="name flex">
+<span>def <span class="ident">get_current_from_bxyz</span></span>(<span>Bx: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>By: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>Bz: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]] | None = None,<br>pixel_size: float = 1e-06,<br>standoff: float | None = None,<br>nv_layer_thickness: float | None = None,<br>nv_above_sample: bool = True,<br>use_components: Literal['xy', 'z', 'auto'] = 'auto',<br>pad_mode: str | None = 'edge',<br>pad_factor: int = 2,<br>k_vector_epsilon: float = 1e-06,<br>do_hanning_filter: bool = False,<br>hanning_low_cutoff: float | None = None,<br>hanning_high_cutoff: float | None = None) ‑> dict[str, numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_current_from_bxyz(
+    Bx: npt.NDArray,
+    By: npt.NDArray,
+    Bz: npt.NDArray | None = None,
+    pixel_size: float = 1e-6,
+    standoff: float | None = None,
+    nv_layer_thickness: float | None = None,
+    nv_above_sample: bool = True,
+    use_components: Literal[&#34;xy&#34;, &#34;z&#34;, &#34;auto&#34;] = &#34;auto&#34;,
+    pad_mode: str | None = &#34;edge&#34;,
+    pad_factor: int = 2,
+    k_vector_epsilon: float = 1e-6,
+    do_hanning_filter: bool = False,
+    hanning_low_cutoff: float | None = None,
+    hanning_high_cutoff: float | None = None,
+) -&gt; dict[str, npt.NDArray]:
+    &#34;&#34;&#34;
+    Reconstruct current density Jx, Jy from magnetic field components.
+
+    Uses Fourier-space inversion to calculate current density Jx, Jy
+    from measured B-field components. Supports multiple reconstruction
+    methods: from Bx/By (most common), from Bz only, or weighted
+    combination of all three.
+
+    Parameters
+    ----------
+    Bx, By : npt.NDArray
+        Magnetic field components in Gauss (2D arrays).
+    Bz : npt.NDArray | None, optional
+        Bz component. Required if use_components=&#34;z&#34; or &#34;xyz&#34;.
+    pixel_size : float, default=1e-6
+        Effective pixel size in meters.
+    standoff : float | None
+        Distance from NV layer to sample in meters.
+    nv_layer_thickness : float | None
+        Thickness of NV layer in meters.
+    nv_above_sample : bool, default=True
+        True if NV layer is above sample (higher z).
+    use_components : {&#34;xy&#34;, &#34;z&#34;, &#34;auto&#34;}, default=&#34;auto&#34;
+        Which field components to use:
+        - &#34;xy&#34;: Use Bx, By only (most common)
+        - &#34;z&#34;: Use Bz only
+        - &#34;auto&#34;: Use &#34;xy&#34; if Bx, By provided, else &#34;z&#34;
+    pad_mode : str or None, default=&#34;edge&#34;
+        Padding mode for fourier transform. Set to None for no padding.
+    pad_factor : int, default=2
+        Padding factor on each side.
+    k_vector_epsilon : float, default=1e-6
+        Small epsilon added to k-vectors to avoid division by zero.
+    do_hanning_filter : bool, default=False
+        Apply Hanning filter to reduce noise amplification.
+    hanning_low_cutoff, hanning_high_cutoff : float | None
+        Cutoff wavelengths in meters for Hanning filter.
+
+    Returns
+    -------
+    dict with keys:
+        - &#34;Jx&#34;: Current density x-component (A/m)
+        - &#34;Jy&#34;: Current density y-component (A/m)
+        - &#34;Jnorm&#34;: Current density magnitude sqrt(Jx² + Jy²) (A/m)
+        - &#34;_metadata&#34;: Dict with parameters used
+
+    Raises
+    ------
+    ValueError
+        If use_components=&#34;z&#34; but Bz not provided.
+
+    Notes
+    -----
+    - Input B-field should be in Gauss (output of dukit.field)
+    - Output current density is in A/m
+    - Requires standoff for accurate absolute values
+    - Zero-mean: DC current component cannot be determined
+
+    Reference
+    ---------
+    D. A. Broadway, S. E. Lillie, S. C. Scholten, D. Rohner,
+    N. Dontschuk, P. Maletinsky, J.-P. Tetienne, and L. C. L. Hollenberg,
+    Improved Current Density and Magnetization Reconstruction Through
+    Vector Magnetic Field Measurements, Phys. Rev. Applied 14, 024076 (2020).
+    https://doi.org/10.1103/PhysRevApplied.14.024076
+    &#34;&#34;&#34;
+    # copy and convert Gauss -&gt; Tesla
+    bx = np.copy(Bx) * 1e-4
+    by = np.copy(By) * 1e-4
+
+    # Determine which components to use
+    if use_components == &#34;auto&#34;:
+        use = &#34;xy&#34;
+        if Bz is not None:
+            # Use xy by default if available
+            use = &#34;xy&#34;
+    else:
+        use = use_components
+
+    if use == &#34;xy&#34;:
+        # first pad each comp
+        bx_pad, padder = dukit.fourier.pad_image(bx, pad_mode, pad_factor)
+        by_pad, _ = dukit.fourier.pad_image(by, pad_mode, pad_factor)
+
+        fft_bx = numpy_fft.fftshift(numpy_fft.fft2(bx_pad))
+        fft_by = numpy_fft.fftshift(numpy_fft.fft2(by_pad))
+        fft_bx = dukit.fourier.set_naninf_to_zero(fft_bx)
+        fft_by = dukit.fourier.set_naninf_to_zero(fft_by)
+
+        ky, kx, k = dukit.fourier.define_k_vectors(
+            fft_bx.shape, pixel_size, k_vector_epsilon=k_vector_epsilon
+        )
+
+        sign = 1 if nv_above_sample else -1
+
+        # define transform
+        _, bx_to_jy = define_current_transform(
+            [sign, 0, 0], ky, kx, k, standoff, nv_layer_thickness
+        )
+        by_to_jx, _ = define_current_transform(
+            [0, sign, 0], ky, kx, k, standoff, nv_layer_thickness
+        )
+
+        hanning_filt = dukit.fourier.hanning_filter_kspace(
+            k, do_hanning_filter, hanning_low_cutoff, hanning_high_cutoff, standoff
+        )
+
+        bx_to_jy = dukit.fourier.set_naninf_to_zero(hanning_filt * bx_to_jy)
+        by_to_jx = dukit.fourier.set_naninf_to_zero(hanning_filt * by_to_jx)
+
+        fft_jx = fft_by * by_to_jx
+        fft_jy = fft_bx * bx_to_jy
+
+        # fourier transform back into real space
+        jx = numpy_fft.ifft2(numpy_fft.ifftshift(fft_jx)).real
+        jy = numpy_fft.ifft2(numpy_fft.ifftshift(fft_jy)).real
+
+        # only return non-padded region
+        jx_reg = dukit.fourier.unpad_image(jx, padder)
+        jy_reg = dukit.fourier.unpad_image(jy, padder)
+
+    else:  # use == &#34;z&#34;
+        if Bz is None:
+            raise ValueError(&#34;Bz must be provided when use_components=&#39;z&#39;&#34;)
+        bz = np.copy(Bz) * 1e-4
+        bz_pad, padder = dukit.fourier.pad_image(bz, pad_mode, pad_factor)
+
+        fft_bz = numpy_fft.fftshift(numpy_fft.fft2(bz_pad))
+        fft_bz = dukit.fourier.set_naninf_to_zero(fft_bz)
+
+        ky, kx, k = dukit.fourier.define_k_vectors(
+            fft_bz.shape, pixel_size, k_vector_epsilon=k_vector_epsilon
+        )
+
+        sign = 1 if nv_above_sample else -1
+
+        # define transformation
+        bz_to_jx, bz_to_jy = define_current_transform(
+            [0, 0, sign], ky, kx, k, standoff, nv_layer_thickness
+        )
+
+        hanning_filt = dukit.fourier.hanning_filter_kspace(
+            k, do_hanning_filter, hanning_low_cutoff, hanning_high_cutoff, standoff
+        )
+
+        bz_to_jx = dukit.fourier.set_naninf_to_zero(hanning_filt * bz_to_jx)
+        bz_to_jy = dukit.fourier.set_naninf_to_zero(hanning_filt * bz_to_jy)
+
+        fft_jx = bz_to_jx * fft_bz
+        fft_jy = bz_to_jy * fft_bz
+
+        # fourier transform back into real space
+        jx = numpy_fft.ifft2(numpy_fft.ifftshift(fft_jx)).real
+        jy = numpy_fft.ifft2(numpy_fft.ifftshift(fft_jy)).real
+
+        # only return non-padded region
+        jx_reg = dukit.fourier.unpad_image(jx, padder)
+        jy_reg = dukit.fourier.unpad_image(jy, padder)
+
+    return {
+        &#34;Jx&#34;: jx_reg,
+        &#34;Jy&#34;: jy_reg,
+        &#34;Jnorm&#34;: np.sqrt(jx_reg**2 + jy_reg**2),
+        &#34;_metadata&#34;: {
+            &#34;method&#34;: &#34;get_current_from_bxyz&#34;,
+            &#34;use_components&#34;: use,
+            &#34;nv_above_sample&#34;: nv_above_sample,
+            &#34;standoff&#34;: standoff,
+            &#34;nv_layer_thickness&#34;: nv_layer_thickness,
+            &#34;timestamp&#34;: datetime.utcnow().isoformat(),
+            &#34;image_shape&#34;: jx_reg.shape,
+            &#34;pixel_size&#34;: pixel_size,
+        },
+    }</code></pre>
+</details>
+<div class="desc"><p>Reconstruct current density Jx, Jy from magnetic field components.</p>
+<p>Uses Fourier-space inversion to calculate current density Jx, Jy
+from measured B-field components. Supports multiple reconstruction
+methods: from Bx/By (most common), from Bz only, or weighted
+combination of all three.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>Bx</code></strong>, <strong><code>By</code></strong> :&ensp;<code>npt.NDArray</code></dt>
+<dd>Magnetic field components in Gauss (2D arrays).</dd>
+<dt><strong><code>Bz</code></strong> :&ensp;<code>npt.NDArray | None</code>, optional</dt>
+<dd>Bz component. Required if use_components="z" or "xyz".</dd>
+<dt><strong><code>pixel_size</code></strong> :&ensp;<code>float</code>, default=<code>1e-6</code></dt>
+<dd>Effective pixel size in meters.</dd>
+<dt><strong><code>standoff</code></strong> :&ensp;<code>float | None</code></dt>
+<dd>Distance from NV layer to sample in meters.</dd>
+<dt><strong><code>nv_layer_thickness</code></strong> :&ensp;<code>float | None</code></dt>
+<dd>Thickness of NV layer in meters.</dd>
+<dt><strong><code>nv_above_sample</code></strong> :&ensp;<code>bool</code>, default=<code>True</code></dt>
+<dd>True if NV layer is above sample (higher z).</dd>
+<dt><strong><code>use_components</code></strong> :&ensp;<code>{"xy", "z", "auto"}</code>, default=<code>"auto"</code></dt>
+<dd>Which field components to use:
+- "xy": Use Bx, By only (most common)
+- "z": Use Bz only
+- "auto": Use "xy" if Bx, By provided, else "z"</dd>
+<dt><strong><code>pad_mode</code></strong> :&ensp;<code>str</code> or <code>None</code>, default=<code>"edge"</code></dt>
+<dd>Padding mode for fourier transform. Set to None for no padding.</dd>
+<dt><strong><code>pad_factor</code></strong> :&ensp;<code>int</code>, default=<code>2</code></dt>
+<dd>Padding factor on each side.</dd>
+<dt><strong><code>k_vector_epsilon</code></strong> :&ensp;<code>float</code>, default=<code>1e-6</code></dt>
+<dd>Small epsilon added to k-vectors to avoid division by zero.</dd>
+<dt><strong><code>do_hanning_filter</code></strong> :&ensp;<code>bool</code>, default=<code>False</code></dt>
+<dd>Apply Hanning filter to reduce noise amplification.</dd>
+<dt><strong><code>hanning_low_cutoff</code></strong>, <strong><code>hanning_high_cutoff</code></strong> :&ensp;<code>float | None</code></dt>
+<dd>Cutoff wavelengths in meters for Hanning filter.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict with keys:</code></dt>
+<dd>
+<ul>
+<li>"Jx": Current density x-component (A/m)</li>
+<li>"Jy": Current density y-component (A/m)</li>
+<li>"Jnorm": Current density magnitude sqrt(Jx² + Jy²) (A/m)</li>
+<li>"_metadata": Dict with parameters used</li>
+</ul>
+</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>ValueError</code></dt>
+<dd>If use_components="z" but Bz not provided.</dd>
+</dl>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Input B-field should be in Gauss (output of dukit.field)</li>
+<li>Output current density is in A/m</li>
+<li>Requires standoff for accurate absolute values</li>
+<li>Zero-mean: DC current component cannot be determined</li>
+</ul>
+<h2 id="reference">Reference</h2>
+<p>D. A. Broadway, S. E. Lillie, S. C. Scholten, D. Rohner,
+N. Dontschuk, P. Maletinsky, J.-P. Tetienne, and L. C. L. Hollenberg,
+Improved Current Density and Magnetization Reconstruction Through
+Vector Magnetic Field Measurements, Phys. Rev. Applied 14, 024076 (2020).
+<a href="https://doi.org/10.1103/PhysRevApplied.14.024076">https://doi.org/10.1103/PhysRevApplied.14.024076</a></p></div>
+</dd>
+<dt id="dukit.source.get_current_without_ft"><code class="name flex">
+<span>def <span class="ident">get_current_without_ft</span></span>(<span>Bx: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>By: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]) ‑> dict[str, numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_current_without_ft(Bx: npt.NDArray, By: npt.NDArray) -&gt; dict[str, npt.NDArray]:
+    &#34;&#34;&#34;
+    Approximate current density without Fourier propagation.
+
+    Simple rescaling: J ≈ (2/μ₀) × B × (perpendicular conversion).
+    Fast but less accurate - useful for quick checks.
+
+    Parameters
+    ----------
+    Bx, By : npt.NDArray
+        Magnetic field components in Gauss.
+
+    Returns
+    -------
+    dict with keys &#34;Jx&#34;, &#34;Jy&#34;, &#34;Jnorm&#34; in A/m.
+    &#34;&#34;&#34;
+    scale = (1e-4 * 2) / MU_0
+    jx = -By * scale
+    jy = Bx * scale
+    return {
+        &#34;Jx&#34;: jx,
+        &#34;Jy&#34;: jy,
+        &#34;Jnorm&#34;: np.sqrt(jx**2 + jy**2),
+    }</code></pre>
+</details>
+<div class="desc"><p>Approximate current density without Fourier propagation.</p>
+<p>Simple rescaling: J ≈ (2/μ₀) × B × (perpendicular conversion).
+Fast but less accurate - useful for quick checks.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>Bx</code></strong>, <strong><code>By</code></strong> :&ensp;<code>npt.NDArray</code></dt>
+<dd>Magnetic field components in Gauss.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>dict with keys "Jx", "Jy", "Jnorm" in A/m.</p></div>
+</dd>
+<dt id="dukit.source.get_divperp_j"><code class="name flex">
+<span>def <span class="ident">get_divperp_j</span></span>(<span>Jx: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>Jy: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>pixel_size: float,<br>pad_mode: str | None = 'edge',<br>pad_factor: int = 2,<br>k_vector_epsilon: float = 1e-06) ‑> numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_divperp_j(
+    Jx: npt.NDArray,
+    Jy: npt.NDArray,
+    pixel_size: float,
+    pad_mode: str | None = &#34;edge&#34;,
+    pad_factor: int = 2,
+    k_vector_epsilon: float = 1e-6,
+) -&gt; npt.NDArray:
+    &#34;&#34;&#34;
+    Calculate perpendicular divergence of current density.
+
+    ∇⊥ · J = ∂Jx/∂x + ∂Jy/∂y
+
+    Returns normalized divergence (divided by max absolute value).
+    Useful for checking current conservation.
+
+    Parameters
+    ----------
+    Jx, Jy : npt.NDArray
+        Current density components (A/m), 2D arrays.
+    pixel_size : float
+        Effective pixel size in meters.
+    pad_mode : str or None, default=&#34;edge&#34;
+        Padding mode for fourier transform. Passed to numpy.pad.
+        Set to None for no padding.
+    pad_factor : int, default=2
+        Padding factor on each side.
+    k_vector_epsilon : float, default=1e-6
+        Small epsilon added to k-vectors to avoid division by zero.
+
+    Returns
+    -------
+    divperp_j : npt.NDArray
+        Normalized perpendicular divergence (2D array).
+    &#34;&#34;&#34;
+    jx = np.copy(Jx)
+    jy = np.copy(Jy)
+
+    # first pad each comp
+    jx_pad, padder = dukit.fourier.pad_image(jx, pad_mode, pad_factor)
+    jy_pad, _ = dukit.fourier.pad_image(jy, pad_mode, pad_factor)
+
+    fft_jx = numpy_fft.fftshift(numpy_fft.fft2(jx_pad))
+    fft_jy = numpy_fft.fftshift(numpy_fft.fft2(jy_pad))
+    fft_jx = dukit.fourier.set_naninf_to_zero(fft_jx)
+    fft_jy = dukit.fourier.set_naninf_to_zero(fft_jy)
+
+    ky, kx, k = dukit.fourier.define_k_vectors(
+        fft_jx.shape, pixel_size, k_vector_epsilon=k_vector_epsilon
+    )
+
+    # Note: there was a typo in qdmpy - missing &#39;*&#39; operator for ky term. Fixed here.
+    fft_divperp_j = -1j * kx * fft_jx + -1j * ky * fft_jy
+
+    divperp_j = numpy_fft.ifft2(numpy_fft.ifftshift(fft_divperp_j)).real
+
+    # only return non-padded region
+    divperp_j_reg = dukit.fourier.unpad_image(divperp_j, padder)
+    mx = max(np.abs([np.nanmax(divperp_j_reg), np.nanmin(divperp_j_reg)]))
+    return divperp_j_reg / mx</code></pre>
+</details>
+<div class="desc"><p>Calculate perpendicular divergence of current density.</p>
+<p>∇⊥ · J = ∂Jx/∂x + ∂Jy/∂y</p>
+<p>Returns normalized divergence (divided by max absolute value).
+Useful for checking current conservation.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>Jx</code></strong>, <strong><code>Jy</code></strong> :&ensp;<code>npt.NDArray</code></dt>
+<dd>Current density components (A/m), 2D arrays.</dd>
+<dt><strong><code>pixel_size</code></strong> :&ensp;<code>float</code></dt>
+<dd>Effective pixel size in meters.</dd>
+<dt><strong><code>pad_mode</code></strong> :&ensp;<code>str</code> or <code>None</code>, default=<code>"edge"</code></dt>
+<dd>Padding mode for fourier transform. Passed to numpy.pad.
+Set to None for no padding.</dd>
+<dt><strong><code>pad_factor</code></strong> :&ensp;<code>int</code>, default=<code>2</code></dt>
+<dd>Padding factor on each side.</dd>
+<dt><strong><code>k_vector_epsilon</code></strong> :&ensp;<code>float</code>, default=<code>1e-6</code></dt>
+<dd>Small epsilon added to k-vectors to avoid division by zero.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>divperp_j</code></strong> :&ensp;<code>npt.NDArray</code></dt>
+<dd>Normalized perpendicular divergence (2D array).</dd>
+</dl></div>
+</dd>
+<dt id="dukit.source.get_magnetization_from_bdefect"><code class="name flex">
+<span>def <span class="ident">get_magnetization_from_bdefect</span></span>(<span>b_defect: numpy.ndarray,<br>u_defect: numpy.ndarray,<br>pixel_size: float = 1.0,<br>standoff: float | None = None,<br>nv_layer_thickness: float | None = None,<br>magnetization_angle: float | None = None,<br>nv_above_sample: bool = True,<br>pad_mode: str | None = 'edge',<br>pad_factor: int = 2,<br>k_vector_epsilon: float = 1e-06,<br>do_hanning_filter: bool = False,<br>hanning_low_cutoff: float | None = None,<br>hanning_high_cutoff: float | None = None) ‑> dict[str, numpy.ndarray]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_magnetization_from_bdefect(
+    b_defect: np.ndarray,
+    u_defect: np.ndarray,
+    pixel_size: float = 1.0,
+    standoff: float | None = None,
+    nv_layer_thickness: float | None = None,
+    magnetization_angle: float | None = None,
+    nv_above_sample: bool = True,
+    pad_mode: str | None = &#34;edge&#34;,
+    pad_factor: int = 2,
+    k_vector_epsilon: float = 1e-6,
+    do_hanning_filter: bool = False,
+    hanning_low_cutoff: float | None = None,
+    hanning_high_cutoff: float | None = None,
+) -&gt; dict[str, np.ndarray]:
+    r&#34;&#34;&#34;Reconstruct magnetization from single B_defect measurement.
+
+    Can reconstruct either out-of-plane magnetization (Mz) or in-plane
+    magnetization (Mpsi) at a specified angle.
+
+    Parameters
+    ----------
+    b_defect : np.ndarray
+        B-field along defect axis in Gauss (2D array).
+    u_defect : np.ndarray
+        Defect orientation unit vector, shape (3,). Normalized internally.
+    pixel_size : float, default=1.0
+        Effective pixel size in meters.
+    standoff : float | None
+        Distance from NV layer to sample in meters.
+    nv_layer_thickness : float | None
+        Thickness of NV layer in meters.
+    magnetization_angle : float | None, default=None
+        In-plane magnetization angle in degrees from +x towards +y.
+        None = out-of-plane (Mz).
+        Any value = in-plane at that angle (Mpsi).
+    nv_above_sample : bool, default=True
+        True if NV layer is above sample (higher z).
+    pad_mode : str | None, default=&#34;edge&#34;
+        Mode for Fourier padding. See np.pad for options.
+    pad_factor : int, default=2
+        Factor to pad image on all sides.
+    k_vector_epsilon : float, default=1e-6
+        Epsilon for k-vectors to avoid division by zero.
+    do_hanning_filter : bool, default=False
+        Apply Hanning filter to reduce noise amplification.
+    hanning_low_cutoff, hanning_high_cutoff : float | None
+        Cutoff wavelengths in meters for Hanning filter.
+
+    Returns
+    -------
+    dict with keys:
+        - &#34;Mz&#34; or &#34;Mpsi&#34;: Magnetization (μB/nm²)
+          - &#34;Mz&#34; if magnetization_angle is None (out-of-plane)
+          - &#34;Mpsi&#34; if magnetization_angle is given (in-plane at angle)
+        - &#34;_metadata&#34;: Dict with parameters used
+
+    Reference
+    ---------
+    D. A. Broadway, S. E. Lillie, S. C. Scholten, D. Rohner,
+    N. Dontschuk, P. Maletinsky, J.-P. Tetienne, and L. C. L. Hollenberg,
+    Improved Current Density and Magnetization Reconstruction Through
+    Vector Magnetic Field Measurements, Phys. Rev. Applied 14, 024076 (2020).
+    https://doi.org/10.1103/PhysRevApplied.14.024076
+    &#34;&#34;&#34;
+
+    # Determine output key based on magnetization_angle
+    if magnetization_angle is None:
+        result_key = &#34;Mz&#34;
+    else:
+        result_key = &#34;Mpsi&#34;
+
+    meta = {
+        &#34;pixel_size&#34;: pixel_size,
+        &#34;standoff&#34;: standoff,
+        &#34;nv_layer_thickness&#34;: nv_layer_thickness,
+        &#34;magnetization_angle&#34;: magnetization_angle,
+        &#34;nv_above_sample&#34;: nv_above_sample,
+        &#34;pad_mode&#34;: pad_mode,
+        &#34;pad_factor&#34;: pad_factor,
+        &#34;do_hanning_filter&#34;: do_hanning_filter,
+        &#34;hanning_low_cutoff&#34;: hanning_low_cutoff,
+        &#34;hanning_high_cutoff&#34;: hanning_high_cutoff,
+    }
+
+    b = np.copy(b_defect) * 1e-4
+    b_pad, padder = dukit.fourier.pad_image(b, pad_mode, pad_factor)
+
+    fft_b = numpy_fft.fftshift(numpy_fft.fft2(b_pad))
+
+    ky, kx, k = dukit.fourier.define_k_vectors(
+        fft_b.shape, pixel_size, k_vector_epsilon=k_vector_epsilon
+    )
+
+    d_matrix = define_magnetization_transformation(ky, kx, k, standoff, nv_layer_thickness)
+
+    if nv_above_sample:
+        unv_cpy = np.copy(u_defect)
+    else:
+        unv_cpy = np.array([-u_defect[0], -u_defect[1], u_defect[2]])
+
+    if magnetization_angle is None:
+        # z magnetized
+        m_to_b = (
+            unv_cpy[0] * d_matrix[2, 0, ::]
+            + unv_cpy[1] * d_matrix[2, 1, ::]
+            + unv_cpy[2] * d_matrix[2, 2, ::]
+        )
+    else:
+        # in-plane magnetization
+        psi = np.deg2rad(magnetization_angle)
+        b_axis = np.nonzero(unv_cpy)[0]
+        m_to_b = None
+        for idx in b_axis:
+            new = unv_cpy[int(idx)] * (
+                np.cos(psi) * d_matrix[0, int(idx), ::] + np.sin(psi) * d_matrix[1, int(idx), ::]
+            )
+            m_to_b = new if m_to_b is None else m_to_b + new
+
+    hanning_filt = dukit.fourier.hanning_filter_kspace(
+        k, do_hanning_filter, hanning_low_cutoff, hanning_high_cutoff, standoff
+    )
+
+    with np.errstate(all=&#34;ignore&#34;):
+        fft_m = fft_b * hanning_filt / m_to_b
+
+    fft_m = dukit.fourier.set_naninf_to_zero(fft_m)
+
+    m = numpy_fft.ifft2(numpy_fft.ifftshift(fft_m)).real
+
+    m_reg = dukit.fourier.unpad_image(m, padder)
+
+    return {
+        result_key: m_reg * MAG_UNIT_CONV,
+        &#34;_metadata&#34;: meta,
+    }</code></pre>
+</details>
+<div class="desc"><p>Reconstruct magnetization from single B_defect measurement.</p>
+<p>Can reconstruct either out-of-plane magnetization (Mz) or in-plane
+magnetization (Mpsi) at a specified angle.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>b_defect</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>B-field along defect axis in Gauss (2D array).</dd>
+<dt><strong><code>u_defect</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>Defect orientation unit vector, shape (3,). Normalized internally.</dd>
+<dt><strong><code>pixel_size</code></strong> :&ensp;<code>float</code>, default=<code>1.0</code></dt>
+<dd>Effective pixel size in meters.</dd>
+<dt><strong><code>standoff</code></strong> :&ensp;<code>float | None</code></dt>
+<dd>Distance from NV layer to sample in meters.</dd>
+<dt><strong><code>nv_layer_thickness</code></strong> :&ensp;<code>float | None</code></dt>
+<dd>Thickness of NV layer in meters.</dd>
+<dt><strong><code>magnetization_angle</code></strong> :&ensp;<code>float | None</code>, default=<code>None</code></dt>
+<dd>In-plane magnetization angle in degrees from +x towards +y.
+None = out-of-plane (Mz).
+Any value = in-plane at that angle (Mpsi).</dd>
+<dt><strong><code>nv_above_sample</code></strong> :&ensp;<code>bool</code>, default=<code>True</code></dt>
+<dd>True if NV layer is above sample (higher z).</dd>
+<dt><strong><code>pad_mode</code></strong> :&ensp;<code>str | None</code>, default=<code>"edge"</code></dt>
+<dd>Mode for Fourier padding. See np.pad for options.</dd>
+<dt><strong><code>pad_factor</code></strong> :&ensp;<code>int</code>, default=<code>2</code></dt>
+<dd>Factor to pad image on all sides.</dd>
+<dt><strong><code>k_vector_epsilon</code></strong> :&ensp;<code>float</code>, default=<code>1e-6</code></dt>
+<dd>Epsilon for k-vectors to avoid division by zero.</dd>
+<dt><strong><code>do_hanning_filter</code></strong> :&ensp;<code>bool</code>, default=<code>False</code></dt>
+<dd>Apply Hanning filter to reduce noise amplification.</dd>
+<dt><strong><code>hanning_low_cutoff</code></strong>, <strong><code>hanning_high_cutoff</code></strong> :&ensp;<code>float | None</code></dt>
+<dd>Cutoff wavelengths in meters for Hanning filter.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict with keys:</code></dt>
+<dd>
+<ul>
+<li>"Mz" or "Mpsi": Magnetization (μB/nm²)</li>
+<li>"Mz" if magnetization_angle is None (out-of-plane)</li>
+<li>"Mpsi" if magnetization_angle is given (in-plane at angle)</li>
+<li>"_metadata": Dict with parameters used</li>
+</ul>
+</dd>
+</dl>
+<h2 id="reference">Reference</h2>
+<p>D. A. Broadway, S. E. Lillie, S. C. Scholten, D. Rohner,
+N. Dontschuk, P. Maletinsky, J.-P. Tetienne, and L. C. L. Hollenberg,
+Improved Current Density and Magnetization Reconstruction Through
+Vector Magnetic Field Measurements, Phys. Rev. Applied 14, 024076 (2020).
+<a href="https://doi.org/10.1103/PhysRevApplied.14.024076">https://doi.org/10.1103/PhysRevApplied.14.024076</a></p></div>
+</dd>
+<dt id="dukit.source.get_magnetization_from_bxyz"><code class="name flex">
+<span>def <span class="ident">get_magnetization_from_bxyz</span></span>(<span>Bx: numpy.ndarray,<br>By: numpy.ndarray,<br>Bz: numpy.ndarray | None = None,<br>pixel_size: float = 1.0,<br>standoff: float | None = None,<br>nv_layer_thickness: float | None = None,<br>magnetization_angle: float | None = None,<br>use_components: str = 'auto',<br>pad_mode: str | None = 'edge',<br>pad_factor: int = 2,<br>k_vector_epsilon: float = 1e-06,<br>do_hanning_filter: bool = False,<br>hanning_low_cutoff: float | None = None,<br>hanning_high_cutoff: float | None = None) ‑> dict[str, numpy.ndarray]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_magnetization_from_bxyz(
+    Bx: np.ndarray,
+    By: np.ndarray,
+    Bz: np.ndarray | None = None,
+    pixel_size: float = 1.0,
+    standoff: float | None = None,
+    nv_layer_thickness: float | None = None,
+    magnetization_angle: float | None = None,
+    use_components: str = &#34;auto&#34;,
+    pad_mode: str | None = &#34;edge&#34;,
+    pad_factor: int = 2,
+    k_vector_epsilon: float = 1e-6,
+    do_hanning_filter: bool = False,
+    hanning_low_cutoff: float | None = None,
+    hanning_high_cutoff: float | None = None,
+) -&gt; dict[str, np.ndarray]:
+    r&#34;&#34;&#34;Reconstruct magnetization from magnetic field components.
+
+    Can reconstruct either out-of-plane magnetization (Mz) or in-plane
+    magnetization (Mpsi) at a specified angle.
+
+    Parameters
+    ----------
+    Bx, By : np.ndarray
+        Magnetic field components in Gauss (2D arrays).
+    Bz : np.ndarray | None, optional
+        Bz component. Required if use_components=&#34;z&#34; or &#34;xyz&#34;.
+    pixel_size : float, default=1.0
+        Effective pixel size in meters.
+    standoff : float | None
+        Distance from NV layer to sample in meters.
+    nv_layer_thickness : float | None
+        Thickness of NV layer in meters.
+    magnetization_angle : float | None, default=None
+        In-plane magnetization angle in degrees from +x towards +y.
+        None = out-of-plane (Mz).
+        Any value = in-plane at that angle (Mpsi).
+    use_components : {&#34;xy&#34;, &#34;z&#34;, &#34;auto&#34;}, default=&#34;auto&#34;
+        Which field components to use:
+        - &#34;xy&#34;: Use Bx, By only (most common)
+        - &#34;z&#34;: Use Bz only
+        - &#34;auto&#34;: Use &#34;xy&#34; if Bx, By provided, else &#34;z&#34;
+    pad_mode : str | None, default=&#34;edge&#34;
+        Mode for Fourier padding. See np.pad for options.
+    pad_factor : int, default=2
+        Factor to pad image on all sides.
+    k_vector_epsilon : float, default=1e-6
+        Epsilon for k-vectors to avoid division by zero.
+    do_hanning_filter : bool, default=False
+        Apply Hanning filter to reduce noise amplification.
+    hanning_low_cutoff, hanning_high_cutoff : float | None
+        Cutoff wavelengths in meters for Hanning filter.
+
+    Returns
+    -------
+    dict with keys:
+        - &#34;Mz&#34; or &#34;Mpsi&#34;: Magnetization (μB/nm²)
+          - &#34;Mz&#34; if magnetization_angle is None (out-of-plane)
+          - &#34;Mpsi&#34; if magnetization_angle is given (in-plane at angle)
+        - &#34;_metadata&#34;: Dict with parameters used
+
+    Reference
+    ---------
+    D. A. Broadway, S. E. Lillie, S. C. Scholten, D. Rohner,
+    N. Dontschuk, P. Maletinsky, J.-P. Tetienne, and L. C. L. Hollenberg,
+    Improved Current Density and Magnetization Reconstruction Through
+    Vector Magnetic Field Measurements, Phys. Rev. Applied 14, 024076 (2020).
+    https://doi.org/10.1103/PhysRevApplied.14.024076
+    &#34;&#34;&#34;
+
+    if use_components == &#34;auto&#34;:
+        if Bx is not None and By is not None:
+            use_components = &#34;xy&#34;
+        elif Bz is not None:
+            use_components = &#34;z&#34;
+        else:
+            raise ValueError(&#34;Must provide Bx, By or Bz&#34;)
+
+    # Determine output key based on magnetization_angle
+    if magnetization_angle is None:
+        result_key = &#34;Mz&#34;
+    else:
+        result_key = &#34;Mpsi&#34;
+
+    meta = {
+        &#34;pixel_size&#34;: pixel_size,
+        &#34;standoff&#34;: standoff,
+        &#34;nv_layer_thickness&#34;: nv_layer_thickness,
+        &#34;magnetization_angle&#34;: magnetization_angle,
+        &#34;use_components&#34;: use_components,
+        &#34;pad_mode&#34;: pad_mode,
+        &#34;pad_factor&#34;: pad_factor,
+        &#34;do_hanning_filter&#34;: do_hanning_filter,
+        &#34;hanning_low_cutoff&#34;: hanning_low_cutoff,
+        &#34;hanning_high_cutoff&#34;: hanning_high_cutoff,
+    }
+
+    if use_components == &#34;xy&#34;:
+        bx = np.copy(Bx) * 1e-4
+        by = np.copy(By) * 1e-4
+
+        bx_pad, padder = dukit.fourier.pad_image(bx, pad_mode, pad_factor)
+        by_pad, _ = dukit.fourier.pad_image(by, pad_mode, pad_factor)
+
+        fft_bx = numpy_fft.fftshift(numpy_fft.fft2(bx_pad))
+        fft_by = numpy_fft.fftshift(numpy_fft.fft2(by_pad))
+        fft_bx = dukit.fourier.set_naninf_to_zero(fft_bx)
+        fft_by = dukit.fourier.set_naninf_to_zero(fft_by)
+
+        ky, kx, k = dukit.fourier.define_k_vectors(
+            fft_bx.shape, pixel_size, k_vector_epsilon=k_vector_epsilon
+        )
+
+        d_matrix = define_magnetization_transformation(ky, kx, k, standoff, nv_layer_thickness)
+
+        if magnetization_angle is None:
+            m_to_bx = d_matrix[2, 0, ::]  # z magnetized
+            m_to_by = d_matrix[2, 1, ::]
+        else:
+            psi = np.deg2rad(magnetization_angle)
+            m_to_bx = np.cos(psi) * d_matrix[0, 0, ::] + np.sin(psi) * d_matrix[1, 0, ::]
+            m_to_by = np.cos(psi) * d_matrix[0, 1, ::] + np.sin(psi) * d_matrix[1, 1, ::]
+
+        hanning_filt = dukit.fourier.hanning_filter_kspace(
+            k, do_hanning_filter, hanning_low_cutoff, hanning_high_cutoff, standoff
+        )
+
+        with np.errstate(all=&#34;ignore&#34;):
+            fft_m_bx = fft_bx * hanning_filt / m_to_bx
+            fft_m_by = fft_by * hanning_filt / m_to_by
+            fft_m = (fft_m_bx + fft_m_by) / 2
+
+        fft_m = dukit.fourier.set_naninf_to_zero(fft_m)
+
+        m = numpy_fft.ifft2(numpy_fft.ifftshift(fft_m)).real
+
+        m_reg = dukit.fourier.unpad_image(m, padder)
+
+        return {
+            result_key: m_reg * MAG_UNIT_CONV,
+            &#34;_metadata&#34;: meta,
+        }
+
+    elif use_components == &#34;z&#34;:
+        if Bz is None:
+            raise ValueError(&#34;Bz must be provided when use_components=&#39;z&#39;&#34;)
+
+        bz = np.copy(Bz) * 1e-4
+        bz_pad, padder = dukit.fourier.pad_image(bz, pad_mode, pad_factor)
+
+        fft_bz = numpy_fft.fftshift(numpy_fft.fft2(bz_pad))
+        fft_bz = dukit.fourier.set_naninf_to_zero(fft_bz)
+
+        ky, kx, k = dukit.fourier.define_k_vectors(
+            fft_bz.shape, pixel_size, k_vector_epsilon=k_vector_epsilon
+        )
+
+        d_matrix = define_magnetization_transformation(ky, kx, k, standoff, nv_layer_thickness)
+
+        if magnetization_angle is None:
+            m_to_bz = d_matrix[2, 2, ::]  # z magnetized
+        else:
+            psi = np.deg2rad(magnetization_angle)
+            m_to_bz = np.cos(psi) * d_matrix[0, 2, ::] + np.sin(psi) * d_matrix[1, 2, ::]
+
+        hanning_filt = dukit.fourier.hanning_filter_kspace(
+            k, do_hanning_filter, hanning_low_cutoff, hanning_high_cutoff, standoff
+        )
+
+        with np.errstate(all=&#34;ignore&#34;):
+            fft_m = fft_bz * hanning_filt / m_to_bz
+
+        fft_m = dukit.fourier.set_naninf_to_zero(fft_m)
+
+        m = numpy_fft.ifft2(numpy_fft.ifftshift(fft_m)).real
+
+        m_reg = dukit.fourier.unpad_image(m, padder)
+
+        return {
+            result_key: m_reg * MAG_UNIT_CONV,
+            &#34;_metadata&#34;: meta,
+        }
+
+    else:
+        raise ValueError(f&#34;Invalid use_components: {use_components}&#34;)</code></pre>
+</details>
+<div class="desc"><p>Reconstruct magnetization from magnetic field components.</p>
+<p>Can reconstruct either out-of-plane magnetization (Mz) or in-plane
+magnetization (Mpsi) at a specified angle.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>Bx</code></strong>, <strong><code>By</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>Magnetic field components in Gauss (2D arrays).</dd>
+<dt><strong><code>Bz</code></strong> :&ensp;<code>np.ndarray | None</code>, optional</dt>
+<dd>Bz component. Required if use_components="z" or "xyz".</dd>
+<dt><strong><code>pixel_size</code></strong> :&ensp;<code>float</code>, default=<code>1.0</code></dt>
+<dd>Effective pixel size in meters.</dd>
+<dt><strong><code>standoff</code></strong> :&ensp;<code>float | None</code></dt>
+<dd>Distance from NV layer to sample in meters.</dd>
+<dt><strong><code>nv_layer_thickness</code></strong> :&ensp;<code>float | None</code></dt>
+<dd>Thickness of NV layer in meters.</dd>
+<dt><strong><code>magnetization_angle</code></strong> :&ensp;<code>float | None</code>, default=<code>None</code></dt>
+<dd>In-plane magnetization angle in degrees from +x towards +y.
+None = out-of-plane (Mz).
+Any value = in-plane at that angle (Mpsi).</dd>
+<dt><strong><code>use_components</code></strong> :&ensp;<code>{"xy", "z", "auto"}</code>, default=<code>"auto"</code></dt>
+<dd>Which field components to use:
+- "xy": Use Bx, By only (most common)
+- "z": Use Bz only
+- "auto": Use "xy" if Bx, By provided, else "z"</dd>
+<dt><strong><code>pad_mode</code></strong> :&ensp;<code>str | None</code>, default=<code>"edge"</code></dt>
+<dd>Mode for Fourier padding. See np.pad for options.</dd>
+<dt><strong><code>pad_factor</code></strong> :&ensp;<code>int</code>, default=<code>2</code></dt>
+<dd>Factor to pad image on all sides.</dd>
+<dt><strong><code>k_vector_epsilon</code></strong> :&ensp;<code>float</code>, default=<code>1e-6</code></dt>
+<dd>Epsilon for k-vectors to avoid division by zero.</dd>
+<dt><strong><code>do_hanning_filter</code></strong> :&ensp;<code>bool</code>, default=<code>False</code></dt>
+<dd>Apply Hanning filter to reduce noise amplification.</dd>
+<dt><strong><code>hanning_low_cutoff</code></strong>, <strong><code>hanning_high_cutoff</code></strong> :&ensp;<code>float | None</code></dt>
+<dd>Cutoff wavelengths in meters for Hanning filter.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict with keys:</code></dt>
+<dd>
+<ul>
+<li>"Mz" or "Mpsi": Magnetization (μB/nm²)</li>
+<li>"Mz" if magnetization_angle is None (out-of-plane)</li>
+<li>"Mpsi" if magnetization_angle is given (in-plane at angle)</li>
+<li>"_metadata": Dict with parameters used</li>
+</ul>
+</dd>
+</dl>
+<h2 id="reference">Reference</h2>
+<p>D. A. Broadway, S. E. Lillie, S. C. Scholten, D. Rohner,
+N. Dontschuk, P. Maletinsky, J.-P. Tetienne, and L. C. L. Hollenberg,
+Improved Current Density and Magnetization Reconstruction Through
+Vector Magnetic Field Measurements, Phys. Rev. Applied 14, 024076 (2020).
+<a href="https://doi.org/10.1103/PhysRevApplied.14.024076">https://doi.org/10.1103/PhysRevApplied.14.024076</a></p></div>
+</dd>
+<dt id="dukit.source.normalize_in_plane_mag"><code class="name flex">
+<span>def <span class="ident">normalize_in_plane_mag</span></span>(<span>magnetization: numpy.ndarray, angle_deg: float, edge_pixels: int = 10) ‑> numpy.ndarray</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def normalize_in_plane_mag(
+    magnetization: np.ndarray,
+    angle_deg: float,
+    edge_pixels: int = 10,
+) -&gt; np.ndarray:
+    &#34;&#34;&#34;Normalize in-plane magnetization by subtracting line artifacts.
+
+    For each line parallel to the magnetization direction, subtract
+    the average of the edge pixels. This removes artifacts from
+    reconstruction.
+
+    Parameters
+    ----------
+    magnetization : np.ndarray
+        2D magnetization array.
+    angle_deg : float
+        In-plane magnetization angle in degrees from +x towards +y.
+    edge_pixels : int, default=10
+        Number of pixels at each edge to use for averaging.
+
+    Returns
+    -------
+    Normalized magnetization array.
+
+    Notes
+    -----
+    Adapted from D. Broadway&#39;s original implementation in qdmpy.
+    &#34;&#34;&#34;
+    psi = np.deg2rad(angle_deg)
+    new_im = magnetization.copy()
+
+    if psi &lt; 0:
+        magnetization = np.flip(magnetization, 1)
+        new_im = np.flip(new_im, 1)
+        psi = np.abs(psi)
+        flip_back = True
+    else:
+        flip_back = False
+
+    height, width = magnetization.shape
+    max_y_idx = height - 1
+
+    # Get indices of a line from origin at bottom left at psi (from +x to +y)
+    origin_line_y = max_y_idx - np.tan(psi) * np.arange(width)
+    origin_line_y_ints = [round(y) for y in origin_line_y.tolist()]
+
+    offset = 0  # Look for parallel lines, at +- &#39;offset&#39; in y
+    for _ in range(height):
+        above_y_idxs = []
+        above_x_idxs = []
+        below_y_idxs = []
+        below_x_idxs = []
+
+        for x_idx, y_idx in enumerate(origin_line_y_ints):
+            if y_idx - offset &gt;= 0 and y_idx - offset &lt;= max_y_idx:
+                above_y_idxs.append(y_idx - offset)
+                above_x_idxs.append(x_idx)
+
+            if y_idx + offset &gt;= 0 and y_idx + offset &lt;= max_y_idx:
+                below_y_idxs.append(y_idx + offset)
+                below_x_idxs.append(x_idx)
+
+        for coords in [
+            (above_y_idxs, above_x_idxs),
+            (below_y_idxs, below_x_idxs),
+        ]:
+            im_cut = magnetization[coords]
+            if len(im_cut) &gt; 0:
+                edge_avg = (np.mean(im_cut[:edge_pixels]) + np.mean(im_cut[-edge_pixels:])) / 2
+                new_im[coords] = im_cut - edge_avg
+
+        offset += 1
+
+    if flip_back:
+        new_im = np.flip(new_im, 1)
+
+    return new_im</code></pre>
+</details>
+<div class="desc"><p>Normalize in-plane magnetization by subtracting line artifacts.</p>
+<p>For each line parallel to the magnetization direction, subtract
+the average of the edge pixels. This removes artifacts from
+reconstruction.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>magnetization</code></strong> :&ensp;<code>np.ndarray</code></dt>
+<dd>2D magnetization array.</dd>
+<dt><strong><code>angle_deg</code></strong> :&ensp;<code>float</code></dt>
+<dd>In-plane magnetization angle in degrees from +x towards +y.</dd>
+<dt><strong><code>edge_pixels</code></strong> :&ensp;<code>int</code>, default=<code>10</code></dt>
+<dd>Number of pixels at each edge to use for averaging.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>Normalized magnetization array.</p>
+<h2 id="notes">Notes</h2>
+<p>Adapted from D. Broadway's original implementation in qdmpy.</p></div>
+</dd>
+<dt id="dukit.source.reconstruct_source"><code class="name flex">
+<span>def <span class="ident">reconstruct_source</span></span>(<span>bxyz: dict[str, numpy.ndarray],<br>pixel_size: float,<br>source_type: Literal['<a title="dukit.source.current" href="current.html">dukit.source.current</a>', '<a title="dukit.source.magnetization" href="magnetization.html">dukit.source.magnetization</a>'] = 'current',<br>standoff: float | None = None,<br>nv_layer_thickness: float | None = None,<br>nv_above_sample: bool = True,<br>magnetization_angle: float | None = None,<br>use_components: Literal['xy', 'z', 'xyz', 'auto'] = 'auto',<br>subtract_background: bool = False,<br>background_method: str | None = None,<br>background_params: dict | None = None,<br>**fourier_kwargs) ‑> dict[str, numpy.ndarray]</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reconstruct_source(
+    bxyz: dict[str, np.ndarray],
+    pixel_size: float,
+    source_type: Literal[&#34;current&#34;, &#34;magnetization&#34;] = &#34;current&#34;,
+    standoff: float | None = None,
+    nv_layer_thickness: float | None = None,
+    nv_above_sample: bool = True,
+    magnetization_angle: float | None = None,
+    use_components: Literal[&#34;xy&#34;, &#34;z&#34;, &#34;xyz&#34;, &#34;auto&#34;] = &#34;auto&#34;,
+    subtract_background: bool = False,
+    background_method: str | None = None,
+    background_params: dict | None = None,
+    **fourier_kwargs,
+) -&gt; dict[str, np.ndarray]:
+    &#34;&#34;&#34;High-level source reconstruction from Bxyz field.
+
+    Parameters
+    ----------
+    bxyz : dict
+        Dictionary with keys &#34;Bx&#34;, &#34;By&#34;, &#34;Bz&#34; (2D arrays in Gauss).
+        Can also include &#34;u_defects&#34; for defect-based reconstruction.
+    pixel_size : float
+        Effective pixel size in meters.
+    source_type : {&#34;current&#34;, &#34;magnetization&#34;}, default=&#34;current&#34;
+        Type of source to reconstruct.
+    standoff : float | None
+        Distance from NV layer to sample in meters.
+    nv_layer_thickness : float | None
+        Thickness of NV layer in meters.
+    nv_above_sample : bool, default=True
+        True if NV layer is above sample (higher z).
+    magnetization_angle : float | None, default=None
+        For magnetization only: None for out-of-plane (Mz),
+        or angle in degrees for in-plane (Mpsi).
+    use_components : {&#34;xy&#34;, &#34;z&#34;, &#34;xyz&#34;, &#34;auto&#34;}, default=&#34;auto&#34;
+        Which field components to use for reconstruction.
+    subtract_background : bool, default=False
+        Subtract background from reconstruction results.
+    background_method : str | None
+        Method for background subtraction (e.g., &#34;poly&#34;, &#34;gaussian&#34;).
+        See dukit.itool.get_background for options.
+    background_params : dict | None
+        Parameters for background subtraction.
+    **fourier_kwargs
+        Additional arguments passed to reconstruction functions:
+        - pad_mode, pad_factor, k_vector_epsilon
+        - do_hanning_filter, hanning_low_cutoff, hanning_high_cutoff
+
+    Returns
+    -------
+    dict with reconstruction results in the same format as the
+    underlying reconstruction function (get_current_from_bxyz or
+    get_magnetization_from_bxyz).
+
+    Example
+    -------
+    &gt;&gt;&gt; import dukit
+    &gt;&gt;&gt; import numpy as np
+    &gt;&gt;&gt;
+    &gt;&gt;&gt; # First get Bxyz from field reconstruction
+    &gt;&gt;&gt; bxyz = {
+    ...     &#34;Bx&#34;: np.random.randn(100, 100) * 10,
+    ...     &#34;By&#34;: np.random.randn(100, 100) * 10,
+    ...     &#34;Bz&#34;: np.random.randn(100, 100) * 10,
+    ... }
+    &gt;&gt;&gt;
+    &gt;&gt;&gt; # Reconstruct current density
+    &gt;&gt;&gt; result = dukit.source.reconstruct_source(
+    ...     bxyz,
+    ...     pixel_size=1.5e-6,
+    ...     source_type=&#34;current&#34;,
+    ...     standoff=150e-9,
+    ...     use_components=&#34;xy&#34;,
+    ... )
+    &gt;&gt;&gt; Jx = result[&#34;Jx&#34;]
+    &gt;&gt;&gt; Jy = result[&#34;Jy&#34;]
+    &gt;&gt;&gt;
+    &gt;&gt;&gt; # Or reconstruct magnetization
+    &gt;&gt;&gt; mag = dukit.source.reconstruct_source(
+    ...     bxyz,
+    ...     pixel_size=1.5e-6,
+    ...     source_type=&#34;magnetization&#34;,
+    ...     standoff=150e-9,
+    ...     magnetization_angle=None,  # Out-of-plane
+    ... )
+    &gt;&gt;&gt; Mz = mag[&#34;Mz&#34;]
+    &#34;&#34;&#34;
+
+    # Check what reconstruction inputs we have
+    has_bxyz = all(key in bxyz for key in [&#34;Bx&#34;, &#34;By&#34;])
+
+    if source_type == &#34;current&#34;:
+        if has_bxyz:
+            result = get_current_from_bxyz(
+                bxyz[&#34;Bx&#34;],
+                bxyz[&#34;By&#34;],
+                Bz=bxyz.get(&#34;Bz&#34;),
+                pixel_size=pixel_size,
+                standoff=standoff,
+                nv_layer_thickness=nv_layer_thickness,
+                use_components=use_components,
+                **fourier_kwargs,
+            )
+        else:
+            raise ValueError(&#34;For current reconstruction, bxyz must contain &#39;Bx&#39; and &#39;By&#39;&#34;)
+
+    elif source_type == &#34;magnetization&#34;:
+        if has_bxyz:
+            result = get_magnetization_from_bxyz(
+                bxyz[&#34;Bx&#34;],
+                bxyz[&#34;By&#34;],
+                Bz=bxyz.get(&#34;Bz&#34;),
+                pixel_size=pixel_size,
+                standoff=standoff,
+                nv_layer_thickness=nv_layer_thickness,
+                use_components=use_components,
+                **fourier_kwargs,
+            )
+        else:
+            raise ValueError(
+                &#34;For magnetization reconstruction, bxyz must contain &#39;Bx&#39; and &#39;By&#39; or &#39;Bz&#39;&#34;
+            )
+
+    else:
+        raise ValueError(f&#34;Invalid source_type: {source_type}&#34;)
+
+    # Optional background subtraction
+    if subtract_background:
+        if background_method is None:
+            background_method = &#34;poly&#34;
+        if background_params is None:
+            background_params = {}
+
+        result = _subtract_background_from_result(result, background_method, background_params)
+
+    return result</code></pre>
+</details>
+<div class="desc"><p>High-level source reconstruction from Bxyz field.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>bxyz</code></strong> :&ensp;<code>dict</code></dt>
+<dd>Dictionary with keys "Bx", "By", "Bz" (2D arrays in Gauss).
+Can also include "u_defects" for defect-based reconstruction.</dd>
+<dt><strong><code>pixel_size</code></strong> :&ensp;<code>float</code></dt>
+<dd>Effective pixel size in meters.</dd>
+<dt><strong><code>source_type</code></strong> :&ensp;<code>{"current", "magnetization"}</code>, default=<code>"current"</code></dt>
+<dd>Type of source to reconstruct.</dd>
+<dt><strong><code>standoff</code></strong> :&ensp;<code>float | None</code></dt>
+<dd>Distance from NV layer to sample in meters.</dd>
+<dt><strong><code>nv_layer_thickness</code></strong> :&ensp;<code>float | None</code></dt>
+<dd>Thickness of NV layer in meters.</dd>
+<dt><strong><code>nv_above_sample</code></strong> :&ensp;<code>bool</code>, default=<code>True</code></dt>
+<dd>True if NV layer is above sample (higher z).</dd>
+<dt><strong><code>magnetization_angle</code></strong> :&ensp;<code>float | None</code>, default=<code>None</code></dt>
+<dd>For magnetization only: None for out-of-plane (Mz),
+or angle in degrees for in-plane (Mpsi).</dd>
+<dt><strong><code>use_components</code></strong> :&ensp;<code>{"xy", "z", "xyz", "auto"}</code>, default=<code>"auto"</code></dt>
+<dd>Which field components to use for reconstruction.</dd>
+<dt><strong><code>subtract_background</code></strong> :&ensp;<code>bool</code>, default=<code>False</code></dt>
+<dd>Subtract background from reconstruction results.</dd>
+<dt><strong><code>background_method</code></strong> :&ensp;<code>str | None</code></dt>
+<dd>Method for background subtraction (e.g., "poly", "gaussian").
+See dukit.itool.get_background for options.</dd>
+<dt><strong><code>background_params</code></strong> :&ensp;<code>dict | None</code></dt>
+<dd>Parameters for background subtraction.</dd>
+<dt><strong><code>**fourier_kwargs</code></strong></dt>
+<dd>Additional arguments passed to reconstruction functions:
+- pad_mode, pad_factor, k_vector_epsilon
+- do_hanning_filter, hanning_low_cutoff, hanning_high_cutoff</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict with reconstruction results in the same format as the</code></dt>
+<dd>&nbsp;</dd>
+<dt><code>underlying reconstruction function (<a title="dukit.source.get_current_from_bxyz" href="#dukit.source.get_current_from_bxyz">get_current_from_bxyz()</a> or</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<p>get_magnetization_from_bxyz).</p>
+<h2 id="example">Example</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; import dukit
+&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt;
+&gt;&gt;&gt; # First get Bxyz from field reconstruction
+&gt;&gt;&gt; bxyz = {
+...     &quot;Bx&quot;: np.random.randn(100, 100) * 10,
+...     &quot;By&quot;: np.random.randn(100, 100) * 10,
+...     &quot;Bz&quot;: np.random.randn(100, 100) * 10,
+... }
+&gt;&gt;&gt;
+&gt;&gt;&gt; # Reconstruct current density
+&gt;&gt;&gt; result = dukit.source.reconstruct_source(
+...     bxyz,
+...     pixel_size=1.5e-6,
+...     source_type=&quot;current&quot;,
+...     standoff=150e-9,
+...     use_components=&quot;xy&quot;,
+... )
+&gt;&gt;&gt; Jx = result[&quot;Jx&quot;]
+&gt;&gt;&gt; Jy = result[&quot;Jy&quot;]
+&gt;&gt;&gt;
+&gt;&gt;&gt; # Or reconstruct magnetization
+&gt;&gt;&gt; mag = dukit.source.reconstruct_source(
+...     bxyz,
+...     pixel_size=1.5e-6,
+...     source_type=&quot;magnetization&quot;,
+...     standoff=150e-9,
+...     magnetization_angle=None,  # Out-of-plane
+... )
+&gt;&gt;&gt; Mz = mag[&quot;Mz&quot;]
+</code></pre></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<form>
+<input id="lunr-search" name="q" placeholder="🔎 Search ..." aria-label="Search"
+disabled minlength="2">
+</form>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.css" integrity="sha512-b+T2i3P45i1LZM7I00Ci5QquB9szqaxu+uuk5TUSGjZQ4w4n+qujQiIuvTv2BxE7WCGQCifNMksyKILDiHzsOg==" crossorigin>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.js" integrity="sha512-2B9/byNV1KKRm5nQ2RLViPFD6U4dUjDGwuW1GU+ImJh8YinPU9Zlq1GzdTMO+G2ROrB5o1qasJBy1ttYz0wCug==" crossorigin></script>
+<style>
+.modal-dialog iframe {
+width: 100vw;
+height: calc(100vh - 80px);
+}
+@media screen and (min-width: 700px) {
+.modal-dialog iframe {
+width: 70vw;
+height: 80vh;
+}
+}
+.modal-dialog .tingle-modal-box {width: auto;}
+.modal-dialog .tingle-modal-box__content {padding: 0;}
+</style>
+<script>
+const input = document.getElementById('lunr-search');
+input.disabled = false;
+input.form.addEventListener('submit', (ev) => {
+ev.preventDefault();
+const url = new URL(window.location);
+url.searchParams.set('q', input.value);
+history.replaceState({}, null, url.toString());
+search(input.value);
+});
+const query = new URL(window.location).searchParams.get('q');
+if (query)
+search(query);
+function search(query) {
+const url = '../../doc-search.html#' + encodeURIComponent(query);
+new tingle.modal({
+cssClass: ['modal-dialog'],
+onClose: () => {
+const url = new URL(window.location);
+url.searchParams.delete('q');
+history.replaceState({}, null, url.toString());
+setTimeout(() => input.focus(), 100);
+}
+}).setContent('<iframe src="' + url + '"></iframe>').open();
+}
+</script>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="dukit" href="../index.html">dukit</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="dukit.source.current" href="current.html">dukit.source.current</a></code></li>
+<li><code><a title="dukit.source.magnetization" href="magnetization.html">dukit.source.magnetization</a></code></li>
+<li><code><a title="dukit.source.reconstruct" href="reconstruct.html">dukit.source.reconstruct</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="dukit.source.get_current_from_bdefect" href="#dukit.source.get_current_from_bdefect">get_current_from_bdefect</a></code></li>
+<li><code><a title="dukit.source.get_current_from_bxyz" href="#dukit.source.get_current_from_bxyz">get_current_from_bxyz</a></code></li>
+<li><code><a title="dukit.source.get_current_without_ft" href="#dukit.source.get_current_without_ft">get_current_without_ft</a></code></li>
+<li><code><a title="dukit.source.get_divperp_j" href="#dukit.source.get_divperp_j">get_divperp_j</a></code></li>
+<li><code><a title="dukit.source.get_magnetization_from_bdefect" href="#dukit.source.get_magnetization_from_bdefect">get_magnetization_from_bdefect</a></code></li>
+<li><code><a title="dukit.source.get_magnetization_from_bxyz" href="#dukit.source.get_magnetization_from_bxyz">get_magnetization_from_bxyz</a></code></li>
+<li><code><a title="dukit.source.normalize_in_plane_mag" href="#dukit.source.normalize_in_plane_mag">normalize_in_plane_mag</a></code></li>
+<li><code><a title="dukit.source.reconstruct_source" href="#dukit.source.reconstruct_source">reconstruct_source</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>

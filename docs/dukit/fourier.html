@@ -2,19 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.9.2" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
 <title>dukit.fourier API documentation</title>
-<meta name="description" content="Shared FFTW tooling …" />
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
-<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
-<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
-<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<meta name="description" content="Shared FFTW tooling …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}#lunr-search{width:100%;font-size:1em;padding:6px 9px 5px 9px;border:1px solid silver}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
 <style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
-<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
 </head>
 <body>
 <main>
@@ -39,375 +54,6 @@
 <li><code><a title="dukit.fourier.MAG_UNIT_CONV" href="#dukit.fourier.MAG_UNIT_CONV">MAG_UNIT_CONV</a></code></li>
 <li><code><a title="dukit.fourier.MU_0" href="#dukit.fourier.MU_0">MU_0</a></code></li>
 </ul>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python"># -*- coding: utf-8 -*-
-&#34;&#34;&#34;
-Shared FFTW tooling.
-
-Functions
----------
- - `dukit.fourier.unpad_image`
- - `dukit.fourier.pad_image`
- - `dukit.fourier.define_k_vectors`
- - `dukit.fourier.set_naninf_to_zero`
- - `dukit.fourier.hanning_filter_kspace`
- - `dukit.fourier.define_magnetization_transformation`
- - `dukit.fourier.define_current_transform`
-
-Constants
----------
- - `dukit.fourier.MAG_UNIT_CONV`
- - `dukit.fourier.MU_0`
-&#34;&#34;&#34;
-
-
-# ============================================================================
-
-__author__ = &#34;Sam Scholten&#34;
-__pdoc__ = {
-    &#34;dukit.fourier.unpad_image&#34;: True,
-    &#34;dukit.fourier.pad_image&#34;: True,
-    &#34;dukit.fourier.define_k_vectors&#34;: True,
-    &#34;dukit.fourier.set_naninf_to_zero&#34;: True,
-    &#34;dukit.fourier.hanning_filter_kspace&#34;: True,
-    &#34;dukit.fourier.MAG_UNIT_CONV&#34;: True,
-    &#34;dukit.fourier.MU_0&#34;: True,
-    &#34;dukit.fourier.define_magnetization_transformation&#34;: True,
-    &#34;dukit.fourier.define_current_transform&#34;: True,
-}
-
-# ============================================================================
-
-from pyfftw.interfaces import numpy_fft
-import numpy as np
-import numpy.typing as npt
-
-# ============================================================================
-
-MAG_UNIT_CONV: float = 1e-18 / 9.274010e-24
-&#34;&#34;&#34;
-Convert unit for magnetization to something more helpful.
-
-SI unit measured: Amps: A [for 2D magnetization, A/m for 3D]
-
-More useful: Bohr magnetons per nanometre squared: mu_B nm^-2
-
-```
-mu_B -&gt; 9.274 010 e-24 A m^+2 or J/T
-
-m^2 -&gt; 1e+18 nm^2
-
-
-Measure x amps = x A
-
- def  mu_B  =  9.2_      in units of A m^2
- 
- =&gt; x A = x (1 / 9.2_)   in units of mu_B/m^2
- 
- =&gt; x A = x (1e-18/9.2_) in units of mu_B/nm^2
-```
-&#34;&#34;&#34;
-
-
-MU_0: float = 1.25663706212 * 1e-6
-&#34;&#34;&#34;
-Vacuum permeability
-&#34;&#34;&#34;
-
-
-# ============================================================================
-
-
-def unpad_image(
-    x: npt.NDArray, padder: tuple[tuple[int, int], tuple[int, int]]
-) -&gt; npt.NDArray:
-    &#34;&#34;&#34;undo a padding defined by `dukit.fourier.pad_image` (it returns
-    the padder list)&#34;&#34;&#34;
-    slices = []
-    for c in padder:
-        e = None if c[1] == 0 else -c[1]
-        slices.append(slice(c[0], e))
-    return x[tuple(slices)]
-
-
-# ============================================================================
-
-
-def pad_image(
-    image: npt.NDArray, pad_mode: str, pad_factor: int
-) -&gt; tuple[npt.NDArray, tuple[tuple[int, int], tuple[int, int]]]:
-    &#34;&#34;&#34;
-    pad_mode -&gt; see np.pad
-    pad_factor -&gt; either side of image
-    &#34;&#34;&#34;
-
-    if len(np.shape(image)) != 2:
-        raise ValueError(&#34;image passed to pad_image was not 2D.&#34;)
-
-    image = np.array(image)
-
-    if pad_mode is None:
-        return image, ((0, 0), (0, 0))
-
-    size_y, size_x = image.shape
-
-    y_pad = pad_factor * size_y
-    x_pad = pad_factor * size_x
-    padder = ((y_pad, y_pad), (x_pad, x_pad))
-    padded_image = np.pad(image, mode=pad_mode, pad_width=padder)
-
-    return padded_image, padder
-
-
-# ============================================================================
-
-
-def define_k_vectors(
-    shape: tuple[int, int],
-    raw_pixel_size: float,
-    applied_binning: tuple[int, int] | int =1,
-    k_vector_epsilon: float = 1e-6,
-) -&gt; tuple[npt.NDArray, npt.NDArray, npt.NDArray]:
-    &#34;&#34;&#34;Get scaled k vectors (as meshgrid) for fft.
-
-    Arguments
-    ----------
-    shape : list
-        Shape of fft array to get k vectors for.
-    raw_pixel_size : float
-        I.e. camera pixel size
-    applied_binning : 2-tuple of ints or int
-        Binning that has been applied. 2-tuple for asymmetric binning
-        NOTE sorry untested in fourier currently
-    k_vector_epsilon : float
-        Add an epsilon value to the k-vectors to avoid some issues with 1/0.
-
-    Returns
-    -------
-    ky, kx, k : np array
-        Wavenumber meshgrids, k = sqrt( kx^2 + ky^2 )
-    &#34;&#34;&#34;
-    # scaling for the k vectors so they are in the right units
-    # (allow for asymmetric binning)
-    # get the fft frequencies and shift the ordering and forces type to be float64
-    if isinstance(applied_binning, tuple):
-        bin_x, bin_y = applied_binning
-        scaling_y = np.float64(2 * np.pi / (raw_pixel_size * bin_y))
-        scaling_x = np.float64(2 * np.pi / (raw_pixel_size * bin_x))
-        ky_vec = scaling_y * numpy_fft.fftshift(numpy_fft.fftfreq(shape[0]))
-        kx_vec = scaling_x * numpy_fft.fftshift(numpy_fft.fftfreq(shape[1]))
-    else:
-        scl = raw_pixel_size * applied_binning if applied_binning else raw_pixel_size
-        scaling = np.float64(2 * np.pi / scl)
-        ky_vec = scaling * numpy_fft.fftshift(numpy_fft.fftfreq(shape[0]))
-        kx_vec = scaling * numpy_fft.fftshift(numpy_fft.fftfreq(shape[1]))
-
-    # Include a small factor in the k vectors to remove division by zero issues (min_k)
-    # Make a meshgrid to pass back
-    if k_vector_epsilon:
-        ky, kx = np.meshgrid(
-            ky_vec - k_vector_epsilon, kx_vec + k_vector_epsilon, indexing=&#34;ij&#34;
-        )
-    else:
-        ky, kx = np.meshgrid(ky_vec, kx_vec, indexing=&#34;ij&#34;)
-
-    k = np.sqrt(ky**2 + kx**2)
-    return -ky, kx, k  # negative here to maintain correct image orientation
-
-
-# ============================================================================
-
-
-def set_naninf_to_zero(array: npt.NDArray) -&gt; npt.NDArray:
-    &#34;&#34;&#34;replaces NaNs and infs with zero&#34;&#34;&#34;
-    idxs = np.logical_or(np.isnan(array), np.isinf(array))
-    array[idxs] = 0
-    return array
-
-
-# ============================================================================
-
-
-def hanning_filter_kspace(
-    k: npt.NDArray,
-    do_filt: bool,
-    hanning_low_cutoff: float | None,
-    hanning_high_cutoff: float | None,
-    standoff: float | None,
-) -&gt; npt.NDArray | int:
-    &#34;&#34;&#34;Computes a hanning image filter with both low and high pass filters.
-
-    Arguments
-    ---------
-    k : np array
-        Wavenumber meshgrids, k = sqrt( kx^2 + ky^2 )
-    do_filt : bool
-        Do a hanning filter?
-    hanning_high_cutoff : float
-        Set highpass cutoff k values. Give as a distance/wavelength, e.g. k_high will be
-        set via k_high = 2pi/high_cutoff. Should be _smaller_ number than low_cutoff.
-    hanning_low_cutoff : float
-        Set lowpass cutoff k values. Give as a distance/wavelength, e.g. k_low will be
-        set via k_low = 2pi/low_cutoff. Should be _larger_ number than high_cutoff.
-    standoff : float
-        Distance NV layer &lt;-&gt; Sample.
-
-    Returns
-    -------
-    img_filter : (2d array, float)
-        bandpass filter to remove artifacts in the FFT process.
-    &#34;&#34;&#34;
-    # Define Hanning filter to prevent noise amplification at frequencies higher than the
-    # spatial resolution
-
-    if (
-        do_filt and standoff and standoff &gt; 1e-10
-    ):  # standoff greater than an angstrom...
-        hy = np.hanning(k.shape[0])
-        hx = np.hanning(k.shape[1])
-        img_filt = np.sqrt(np.outer(hy, hx))
-        # apply cutoffs
-        if hanning_high_cutoff is not None:
-            k_cut_high = (2 * np.pi) / hanning_high_cutoff
-            img_filt[k &gt; k_cut_high] = 0
-        else:
-            k_cut_high = (2 * np.pi) / standoff
-            img_filt[k &gt; k_cut_high] = 0
-        if hanning_low_cutoff is not None:
-            k_cut_low = (2 * np.pi) / hanning_low_cutoff
-            img_filt[k &lt; k_cut_low] = 0
-    else:
-        img_filt = 1
-    return img_filt
-
-
-# ============================================================================
-
-
-def define_magnetization_transformation(
-    ky: npt.NDArray,
-    kx: npt.NDArray,
-    k: npt.NDArray,
-    standoff: float | None = None,
-    nv_layer_thickness: float | None = None,
-) -&gt; npt.NDArray:
-    &#34;&#34;&#34;M =&gt; b fourier-space transformation.
-
-    Parameters
-    ----------
-    ky, kx, k : np array
-        Wavenumber meshgrids, k = sqrt( kx^2 + ky^2 )
-    standoff : float
-        Distance NV layer &lt;-&gt; Sample
-    nv_layer_thickness : float or None, default : None
-        Thickness of NV layer (in metres)
-
-    Returns
-    -------
-    d_matrix : np array
-        Transformation such that B = d_matrix * m. E.g. for z magnetized sample:
-        m_to_bnv = (
-            unv[0] * d_matrix[2, 0, ::] + unv[1] * d_matrix[2, 1, ::] +
-            unv[2] * d_matrix[2, 2, ::]
-        )
-        -&gt; First index &#39;2&#39; is for z magnetization
-        (see m_from_bxy for in-plane mag process), the
-        second index is for the (bnv etc.) bfield axis (0:x, 1:y, 2:z),
-        and the last index iterates through the k values/vectors.
-
-
-    See D. A. Broadway, S. E. Lillie, S. C. Scholten, D. Rohner, N. Dontschuk,
-        P. Maletinsky, J.-P. Tetienne, and L. C. L. Hollenberg,
-        Improved Current Density and Magnetization Reconstruction Through Vector
-        Magnetic Field Measurements, Phys. Rev. Applied 14, 024076 (2020).
-        https://doi.org/10.1103/PhysRevApplied.14.024076
-        https://arxiv.org/abs/2005.06788
-    &#34;&#34;&#34;
-
-    if standoff:
-        exp_factor = np.exp(k * standoff)
-        if nv_layer_thickness:
-            # average exp factor exp(-k z) across
-            # z = [standoff - nv_thickness / 2, standoff + nv_thickness / 2]
-            # get exp(-k z) * sinh(k nv_thickness / 2) / (k nv_thickness / 2)
-            # (inverted here)
-            arg = k * nv_layer_thickness / 2
-            exp_factor *= 1 / (arg / np.sinh(arg))
-    else:
-        exp_factor = 1
-
-    alpha = 2 * exp_factor / MU_0
-
-    return (1 / alpha) * np.array(
-        [
-            [-(kx**2) / k, -(kx * ky) / k, -1j * kx],
-            [-(kx * ky) / k, -(ky**2) / k, -1j * ky],
-            [-1j * kx, -1j * ky, k],
-        ]
-    )
-
-
-# ============================================================================
-
-
-def define_current_transform(
-    u_proj: tuple[float, float, float],
-    ky: npt.NDArray,
-    kx: npt.NDArray,
-    k: npt.NDArray,
-    standoff: float | None = None,
-    nv_layer_thickness: float | None = None,
-) -&gt; tuple[npt.NDArray, npt.NDArray]:
-    &#34;&#34;&#34;b =&gt; J fourier-space transformation.
-
-    Arguments
-    ---------
-    u_proj : 3-tuple
-        Shape: 3, the direction the magnetic field was measured in (projected onto).
-    ky, kx, k : np arrays
-        Wavenumber meshgrids, k = sqrt( kx^2 + ky^2 )
-    standoff : float or None, default : None
-        Distance NV layer &lt;-&gt; sample
-    nv_layer_thickness : float or None, default : None
-        Thickness of NV layer (in metres)
-
-    Returns
-    -------
-    b_to_jx, b_to_jy : np arrays (2D)
-
-    See D. A. Broadway, S. E. Lillie, S. C. Scholten, D. Rohner, N. Dontschuk,
-        P. Maletinsky, J.-P. Tetienne, and L. C. L. Hollenberg,
-        Improved Current Density and Magnetization Reconstruction Through Vector
-        Magnetic Field Measurements, Phys. Rev. Applied 14, 024076 (2020).
-        https://doi.org/10.1103/PhysRevApplied.14.024076
-        https://arxiv.org/abs/2005.06788
-    &#34;&#34;&#34;
-    if standoff:
-        exp_factor = np.exp(k * standoff)
-        if nv_layer_thickness:
-            # average exp factor exp(-k z) across
-            # z = [standoff - nv_thickness / 2, standoff + nv_thickness / 2]
-            # get exp(-k z) * sinh(k nv_thickness / 2) / (k nv_thickness / 2)
-            # (inverted here)
-            arg = k * nv_layer_thickness / 2
-            exp_factor *= arg / np.sinh(arg)
-    else:
-        exp_factor = 1
-
-    alpha = 2 * exp_factor / MU_0
-
-    prefac = alpha / (u_proj[0] * kx + u_proj[1] * ky + 1j * u_proj[2] * k)
-    b_to_jx = prefac * -ky
-    b_to_jy = prefac * kx
-
-    return b_to_jx, b_to_jy
-
-
-# ============================================================================</code></pre>
-</details>
 </section>
 <section>
 </section>
@@ -443,32 +89,9 @@ Measure x amps = x A
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="dukit.fourier.define_current_transform"><code class="name flex">
-<span>def <span class="ident">define_current_transform</span></span>(<span>u_proj: tuple[float, float, float], ky: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], kx: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], k: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], standoff: float | None = None, nv_layer_thickness: float | None = None) ‑> tuple[numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]]]</span>
+<span>def <span class="ident">define_current_transform</span></span>(<span>u_proj: tuple[float, float, float],<br>ky: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>kx: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>k: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>standoff: float | None = None,<br>nv_layer_thickness: float | None = None) ‑> tuple[numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]], numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]]</span>
 </code></dt>
 <dd>
-<div class="desc"><p>b =&gt; J fourier-space transformation.</p>
-<h2 id="arguments">Arguments</h2>
-<dl>
-<dt><strong><code>u_proj</code></strong> :&ensp;<code>3-tuple</code></dt>
-<dd>Shape: 3, the direction the magnetic field was measured in (projected onto).</dd>
-<dt><strong><code>ky</code></strong>, <strong><code>kx</code></strong>, <strong><code>k</code></strong> :&ensp;<code>np arrays</code></dt>
-<dd>Wavenumber meshgrids, k = sqrt( kx^2 + ky^2 )</dd>
-<dt><strong><code>standoff</code></strong> :&ensp;<code>float</code> or <code>None</code>, default <code>: None</code></dt>
-<dd>Distance NV layer &lt;-&gt; sample</dd>
-<dt><strong><code>nv_layer_thickness</code></strong> :&ensp;<code>float</code> or <code>None</code>, default <code>: None</code></dt>
-<dd>Thickness of NV layer (in metres)</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><strong><code>b_to_jx</code></strong>, <strong><code>b_to_jy</code></strong> :&ensp;<code>np arrays (2D)</code></dt>
-<dd>&nbsp;</dd>
-<dt><code>See D. A. Broadway, S. E. Lillie, S. C. Scholten, D. Rohner, N. Dontschuk,</code></dt>
-<dd>P. Maletinsky, J.-P. Tetienne, and L. C. L. Hollenberg,
-Improved Current Density and Magnetization Reconstruction Through Vector
-Magnetic Field Measurements, Phys. Rev. Applied 14, 024076 (2020).
-<a href="https://doi.org/10.1103/PhysRevApplied.14.024076">https://doi.org/10.1103/PhysRevApplied.14.024076</a>
-<a href="https://arxiv.org/abs/2005.06788">https://arxiv.org/abs/2005.06788</a></dd>
-</dl></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -525,29 +148,34 @@ Magnetic Field Measurements, Phys. Rev. Applied 14, 024076 (2020).
 
     return b_to_jx, b_to_jy</code></pre>
 </details>
-</dd>
-<dt id="dukit.fourier.define_k_vectors"><code class="name flex">
-<span>def <span class="ident">define_k_vectors</span></span>(<span>shape: tuple[int, int], raw_pixel_size: float, applied_binning: tuple[int, int] | int = 1, k_vector_epsilon: float = 1e-06) ‑> tuple[numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]]]</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get scaled k vectors (as meshgrid) for fft.</p>
+<div class="desc"><p>b =&gt; J fourier-space transformation.</p>
 <h2 id="arguments">Arguments</h2>
 <dl>
-<dt><strong><code>shape</code></strong> :&ensp;<code>list</code></dt>
-<dd>Shape of fft array to get k vectors for.</dd>
-<dt><strong><code>raw_pixel_size</code></strong> :&ensp;<code>float</code></dt>
-<dd>I.e. camera pixel size</dd>
-<dt><strong><code>applied_binning</code></strong> :&ensp;<code>2-tuple</code> of <code>ints</code> or <code>int</code></dt>
-<dd>Binning that has been applied. 2-tuple for asymmetric binning
-NOTE sorry untested in fourier currently</dd>
-<dt><strong><code>k_vector_epsilon</code></strong> :&ensp;<code>float</code></dt>
-<dd>Add an epsilon value to the k-vectors to avoid some issues with 1/0.</dd>
+<dt><strong><code>u_proj</code></strong> :&ensp;<code>3-tuple</code></dt>
+<dd>Shape: 3, the direction the magnetic field was measured in (projected onto).</dd>
+<dt><strong><code>ky</code></strong>, <strong><code>kx</code></strong>, <strong><code>k</code></strong> :&ensp;<code>np arrays</code></dt>
+<dd>Wavenumber meshgrids, k = sqrt( kx^2 + ky^2 )</dd>
+<dt><strong><code>standoff</code></strong> :&ensp;<code>float</code> or <code>None</code>, default <code>: None</code></dt>
+<dd>Distance NV layer &lt;-&gt; sample</dd>
+<dt><strong><code>nv_layer_thickness</code></strong> :&ensp;<code>float</code> or <code>None</code>, default <code>: None</code></dt>
+<dd>Thickness of NV layer (in metres)</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><strong><code>ky</code></strong>, <strong><code>kx</code></strong>, <strong><code>k</code></strong> :&ensp;<code>np array</code></dt>
-<dd>Wavenumber meshgrids, k = sqrt( kx^2 + ky^2 )</dd>
+<dt><strong><code>b_to_jx</code></strong>, <strong><code>b_to_jy</code></strong> :&ensp;<code>np arrays (2D)</code></dt>
+<dd>&nbsp;</dd>
+<dt><code>See D. A. Broadway, S. E. Lillie, S. C. Scholten, D. Rohner, N. Dontschuk,</code></dt>
+<dd>P. Maletinsky, J.-P. Tetienne, and L. C. L. Hollenberg,
+Improved Current Density and Magnetization Reconstruction Through Vector
+Magnetic Field Measurements, Phys. Rev. Applied 14, 024076 (2020).
+<a href="https://doi.org/10.1103/PhysRevApplied.14.024076">https://doi.org/10.1103/PhysRevApplied.14.024076</a>
+<a href="https://arxiv.org/abs/2005.06788">https://arxiv.org/abs/2005.06788</a></dd>
 </dl></div>
+</dd>
+<dt id="dukit.fourier.define_k_vectors"><code class="name flex">
+<span>def <span class="ident">define_k_vectors</span></span>(<span>shape: tuple[int, int],<br>raw_pixel_size: float,<br>*,<br>applied_binning: tuple[int, int] | int = 1,<br>k_vector_epsilon: float = 1e-06) ‑> tuple[numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]], numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]], numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]]</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -555,7 +183,8 @@ NOTE sorry untested in fourier currently</dd>
 <pre><code class="python">def define_k_vectors(
     shape: tuple[int, int],
     raw_pixel_size: float,
-    applied_binning: tuple[int, int] | int =1,
+    *,
+    applied_binning: tuple[int, int] | int = 1,
     k_vector_epsilon: float = 1e-6,
 ) -&gt; tuple[npt.NDArray, npt.NDArray, npt.NDArray]:
     &#34;&#34;&#34;Get scaled k vectors (as meshgrid) for fft.
@@ -572,11 +201,21 @@ NOTE sorry untested in fourier currently</dd>
     k_vector_epsilon : float
         Add an epsilon value to the k-vectors to avoid some issues with 1/0.
 
+    NOTE `applied_binning` and `k_vector_epsilon` are keyword-only args, to
+    prevent silent mis-binding (e.g. a `k_vector_epsilon` value landing in
+    the `applied_binning` slot, and vice versa).
+
     Returns
     -------
     ky, kx, k : np array
         Wavenumber meshgrids, k = sqrt( kx^2 + ky^2 )
     &#34;&#34;&#34;
+    # guard against silent mis-binding (e.g. a float epsilon passed positionally)
+    if not isinstance(applied_binning, (Integral, tuple)):
+        raise TypeError(
+            f&#34;applied_binning must be an int or 2-tuple of ints, got {applied_binning!r}&#34;
+        )
+
     # scaling for the k vectors so they are in the right units
     # (allow for asymmetric binning)
     # get the fft frequencies and shift the ordering and forces type to be float64
@@ -595,49 +234,39 @@ NOTE sorry untested in fourier currently</dd>
     # Include a small factor in the k vectors to remove division by zero issues (min_k)
     # Make a meshgrid to pass back
     if k_vector_epsilon:
-        ky, kx = np.meshgrid(
-            ky_vec - k_vector_epsilon, kx_vec + k_vector_epsilon, indexing=&#34;ij&#34;
-        )
+        ky, kx = np.meshgrid(ky_vec - k_vector_epsilon, kx_vec + k_vector_epsilon, indexing=&#34;ij&#34;)
     else:
         ky, kx = np.meshgrid(ky_vec, kx_vec, indexing=&#34;ij&#34;)
 
     k = np.sqrt(ky**2 + kx**2)
     return -ky, kx, k  # negative here to maintain correct image orientation</code></pre>
 </details>
-</dd>
-<dt id="dukit.fourier.define_magnetization_transformation"><code class="name flex">
-<span>def <span class="ident">define_magnetization_transformation</span></span>(<span>ky: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], kx: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], k: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], standoff: float | None = None, nv_layer_thickness: float | None = None) ‑> numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]]</span>
-</code></dt>
-<dd>
-<div class="desc"><p>M =&gt; b fourier-space transformation.</p>
-<h2 id="parameters">Parameters</h2>
+<div class="desc"><p>Get scaled k vectors (as meshgrid) for fft.</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>shape</code></strong> :&ensp;<code>list</code></dt>
+<dd>Shape of fft array to get k vectors for.</dd>
+<dt><strong><code>raw_pixel_size</code></strong> :&ensp;<code>float</code></dt>
+<dd>I.e. camera pixel size</dd>
+<dt><strong><code>applied_binning</code></strong> :&ensp;<code>2-tuple</code> of <code>ints</code> or <code>int</code></dt>
+<dd>Binning that has been applied. 2-tuple for asymmetric binning
+NOTE sorry untested in fourier currently</dd>
+<dt><strong><code>k_vector_epsilon</code></strong> :&ensp;<code>float</code></dt>
+<dd>Add an epsilon value to the k-vectors to avoid some issues with 1/0.</dd>
+</dl>
+<p>NOTE <code>applied_binning</code> and <code>k_vector_epsilon</code> are keyword-only args, to
+prevent silent mis-binding (e.g. a <code>k_vector_epsilon</code> value landing in
+the <code>applied_binning</code> slot, and vice versa).</p>
+<h2 id="returns">Returns</h2>
 <dl>
 <dt><strong><code>ky</code></strong>, <strong><code>kx</code></strong>, <strong><code>k</code></strong> :&ensp;<code>np array</code></dt>
 <dd>Wavenumber meshgrids, k = sqrt( kx^2 + ky^2 )</dd>
-<dt><strong><code>standoff</code></strong> :&ensp;<code>float</code></dt>
-<dd>Distance NV layer &lt;-&gt; Sample</dd>
-<dt><strong><code>nv_layer_thickness</code></strong> :&ensp;<code>float</code> or <code>None</code>, default <code>: None</code></dt>
-<dd>Thickness of NV layer (in metres)</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><strong><code>d_matrix</code></strong> :&ensp;<code>np array</code></dt>
-<dd>Transformation such that B = d_matrix * m. E.g. for z magnetized sample:
-m_to_bnv = (
-unv[0] * d_matrix[2, 0, ::] + unv[1] * d_matrix[2, 1, ::] +
-unv[2] * d_matrix[2, 2, ::]
-)
--&gt; First index '2' is for z magnetization
-(see m_from_bxy for in-plane mag process), the
-second index is for the (bnv etc.) bfield axis (0:x, 1:y, 2:z),
-and the last index iterates through the k values/vectors.</dd>
-<dt><code>See D. A. Broadway, S. E. Lillie, S. C. Scholten, D. Rohner, N. Dontschuk,</code></dt>
-<dd>P. Maletinsky, J.-P. Tetienne, and L. C. L. Hollenberg,
-Improved Current Density and Magnetization Reconstruction Through Vector
-Magnetic Field Measurements, Phys. Rev. Applied 14, 024076 (2020).
-<a href="https://doi.org/10.1103/PhysRevApplied.14.024076">https://doi.org/10.1103/PhysRevApplied.14.024076</a>
-<a href="https://arxiv.org/abs/2005.06788">https://arxiv.org/abs/2005.06788</a></dd>
 </dl></div>
+</dd>
+<dt id="dukit.fourier.define_magnetization_transformation"><code class="name flex">
+<span>def <span class="ident">define_magnetization_transformation</span></span>(<span>ky: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>kx: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>k: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>standoff: float | None = None,<br>nv_layer_thickness: float | None = None) ‑> numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -704,32 +333,40 @@ Magnetic Field Measurements, Phys. Rev. Applied 14, 024076 (2020).
         ]
     )</code></pre>
 </details>
-</dd>
-<dt id="dukit.fourier.hanning_filter_kspace"><code class="name flex">
-<span>def <span class="ident">hanning_filter_kspace</span></span>(<span>k: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], do_filt: bool, hanning_low_cutoff: float | None, hanning_high_cutoff: float | None, standoff: float | None) ‑> numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]] | int</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Computes a hanning image filter with both low and high pass filters.</p>
-<h2 id="arguments">Arguments</h2>
+<div class="desc"><p>M =&gt; b fourier-space transformation.</p>
+<h2 id="parameters">Parameters</h2>
 <dl>
-<dt><strong><code>k</code></strong> :&ensp;<code>np array</code></dt>
+<dt><strong><code>ky</code></strong>, <strong><code>kx</code></strong>, <strong><code>k</code></strong> :&ensp;<code>np array</code></dt>
 <dd>Wavenumber meshgrids, k = sqrt( kx^2 + ky^2 )</dd>
-<dt><strong><code>do_filt</code></strong> :&ensp;<code>bool</code></dt>
-<dd>Do a hanning filter?</dd>
-<dt><strong><code>hanning_high_cutoff</code></strong> :&ensp;<code>float</code></dt>
-<dd>Set highpass cutoff k values. Give as a distance/wavelength, e.g. k_high will be
-set via k_high = 2pi/high_cutoff. Should be <em>smaller</em> number than low_cutoff.</dd>
-<dt><strong><code>hanning_low_cutoff</code></strong> :&ensp;<code>float</code></dt>
-<dd>Set lowpass cutoff k values. Give as a distance/wavelength, e.g. k_low will be
-set via k_low = 2pi/low_cutoff. Should be <em>larger</em> number than high_cutoff.</dd>
 <dt><strong><code>standoff</code></strong> :&ensp;<code>float</code></dt>
-<dd>Distance NV layer &lt;-&gt; Sample.</dd>
+<dd>Distance NV layer &lt;-&gt; Sample</dd>
+<dt><strong><code>nv_layer_thickness</code></strong> :&ensp;<code>float</code> or <code>None</code>, default <code>: None</code></dt>
+<dd>Thickness of NV layer (in metres)</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><strong><code>img_filter</code></strong> :&ensp;<code>(2d array, float)</code></dt>
-<dd>bandpass filter to remove artifacts in the FFT process.</dd>
+<dt><strong><code>d_matrix</code></strong> :&ensp;<code>np array</code></dt>
+<dd>Transformation such that B = d_matrix * m. E.g. for z magnetized sample:
+m_to_bnv = (
+unv[0] * d_matrix[2, 0, ::] + unv[1] * d_matrix[2, 1, ::] +
+unv[2] * d_matrix[2, 2, ::]
+)
+-&gt; First index '2' is for z magnetization
+(see m_from_bxy for in-plane mag process), the
+second index is for the (bnv etc.) bfield axis (0:x, 1:y, 2:z),
+and the last index iterates through the k values/vectors.</dd>
+<dt><code>See D. A. Broadway, S. E. Lillie, S. C. Scholten, D. Rohner, N. Dontschuk,</code></dt>
+<dd>P. Maletinsky, J.-P. Tetienne, and L. C. L. Hollenberg,
+Improved Current Density and Magnetization Reconstruction Through Vector
+Magnetic Field Measurements, Phys. Rev. Applied 14, 024076 (2020).
+<a href="https://doi.org/10.1103/PhysRevApplied.14.024076">https://doi.org/10.1103/PhysRevApplied.14.024076</a>
+<a href="https://arxiv.org/abs/2005.06788">https://arxiv.org/abs/2005.06788</a></dd>
 </dl></div>
+</dd>
+<dt id="dukit.fourier.hanning_filter_kspace"><code class="name flex">
+<span>def <span class="ident">hanning_filter_kspace</span></span>(<span>k: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>do_filt: bool,<br>hanning_low_cutoff: float | None,<br>hanning_high_cutoff: float | None,<br>standoff: float | None) ‑> numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]] | int</span>
+</code></dt>
+<dd>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -766,9 +403,7 @@ set via k_low = 2pi/low_cutoff. Should be <em>larger</em> number than high_cutof
     # Define Hanning filter to prevent noise amplification at frequencies higher than the
     # spatial resolution
 
-    if (
-        do_filt and standoff and standoff &gt; 1e-10
-    ):  # standoff greater than an angstrom...
+    if do_filt and standoff and standoff &gt; 1e-10:  # standoff greater than an angstrom...
         hy = np.hanning(k.shape[0])
         hx = np.hanning(k.shape[1])
         img_filt = np.sqrt(np.outer(hy, hx))
@@ -786,13 +421,32 @@ set via k_low = 2pi/low_cutoff. Should be <em>larger</em> number than high_cutof
         img_filt = 1
     return img_filt</code></pre>
 </details>
+<div class="desc"><p>Computes a hanning image filter with both low and high pass filters.</p>
+<h2 id="arguments">Arguments</h2>
+<dl>
+<dt><strong><code>k</code></strong> :&ensp;<code>np array</code></dt>
+<dd>Wavenumber meshgrids, k = sqrt( kx^2 + ky^2 )</dd>
+<dt><strong><code>do_filt</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Do a hanning filter?</dd>
+<dt><strong><code>hanning_high_cutoff</code></strong> :&ensp;<code>float</code></dt>
+<dd>Set highpass cutoff k values. Give as a distance/wavelength, e.g. k_high will be
+set via k_high = 2pi/high_cutoff. Should be <em>smaller</em> number than low_cutoff.</dd>
+<dt><strong><code>hanning_low_cutoff</code></strong> :&ensp;<code>float</code></dt>
+<dd>Set lowpass cutoff k values. Give as a distance/wavelength, e.g. k_low will be
+set via k_low = 2pi/low_cutoff. Should be <em>larger</em> number than high_cutoff.</dd>
+<dt><strong><code>standoff</code></strong> :&ensp;<code>float</code></dt>
+<dd>Distance NV layer &lt;-&gt; Sample.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>img_filter</code></strong> :&ensp;<code>(2d array, float)</code></dt>
+<dd>bandpass filter to remove artifacts in the FFT process.</dd>
+</dl></div>
 </dd>
 <dt id="dukit.fourier.pad_image"><code class="name flex">
-<span>def <span class="ident">pad_image</span></span>(<span>image: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], pad_mode: str, pad_factor: int) ‑> tuple[numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], tuple[tuple[int, int], tuple[int, int]]]</span>
+<span>def <span class="ident">pad_image</span></span>(<span>image: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>pad_mode: str,<br>pad_factor: int) ‑> tuple[numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]], tuple[tuple[int, int], tuple[int, int]]]</span>
 </code></dt>
 <dd>
-<div class="desc"><p>pad_mode -&gt; see np.pad
-pad_factor -&gt; either side of image</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -815,19 +469,20 @@ pad_factor -&gt; either side of image</p></div>
 
     size_y, size_x = image.shape
 
-    y_pad = pad_factor * size_y
-    x_pad = pad_factor * size_x
+    y_pad = int(pad_factor * size_y)
+    x_pad = int(pad_factor * size_x)
     padder = ((y_pad, y_pad), (x_pad, x_pad))
     padded_image = np.pad(image, mode=pad_mode, pad_width=padder)
 
     return padded_image, padder</code></pre>
 </details>
+<div class="desc"><p>pad_mode -&gt; see np.pad
+pad_factor -&gt; either side of image</p></div>
 </dd>
 <dt id="dukit.fourier.set_naninf_to_zero"><code class="name flex">
-<span>def <span class="ident">set_naninf_to_zero</span></span>(<span>array: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]]) ‑> numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]]</span>
+<span>def <span class="ident">set_naninf_to_zero</span></span>(<span>array: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]) ‑> numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]</span>
 </code></dt>
 <dd>
-<div class="desc"><p>replaces NaNs and infs with zero</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -838,20 +493,17 @@ pad_factor -&gt; either side of image</p></div>
     array[idxs] = 0
     return array</code></pre>
 </details>
+<div class="desc"><p>replaces NaNs and infs with zero</p></div>
 </dd>
 <dt id="dukit.fourier.unpad_image"><code class="name flex">
-<span>def <span class="ident">unpad_image</span></span>(<span>x: numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]], padder: tuple[tuple[int, int], tuple[int, int]]) ‑> numpy.ndarray[typing.Any, numpy.dtype[+_ScalarType_co]]</span>
+<span>def <span class="ident">unpad_image</span></span>(<span>x: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]],<br>padder: tuple[tuple[int, int], tuple[int, int]]) ‑> numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[~_ScalarT]]</span>
 </code></dt>
 <dd>
-<div class="desc"><p>undo a padding defined by <code><a title="dukit.fourier.pad_image" href="#dukit.fourier.pad_image">pad_image()</a></code> (it returns
-the padder list)</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def unpad_image(
-    x: npt.NDArray, padder: tuple[tuple[int, int], tuple[int, int]]
-) -&gt; npt.NDArray:
+<pre><code class="python">def unpad_image(x: npt.NDArray, padder: tuple[tuple[int, int], tuple[int, int]]) -&gt; npt.NDArray:
     &#34;&#34;&#34;undo a padding defined by `dukit.fourier.pad_image` (it returns
     the padder list)&#34;&#34;&#34;
     slices = []
@@ -860,6 +512,8 @@ the padder list)</p></div>
         slices.append(slice(c[0], e))
     return x[tuple(slices)]</code></pre>
 </details>
+<div class="desc"><p>undo a padding defined by <code><a title="dukit.fourier.pad_image" href="#dukit.fourier.pad_image">pad_image()</a></code> (it returns
+the padder list)</p></div>
 </dd>
 </dl>
 </section>
@@ -871,8 +525,8 @@ the padder list)</p></div>
 <input id="lunr-search" name="q" placeholder="🔎 Search ..." aria-label="Search"
 disabled minlength="2">
 </form>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.css" integrity="sha512-j1u8eUJ4f23xPPxwOrLUPQaCD2dwzNqqmDDcWS4deWsMv2ohLqmXXuP3hU7g8TyzbMSakP/mMqoNBYWj8AEIFg==" crossorigin>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.15.3/tingle.min.js" integrity="sha512-plGUER9JkeEWPPqQBE4sdLqBoQug5Ap+BCGMc7bJ8BXkm+VVj6QzkpBz5Yv2yPkkq+cqg9IpkBaGCas6uDbW8g==" crossorigin></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.css" integrity="sha512-b+T2i3P45i1LZM7I00Ci5QquB9szqaxu+uuk5TUSGjZQ4w4n+qujQiIuvTv2BxE7WCGQCifNMksyKILDiHzsOg==" crossorigin>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.16.0/tingle.min.js" integrity="sha512-2B9/byNV1KKRm5nQ2RLViPFD6U4dUjDGwuW1GU+ImJh8YinPU9Zlq1GzdTMO+G2ROrB5o1qasJBy1ttYz0wCug==" crossorigin></script>
 <style>
 .modal-dialog iframe {
 width: 100vw;
@@ -913,7 +567,6 @@ setTimeout(() => input.focus(), 100);
 }).setContent('<iframe src="' + url + '"></iframe>').open();
 }
 </script>
-<h1>Index</h1>
 <div class="toc">
 <ul>
 <li><a href="#functions">Functions</a></li>
@@ -947,7 +600,7 @@ setTimeout(() => input.focus(), 100);
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
 </footer>
 </body>
 </html>
